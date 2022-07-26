@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 jupyter-book = "*"
+ghp-import = "*"
 
 [dev-packages]
 

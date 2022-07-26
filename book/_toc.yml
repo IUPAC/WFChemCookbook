@@ -5,6 +5,7 @@ format: jb-book
 root: intro
 chapters:
 - file: school
+- file: store
 - file: ingredients
-- file: recipes
 - file: cutlery
+- file: recipes
