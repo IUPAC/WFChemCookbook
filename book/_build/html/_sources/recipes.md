@@ -1,3 +1,3 @@
-# What are common workflows for FAIR Data
+# Workflows for FAIR Data
 
-Processing your data to make it FAIR.
+How to collect/process your data to make it FAIR.
