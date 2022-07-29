@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: IUPAC FAIR Chemistry Cookbook
-author: WorldFAIR Chemistry D3.2 committee
+author: WorldFAIR Chemistry D3.2 Project
 logo: images/iupacwf.jpg
 
 # Force re-execution of notebooks on each build.
@@ -30,3 +30,6 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+# new feature?
+only_build_toc_files: true

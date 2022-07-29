@@ -4,8 +4,10 @@
 format: jb-book
 root: intro
 chapters:
+- file: howtos
 - file: school
 - file: store
 - file: ingredients
 - file: cutlery
 - file: recipes
+- file: glossary
