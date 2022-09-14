@@ -3,11 +3,26 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: howtos
-- file: school
-- file: store
-- file: ingredients
-- file: cutlery
-- file: recipes
-- file: glossary
+parts:
+  - caption: How Tos
+    file: howtos
+    chapters:
+    - file: howtos_identifiers
+  - caption: About FAIR Data
+    chapters:
+    - file: school
+  - caption: Resources for FAIR Data
+    chapters:
+    - file: store
+  - caption: Ingredients for FAIR Data
+    chapters:
+    - file: ingredients
+  - caption: Tools for FAIR Data
+    chapters:
+    - file: cutlery
+  - caption: Recipes for FAIR Data
+    chapters:
+    - file: recipes
+  - caption: FAIR Chemical Data Glossary
+    chapters:
+    - file: glossary

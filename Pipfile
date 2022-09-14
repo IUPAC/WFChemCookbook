@@ -6,6 +6,11 @@ name = "pypi"
 [packages]
 jupyter-book = "*"
 ghp-import = "*"
+jupyter-sphinx = "==0.4.0"
+asttokens = "==2.0.8"
+attrs = "==22.1.0"
+pygments = "==2.13.0"
+setuptools = "==65.3.0"
 
 [dev-packages]
 
