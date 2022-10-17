@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Repository: PubChem &#8212; IUPAC FAIR Chemistry Cookbook</title>
+    <title>Using the IUPAC Gold Book API in Python &#8212; IUPAC FAIR Chemistry Cookbook</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Repository: Zenodo" href="zenodo.html" />
-    <link rel="prev" title="Repository: figshare" href="figshare.html" />
+    <link rel="next" title="Using the OPSIN API in Python" href="opsin.html" />
+    <link rel="prev" title="Ingredients for FAIR Data" href="../ingredients.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -142,29 +142,29 @@ const thebe_selector_output = ".output, .cell_output"
   Resources for FAIR Data
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../store.html">
    Resources to make your data FAIR
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="figshare.html">
+    <a class="reference internal" href="../repositories/figshare.html">
      Repository: figshare
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../repositories/pubchem.html">
      Repository: PubChem
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="zenodo.html">
+    <a class="reference internal" href="../repositories/zenodo.html">
      Repository: Zenodo
     </a>
    </li>
@@ -188,14 +188,14 @@ const thebe_selector_output = ".output, .cell_output"
   Tools for FAIR Data
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/goldbook.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Using the IUPAC Gold Book API in Python
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/opsin.html">
+  <a class="reference internal" href="opsin.html">
    Using the OPSIN API in Python
   </a>
  </li>
@@ -274,6 +274,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/iupac/WFChemCookbook/master?urlpath=tree/docs/notebooks/goldbook.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -313,7 +342,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/iupac/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Frepositories/pubchem.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/iupac/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/goldbook.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -341,7 +370,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/repositories/pubchem.md"
+        <a href="../_sources/notebooks/goldbook.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -352,7 +381,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -390,7 +419,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Repository: PubChem</h1>
+                <h1>Using the IUPAC Gold Book API in Python</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -402,8 +431,52 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="repository-pubchem">
-<h1>Repository: PubChem<a class="headerlink" href="#repository-pubchem" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="using-the-iupac-gold-book-api-in-python">
+<h1>Using the IUPAC Gold Book API in Python<a class="headerlink" href="#using-the-iupac-gold-book-api-in-python" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the (native - part of Python) Python packages needed to run this code</span>
+<span class="kn">import</span> <span class="nn">requests</span>                             <span class="c1"># package to get data from a URL</span>
+<span class="kn">import</span> <span class="nn">json</span>                                 <span class="c1"># package to read/write/display JSON</span>
+<span class="kn">import</span> <span class="nn">re</span>                                   <span class="c1"># package to use regular expression (regex) searching</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># function to remove HTML tags from a string</span>
+<span class="c1"># https://medium.com/@jorlugaqui/how-to-strip-html-tags-from-a-string-in-python-7cb81a2bbf44</span>
+<span class="k">def</span> <span class="nf">remove_html_tags</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>                 <span class="c1"># a &#39;def&#39; is a (defined) function that can be called later</span>
+    <span class="n">clean</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span><span class="p">)</span>             <span class="c1"># sets up a regular expression to search with</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">clean</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>          <span class="c1"># removes the matches to the regular expression</span>
+
+<span class="c1"># script to call the IUPAC Gold Book API and get metadata about all IUPAC Recommended Terms</span>
+<span class="n">searchterm</span> <span class="o">=</span> <span class="s2">&quot;cis-trans isomers&quot;</span>
+<span class="n">searchcode</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">allpath</span> <span class="o">=</span> <span class="s2">&quot;https://goldbook.iupac.org/terms/index/all/json&quot;</span>  <span class="c1"># URL path to the IUPAC Gold Book API</span>
+<span class="n">reqdata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">allpath</span><span class="p">)</span>
+<span class="n">pydict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">reqdata</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">code</span><span class="p">,</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">pydict</span><span class="p">[</span><span class="s1">&#39;terms&#39;</span><span class="p">][</span><span class="s1">&#39;list&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">cleaned</span> <span class="o">=</span> <span class="n">remove_html_tags</span><span class="p">(</span><span class="n">term</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">cleaned</span> <span class="o">==</span> <span class="n">searchterm</span><span class="p">:</span>
+        <span class="n">searchcode</span> <span class="o">=</span> <span class="n">code</span>
+        <span class="k">break</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;https://goldbook.iupac.org/terms/view/**/json&quot;</span>  <span class="c1"># URL path to the IUPAC Gold Book API for a term</span>
+<span class="n">reqdata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;**&quot;</span><span class="p">,</span> <span class="n">searchcode</span><span class="p">))</span>  <span class="c1"># request data from the Gold Book server</span>
+<span class="n">jsondata</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">reqdata</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>                  <span class="c1"># get the downloaded JSON</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">searchterm</span> <span class="o">+</span> <span class="s2">&quot; (&quot;</span> <span class="o">+</span> <span class="n">searchcode</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>             <span class="c1"># print the title and Gold Book term code</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jsondata</span><span class="p">[</span><span class="s1">&#39;term&#39;</span><span class="p">][</span><span class="s1">&#39;definitions&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>       <span class="c1"># print the definition of the term</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cis-trans isomers (C01093)
+Stereoisomeric olefins or cycloalkanes (or hetero-analogues) which differ in the positions of atoms (or groups) relative to a reference plane: in the cis-isomer the atoms are on the same side, in the trans-isomer they are on opposite sides. [image: molecular structures showing cis/trans isomerism]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -419,7 +492,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./repositories"
+            path: "./notebooks"
         },
         predefinedOutput: true
     }
@@ -433,17 +506,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="figshare.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../ingredients.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Repository: figshare</p>
+            <p class="prev-next-title">Ingredients for FAIR Data</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="zenodo.html" title="next page">
+    <a class='right-next' id="next-link" href="opsin.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Repository: Zenodo</p>
+        <p class="prev-next-title">Using the OPSIN API in Python</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
