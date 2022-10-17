@@ -24,7 +24,8 @@ parts:
     - file: ingredients
   - caption: Tools for FAIR Data
     chapters:
-    - file: cutlery
+    - file: notebooks/goldbook.ipynb
+    - file: notebooks/opsin.ipynb
   - caption: Recipes for FAIR Data
     chapters:
     - file: recipes
