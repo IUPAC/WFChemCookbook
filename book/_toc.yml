@@ -26,6 +26,8 @@ parts:
     chapters:
     - file: notebooks/goldbook.ipynb
     - file: notebooks/opsin.ipynb
+    - file: notebooks/pubchem-pug-rest1.ipynb
+    - file: notebooks/pubchem-pug-rest2.ipynb
   - caption: Recipes for FAIR Data
     chapters:
     - file: recipes
