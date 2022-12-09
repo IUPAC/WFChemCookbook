@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-jupyter-book = "*"
+jupyter-book = "==0.13.1"
 ghp-import = "*"
 jupyter-sphinx = "==0.4.0"
 asttokens = "==2.0.8"
@@ -14,7 +14,7 @@ setuptools = "==65.3.0"
 sqlalchemy = "==1.4.42"
 requests= ">=2.28"
 jupyter = "*"
-matplotlib = "*"
+matplotlib = "==3.6.2"
 
 [dev-packages]
 
