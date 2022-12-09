@@ -2,7 +2,7 @@
 
 What are the ingredients that make data FAIR?
 
-The FAIR Principles {cite:p}`wilkinson_fair_2016` provide a set of criteria that detail the characteristics
+The FAIR Principles {cite:p}`Wilkinson2016` provide a set of criteria that detail the characteristics
 that determine if a set of data or resource is FAIR.  Note that these are general principles, and thus they
 are qualities to bring to data and not requirements.  As such one can talk about the 'FAIRness' of data
 and this implies a scale of FAIRness something that can now be evaluated using FAIR tools.
