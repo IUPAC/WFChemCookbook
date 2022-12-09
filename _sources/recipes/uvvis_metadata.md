@@ -24,7 +24,7 @@ interoperability and reusability of spectroscopic data in chemistry {cite}`Hanso
 Instrument–specific file formats should not be used for storage of the raw spectroscopic dataset. If JCAMP-DX is a 
 fully supported format of the spectrophotometer, then the sample level metadata available in the raw data file could 
 be user–defined or mandatory. The metadata content also depends on mapping from the spectrophotometer native software 
-to JCAMP-DX{cite}`IUPAC2022`. Sample level metadata should be supplemented using the file structure defined in 3.2 below.
+to JCAMP-DX{cite}`Davies2019`. Sample level metadata should be supplemented using the file structure defined in 3.2 below.
 
 The file formats recommended here are not exhaustive. For data reuse and preservation, all file formats must be 
 non-proprietary, and associated software open source (maintained). Files should be uncompressed and unencrypted.
@@ -166,4 +166,5 @@ Provide stepwise guidance for a user (assume novice) to complete the following:
 
 ## 6.	References
 ```{bibliography}
+:style: unsrt
 ```
