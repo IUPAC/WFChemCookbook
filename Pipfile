@@ -15,6 +15,7 @@ sqlalchemy = "==1.4.42"
 requests= ">=2.28"
 jupyter = "*"
 matplotlib = "==3.6.2"
+rdkit-pypi = "*"
 
 [dev-packages]
 

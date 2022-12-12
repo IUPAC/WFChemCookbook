@@ -24,7 +24,7 @@ interoperability and reusability of spectroscopic data in chemistry {cite}`Hanso
 Instrument–specific file formats should not be used for storage of the raw spectroscopic dataset. If JCAMP-DX is a 
 fully supported format of the spectrophotometer, then the sample level metadata available in the raw data file could 
 be user–defined or mandatory. The metadata content also depends on mapping from the spectrophotometer native software 
-to JCAMP-DX{cite}`IUPAC2022`. Sample level metadata should be supplemented using the file structure defined in 3.2 below.
+to JCAMP-DX{cite}`Davies2019`. Sample level metadata should be supplemented using the file structure defined in 3.2 below.
 
 The file formats recommended here are not exhaustive. For data reuse and preservation, all file formats must be 
 non-proprietary, and associated software open source (maintained). Files should be uncompressed and unencrypted.
@@ -145,18 +145,6 @@ non-proprietary, and associated software open source (maintained). Files should 
 </table>
 
 ## 4.	Data reporting
-An exemplar procedure for data reporting is described in 4.1, below. UV/Vis reference data for [choose any small 
-molecule: e.g., salicylic acid, benzophenone and use it in the example below] in JCAMP-DX format is from the NIST 
-Standard Reference Database available from the NIST Chemistry WebBook{cite}`NIST2022`.
-
-### 4.1 Exemplar data reporting in Jupyter Notebook
-Provide stepwise guidance for a user (assume novice) to complete the following:
-- Install Jupyter and create a Jupyter Notebook project (including file directory structure information)
-- Import a UV/Vis file in JCAMP–DX format 
-  - (i) Plot the data to create a well formatted graphical representation of the UV/Vis spectrum
-  - (ii) Extract 𝜆<sub>max</sub> with corresponding ε. 
-- Provide the exemplar script for obtaining these two key outputs.
-- Provide the corresponding script for data imported in CSV format.
 
 
 ## 5.	Glossary
@@ -166,4 +154,5 @@ Provide stepwise guidance for a user (assume novice) to complete the following:
 
 ## 6.	References
 ```{bibliography}
+:style: unsrt
 ```
