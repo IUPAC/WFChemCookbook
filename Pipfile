@@ -16,6 +16,7 @@ requests= ">=2.28"
 jupyter = "*"
 matplotlib = "==3.6.2"
 rdkit-pypi = "*"
+openbabel-wheel = "*"
 
 [dev-packages]
 

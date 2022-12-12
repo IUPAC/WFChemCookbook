@@ -14,6 +14,7 @@ parts:
           - file: notebooks/pubchem-pug-rest1.ipynb
           - file: notebooks/pubchem-pug-rest2.ipynb
           - file: notebooks/computing_inchis.ipynb
+          - file: notebooks/dataset_search.ipynb
   - caption: CULINARY SCHOOL
     chapters:
       - file: howtos
