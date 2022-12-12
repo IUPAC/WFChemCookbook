@@ -145,18 +145,6 @@ non-proprietary, and associated software open source (maintained). Files should 
 </table>
 
 ## 4.	Data reporting
-An exemplar procedure for data reporting is described in 4.1, below. UV/Vis reference data for [choose any small 
-molecule: e.g., salicylic acid, benzophenone and use it in the example below] in JCAMP-DX format is from the NIST 
-Standard Reference Database available from the NIST Chemistry WebBook{cite}`NIST2022`.
-
-### 4.1 Exemplar data reporting in Jupyter Notebook
-Provide stepwise guidance for a user (assume novice) to complete the following:
-- Install Jupyter and create a Jupyter Notebook project (including file directory structure information)
-- Import a UV/Vis file in JCAMP–DX format 
-  - (i) Plot the data to create a well formatted graphical representation of the UV/Vis spectrum
-  - (ii) Extract 𝜆<sub>max</sub> with corresponding ε. 
-- Provide the exemplar script for obtaining these two key outputs.
-- Provide the corresponding script for data imported in CSV format.
 
 
 ## 5.	Glossary

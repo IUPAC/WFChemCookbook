@@ -154,6 +154,16 @@ const thebe_selector_output = ".output, .cell_output"
      Accessing PubChem through PUG-REST: Part II
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/computing_inchis.html">
+     Computing InChIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/dataset_search.html">
+     Recipe: Reusing a Chemical Dataset. Part 1- Finding Datasets
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -482,13 +492,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#data-reporting">
    4.	Data reporting
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemplar-data-reporting-in-jupyter-notebook">
-     4.1 Exemplar data reporting in Jupyter Notebook
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#glossary">
@@ -557,13 +560,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#data-reporting">
    4.	Data reporting
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemplar-data-reporting-in-jupyter-notebook">
-     4.1 Exemplar data reporting in Jupyter Notebook
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#glossary">
@@ -607,7 +603,7 @@ compound characterisation for publication: authors who aim to improve the FAIRne
 <section id="resources">
 <h2>2.	Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
 <p>FAIR data management refers to the IUPAC FAIRSpec standard: IUPAC specifications for the findability, accessibility,
-interoperability and reusability of spectroscopic data in chemistry <span id="id1">[<a class="reference internal" href="#id7" title="Robert M. Hanson, Damien Jeannerat, Mark Archibald, Ian J. Bruno, Stuart J. Chalk, Antony N. Davies, Robert J. Lancashire, Jeffrey Lang, and Henry S. Rzepa. Iupac specification for the fair management of spectroscopic data in chemistry (iupac fairspec) – guiding principles. Pure and Applied Chemistry, 94(6):623–636, 2022. URL: https://doi.org/10.1515/pac-2021-2009, doi:doi:10.1515/pac-2021-2009.">1</a>]</span>.</p>
+interoperability and reusability of spectroscopic data in chemistry <span id="id1">[<a class="reference internal" href="#id6" title="Robert M. Hanson, Damien Jeannerat, Mark Archibald, Ian J. Bruno, Stuart J. Chalk, Antony N. Davies, Robert J. Lancashire, Jeffrey Lang, and Henry S. Rzepa. Iupac specification for the fair management of spectroscopic data in chemistry (iupac fairspec) – guiding principles. Pure and Applied Chemistry, 94(6):623–636, 2022. URL: https://doi.org/10.1515/pac-2021-2009, doi:doi:10.1515/pac-2021-2009.">1</a>]</span>.</p>
 </section>
 <section id="structuring-the-meta-data">
 <h2>3.	Structuring the (meta)data<a class="headerlink" href="#structuring-the-meta-data" title="Permalink to this headline">#</a></h2>
@@ -616,7 +612,7 @@ interoperability and reusability of spectroscopic data in chemistry <span id="id
 <p>Instrument–specific file formats should not be used for storage of the raw spectroscopic dataset. If JCAMP-DX is a
 fully supported format of the spectrophotometer, then the sample level metadata available in the raw data file could
 be user–defined or mandatory. The metadata content also depends on mapping from the spectrophotometer native software
-to JCAMP-DX<span id="id2">[<a class="reference internal" href="#id8" title="Robert J. Lancashire Antony N. Davies, Peter Lampen. Are you taking your metadata seriously? Spectroscopy Europe, 2019. URL: https://www.spectroscopyeurope.com/td-column/are-you-taking-your-metadata-seriously.">2</a>]</span>. Sample level metadata should be supplemented using the file structure defined in 3.2 below.</p>
+to JCAMP-DX<span id="id2">[<a class="reference internal" href="#id7" title="Robert J. Lancashire Antony N. Davies, Peter Lampen. Are you taking your metadata seriously? Spectroscopy Europe, 2019. URL: https://www.spectroscopyeurope.com/td-column/are-you-taking-your-metadata-seriously.">2</a>]</span>. Sample level metadata should be supplemented using the file structure defined in 3.2 below.</p>
 <p>The file formats recommended here are not exhaustive. For data reuse and preservation, all file formats must be
 non-proprietary, and associated software open source (maintained). Files should be uncompressed and unencrypted.</p>
 </section>
@@ -738,49 +734,28 @@ non-proprietary, and associated software open source (maintained). Files should 
 </section>
 <section id="data-reporting">
 <h2>4.	Data reporting<a class="headerlink" href="#data-reporting" title="Permalink to this headline">#</a></h2>
-<p>An exemplar procedure for data reporting is described in 4.1, below. UV/Vis reference data for [choose any small
-molecule: e.g., salicylic acid, benzophenone and use it in the example below] in JCAMP-DX format is from the NIST
-Standard Reference Database available from the NIST Chemistry WebBook<span id="id3">[<a class="reference internal" href="#id9" title="Peter Linstrom. The nist chemistry webbook. URL: https://webbook.nist.gov/.">3</a>]</span>.</p>
-<section id="exemplar-data-reporting-in-jupyter-notebook">
-<h3>4.1 Exemplar data reporting in Jupyter Notebook<a class="headerlink" href="#exemplar-data-reporting-in-jupyter-notebook" title="Permalink to this headline">#</a></h3>
-<p>Provide stepwise guidance for a user (assume novice) to complete the following:</p>
-<ul class="simple">
-<li><p>Install Jupyter and create a Jupyter Notebook project (including file directory structure information)</p></li>
-<li><p>Import a UV/Vis file in JCAMP–DX format</p>
-<ul>
-<li><p>(i) Plot the data to create a well formatted graphical representation of the UV/Vis spectrum</p></li>
-<li><p>(ii) Extract 𝜆<sub>max</sub> with corresponding ε.</p></li>
-</ul>
-</li>
-<li><p>Provide the exemplar script for obtaining these two key outputs.</p></li>
-<li><p>Provide the corresponding script for data imported in CSV format.</p></li>
-</ul>
-</section>
 </section>
 <section id="glossary">
 <h2>5.	Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>JCAMP–DX: IUPAC standard file format for spectral data<span id="id4">[<a class="reference internal" href="#id10" title="IUPAC Committee on Publications and Cheminformatics Data Standards (CPCDS). Digital standards, jcamp-dx. URL: https://iupac.org/what-we-do/digital-standards/jcamp-dx/.">4</a>]</span>.</p></li>
+<li><p>JCAMP–DX: IUPAC standard file format for spectral data<span id="id3">[<a class="reference internal" href="#id9" title="IUPAC Committee on Publications and Cheminformatics Data Standards (CPCDS). Digital standards, jcamp-dx. URL: https://iupac.org/what-we-do/digital-standards/jcamp-dx/.">3</a>]</span>.</p></li>
 <li><p>LDR: Labelled–data–record, the basic element of a JCAMP–DX file.</p></li>
 </ul>
 </section>
 <section id="references">
 <h2>6.	References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
-<div class="docutils container" id="id5">
+<div class="docutils container" id="id4">
 <dl class="citation">
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Robert M. Hanson, Damien Jeannerat, Mark Archibald, Ian J. Bruno, Stuart J. Chalk, Antony N. Davies, Robert J. Lancashire, Jeffrey Lang, and Henry S. Rzepa. Iupac specification for the fair management of spectroscopic data in chemistry (iupac fairspec) – guiding principles. <em>Pure and Applied Chemistry</em>, 94(6):623–636, 2022. URL: <a class="reference external" href="https://doi.org/10.1515/pac-2021-2009">https://doi.org/10.1515/pac-2021-2009</a>, <a class="reference external" href="https://doi.org/doi:10.1515/pac-2021-2009">doi:doi:10.1515/pac-2021-2009</a>.</p>
 </dd>
-<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>Robert J. Lancashire Antony N. Davies, Peter Lampen. Are you taking your metadata seriously? <em>Spectroscopy Europe</em>, 2019. URL: <a class="reference external" href="https://www.spectroscopyeurope.com/td-column/are-you-taking-your-metadata-seriously">https://www.spectroscopyeurope.com/td-column/are-you-taking-your-metadata-seriously</a>.</p>
 </dd>
 <dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>Peter Linstrom. The nist chemistry webbook. URL: <a class="reference external" href="https://webbook.nist.gov/">https://webbook.nist.gov/</a>.</p>
-</dd>
-<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
 <dd><p>IUPAC Committee on Publications and Cheminformatics Data Standards (CPCDS). Digital standards, jcamp-dx. URL: <a class="reference external" href="https://iupac.org/what-we-do/digital-standards/jcamp-dx/">https://iupac.org/what-we-do/digital-standards/jcamp-dx/</a>.</p>
 </dd>
-<dt class="label" id="id6"><span class="brackets">5</span></dt>
+<dt class="label" id="id5"><span class="brackets">4</span></dt>
 <dd><p>Mark D. et al. Wilkinson. The fair guiding principles for scientific data management and stewardship. <em>Scientific Data</em>, 3:160018, 2016. <a class="reference external" href="https://doi.org/10.1038/sdata.2016.18">doi:10.1038/sdata.2016.18</a>.</p>
 </dd>
 </dl>
