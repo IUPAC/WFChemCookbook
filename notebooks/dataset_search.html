@@ -94,7 +94,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../_static/iupacwf.jpg" class="logo" alt="logo">
+      <img src="../_static/iupac_and_wf.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">IUPAC FAIR Chemistry Cookbook</h1>
@@ -595,7 +595,7 @@ PubChem to include data, in one of a couple of ways:</p>
     },
     {
         &quot;name&quot;: &quot;BindingDB&quot;,
-        &quot;url&quot;: &quot;http://www.bindingdb.org/rwd/bind/&quot;
+        &quot;url&quot;: &quot;https://www.bindingdb.org/rwd/bind/&quot;
     },
     {
         &quot;name&quot;: &quot;BioCyc&quot;,
@@ -930,26 +930,56 @@ PubChem to include data, in one of a couple of ways:</p>
 <section id="searching-fair-sharing-for-datasets">
 <h2>Searching FAIR Sharing for datasets<a class="headerlink" href="#searching-fair-sharing-for-datasets" title="Permalink to this headline">#</a></h2>
 <p>FAIRSharing is a database of FAIR resources and per se a database of datasets, however you might find a repository here that
-has the kind of data you are looking for.</p>
+has the kind of data you are looking for. The code below a</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hiddensettings</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
 <span class="c1"># see https://fairsharing.org/API_doc for instructions on how to search the API</span>
 <span class="c1"># user login</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.fairsharing.org/users/sign_in&#39;</span>
-<span class="n">hdrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;login&#39;</span><span class="p">:</span> <span class="n">fs_user</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="n">fs_pass</span><span class="p">}}</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">hdrs</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-<span class="n">searchurl</span> <span class="o">=</span><span class="s1">&#39;https://api.fairsharing.org//search/fairsharing_records?q=chemistry&#39;</span>
-<span class="n">search</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">searchurl</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">hdrs</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">search</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-<span class="c1"># not working yet</span>
+<span class="n">loghdrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+<span class="n">login</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;login&#39;</span><span class="p">:</span> <span class="n">fs_user</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="n">fs_pass</span><span class="p">}}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">loghdrs</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">login</span><span class="p">))</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">jwt</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;jwt&#39;</span><span class="p">]</span>
+<span class="n">srchdrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span> <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span> <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s2">&quot;Bearer </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">jwt</span><span class="p">)}</span>
+<span class="n">searchterm</span> <span class="o">=</span> <span class="s1">&#39;chemistry&#39;</span>
+<span class="n">searchurl</span> <span class="o">=</span><span class="s1">&#39;https://api.fairsharing.org//search/fairsharing_records?q=&#39;</span> <span class="o">+</span> <span class="n">searchterm</span>
+<span class="n">search</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">searchurl</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">srchdrs</span><span class="p">)</span>
+<span class="n">hits</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">search</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">hit</span> <span class="ow">in</span> <span class="n">hits</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">hit</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">hit</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="s1">&#39;url&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b&#39;{&quot;error&quot;:&quot;You need to sign in or sign up before continuing.&quot;}&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FAIRsharing record for: Chemistry: https://fairsharing.org/fairsharing_records/3524
+FAIRsharing record for: Portable reduced-precision binary format for trajectories produced by GROMACS package.: https://fairsharing.org/fairsharing_records/1443
+FAIRsharing record for: Royal Society of Chemistry - Data policy: https://fairsharing.org/10.25504/FAIRsharing.egbgwm
+FAIRsharing record for: Chemistry vocabulary: https://fairsharing.org/10.25504/FAIRsharing.TrcBD2
+FAIRsharing record for: EMODnet Chemistry: https://fairsharing.org/10.25504/FAIRsharing.KOiDmy
+FAIRsharing record for: Beilstein Journal of Organic Chemistry: https://fairsharing.org/10.25504/FAIRsharing.7GA79k
+FAIRsharing record for: MINAS - A Database of Metal Ions in Nucleic AcidS: https://fairsharing.org/10.25504/FAIRsharing.wqtfkv
+FAIRsharing record for: ioChem-BD: https://fairsharing.org/10.25504/FAIRsharing.lwW6a1
+FAIRsharing record for: ChemSpider: https://fairsharing.org/10.25504/FAIRsharing.96f3gm
+FAIRsharing record for: mzTab for Metabolomics: https://fairsharing.org/fairsharing_records/831
+FAIRsharing record for: Chemical Markup Language: https://fairsharing.org/10.25504/FAIRsharing.3mdt9n
+FAIRsharing record for: CHARMM Card File Format: https://fairsharing.org/10.25504/FAIRsharing.7hp91k
+FAIRsharing record for: CAS Registry Number: https://fairsharing.org/10.25504/FAIRsharing.r7Kwy7
+FAIRsharing record for: Swedish Ocean Archive: https://fairsharing.org/10.25504/FAIRsharing.npf403
+FAIRsharing record for: IUPAC International Chemical Identifier: https://fairsharing.org/10.25504/FAIRsharing.ddk9t9
+FAIRsharing record for: MolMeDB: Molecules on Membranes Database: https://fairsharing.org/10.25504/FAIRsharing.CWzk3C
+FAIRsharing record for: Name Reaction Ontology: https://fairsharing.org/10.25504/FAIRsharing.w4tncg
+FAIRsharing record for: Molecular Process Ontology: https://fairsharing.org/10.25504/FAIRsharing.mct09a
+FAIRsharing record for: Dot Bracket Notation (DBN) - Vienna Format: https://fairsharing.org/10.25504/FAIRsharing.4xrzw1
+FAIRsharing record for: Chemical Methods Ontology: https://fairsharing.org/10.25504/FAIRsharing.9j4wh2
+FAIRsharing record for: Geological and Environmental Reference Materials: https://fairsharing.org/fairsharing_records/3006
+FAIRsharing record for: IUPAC Compendium of Chemical Terminology: https://fairsharing.org/10.25504/FAIRsharing.OsiqlF
+FAIRsharing record for: IUPAC Periodic Table of the Elements: https://fairsharing.org/10.25504/FAIRsharing.92473c
+FAIRsharing record for: Network for the Detection of Atmospheric Composition Change: https://fairsharing.org/10.25504/FAIRsharing.298d50
+FAIRsharing record for: ThermoML: https://fairsharing.org/10.25504/FAIRsharing.7b0fc3
 </pre></div>
 </div>
 </div>
