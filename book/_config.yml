@@ -3,7 +3,7 @@
 
 title: IUPAC FAIR Chemistry Cookbook
 author: IUPAC WorldFAIR Chemistry D3.2 Project
-logo: images/iupacwf.jpg
+logo: images/iupac_and_wf.jpg
 
 # force re-execution of notebooks on each build.
 # see https://jupyterbook.org/content/execute.html
