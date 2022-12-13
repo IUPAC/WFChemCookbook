@@ -20,6 +20,7 @@ parts:
       - file: howtos
         sections:
         - file: howtos/uniqueidentifiers
+        - file: howtos/PrepChemicalDataforSharing
   - caption: PANTRY
     chapters:
     - file: store
