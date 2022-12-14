@@ -22,7 +22,7 @@
 
 ### Flowchart
 
-### Structure and organization of chemcial data package
+### Structure and organization of chemical data package
 
 ## Examples of FAIR chemical data package in the minimalist approach
 
