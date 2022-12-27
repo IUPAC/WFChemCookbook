@@ -4,19 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+ghp-import = "==2.1.0"
+jupyter = "==1.0.0"
 jupyter-book = "==0.13.1"
-ghp-import = "*"
-jupyter-sphinx = "==0.4.0"
-asttokens = "==2.0.8"
-attrs = "==22.1.0"
-pygments = "==2.13.0"
-setuptools = "==65.3.0"
-sqlalchemy = "==1.4.42"
-requests= ">=2.28"
-jupyter = "*"
 matplotlib = "==3.6.2"
-rdkit-pypi = "*"
-openbabel-wheel = "*"
+openbabel-wheel = "==3.1.1.6"
+rdkit-pypi = "==2022.9.3"
 
 [dev-packages]
 
