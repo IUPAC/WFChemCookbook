@@ -16,7 +16,7 @@ compound characterisation for publication: authors who aim to improve the FAIRne
 
 ## 2.	Resources
 FAIR data management refers to the IUPAC FAIRSpec standard: IUPAC specifications for the findability, accessibility, 
-interoperability and reusability of spectroscopic data in chemistry {cite}`Hanson2022`.
+interoperability and reusability of spectroscopic data in chemistry {cite} `Hanson2022`.
 
 ## 3.	Structuring the (meta)data 
 
@@ -24,7 +24,7 @@ interoperability and reusability of spectroscopic data in chemistry {cite}`Hanso
 Instrument–specific file formats should not be used for storage of the raw spectroscopic dataset. If JCAMP-DX is a 
 fully supported format of the spectrophotometer, then the sample level metadata available in the raw data file could 
 be user–defined or mandatory. The metadata content also depends on mapping from the spectrophotometer native software 
-to JCAMP-DX{cite}`Davies2019`. Sample level metadata should be supplemented using the file structure defined in 3.2 below.
+to JCAMP-DX{cite} `Davies2019`. Sample level metadata should be supplemented using the file structure defined in 3.2 below.
 
 The file formats recommended here are not exhaustive. For data reuse and preservation, all file formats must be 
 non-proprietary, and associated software open source (maintained). Files should be uncompressed and unencrypted.
@@ -148,7 +148,7 @@ non-proprietary, and associated software open source (maintained). Files should 
 
 
 ## 5.	Glossary
-- JCAMP–DX: IUPAC standard file format for spectral data{cite}`IUPAC2022`.
+- JCAMP–DX: IUPAC standard file format for spectral data{cite} `IUPAC2022`.
 - LDR: Labelled–data–record, the basic element of a JCAMP–DX file.
 
 
