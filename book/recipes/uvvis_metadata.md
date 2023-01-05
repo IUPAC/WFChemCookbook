@@ -16,7 +16,7 @@ compound characterisation for publication: authors who aim to improve the FAIRne
 
 ## 2.	Resources
 FAIR data management refers to the IUPAC FAIRSpec standard: IUPAC specifications for the findability, accessibility, 
-interoperability and reusability of spectroscopic data in chemistry {cite}`Hanson2022`.
+interoperability and reusability of spectroscopic data in chemistry {cite} `Hanson2022`.
 
 ## 3.	Structuring the (meta)data 
 
@@ -148,11 +148,12 @@ non-proprietary, and associated software open source (maintained). Files should 
 
 
 ## 5.	Glossary
-- JCAMP–DX: IUPAC standard file format for spectral data{cite}`IUPAC2022`.
+- JCAMP–DX: IUPAC standard file format for spectral data{cite} `IUPAC2022`.
 - LDR: Labelled–data–record, the basic element of a JCAMP–DX file.
 
 
 ## 6.	References
 ```{bibliography}
+:filter: docname in docnames
 :style: unsrt
 ```
