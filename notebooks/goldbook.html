@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Using the IUPAC Gold Book API in Python &#8212; IUPAC FAIR Chemistry Cookbook</title>
+    <title>Interactive Example: Accessing the IUPAC Gold Book API in Python &#8212; IUPAC FAIR Chemistry Cookbook</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -136,7 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Using the IUPAC Gold Book API in Python
+     Interactive Example: Accessing the IUPAC Gold Book API in Python
     </a>
    </li>
    <li class="toctree-l2">
@@ -489,23 +489,100 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-import-the-python-packages-needed-to-run-this-code">
+   Step 1: Import the Python packages needed to run this code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-add-a-function-to-remove-html-tags-from-textual-data">
+   Step 2: Add a function to remove HTML tags from textual data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-download-a-json-file-with-data-about-all-the-iupac-recommended-terms-currently-available">
+   Step 3: Download a JSON file with data about all the IUPAC Recommended Terms currently available
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-search-for-a-term-in-the-recommended-term-list-and-if-present-get-its-code">
+   Step 4: Search for a term in the recommended term list and if present get its code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-use-the-term-code-to-create-url-to-get-data-about-the-term-and-print-out-the-term-its-code-and-the-definition">
+   Step 5: Use the term code to create URL to get data about the term, and print out the term, its code and the definition
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Using the IUPAC Gold Book API in Python</h1>
+                <h1>Interactive Example: Accessing the IUPAC Gold Book API in Python</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-import-the-python-packages-needed-to-run-this-code">
+   Step 1: Import the Python packages needed to run this code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-add-a-function-to-remove-html-tags-from-textual-data">
+   Step 2: Add a function to remove HTML tags from textual data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-download-a-json-file-with-data-about-all-the-iupac-recommended-terms-currently-available">
+   Step 3: Download a JSON file with data about all the IUPAC Recommended Terms currently available
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-search-for-a-term-in-the-recommended-term-list-and-if-present-get-its-code">
+   Step 4: Search for a term in the recommended term list and if present get its code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-use-the-term-code-to-create-url-to-get-data-about-the-term-and-print-out-the-term-its-code-and-the-definition">
+   Step 5: Use the term code to create URL to get data about the term, and print out the term, its code and the definition
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -513,42 +590,94 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="using-the-iupac-gold-book-api-in-python">
-<h1>Using the IUPAC Gold Book API in Python<a class="headerlink" href="#using-the-iupac-gold-book-api-in-python" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="interactive-example-accessing-the-iupac-gold-book-api-in-python">
+<h1>Interactive Example: Accessing the IUPAC Gold Book API in Python<a class="headerlink" href="#interactive-example-accessing-the-iupac-gold-book-api-in-python" title="Permalink to this headline">#</a></h1>
+<p>Author: <a class="reference external" href="https://orcid.org/0000-0002-0703-7776">Stuart Chalk</a>
+Topic: How to use the IUPAC Gold Book API to retrieve the definition of a chemistry concept
+Format: Interactive Jupyter Notebook (Python)
+Skills: You should be familiar with
+- Application Programming Interfaces (APIs)
+- The JavaScript Object Notation (JSON) file format
+- Introductory Python
+Learning outcomes: After completing this example you should understand:
+- what a Python function (def) is
+- how to write Python code to request data from a URL (typically an API)
+- how to use a Python variable to call an API and download data for the content of the variable
+Reuse: This notebook is made available under the IUPAC FAIR Chemistry Cookbook MIT license.</p>
+<section id="step-1-import-the-python-packages-needed-to-run-this-code">
+<h2>Step 1: Import the Python packages needed to run this code<a class="headerlink" href="#step-1-import-the-python-packages-needed-to-run-this-code" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the (native - part of Python) Python packages needed to run this code</span>
-<span class="kn">import</span> <span class="nn">requests</span>                             <span class="c1"># package to get data from a URL</span>
-<span class="kn">import</span> <span class="nn">json</span>                                 <span class="c1"># package to read/write/display JSON</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>                             <span class="c1"># package to get data from a URL</span>
+<span class="kn">import</span> <span class="nn">json</span>                                 <span class="c1"># package to read/write/display JSON formatted data</span>
 <span class="kn">import</span> <span class="nn">re</span>                                   <span class="c1"># package to use regular expression (regex) searching</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="step-2-add-a-function-to-remove-html-tags-from-textual-data">
+<h2>Step 2: Add a function to remove HTML tags from textual data<a class="headerlink" href="#step-2-add-a-function-to-remove-html-tags-from-textual-data" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># function to remove HTML tags from a string</span>
-<span class="c1"># https://medium.com/@jorlugaqui/how-to-strip-html-tags-from-a-string-in-python-7cb81a2bbf44</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Source: https://medium.com/@jorlugaqui/how-to-strip-html-tags-from-a-string-in-python-7cb81a2bbf44</span>
 <span class="k">def</span> <span class="nf">remove_html_tags</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>                 <span class="c1"># a &#39;def&#39; is a (defined) function that can be called later</span>
     <span class="n">clean</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span><span class="p">)</span>             <span class="c1"># sets up a regular expression to search with</span>
     <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">clean</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>          <span class="c1"># removes the matches to the regular expression</span>
-
-<span class="c1"># script to call the IUPAC Gold Book API and get metadata about all IUPAC Recommended Terms</span>
-<span class="n">searchterm</span> <span class="o">=</span> <span class="s2">&quot;cis-trans isomers&quot;</span>
-<span class="n">searchcode</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">allpath</span> <span class="o">=</span> <span class="s2">&quot;https://goldbook.iupac.org/terms/index/all/json&quot;</span>  <span class="c1"># URL path to the IUPAC Gold Book API</span>
-<span class="n">reqdata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">allpath</span><span class="p">)</span>
-<span class="n">pydict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">reqdata</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">code</span><span class="p">,</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">pydict</span><span class="p">[</span><span class="s1">&#39;terms&#39;</span><span class="p">][</span><span class="s1">&#39;list&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">cleaned</span> <span class="o">=</span> <span class="n">remove_html_tags</span><span class="p">(</span><span class="n">term</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
-    <span class="k">if</span> <span class="n">cleaned</span> <span class="o">==</span> <span class="n">searchterm</span><span class="p">:</span>
-        <span class="n">searchcode</span> <span class="o">=</span> <span class="n">code</span>
-        <span class="k">break</span>
-<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;https://goldbook.iupac.org/terms/view/**/json&quot;</span>  <span class="c1"># URL path to the IUPAC Gold Book API for a term</span>
-<span class="n">reqdata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;**&quot;</span><span class="p">,</span> <span class="n">searchcode</span><span class="p">))</span>  <span class="c1"># request data from the Gold Book server</span>
-<span class="n">jsondata</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">reqdata</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>                  <span class="c1"># get the downloaded JSON</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">searchterm</span> <span class="o">+</span> <span class="s2">&quot; (&quot;</span> <span class="o">+</span> <span class="n">searchcode</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>             <span class="c1"># print the title and Gold Book term code</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">jsondata</span><span class="p">[</span><span class="s1">&#39;term&#39;</span><span class="p">][</span><span class="s1">&#39;definitions&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>       <span class="c1"># print the definition of the term</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-download-a-json-file-with-data-about-all-the-iupac-recommended-terms-currently-available">
+<h2>Step 3: Download a JSON file with data about all the IUPAC Recommended Terms currently available<a class="headerlink" href="#step-3-download-a-json-file-with-data-about-all-the-iupac-recommended-terms-currently-available" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allpath</span> <span class="o">=</span> <span class="s2">&quot;https://goldbook.iupac.org/terms/index/all/json&quot;</span>  <span class="c1"># URL to the IUPAC Gold Book API down</span>
+<span class="n">reqdata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">allpath</span><span class="p">)</span>                              <span class="c1"># download file in JSON</span>
+<span class="n">terms</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">reqdata</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>                          <span class="c1"># convert JSON to a Python dictionary</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">terms</span><span class="p">[</span><span class="s1">&#39;terms&#39;</span><span class="p">][</span><span class="s1">&#39;list&#39;</span><span class="p">]))</span> <span class="o">+</span> <span class="s1">&#39; terms&#39;</span><span class="p">)</span>           <span class="c1"># print the number of terms in the list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7052 terms
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-4-search-for-a-term-in-the-recommended-term-list-and-if-present-get-its-code">
+<h2>Step 4: Search for a term in the recommended term list and if present get its code<a class="headerlink" href="#step-4-search-for-a-term-in-the-recommended-term-list-and-if-present-get-its-code" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">searchterm</span> <span class="o">=</span> <span class="s2">&quot;cis-trans isomers&quot;</span>                            <span class="c1"># the term to be found</span>
+<span class="n">searchcode</span> <span class="o">=</span> <span class="kc">None</span>                                           <span class="c1"># empty variable to contain the searchcode</span>
+<span class="k">for</span> <span class="n">code</span><span class="p">,</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">terms</span><span class="p">[</span><span class="s1">&#39;terms&#39;</span><span class="p">][</span><span class="s1">&#39;list&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>           <span class="c1"># iterate over each term in the list (code (str), term (obj))</span>
+    <span class="n">cleaned</span> <span class="o">=</span> <span class="n">remove_html_tags</span><span class="p">(</span><span class="n">term</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>               <span class="c1"># remove any HTML formatting in the title</span>
+    <span class="k">if</span> <span class="n">cleaned</span> <span class="o">==</span> <span class="n">searchterm</span><span class="p">:</span>                               <span class="c1"># check if the term matches the one we want</span>
+        <span class="n">searchcode</span> <span class="o">=</span> <span class="n">code</span>                                   <span class="c1"># if it does, get the code for the term</span>
+        <span class="k">break</span>                                               <span class="c1"># we have found the term so we can get out of the for loop</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">searchcode</span><span class="p">)</span>                                           <span class="c1"># IUPAC Gold Book term code (if found)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C01093
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-5-use-the-term-code-to-create-url-to-get-data-about-the-term-and-print-out-the-term-its-code-and-the-definition">
+<h2>Step 5: Use the term code to create URL to get data about the term, and print out the term, its code and the definition<a class="headerlink" href="#step-5-use-the-term-code-to-create-url-to-get-data-about-the-term-and-print-out-the-term-its-code-and-the-definition" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;https://goldbook.iupac.org/terms/view/**/json&quot;</span>      <span class="c1"># URL path to the IUPAC Gold Book API for a term</span>
+<span class="n">reqdata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;**&quot;</span><span class="p">,</span> <span class="n">searchcode</span><span class="p">))</span>      <span class="c1"># request data from the Gold Book server</span>
+<span class="n">jsondata</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">reqdata</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>                      <span class="c1"># get the downloaded JSON</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">searchterm</span> <span class="o">+</span> <span class="s2">&quot; (&quot;</span> <span class="o">+</span> <span class="n">searchcode</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>                 <span class="c1"># print the title and Gold Book term code</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jsondata</span><span class="p">[</span><span class="s1">&#39;term&#39;</span><span class="p">][</span><span class="s1">&#39;definitions&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>           <span class="c1"># print the definition of the term</span>
 </pre></div>
 </div>
 </div>
@@ -559,6 +688,8 @@ Stereoisomeric olefins or cycloalkanes (or hetero-analogues) which differ in the
 </div>
 </div>
 </div>
+<p>Step 6: Try other terms by changing the value of the ‘searchterm’ variable above and rerunning steps 4 and 5</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
