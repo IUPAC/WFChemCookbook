@@ -154,5 +154,6 @@ non-proprietary, and associated software open source (maintained). Files should 
 
 ## 6.	References
 ```{bibliography}
+:filter: docname in docnames
 :style: unsrt
 ```
