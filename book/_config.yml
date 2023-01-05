@@ -25,6 +25,11 @@ repository:
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
+# add Google colab launch button
+launch_buttons:
+  binderhub_url: ""
+  colab_url: "https://colab.research.google.com"
+
 # add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
