@@ -511,29 +511,41 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-1-import-the-python-packages-needed-to-run-this-code">
-   Step 1: Import the Python packages needed to run this code
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Interactive Example: Accessing the IUPAC Gold Book API in Python
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-import-the-python-packages-needed-to-run-this-code">
+     Step 1: Import the Python packages needed to run this code
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-add-a-function-to-remove-html-tags-from-textual-data">
+     Step 2: Add a function to remove HTML tags from textual data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-download-a-json-file-with-data-about-all-the-iupac-recommended-terms-currently-available">
+     Step 3: Download a JSON file with data about all the IUPAC Recommended Terms currently available
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-search-for-a-term-in-the-recommended-term-list-and-if-present-get-its-code">
+     Step 4: Search for a term in the recommended term list and if present get its code
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-5-use-the-term-code-to-create-url-to-get-data-about-the-term-and-print-out-the-term-its-code-and-the-definition">
+     Step 5: Use the term code to create URL to get data about the term, and print out the term, its code and the definition
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-2-add-a-function-to-remove-html-tags-from-textual-data">
-   Step 2: Add a function to remove HTML tags from textual data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-3-download-a-json-file-with-data-about-all-the-iupac-recommended-terms-currently-available">
-   Step 3: Download a JSON file with data about all the IUPAC Recommended Terms currently available
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-4-search-for-a-term-in-the-recommended-term-list-and-if-present-get-its-code">
-   Step 4: Search for a term in the recommended term list and if present get its code
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-5-use-the-term-code-to-create-url-to-get-data-about-the-term-and-print-out-the-term-its-code-and-the-definition">
-   Step 5: Use the term code to create URL to get data about the term, and print out the term, its code and the definition
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-try-other-terms-by-changing-the-value-of-the-searchterm-variable-above-and-rerunning-steps-4-and-5">
+   Step 6: Try other terms by changing the value of the ‘searchterm’ variable above and rerunning steps 4 and 5
   </a>
  </li>
 </ul>
@@ -555,29 +567,41 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-1-import-the-python-packages-needed-to-run-this-code">
-   Step 1: Import the Python packages needed to run this code
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Interactive Example: Accessing the IUPAC Gold Book API in Python
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-import-the-python-packages-needed-to-run-this-code">
+     Step 1: Import the Python packages needed to run this code
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-add-a-function-to-remove-html-tags-from-textual-data">
+     Step 2: Add a function to remove HTML tags from textual data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-download-a-json-file-with-data-about-all-the-iupac-recommended-terms-currently-available">
+     Step 3: Download a JSON file with data about all the IUPAC Recommended Terms currently available
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-search-for-a-term-in-the-recommended-term-list-and-if-present-get-its-code">
+     Step 4: Search for a term in the recommended term list and if present get its code
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-5-use-the-term-code-to-create-url-to-get-data-about-the-term-and-print-out-the-term-its-code-and-the-definition">
+     Step 5: Use the term code to create URL to get data about the term, and print out the term, its code and the definition
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-2-add-a-function-to-remove-html-tags-from-textual-data">
-   Step 2: Add a function to remove HTML tags from textual data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-3-download-a-json-file-with-data-about-all-the-iupac-recommended-terms-currently-available">
-   Step 3: Download a JSON file with data about all the IUPAC Recommended Terms currently available
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-4-search-for-a-term-in-the-recommended-term-list-and-if-present-get-its-code">
-   Step 4: Search for a term in the recommended term list and if present get its code
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-5-use-the-term-code-to-create-url-to-get-data-about-the-term-and-print-out-the-term-its-code-and-the-definition">
-   Step 5: Use the term code to create URL to get data about the term, and print out the term, its code and the definition
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-try-other-terms-by-changing-the-value-of-the-searchterm-variable-above-and-rerunning-steps-4-and-5">
+   Step 6: Try other terms by changing the value of the ‘searchterm’ variable above and rerunning steps 4 and 5
   </a>
  </li>
 </ul>
@@ -596,13 +620,13 @@ title="Print to PDF"
 Topic: How to use the IUPAC Gold Book API to retrieve the definition of a chemistry concept
 Format: Interactive Jupyter Notebook (Python)
 Skills: You should be familiar with
-- Application Programming Interfaces (APIs)
-- The JavaScript Object Notation (JSON) file format
-- Introductory Python
+- <a class="reference external" href="https://www.ibm.com/topics/api">Application Programming Interfaces (APIs)</a>
+- <a class="reference external" href="https://www.w3schools.com/js/js_json_intro.asp">The JavaScript Object Notation (JSON) file format</a>
+- <a class="reference external" href="https://www.youtube.com/watch?v=kqtD5dpn9C8">Introductory Python</a>
 Learning outcomes: After completing this example you should understand:
-- what a Python function (def) is
-- how to write Python code to request data from a URL (typically an API)
-- how to use a Python variable to call an API and download data for the content of the variable
+- What is a Python function (def)
+- How to write Python code to request data from a URL (typically an API)
+- How to use a Python variable to call an API and download data for the content of the variable
 Reuse: This notebook is made available under the IUPAC FAIR Chemistry Cookbook MIT license.</p>
 <section id="step-1-import-the-python-packages-needed-to-run-this-code">
 <h2>Step 1: Import the Python packages needed to run this code<a class="headerlink" href="#step-1-import-the-python-packages-needed-to-run-this-code" title="Permalink to this headline">#</a></h2>
@@ -688,8 +712,10 @@ Stereoisomeric olefins or cycloalkanes (or hetero-analogues) which differ in the
 </div>
 </div>
 </div>
-<p>Step 6: Try other terms by changing the value of the ‘searchterm’ variable above and rerunning steps 4 and 5</p>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-6-try-other-terms-by-changing-the-value-of-the-searchterm-variable-above-and-rerunning-steps-4-and-5">
+<h1>Step 6: Try other terms by changing the value of the ‘searchterm’ variable above and rerunning steps 4 and 5<a class="headerlink" href="#step-6-try-other-terms-by-changing-the-value-of-the-searchterm-variable-above-and-rerunning-steps-4-and-5" title="Permalink to this headline">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
