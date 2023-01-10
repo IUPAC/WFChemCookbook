@@ -23,6 +23,7 @@ parts:
         sections:
         - file: howtos/uniqueidentifiers
         - file: howtos/PrepChemicalDataforSharing
+        - file: howtos/learn_spectra
   - caption: PANTRY
     chapters:
     - file: store
