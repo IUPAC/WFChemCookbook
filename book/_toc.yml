@@ -3,6 +3,7 @@
 
 format: jb-book
 root: intro
+title: ''
 parts:
   - caption: RECIPES
     chapters:
@@ -39,6 +40,8 @@ parts:
   - caption: TOOLS
     chapters:
     - file: cutlery
-  - caption: FAIR GLOSSARY
+  - caption: REFERENCE
     chapters:
+    - file: about
     - file: glossary
+    - file: bibliography
