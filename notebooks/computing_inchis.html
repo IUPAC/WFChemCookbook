@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Computing InChIs &#8212; IUPAC FAIR Chemistry Cookbook</title>
+    <title>Recipe: Computing InChIs &#8212; IUPAC FAIR Chemistry Cookbook</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -136,12 +136,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="goldbook.html">
-     Using the IUPAC Gold Book API in Python
+     Recipe: Accessing the IUPAC Gold Book API in Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="opsin.html">
-     Using the OPSIN API in Python
+     Recipe: Using the OPSIN API in Python
     </a>
    </li>
    <li class="toctree-l2">
@@ -161,7 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Computing InChIs
+     Recipe: Computing InChIs
     </a>
    </li>
    <li class="toctree-l2">
@@ -513,55 +513,62 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Computing InChIs
+   Recipe: Computing InChIs
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-rdkit">
+   1. Using RDKit
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-to-calculate-inchis-from-smiles-using-rdkit-or-open-babel">
-     How to Calculate InChIs from SMILES Using RDKit or Open Babel
+    <a class="reference internal nav-link" href="#import-rdkit-modules">
+     1.1 Import RDKit Modules
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-molecular-object-from-smiles">
+     1.2 Create a Molecular Object from SMILES
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-inchi">
+     1.3 Calculate InChI
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-inchis-for-a-list-of-molecules">
+     1.4 Calculate InChIs for a List of Molecules
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-rdkit-modules">
-   1. Import RDKit Modules
+  <a class="reference internal nav-link" href="#using-open-babel">
+   2. Using Open Babel
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-molecular-object-from-smiles">
-   2. Create Molecular Object from SMILES
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calculate-inchi">
-   3. Calculate InChI
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calculate-inchis-for-a-list-of-molecules">
-   4. Calculate InChIs for a List of Molecules
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-open-babel-modules">
-   1. Import Open Babel Modules
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   2. Create Molecular Object from SMILES
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   3. Calculate InChI
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   4. Calculate InChIs for a List of Molecules
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-open-babel-modules">
+     2.1 Import Open Babel Modules
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2.2 Create a Molecular Object from SMILES
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     2.3 Calculate InChI
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     2.4 Calculate InChIs for a List of Molecules
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -572,7 +579,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Computing InChIs</h1>
+                <h1>Recipe: Computing InChIs</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -584,55 +591,62 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Computing InChIs
+   Recipe: Computing InChIs
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-rdkit">
+   1. Using RDKit
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-to-calculate-inchis-from-smiles-using-rdkit-or-open-babel">
-     How to Calculate InChIs from SMILES Using RDKit or Open Babel
+    <a class="reference internal nav-link" href="#import-rdkit-modules">
+     1.1 Import RDKit Modules
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-molecular-object-from-smiles">
+     1.2 Create a Molecular Object from SMILES
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-inchi">
+     1.3 Calculate InChI
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-inchis-for-a-list-of-molecules">
+     1.4 Calculate InChIs for a List of Molecules
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-rdkit-modules">
-   1. Import RDKit Modules
+  <a class="reference internal nav-link" href="#using-open-babel">
+   2. Using Open Babel
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-molecular-object-from-smiles">
-   2. Create Molecular Object from SMILES
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calculate-inchi">
-   3. Calculate InChI
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calculate-inchis-for-a-list-of-molecules">
-   4. Calculate InChIs for a List of Molecules
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-open-babel-modules">
-   1. Import Open Babel Modules
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   2. Create Molecular Object from SMILES
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   3. Calculate InChI
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   4. Calculate InChIs for a List of Molecules
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-open-babel-modules">
+     2.1 Import Open Babel Modules
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2.2 Create a Molecular Object from SMILES
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     2.3 Calculate InChI
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     2.4 Calculate InChIs for a List of Molecules
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -644,17 +658,33 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="computing-inchis">
-<h1>Computing InChIs<a class="headerlink" href="#computing-inchis" title="Permalink to this headline">#</a></h1>
-<section id="how-to-calculate-inchis-from-smiles-using-rdkit-or-open-babel">
-<h2>How to Calculate InChIs from SMILES Using RDKit or Open Babel<a class="headerlink" href="#how-to-calculate-inchis-from-smiles-using-rdkit-or-open-babel" title="Permalink to this headline">#</a></h2>
-<p>Vincent Scalfani</p>
-<p><em>Adapted from CPCDS 2021 Digital IUPAC Session - 51st IUPAC General Assembly</em></p>
-<p>Reuse: this tutorial is included in the IUPAC FAIR Chemistry Cookbook MIT license.</p>
+  <section id="recipe-computing-inchis">
+<h1>Recipe: Computing InChIs<a class="headerlink" href="#recipe-computing-inchis" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <a class="reference external" href="https://orcid.org/0000-0002-7363-531X">Vincent Scalfani</a></p></li>
+<li><p>Reviewer:</p></li>
+<li><p>Topic: How to Calculate InChIs from SMILES Using <a class="reference external" href="https://www.rdkit.org/">RDKit</a> or <a class="reference external" href="https://openbabel.org/wiki/Main_Page">Open Babel</a>
+<em>Adapted from CPCDS 2021 Digital IUPAC Session - 51st IUPAC General Assembly</em></p></li>
+<li><p>Format: Interactive Jupyter Notebook (Python)</p></li>
+<li><p>Skills: You should be familiar with</p>
+<ul>
+<li><p><a class="reference external" href="https://chem.libretexts.org/Courses/University_of_Arkansas_Little_Rock/ChemInformatics_(2015)%3A_Chem_4399_5399/Text/5_Chemical_Identifiers">Chemical Identifiers</a></p></li>
+</ul>
+</li>
+<li><p>Learning outcomes:  After completing this example you should understand:</p>
+<ul>
+<li><p>How to load and use RDKit to obtain and display chemical identifiers</p></li>
+<li><p>How to load and use Open Babel to obtain and display chemical identifiers</p></li>
+</ul>
+</li>
+<li><p>Citation: ‘Recipe: Computing InChIs’, The IUPAC FAIR Chemistry Cookbook, <a class="reference external" href="https://iupac.github.io/WFChemCookbook/notebooks/computing_inchis.html">https://iupac.github.io/WFChemCookbook/notebooks/computing_inchis.html</a></p></li>
+<li><p>Reuse: this tutorial is included in the IUPAC FAIR Chemistry Cookbook MIT license.</p></li>
+</ul>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="import-rdkit-modules">
-<h1>1. Import RDKit Modules<a class="headerlink" href="#import-rdkit-modules" title="Permalink to this headline">#</a></h1>
+<section id="using-rdkit">
+<h1>1. Using RDKit<a class="headerlink" href="#using-rdkit" title="Permalink to this headline">#</a></h1>
+<section id="import-rdkit-modules">
+<h2>1.1 Import RDKit Modules<a class="headerlink" href="#import-rdkit-modules" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
@@ -673,8 +703,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="create-molecular-object-from-smiles">
-<h1>2. Create Molecular Object from SMILES<a class="headerlink" href="#create-molecular-object-from-smiles" title="Permalink to this headline">#</a></h1>
+<section id="create-a-molecular-object-from-smiles">
+<h2>1.2 Create a Molecular Object from SMILES<a class="headerlink" href="#create-a-molecular-object-from-smiles" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PubChem CID: 134601</span>
@@ -695,14 +725,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;rdkit.Chem.rdchem.Mol object at 0x10fa50200&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;rdkit.Chem.rdchem.Mol object at 0x11a104200&gt;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="calculate-inchi">
-<h1>3. Calculate InChI<a class="headerlink" href="#calculate-inchi" title="Permalink to this headline">#</a></h1>
+<section id="calculate-inchi">
+<h2>1.3 Calculate InChI<a class="headerlink" href="#calculate-inchi" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchi</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
@@ -728,8 +758,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="calculate-inchis-for-a-list-of-molecules">
-<h1>4. Calculate InChIs for a List of Molecules<a class="headerlink" href="#calculate-inchis-for-a-list-of-molecules" title="Permalink to this headline">#</a></h1>
+<section id="calculate-inchis-for-a-list-of-molecules">
+<h2>1.4 Calculate InChIs for a List of Molecules<a class="headerlink" href="#calculate-inchis-for-a-list-of-molecules" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a file of SMILES</span>
@@ -762,19 +792,19 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next,loop through the smiles_list and create RDKit molecular objects</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next, loop through the smiles_list and create RDKit molecular objects</span>
 <span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi</span><span class="p">)</span> <span class="k">for</span> <span class="n">smi</span> <span class="ow">in</span> <span class="n">smiles_list</span><span class="p">]</span>
 <span class="n">mols</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;rdkit.Chem.rdchem.Mol at 0x10fa50580&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x10fa50660&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x10fa50a50&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x10fa50ac0&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x10fa50b30&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x10fa50ba0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;rdkit.Chem.rdchem.Mol at 0x11a104580&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x11a104660&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x11a104a50&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x11a104ac0&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x11a104b30&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x11a104ba0&gt;]
 </pre></div>
 </div>
 </div>
@@ -810,8 +840,11 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="import-open-babel-modules">
-<h1>1. Import Open Babel Modules<a class="headerlink" href="#import-open-babel-modules" title="Permalink to this headline">#</a></h1>
+</section>
+<section id="using-open-babel">
+<h1>2. Using Open Babel<a class="headerlink" href="#using-open-babel" title="Permalink to this headline">#</a></h1>
+<section id="import-open-babel-modules">
+<h2>2.1 Import Open Babel Modules<a class="headerlink" href="#import-open-babel-modules" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open Babel v3.1.1</span>
@@ -822,8 +855,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>2. Create Molecular Object from SMILES<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>2.2 Create a Molecular Object from SMILES<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">pybel</span><span class="o">.</span><span class="n">readstring</span><span class="p">(</span><span class="s2">&quot;smi&quot;</span><span class="p">,</span> <span class="s2">&quot;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@H](CC(=O)O)N&quot;</span><span class="p">)</span>
@@ -848,8 +881,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id2">
-<h1>3. Calculate InChI<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>2.3 Calculate InChI<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up InChI conversion</span>
@@ -907,8 +940,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id3">
-<h1>4. Calculate InChIs for a List of Molecules<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h1>
+<section id="id3">
+<h2>2.4 Calculate InChIs for a List of Molecules<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a file of SMILES</span>
@@ -935,12 +968,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;openbabel.pybel.Molecule at 0x110152a10&gt;,
- &lt;openbabel.pybel.Molecule at 0x110152aa0&gt;,
- &lt;openbabel.pybel.Molecule at 0x110152fe0&gt;,
- &lt;openbabel.pybel.Molecule at 0x110153370&gt;,
- &lt;openbabel.pybel.Molecule at 0x110152860&gt;,
- &lt;openbabel.pybel.Molecule at 0x110152380&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;openbabel.pybel.Molecule at 0x11a3c25f0&gt;,
+ &lt;openbabel.pybel.Molecule at 0x11a3c2710&gt;,
+ &lt;openbabel.pybel.Molecule at 0x11a3c2fb0&gt;,
+ &lt;openbabel.pybel.Molecule at 0x11a3c3340&gt;,
+ &lt;openbabel.pybel.Molecule at 0x11a3c2a10&gt;,
+ &lt;openbabel.pybel.Molecule at 0x11a3c23b0&gt;]
 </pre></div>
 </div>
 </div>
@@ -971,6 +1004,7 @@ title="Print to PDF"
 <p><strong>References</strong></p>
 <p>[1] RDKit Documentation: <a class="reference external" href="https://www.rdkit.org/docs/index.html">https://www.rdkit.org/docs/index.html</a></p>
 <p>[2] Open Babel Python Documentation: <a class="reference external" href="https://open-babel.readthedocs.io/en/latest/UseTheLibrary/Python.html">https://open-babel.readthedocs.io/en/latest/UseTheLibrary/Python.html</a></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
