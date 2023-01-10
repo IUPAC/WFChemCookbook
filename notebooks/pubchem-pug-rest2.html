@@ -50,10 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Accessing PubChem through PUG-REST: Part III" href="pubchem-pug-rest3.html" />
-    <link rel="prev" title="Accessing PubChem through PUG-REST: Part I" href="pubchem-pug-rest1.html" />
+    <link rel="prev" title="Recipe: Accessing PubChem through PUG-REST - Part I" href="pubchem-pug-rest1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -136,17 +137,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="goldbook.html">
-     Using the IUPAC Gold Book API in Python
+     Recipe: Accessing the IUPAC Gold Book API in Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="opsin.html">
-     Using the OPSIN API in Python
+     Recipe: Using the OPSIN API in Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="pubchem-pug-rest1.html">
-     Accessing PubChem through PUG-REST: Part I
+     Recipe: Accessing PubChem through PUG-REST - Part I
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -161,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="computing_inchis.html">
-     Computing InChIs
+     Recipe: Computing InChIs
     </a>
    </li>
    <li class="toctree-l2">
@@ -180,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../howtos.html">
-   Learn how to make your science FAIRer
+   Make your science FAIRer
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -196,6 +197,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../howtos/PrepChemicalDataforSharing.html">
      Prepare Chemical Data for FAIR Sharing - A Minimalist Approach
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howtos/learn_spectra.html">
+     How to: FAIR formating of (multi, hyper)spectral data
     </a>
    </li>
   </ul>
@@ -278,13 +284,23 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  FAIR GLOSSARY
+  REFERENCE
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../about.html">
+   About this Project
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   A Glossary of FAIR Terminology
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
   </a>
  </li>
 </ul>
@@ -585,7 +601,9 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID             : 2244
-MolecularFormula: C9H8O4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MolecularFormula: C9H8O4
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MolecularWeight : 180.16
@@ -642,7 +660,7 @@ IsomericSMILES  : CC(=O)OC1=CC=CC=C1C(=O)O
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;23681059&#39;, &#39;156391&#39;, &#39;6925666&#39;, &#39;56841568&#39;, &#39;77098502&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;23681059&#39;, &#39;156391&#39;, &#39;6925666&#39;, &#39;56841568&#39;, &#39;77098502&#39;, &#39;9581&#39;]
 </pre></div>
 </div>
 </div>
@@ -665,6 +683,10 @@ IsomericSMILES  : CC(=O)OC1=CC=CC=C1C(=O)O
 </div>
 <img alt="../_images/pubchem-pug-rest2_11_2.png" src="../_images/pubchem-pug-rest2_11_2.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 77098502 : C31H35ClNNaO4
+</pre></div>
+</div>
+<img alt="../_images/pubchem-pug-rest2_11_4.png" src="../_images/pubchem-pug-rest2_11_4.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 9581 : C10H16ClNO
 </pre></div>
 </div>
 </div>
@@ -709,6 +731,168 @@ Naproxen Sodium and diphenhydramine combination
 Diphenhydramine hydrochloride and naproxen sodium
 Diphenhydramine hydrochloride mixture with naproxen sodium
 S900006580
+
+#-- CID 9581
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PSEUDOEPHEDRINE HYDROCHLORIDE
+Pseudoephedrine Hcl
+345-78-8
+Otrinol
+Rhinalair
+Tussaphed
+Novafed
+Sudafed
+Sudomyl
+First sign
+d-Pseudoephedrine hydrochloride
+Besan
+Sudafed hydrochloride
+(+)-Pseudoephedrine hydrochloride
+Pseudophedrine hydrochloride
+Galsud
+Efidac 24
+1S,2S-(+)-Pseudoephedrine hydrochloride
+NSC-33634
+NSC-106567
+6V9V2RYJ8N
+L(+)-Pseudoephedrine hydrochloride
+Sinufed
+CoAdvil
+Symptom 2
+D-(alpha-(1-Methylamino)ethyl)benzyl alcohol hydrochloride
+Sudafed 12 Hour
+Pseudoephedrine, (+)-
+Pseudoephedrine, L-(+)-
+Suphedrine
+Nexafed
+Dorcol
+Histalet Syrup
+L-(+)-Pseudoephedrine hydrochloride
+Sun mark sinus
+Deconsal II
+CHEBI:8604
+Sudafed Liquid, Children&#39;s
+PediaCare Decongestant Drops
+Sudafed 24 Hour
+(1S,2S)-2-(methylamino)-1-phenylpropan-1-ol hydrochloride
+Benzenemethanol, hydrochloride, S-(R,R)-
+WLN: QYR &amp; Y1 &amp; M1 &amp; GH-L
+Dimetapp Decongestant
+Actifed Sinus Daytime
+CPDD 0050
+Benzenemethanol, hydrochloride, [S-(R*,R*)]-
+EINECS 206-462-1
+Pseudoephedrine hydrochloride [USAN]
+NSC 33634
+UNII-6V9V2RYJ8N
+NSC 106567
+(1S,2S)-2-(methylamino)-1-phenylpropan-1-ol;hydrochloride
+Topcare 12 hour decongestant
+D-[.alpha.-(1-Methylamino)ethyl]benzyl alcohol hydrochloride
+Ornex and Maximum Strength Ornex
+Sudafed (TN)
+GALPSEUD
+Pseudoephedrine, hydrochloride, L-(+)-
+Pseudoephedrine hydrochloride [USAN:USP]
+Tylenol Sinus Medication, Maximum Strength
+Isoephedrine Hydrochloride
+Contac Day &amp; Night Allergy Sinus Day Caplets
+psi-Ephedrine Hydrochloride
+Benzenemethanol, alpha-(1-(methylamino)ethyl)-, hydrochloride, (S-(R*,R*))-
+EC 206-462-1
+SCHEMBL33285
+MLS001304069
+SPECTRUM1500516
+CHEMBL1200724
+Sine-Off Maximum Strength No Drowsiness Formula Caplets
+DTXSID10889343
+HMS1920N04
+Pharmakon1600-01500516
+NSC33634
+Pseudoephedrine hydrochloride (USP)
+CCG-39241
+NSC106567
+NSC759616
+AKOS027383893
+Benzenemethanol, alpha-(1-(methylamino)ethyl)-, (S-(R*,R*))-, hydrochloride
+NSC-759616
+Benzenemethanol, .alpha.-[(1S)-1-(methylamino)ethyl]-, hydrochloride, (.alpha.S)-
+Benzenemethanol, alpha-((1S)-1-(methylamino)ethyl)-, hydrochloride, (alphaS)-
+Benzenemethanol, alpha-(1-(methylamino)ethyl)-, hydrochloride, (S-(theta,theta))-
+PSEUDOEPHEDRINE HYDROCHLORIDE [MI]
+SMR000718787
+(+)-Pseudoephedrine hydrochloride, &gt;=98%
+P1654
+PSEUDOEPHEDRINE HYDROCHLORIDE [MART.]
+PSEUDOEPHEDRINE HYDROCHLORIDE [VANDF]
+PSEUDOEPHEDRINE HYDROCHLORIDE [USP-RS]
+PSEUDOEPHEDRINE HYDROCHLORIDE [WHO-DD]
+D00485
+345P788
+PSEUDOEPHEDRINE HYDROCHLORIDE [ORANGE BOOK]
+MYFED COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+PSEUDOEPHEDRINE HYDROCHLORIDE [EP MONOGRAPH]
+PSEUDOEPHEDRINE HYDROCHLORIDE [USP MONOGRAPH]
+W-106727
+ACTAHIST COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+ACTIFED COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+ALEVE-D COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+ALLERFED COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+CORPHED COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+HISTAFED COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+ISOCLOR COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF MYFED
+Q27108108
+TRIPHED COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+ZYRTEC-D COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+ALLEGRA-D COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+BROMFED-DM COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+MUCINEX D COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF ACTIFED
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF ALEVE-D
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF CORPHED
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF ISOCLOR
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF TRIPHED
+SEMPREX-D COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+TRIACIN-C COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+TRILITRON COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+(+)-Pseudoephedrine hydrochloride, Sigma Reference Standard
+BROMANATE DM COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+DIMETANE-DX COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+HYCOFENIX COMPONENT OF PSEUDOEPHEDRINE HYDROCHLORIDE
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF ACTAHIST
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF ALLEGRA-D
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF ALLERFED
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF BROMFED-DM
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF HISTAFED
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF HYCOFENIX
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF MUCINEX D
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF SEMPREX-D
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF TRIACIN-C
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF TRILITRON
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF ZYRTEC-D
+Pseudoephedrine Hydrochloride; Threo-Ephedrine Hydrochloride
+SINE-AID IB COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+(1S,2S)-2-(Methylamino)-1-phenyl-1-propanol Hydrochloride
+CODIMAL-L.A. 12 COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF BROMANATE DM
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF DIMETANE-DX
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF SINE-AID IB
+ADVIL ALLERGY SINUS COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+CHILDREN&#39;S ADVIL COLD COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+CHILDREN&#39;S MOTRIN COLD COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF ADVIL ALLERGY SINUS
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF CODIMAL-L.A. 12
+(+)-Pseudoephedrine Hydrochloride 1.0 mg/ml in Methanol (as free base)
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF CHILDREN&#39;S ADVIL COLD
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF CHILDREN&#39;S MOTRIN COLD
+Pseudoephedrine hydrochloride, British Pharmacopoeia (BP) Reference Standard
+Benzenemethanol, .alpha.-[(1S)-1-(methylamino)ethyl]-, hydrochloride (1:1), (.alpha.S)-
+Benzenemethanol, alpha-((1S)-1-(methylamino)ethyl)-, hydrochloride (1:1), (alphaS)-
+Pseudoephedrine hydrochloride, European Pharmacopoeia (EP) Reference Standard
+Pseudoephedrine hydrochloride, United States Pharmacopeia (USP) Reference Standard
+Pseudoephedrine hydrochloride, Pharmaceutical Secondary Standard; Certified Reference Material
 </pre></div>
 </div>
 </div>
@@ -748,7 +932,7 @@ S900006580
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Accessing PubChem through PUG-REST: Part I</p>
+            <p class="prev-next-title">Recipe: Accessing PubChem through PUG-REST - Part I</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="pubchem-pug-rest3.html" title="next page">

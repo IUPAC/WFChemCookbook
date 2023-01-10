@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Workflows for FAIR Data" href="recipes.html" />
@@ -179,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="howtos.html">
-   Learn how to make your science FAIRer
+   Make your science FAIRer
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -195,6 +196,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="howtos/PrepChemicalDataforSharing.html">
      Prepare Chemical Data for FAIR Sharing - A Minimalist Approach
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="howtos/learn_spectra.html">
+     How to: FAIR formating of (multi, hyper)spectral data
     </a>
    </li>
   </ul>
@@ -277,13 +283,23 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  FAIR GLOSSARY
+  REFERENCE
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   About this Project
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="glossary.html">
-   A Glossary of FAIR Terminology
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   Bibliography
   </a>
  </li>
 </ul>
@@ -441,12 +457,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-you-can-help">
+   How you can help
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -458,6 +498,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-you-can-help">
+   How you can help
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -467,54 +520,37 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-the-iupac-fair-chemistry-cookbook">
 <h1>Welcome to the IUPAC FAIR Chemistry Cookbook<a class="headerlink" href="#welcome-to-the-iupac-fair-chemistry-cookbook" title="Permalink to this headline">#</a></h1>
-<p>The IUPAC FAIR Chemistry Cookbook (FCCB) is intended to be an open, collaborate, community focused
+<p>The IUPAC FAIR Chemistry Cookbook (FCCB) is intended to be an open, collaborative, community focused
 resource on how to work with FAIR data in chemistry. FAIR means findable, accessible, interoperable,
-and reusable and is the new paradigm for how chemists should share their data.</p>
-<p>This first version of the FCCB is provided as a sampler of content that could be published in this
-mode of dissemination.  We would apprecitate it if you could review the set of recipes available on
-the left, and provide feedback to the project group (<a class="reference external" href="https://github.com/IUPAC/WFChemCookbook/issues">here</a>) and/or make suggestions of content or
-additonal dissemination mechanisms.</p>
+and reusable and is the new paradigm for how chemists should share their work/data. This resource
+is provided by the Internatinal Union of Pure and Applied Chemistry (<a class="reference external" href="https://iupac.org/">IUPAC</a>),
+a project funded by the EU funded <a class="reference external" href="https://worldfair-project.eu/">WorldFAIR project</a>.</p>
+<section id="how-you-can-help">
+<h2>How you can help<a class="headerlink" href="#how-you-can-help" title="Permalink to this headline">#</a></h2>
+<p>This first version of the FCCB is provided as a sampler of content that will be published via this
+mode of dissemination.  We would appreciate it if you could review the set of RECIPES available on
+the left, and provide feedback to the project group (<a class="reference external" href="https://github.com/IUPAC/WFChemCookbook/issues">here</a>)
+and/or make suggestions of content or additional dissemination mechanisms.</p>
+<p>We would also like to get feedback on the additional sections on the left, areas of content we anticipate
+including as reference material for the recipes and other content.  The intent is to present all the
+material with relevant chemistry examples, point to external content that are of high quality where available,
+reference IUPAC and community digital standards where appropriate, and engage the chemistry community in order
+to broaden the understanding of FAIR in chemistry.</p>
+<p><em>The IUPAC FAIR Chemistry Cookbook contributors</em></p>
+</section>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">RECIPES</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="recipes.html">Workflows for FAIR Data</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">CULINARY SCHOOL</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="howtos.html">Learn how to make your science FAIRer</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">PANTRY</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="store.html">Resources to make your data FAIR</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAIR COOKING</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="school.html">Learn about FAIR Data</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ingredients for FAIR Data</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ingredients.html">Ingredients for FAIR Data</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">TOOLS</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="cutlery.html">Tools for enabling FAIR Data</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAIR GLOSSARY</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">A Glossary of FAIR Terminology</a></li>
-</ul>
 </div>
 </section>
 

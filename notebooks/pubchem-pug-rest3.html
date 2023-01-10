@@ -50,9 +50,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Computing InChIs" href="computing_inchis.html" />
+    <link rel="next" title="Recipe: Computing InChIs" href="computing_inchis.html" />
     <link rel="prev" title="Accessing PubChem through PUG-REST: Part II" href="pubchem-pug-rest2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -136,17 +137,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="goldbook.html">
-     Using the IUPAC Gold Book API in Python
+     Recipe: Accessing the IUPAC Gold Book API in Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="opsin.html">
-     Using the OPSIN API in Python
+     Recipe: Using the OPSIN API in Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="pubchem-pug-rest1.html">
-     Accessing PubChem through PUG-REST: Part I
+     Recipe: Accessing PubChem through PUG-REST - Part I
     </a>
    </li>
    <li class="toctree-l2">
@@ -161,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="computing_inchis.html">
-     Computing InChIs
+     Recipe: Computing InChIs
     </a>
    </li>
    <li class="toctree-l2">
@@ -180,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../howtos.html">
-   Learn how to make your science FAIRer
+   Make your science FAIRer
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -196,6 +197,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../howtos/PrepChemicalDataforSharing.html">
      Prepare Chemical Data for FAIR Sharing - A Minimalist Approach
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howtos/learn_spectra.html">
+     How to: FAIR formating of (multi, hyper)spectral data
     </a>
    </li>
   </ul>
@@ -278,13 +284,23 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  FAIR GLOSSARY
+  REFERENCE
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../about.html">
+   About this Project
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   A Glossary of FAIR Terminology
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
   </a>
  </li>
 </ul>
@@ -805,8 +821,8 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
-[&#39;155903259&#39;, &#39;163421961&#39;, &#39;164850071&#39;, &#39;164785132&#39;, &#39;164766041&#39;, &#39;164766036&#39;, &#39;164701821&#39;, &#39;164701819&#39;, &#39;164701818&#39;, &#39;164701817&#39;, &#39;164701816&#39;, &#39;164701815&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701807&#39;, &#39;164701805&#39;, &#39;164701800&#39;, &#39;164701794&#39;, &#39;164701789&#39;, &#39;164701777&#39;, &#39;164701776&#39;, &#39;164701775&#39;, &#39;164701773&#39;, &#39;164701772&#39;, &#39;164701766&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;164701757&#39;, &#39;164701749&#39;, &#39;164701748&#39;, &#39;164701743&#39;, &#39;164701742&#39;, &#39;164701741&#39;, &#39;164701738&#39;, &#39;164701736&#39;, &#39;164701733&#39;, &#39;164159966&#39;, &#39;164158215&#39;, &#39;163362031&#39;, &#39;163362029&#39;, &#39;163362026&#39;, &#39;163362016&#39;, &#39;163362014&#39;, &#39;163362009&#39;, &#39;163362008&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361998&#39;, &#39;163361997&#39;, &#39;163361849&#39;, &#39;163283407&#39;, &#39;163283390&#39;, &#39;163283387&#39;, &#39;163283371&#39;, &#39;163283370&#39;, &#39;163283343&#39;, &#39;163283330&#39;, &#39;163283322&#39;, &#39;163283284&#39;, &#39;163283243&#39;, &#39;163283239&#39;, &#39;163283238&#39;, &#39;163283236&#39;, &#39;162479130&#39;, &#39;162478807&#39;, &#39;162396459&#39;, &#39;162396458&#39;, &#39;162396453&#39;, &#39;162396452&#39;, &#39;162396372&#39;, &#39;164850290&#39;, &#39;164850073&#39;, &#39;164701802&#39;, &#39;164701798&#39;, &#39;164040179&#39;, &#39;163941851&#39;, &#39;163362019&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;163283283&#39;, &#39;162712506&#39;, &#39;162712498&#39;, &#39;162712490&#39;, &#39;162712489&#39;, &#39;162712482&#39;, &#39;162712471&#39;, &#39;162712468&#39;, &#39;162712462&#39;, &#39;162712460&#39;, &#39;162685338&#39;, &#39;162396461&#39;, &#39;162396460&#39;, &#39;162396450&#39;, &#39;162396442&#39;, &#39;157010397&#39;, &#39;164971185&#39;, &#39;165179472&#39;, &#39;165179485&#39;, &#39;165179486&#39;, &#39;165179488&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>122
+[&#39;155903259&#39;, &#39;163421961&#39;, &#39;165179488&#39;, &#39;165179486&#39;, &#39;165179485&#39;, &#39;165179472&#39;, &#39;164850071&#39;, &#39;164785132&#39;, &#39;164766041&#39;, &#39;164766036&#39;, &#39;164701821&#39;, &#39;164701819&#39;, &#39;164701818&#39;, &#39;164701817&#39;, &#39;164701816&#39;, &#39;164701815&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701807&#39;, &#39;164701805&#39;, &#39;164701800&#39;, &#39;164701794&#39;, &#39;164701789&#39;, &#39;164701777&#39;, &#39;164701776&#39;, &#39;164701775&#39;, &#39;164701773&#39;, &#39;164701772&#39;, &#39;164701766&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;164701757&#39;, &#39;164701749&#39;, &#39;164701748&#39;, &#39;164701743&#39;, &#39;164701742&#39;, &#39;164701741&#39;, &#39;164701738&#39;, &#39;164701736&#39;, &#39;164701733&#39;, &#39;164159966&#39;, &#39;164158215&#39;, &#39;163362031&#39;, &#39;163362029&#39;, &#39;163362026&#39;, &#39;163362016&#39;, &#39;163362014&#39;, &#39;163362009&#39;, &#39;163362008&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361998&#39;, &#39;163361997&#39;, &#39;163361849&#39;, &#39;163283407&#39;, &#39;163283390&#39;, &#39;163283387&#39;, &#39;163283371&#39;, &#39;163283370&#39;, &#39;163283343&#39;, &#39;163283330&#39;, &#39;163283322&#39;, &#39;163283284&#39;, &#39;163283243&#39;, &#39;163283239&#39;, &#39;163283238&#39;, &#39;163283236&#39;, &#39;162479130&#39;, &#39;162478807&#39;, &#39;162396459&#39;, &#39;162396458&#39;, &#39;162396453&#39;, &#39;162396452&#39;, &#39;162396372&#39;, &#39;164971185&#39;, &#39;164850290&#39;, &#39;164850073&#39;, &#39;164701802&#39;, &#39;164701798&#39;, &#39;164040179&#39;, &#39;163941851&#39;, &#39;163362019&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;163283283&#39;, &#39;162712506&#39;, &#39;162712498&#39;, &#39;162712490&#39;, &#39;162712489&#39;, &#39;162712482&#39;, &#39;162712471&#39;, &#39;162712468&#39;, &#39;162712462&#39;, &#39;162712460&#39;, &#39;162685338&#39;, &#39;162396461&#39;, &#39;162396460&#39;, &#39;162396450&#39;, &#39;162396442&#39;, &#39;157010397&#39;, &#39;166149062&#39;, &#39;166149063&#39;, &#39;166149071&#39;, &#39;166149074&#39;, &#39;166149077&#39;, &#39;166149089&#39;, &#39;166149094&#39;, &#39;166149137&#39;, &#39;166156664&#39;, &#39;166156828&#39;, &#39;166156829&#39;, &#39;166156836&#39;, &#39;166157017&#39;, &#39;166157023&#39;, &#39;166157043&#39;, &#39;166157057&#39;, &#39;166157065&#39;, &#39;166157157&#39;, &#39;166157194&#39;, &#39;166157205&#39;, &#39;166157215&#39;, &#39;166157269&#39;]
 </pre></div>
 </div>
 </div>
@@ -822,8 +838,8 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
-[&#39;155903259&#39;, &#39;164701818&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;163362031&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361849&#39;, &#39;162396459&#39;, &#39;164040179&#39;, &#39;163341926&#39;, &#39;163285815&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+[&#39;155903259&#39;, &#39;164701818&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;163362031&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361849&#39;, &#39;162396459&#39;, &#39;164040179&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;166157194&#39;]
 </pre></div>
 </div>
 </div>
@@ -853,6 +869,7 @@ Detail:
 164040179,36,&quot;C24H36F3N5O4&quot;,&quot;C.CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 163341926,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C&quot;
 163285815,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+166157194,34,&quot;C23H33F2N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 </pre></div>
 </div>
 </div>
@@ -886,7 +903,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38488
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>39211
 </pre></div>
 </div>
 </div>
@@ -900,7 +917,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6746
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6752
 </pre></div>
 </div>
 </div>
@@ -951,12 +968,12 @@ Detail:
 107526 	 C6H12O6 	 C([C@H]([C@H]([C@@H]([C@H](C=O)O)O)O)O)O
 24749 	 C6H12O6 	 C(C(C(C(C(C=O)O)O)O)O)O
 24310 	 C6H12O6 	 C1[C@H]([C@H]([C@@H]([C@](O1)(CO)O)O)O)O
+6904 	 C6H12O6 	 C([C@@H]([C@H]([C@@H](C(=O)CO)O)O)O)O
+5984 	 C6H12O6 	 C([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)O
 892 	 C6H12O6 	 C1(C(C(C(C(C1O)O)O)O)O)O
 64689 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O
-5984 	 C6H12O6 	 C([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)O
-439709 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@](O1)(CO)O)O)O)O
-439312 	 C6H12O6 	 C1[C@H]([C@@H]([C@@H](C(O1)(CO)O)O)O)O
-79025 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O)O)O)O)O
+5793 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+5460024 	 C6H12O6 	 C([C@@H]([C@@H]([C@H](C(=O)CO)O)O)O)O
 </pre></div>
 </div>
 </div>
@@ -969,7 +986,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3235
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3237
 </pre></div>
 </div>
 </div>
@@ -1002,12 +1019,12 @@ Detail:
 107526 	 C6H12O6 	 C([C@H]([C@H]([C@@H]([C@H](C=O)O)O)O)O)O
 24749 	 C6H12O6 	 C(C(C(C(C(C=O)O)O)O)O)O
 24310 	 C6H12O6 	 C1[C@H]([C@H]([C@@H]([C@](O1)(CO)O)O)O)O
-892 	 C6H12O6 	 C1(C(C(C(C(C1O)O)O)O)O)O
-64689 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O
+6904 	 C6H12O6 	 C([C@@H]([C@H]([C@@H](C(=O)CO)O)O)O)O
 5984 	 C6H12O6 	 C([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)O
+892 	 C6H12O6 	 C1(C(C(C(C(C1O)O)O)O)O)O
 3609400 	 C6H12FeO6 	 CC(C(=O)O)O.CC(C(=O)O)O.[Fe]
-439709 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@](O1)(CO)O)O)O)O
-439312 	 C6H12O6 	 C1[C@H]([C@@H]([C@@H](C(O1)(CO)O)O)O)O
+64689 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O
+5793 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
 </pre></div>
 </div>
 </div>
@@ -1052,7 +1069,7 @@ Detail:
     <a class='right-next' id="next-link" href="computing_inchis.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Computing InChIs</p>
+        <p class="prev-next-title">Recipe: Computing InChIs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
