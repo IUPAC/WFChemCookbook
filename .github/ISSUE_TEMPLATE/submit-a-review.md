@@ -2,8 +2,8 @@
 name: Submit a Review
 about: This issue type is for reviewers of content to submit their review
 title: ''
-labels: ''
-assignees: ''
+labels: review
+assignees: stuchalk
 
 ---
 
