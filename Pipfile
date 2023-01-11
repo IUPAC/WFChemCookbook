@@ -12,6 +12,7 @@ openbabel-wheel = "==3.1.1.6"
 rdkit-pypi = "==2022.9.3"
 numpy = "==1.23.4"
 jcamp = "*"
+sphinx = "==4.5.0"
 
 [dev-packages]
 

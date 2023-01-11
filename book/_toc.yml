@@ -8,14 +8,14 @@ parts:
     chapters:
       - file: recipes
         sections:
-          - file: notebooks/uvvis_metadata
-          - file: notebooks/goldbook.ipynb
-          - file: notebooks/opsin.ipynb
-          - file: notebooks/pubchem-pug-rest1.ipynb
-          - file: notebooks/pubchem-pug-rest2.ipynb
-          - file: notebooks/pubchem-pug-rest3.ipynb
-          - file: notebooks/computing_inchis.ipynb
-          - file: notebooks/dataset_search.ipynb
+          - file: recipes/inchkeys.md
+          - file: recipes/goldbook.ipynb
+          - file: recipes/opsin.ipynb
+          - file: recipes/pubchem-pug-rest1.ipynb
+          - file: recipes/pubchem-pug-rest2.ipynb
+          - file: recipes/pubchem-pug-rest3.ipynb
+          - file: recipes/computing_inchis.ipynb
+          - file: recipes/dataset_search.ipynb
   - caption: CULINARY SCHOOL
     chapters:
       - file: howtos
