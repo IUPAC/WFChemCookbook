@@ -1,3 +1,4 @@
 .idea
 book/_build
 book/recipes/hiddensettings.py
+book/howtos/inchikeys.md
