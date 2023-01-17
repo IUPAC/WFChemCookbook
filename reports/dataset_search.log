@@ -17,21 +17,33 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from rdkit import Chem
-from rdkit.Chem import Draw
-
-# RDKit Version
-from rdkit import rdBase
-print(rdBase.rdkitVersion)
+from hiddensettings import *
+import requests
+import json
+# see https://fairsharing.org/API_doc for instructions on how to search the API
+# user login
+url = 'https://api.fairsharing.org/users/sign_in'
+loghdrs = {'Accept': 'application/json','Content-Type': 'application/json'}
+login = {'user': {'login': fs_user, 'password': fs_pass}}
+response = requests.request("POST", url, headers=loghdrs, data=json.dumps(login))
+data = response.json()
+jwt = data['jwt']
+srchdrs = {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': "Bearer {0}".format(jwt)}
+searchterm = 'chemistry'
+searchurl ='https://api.fairsharing.org//search/fairsharing_records?q=' + searchterm
+search = requests.request("POST", searchurl, headers=srchdrs)
+hits = json.loads(search.content)
+for hit in hits['data']:
+    print(hit['attributes']['name'] + ": " + hit['attributes']['url'])
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mrdkit[39;00m [38;5;28;01mimport[39;00m Chem
-[1;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mrdkit[39;00m[38;5;21;01m.[39;00m[38;5;21;01mChem[39;00m [38;5;28;01mimport[39;00m Draw
-[1;32m      4[0m [38;5;66;03m# RDKit Version[39;00m
+Cell [0;32mIn[2], line 1[0m
+[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mhiddensettings[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mrequests[39;00m
+[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mjson[39;00m
 
-[0;31mModuleNotFoundError[0m: No module named 'rdkit'
-ModuleNotFoundError: No module named 'rdkit'
+[0;31mModuleNotFoundError[0m: No module named 'hiddensettings'
+ModuleNotFoundError: No module named 'hiddensettings'
 
