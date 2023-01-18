@@ -1077,18 +1077,30 @@ Markdown (.ipynb)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; For reporting of epsilon value corresponding to lambda max, we must first take the anitlog in this </span>
 <span class="sd">    example &quot;&quot;&quot;</span>
+
 <span class="n">epsilon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_epsilon</span><span class="p">)</span> <span class="c1"># Create a variable and assign the antilog of log_epsilon </span>
                               <span class="c1"># using numpys exp (exponential) method</span>
-<span class="n">lambda_max</span> <span class="o">=</span> <span class="n">data_dictionary</span><span class="p">[</span><span class="s1">&#39;maxx&#39;</span><span class="p">]</span> <span class="c1"># Takes the max of lambda from the data</span>
-<span class="n">associated_epsilon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">epsilon</span><span class="p">)</span> <span class="c1"># Uses numpy to find the minimum value of epsilon</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">lambda_max</span><span class="si">}</span><span class="s1"> nm&#39;</span><span class="p">)</span> <span class="c1"># Printing out including proper units</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">associated_epsilon</span><span class="si">}</span><span class="s1"> L mol-1 cm-1&#39;</span><span class="p">)</span>
+
+<span class="n">arg_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">epsilon</span><span class="p">)</span> <span class="c1"># Use numpys arg max function to find the index of the largest y value</span>
+<span class="n">lambda_max</span> <span class="o">=</span> <span class="n">wavelength</span><span class="p">[</span><span class="n">arg_max</span><span class="p">]</span> <span class="c1"># Use this index to find the x value at max y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lambda_max</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> nm&quot;</span><span class="p">)</span> <span class="c1"># Printing output to screen to 1 d.p including proper units</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">associated_epsilon</span><span class="si">}</span><span class="s1"> L mol-1 cm-1&#39;</span><span class="p">)</span> <span class="c1"># Printing output to screen including units </span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>340.066 nm
-3.5151774231795185 L mol-1 cm-1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>301.6 nm
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">lambda_max</span> <span class="o">=</span> <span class="n">wavelength</span><span class="p">[</span><span class="n">arg_max</span><span class="p">]</span> <span class="c1"># Use this index to find the x value at max y</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lambda_max</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> nm&quot;</span><span class="p">)</span> <span class="c1"># Printing output to screen to 1 d.p including proper units</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">associated_epsilon</span><span class="si">}</span><span class="s1"> L mol-1 cm-1&#39;</span><span class="p">)</span> <span class="c1"># Printing output to screen including units </span>
+
+<span class="ne">NameError</span>: name &#39;associated_epsilon&#39; is not defined
 </pre></div>
 </div>
 </div>
