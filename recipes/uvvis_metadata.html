@@ -1096,7 +1096,7 @@ Markdown (.ipynb)
 
 <span class="n">arg_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">epsilon_array</span><span class="p">)</span> <span class="c1"># Use numpys arg max function to find the index of the largest y value</span>
 <span class="n">lambda_max</span> <span class="o">=</span> <span class="n">wavelength</span><span class="p">[</span><span class="n">arg_max</span><span class="p">]</span> <span class="c1"># Use this index to find the x value at max y</span>
-<span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon_array</span><span class="p">[</span><span class="n">arg_max</span><span class="p">]</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon_array</span><span class="p">[</span><span class="n">arg_max</span><span class="p">]</span> <span class="c1"># Find epsilon at this index</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lambda_max</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> nm&quot;</span><span class="p">)</span> <span class="c1"># Printing output to screen to 1 d.p including proper units</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">epsilon</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> L mol-1 cm-1&#39;</span><span class="p">)</span> <span class="c1"># Printing output to screen to 1 d.p including units </span>
@@ -1106,18 +1106,6 @@ Markdown (.ipynb)
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>301.6 nm
 1577.0 L mol-1 cm-1
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">epsilon_array</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy.ndarray
 </pre></div>
 </div>
 </div>
