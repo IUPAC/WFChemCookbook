@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['import requests', 'import json', '# This URL is the metadata about the data sources in PubChem', "url = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug/sourcetable/all/JSON/?response_type=display'", 'response = requests.get(url)']
+['# Molecular weight', 'print("MolecularWeight  :", requests.get("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/MolecularWeight/txt").text.strip())', '', '# Hydrogen-bond donor count', 'print("HBondDonorCount  :", requests.get("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/HBondDonorCount/txt").text.strip())']
 ...
-['        hit = {}', "        hit.update({'name': row['Cell'][0]})", "        hit.update({'url': row['Cell'][9]})", '        results.append(hit)', 'print(json.dumps(results, indent=4))']
+['# XLogP', 'print("XLogP            :", requests.get("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/XLogP/txt").text.strip())', '', '# Topological polar surface area (TPSA)', 'print("TPSA             :", requests.get("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/TPSA/txt").text.strip())']
 -------------------
 

@@ -32,8 +32,13 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['import requests', 'import json', '# This URL is the metadata about the data sources in PubChem', "url = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug/sourcetable/all/JSON/?response_type=display'", 'response = requests.get(url)']
-...
-['        hit = {}', "        hit.update({'name': row['Cell'][0]})", "        hit.update({'url': row['Cell'][9]})", '        results.append(hit)', 'print(json.dumps(results, indent=4))']
+# Compounds with the same isotopism (stereochemistry can be different)
+cids1 = requests.post("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/smiles/cids/txt?identity_type=same_isotope", data={'smiles':smiles}).text.strip().split()
+print(cids1)
+
+for mycid in cids1:
+    display(Image(requests.get("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/" + mycid + "/record/PNG?image_size=200x200").content))
+    print("CID " + mycid, ":", requests.get("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/" + mycid + "/property/IsomericSMILES/TXT").text)
+    time.sleep(0.2)
 -------------------
 
