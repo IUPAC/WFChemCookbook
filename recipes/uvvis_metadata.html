@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Recipe: Creating a UV/Vis (meta)data file structure for small molecule characterisation &#8212; IUPAC FAIR Chemistry Cookbook</title>
+    <title>Recipe: Structured UV/Vis (meta)data for small molecule characterisation &#8212; IUPAC FAIR Chemistry Cookbook</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -132,7 +132,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Recipe: Creating a UV/Vis (meta)data file structure for small molecule characterisation
+     Recipe: Structured UV/Vis (meta)data for small molecule characterisation
     </a>
    </li>
    <li class="toctree-l2">
@@ -534,46 +534,36 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#target-audience">
-   1.1 Target audience
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contents">
-   2. Contents
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#glossary">
-   3. Glossary
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resources">
-   4. Resources
+   2. Target audience
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#structuring-the-meta-data">
-   5. Structuring the (meta)data
+   3. Structuring the (meta)data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#file-formats">
-     5.1 File formats
+     3.1 File formats
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#file-heirachy">
-     5.2 File heirachy
+    <a class="reference internal nav-link" href="#file-hierarchy">
+     3.2 File hierarchy
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-tools">
-   6. The Tools
+  <a class="reference internal nav-link" href="#data-reporting-using-jupyter-notebook-python">
+   4. Data reporting using Jupyter Notebook (Python)
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-tools">
+     4.1 The tools
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-is-python">
      What is Python?
@@ -589,21 +579,26 @@ title="Print to PDF"
      What is Anaconda?
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-the-tools">
+     Installing the tools
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-the-notebook-on-your-computer">
+     Running the notebook (on your computer)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplar-code-for-data-reporting">
+     4.2 Exemplar code for data reporting
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installing-the-tools">
-   6.1 Installing the tools
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-the-notebook-on-your-computer">
-   6.2 Running the notebook (on your computer)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exemplar-code-for-data-reporting">
-   7. Exemplar code for data reporting
+  <a class="reference internal nav-link" href="#glossary">
+   5. Glossary
   </a>
  </li>
 </ul>
@@ -615,7 +610,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Recipe: Creating a UV/Vis (meta)data file structure for small molecule characterisation</h1>
+                <h1>Recipe: Structured UV/Vis (meta)data for small molecule characterisation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -632,46 +627,36 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#target-audience">
-   1.1 Target audience
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contents">
-   2. Contents
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#glossary">
-   3. Glossary
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resources">
-   4. Resources
+   2. Target audience
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#structuring-the-meta-data">
-   5. Structuring the (meta)data
+   3. Structuring the (meta)data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#file-formats">
-     5.1 File formats
+     3.1 File formats
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#file-heirachy">
-     5.2 File heirachy
+    <a class="reference internal nav-link" href="#file-hierarchy">
+     3.2 File hierarchy
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-tools">
-   6. The Tools
+  <a class="reference internal nav-link" href="#data-reporting-using-jupyter-notebook-python">
+   4. Data reporting using Jupyter Notebook (Python)
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-tools">
+     4.1 The tools
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-is-python">
      What is Python?
@@ -687,21 +672,26 @@ title="Print to PDF"
      What is Anaconda?
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-the-tools">
+     Installing the tools
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-the-notebook-on-your-computer">
+     Running the notebook (on your computer)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplar-code-for-data-reporting">
+     4.2 Exemplar code for data reporting
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installing-the-tools">
-   6.1 Installing the tools
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-the-notebook-on-your-computer">
-   6.2 Running the notebook (on your computer)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exemplar-code-for-data-reporting">
-   7. Exemplar code for data reporting
+  <a class="reference internal nav-link" href="#glossary">
+   5. Glossary
   </a>
  </li>
 </ul>
@@ -714,14 +704,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="recipe-creating-a-uv-vis-meta-data-file-structure-for-small-molecule-characterisation">
-<h1>Recipe: Creating a UV/Vis (meta)data file structure for small molecule characterisation<a class="headerlink" href="#recipe-creating-a-uv-vis-meta-data-file-structure-for-small-molecule-characterisation" title="Permalink to this headline">#</a></h1>
+  <section id="recipe-structured-uv-vis-meta-data-for-small-molecule-characterisation">
+<h1>Recipe: Structured UV/Vis (meta)data for small molecule characterisation<a class="headerlink" href="#recipe-structured-uv-vis-meta-data-for-small-molecule-characterisation" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Author(s):</p>
 <ul>
-<li><p>Sally Bloodworth (<a class="reference external" href="https://orcid.org/0000-0003-2219-3635">https://orcid.org/0000-0003-2219-3635</a>)</p></li>
-<li><p>Simon Coles (<a class="reference external" href="http://orcid.org/0000-0001-8414-9272">http://orcid.org/0000-0001-8414-9272</a>)</p></li>
-<li><p>Samuel Munday (<a class="reference external" href="https://orcid.org/0000-0001-5404-6934">https://orcid.org/0000-0001-5404-6934</a>)</p></li>
+<li><p><a class="reference external" href="https://orcid.org/0000-0003-2219-3635">Sally Bloodworth</a>, <a class="reference external" href="http://orcid.org/0000-0001-8414-9272">Simon Coles</a>, <a class="reference external" href="https://orcid.org/0000-0001-5404-6934">Samuel Munday</a></p></li>
 </ul>
 </li>
 <li><p>Reviewer:</p></li>
@@ -737,62 +725,20 @@ title="Print to PDF"
 <p>To provide guidance on the minimum set of metadata required for publishing UV/Vis spectroscopic data as supplementary information to support compound characterisation using the Beer-Lambert Law. To apply the FAIR principles for data management to produce digital data objects that contain raw, spectral and metadata to enable current and future researchers in the reanalysis and visualisation of UV/Vis spectroscopic data.</p>
 </section>
 <section id="target-audience">
-<h2>1.1 Target audience<a class="headerlink" href="#target-audience" title="Permalink to this headline">#</a></h2>
+<h2>2. Target audience<a class="headerlink" href="#target-audience" title="Permalink to this headline">#</a></h2>
 <p>Researchers who routinely work with a user interface (spreadsheet) for preparation of supplementary material to support compound characterisation for publication: authors who aim to improve the FAIRness of their published supporting data.</p>
-</section>
-<section id="contents">
-<h2>2. Contents<a class="headerlink" href="#contents" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>Provide a glossary of terms</p></li>
-<li><p>Give an overview of the steps needed to install python and launch a jupyter notebook</p></li>
-<li><p>Introduce the tools used in this tutorial</p></li>
-<li><p>Quick introduction on how to run the notebook</p></li>
-<li><p>Show a short example of using Python and Jupyter for data reporting</p></li>
-</ol>
-<p><b><i>Skip to the bottom of this notebook to see and run the code</i></b></p>
-</section>
-<section id="glossary">
-<h2>3. Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">#</a></h2>
-<p><u><b>Package</b></u></p>
-<p>When developing a Python script, it’s often necessary to use functionality that is not included in the Python standard library. One way to access this additional functionality is by importing Python packages into your script. These packages, also known as modules, provide pre-built functionality and code that can be easily integrated into your script, saving you the time and effort of having to write everything from scratch. They can include functions, classes, or other objects that are ready to use or extend, and are written by other developers to solve specific problems or tasks. In addition, importing packages can also help to keep your code organized and maintainable, by breaking it up into reusable and functional blocks. In summary, we import packages into scripts to leverage pre-built functionality and take advantage of the expertise of the Python community, allowing us to focus on the specific problem we are trying to solve.</p>
-<p><b><u>Comment</u></b></p>
-<p>In Python, a comment is a piece of text that is ignored by the interpreter when the code is executed. Comments are used to explain the purpose and logic of the code, and to make it easier for other people (or yourself) to understand and maintain the code. Comments can be a single line or span multiple lines and can start with a # symbol or be encapsulated by tiple quotes “”” “””. The text within the comment is only intended for human readers. Comments are very useful to add explanations and context to code, also it can help to keep track of the progress, problems or ideas you had when working in a script. Use them liberally.</p>
-<p><b><u>Method</u></b></p>
-<p>A method is a function that is associated with an object. It is defined inside a class, and it can access and manipulate the attributes and state of the object it is associated with. Methods contain functionality that is often useful for the work you are doing.</p>
-<p><b><u>Data Strucutre</u></b></p>
-<p>In Python (and in computer science in general), a data structure is a way of organizing and storing data in a computer’s memory so that it can be efficiently accessed and modified.</p>
-<p><b><u>Float</u></b></p>
-<p>A float (short for “floating-point number”) is a type of numeric data that can represent decimal values.</p>
-<p><b><u>Function</u></b></p>
-<p>In Python, a function is a block of organized, reusable code that performs a specific task. Functions provide a way to organize your code into logical, modular chunks that can be easily reused and tested.</p>
-<p>A Python function is defined using the def keyword, followed by the function name, a pair of parentheses (), and a colon :. The code inside the function is indented under the definition line.</p>
-<p><b><u>Dictionary</u></b></p>
-<p>A dictionary is a built-in data structure that stores a collection of key-value pairs, where each key is unique. Dictionaries are also commonly known as associative arrays or hash maps. They are similar to lists or arrays in other programming languages, but the elements in a dictionary are accessed via keys rather than an index.</p>
-<p><b><u>Variable</u></b></p>
-<p>In Python, a variable is a named location in memory that is used to store a value. A variable can be thought of as a “container” that holds a value, and the value can be of any data type (e.g., a number, a string, a list, etc.).</p>
-<p>To create a variable in Python, you simply give it a name and assign a value to it using the assignment operator (=).</p>
-<p><b><u>Doc String</u></b></p>
-<p>A docstring in Python is a string that appears at the top of a module, class, or function definition. Docstrings are used to provide a brief description of what the code does, as well as any information on the arguments, return values, and other details of the code.</p>
-<p><b><u>Virtual Environment</u></b></p>
-<p>You may have multiple Python projects happening at once. A virtual environment is a named, isolated copy of Python that has its own files and packages. Anything done inside a virtual environment is specific to that environment and won’t affect any other projects. All the dependencies and packages you install will be sandboxed inside the environment you are using. You should therefore have a separate virtual environment for each separate project.</p>
-<p><b><u>JCAMP–DX</u></b></p>
-<p>IUPAC standard file format for spectral data</p>
-<p><b><u>LDR</u></b></p>
-<p>Labelled–data–record, the basic element of a JCAMP–DX file.</p>
-</section>
-<section id="resources">
-<h2>4. Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
-<p>FAIR data management refers to the IUPAC FAIRSpec standard: IUPAC specifications for the findability, accessibility, interoperability and reusability of spectroscopic data in chemistry.</p>
+<p>FAIR data management refers to the <a class="reference external" href="https://doi.org/10.1515/pac-2021-2009">IUPAC FAIRSpec standard</a>: IUPAC specifications for the findability, accessibility, interoperability and reusability of spectroscopic data in chemistry.</p>
 </section>
 <section id="structuring-the-meta-data">
-<h2>5. Structuring the (meta)data<a class="headerlink" href="#structuring-the-meta-data" title="Permalink to this headline">#</a></h2>
+<h2>3. Structuring the (meta)data<a class="headerlink" href="#structuring-the-meta-data" title="Permalink to this headline">#</a></h2>
 <section id="file-formats">
-<h3>5.1 File formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">#</a></h3>
-<p>Instrument–specific file formats should not be used for storage of the raw spectroscopic dataset. If JCAMP-DX is a fully supported format of the spectrophotometer, then the sample level metadata available in the raw data file could be user–defined or mandatory. The metadata content also depends on mapping from the spectrophotometer native software to JCAMP-DX {cite} Davies2019. Sample level metadata should be supplemented using the file structure defined in 3.2 below.</p>
+<h3>3.1 File formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">#</a></h3>
+<p>Textual metadata should (typically) be provided as a README.txt file.</p>
+<p>Instrument–specific file formats should not be used for storage of the raw spectroscopic dataset. If JCAMP-DX is a fully supported format of the spectrophotometer, then the sample level metadata available in the raw data file could be user–defined or mandatory. The metadata content also depends on mapping from the spectrophotometer native software to JCAMP-DX. Sample level metadata should be supplemented using the file structure defined in 3.2 below.</p>
 <p>The file formats recommended here are not exhaustive. For data reuse and preservation, all file formats must be non-proprietary, and associated software open source (maintained). Files should be uncompressed and unencrypted.</p>
 </section>
-<section id="file-heirachy">
-<h3>5.2 File heirachy<a class="headerlink" href="#file-heirachy" title="Permalink to this headline">#</a></h3>
+<section id="file-hierarchy">
+<h3>3.2 File hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this headline">#</a></h3>
 <table>
   <tr style="background-color:gray;">
     <td colspan='4'><strong>Raw Data</strong></td>
@@ -800,14 +746,14 @@ title="Print to PDF"
   <tr>
     <td> <b>Content</b></td>
     <td> <b>Definition </b></td>
-    <td> <b>Essential or desirable </b></td>
+    <td> <b>Priority</b></td>
     <td> <b>Format </b></td>
   </tr>
   <tr>
     <td style="word-wrap: break-word; max-width: 200px;">Data matrix (with or without column headings)</td>
     <td style="word-wrap: break-word; max-width: 200px;">Spectrophotometer output as tabular data (absorbance and wavelength)</td>
     <td style="word-wrap: break-word; max-width: 200px;">Essential</td>
-    <td style="word-wrap: break-word; max-width: 200px;">CSV (.csv) JCAMP–DX (core LDR component)
+    <td style="word-wrap: break-word; max-width: 200px;">CSV (.csv) JCAMP–DX (.jdx)
 </td>
   </tr>
   <tr style="background-color:gray;">
@@ -816,7 +762,7 @@ title="Print to PDF"
   <tr>
     <td> <b>Content</b></td>
     <td> <b>Definition </b></td>
-    <td> <b>Essential or desirable </b></td>
+    <td> <b>Priority </b></td>
     <td> <b>Format </b></td>
   </tr>
   <tr>
@@ -862,7 +808,7 @@ Markdown (.ipynb)
   <tr>
     <td> <b>Content</b></td>
     <td> <b>Definition </b></td>
-    <td> <b>Essential or desirable </b></td>
+    <td> <b>Priority </b></td>
     <td> <b>Format </b></td>
   </tr>
   <tr>
@@ -889,7 +835,7 @@ Jupyter Notebook <br> Markdown (.ipynb)
   <tr>
     <td> <b>Content</b></td>
     <td> <b>Definition </b></td>
-    <td> <b>Essential or desirable </b></td>
+    <td> <b>Priority </b></td>
     <td> <b>Format </b></td>
   </tr>
   <tr>
@@ -921,35 +867,33 @@ Markdown (.ipynb)
   </table>
 </section>
 </section>
+<section id="data-reporting-using-jupyter-notebook-python">
+<h2>4. Data reporting using Jupyter Notebook (Python)<a class="headerlink" href="#data-reporting-using-jupyter-notebook-python" title="Permalink to this headline">#</a></h2>
+<p>Publication of UV/Vis spectroscopic data for small molecule characterisation typically requires a plot of the spectrum, and accompanying values for 𝜆max and ε. An exemplar procedure for FAIR data reporting using Jupyter Notebook is described below, suitable for a novice user without existing experience in the Python language.</p>
+<p>The UV/Vis reference data file ‘sample_data.jdx’ for salicylic acid in JCAMP-DX format is from the NIST Standard Reference Database available from the <a class="reference external" href="https://webbook.nist.gov/">NIST Chemistry WebBook</a>.</p>
 <section id="the-tools">
-<h2>6. The Tools<a class="headerlink" href="#the-tools" title="Permalink to this headline">#</a></h2>
+<h3>4.1 The tools<a class="headerlink" href="#the-tools" title="Permalink to this headline">#</a></h3>
+</section>
 <section id="what-is-python">
 <h3>What is Python?<a class="headerlink" href="#what-is-python" title="Permalink to this headline">#</a></h3>
 <p>From the official python website, <a class="reference external" href="http://Python.org">Python.org</a>:</p>
-<blockquote>
-<div><p>Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python’s simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed.</p>
-</div></blockquote>
+<p>Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python’s simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed.</p>
 </section>
 <section id="what-is-jupyter-a-jupyter-notebook">
 <h3>What is Jupyter/a Jupyter Notebook?<a class="headerlink" href="#what-is-jupyter-a-jupyter-notebook" title="Permalink to this headline">#</a></h3>
-<blockquote>
-<div><p>Jupyter (formerly IPython Notebook) is an open-source project that lets you easily combine markdown text and executable Python source code on one canvas called a notebook. They are both human readable documents containing the analysis description and the results (figures, tables, etc..) as well as executable documents which run the code to perform the data analysis.</p>
-</div></blockquote>
+<p>Jupyter (formerly IPython Notebook) is an open-source project that lets you easily combine markdown text and executable Python source code on one canvas called a notebook. They are both human readable documents containing the analysis description and the results (figures, tables, etc..) as well as executable documents which run the code to perform the data analysis.</p>
 </section>
 <section id="what-is-anaconda">
 <h3>What is Anaconda?<a class="headerlink" href="#what-is-anaconda" title="Permalink to this headline">#</a></h3>
-<blockquote>
-<div><p>Anaconda can be thought of as a one stop shop for all things Python and data science. It’s almost an umbrella; by downloading Anaconda you also get Python, Jupyter notebooks and a whole host of other useful programmes. It is also a package manager and virtual environment manager.</p>
-</div></blockquote>
-</section>
+<p>Anaconda can be thought of as a one stop shop for all things Python and data science. It’s almost an umbrella; by downloading Anaconda you also get Python, Jupyter notebooks and a whole host of other useful programmes. It is also a package manager and virtual environment manager.</p>
 </section>
 <section id="installing-the-tools">
-<h2>6.1 Installing the tools<a class="headerlink" href="#installing-the-tools" title="Permalink to this headline">#</a></h2>
+<h3>Installing the tools<a class="headerlink" href="#installing-the-tools" title="Permalink to this headline">#</a></h3>
 <p>The easiest way to install Python is through the package and virtual environment manager Anaconda. Anaconda is free and open source and the Individual Edition can be installed from <a class="reference external" href="https://www.anaconda.com/">https://www.anaconda.com/</a>.</p>
 <p>Once Anaconda is installed you can create a virtual environment, load Jupyter into the environment and run this notebook.</p>
 </section>
 <section id="running-the-notebook-on-your-computer">
-<h2>6.2 Running the notebook (on your computer)<a class="headerlink" href="#running-the-notebook-on-your-computer" title="Permalink to this headline">#</a></h2>
+<h3>Running the notebook (on your computer)<a class="headerlink" href="#running-the-notebook-on-your-computer" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Make sure Anaconda is installed on your computer</p></li>
 <li><p>Use the Anaconda navigator (or the command line) to create a virutal environment</p></li>
@@ -962,8 +906,7 @@ Markdown (.ipynb)
 </ol>
 </section>
 <section id="exemplar-code-for-data-reporting">
-<h2>7. Exemplar code for data reporting<a class="headerlink" href="#exemplar-code-for-data-reporting" title="Permalink to this headline">#</a></h2>
-<p>An exemplar procedure for data reporting is described in 4.1, below. UV/Vis reference data for salicylic acid in JCAMP-DX format is from the NIST Standard Reference Database available from the NIST Chemistry WebBook</p>
+<h3>4.2 Exemplar code for data reporting<a class="headerlink" href="#exemplar-code-for-data-reporting" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; First the packages we need are imported into the jupyter notebook &quot;&quot;&quot;</span>
@@ -1038,6 +981,7 @@ Markdown (.ipynb)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; We will extract the x and y components from the dictionary. We can specify two variables (which are named</span>
 <span class="sd">    with descriptive and informative names) that will hold the data associated with x and y &quot;&quot;&quot;</span>
+
 <span class="n">wavelength</span> <span class="o">=</span> <span class="n">data_dictionary</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="c1"># Variable named &#39;wavelength&#39; holding x values as seen in dictionary above</span>
 <span class="n">log_epsilon</span> <span class="o">=</span> <span class="n">data_dictionary</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="c1"># Variable named &#39;log_epsilon&#39; holding y values as seen in dictionary above</span>
 </pre></div>
@@ -1047,22 +991,25 @@ Markdown (.ipynb)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Plot the results on a graph &quot;&quot;&quot;</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">log_epsilon</span><span class="p">)</span>                    <span class="c1"># Plot the two variables as a line graph</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength nm&#39;</span><span class="p">)</span>                          <span class="c1"># Set the name of the x-label</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Log epsilon&#39;</span><span class="p">)</span>                            <span class="c1"># Set the name of the y-label</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;A graph of wavelength vs log-epsilon&#39;</span><span class="p">)</span>    <span class="c1"># Set the title of the graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength (nm)&#39;</span><span class="p">)</span>                          <span class="c1"># Set the name of the x-label</span>
+<span class="c1">#plt.ylabel(&#39;Log r&#39;$\epsilon&#39; (L mol&#39;) )</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Log $\epsilon$ ($L\ mol^{-1}\ cm^{-1}$)&#39;</span><span class="p">)</span>                             <span class="c1"># Set the name of the y-label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;UV spectrum of salicyclic acid&#39;</span><span class="p">)</span>          <span class="c1"># Set the title of the graph</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>                                           <span class="c1"># Show grid lines</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                                           <span class="c1"># Plot the graph to the screen</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/uvvis_metadata_17_0.png" src="../_images/uvvis_metadata_17_0.png" />
+<img alt="../_images/uvvis_metadata_13_0.png" src="../_images/uvvis_metadata_13_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Save the figure &quot;&quot;&quot;</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;my_figure.png&#39;</span><span class="p">)</span>  <span class="c1"># Saves the figure to your current directory. File path can be updated to suit</span>
 </pre></div>
 </div>
@@ -1075,15 +1022,14 @@ Markdown (.ipynb)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; For reporting of epsilon value corresponding to lambda max, we must first take the anitlog in this </span>
-<span class="sd">    example &quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; For reporting of epsilon value corresponding to lambda max, we must first take the anitlog in this example &quot;&quot;&quot;</span>
 
 <span class="n">epsilon_array</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">log_epsilon</span> <span class="c1"># Create an nd array and assign the antilog of log_epsilon </span>
                                 <span class="c1"># using numpys exp (exponential) method</span>
 
 <span class="n">arg_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">epsilon_array</span><span class="p">)</span> <span class="c1"># Use numpys arg max function to find the index of the largest y value</span>
 <span class="n">lambda_max</span> <span class="o">=</span> <span class="n">wavelength</span><span class="p">[</span><span class="n">arg_max</span><span class="p">]</span> <span class="c1"># Use this index to find the x value at max y</span>
-<span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon_array</span><span class="p">[</span><span class="n">arg_max</span><span class="p">]</span> <span class="c1"># Find epsilon at this index</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon_array</span><span class="p">[</span><span class="n">arg_max</span><span class="p">]</span> <span class="c1"># Find epsilon at this index </span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lambda_max</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> nm&quot;</span><span class="p">)</span> <span class="c1"># Printing output to screen to 1 d.p including proper units</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">epsilon</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> L mol-1 cm-1&#39;</span><span class="p">)</span> <span class="c1"># Printing output to screen to 1 d.p including units </span>
@@ -1137,16 +1083,38 @@ Markdown (.ipynb)
 
 <span class="n">epsilon</span> <span class="o">=</span> <span class="n">beer_lambert</span><span class="p">(</span><span class="n">absorbance</span><span class="p">,</span> <span class="n">concentration</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span> <span class="c1"># Replace each of the parameters absorbance, </span>
                                                           <span class="c1"># concentration and length with your own numbers.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">epsilon</span><span class="p">)</span>                                            <span class="c1"># Prints calculated epsilon values to screen</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.16666666666666666
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="glossary">
+<h2>5. Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">#</a></h2>
+<p><b>Package</b></p>
+<p>When developing a Python script, it’s often necessary to use functionality that is not included in the Python standard library. One way to access this additional functionality is by importing Python packages into your script. These packages, also known as modules, provide pre-built functionality and code that can be easily integrated into your script, saving you the time and effort of having to write everything from scratch. They can include functions, classes, or other objects that are ready to use or extend, and are written by other developers to solve specific problems or tasks. In addition, importing packages can also help to keep your code organized and maintainable, by breaking it up into reusable and functional blocks. In summary, we import packages into scripts to leverage pre-built functionality and take advantage of the expertise of the Python community, allowing us to focus on the specific problem we are trying to solve.</p>
+<p><b>Comment</b></p>
+<p>In Python, a comment is a piece of text that is ignored by the interpreter when the code is executed. Comments are used to explain the purpose and logic of the code, and to make it easier for other people (or yourself) to understand and maintain the code. Comments can be a single line or span multiple lines and can start with a # symbol or be encapsulated by tiple quotes “”” “””. The text within the comment is only intended for human readers. Comments are very useful to add explanations and context to code, also it can help to keep track of the progress, problems or ideas you had when working in a script. Use them liberally.</p>
+<p><b>Method</b></p>
+<p>A method is a function that is associated with an object. It is defined inside a class, and it can access and manipulate the attributes and state of the object it is associated with. Methods contain functionality that is often useful for the work you are doing.</p>
+<p><b>Data Structure</b></p>
+<p>In Python (and in computer science in general), a data structure is a way of organizing and storing data in a computer’s memory so that it can be efficiently accessed and modified.</p>
+<p><b>Float</b></p>
+<p>A float (short for “floating-point number”) is a type of numeric data that can represent decimal values.</p>
+<p><b>Function</b></p>
+<p>In Python, a function is a block of organized, reusable code that performs a specific task. Functions provide a way to organize your code into logical, modular chunks that can be easily reused and tested.</p>
+<p>A Python function is defined using the def keyword, followed by the function name, a pair of parentheses (), and a colon :. The code inside the function is indented under the definition line.</p>
+<p><b>Dictionary</b></p>
+<p>A dictionary is a built-in data structure that stores a collection of key-value pairs, where each key is unique. Dictionaries are also commonly known as associative arrays or hash maps. They are similar to lists or arrays in other programming languages, but the elements in a dictionary are accessed via keys rather than an index.</p>
+<p><b>Variable</b></p>
+<p>In Python, a variable is a named location in memory that is used to store a value. A variable can be thought of as a “container” that holds a value, and the value can be of any data type (e.g., a number, a string, a list, etc.).</p>
+<p>To create a variable in Python, you simply give it a name and assign a value to it using the assignment operator (=).</p>
+<p><b>Doc String</b></p>
+<p>A docstring in Python is a string that appears at the top of a module, class, or function definition. Docstrings are used to provide a brief description of what the code does, as well as any information on the arguments, return values, and other details of the code.</p>
+<p><b>Virtual Environment</b></p>
+<p>You may have multiple Python projects happening at once. A virtual environment is a named, isolated copy of Python that has its own files and packages. Anything done inside a virtual environment is specific to that environment and won’t affect any other projects. All the dependencies and packages you install will be sandboxed inside the environment you are using. You should therefore have a separate virtual environment for each separate project.</p>
+<p><b><a class="reference external" href="https://iupac.org/what-we-do/digital-standards/jcamp-dx/">JCAMP–DX</a></b></p>
+<p>IUPAC standard file format for spectral data</p>
 </section>
 </section>
 
