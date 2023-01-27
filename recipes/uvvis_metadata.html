@@ -865,7 +865,7 @@ Markdown (.ipynb)
 </section>
 <section id="data-reporting-using-jupyter-notebook-python">
 <h2>4. Data reporting using Jupyter Notebook (Python)<a class="headerlink" href="#data-reporting-using-jupyter-notebook-python" title="Permalink to this headline">#</a></h2>
-<p>Publication of UV/Vis spectroscopic data for small molecule characterisation typically requires a plot of the spectrum, and accompanying values for 𝜆max and ε. An exemplar procedure for FAIR data reporting using Jupyter Notebook is described below, suitable for a novice user without existing experience in the Python language.</p>
+<p>Publication of UV/Vis spectroscopic data for small molecule characterisation typically requires a plot of the spectrum, and accompanying values for 𝜆_max and ε. An exemplar procedure for FAIR data reporting using Jupyter Notebook is described below, suitable for a novice user without existing experience in the Python language.</p>
 <p>The UV/Vis reference data file ‘sample_data.jdx’ for salicylic acid in JCAMP-DX format is from the NIST Standard Reference Database available from the <a class="reference external" href="https://webbook.nist.gov/">NIST Chemistry WebBook</a>.</p>
 <section id="the-tools">
 <h3>4.1 The tools<a class="headerlink" href="#the-tools" title="Permalink to this headline">#</a></h3>
@@ -903,33 +903,32 @@ Markdown (.ipynb)
 </section>
 <section id="exemplar-code-for-data-reporting">
 <h3>4.2 Exemplar code for data reporting<a class="headerlink" href="#exemplar-code-for-data-reporting" title="Permalink to this headline">#</a></h3>
+<p>First the packages we need are imported into the Jupyter notebook</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; First the packages we need are imported into the jupyter notebook &quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">jcamp</span> <span class="kn">import</span> <span class="n">jcamp_read</span>              <span class="c1"># Importing the jcamp_read() method from the jcamp package</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jcamp</span> <span class="kn">import</span> <span class="n">jcamp_read</span>              <span class="c1"># Importing the jcamp_read() method from the jcamp package</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>           <span class="c1"># Importing a plotting package</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                        <span class="c1"># Import the numerical python package for mathematical operations</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Next, specify the file path that your file is saved at, and use the jcamp_read() method to import the data into your script</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Next, specify the file path that your file is saved at, and use the jcamp_read() method to import the data</span>
-<span class="sd">    into your script &quot;&quot;&quot;</span>
-<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;sample_data.jdx&#39;</span>             <span class="c1"># Replace with your specific file path</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;sample_data.jdx&#39;</span>             <span class="c1"># Replace with your specific file path</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">data_dictionary</span> <span class="o">=</span> <span class="n">jcamp_read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>    <span class="c1"># Store the contents of the jdx file in a python dictionary</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>The data is extracted into a dictionary of key:value pairs. We can quickly see what it contains by
+showing the contents on screen. It’s obvious that the data we need is saved as x and y, however the units
+are nm for x, but logged for y.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; The data is extracted into a dictionary of key:value pairs. We can quickly see what it contains by </span>
-<span class="sd">    showing the contents on screen. Its obvious that the data we need is saved as x and y, however the units</span>
-<span class="sd">    are nm for x, but logged for y. &quot;&quot;&quot;</span>
-<span class="n">data_dictionary</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_dictionary</span> <span class="c1"># Show the contents of the dictionary on screen</span>
 </pre></div>
 </div>
 </div>
@@ -973,25 +972,23 @@ Markdown (.ipynb)
 </div>
 </div>
 </div>
+<p>We will now extract the x and y components from the dictionary. We can specify two variables (which are named
+with descriptive and informative names) that will hold the data associated with x and y</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; We will extract the x and y components from the dictionary. We can specify two variables (which are named</span>
-<span class="sd">    with descriptive and informative names) that will hold the data associated with x and y &quot;&quot;&quot;</span>
-
-<span class="n">wavelength</span> <span class="o">=</span> <span class="n">data_dictionary</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="c1"># Variable named &#39;wavelength&#39; holding x values as seen in dictionary above</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavelength</span> <span class="o">=</span> <span class="n">data_dictionary</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="c1"># Variable named &#39;wavelength&#39; holding x values as seen in dictionary above</span>
 <span class="n">log_epsilon</span> <span class="o">=</span> <span class="n">data_dictionary</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="c1"># Variable named &#39;log_epsilon&#39; holding y values as seen in dictionary above</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Now, plot the results on a graph</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Plot the results on a graph &quot;&quot;&quot;</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">log_epsilon</span><span class="p">)</span>                    <span class="c1"># Plot the two variables as a line graph</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">log_epsilon</span><span class="p">)</span>                    <span class="c1"># Plot the two variables as a line graph</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength (nm)&#39;</span><span class="p">)</span>                          <span class="c1"># Set the name of the x-label</span>
 <span class="c1">#plt.ylabel(&#39;Log r&#39;$\epsilon&#39; (L mol&#39;) )</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Log $\epsilon$ ($L\ mol^{-1}\ cm^{-1}$)&#39;</span><span class="p">)</span>                             <span class="c1"># Set the name of the y-label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Log $\epsilon$ ($L\ mol^{-1}\ cm^{-1}$)&#39;</span><span class="p">)</span> <span class="c1"># Set the name of the y-label</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;UV spectrum of salicyclic acid&#39;</span><span class="p">)</span>          <span class="c1"># Set the title of the graph</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>                                           <span class="c1"># Show grid lines</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                                           <span class="c1"># Plot the graph to the screen</span>
@@ -999,14 +996,13 @@ Markdown (.ipynb)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/uvvis_metadata_13_0.png" src="../_images/uvvis_metadata_13_0.png" />
+<img alt="../_images/uvvis_metadata_18_0.png" src="../_images/uvvis_metadata_18_0.png" />
 </div>
 </div>
+<p>Save the figure</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Save the figure &quot;&quot;&quot;</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;my_figure.png&#39;</span><span class="p">)</span>  <span class="c1"># Saves the figure to your current directory. File path can be updated to suit</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;my_figure.png&#39;</span><span class="p">)</span>  <span class="c1"># Saves the figure to your current directory. File path can be updated to suit</span>
 </pre></div>
 </div>
 </div>
@@ -1016,11 +1012,10 @@ Markdown (.ipynb)
 </div>
 </div>
 </div>
+<p>In this example, for reporting of the molar extinction coefficient (ε) corresponding to 𝜆_max we must first take the antilog</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; For reporting of epsilon value corresponding to lambda max, we must first take the anitlog in this example &quot;&quot;&quot;</span>
-
-<span class="n">epsilon_array</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">log_epsilon</span> <span class="c1"># Create an nd array and assign the antilog of log_epsilon </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epsilon_array</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">log_epsilon</span> <span class="c1"># Create an nd array and assign the antilog of log_epsilon </span>
                                 <span class="c1"># using numpys exp (exponential) method</span>
 
 <span class="n">arg_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">epsilon_array</span><span class="p">)</span> <span class="c1"># Use numpys arg max function to find the index of the largest y value</span>
@@ -1039,12 +1034,10 @@ Markdown (.ipynb)
 </div>
 </div>
 </div>
+<p>Now we create a function to calculate the Beer Lambert law to convert Absorbance (A) to Absorptivity (ε) followed by a line of code to run the function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Function to calculate Beer Lambert law to convert Absorbance (A) to Absorptivity (epsilon) followed</span>
-<span class="sd">    by a line of code to run the function&quot;&quot;&quot;</span>
-
-<span class="k">def</span> <span class="nf">beer_lambert</span><span class="p">(</span><span class="n">absorbance</span><span class="p">,</span> <span class="n">concentration</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">beer_lambert</span><span class="p">(</span><span class="n">absorbance</span><span class="p">,</span> <span class="n">concentration</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Doc String</span>
 <span class="sd">    ----------</span>
