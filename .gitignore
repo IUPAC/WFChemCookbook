@@ -1,4 +1,6 @@
 .idea
+.DS_Store
 book/_build
 book/recipes/hiddensettings.py
 book/howtos/inchikeys.md
+book/.DS_Store
