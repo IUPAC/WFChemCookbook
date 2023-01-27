@@ -8,6 +8,7 @@ parts:
     chapters:
       - file: recipes
         sections:
+          - file: recipes/uvvis_metadata.ipynb
           - file: recipes/goldbook.ipynb
           - file: recipes/opsin.ipynb
           - file: recipes/pubchem-pug-rest1.ipynb
