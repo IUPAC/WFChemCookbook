@@ -131,11 +131,6 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="uvvis_metadata.html">
-     Recipe: Structured UV/Vis (meta)data for small molecule characterisation
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="goldbook.html">
      Recipe: Accessing the IUPAC Gold Book API in Python
     </a>
@@ -278,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../cutlery.html">
-   Tools for Enabling FAIR Data
+   Tools for enabling FAIR Data
   </a>
  </li>
 </ul>
@@ -362,7 +357,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/IUPAC/WFChemCookbook/main?urlpath=tree/book/recipes/computing_inchis.ipynb"
+        <a href="https://mybinder.org/v2/gh/IUPAC/WFChemCookbook/main?urlpath=tree/book/notebooks/computing_inchis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -380,7 +375,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/IUPAC/WFChemCookbook/blob/main/book/recipes/computing_inchis.ipynb"
+        <a href="https://colab.research.google.com/github/IUPAC/WFChemCookbook/blob/main/book/notebooks/computing_inchis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -440,7 +435,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Frecipes/computing_inchis.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/computing_inchis.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -468,7 +463,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/recipes/computing_inchis.ipynb"
+        <a href="../_sources/notebooks/computing_inchis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -693,7 +688,7 @@ title="Print to PDF"
 <li><p>How to load and use Open Babel to obtain and display chemical identifiers</p></li>
 </ul>
 </li>
-<li><p>Citation: ‘Recipe: Computing InChIs’, The IUPAC FAIR Chemistry Cookbook, <a class="reference external" href="https://iupac.github.io/WFChemCookbook/recipes/computing_inchis.html">https://iupac.github.io/WFChemCookbook/recipes/computing_inchis.html</a></p></li>
+<li><p>Citation: ‘Recipe: Computing InChIs’, The IUPAC FAIR Chemistry Cookbook, <a class="reference external" href="https://iupac.github.io/WFChemCookbook/notebooks/computing_inchis.html">https://iupac.github.io/WFChemCookbook/notebooks/computing_inchis.html</a></p></li>
 <li><p>Reuse: this tutorial is included in the IUPAC FAIR Chemistry Cookbook MIT license.</p></li>
 </ul>
 </section>
@@ -741,7 +736,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;rdkit.Chem.rdchem.Mol object at 0x11acc0200&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;rdkit.Chem.rdchem.Mol object at 0x11c17c200&gt;
 </pre></div>
 </div>
 </div>
@@ -815,12 +810,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;rdkit.Chem.rdchem.Mol at 0x11acc0580&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11acc0660&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11acc0a50&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11acc0ac0&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11acc0b30&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11acc0ba0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;rdkit.Chem.rdchem.Mol at 0x11c17c580&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x11c17c660&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x11c17ca50&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x11c17cac0&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x11c17cb30&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x11c17cba0&gt;]
 </pre></div>
 </div>
 </div>
@@ -984,12 +979,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;openbabel.pybel.Molecule at 0x11b3bed10&gt;,
- &lt;openbabel.pybel.Molecule at 0x11b3bee30&gt;,
- &lt;openbabel.pybel.Molecule at 0x11b3bf6d0&gt;,
- &lt;openbabel.pybel.Molecule at 0x11b3bfa60&gt;,
- &lt;openbabel.pybel.Molecule at 0x11b3bf3d0&gt;,
- &lt;openbabel.pybel.Molecule at 0x11b3bead0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;openbabel.pybel.Molecule at 0x11c432c80&gt;,
+ &lt;openbabel.pybel.Molecule at 0x11c432cb0&gt;,
+ &lt;openbabel.pybel.Molecule at 0x11c4332b0&gt;,
+ &lt;openbabel.pybel.Molecule at 0x11c433640&gt;,
+ &lt;openbabel.pybel.Molecule at 0x11c432b30&gt;,
+ &lt;openbabel.pybel.Molecule at 0x11c432d70&gt;]
 </pre></div>
 </div>
 </div>
@@ -1036,7 +1031,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./recipes"
+            path: "./notebooks"
         },
         predefinedOutput: true
     }
