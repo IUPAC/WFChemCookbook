@@ -2,18 +2,19 @@
 
 Learn about the places that have tools, data, code to work with your data.
 
-## Repositories
-- [CommonChemistry](repositories/commonchem.md): Repository of 500,000 chemical substances
-- [Figshare](repositories/figshare.md): General repository for digital research assets
-- [Zenodo](repositories/zenodo.md): General repository for digital research assets
-- [PubChem](repositories/pubchem.md): [Data contributions](https://pubchem.ncbi.nlm.nih.gov/source/) are from collaborations only 
+## General Data Repositories
+- [Figshare](repositories/figshare.md)
+- [Zenodo](repositories/zenodo.md)
 
 ## Chemical Data Websites
-- PubChem
-- ChemSpider
-- MassBank
-- CompTox Dashboard
-- Wikidata
+- [Chemistry Webbook](https://webbook.nist.gov/chemistry/)
+- [ChemSpider](https://www.chemspider.com/)
+- [CommonChemistry](commonchemistry.cas.org/) ([about](repositories/commonchem.md)) - 500,000 chemical substances
+- [CompTox Dashboard](https://comptox.epa.gov/dashboard/)
+- [MassBank](https://mona.fiehnlab.ucdavis.edu/)
+- [PubChem](https://pubchem.ncbi.nlm.nih.gov/) ([about](repositories/pubchem.md)) - 114 million chemical substances  
+  [Data contributions](https://pubchem.ncbi.nlm.nih.gov/source/) mean PubChem is also a repository 
+- [Wikidata](https://www.wikidata.org)
 
 ## Tools
-- OPSIN: Name to identifier (InChI, SMILES, CML) service with API 
+- [OPSIN](https://opsin.ch.cam.ac.uk/): Name to identifier (InChI, SMILES, CML) service with API 

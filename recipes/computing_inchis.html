@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Recipe: Reusing a Chemical Dataset. Part 1- Finding Datasets" href="dataset_search.html" />
+    <link rel="next" title="Recipe: Reusing a Chemical Dataset. Part 1 - Finding Datasets" href="dataset_search.html" />
     <link rel="prev" title="Accessing PubChem through PUG-REST: Part III" href="pubchem-pug-rest3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="dataset_search.html">
-     Recipe: Reusing a Chemical Dataset. Part 1- Finding Datasets
+     Recipe: Reusing a Chemical Dataset. Part 1 - Finding Datasets
     </a>
    </li>
   </ul>
@@ -244,18 +244,6 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  FAIR COOKING
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../school.html">
-   Learn about FAIR Data
-  </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -678,7 +666,7 @@ title="Print to PDF"
 <h1>Recipe: Computing InChIs<a class="headerlink" href="#recipe-computing-inchis" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Author: <a class="reference external" href="https://orcid.org/0000-0002-7363-531X">Vincent Scalfani</a></p></li>
-<li><p>Reviewer:</p></li>
+<li><p>Reviewer: <a class="reference external" href="https://orcid.org/0000-0002-0703-7776">Stuart Chalk</a></p></li>
 <li><p>Topic: How to Calculate InChIs from SMILES Using <a class="reference external" href="https://www.rdkit.org/">RDKit</a> or <a class="reference external" href="https://openbabel.org/wiki/Main_Page">Open Babel</a>
 <em>Adapted from CPCDS 2021 Digital IUPAC Session - 51st IUPAC General Assembly</em></p></li>
 <li><p>Format: Interactive Jupyter Notebook (Python)</p></li>
@@ -694,7 +682,7 @@ title="Print to PDF"
 </ul>
 </li>
 <li><p>Citation: ‘Recipe: Computing InChIs’, The IUPAC FAIR Chemistry Cookbook, <a class="reference external" href="https://iupac.github.io/WFChemCookbook/recipes/computing_inchis.html">https://iupac.github.io/WFChemCookbook/recipes/computing_inchis.html</a></p></li>
-<li><p>Reuse: this tutorial is included in the IUPAC FAIR Chemistry Cookbook MIT license.</p></li>
+<li><p>Reuse: This tutorial is included in the IUPAC FAIR Chemistry Cookbook MIT license.</p></li>
 </ul>
 </section>
 <section id="using-rdkit">
@@ -741,7 +729,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;rdkit.Chem.rdchem.Mol object at 0x11acc0200&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;rdkit.Chem.rdchem.Mol object at 0x12094c200&gt;
 </pre></div>
 </div>
 </div>
@@ -815,12 +803,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;rdkit.Chem.rdchem.Mol at 0x11acc0580&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11acc0660&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11acc0a50&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11acc0ac0&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11acc0b30&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11acc0ba0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;rdkit.Chem.rdchem.Mol at 0x12094c580&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x12094c660&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x12094ca50&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x12094cac0&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x12094cb30&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x12094cba0&gt;]
 </pre></div>
 </div>
 </div>
@@ -984,12 +972,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;openbabel.pybel.Molecule at 0x11b3bed10&gt;,
- &lt;openbabel.pybel.Molecule at 0x11b3bee30&gt;,
- &lt;openbabel.pybel.Molecule at 0x11b3bf6d0&gt;,
- &lt;openbabel.pybel.Molecule at 0x11b3bfa60&gt;,
- &lt;openbabel.pybel.Molecule at 0x11b3bf3d0&gt;,
- &lt;openbabel.pybel.Molecule at 0x11b3bead0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;openbabel.pybel.Molecule at 0x120bfad10&gt;,
+ &lt;openbabel.pybel.Molecule at 0x120bfb1f0&gt;,
+ &lt;openbabel.pybel.Molecule at 0x120bfb700&gt;,
+ &lt;openbabel.pybel.Molecule at 0x120bfba90&gt;,
+ &lt;openbabel.pybel.Molecule at 0x120bfafb0&gt;,
+ &lt;openbabel.pybel.Molecule at 0x120bfab00&gt;]
 </pre></div>
 </div>
 </div>
@@ -1060,7 +1048,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="dataset_search.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Recipe: Reusing a Chemical Dataset. Part 1- Finding Datasets</p>
+        <p class="prev-next-title">Recipe: Reusing a Chemical Dataset. Part 1 - Finding Datasets</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
