@@ -31,9 +31,6 @@ parts:
         - file: repositories/figshare
         - file: repositories/pubchem
         - file: repositories/zenodo
-  - caption: FAIR COOKING
-    chapters:
-    - file: school
   - caption: Ingredients for FAIR Data
     chapters:
     - file: ingredients
