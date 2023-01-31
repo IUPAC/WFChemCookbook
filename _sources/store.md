@@ -9,7 +9,7 @@ Learn about the places that have tools, data, code to work with your data.
 ## Chemical Data Websites
 - [Chemistry Webbook](https://webbook.nist.gov/chemistry/)
 - [ChemSpider](https://www.chemspider.com/)
-- [CommonChemistry](commonchemistry.cas.org/) ([about](repositories/commonchem.md)) - 500,000 chemical substances
+- [CommonChemistry](https://commonchemistry.cas.org/) ([about](repositories/commonchem.md)) - 500,000 chemical substances
 - [CompTox Dashboard](https://comptox.epa.gov/dashboard/)
 - [MassBank](https://mona.fiehnlab.ucdavis.edu/)
 - [PubChem](https://pubchem.ncbi.nlm.nih.gov/) ([about](repositories/pubchem.md)) - 114 million chemical substances  
