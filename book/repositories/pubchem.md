@@ -56,6 +56,6 @@ This paper includes several protocols designed to help users to get familiar wit
 * **Basic Protocol 7**: [Finding compounds annotated with classifications or ontological terms](https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpz1.217#cpz1217-prot-0008)
 * **Basic Protocol 8**: [Finding stereoisomers and isotopomers of a compound through identity search](https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpz1.217#cpz1217-prot-0009)
 
-
 ```{bibliography}
+:filter: docname in docnames
 ```

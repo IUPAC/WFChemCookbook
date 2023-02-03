@@ -10,3 +10,6 @@ This page will contain a full bibliography of resource referenced across the boo
 - {cite:p}`Kim2023`
 - {cite:p}`NIST2022`
 - {cite:p}`Wilkinson2016`
+
+```{bibliography}
+```
