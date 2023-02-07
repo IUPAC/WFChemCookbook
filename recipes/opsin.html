@@ -152,12 +152,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="pubchem-pug-rest2.html">
-     Accessing PubChem through PUG-REST: Part II
+     Recipe: Accessing PubChem through PUG-REST: Part II
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="pubchem-pug-rest3.html">
-     Accessing PubChem through PUG-REST: Part III
+     Recipe: Accessing PubChem through PUG-REST: Part III
     </a>
    </li>
    <li class="toctree-l2">
@@ -516,28 +516,33 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-1-import-the-python-packages-needed-to-run-this-code">
-   Step 1: Import the Python packages needed to run this code
+  <a class="reference internal nav-link" href="#about-opsin">
+   About OPSIN
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-2-call-the-opsin-data-api-and-get-metadata-about-a-compound">
-   Step 2: Call the OPSIN data API and get metadata about a compound
+  <a class="reference internal nav-link" href="#step-1-import-the-python-packages">
+   Step 1: Import the Python packages
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-3-call-the-opsin-image-api-to-see-a-picture-of-the-molecule">
-   Step 3: Call the OPSIN image API to see a picture of the molecule
+  <a class="reference internal nav-link" href="#step-2-call-the-opsin-data-api">
+   Step 2: Call the OPSIN data API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-4-extract-the-formula-of-the-substance-from-a-standard-inchi-string-using-regex">
-   Step 4: Extract the formula of the substance from a standard InChI string using regex
+  <a class="reference internal nav-link" href="#step-3-call-the-opsin-image-api">
+   Step 3: Call the OPSIN image API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-5-try-other-compounds-by-changing-the-value-of-the-name-variable-above-and-rerunning-steps-2-3-and-4">
-   Step 5: Try other compounds by changing the value of the ‘name’ variable above and rerunning steps 2, 3 and 4
+  <a class="reference internal nav-link" href="#step-4-extract-the-formula-of-the-substance">
+   Step 4: Extract the formula of the substance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-try-other-queries">
+   Step 5: Try other queries
   </a>
  </li>
 </ul>
@@ -560,28 +565,33 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-1-import-the-python-packages-needed-to-run-this-code">
-   Step 1: Import the Python packages needed to run this code
+  <a class="reference internal nav-link" href="#about-opsin">
+   About OPSIN
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-2-call-the-opsin-data-api-and-get-metadata-about-a-compound">
-   Step 2: Call the OPSIN data API and get metadata about a compound
+  <a class="reference internal nav-link" href="#step-1-import-the-python-packages">
+   Step 1: Import the Python packages
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-3-call-the-opsin-image-api-to-see-a-picture-of-the-molecule">
-   Step 3: Call the OPSIN image API to see a picture of the molecule
+  <a class="reference internal nav-link" href="#step-2-call-the-opsin-data-api">
+   Step 2: Call the OPSIN data API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-4-extract-the-formula-of-the-substance-from-a-standard-inchi-string-using-regex">
-   Step 4: Extract the formula of the substance from a standard InChI string using regex
+  <a class="reference internal nav-link" href="#step-3-call-the-opsin-image-api">
+   Step 3: Call the OPSIN image API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-5-try-other-compounds-by-changing-the-value-of-the-name-variable-above-and-rerunning-steps-2-3-and-4">
-   Step 5: Try other compounds by changing the value of the ‘name’ variable above and rerunning steps 2, 3 and 4
+  <a class="reference internal nav-link" href="#step-4-extract-the-formula-of-the-substance">
+   Step 4: Extract the formula of the substance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-try-other-queries">
+   Step 5: Try other queries
   </a>
  </li>
 </ul>
@@ -598,10 +608,10 @@ title="Print to PDF"
 <h1>Recipe: Using the OPSIN API in Python<a class="headerlink" href="#recipe-using-the-opsin-api-in-python" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Author: <a class="reference external" href="https://orcid.org/0000-0002-0703-7776">Stuart Chalk</a></p></li>
-<li><p>Reviewer:</p></li>
-<li><p>Topic: How to use the OPSIN API to retrieve chemical identifiers based on IUPAC compound names</p></li>
+<li><p>Reviewer: <a class="reference external" href="https://orcid.org/0000-0001-6513-9140">Jordi Cuadros</a></p></li>
+<li><p>Topic: How to use the OPSIN API to retrieve chemical identifiers and images based on IUPAC compound names</p></li>
 <li><p>Format: Interactive Jupyter Notebook (Python)</p></li>
-<li><p>Target audience: Data scientists interested in chemical identifiers</p></li>
+<li><p>Target audience: Data scientists interested retrieving chemical identifiers or chemical images</p></li>
 <li><p>Skills: You should be familiar with</p>
 <ul>
 <li><p><a class="reference external" href="https://www.ibm.com/topics/api">Application Programming Interfaces (APIs)</a></p></li>
@@ -612,9 +622,9 @@ title="Print to PDF"
 <li><p>Learning outcomes: After completing this example you should understand:</p>
 <ul>
 <li><p>How to write Python code to request data from a URL (typically an API)</p></li>
-<li><p>How to use a Python variable to call an API and download data for the content of the variable</p></li>
+<li><p>How to use a Python variable to dynamically (with different values) call an API</p></li>
 <li><p>How to access an image file from the OPSIN image API</p></li>
-<li><p>How to use regular expressions (regex) to extract data from strings</p></li>
+<li><p>How to use <a class="reference external" href="https://regexone.com/">regular expressions</a> (regex) to extract data from strings</p></li>
 </ul>
 </li>
 <li><p>Citation: ‘Recipe: Using the OPSIN API in Python’, The IUPAC FAIR Chemistry Cookbook, <a class="reference external" href="https://iupac.github.io/WFChemCookbook/recipes/opsin.html">https://iupac.github.io/WFChemCookbook/recipes/opsin.html</a></p></li>
@@ -623,35 +633,46 @@ title="Print to PDF"
 <blockquote>
 <div><p><strong><em>NOTE:</em></strong>  This is an interactive recipe! Run it in Binder or Colab (see rocket icon <img alt="icons" src="../_images/icons.png" /> above)</p>
 </div></blockquote>
-<section id="step-1-import-the-python-packages-needed-to-run-this-code">
-<h2>Step 1: Import the Python packages needed to run this code<a class="headerlink" href="#step-1-import-the-python-packages-needed-to-run-this-code" title="Permalink to this headline">#</a></h2>
+<section id="about-opsin">
+<h2>About OPSIN<a class="headerlink" href="#about-opsin" title="Permalink to this headline">#</a></h2>
+<p>OPSIN is a web tool for converting an IUPAC systematic name into chemical identifiers, chemical markup language (CML) XML and images of molecules.  It is written in Java (GitHub repository) and accessed via a <a class="reference external" href="https://opsin.ch.cam.ac.uk">web form</a> (for humans), or its <a class="reference external" href="https://opsin.ch.cam.ac.uk/instructions.html">API</a> (for machines).  More information about OPSIN can be found here (<a class="reference external" href="https://opsin.ch.cam.ac.uk/information.html">website</a>) or here (<a class="reference external" href="https://pubs.acs.org/articlesonrequest/AOR-PcYgSy87ettZWfqyvHmN">paper</a>).</p>
+</section>
+<section id="step-1-import-the-python-packages">
+<h2>Step 1: Import the Python packages<a class="headerlink" href="#step-1-import-the-python-packages" title="Permalink to this headline">#</a></h2>
+<p>The following Python packages are installed in order to run the Python code.  Any package imported using ‘from’ is code developed by someone from the Python community (and typically made available to the community via <a class="reference external" href="https://pypi.org">pypi.org</a>), while a package imported starting with ‘import’ is native to Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>  <span class="c1"># package to run Python in a Jupyter notebook</span>
-<span class="kn">import</span> <span class="nn">requests</span>                             <span class="c1"># package to get data from a URL</span>
-<span class="kn">import</span> <span class="nn">json</span>                                 <span class="c1"># package to read/write/display JSON</span>
-<span class="kn">import</span> <span class="nn">re</span>                                   <span class="c1"># package to use regular expression (regex) searching</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>            <span class="c1"># package to run Python in a Jupyter notebook</span>
+<span class="kn">import</span> <span class="nn">requests</span>                                       <span class="c1"># package to get data from a URL</span>
+<span class="kn">import</span> <span class="nn">json</span>                                           <span class="c1"># package to read/write/display JSON</span>
+<span class="kn">import</span> <span class="nn">re</span>                                             <span class="c1"># package to use regular expression (regex) searching</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="step-2-call-the-opsin-data-api-and-get-metadata-about-a-compound">
-<h2>Step 2: Call the OPSIN data API and get metadata about a compound<a class="headerlink" href="#step-2-call-the-opsin-data-api-and-get-metadata-about-a-compound" title="Permalink to this headline">#</a></h2>
+<section id="step-2-call-the-opsin-data-api">
+<h2>Step 2: Call the OPSIN data API<a class="headerlink" href="#step-2-call-the-opsin-data-api" title="Permalink to this headline">#</a></h2>
+<p>Calling an OPSIN API involves adding an IUPAC systematic name to the end of the base OPSIN API endpoint (see the path variable).
+The format of the API request is ‘<a class="reference external" href="https://opsin.ch.cam.ac.uk/opsin/">https://opsin.ch.cam.ac.uk/opsin/</a>&lt;systematicname&gt;.json’.  This call returns data as in JSON format
+even if the request does not work. If the request does not work the name provided is either no recognized or is not a systematic name.
+In the example below, the ‘cml’ data in the JSON retrieved is removed to improve the display of the other data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># format of API request is &#39;https://opsin.ch.cam.ac.uk/opsin/&lt;IUPAC compound name&gt;&#39;</span>
-<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;https://opsin.ch.cam.ac.uk/opsin/&quot;</span>  <span class="c1"># URL path to the OPSIN API</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;propan-2-one&quot;</span>                       <span class="c1"># IUPAC name of a chemical compound, ion or element</span>
-<span class="n">reqdata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>         <span class="c1"># get is a method of request data from the OPSIN server</span>
-<span class="n">jsondata</span> <span class="o">=</span> <span class="n">reqdata</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>                   <span class="c1"># get the downloaded JSON</span>
-<span class="k">del</span> <span class="n">jsondata</span><span class="p">[</span><span class="s1">&#39;cml&#39;</span><span class="p">]</span>                         <span class="c1"># remove the cml element of the JSON for nicer display</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">jsondata</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>       <span class="c1"># print the JSON in a nice format</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;https://opsin.ch.cam.ac.uk/opsin/&quot;</span>            <span class="c1"># URL path to the OPSIN API</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;propan-2-one&quot;</span>                                 <span class="c1"># IUPAC name of a chemical compound, ion or element</span>
+<span class="n">apiurl</span> <span class="o">=</span> <span class="n">path</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;.json&#39;</span>                        <span class="c1"># concatenate (join) strings with the &#39;+&#39; operator</span>
+<span class="n">reqdata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">apiurl</span><span class="p">)</span>                        <span class="c1"># get is a method of request data from the OPSIN server</span>
+<span class="n">jsondata</span> <span class="o">=</span> <span class="n">reqdata</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>                             <span class="c1"># get the downloaded JSON</span>
+<span class="k">del</span> <span class="n">jsondata</span><span class="p">[</span><span class="s1">&#39;cml&#39;</span><span class="p">]</span>                                   <span class="c1"># remove the cml element of the JSON for nicer display</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">apiurl</span><span class="p">)</span>                                         <span class="c1"># print out the apiurl (useful as a check if an error is returned)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">jsondata</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>                 <span class="c1"># print the JSON in a nice format</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://opsin.ch.cam.ac.uk/opsin/propan-2-one.json
+{
     &quot;status&quot;: &quot;SUCCESS&quot;,
     &quot;message&quot;: &quot;&quot;,
     &quot;inchi&quot;: &quot;InChI=1/C3H6O/c1-3(2)4/h1-2H3&quot;,
@@ -664,39 +685,45 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="step-3-call-the-opsin-image-api-to-see-a-picture-of-the-molecule">
-<h2>Step 3: Call the OPSIN image API to see a picture of the molecule<a class="headerlink" href="#step-3-call-the-opsin-image-api-to-see-a-picture-of-the-molecule" title="Permalink to this headline">#</a></h2>
+<section id="step-3-call-the-opsin-image-api">
+<h2>Step 3: Call the OPSIN image API<a class="headerlink" href="#step-3-call-the-opsin-image-api" title="Permalink to this headline">#</a></h2>
+<p>To request an image, rather than the JSON data (above), appending ‘.png’ (<a class="reference external" href="https://en.wikipedia.org/wiki/PNG">portable network graphic</a>) or ‘.svg’ (<a class="reference external" href="https://en.wikipedia.org/wiki/SVG">scaled vector graphics</a>) instead of ‘.json’ will send back and image of a molecule if the name can be interpretted. The format of the API request is ‘<a class="reference external" href="https://opsin.ch.cam.ac.uk/opsin/">https://opsin.ch.cam.ac.uk/opsin/</a>&lt;systematicname&gt;.png’ for a ‘.png’ file and ‘<a class="reference external" href="https://opsin.ch.cam.ac.uk/opsin/">https://opsin.ch.cam.ac.uk/opsin/</a>&lt;systematicname&gt;.svg’ for an ‘.svg’ file.</p>
+<p><strong><em>NOTE</em></strong>: Other options for images can be found at the <a class="reference external" href="https://cactus.nci.nih.gov/chemical/structure">Chemical Identifier Resolver</a> from the US NIH, see this blog <a class="reference external" href="https://cactus.nci.nih.gov/blog/?p=136">https://cactus.nci.nih.gov/blog/?p=136</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># format of API request is &#39;https://opsin.ch.cam.ac.uk/opsin/&lt;IUPAC compound name&gt;.png&#39;</span>
-<span class="n">reqimg</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.png&quot;</span><span class="p">)</span> <span class="c1"># request the image of the compound</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reqimg</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.png&quot;</span><span class="p">)</span> <span class="c1"># request the image of the compound</span>
 <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">reqimg</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>              <span class="c1"># display the image</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/opsin_6_0.png" src="../_images/opsin_6_0.png" />
+<img alt="../_images/opsin_7_0.png" src="../_images/opsin_7_0.png" />
 </div>
 </div>
 </section>
-<section id="step-4-extract-the-formula-of-the-substance-from-a-standard-inchi-string-using-regex">
-<h2>Step 4: Extract the formula of the substance from a standard InChI string using regex<a class="headerlink" href="#step-4-extract-the-formula-of-the-substance-from-a-standard-inchi-string-using-regex" title="Permalink to this headline">#</a></h2>
+<section id="step-4-extract-the-formula-of-the-substance">
+<h2>Step 4: Extract the formula of the substance<a class="headerlink" href="#step-4-extract-the-formula-of-the-substance" title="Permalink to this headline">#</a></h2>
+<p>An InChI string contains the molecular formula of the compound as part of the string.  Using regular expressions (formatted strings that match patterns in other text strings), also referred to as ‘regex’, you can find patterns in strings and extract them, or use them to create new strings.  Below, the ‘1S’ part of a standard InChI string is used to anchor a regular expression to match the molecular formula.  The string ‘(.+)’ means “match any character multiple times, in a sequence until you find a ‘)’ character. The ‘?’ is required to stop the regex from being ‘greedy’, matching the string all the way to the last ‘/’ in the InChI string, rather than stopping at the first, like we want.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;1S/(.+?)/&#39;</span><span class="p">,</span> <span class="n">jsondata</span><span class="p">[</span><span class="s1">&#39;stdinchi&#39;</span><span class="p">])</span>   <span class="c1"># match the formula using regex string</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>                                         <span class="c1"># print the first (only) match</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;InchI: &#39;</span> <span class="o">+</span> <span class="n">jsondata</span><span class="p">[</span><span class="s1">&#39;stdinchi&#39;</span><span class="p">])</span>                 <span class="c1"># print the standard inchi</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;1S/(.+?)/&#39;</span><span class="p">,</span> <span class="n">jsondata</span><span class="p">[</span><span class="s1">&#39;stdinchi&#39;</span><span class="p">])</span>   <span class="c1"># match the formula using regex string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Formula: &#39;</span> <span class="o">+</span> <span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>                           <span class="c1"># print the first (only) match</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C3H6O
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>InchI: InChI=1S/C3H6O/c1-3(2)4/h1-2H3
+Formula: C3H6O
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="step-5-try-other-compounds-by-changing-the-value-of-the-name-variable-above-and-rerunning-steps-2-3-and-4">
-<h2>Step 5: Try other compounds by changing the value of the ‘name’ variable above and rerunning steps 2, 3 and 4<a class="headerlink" href="#step-5-try-other-compounds-by-changing-the-value-of-the-name-variable-above-and-rerunning-steps-2-3-and-4" title="Permalink to this headline">#</a></h2>
+<section id="step-5-try-other-queries">
+<h2>Step 5: Try other queries<a class="headerlink" href="#step-5-try-other-queries" title="Permalink to this headline">#</a></h2>
+<p>By changing the value of the ‘name’ variable in Step 2 and rerunning Steps 2, 3 and 4, you can retrieve data, get the image and formula for other molecules.  Try a molecule that is larger like ‘2-[3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-4-methyl-1,3-thiazol-3-ium-5-yl]ethanol’.
+If you delete (or comment out line 6 in the code of Step 2 by putting a ‘# ‘ in front of the code) you will also see the CML XML in the output.</p>
 </section>
 </section>
 
