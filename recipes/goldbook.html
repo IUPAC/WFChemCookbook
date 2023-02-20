@@ -516,13 +516,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-1-import-the-python-packages-needed-to-run-this-code">
-   Step 1: Import the Python packages needed to run this code
+  <a class="reference internal nav-link" href="#step-1-import-needed-python-packages">
+   Step 1: Import needed Python packages
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-2-add-a-function-to-remove-html-tags-from-textual-data">
-   Step 2: Add a function to remove HTML tags from textual data
+  <a class="reference internal nav-link" href="#step-2-add-a-python-function">
+   Step 2: Add a Python function
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -565,13 +565,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-1-import-the-python-packages-needed-to-run-this-code">
-   Step 1: Import the Python packages needed to run this code
+  <a class="reference internal nav-link" href="#step-1-import-needed-python-packages">
+   Step 1: Import needed Python packages
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-2-add-a-function-to-remove-html-tags-from-textual-data">
-   Step 2: Add a function to remove HTML tags from textual data
+  <a class="reference internal nav-link" href="#step-2-add-a-python-function">
+   Step 2: Add a Python function
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -616,9 +616,9 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 <ul class="simple">
 <li><p class="sd-card-text">Author: <a class="reference external" href="https://orcid.org/0000-0002-0703-7776">Stuart Chalk</a></p></li>
 <li><p class="sd-card-text">Reviewer:</p></li>
-<li><p class="sd-card-text">Topics: How to use the IUPAC Gold Book API to retrieve the definition of a chemistry concept</p></li>
+<li><p class="sd-card-text">Topics: The IUPAC Gold Book, APIs, JSON</p></li>
 <li><p class="sd-card-text">Format: Interactive Jupyter Notebook (Python)</p></li>
-<li><p class="sd-card-text">Target audience:</p></li>
+<li><p class="sd-card-text">Scenarios: Add the definition of a chemical concept to a website</p></li>
 <li><p class="sd-card-text">Skills: You should be familiar with</p>
 <ul>
 <li><p class="sd-card-text"><a class="reference external" href="https://www.ibm.com/topics/api">Application Programming Interfaces (APIs)</a></p></li>
@@ -637,8 +637,9 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 <li><p class="sd-card-text">Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
 </ul>
 </div>
-</details><section id="step-1-import-the-python-packages-needed-to-run-this-code">
-<h2>Step 1: Import the Python packages needed to run this code<a class="headerlink" href="#step-1-import-the-python-packages-needed-to-run-this-code" title="Permalink to this headline">#</a></h2>
+</details><section id="step-1-import-needed-python-packages">
+<h2>Step 1: Import needed Python packages<a class="headerlink" href="#step-1-import-needed-python-packages" title="Permalink to this headline">#</a></h2>
+<p>Python has a lot of functionality that can be imported using the import function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>                             <span class="c1"># package to get data from a URL</span>
@@ -649,8 +650,9 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </div>
 </section>
-<section id="step-2-add-a-function-to-remove-html-tags-from-textual-data">
-<h2>Step 2: Add a function to remove HTML tags from textual data<a class="headerlink" href="#step-2-add-a-function-to-remove-html-tags-from-textual-data" title="Permalink to this headline">#</a></h2>
+<section id="step-2-add-a-python-function">
+<h2>Step 2: Add a Python function<a class="headerlink" href="#step-2-add-a-python-function" title="Permalink to this headline">#</a></h2>
+<p>This function removes HTML tags from textual data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Source: https://medium.com/@jorlugaqui/how-to-strip-html-tags-from-a-string-in-python-7cb81a2bbf44</span>
