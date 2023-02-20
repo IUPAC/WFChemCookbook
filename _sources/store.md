@@ -1,6 +1,6 @@
-# Resources to make your data FAIR
+# Places to find and store FAIR data
 
-Learn about the places that have tools, data, code to work with your data.
+Learn about the places where you can find and share/store your FAIR data.
 
 ## General Data Repositories
 - [Figshare](repositories/figshare.md)
