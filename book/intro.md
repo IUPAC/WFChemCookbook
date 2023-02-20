@@ -3,7 +3,7 @@
 The IUPAC FAIR Chemistry Cookbook (FCCB) is intended to be an open, collaborative, community focused 
 resource on how to work with FAIR data in chemistry. FAIR means findable, accessible, interoperable, 
 and reusable and is the new paradigm for how chemists should share their work/data. This resource
-is provided by the Internatinal Union of Pure and Applied Chemistry ([IUPAC](https://iupac.org/)),
+is provided by the International Union of Pure and Applied Chemistry ([IUPAC](https://iupac.org/)),
 a project funded by the EU funded [WorldFAIR project](https://worldfair-project.eu/).
 
 ## How you can help

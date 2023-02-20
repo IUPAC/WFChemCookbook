@@ -31,10 +31,10 @@ parts:
         - file: repositories/figshare
         - file: repositories/pubchem
         - file: repositories/zenodo
-  - caption: Ingredients for FAIR Data
+  - caption: INGREDIENTS
     chapters:
     - file: ingredients
-  - caption: TOOLS
+  - caption: COOKWARE
     chapters:
     - file: cutlery
   - caption: REFERENCE
