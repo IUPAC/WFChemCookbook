@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Make your science FAIRer" href="../howtos.html" />
+    <link rel="next" title="Making your science FAIRer" href="../howtos.html" />
     <link rel="prev" title="Recipe: Computing InChIs" href="computing_inchis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -181,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../howtos.html">
-   Make your science FAIRer
+   Making your science FAIRer
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -196,7 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../howtos/PrepChemicalDataforSharing.html">
-     Prepare Chemical Data for FAIR Sharing - A Minimalist Approach
+     How to: Preparing Chemical Data for FAIR Sharing - A Minimalist Approach
     </a>
    </li>
    <li class="toctree-l2">
@@ -215,7 +215,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../store.html">
-   Resources to make your data FAIR
+   Places to find and store FAIR data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -248,19 +248,19 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Ingredients for FAIR Data
+  INGREDIENTS
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../ingredients.html">
-   Ingredients for FAIR Data
+   Must-haves for FAIR
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  TOOLS
+  COOKWARE
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -634,31 +634,39 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="recipe-finding-a-findable-dataset">
 <h1>Recipe: Finding a Findable Dataset<a class="headerlink" href="#recipe-finding-a-findable-dataset" title="Permalink to this headline">#</a></h1>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
-<li><p>Author: <a class="reference external" href="https://orcid.org/0000-0002-0703-7776">Stuart Chalk</a></p></li>
-<li><p>Reviewer:</p></li>
-<li><p>Topic: How and where to find a ‘findable’ chemical database</p></li>
-<li><p>Format: Interactive Jupyter Notebook (Python)</p></li>
-<li><p>Target audience:</p></li>
-<li><p>Skills: You should be familiar with</p>
+<li><p class="sd-card-text">Author: <a class="reference external" href="https://orcid.org/0000-0002-0703-7776">Stuart Chalk</a></p></li>
+<li><p class="sd-card-text">Reviewer:</p></li>
+<li><p class="sd-card-text">Topic: How and where to find a ‘findable’ chemical database</p></li>
+<li><p class="sd-card-text">Format: Interactive Jupyter Notebook (Python)</p></li>
+<li><p class="sd-card-text">Target audience:</p></li>
+<li><p class="sd-card-text">Skills: You should be familiar with</p>
 <ul>
-<li><p><a class="reference external" href="https://www.ibm.com/topics/api">Application Programming Interfaces (APIs)</a></p></li>
-<li><p><a class="reference external" href="https://doi.org/10.1515/pac-2021-3013">Working with a data model</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=iiADhChRriM">Introductory JSON</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://www.ibm.com/topics/api">Application Programming Interfaces (APIs)</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://doi.org/10.1515/pac-2021-3013">Working with a data model</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://www.youtube.com/watch?v=iiADhChRriM">Introductory JSON</a></p></li>
 </ul>
 </li>
-<li><p>Learning outcomes: After completing this example you should understand:</p>
+<li><p class="sd-card-text">Learning outcomes: After completing this example you should understand:</p>
 <ul>
-<li><p>How to make a request to a website using the Python ‘requests’ functionality</p></li>
-<li><p>Retrieve data in JSON format and how to parse it (knowing the data model)</p></li>
-<li><p>How to store confidential data in a remote file</p></li>
-<li><p>How programmtically you can authenticate to an API (one of many ways)</p></li>
+<li><p class="sd-card-text">How to make a request to a website using the Python ‘requests’ functionality</p></li>
+<li><p class="sd-card-text">Retrieve data in JSON format and how to parse it (knowing the data model)</p></li>
+<li><p class="sd-card-text">How to store confidential data in a remote file</p></li>
+<li><p class="sd-card-text">How programmtically you can authenticate to an API (one of many ways)</p></li>
 </ul>
 </li>
-<li><p>Citation: ‘Recipe: Finding a Findable Dataset’, The IUPAC FAIR Chemistry Cookbook, <a class="reference external" href="https://iupac.github.io/WFChemCookbook/recipes/dataset_search.html">https://iupac.github.io/WFChemCookbook/recipes/dataset_search.html</a></p></li>
-<li><p>Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
+<li><p class="sd-card-text">Citation: ‘Recipe: Finding a Findable Dataset’, The IUPAC FAIR Chemistry Cookbook, <a class="reference external" href="https://iupac.github.io/WFChemCookbook/recipes/dataset_search.html">https://iupac.github.io/WFChemCookbook/recipes/dataset_search.html</a></p></li>
+<li><p class="sd-card-text">Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
 </ul>
-<section id="scenario">
+</div>
+</details><section id="scenario">
 <h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">#</a></h2>
 <p>Our group has a set of thermophysical data on over 8000 chemical substances.  We want to integrate into this dataset another physical property dataset so that we can do an analysis of the correlations of the thermophysical data with the chosen physical property of the substances (that are common to both sets).</p>
 <p>Criteria for picking the physical property dataset: high quality, trusted, large, available with an open license, so I can publish the results and make the derived dataset open.</p>
@@ -1093,7 +1101,7 @@ related resources.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;success&#39;: True, &#39;jwt&#39;: &#39;eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMzBmOGNjYS1jNzY3LTRkMGQtYjZmMC04ODIwODEwNGIzNzYiLCJzdWIiOiI4NTA5Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjc2OTIxMDkzLCJleHAiOjE2NzcwMDc0OTN9.lgKufFuy_j9cvLrJSmw_mkjTAi0oVjiFwvfA3rH27uA&#39;, &#39;username&#39;: &#39;ChemCookbook&#39;, &#39;id&#39;: 8509, &#39;role&#39;: &#39;user&#39;, &#39;profile_type&#39;: &#39;none&#39;, &#39;watched_records&#39;: [], &#39;is_curator&#39;: False, &#39;is_super_curator&#39;: False, &#39;third_party&#39;: False, &#39;expiry&#39;: 1677007493, &#39;message&#39;: &#39;Authentication successful&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;success&#39;: True, &#39;jwt&#39;: &#39;eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMzBmOGNjYS1jNzY3LTRkMGQtYjZmMC04ODIwODEwNGIzNzYiLCJzdWIiOiI4NTA5Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjc2OTI0MjgzLCJleHAiOjE2NzcwMTA2ODN9.sDeaqPq1j7BVismxhBhQJkmKLcXNpZvOQl3WA__m7As&#39;, &#39;username&#39;: &#39;ChemCookbook&#39;, &#39;id&#39;: 8509, &#39;role&#39;: &#39;user&#39;, &#39;profile_type&#39;: &#39;none&#39;, &#39;watched_records&#39;: [], &#39;is_curator&#39;: False, &#39;is_super_curator&#39;: False, &#39;third_party&#39;: False, &#39;expiry&#39;: 1677010683, &#39;message&#39;: &#39;Authentication successful&#39;}
 </pre></div>
 </div>
 </div>
@@ -2045,7 +2053,7 @@ FAIRsharing record for: Network for the Detection of Atmospheric Composition Cha
     <a class='right-next' id="next-link" href="../howtos.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Make your science FAIRer</p>
+        <p class="prev-next-title">Making your science FAIRer</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

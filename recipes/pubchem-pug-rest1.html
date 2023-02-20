@@ -181,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../howtos.html">
-   Make your science FAIRer
+   Making your science FAIRer
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -196,7 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../howtos/PrepChemicalDataforSharing.html">
-     Prepare Chemical Data for FAIR Sharing - A Minimalist Approach
+     How to: Preparing Chemical Data for FAIR Sharing - A Minimalist Approach
     </a>
    </li>
    <li class="toctree-l2">
@@ -215,7 +215,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../store.html">
-   Resources to make your data FAIR
+   Places to find and store FAIR data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -248,19 +248,19 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Ingredients for FAIR Data
+  INGREDIENTS
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../ingredients.html">
-   Ingredients for FAIR Data
+   Must-haves for FAIR
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  TOOLS
+  COOKWARE
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -515,32 +515,27 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Recipe: Accessing PubChem through PUG-REST - Part I
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-syntax-of-pug-rest-request-url">
    1. Basic Syntax of PUG-REST Request URL
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#import-the-python-packages-needed-to-run-this-code">
      1. Import the Python packages needed to run this code
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#construct-a-pug-rest-api-and-retrieve-data">
      2. Construct a PUG-REST API and retrieve data
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#getting-computed-molecular-properties">
      3. Getting Computed Molecular Properties
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#getting-chemical-structures">
      4. Getting Chemical Structures
     </a>
@@ -566,32 +561,27 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Recipe: Accessing PubChem through PUG-REST - Part I
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-syntax-of-pug-rest-request-url">
    1. Basic Syntax of PUG-REST Request URL
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#import-the-python-packages-needed-to-run-this-code">
      1. Import the Python packages needed to run this code
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#construct-a-pug-rest-api-and-retrieve-data">
      2. Construct a PUG-REST API and retrieve data
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#getting-computed-molecular-properties">
      3. Getting Computed Molecular Properties
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#getting-chemical-structures">
      4. Getting Chemical Structures
     </a>
@@ -608,22 +598,29 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="recipe-accessing-pubchem-through-pug-rest-part-i">
+  <section class="tex2jax_ignore mathjax_ignore" id="recipe-accessing-pubchem-through-pug-rest-part-i">
 <h1>Recipe: Accessing PubChem through PUG-REST - Part I<a class="headerlink" href="#recipe-accessing-pubchem-through-pug-rest-part-i" title="Permalink to this headline">#</a></h1>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
-<li><p>Author: <a class="reference external" href="https://orcid.org/0000-0001-9828-2074">Sunghwan Kim</a></p></li>
-<li><p>Reviewer:</p></li>
-<li><p>Topic: Accessing the PubChem REST API to access chemical data</p></li>
-<li><p>Format: Interactive Jupyter Notebook (Python)</p></li>
-<li><p>Target audience:</p></li>
-<li><p>Skills:</p></li>
-<li><p>Learning outcomes:</p></li>
-<li><p>Citation: ‘Recipe: Accessing PubChem through PUG-REST - Part I’, The IUPAC FAIR Chemistry Cookbook, <a class="reference external" href="https://iupac.github.io/WFChemCookbook/recipes/pubchem-pug-rest1.html">https://iupac.github.io/WFChemCookbook/recipes/pubchem-pug-rest1.html</a></p></li>
-<li><p>Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
+<li><p class="sd-card-text">Author: <a class="reference external" href="https://orcid.org/0000-0001-9828-2074">Sunghwan Kim</a></p></li>
+<li><p class="sd-card-text">Reviewer:</p></li>
+<li><p class="sd-card-text">Topics:</p></li>
+<li><p class="sd-card-text">Format: Interactive Jupyter Notebook (Python)</p></li>
+<li><p class="sd-card-text">Scenarios:</p></li>
+<li><p class="sd-card-text">Skills:</p></li>
+<li><p class="sd-card-text">Learning outcomes:</p></li>
+<li><p class="sd-card-text">Citation: ‘Recipe: Accessing PubChem through PUG-REST - Part I’, The IUPAC FAIR Chemistry Cookbook, <a class="reference external" href="https://iupac.github.io/WFChemCookbook/recipes/pubchem-pug-rest1.html">https://iupac.github.io/WFChemCookbook/recipes/pubchem-pug-rest1.html</a></p></li>
+<li><p class="sd-card-text">Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
 </ul>
-</section>
-<section id="basic-syntax-of-pug-rest-request-url">
-<h1>1. Basic Syntax of PUG-REST Request URL<a class="headerlink" href="#basic-syntax-of-pug-rest-request-url" title="Permalink to this headline">#</a></h1>
+</div>
+</details><section id="basic-syntax-of-pug-rest-request-url">
+<h2>1. Basic Syntax of PUG-REST Request URL<a class="headerlink" href="#basic-syntax-of-pug-rest-request-url" title="Permalink to this headline">#</a></h2>
 <p>A detailed description of the PUG-REST Request URL syntax can be found in the PUG-REST help page (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest">https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest</a>).</p>
 <p>A PUG-REST request url consists of four parts:</p>
 <ul class="simple">
@@ -634,7 +631,7 @@ title="Print to PDF"
 </ul>
 <p>The following example shows how to formulate a four-component PUG-REST Request URL to get the molecular formula of CID 2244 (aspirin) in TXT.</p>
 <section id="import-the-python-packages-needed-to-run-this-code">
-<h2>1. Import the Python packages needed to run this code<a class="headerlink" href="#import-the-python-packages-needed-to-run-this-code" title="Permalink to this headline">#</a></h2>
+<h3>1. Import the Python packages needed to run this code<a class="headerlink" href="#import-the-python-packages-needed-to-run-this-code" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -646,7 +643,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="construct-a-pug-rest-api-and-retrieve-data">
-<h2>2. Construct a PUG-REST API and retrieve data<a class="headerlink" href="#construct-a-pug-rest-api-and-retrieve-data" title="Permalink to this headline">#</a></h2>
+<h3>2. Construct a PUG-REST API and retrieve data<a class="headerlink" href="#construct-a-pug-rest-api-and-retrieve-data" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pugrest_prolog</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;</span>
@@ -701,7 +698,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="getting-computed-molecular-properties">
-<h2>3. Getting Computed Molecular Properties<a class="headerlink" href="#getting-computed-molecular-properties" title="Permalink to this headline">#</a></h2>
+<h3>3. Getting Computed Molecular Properties<a class="headerlink" href="#getting-computed-molecular-properties" title="Permalink to this headline">#</a></h3>
 <p>Various kinds of <strong>computed</strong> molecular properties, such as molecular weight, hydrogen-bond donor and acceptor counts, heavy atom count, XLogP, and Topological polar surface area (TPSA) are available through PUG-REST as shown below.  A complete list of the computed molecular properties available through PUG-REST can be found at the PUG-REST help page (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest">https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest</a>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -727,9 +724,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MolecularWeight  : 180.16
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HBondDonorCount  : 1
+HBondDonorCount  : 1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HBondAcceptorCoun: 4
@@ -780,7 +775,7 @@ title="Print to PDF"
 <p>The returned CSV output can be opened in a spreadsheet program (e.g., Microsoft Excel or GoogleSheet).</p>
 </section>
 <section id="getting-chemical-structures">
-<h2>4. Getting Chemical Structures<a class="headerlink" href="#getting-chemical-structures" title="Permalink to this headline">#</a></h2>
+<h3>4. Getting Chemical Structures<a class="headerlink" href="#getting-chemical-structures" title="Permalink to this headline">#</a></h3>
 <p>Through PUG-REST, you can get the structure of a molecule in several formats:</p>
 <ul class="simple">
 <li><p>line notations (SMILES, InChI, and InChIKey)</p></li>
@@ -812,7 +807,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>InChI           : InChI=1S/C22H28FN3O6S/c1-13(2)20-18(10-9-16(27)11-17(28)12-19(29)30)21(14-5-7-15(23)8-6-14)25-22(24-20)26(3)33(4,31)32/h5-10,13,16-17,27-28H,11-12H2,1-4H3,(H,29,30)/b10-9+/t16-,17-/m1/s1
-InChIKey        : BPRHUIZQVSMCRT-VEUZHWNKSA-N
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>InChIKey        : BPRHUIZQVSMCRT-VEUZHWNKSA-N
 </pre></div>
 </div>
 </div>
@@ -896,6 +893,7 @@ InChIKey        : BPRHUIZQVSMCRT-VEUZHWNKSA-N
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
