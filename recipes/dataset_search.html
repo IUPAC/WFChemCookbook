@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Recipe: Reusing a Chemical Dataset. Part 1 - Finding Datasets &#8212; IUPAC FAIR Chemistry Cookbook</title>
+    <title>Recipe: Finding a Findable Dataset &#8212; IUPAC FAIR Chemistry Cookbook</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Recipe: Reusing a Chemical Dataset. Part 1 - Finding Datasets
+     Recipe: Finding a Findable Dataset
     </a>
    </li>
   </ul>
@@ -568,7 +568,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Recipe: Reusing a Chemical Dataset. Part 1 - Finding Datasets</h1>
+                <h1>Recipe: Finding a Findable Dataset</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -632,12 +632,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="recipe-reusing-a-chemical-dataset-part-1-finding-datasets">
-<h1>Recipe: Reusing a Chemical Dataset. Part 1 - Finding Datasets<a class="headerlink" href="#recipe-reusing-a-chemical-dataset-part-1-finding-datasets" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="recipe-finding-a-findable-dataset">
+<h1>Recipe: Finding a Findable Dataset<a class="headerlink" href="#recipe-finding-a-findable-dataset" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Author: <a class="reference external" href="https://orcid.org/0000-0002-0703-7776">Stuart Chalk</a></p></li>
 <li><p>Reviewer:</p></li>
-<li><p>Topic: How to reuse a chemical database</p></li>
+<li><p>Topic: How and where to find a ‘findable’ chemical database</p></li>
 <li><p>Format: Interactive Jupyter Notebook (Python)</p></li>
 <li><p>Target audience:</p></li>
 <li><p>Skills: You should be familiar with</p>
@@ -655,8 +655,8 @@ title="Print to PDF"
 <li><p>How programmtically you can authenticate to an API (one of many ways)</p></li>
 </ul>
 </li>
-<li><p>Citation: ‘Recipe: Reusing a Chemical Dataset. Part 1 - Finding Datasets’, The IUPAC FAIR Chemistry Cookbook, <a class="reference external" href="https://iupac.github.io/WFChemCookbook/recipes/dataset_search.html">https://iupac.github.io/WFChemCookbook/recipes/dataset_search.html</a></p></li>
-<li><p>Reuse: This notebook is made available under the IUPAC FAIR Chemistry Cookbook MIT license.</p></li>
+<li><p>Citation: ‘Recipe: Finding a Findable Dataset’, The IUPAC FAIR Chemistry Cookbook, <a class="reference external" href="https://iupac.github.io/WFChemCookbook/recipes/dataset_search.html">https://iupac.github.io/WFChemCookbook/recipes/dataset_search.html</a></p></li>
+<li><p>Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
 </ul>
 <section id="scenario">
 <h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">#</a></h2>
@@ -750,7 +750,7 @@ PubChem to include data, in one of a couple of ways:</p>
     },
     {
         &quot;name&quot;: &quot;Cell Line Ontology (CLO)&quot;,
-        &quot;url&quot;: &quot;http://www.clo-ontology.org/&quot;
+        &quot;url&quot;: &quot;https://github.com/CLO-Ontology/CLO&quot;
     },
     {
         &quot;name&quot;: &quot;Cell Ontology (CL)&quot;,
@@ -787,6 +787,10 @@ PubChem to include data, in one of a couple of ways:</p>
     {
         &quot;name&quot;: &quot;COVID-19 Disease Map&quot;,
         &quot;url&quot;: &quot;https://covid.pages.uni.lu/&quot;
+    },
+    {
+        &quot;name&quot;: &quot;Database of Interacting Proteins (DIP)&quot;,
+        &quot;url&quot;: &quot;https://dip.doe-mbi.ucla.edu/&quot;
     },
     {
         &quot;name&quot;: &quot;Drug Gene Interaction database (DGIdb)&quot;,
@@ -1089,7 +1093,7 @@ related resources.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;success&#39;: True, &#39;jwt&#39;: &#39;eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMzBmOGNjYS1jNzY3LTRkMGQtYjZmMC04ODIwODEwNGIzNzYiLCJzdWIiOiI4NTA5Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjc1ODAzNzMzLCJleHAiOjE2NzU4OTAxMzN9.luJ5r_v5suXxisuilx-qxtqdL4sd1FCGfH4DIOiRipA&#39;, &#39;username&#39;: &#39;ChemCookbook&#39;, &#39;id&#39;: 8509, &#39;role&#39;: &#39;user&#39;, &#39;profile_type&#39;: &#39;none&#39;, &#39;watched_records&#39;: [], &#39;is_curator&#39;: False, &#39;is_super_curator&#39;: False, &#39;third_party&#39;: False, &#39;expiry&#39;: 1675890133, &#39;message&#39;: &#39;Authentication successful&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;success&#39;: True, &#39;jwt&#39;: &#39;eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMzBmOGNjYS1jNzY3LTRkMGQtYjZmMC04ODIwODEwNGIzNzYiLCJzdWIiOiI4NTA5Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjc2OTE3MDQzLCJleHAiOjE2NzcwMDM0NDN9.PICGW2hePIX1MKu_5bMCtsf7iV72WGS-Z-E-sKo6jA0&#39;, &#39;username&#39;: &#39;ChemCookbook&#39;, &#39;id&#39;: 8509, &#39;role&#39;: &#39;user&#39;, &#39;profile_type&#39;: &#39;none&#39;, &#39;watched_records&#39;: [], &#39;is_curator&#39;: False, &#39;is_super_curator&#39;: False, &#39;third_party&#39;: False, &#39;expiry&#39;: 1677003443, &#39;message&#39;: &#39;Authentication successful&#39;}
 </pre></div>
 </div>
 </div>
@@ -1980,13 +1984,13 @@ FAIRsharing record for: Beilstein Journal of Organic Chemistry: https://fairshar
 FAIRsharing record for: ioChem-BD: https://fairsharing.org/10.25504/FAIRsharing.lwW6a1
 FAIRsharing record for: MINAS - A Database of Metal Ions in Nucleic AcidS: https://fairsharing.org/10.25504/FAIRsharing.wqtfkv
 FAIRsharing record for: ChemSpider: https://fairsharing.org/10.25504/FAIRsharing.96f3gm
-FAIRsharing record for: Chemical Markup Language: https://fairsharing.org/10.25504/FAIRsharing.3mdt9n
 FAIRsharing record for: mzTab for Metabolomics: https://fairsharing.org/fairsharing_records/831
+FAIRsharing record for: Chemical Markup Language: https://fairsharing.org/10.25504/FAIRsharing.3mdt9n
 FAIRsharing record for: CAS Registry Number: https://fairsharing.org/10.25504/FAIRsharing.r7Kwy7
-FAIRsharing record for: IUPAC International Chemical Identifier: https://fairsharing.org/10.25504/FAIRsharing.ddk9t9
 FAIRsharing record for: CHARMM Card File Format: https://fairsharing.org/10.25504/FAIRsharing.7hp91k
-FAIRsharing record for: MolMeDB: Molecules on Membranes Database: https://fairsharing.org/10.25504/FAIRsharing.CWzk3C
+FAIRsharing record for: IUPAC International Chemical Identifier: https://fairsharing.org/10.25504/FAIRsharing.ddk9t9
 FAIRsharing record for: Swedish Ocean Archive: https://fairsharing.org/10.25504/FAIRsharing.npf403
+FAIRsharing record for: MolMeDB: Molecules on Membranes Database: https://fairsharing.org/10.25504/FAIRsharing.CWzk3C
 FAIRsharing record for: Chemical Methods Ontology: https://fairsharing.org/10.25504/FAIRsharing.9j4wh2
 FAIRsharing record for: Name Reaction Ontology: https://fairsharing.org/10.25504/FAIRsharing.w4tncg
 FAIRsharing record for: Dot Bracket Notation (DBN) - Vienna Format: https://fairsharing.org/10.25504/FAIRsharing.4xrzw1
