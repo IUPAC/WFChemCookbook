@@ -1,6 +1,6 @@
 # How to: Preparing Chemical Data for FAIR Sharing - A Minimalist Approach
 
-```{dropdown} About this interactive ![icons](../images/rocket.png) recipe
+```{dropdown} About this how to
 - Author: [Ye Li](https://orcid.org/0000-0001-8361-6916)
 - Reviewer:
 - Topics: Chemical data, FAIR, formatting
