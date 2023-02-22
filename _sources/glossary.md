@@ -76,7 +76,7 @@ examples and addition entries as needed.  Terms marked [RDA] are found/derived f
   or by use of referencing attributes describing its properties.
 - _Digital Object Identifier (DOI)_ - 
   A unique character string form of a persistent identifier, such as "10.1515/pac-2021-2009" (more precisely referred to as 
-  a DOI Name) that can be part of a URL such as “https://doi.org/10.1515/pac-2021-2009”. The distribution and management of 
+  a DOI Name) that can be part of a URL such as "https://doi.org/10.1515/pac-2021-2009". The distribution and management of 
   DOIs are carried out by a federation of registration agencies under the auspices of the International DOI Foundation.
 - _FAIR Data Management_ - 
   Data management based on the FAIR (Findable, Accessible, Interoperable, and Reusable) Guiding Principles, recognizing 
