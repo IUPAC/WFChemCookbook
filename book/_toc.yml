@@ -25,7 +25,7 @@ parts:
         - file: howtos/learn_spectra
   - caption: PANTRY
     chapters:
-    - file: store
+    - file: pantry
       sections:
         - file: repositories/commonchem
         - file: repositories/figshare
@@ -36,7 +36,7 @@ parts:
     - file: ingredients
   - caption: COOKWARE
     chapters:
-    - file: cutlery
+    - file: cookware
   - caption: REFERENCE
     chapters:
     - file: about
