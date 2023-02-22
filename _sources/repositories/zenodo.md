@@ -1,6 +1,6 @@
 # Repository: Zenodo
 
-- Website: https://zenodo.com
+- Website: https://zenodo.org
 - Type: General repository for datasets and software
 - Organization: [CERN Data Centre](https://home.cern/science/computing/data-centre) & [Invenio](https://inveniosoftware.org/)
 - Features: Adds a DOI (from DataCite) to each version of an item in the repository, 
