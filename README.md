@@ -10,3 +10,9 @@ The contents of this repository are designed to use the [Jupyter Book](https://j
 ## Developer instructions
 
 See the [contributing guide](./CONTRIBUTING.md).
+
+## About this project 
+
+The Committee on Data of the International Science Council ([CODATA](https://codata.org/)) and the Research Data Alliance ([RDA](https://rd-alliance.org/)) have recently launched the [WorldFAIR Initiative](https://worldfair-project.eu/) to advance implementation of the [FAIR data principles](https://force11.org/info/the-fair-data-principles/) within and across research domains. The International Union of Pure and Applied Chemistry ([IUPAC](https://iupac.org/)), known as the world authority on chemical nomenclature, terminology, and standardized methods of measurement, is leading the [WorldFAIR Chemistry project](https://iupac.org/project/2022-012-1-024) in a concerted effort through collaboration with related disciplines and data science communities to support broader data sharing of chemical data. The goal of WorldFAIR Chemistry is to support the use of chemical data standards in research workflows to enable downstream data reuse through practical direction and resources.
+
+*WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41 Coordination and Support Action under Grant Agreement No. 101058393.*
