@@ -4,9 +4,6 @@
 format: jb-book
 root: intro
 parts:
- - caption: SAMPLER EDITION 
-    chapters: 
-      - file: sampler
  - caption: RECIPES
     chapters:
       - file: recipes
