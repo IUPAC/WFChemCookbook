@@ -20,7 +20,7 @@ parts:
           - file: howtos/learn_spectra
  - caption: FUTURE CONTENTS
     chapters: 
-      - file: culinary
+      - file: school
       - file: ingredients
       - file: recipes
       - file: kitchen
