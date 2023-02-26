@@ -1,11 +1,6 @@
 # About this Project
 
-This website is the product of the WorldFAIR D3.2 project, one of three deliverables under WP3 developed by the 
-International Union of Pure and Applied Chemistry ([IUPAC](https://iupac.org/)) for the 
-[WorldFAIR](https://worldfair-project.eu/) project. The IUPAC FAIR Chemistry Cookbook is intended to support the 
-chemistry community in understanding what FAIR is and how chemists can be enabled to be FAIRer moving forward. In 
-addition, the site is intended to be a living resource by addition of new content as the area of FAIR evolves and 
-encouraging the chemistry community to contribute new content.
+This website is the product of the [WorldFAIR D3.2 project](https://iupac.org/project/2022-028-1-024/), one of three deliverables under the [Chemistry case study](https://worldfair-project.eu/case-studies-of-worldfair/#chemistry) developed by the IUPAC Committee on Publications and Cheminformatics Data Standards [(CPCDS]([https://iupac.org/](https://iupac.org/body/024/)) for the [WorldFAIR initiative](https://worldfair-project.eu/) (see below). The IUPAC FAIR Chemistry Cookbook is intended to support the broader community in understanding how to implement the FAIR data principles for chemical data. The site is designed to be a living resource through the addition of new content as strategies for implementing FAIR evolve and the sharing and reuse of FAIR chemical data continues to increase.
 
 ## WorldFAIR D3.2 Objective
 FAIR chemical data needs to be machine-readable, and this can be an unfamiliar scenario for many researchers and other 
