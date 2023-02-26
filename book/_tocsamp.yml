@@ -1,0 +1,36 @@
+# Table of contents sampler edition 
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+ - caption: SAMPLER EDITION 
+    chapters: 
+      - file: sampler
+ - caption: SAMPLE RECIPES
+    chapters:
+      - file: recipes
+        sections:
+          - file: recipes/uvvis_metadata.ipynb
+          - file: recipes/goldbook.ipynb
+          - file: recipes/opsin.ipynb
+          - file: recipes/pubchem-pug-rest1.ipynb
+          - file: recipes/pubchem-pug-rest2.ipynb
+          - file: recipes/pubchem-pug-rest3.ipynb
+          - file: recipes/computing_inchis.ipynb
+          - file: recipes/dataset_search.ipynb
+          - file: howtos/PrepChemicalDataforSharing
+ - caption: FUTURE CONTENTS
+    chapters: 
+      - file: culinary
+      - file: ingredients
+      - file: recipes
+      - file: kitchen
+      - file: pantry
+      - file: cookware
+      - file: menus 
+  - caption: REFERENCE
+    chapters:
+    - file: about
+    - file: glossary
+    - file: bibliography
