@@ -17,6 +17,7 @@ parts:
           - file: recipes/computing_inchis.ipynb
           - file: recipes/dataset_search.ipynb
           - file: howtos/PrepChemicalDataforSharing
+          - file: howtos/learn_spectra
  - caption: FUTURE CONTENTS
     chapters: 
       - file: culinary
