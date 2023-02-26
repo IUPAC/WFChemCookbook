@@ -7,6 +7,7 @@ The IUPAC FAIR Chemistry Cookbook is intended to be an open, collaborative, comm
 ## Using the Cookbook
 
 [use cases]
+[Jupyter notebooks]
 [interactive recipes]
 [headers]
 [skills]
