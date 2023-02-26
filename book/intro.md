@@ -4,3 +4,15 @@ The IUPAC FAIR Chemistry Cookbook is intended to be an open, collaborative, comm
 
 *WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41 Coordination and Support Action under Grant Agreement No. 101058393.*
 
+## Using the Cookbook
+
+[use cases]
+[interactive recipes]
+[headers]
+[skills]
+[learning objectives]
+[disclaimer] 
+
+## Contributing to the Cookbook
+* Feedback & Suggestions
+* [Join the team!]
