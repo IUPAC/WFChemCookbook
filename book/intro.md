@@ -14,5 +14,5 @@ The IUPAC FAIR Chemistry Cookbook is intended to be an open, collaborative, comm
 [disclaimer] 
 
 ## Contributing to the Cookbook
-* [Feedback & Suggestions](https://github.com/IUPAC/WFChemCookbook/issues/new/choose) 
-* [Join the team!]
+
+We welcome [feedback & suggestions](https://github.com/IUPAC/WFChemCookbook/issues/new/choose) for additional content. 
