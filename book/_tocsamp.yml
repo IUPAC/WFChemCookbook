@@ -3,13 +3,10 @@
 
 format: jb-book
 root: intro
-parts:
- - caption: SAMPLER EDITION 
-    chapters: 
-      - file: sampler
+parts: 
  - caption: SAMPLE RECIPES
     chapters:
-      - file: recipes
+      - file: sampler
         sections:
           - file: recipes/uvvis_metadata.ipynb
           - file: recipes/goldbook.ipynb
