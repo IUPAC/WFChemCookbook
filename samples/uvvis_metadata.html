@@ -870,22 +870,9 @@ Markdown (.ipynb)
 <p>First the packages we need are imported into the Jupyter notebook</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
-from jcamp import jcamp_read              # Importing the jcamp_read() method from the jcamp package
-import matplotlib.pyplot as plt           # Importing a plotting package
-import numpy as np                        # Import the numerical python package for mathematical operations
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">jcamp</span> <span class="kn">import</span> <span class="n">jcamp_read</span>              <span class="c1"># Importing the jcamp_read() method from the jcamp package</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>           <span class="c1"># Importing a plotting package</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                        <span class="c1"># Import the numerical python package for mathematical operations</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;jcamp&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jcamp</span> <span class="kn">import</span> <span class="n">jcamp_read</span>              <span class="c1"># Importing the jcamp_read() method from the jcamp package</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>           <span class="c1"># Importing a plotting package</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                        <span class="c1"># Import the numerical python package for mathematical operations</span>
 </pre></div>
 </div>
 </div>
@@ -893,9 +880,9 @@ import numpy as np                        # Import the numerical python package 
 <p>Next, specify the file path that your file is saved at, and use the jcamp_read() method to import the data into your script</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>file_path = &#39;sample_data.jdx&#39;             # Replace with your specific file path
-with open(file_path, &#39;r&#39;) as file:
-    data_dictionary = jcamp_read(file)    # Store the contents of the jdx file in a python dictionary
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;sample_data.jdx&#39;</span>             <span class="c1"># Replace with your specific file path</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">data_dictionary</span> <span class="o">=</span> <span class="n">jcamp_read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>    <span class="c1"># Store the contents of the jdx file in a python dictionary</span>
 </pre></div>
 </div>
 </div>
@@ -905,7 +892,7 @@ showing the contents on screen. It’s obvious that the data we need is saved as
 are nm for x, but logged for y.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>data_dictionary # Show the contents of the dictionary on screen
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_dictionary</span> <span class="c1"># Show the contents of the dictionary on screen</span>
 </pre></div>
 </div>
 </div>
@@ -953,8 +940,8 @@ are nm for x, but logged for y.</p>
 with descriptive and informative names) that will hold the data associated with x and y</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>wavelength = data_dictionary[&#39;x&#39;] # Variable named &#39;wavelength&#39; holding x values as seen in dictionary above
-log_epsilon = data_dictionary[&#39;y&#39;] # Variable named &#39;log_epsilon&#39; holding y values as seen in dictionary above
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavelength</span> <span class="o">=</span> <span class="n">data_dictionary</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="c1"># Variable named &#39;wavelength&#39; holding x values as seen in dictionary above</span>
+<span class="n">log_epsilon</span> <span class="o">=</span> <span class="n">data_dictionary</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="c1"># Variable named &#39;log_epsilon&#39; holding y values as seen in dictionary above</span>
 </pre></div>
 </div>
 </div>
@@ -962,13 +949,13 @@ log_epsilon = data_dictionary[&#39;y&#39;] # Variable named &#39;log_epsilon&#39
 <p>Now, plot the results on a graph</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>plt.plot(wavelength, log_epsilon)                    # Plot the two variables as a line graph
-plt.xlabel(&#39;Wavelength (nm)&#39;)                          # Set the name of the x-label
-#plt.ylabel(&#39;Log r&#39;$\epsilon&#39; (L mol&#39;) )
-plt.ylabel(r&#39;Log $\epsilon$ ($L\ mol^{-1}\ cm^{-1}$)&#39;) # Set the name of the y-label
-plt.title(&#39;UV spectrum of salicyclic acid&#39;)          # Set the title of the graph
-plt.grid()                                           # Show grid lines
-plt.show()                                           # Plot the graph to the screen
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">log_epsilon</span><span class="p">)</span>                    <span class="c1"># Plot the two variables as a line graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength (nm)&#39;</span><span class="p">)</span>                          <span class="c1"># Set the name of the x-label</span>
+<span class="c1">#plt.ylabel(&#39;Log r&#39;$\epsilon&#39; (L mol&#39;) )</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Log $\epsilon$ ($L\ mol^{-1}\ cm^{-1}$)&#39;</span><span class="p">)</span> <span class="c1"># Set the name of the y-label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;UV spectrum of salicyclic acid&#39;</span><span class="p">)</span>          <span class="c1"># Set the title of the graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>                                           <span class="c1"># Show grid lines</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                                           <span class="c1"># Plot the graph to the screen</span>
 </pre></div>
 </div>
 </div>
@@ -979,12 +966,12 @@ plt.show()                                           # Plot the graph to the scr
 <p>Save the figure</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>plt.savefig(&#39;my_figure.png&#39;)  # Saves the figure to your current directory. File path can be updated to suit
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;my_figure.png&#39;</span><span class="p">)</span>  <span class="c1"># Saves the figure to your current directory. File path can be updated to suit</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -992,15 +979,15 @@ plt.show()                                           # Plot the graph to the scr
 <p>In this example, for reporting of the molar extinction coefficient (ε) corresponding to 𝜆_max we must first take the antilog</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>epsilon_array = 10**log_epsilon # Create an nd array and assign the antilog of log_epsilon 
-                                # using numpys exp (exponential) method
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epsilon_array</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">log_epsilon</span> <span class="c1"># Create an nd array and assign the antilog of log_epsilon </span>
+                                <span class="c1"># using numpys exp (exponential) method</span>
 
-arg_max = np.argmax(epsilon_array) # Use numpys arg max function to find the index of the largest y value
-lambda_max = wavelength[arg_max] # Use this index to find the x value at max y
-epsilon = epsilon_array[arg_max] # Find epsilon at this index 
+<span class="n">arg_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">epsilon_array</span><span class="p">)</span> <span class="c1"># Use numpys arg max function to find the index of the largest y value</span>
+<span class="n">lambda_max</span> <span class="o">=</span> <span class="n">wavelength</span><span class="p">[</span><span class="n">arg_max</span><span class="p">]</span> <span class="c1"># Use this index to find the x value at max y</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon_array</span><span class="p">[</span><span class="n">arg_max</span><span class="p">]</span> <span class="c1"># Find epsilon at this index </span>
 
-print(f&quot;{lambda_max:.1f} nm&quot;) # Printing output to screen to 1 d.p including proper units
-print(f&#39;{epsilon:.1f} L mol-1 cm-1&#39;) # Printing output to screen to 1 d.p including units 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lambda_max</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> nm&quot;</span><span class="p">)</span> <span class="c1"># Printing output to screen to 1 d.p including proper units</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">epsilon</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> L mol-1 cm-1&#39;</span><span class="p">)</span> <span class="c1"># Printing output to screen to 1 d.p including units </span>
 </pre></div>
 </div>
 </div>
@@ -1014,41 +1001,41 @@ print(f&#39;{epsilon:.1f} L mol-1 cm-1&#39;) # Printing output to screen to 1 d.
 <p>Now we create a function to calculate the Beer Lambert law to convert Absorbance (A) to Absorptivity (ε) followed by a line of code to run the function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def beer_lambert(absorbance, concentration, length):
-    &quot;&quot;&quot;
-    Doc String
-    ----------
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">beer_lambert</span><span class="p">(</span><span class="n">absorbance</span><span class="p">,</span> <span class="n">concentration</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Doc String</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    Calculates the molar absorptivity (epsilon) using the Beer-Lambert Law.</span>
+<span class="sd">    </span>
+<span class="sd">    The Beer-Lambert Law states that the absorbance (Absorbance) of a solution is directly proportional </span>
+<span class="sd">    to the concentration (concentration) of the absorbing species and the path length (length) of the </span>
+<span class="sd">    light through the solution. </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    </span>
+<span class="sd">        absorbance (float): The measured absorbance of the solution</span>
+<span class="sd">        concentration (float): The concentration of the absorbing species in the solution, in molar</span>
+<span class="sd">        length (float): The path length of the light through the solution, in cm.</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    </span>
+<span class="sd">        epsilon (float): The molar absorptivity of the solution</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
     
-    Calculates the molar absorptivity (epsilon) using the Beer-Lambert Law.
+    <span class="n">epsilon</span> <span class="o">=</span> <span class="n">absorbance</span><span class="o">/</span><span class="p">(</span><span class="n">concentration</span><span class="o">*</span><span class="n">length</span><span class="p">)</span>
     
-    The Beer-Lambert Law states that the absorbance (Absorbance) of a solution is directly proportional 
-    to the concentration (concentration) of the absorbing species and the path length (length) of the 
-    light through the solution. 
-    
-    Parameters:
-    -----------
-    
-        absorbance (float): The measured absorbance of the solution
-        concentration (float): The concentration of the absorbing species in the solution, in molar
-        length (float): The path length of the light through the solution, in cm.
-        
-    Returns:
-    --------
-    
-        epsilon (float): The molar absorptivity of the solution
-    
-    &quot;&quot;&quot;
-    
-    epsilon = absorbance/(concentration*length)
-    
-    return epsilon
+    <span class="k">return</span> <span class="n">epsilon</span>
 
-absorbance = 1 # Edit to your own value
-concentration = 2 # Edit to your own value
-length = 3 # Edit to your own value
+<span class="n">absorbance</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Edit to your own value</span>
+<span class="n">concentration</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># Edit to your own value</span>
+<span class="n">length</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># Edit to your own value</span>
 
-epsilon = beer_lambert(absorbance, concentration, length) # Replace each of the parameters absorbance, 
-                                                          # concentration and length with your own numbers.
+<span class="n">epsilon</span> <span class="o">=</span> <span class="n">beer_lambert</span><span class="p">(</span><span class="n">absorbance</span><span class="p">,</span> <span class="n">concentration</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span> <span class="c1"># Replace each of the parameters absorbance, </span>
+                                                          <span class="c1"># concentration and length with your own numbers.</span>
 </pre></div>
 </div>
 </div>
@@ -1096,7 +1083,7 @@ epsilon = beer_lambert(absorbance, concentration, length) # Replace each of the 
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./samples"
         },
         predefinedOutput: true

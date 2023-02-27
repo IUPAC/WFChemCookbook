@@ -584,11 +584,11 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </details><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import requests
-import time
-import io
-import csv
-from IPython.display import Image, display
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
 </pre></div>
 </div>
 </div>
@@ -597,8 +597,8 @@ from IPython.display import Image, display
 <h2>1. Using a SMILES or InChI string as an input query<a class="headerlink" href="#using-a-smiles-or-inchi-string-as-an-input-query" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>smiles = &quot;CC(=O)OC1=CC=CC=C1C(=O)O&quot;
-print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/&quot; + smiles + &quot;/cids/txt&quot;).text.strip())
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC(=O)OC1=CC=CC=C1C(=O)O&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/&quot;</span> <span class="o">+</span> <span class="n">smiles</span> <span class="o">+</span> <span class="s2">&quot;/cids/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -611,8 +611,8 @@ print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smil
 <p>Some SMILES strings contain characters not compatible with the PUG-REST request URL syntax.  For example, isomeric SMILES uses the “/” character (forward slash) to represent the E/Z or cis/trans stereochemistry of a molecule.  However, because the “/” character is also used in the request URL to separate the segments of the URL path, the use of such SMILES strings as an input structure will result an error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>smiles = &quot;CC(C)C1=NC(=NC(=C1/C=C/[C@H](C[C@H](CC(=O)O)O)O)C2=CC=C(C=C2)F)N(C)S(=O)(=O)C&quot;
-print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/&quot; + smiles + &quot;/cids/txt&quot;).text.strip())
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC(C)C1=NC(=NC(=C1/C=C/[C@H](C[C@H](CC(=O)O)O)O)C2=CC=C(C=C2)F)N(C)S(=O)(=O)C&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/&quot;</span> <span class="o">+</span> <span class="n">smiles</span> <span class="o">+</span> <span class="s2">&quot;/cids/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -639,13 +639,13 @@ Detail:
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>smiles = &quot;CC(C)C1=NC(=NC(=C1/C=C/[C@H](C[C@H](CC(=O)O)O)O)C2=CC=C(C=C2)F)N(C)S(=O)(=O)C&quot;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC(C)C1=NC(=NC(=C1/C=C/[C@H](C[C@H](CC(=O)O)O)O)C2=CC=C(C=C2)F)N(C)S(=O)(=O)C&quot;</span>
 
-# As a URL parameter
-print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/txt&quot; + &quot;?smiles=&quot; + smiles).text.strip())
+<span class="c1"># As a URL parameter</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/txt&quot;</span> <span class="o">+</span> <span class="s2">&quot;?smiles=&quot;</span> <span class="o">+</span> <span class="n">smiles</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-# In the HTTP header (using HTTP Post)
-print(requests.post(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/txt&quot;, data={&#39;smiles&#39;:smiles}).text.strip())
+<span class="c1"># In the HTTP header (using HTTP Post)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/txt&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -661,16 +661,16 @@ print(requests.post(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smi
 <p>InChI encodes the chemical structure information into multiple layers and sublayers, separated by the “/” character.  For this reason, InChI strings should also be provided as a URL parameter or in the HTTP header (using HTTP host).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>inchi = &quot;InChI=1S/C9H8O4/c1-6(10)13-8-5-3-2-4-7(8)9(11)12/h2-5H,1H3,(H,11,12)&quot;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inchi</span> <span class="o">=</span> <span class="s2">&quot;InChI=1S/C9H8O4/c1-6(10)13-8-5-3-2-4-7(8)9(11)12/h2-5H,1H3,(H,11,12)&quot;</span>
 
-# With the request URL : WILL NOT WORK
-#print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/inchi/&quot; + inchi + &quot;/cids/txt&quot;).text.strip())
+<span class="c1"># With the request URL : WILL NOT WORK</span>
+<span class="c1">#print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/inchi/&quot; + inchi + &quot;/cids/txt&quot;).text.strip())</span>
 
-# As a URL parameter
-print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/inchi/cids/txt&quot; + &quot;?inchi=&quot; + inchi).text.strip())
+<span class="c1"># As a URL parameter</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/inchi/cids/txt&quot;</span> <span class="o">+</span> <span class="s2">&quot;?inchi=&quot;</span> <span class="o">+</span> <span class="n">inchi</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-# In the HTTP header (using HTTP Post)
-print(requests.post(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/inchi/cids/txt&quot;, data={&#39;inchi&#39;:inchi}).text.strip())
+<span class="c1"># In the HTTP header (using HTTP Post)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/inchi/cids/txt&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;inchi&#39;</span><span class="p">:</span><span class="n">inchi</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -688,16 +688,16 @@ print(requests.post(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/inc
 <h2>2. Performing identity search<a class="headerlink" href="#performing-identity-search" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>smiles = &quot;CC(C)/C=C/I&quot;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC(C)/C=C/I&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Compounds with the same stereochemistry and isotopism (default)
-print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/cid/14571425/cids/txt&quot;).text.strip())
-print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/cid/14571425/cids/txt?identity_type=same_stereo_isotope&quot;).text.strip())
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compounds with the same stereochemistry and isotopism (default)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/cid/14571425/cids/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/cid/14571425/cids/txt?identity_type=same_stereo_isotope&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -712,14 +712,14 @@ print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fast
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Compounds with the same isotopism (stereochemistry can be different)
-cids1 = requests.post(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/smiles/cids/txt?identity_type=same_isotope&quot;, data={&#39;smiles&#39;:smiles}).text.strip().split()
-print(cids1)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compounds with the same isotopism (stereochemistry can be different)</span>
+<span class="n">cids1</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/smiles/cids/txt?identity_type=same_isotope&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids1</span><span class="p">)</span>
 
-for mycid in cids1:
-    display(Image(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot; + mycid + &quot;/record/PNG?image_size=200x200&quot;).content))
-    print(&quot;CID &quot; + mycid, &quot;:&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot; + mycid + &quot;/property/IsomericSMILES/TXT&quot;).text)
-    time.sleep(0.2)
+<span class="k">for</span> <span class="n">mycid</span> <span class="ow">in</span> <span class="n">cids1</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">mycid</span> <span class="o">+</span> <span class="s2">&quot;/record/PNG?image_size=200x200&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CID &quot;</span> <span class="o">+</span> <span class="n">mycid</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">mycid</span> <span class="o">+</span> <span class="s2">&quot;/property/IsomericSMILES/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -743,14 +743,14 @@ for mycid in cids1:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Compounds with the same stereochemistry (isotopism can be different)
-cids2 = requests.post(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/smiles/cids/txt?identity_type=same_stereo&quot;, data={&#39;smiles&#39;:smiles}).text.strip().split()
-print(cids2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compounds with the same stereochemistry (isotopism can be different)</span>
+<span class="n">cids2</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/smiles/cids/txt?identity_type=same_stereo&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids2</span><span class="p">)</span>
 
-for mycid in cids2:
-    display(Image(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot; + mycid + &quot;/record/PNG?image_size=200x200&quot;).content))
-    print(&quot;CID &quot; + mycid, &quot;:&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot; + mycid + &quot;/property/IsomericSMILES/TXT&quot;).text)
-    time.sleep(0.2)
+<span class="k">for</span> <span class="n">mycid</span> <span class="ow">in</span> <span class="n">cids2</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">mycid</span> <span class="o">+</span> <span class="s2">&quot;/record/PNG?image_size=200x200&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CID &quot;</span> <span class="o">+</span> <span class="n">mycid</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">mycid</span> <span class="o">+</span> <span class="s2">&quot;/property/IsomericSMILES/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -770,9 +770,9 @@ for mycid in cids2:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Compounds with the same connectivity (stereochemistry and isotopism can be different)
-cids3 = requests.post(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/smiles/cids/txt?identity_type=same_connectivity&quot;, data={&#39;smiles&#39;:smiles}).text.strip().split()
-print(cids3)    # All compounds in cids1 and cids2 are returned.
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compounds with the same connectivity (stereochemistry and isotopism can be different)</span>
+<span class="n">cids3</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/smiles/cids/txt?identity_type=same_connectivity&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids3</span><span class="p">)</span>    <span class="c1"># All compounds in cids1 and cids2 are returned.</span>
 </pre></div>
 </div>
 </div>
@@ -787,16 +787,16 @@ print(cids3)    # All compounds in cids1 and cids2 are returned.
 <h2>3. Performing 2-D and 3-D similarity search<a class="headerlink" href="#performing-2-d-and-3-d-similarity-search" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>smiles = &quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-cids = requests.post(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsimilarity_2d/smiles/cids/txt&quot;, data={&#39;smiles&#39;:smiles}).text.strip().split()
-print(len(cids))
-print(cids)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsimilarity_2d/smiles/cids/txt&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>125
-[&#39;155903259&#39;, &#39;163421961&#39;, &#39;166157269&#39;, &#39;166157215&#39;, &#39;166157194&#39;, &#39;166157043&#39;, &#39;166157017&#39;, &#39;166156836&#39;, &#39;166156828&#39;, &#39;166156664&#39;, &#39;166149137&#39;, &#39;166149094&#39;, &#39;166149089&#39;, &#39;166149077&#39;, &#39;166149074&#39;, &#39;166149071&#39;, &#39;166149062&#39;, &#39;165179488&#39;, &#39;165179486&#39;, &#39;165179485&#39;, &#39;165179472&#39;, &#39;164971185&#39;, &#39;164850071&#39;, &#39;164785132&#39;, &#39;164766041&#39;, &#39;164766036&#39;, &#39;164701821&#39;, &#39;164701819&#39;, &#39;164701818&#39;, &#39;164701817&#39;, &#39;164701816&#39;, &#39;164701815&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701807&#39;, &#39;164701805&#39;, &#39;164701800&#39;, &#39;164701794&#39;, &#39;164701789&#39;, &#39;164701777&#39;, &#39;164701776&#39;, &#39;164701775&#39;, &#39;164701773&#39;, &#39;164701772&#39;, &#39;164701766&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;164701757&#39;, &#39;164701749&#39;, &#39;164701748&#39;, &#39;164701743&#39;, &#39;164701742&#39;, &#39;164701741&#39;, &#39;164701738&#39;, &#39;164701736&#39;, &#39;164701733&#39;, &#39;164159966&#39;, &#39;164158215&#39;, &#39;164040179&#39;, &#39;163941851&#39;, &#39;163362031&#39;, &#39;163362029&#39;, &#39;163362026&#39;, &#39;163362016&#39;, &#39;163362014&#39;, &#39;163362009&#39;, &#39;163362008&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361998&#39;, &#39;163361997&#39;, &#39;163361849&#39;, &#39;163283407&#39;, &#39;163283390&#39;, &#39;163283387&#39;, &#39;163283371&#39;, &#39;163283370&#39;, &#39;163283343&#39;, &#39;163283330&#39;, &#39;163283322&#39;, &#39;163283284&#39;, &#39;163283243&#39;, &#39;163283239&#39;, &#39;163283238&#39;, &#39;163283236&#39;, &#39;162479130&#39;, &#39;162478807&#39;, &#39;162396459&#39;, &#39;162396458&#39;, &#39;162396453&#39;, &#39;162396452&#39;, &#39;162396372&#39;, &#39;166157205&#39;, &#39;166157157&#39;, &#39;166157065&#39;, &#39;166157057&#39;, &#39;166157023&#39;, &#39;166156829&#39;, &#39;166149063&#39;, &#39;164850290&#39;, &#39;164850073&#39;, &#39;164701802&#39;, &#39;164701798&#39;, &#39;163362019&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;163283283&#39;, &#39;162712506&#39;, &#39;162712498&#39;, &#39;162712490&#39;, &#39;162712489&#39;, &#39;162712482&#39;, &#39;162712471&#39;, &#39;162712468&#39;, &#39;162712462&#39;, &#39;162712460&#39;, &#39;162685338&#39;, &#39;162396461&#39;, &#39;162396460&#39;, &#39;162396450&#39;, &#39;162396442&#39;, &#39;157010397&#39;, &#39;166494662&#39;, &#39;166494843&#39;, &#39;166537627&#39;]
+[&#39;155903259&#39;, &#39;163421961&#39;, &#39;166157269&#39;, &#39;166157215&#39;, &#39;166157194&#39;, &#39;166157043&#39;, &#39;166157017&#39;, &#39;166156836&#39;, &#39;166156828&#39;, &#39;166156664&#39;, &#39;166149137&#39;, &#39;166149094&#39;, &#39;166149089&#39;, &#39;166149077&#39;, &#39;166149074&#39;, &#39;166149071&#39;, &#39;166149062&#39;, &#39;165179488&#39;, &#39;165179486&#39;, &#39;165179485&#39;, &#39;165179472&#39;, &#39;164971185&#39;, &#39;164850071&#39;, &#39;164785132&#39;, &#39;164766041&#39;, &#39;164766036&#39;, &#39;164701821&#39;, &#39;164701819&#39;, &#39;164701818&#39;, &#39;164701817&#39;, &#39;164701816&#39;, &#39;164701815&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701807&#39;, &#39;164701805&#39;, &#39;164701800&#39;, &#39;164701794&#39;, &#39;164701789&#39;, &#39;164701777&#39;, &#39;164701776&#39;, &#39;164701775&#39;, &#39;164701773&#39;, &#39;164701772&#39;, &#39;164701766&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;164701757&#39;, &#39;164701749&#39;, &#39;164701748&#39;, &#39;164701743&#39;, &#39;164701742&#39;, &#39;164701741&#39;, &#39;164701738&#39;, &#39;164701736&#39;, &#39;164701733&#39;, &#39;164159966&#39;, &#39;164158215&#39;, &#39;164040179&#39;, &#39;163941851&#39;, &#39;163362031&#39;, &#39;163362029&#39;, &#39;163362026&#39;, &#39;163362016&#39;, &#39;163362014&#39;, &#39;163362009&#39;, &#39;163362008&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361998&#39;, &#39;163361997&#39;, &#39;163361849&#39;, &#39;163283407&#39;, &#39;163283390&#39;, &#39;163283387&#39;, &#39;163283371&#39;, &#39;163283370&#39;, &#39;163283343&#39;, &#39;163283330&#39;, &#39;163283322&#39;, &#39;163283284&#39;, &#39;163283243&#39;, &#39;163283239&#39;, &#39;163283238&#39;, &#39;163283236&#39;, &#39;162479130&#39;, &#39;162478807&#39;, &#39;162396459&#39;, &#39;162396458&#39;, &#39;162396453&#39;, &#39;162396452&#39;, &#39;162396372&#39;, &#39;166537627&#39;, &#39;166494843&#39;, &#39;166494662&#39;, &#39;166157205&#39;, &#39;166157157&#39;, &#39;166157065&#39;, &#39;166157057&#39;, &#39;166157023&#39;, &#39;166156829&#39;, &#39;166149063&#39;, &#39;164850290&#39;, &#39;164850073&#39;, &#39;164701802&#39;, &#39;164701798&#39;, &#39;163362019&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;163283283&#39;, &#39;162712506&#39;, &#39;162712498&#39;, &#39;162712490&#39;, &#39;162712489&#39;, &#39;162712482&#39;, &#39;162712471&#39;, &#39;162712468&#39;, &#39;162712462&#39;, &#39;162712460&#39;, &#39;162685338&#39;, &#39;162396461&#39;, &#39;162396460&#39;, &#39;162396450&#39;, &#39;162396442&#39;, &#39;157010397&#39;]
 </pre></div>
 </div>
 </div>
@@ -804,10 +804,10 @@ print(cids)
 <p>You can adjust the similarity threshold using the optional parameter “<strong>Threshold</strong>”.  T The following request performs a 2-D similarity search with a tighter similarity threshold (95)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>smiles = &quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-cids = requests.post(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsimilarity_2d/smiles/cids/txt?Threshold=99&quot;, data={&#39;smiles&#39;:smiles}).text.strip().split()
-print(len(cids))
-print(cids)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsimilarity_2d/smiles/cids/txt?Threshold=99&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -822,8 +822,8 @@ print(cids)
 <p>It is also possible to get line notations and molecular properties for the compounds returned from chemical structure search.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>data = requests.post(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsimilarity_2d/smiles/property/HeavyAtomCount,MolecularFormula,IsomericSMILES/csv?Threshold=99&quot;, data={&#39;smiles&#39;:smiles}).text.strip()
-print(data)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsimilarity_2d/smiles/property/HeavyAtomCount,MolecularFormula,IsomericSMILES/csv?Threshold=99&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -850,10 +850,10 @@ print(data)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>smiles = &quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-cids = requests.post(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsimilarity_3d/smiles/cids/txt&quot;, data={&#39;smiles&#39;:smiles}).text.strip().split()
-print(len(cids))
-print(cids)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsimilarity_3d/smiles/cids/txt&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -870,9 +870,9 @@ print(cids)
 <h2>5. Performing substructure/superstructure search<a class="headerlink" href="#performing-substructure-superstructure-search" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>smiles = &quot;C2CN=C(C1=C(C=CC=C1)N2)C3=CC=CC=C3&quot;
-cids = requests.post(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsubstructure/smiles/cids/txt&quot;, data={&#39;smiles&#39;:smiles}).text.strip().split()
-print(len(cids))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;C2CN=C(C1=C(C=CC=C1)N2)C3=CC=CC=C3&quot;</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsubstructure/smiles/cids/txt&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -884,9 +884,9 @@ print(len(cids))
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>smiles = &quot;C2CN=C(C1=C(C=CC=C1)N2)C3=CC=CC=C3&quot;
-cids = requests.post(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsuperstructure/smiles/cids/txt&quot;, data={&#39;smiles&#39;:smiles}).text.strip().split()
-print(len(cids))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;C2CN=C(C1=C(C=CC=C1)N2)C3=CC=CC=C3&quot;</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsuperstructure/smiles/cids/txt&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -901,9 +901,9 @@ print(len(cids))
 <h2>7. Molecular Formula search<a class="headerlink" href="#molecular-formula-search" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>formula = &quot;C6H12O6&quot;
-cids = requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastformula/&quot; + formula +&quot;/cids/txt&quot;).text.strip().split()
-print(len(cids))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">formula</span> <span class="o">=</span> <span class="s2">&quot;C6H12O6&quot;</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastformula/&quot;</span> <span class="o">+</span> <span class="n">formula</span> <span class="o">+</span><span class="s2">&quot;/cids/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -916,23 +916,23 @@ print(len(cids))
 <p>You can download the structural information for the compounds returned from the molecular formula search.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>data = requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastformula/&quot; + formula +&quot;/property/MolecularFormula,IsomericSMILES/CSV&quot;).text.strip()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastformula/&quot;</span> <span class="o">+</span> <span class="n">formula</span> <span class="o">+</span><span class="s2">&quot;/property/MolecularFormula,IsomericSMILES/CSV&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
-cid_props = {}
-reader = csv.reader(io.StringIO(data))
-print(next(reader))  # Print the first line (column header)
+<span class="n">cid_props</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">reader</span><span class="p">))</span>  <span class="c1"># Print the first line (column header)</span>
 
-for row in reader:
-    key = row[0]
-    cid_props[key] = row[1:]
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cid_props</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 
-count = 0
-for item in cid_props:
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cid_props</span><span class="p">:</span>
     
-    count += 1
-    print(item, &quot;\t&quot;, cid_props[item][0], &quot;\t&quot;, cid_props[item][1])
-    if count == 10 :  # For simplicity, print only the first 10 items.
-        break
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cid_props</span><span class="p">[</span><span class="n">item</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cid_props</span><span class="p">[</span><span class="n">item</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">:</span>  <span class="c1"># For simplicity, print only the first 10 items.</span>
+        <span class="k">break</span>
 </pre></div>
 </div>
 </div>
@@ -954,8 +954,8 @@ for item in cid_props:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>cids = requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastformula/&quot; + formula +&quot;/cids/txt?AllowOtherElements=True&quot;).text.strip().split()
-print(len(cids))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastformula/&quot;</span> <span class="o">+</span> <span class="n">formula</span> <span class="o">+</span><span class="s2">&quot;/cids/txt?AllowOtherElements=True&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -967,23 +967,23 @@ print(len(cids))
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>data = requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastformula/&quot; + formula +&quot;/property/MolecularFormula,IsomericSMILES/CSV?AllowOtherElements=True&quot;).text.strip()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastformula/&quot;</span> <span class="o">+</span> <span class="n">formula</span> <span class="o">+</span><span class="s2">&quot;/property/MolecularFormula,IsomericSMILES/CSV?AllowOtherElements=True&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
-cid_props = {}
-reader = csv.reader(io.StringIO(data))
-print(next(reader))  # Print the first line (column header)
+<span class="n">cid_props</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">reader</span><span class="p">))</span>  <span class="c1"># Print the first line (column header)</span>
 
-for row in reader:
-    key = row[0]
-    cid_props[key] = row[1:]
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cid_props</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 
-count = 0
-for item in cid_props:
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cid_props</span><span class="p">:</span>
     
-    count += 1
-    print(item, &quot;\t&quot;, cid_props[item][0], &quot;\t&quot;, cid_props[item][1])
-    if count == 10 :  # For simplicity, print only the first 10 items.
-        break
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cid_props</span><span class="p">[</span><span class="n">item</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cid_props</span><span class="p">[</span><span class="n">item</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">:</span>  <span class="c1"># For simplicity, print only the first 10 items.</span>
+        <span class="k">break</span>
 </pre></div>
 </div>
 </div>
@@ -1018,7 +1018,7 @@ for item in cid_props:
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./samples"
         },
         predefinedOutput: true

@@ -655,12 +655,12 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 <h3>1.1 Import RDKit Modules<a class="headerlink" href="#import-rdkit-modules" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from rdkit import Chem
-from rdkit.Chem import Draw
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">Draw</span>
 
-# RDKit Version
-from rdkit import rdBase
-print(rdBase.rdkitVersion)
+<span class="c1"># RDKit Version</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">rdBase</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rdBase</span><span class="o">.</span><span class="n">rdkitVersion</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -675,9 +675,9 @@ print(rdBase.rdkitVersion)
 <h3>1.2 Create a Molecular Object from SMILES<a class="headerlink" href="#create-a-molecular-object-from-smiles" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># PubChem CID: 134601
-m = Chem.MolFromSmiles(&#39;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@H](CC(=O)O)N&#39;)
-m
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PubChem CID: 134601</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@H](CC(=O)O)N&#39;</span><span class="p">)</span>
+<span class="n">m</span>
 </pre></div>
 </div>
 </div>
@@ -687,13 +687,13 @@ m
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Internally, we have created an RDKit molecular object
-print(m)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Internally, we have created an RDKit molecular object</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;rdkit.Chem.rdchem.Mol object at 0x11c45e2d0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;rdkit.Chem.rdchem.Mol object at 0x126818580&gt;
 </pre></div>
 </div>
 </div>
@@ -703,7 +703,7 @@ print(m)
 <h3>1.3 Calculate InChI<a class="headerlink" href="#calculate-inchi" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>Chem.MolToInchi(m)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchi</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -715,7 +715,7 @@ print(m)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>Chem.MolToInchiKey(m)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchiKey</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -730,12 +730,12 @@ print(m)
 <h3>1.4 Calculate InChIs for a List of Molecules<a class="headerlink" href="#calculate-inchis-for-a-list-of-molecules" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Import a file of SMILES
-smiles_list = []
-with open(&#39;my_smiles.smi&#39;) as infile:
-     for smi in infile:
-            smiles_list.append(smi.rstrip()) # rstrip removes newline
-print(smiles_list)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a file of SMILES</span>
+<span class="n">smiles_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_smiles.smi&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+     <span class="k">for</span> <span class="n">smi</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+            <span class="n">smiles_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smi</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span> <span class="c1"># rstrip removes newline</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">smiles_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -747,40 +747,40 @@ print(smiles_list)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Or create a list directly
-smiles_list = [&#39;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@H](CC(=O)O)N&#39;,
-               &#39;COC(=O)[C@@H](CC1=CC=CC=C1)NC(=O)[C@@H](CC(=O)O)N&#39;,
-               &#39;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)C[C@@H](C(=O)O)N&#39;,
-               &#39;C1=CC=C(C=C1)C[C@@H](C(=O)O)NC(=O)[C@H](CC(=O)O)NC=O&#39;,
-               &#39;C[C@@H](C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)O)N&#39;,
-               &#39;CC(C)C[C@@H](C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)O)NC(=O)C&#39;]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Or create a list directly</span>
+<span class="n">smiles_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@H](CC(=O)O)N&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;COC(=O)[C@@H](CC1=CC=CC=C1)NC(=O)[C@@H](CC(=O)O)N&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)C[C@@H](C(=O)O)N&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;C1=CC=C(C=C1)C[C@@H](C(=O)O)NC(=O)[C@H](CC(=O)O)NC=O&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;C[C@@H](C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)O)N&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;CC(C)C[C@@H](C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)O)NC(=O)C&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Next, loop through the smiles_list and create RDKit molecular objects
-mols = [Chem.MolFromSmiles(smi) for smi in smiles_list]
-mols
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next, loop through the smiles_list and create RDKit molecular objects</span>
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi</span><span class="p">)</span> <span class="k">for</span> <span class="n">smi</span> <span class="ow">in</span> <span class="n">smiles_list</span><span class="p">]</span>
+<span class="n">mols</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;rdkit.Chem.rdchem.Mol at 0x11c45e650&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11c45e730&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11c45eb20&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11c45eb90&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11c45ec00&gt;,
- &lt;rdkit.Chem.rdchem.Mol at 0x11c45ec70&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;rdkit.Chem.rdchem.Mol at 0x126818900&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x1268189e0&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x126818dd0&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x126818e40&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x126818eb0&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x126818f20&gt;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Display the molecules in a grid
-Draw.MolsToGridImage(mols, molsPerRow=3, useSVG=False)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the molecules in a grid</span>
+<span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">useSVG</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -790,9 +790,9 @@ Draw.MolsToGridImage(mols, molsPerRow=3, useSVG=False)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Loop through mols (molecular objects) and calculate InChIs
-InChIs = [Chem.MolToInchi(mol) for mol in mols]
-InChIs
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loop through mols (molecular objects) and calculate InChIs</span>
+<span class="n">InChIs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchi</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span> <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="p">]</span>
+<span class="n">InChIs</span>
 </pre></div>
 </div>
 </div>
@@ -815,9 +815,9 @@ InChIs
 <h3>2.1 Import Open Babel Modules<a class="headerlink" href="#import-open-babel-modules" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Open Babel v3.1.1
-from openbabel import openbabel as ob
-from openbabel import pybel
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open Babel v3.1.1</span>
+<span class="kn">from</span> <span class="nn">openbabel</span> <span class="kn">import</span> <span class="n">openbabel</span> <span class="k">as</span> <span class="n">ob</span>
+<span class="kn">from</span> <span class="nn">openbabel</span> <span class="kn">import</span> <span class="n">pybel</span>
 </pre></div>
 </div>
 </div>
@@ -827,8 +827,8 @@ from openbabel import pybel
 <h3>2.2 Create a Molecular Object from SMILES<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>m = pybel.readstring(&quot;smi&quot;, &quot;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@H](CC(=O)O)N&quot;)
-m
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">pybel</span><span class="o">.</span><span class="n">readstring</span><span class="p">(</span><span class="s2">&quot;smi&quot;</span><span class="p">,</span> <span class="s2">&quot;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@H](CC(=O)O)N&quot;</span><span class="p">)</span>
+<span class="n">m</span>
 </pre></div>
 </div>
 </div>
@@ -837,8 +837,8 @@ m
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Internally, we have created an Open Babel molecular object
-print(type(m))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Internally, we have created an Open Babel molecular object</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -853,9 +853,9 @@ print(type(m))
 <h3>2.3 Calculate InChI<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Set up InChI conversion
-conv = pybel.ob.OBConversion()
-conv.SetOutFormat(&quot;inchi&quot;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up InChI conversion</span>
+<span class="n">conv</span> <span class="o">=</span> <span class="n">pybel</span><span class="o">.</span><span class="n">ob</span><span class="o">.</span><span class="n">OBConversion</span><span class="p">()</span>
+<span class="n">conv</span><span class="o">.</span><span class="n">SetOutFormat</span><span class="p">(</span><span class="s2">&quot;inchi&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -867,9 +867,9 @@ conv.SetOutFormat(&quot;inchi&quot;)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Calculate InChI
-inchi_output = conv.WriteString(m.OBMol)
-print(inchi_output)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate InChI</span>
+<span class="n">inchi_output</span> <span class="o">=</span> <span class="n">conv</span><span class="o">.</span><span class="n">WriteString</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">OBMol</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inchi_output</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -881,9 +881,9 @@ print(inchi_output)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Set up InChIKey conversion
-conv = pybel.ob.OBConversion()
-conv.SetOutFormat(&quot;inchikey&quot;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up InChIKey conversion</span>
+<span class="n">conv</span> <span class="o">=</span> <span class="n">pybel</span><span class="o">.</span><span class="n">ob</span><span class="o">.</span><span class="n">OBConversion</span><span class="p">()</span>
+<span class="n">conv</span><span class="o">.</span><span class="n">SetOutFormat</span><span class="p">(</span><span class="s2">&quot;inchikey&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -895,9 +895,9 @@ conv.SetOutFormat(&quot;inchikey&quot;)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Calculate InChIKey
-inchikey_output = conv.WriteString(m.OBMol)
-print(inchikey_output)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate InChIKey</span>
+<span class="n">inchikey_output</span> <span class="o">=</span> <span class="n">conv</span><span class="o">.</span><span class="n">WriteString</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">OBMol</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inchikey_output</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -912,12 +912,12 @@ print(inchikey_output)
 <h3>2.4 Calculate InChIs for a List of Molecules<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Import a file of SMILES
-smiles_list =[]
-with open(&#39;my_smiles.smi&#39;) as infile:
-     for smi in infile:
-            smiles_list.append(smi.rstrip()) # rstrip removes newline
-print(smiles_list)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a file of SMILES</span>
+<span class="n">smiles_list</span> <span class="o">=</span><span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_smiles.smi&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+     <span class="k">for</span> <span class="n">smi</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+            <span class="n">smiles_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smi</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span> <span class="c1"># rstrip removes newline</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">smiles_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -929,32 +929,32 @@ print(smiles_list)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Next,loop through the smiles_list and create OB molecular objects
-ms = [pybel.readstring(&quot;smi&quot;, m) for m in smiles_list]
-ms
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next,loop through the smiles_list and create OB molecular objects</span>
+<span class="n">ms</span> <span class="o">=</span> <span class="p">[</span><span class="n">pybel</span><span class="o">.</span><span class="n">readstring</span><span class="p">(</span><span class="s2">&quot;smi&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">smiles_list</span><span class="p">]</span>
+<span class="n">ms</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;openbabel.pybel.Molecule at 0x11cc16f80&gt;,
- &lt;openbabel.pybel.Molecule at 0x11cc166e0&gt;,
- &lt;openbabel.pybel.Molecule at 0x11cc17040&gt;,
- &lt;openbabel.pybel.Molecule at 0x11cc17310&gt;,
- &lt;openbabel.pybel.Molecule at 0x11cc169e0&gt;,
- &lt;openbabel.pybel.Molecule at 0x11cc16590&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;openbabel.pybel.Molecule at 0x126f36d70&gt;,
+ &lt;openbabel.pybel.Molecule at 0x126f37220&gt;,
+ &lt;openbabel.pybel.Molecule at 0x126f37760&gt;,
+ &lt;openbabel.pybel.Molecule at 0x126f37af0&gt;,
+ &lt;openbabel.pybel.Molecule at 0x126f36fe0&gt;,
+ &lt;openbabel.pybel.Molecule at 0x126f36b60&gt;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Set up InChI conversion
-conv = pybel.ob.OBConversion()
-conv.SetOutFormat(&quot;inchi&quot;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up InChI conversion</span>
+<span class="n">conv</span> <span class="o">=</span> <span class="n">pybel</span><span class="o">.</span><span class="n">ob</span><span class="o">.</span><span class="n">OBConversion</span><span class="p">()</span>
+<span class="n">conv</span><span class="o">.</span><span class="n">SetOutFormat</span><span class="p">(</span><span class="s2">&quot;inchi&quot;</span><span class="p">)</span>
 
-# Loop through mols (molecular objects) and calculate InChIs
-InChIs = [conv.WriteString(m.OBMol).rstrip() for m in ms]
-InChIs
+<span class="c1"># Loop through mols (molecular objects) and calculate InChIs</span>
+<span class="n">InChIs</span> <span class="o">=</span> <span class="p">[</span><span class="n">conv</span><span class="o">.</span><span class="n">WriteString</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">OBMol</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">ms</span><span class="p">]</span>
+<span class="n">InChIs</span>
 </pre></div>
 </div>
 </div>
@@ -988,7 +988,7 @@ InChIs
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./samples"
         },
         predefinedOutput: true

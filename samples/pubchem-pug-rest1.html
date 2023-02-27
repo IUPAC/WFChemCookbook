@@ -607,9 +607,9 @@ PubChem provides multiple programmatic access routes: Power User Gateway (PUG), 
 <h3>1. Import the Python packages needed to run this code<a class="headerlink" href="#import-the-python-packages-needed-to-run-this-code" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import requests
-import time
-from IPython.display import Image, display
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
 </pre></div>
 </div>
 </div>
@@ -619,16 +619,16 @@ from IPython.display import Image, display
 <h3>2. Construct a PUG-REST API and retrieve data<a class="headerlink" href="#construct-a-pug-rest-api-and-retrieve-data" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>pugrest_prolog = &quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;
-pugrest_input = &quot;compound/cid/2244&quot;
-pugrest_operation = &quot;property/MolecularFormula&quot;
-pugrest_output = &quot;txt&quot;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pugrest_prolog</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;</span>
+<span class="n">pugrest_input</span> <span class="o">=</span> <span class="s2">&quot;compound/cid/2244&quot;</span>
+<span class="n">pugrest_operation</span> <span class="o">=</span> <span class="s2">&quot;property/MolecularFormula&quot;</span>
+<span class="n">pugrest_output</span> <span class="o">=</span> <span class="s2">&quot;txt&quot;</span>
 
-pugrest_url = &quot;/&quot;.join( (pugrest_prolog, pugrest_input, pugrest_operation, pugrest_output) )
-print(&quot;REQEST URL:&quot;, pugrest_url)
+<span class="n">pugrest_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">(</span><span class="n">pugrest_prolog</span><span class="p">,</span> <span class="n">pugrest_input</span><span class="p">,</span> <span class="n">pugrest_operation</span><span class="p">,</span> <span class="n">pugrest_output</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;REQEST URL:&quot;</span><span class="p">,</span> <span class="n">pugrest_url</span><span class="p">)</span>
 
-res = requests.get(pugrest_url)
-print(&quot;OUTPUT    :&quot;, res.text.strip())   # .strip() removes the newline character &quot;\n&quot; at the end of returned string.
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pugrest_url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OUTPUT    :&quot;</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>   <span class="c1"># .strip() removes the newline character &quot;\n&quot; at the end of returned string.</span>
 </pre></div>
 </div>
 </div>
@@ -644,7 +644,7 @@ print(&quot;OUTPUT    :&quot;, res.text.strip())   # .strip() removes the newlin
 <p>The above request can be simplified like the following examples</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(requests.get(pugrest_url).text.strip())
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pugrest_url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -659,7 +659,7 @@ print(&quot;OUTPUT    :&quot;, res.text.strip())   # .strip() removes the newlin
 <p>In practice, users should use the <code class="docutils literal notranslate"><span class="pre">time.sleep()</span></code> command in their scripts to limit the speed of the requests sent to PubChem</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>time.sleep(1.0)    # sleep for 1 second.
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>    <span class="c1"># sleep for 1 second.</span>
 </pre></div>
 </div>
 </div>
@@ -675,43 +675,37 @@ print(&quot;OUTPUT    :&quot;, res.text.strip())   # .strip() removes the newlin
 <p>Various kinds of <strong>computed</strong> molecular properties, such as molecular weight, hydrogen-bond donor and acceptor counts, heavy atom count, XLogP, and Topological polar surface area (TPSA) are available through PUG-REST as shown below.  A complete list of the computed molecular properties available through PUG-REST can be found at the PUG-REST help page (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest">https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest</a>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Molecular weight
-print(&quot;MolecularWeight  :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/MolecularWeight/txt&quot;).text.strip())
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Molecular weight</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MolecularWeight  :&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/MolecularWeight/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-# Hydrogen-bond donor count
-print(&quot;HBondDonorCount  :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/HBondDonorCount/txt&quot;).text.strip())
+<span class="c1"># Hydrogen-bond donor count</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HBondDonorCount  :&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/HBondDonorCount/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-# Hydrogen-bond acceptor count
-print(&quot;HBondAcceptorCoun:&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/HBondAcceptorCount/txt&quot;).text.strip())
+<span class="c1"># Hydrogen-bond acceptor count</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HBondAcceptorCoun:&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/HBondAcceptorCount/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-# Heavy (non-hydrogen) atom count
-print(&quot;HeavyAtomCount   :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/HeavyAtomCount/txt&quot;).text.strip())
+<span class="c1"># Heavy (non-hydrogen) atom count</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HeavyAtomCount   :&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/HeavyAtomCount/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-# XLogP
-print(&quot;XLogP            :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/XLogP/txt&quot;).text.strip())
+<span class="c1"># XLogP</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XLogP            :&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/XLogP/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-# Topological polar surface area (TPSA)
-print(&quot;TPSA             :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/TPSA/txt&quot;).text.strip())
+<span class="c1"># Topological polar surface area (TPSA)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TPSA             :&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/TPSA/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MolecularWeight  : 180.16
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HBondDonorCount  : 1
+HBondDonorCount  : 1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HBondAcceptorCoun: 4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HeavyAtomCount   : 13
+HeavyAtomCount   : 13
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XLogP            : 1.200
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TPSA             : 63.6
+TPSA             : 63.6
 </pre></div>
 </div>
 </div>
@@ -719,7 +713,7 @@ print(&quot;TPSA             :&quot;, requests.get(&quot;https://pubchem.ncbi.nl
 <p>It is also possible to get <strong>multiple kinds of properties</strong> for a given chemical with a <strong>single request</strong>, by providing a list of desired properties in the request URL (separated with commas). Note that the output format specified in the request URL is <strong>“CSV”</strong> (which means “comma-separated values”).  If “txt” is used here, you will get an error message saying “TXT output is limited to a single property”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/MolecularWeight,HBondDonorCount,HBondAcceptorCount,HeavyAtomCount,XLogP,TPSA/csv&quot;).text.strip())
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/MolecularWeight,HBondDonorCount,HBondAcceptorCount,HeavyAtomCount,XLogP,TPSA/csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -733,7 +727,7 @@ print(&quot;TPSA             :&quot;, requests.get(&quot;https://pubchem.ncbi.nl
 <p>You can get molecular properties of <strong>multiple chemicals</strong> with a <strong>single request</strong> by providing their CIDs as input identifiers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244,1983,3672,156391/property/MolecularWeight,HBondDonorCount,HBondAcceptorCount,HeavyAtomCount,XLogP,TPSA/csv&quot;).text.strip())
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244,1983,3672,156391/property/MolecularWeight,HBondDonorCount,HBondAcceptorCount,HeavyAtomCount,XLogP,TPSA/csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -760,17 +754,17 @@ print(&quot;TPSA             :&quot;, requests.get(&quot;https://pubchem.ncbi.nl
 <p>In PUG-REST, the chemical structure line notations (SMILES, InChI, and InChIKeys) are treated like molecular properties.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Canonical SMILES
-print(&quot;Canonical SMILES:&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/property/CanonicalSMILES/TXT&quot;).text.strip())
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Canonical SMILES</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Canonical SMILES:&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/property/CanonicalSMILES/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-# Isomeric SMILES
-print(&quot;Isomeric SMILES :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/property/IsomericSMILES/TXT&quot;).text.strip())
+<span class="c1"># Isomeric SMILES</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Isomeric SMILES :&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/property/IsomericSMILES/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-# InChI
-print(&quot;InChI           :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/property/InChI/TXT&quot;).text.strip())
+<span class="c1"># InChI</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;InChI           :&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/property/InChI/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-# InChIKey
-print(&quot;InChIKey        :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/property/InChIKey/TXT&quot;).text.strip())
+<span class="c1"># InChIKey</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;InChIKey        :&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/property/InChIKey/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -778,13 +772,14 @@ print(&quot;InChIKey        :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Canonical SMILES: CC(C)C1=NC(=NC(=C1C=CC(CC(CC(=O)O)O)O)C2=CC=C(C=C2)F)N(C)S(=O)(=O)C
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Isomeric SMILES : CC(C)C1=NC(=NC(=C1/C=C/[C@H](C[C@H](CC(=O)O)O)O)C2=CC=C(C=C2)F)N(C)S(=O)(=O)C
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Isomeric SMILES :
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> CC(C)C1=NC(=NC(=C1/C=C/[C@H](C[C@H](CC(=O)O)O)O)C2=CC=C(C=C2)F)N(C)S(=O)(=O)C
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>InChI           : InChI=1S/C22H28FN3O6S/c1-13(2)20-18(10-9-16(27)11-17(28)12-19(29)30)21(14-5-7-15(23)8-6-14)25-22(24-20)26(3)33(4,31)32/h5-10,13,16-17,27-28H,11-12H2,1-4H3,(H,29,30)/b10-9+/t16-,17-/m1/s1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>InChIKey        : BPRHUIZQVSMCRT-VEUZHWNKSA-N
+InChIKey        : BPRHUIZQVSMCRT-VEUZHWNKSA-N
 </pre></div>
 </div>
 </div>
@@ -792,7 +787,7 @@ print(&quot;InChIKey        :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm
 <p>It is also possible to get these line notations for <strong>multiple chemicals</strong> with a <strong>single request</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157,53114542,5280656/property/InChIKey,IsomericSMILES/CSV&quot;).text.strip())
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157,53114542,5280656/property/InChIKey,IsomericSMILES/CSV&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -808,9 +803,9 @@ print(&quot;InChIKey        :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm
 <p>It is worth noting that these line notations are developed for machine readability of chemical structures.  Therefore, it is not easy for humans to recognize the structure of a molecule from its line notations, especially for a large molecule.  The most straightforward way for humans to understand the molecular structure is through its drawing or image.  Through PUG-REST, you can get the 2-D and 3-D images of the molecule.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res2d = requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/record/PNG?image_size=large&quot;)
-res3d = requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/record/PNG?image_size=large&amp;record_type=3d&quot;)
-display(Image(res2d.content), Image(res3d.content))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res2d</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/record/PNG?image_size=large&quot;</span><span class="p">)</span>
+<span class="n">res3d</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/record/PNG?image_size=large&amp;record_type=3d&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">res2d</span><span class="o">.</span><span class="n">content</span><span class="p">),</span> <span class="n">Image</span><span class="p">(</span><span class="n">res3d</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -829,9 +824,9 @@ display(Image(res2d.content), Image(res3d.content))
 <p>The 3-D cooordinates of the first diverse conformer (which corresponds to the 3-D image retrieved above) can be accessed using the following request URL.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res = requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/record/SDF?record_type=3d&quot;)
-with open(&quot;conformer1.txt&quot;, &#39;w&#39;) as file:
-    file.write(res.text)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/record/SDF?record_type=3d&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;conformer1.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -846,7 +841,7 @@ with open(&quot;conformer1.txt&quot;, &#39;w&#39;) as file:
 <p>The following example shows how to get the diverse conformer identifiers (step 1)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/conformers/TXT&quot;).text.strip())
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/446157/conformers/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -868,9 +863,9 @@ with open(&quot;conformer1.txt&quot;, &#39;w&#39;) as file:
 <p>The following example shows how to get the 3-D coordinates of the second diverse conformer (the second one from the above conformer list).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res = requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/conformers/0006CECD00000007/SDF&quot;)
-with open(&quot;conformer2.txt&quot;, &#39;w&#39;) as f:
-    f.write(res.text)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/conformers/0006CECD00000007/SDF&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;conformer2.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -892,7 +887,7 @@ with open(&quot;conformer2.txt&quot;, &#39;w&#39;) as f:
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./samples"
         },
         predefinedOutput: true

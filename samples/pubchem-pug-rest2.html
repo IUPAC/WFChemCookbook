@@ -554,9 +554,9 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </details><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import requests
-import time
-from IPython.display import Image, display
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
 </pre></div>
 </div>
 </div>
@@ -566,18 +566,16 @@ from IPython.display import Image, display
 <p>You can access PubChem data using a chemical name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(&quot;CID             :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aspirin/cids/TXT&quot;).text.strip())
-print(&quot;MolecularFormula:&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aspirin/property/MolecularFormula/TXT&quot;).text.strip())
-print(&quot;MolecularWeight :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aspirin/property/MolecularWeight/TXT&quot;).text.strip())
-print(&quot;IsomericSMILES  :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aspirin/property/IsomericSMILES/TXT&quot;).text.strip())
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CID             :&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aspirin/cids/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MolecularFormula:&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aspirin/property/MolecularFormula/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MolecularWeight :&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aspirin/property/MolecularWeight/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IsomericSMILES  :&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aspirin/property/IsomericSMILES/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID             : 2244
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MolecularFormula: C9H8O4
+MolecularFormula: C9H8O4
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MolecularWeight : 180.16
@@ -591,8 +589,8 @@ print(&quot;IsomericSMILES  :&quot;, requests.get(&quot;https://pubchem.ncbi.nlm
 <p>It is very important to understand that, in the real world, people use a chemical name to refer to different, often closely related, chemicals.  An example is a drug name, as shown in this example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>cids1 = requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aleve/cids/TXT&quot;).text.strip().split()
-print(cids1)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cids1</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aleve/cids/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -604,10 +602,10 @@ print(cids1)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for mycid in cids1:
-    display(Image(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot; + mycid + &quot;/record/PNG?image_size=200x200&quot;).content))
-    print(&quot;CID &quot; + mycid, &quot;:&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot; + mycid + &quot;/property/MolecularFormula/TXT&quot;).text)
-    time.sleep(0.2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">mycid</span> <span class="ow">in</span> <span class="n">cids1</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">mycid</span> <span class="o">+</span> <span class="s2">&quot;/record/PNG?image_size=200x200&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CID &quot;</span> <span class="o">+</span> <span class="n">mycid</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">mycid</span> <span class="o">+</span> <span class="s2">&quot;/property/MolecularFormula/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -630,8 +628,8 @@ print(cids1)
 <p>It is also possible to get any PubChem compounds records whose name contains the string “aleve” (i.e., <strong>partial matching</strong> with the input name).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>cids2 = requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aleve/cids/TXT?name_type=word&quot;).text.strip().split()
-print(cids2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cids2</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aleve/cids/TXT?name_type=word&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -643,12 +641,12 @@ print(cids2)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>cids3 = [ x for x in cids2 if x not in cids1]   # remove the hits from the exact match.
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cids3</span> <span class="o">=</span> <span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids2</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cids1</span><span class="p">]</span>   <span class="c1"># remove the hits from the exact match.</span>
 
-for mycid in cids3:
-    display(Image(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot; + mycid + &quot;/record/PNG?image_size=200x200&quot;).content))
-    print(&quot;CID &quot; + mycid, &quot;:&quot;, requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot; + mycid + &quot;/property/MolecularFormula/TXT&quot;).text)
-    time.sleep(0.2)
+<span class="k">for</span> <span class="n">mycid</span> <span class="ow">in</span> <span class="n">cids3</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">mycid</span> <span class="o">+</span> <span class="s2">&quot;/record/PNG?image_size=200x200&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CID &quot;</span> <span class="o">+</span> <span class="n">mycid</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">mycid</span> <span class="o">+</span> <span class="s2">&quot;/property/MolecularFormula/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -673,10 +671,10 @@ for mycid in cids3:
 <p>In the above example, the two CIDs from partial matching (CIDs 56841568 and CIDs 77098502) are the mixture of naproxen with other compounds.  Because they are from partial matching with the name “aleve”, we know their names contain “aleve”, but what are they called exactly?  We can figure this out by getting all synonyms for these compounds using PUG-REST.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for mycid in cids3:
-    print(&quot;#-- CID&quot;, mycid)
-    print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot; + mycid + &quot;/synonyms/TXT&quot;).text)
-    time.sleep(0.2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">mycid</span> <span class="ow">in</span> <span class="n">cids3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#-- CID&quot;</span><span class="p">,</span> <span class="n">mycid</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">mycid</span> <span class="o">+</span> <span class="s2">&quot;/synonyms/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -890,7 +888,7 @@ Pseudoephedrine hydrochloride, Pharmaceutical Secondary Standard; Certified Refe
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./samples"
         },
         predefinedOutput: true

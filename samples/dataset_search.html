@@ -655,9 +655,9 @@ PubChem to include data, in one of a couple of ways:</p>
 <h3>1.1 - Load the Python functions<a class="headerlink" href="#load-the-python-functions" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># as these are direct imports (they do not reference a Python package) they are built into Python
-import requests
-import json
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># as these are direct imports (they do not reference a Python package) they are built into Python</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
 </pre></div>
 </div>
 </div>
@@ -667,21 +667,21 @@ import json
 <h3>1.2 - Search for sources that have ‘curation efforts’<a class="headerlink" href="#search-for-sources-that-have-curation-efforts" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># This URL is the metadata about the data sources in PubChem
-url = &#39;https://pubchem.ncbi.nlm.nih.gov/rest/pug/sourcetable/all/JSON/?response_type=display&#39;
-response = requests.get(url)
-srcs = response.json()
-results = []
-search = &#39;Curation Efforts&#39;  # i.e., a repository, or other type of data source (this is in index 8 of the data list for each source)
-rows = srcs[&#39;Table&#39;][&#39;Row&#39;]
-for row in rows:
-    if row[&#39;Cell&#39;][8].find(search) != -1:
-        hit = {}
-        hit.update({&#39;name&#39;: row[&#39;Cell&#39;][0]})
-        hit.update({&#39;url&#39;: row[&#39;Cell&#39;][9]})
-        results.append(hit)
-# when printed this is a scrollable list of many entries
-print(json.dumps(results, indent=4))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This URL is the metadata about the data sources in PubChem</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://pubchem.ncbi.nlm.nih.gov/rest/pug/sourcetable/all/JSON/?response_type=display&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">srcs</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">search</span> <span class="o">=</span> <span class="s1">&#39;Curation Efforts&#39;</span>  <span class="c1"># i.e., a repository, or other type of data source (this is in index 8 of the data list for each source)</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="n">srcs</span><span class="p">[</span><span class="s1">&#39;Table&#39;</span><span class="p">][</span><span class="s1">&#39;Row&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Cell&#39;</span><span class="p">][</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">search</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">hit</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">hit</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Cell&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]})</span>
+        <span class="n">hit</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Cell&#39;</span><span class="p">][</span><span class="mi">9</span><span class="p">]})</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hit</span><span class="p">)</span>
+<span class="c1"># when printed this is a scrollable list of many entries</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1055,22 +1055,22 @@ related resources.</p>
 <h3>2.1 - Authentication to the FAIRSharing API<a class="headerlink" href="#authentication-to-the-fairsharing-api" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># see https://fairsharing.org/API_doc for instructions on how to search the API
-from hiddensettings import *
-# user login
-url = &#39;https://api.fairsharing.org/users/sign_in&#39;
-loghdrs = {&#39;Accept&#39;: &#39;application/json&#39;,&#39;Content-Type&#39;: &#39;application/json&#39;}
-login = {&#39;user&#39;: {&#39;login&#39;: fs_user, &#39;password&#39;: fs_pass}}
-response = requests.request(&quot;POST&quot;, url, headers=loghdrs, data=json.dumps(login))
-data = response.json()
-print(data)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># see https://fairsharing.org/API_doc for instructions on how to search the API</span>
+<span class="kn">from</span> <span class="nn">hiddensettings</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="c1"># user login</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.fairsharing.org/users/sign_in&#39;</span>
+<span class="n">loghdrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+<span class="n">login</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;login&#39;</span><span class="p">:</span> <span class="n">fs_user</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="n">fs_pass</span><span class="p">}}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">loghdrs</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">login</span><span class="p">))</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># see https://fairsharing.org/API_doc for instructions on how to search the API</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">hiddensettings</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># user login</span>
@@ -1086,17 +1086,17 @@ print(data)
 <h3>2.2 - Make the API request<a class="headerlink" href="#make-the-api-request" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># in order to authenticate when making an API request the &#39;jwt&#39; code above must
-# be included in the JSON headers (see https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
-jwt = data[&#39;jwt&#39;]
-srchdrs = {&#39;Accept&#39;: &#39;application/json&#39;, &#39;Content-Type&#39;: &#39;application/json&#39;, &#39;Authorization&#39;: &quot;Bearer {0}&quot;.format(jwt)}
-searchterm = &#39;chemistry&#39;
-searchurl =&#39;https://api.fairsharing.org/search/fairsharing_records?q=&#39; + searchterm
-search = requests.request(&quot;POST&quot;, searchurl, headers=srchdrs)
-hits = json.loads(search.content)
-# this prints out the raw JSON for the first entry (the &#39;data&#39; entry is a JSON list)
-# that is returned from the API request (formatted nicely, which means its on many lines)
-print(json.dumps(hits[&#39;data&#39;][0], indent=4))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># in order to authenticate when making an API request the &#39;jwt&#39; code above must</span>
+<span class="c1"># be included in the JSON headers (see https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)</span>
+<span class="n">jwt</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;jwt&#39;</span><span class="p">]</span>
+<span class="n">srchdrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span> <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span> <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s2">&quot;Bearer </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">jwt</span><span class="p">)}</span>
+<span class="n">searchterm</span> <span class="o">=</span> <span class="s1">&#39;chemistry&#39;</span>
+<span class="n">searchurl</span> <span class="o">=</span><span class="s1">&#39;https://api.fairsharing.org/search/fairsharing_records?q=&#39;</span> <span class="o">+</span> <span class="n">searchterm</span>
+<span class="n">search</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">searchurl</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">srchdrs</span><span class="p">)</span>
+<span class="n">hits</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">search</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="c1"># this prints out the raw JSON for the first entry (the &#39;data&#39; entry is a JSON list)</span>
+<span class="c1"># that is returned from the API request (formatted nicely, which means its on many lines)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">hits</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1951,9 +1951,9 @@ print(json.dumps(hits[&#39;data&#39;][0], indent=4))
 <h3>2.3 - Output the data in a presentable format<a class="headerlink" href="#output-the-data-in-a-presentable-format" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># here we loop over the data that has been returned and print it out, one per line
-for hit in hits[&#39;data&#39;]:
-    print(hit[&#39;attributes&#39;][&#39;name&#39;] + &quot;: &quot; + hit[&#39;attributes&#39;][&#39;url&#39;])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># here we loop over the data that has been returned and print it out, one per line</span>
+<span class="k">for</span> <span class="n">hit</span> <span class="ow">in</span> <span class="n">hits</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">hit</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">hit</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="s1">&#39;url&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -2003,7 +2003,7 @@ FAIRsharing record for: Network for the Detection of Atmospheric Composition Cha
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./samples"
         },
         predefinedOutput: true

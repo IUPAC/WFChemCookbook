@@ -17,19 +17,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-
-from jcamp import jcamp_read              # Importing the jcamp_read() method from the jcamp package
-import matplotlib.pyplot as plt           # Importing a plotting package
-import numpy as np                        # Import the numerical python package for mathematical operations
+# Import a file of SMILES
+smiles_list = []
+with open('my_smiles.smi') as infile:
+     for smi in infile:
+            smiles_list.append(smi.rstrip()) # rstrip removes newline
+print(smiles_list)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mjcamp[39;00m [38;5;28;01mimport[39;00m jcamp_read              [38;5;66;03m# Importing the jcamp_read() method from the jcamp package[39;00m
-[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m           [38;5;66;03m# Importing a plotting package[39;00m
-[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m                        [38;5;66;03m# Import the numerical python package for mathematical operations[39;00m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Input [0;32mIn [6][0m, in [0;36m<cell line: 3>[0;34m()[0m
+[1;32m      1[0m [38;5;66;03m# Import a file of SMILES[39;00m
+[1;32m      2[0m smiles_list [38;5;241m=[39m []
+[0;32m----> 3[0m [38;5;28;01mwith[39;00m [38;5;28;43mopen[39;49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mmy_smiles.smi[39;49m[38;5;124;43m'[39;49m[43m)[49m [38;5;28;01mas[39;00m infile:
+[1;32m      4[0m      [38;5;28;01mfor[39;00m smi [38;5;129;01min[39;00m infile:
+[1;32m      5[0m             smiles_list[38;5;241m.[39mappend(smi[38;5;241m.[39mrstrip()) [38;5;66;03m# rstrip removes newline[39;00m
 
-[0;31mModuleNotFoundError[0m: No module named 'jcamp'
-ModuleNotFoundError: No module named 'jcamp'
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'my_smiles.smi'
+FileNotFoundError: [Errno 2] No such file or directory: 'my_smiles.smi'
 

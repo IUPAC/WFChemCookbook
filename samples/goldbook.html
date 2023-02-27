@@ -609,9 +609,9 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 <p>Python has a lot of functionality that can be imported using the ‘import’ function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import requests                             # package to get data from a URL
-import json                                 # package to read/write/display JSON formatted data
-import re                                   # package to use regular expression (regex) searching
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>                             <span class="c1"># package to get data from a URL</span>
+<span class="kn">import</span> <span class="nn">json</span>                                 <span class="c1"># package to read/write/display JSON formatted data</span>
+<span class="kn">import</span> <span class="nn">re</span>                                   <span class="c1"># package to use regular expression (regex) searching</span>
 </pre></div>
 </div>
 </div>
@@ -622,10 +622,10 @@ import re                                   # package to use regular expression 
 <p>This function removes HTML tags from textual data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Source: https://medium.com/@jorlugaqui/how-to-strip-html-tags-from-a-string-in-python-7cb81a2bbf44
-def remove_html_tags(text):                 # a &#39;def&#39; is a (defined) function that can be called later
-    clean = re.compile(&#39;&lt;.*?&gt;&#39;)             # sets up a regular expression to search with
-    return re.sub(clean, &#39;&#39;, text)          # removes the matches to the regular expression
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Source: https://medium.com/@jorlugaqui/how-to-strip-html-tags-from-a-string-in-python-7cb81a2bbf44</span>
+<span class="k">def</span> <span class="nf">remove_html_tags</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>                 <span class="c1"># a &#39;def&#39; is a (defined) function that can be called later</span>
+    <span class="n">clean</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span><span class="p">)</span>             <span class="c1"># sets up a regular expression to search with</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">clean</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>          <span class="c1"># removes the matches to the regular expression</span>
 </pre></div>
 </div>
 </div>
@@ -636,10 +636,10 @@ def remove_html_tags(text):                 # a &#39;def&#39; is a (defined) fun
 <p>Frab data for all the IUPAC Recommended Terms currently available</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>allpath = &quot;https://goldbook.iupac.org/terms/index/all/json&quot;  # URL to the IUPAC Gold Book API down
-reqdata = requests.get(allpath)                              # download file in JSON
-terms = json.loads(reqdata.content)                          # convert JSON to a Python dictionary
-print(str(len(terms[&#39;terms&#39;][&#39;list&#39;])) + &#39; terms&#39;)           # print the number of terms in the list
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allpath</span> <span class="o">=</span> <span class="s2">&quot;https://goldbook.iupac.org/terms/index/all/json&quot;</span>  <span class="c1"># URL to the IUPAC Gold Book API down</span>
+<span class="n">reqdata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">allpath</span><span class="p">)</span>                              <span class="c1"># download file in JSON</span>
+<span class="n">terms</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">reqdata</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>                          <span class="c1"># convert JSON to a Python dictionary</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">terms</span><span class="p">[</span><span class="s1">&#39;terms&#39;</span><span class="p">][</span><span class="s1">&#39;list&#39;</span><span class="p">]))</span> <span class="o">+</span> <span class="s1">&#39; terms&#39;</span><span class="p">)</span>           <span class="c1"># print the number of terms in the list</span>
 </pre></div>
 </div>
 </div>
@@ -655,14 +655,14 @@ print(str(len(terms[&#39;terms&#39;][&#39;list&#39;])) + &#39; terms&#39;)      
 <p>Search the recommended term list and if present get the terms code</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>searchterm = &quot;cis-trans isomers&quot;                            # the term to be found
-searchcode = None                                           # empty variable to contain the searchcode
-for code, term in terms[&#39;terms&#39;][&#39;list&#39;].items():           # iterate over each term in the list (code (str), term (obj))
-    cleaned = remove_html_tags(term[&#39;title&#39;])               # remove any HTML formatting in the title
-    if cleaned == searchterm:                               # check if the term matches the one we want
-        searchcode = code                                   # if it does, get the code for the term
-        break                                               # we have found the term so we can get out of the for loop
-print(searchcode)                                           # IUPAC Gold Book term code (if found)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">searchterm</span> <span class="o">=</span> <span class="s2">&quot;cis-trans isomers&quot;</span>                            <span class="c1"># the term to be found</span>
+<span class="n">searchcode</span> <span class="o">=</span> <span class="kc">None</span>                                           <span class="c1"># empty variable to contain the searchcode</span>
+<span class="k">for</span> <span class="n">code</span><span class="p">,</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">terms</span><span class="p">[</span><span class="s1">&#39;terms&#39;</span><span class="p">][</span><span class="s1">&#39;list&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>           <span class="c1"># iterate over each term in the list (code (str), term (obj))</span>
+    <span class="n">cleaned</span> <span class="o">=</span> <span class="n">remove_html_tags</span><span class="p">(</span><span class="n">term</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>               <span class="c1"># remove any HTML formatting in the title</span>
+    <span class="k">if</span> <span class="n">cleaned</span> <span class="o">==</span> <span class="n">searchterm</span><span class="p">:</span>                               <span class="c1"># check if the term matches the one we want</span>
+        <span class="n">searchcode</span> <span class="o">=</span> <span class="n">code</span>                                   <span class="c1"># if it does, get the code for the term</span>
+        <span class="k">break</span>                                               <span class="c1"># we have found the term so we can get out of the for loop</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">searchcode</span><span class="p">)</span>                                           <span class="c1"># IUPAC Gold Book term code (if found)</span>
 </pre></div>
 </div>
 </div>
@@ -678,11 +678,11 @@ print(searchcode)                                           # IUPAC Gold Book te
 <p>Generate a URL to get data about a term, print out the term, its code and its definition</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>path = &quot;https://goldbook.iupac.org/terms/view/**/json&quot;      # URL path to the IUPAC Gold Book API for a term
-reqdata = requests.get(path.replace(&quot;**&quot;, searchcode))      # request data from the Gold Book server
-jsondata = json.loads(reqdata.content)                      # get the downloaded JSON
-print(searchterm + &quot; (&quot; + searchcode + &quot;)&quot;)                 # print the title and Gold Book term code
-print(jsondata[&#39;term&#39;][&#39;definitions&#39;][0][&#39;text&#39;])           # print the definition of the term
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;https://goldbook.iupac.org/terms/view/**/json&quot;</span>      <span class="c1"># URL path to the IUPAC Gold Book API for a term</span>
+<span class="n">reqdata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;**&quot;</span><span class="p">,</span> <span class="n">searchcode</span><span class="p">))</span>      <span class="c1"># request data from the Gold Book server</span>
+<span class="n">jsondata</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">reqdata</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>                      <span class="c1"># get the downloaded JSON</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">searchterm</span> <span class="o">+</span> <span class="s2">&quot; (&quot;</span> <span class="o">+</span> <span class="n">searchcode</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>                 <span class="c1"># print the title and Gold Book term code</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jsondata</span><span class="p">[</span><span class="s1">&#39;term&#39;</span><span class="p">][</span><span class="s1">&#39;definitions&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>           <span class="c1"># print the definition of the term</span>
 </pre></div>
 </div>
 </div>
@@ -712,7 +712,7 @@ Stereoisomeric olefins or cycloalkanes (or hetero-analogues) which differ in the
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./samples"
         },
         predefinedOutput: true
