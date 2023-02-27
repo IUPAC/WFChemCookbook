@@ -1,44 +1,36 @@
-# Table of contents
+# Table of contents sampler edition 
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
 root: intro
-parts:
- - caption: RECIPES
-    chapters:
+parts: 
+ - caption: SAMPLE RECIPES
+   chapters:
+      - file: sampler
+        sections:
+          - file: samples/uvvis_metadata.ipynb
+          - file: samples/goldbook.ipynb
+          - file: samples/opsin.ipynb
+          - file: samples/pubchem-pug
+            sections:
+              - file: samples/pubchem-pug-rest1.ipynb
+              - file: samples/pubchem-pug-rest2.ipynb
+              - file: samples/pubchem-pug-rest3.ipynb
+          - file: samples/computing_inchis.ipynb
+          - file: samples/dataset_search.ipynb
+          - file: samples/PrepChemicalDataforSharing
+          - file: samples/learn_spectra
+ - caption: FUTURE CONTENTS
+   chapters:
+      - file: school
+      - file: ingredients
       - file: recipes
-        sections:
-          - file: recipes/uvvis_metadata.ipynb
-          - file: recipes/goldbook.ipynb
-          - file: recipes/opsin.ipynb
-          - file: recipes/pubchem-pug-rest1.ipynb
-          - file: recipes/pubchem-pug-rest2.ipynb
-          - file: recipes/pubchem-pug-rest3.ipynb
-          - file: recipes/computing_inchis.ipynb
-          - file: recipes/dataset_search.ipynb
-  - caption: CULINARY SCHOOL
-    chapters:
-      - file: howtos
-        sections:
-        - file: howtos/uniqueidentifiers
-        - file: howtos/PrepChemicalDataforSharing
-        - file: howtos/learn_spectra
-  - caption: PANTRY
-    chapters:
-    - file: pantry
-      sections:
-        - file: repositories/commonchem
-        - file: repositories/figshare
-        - file: repositories/pubchem
-        - file: repositories/zenodo
-  - caption: INGREDIENTS
-    chapters:
-    - file: ingredients
-  - caption: COOKWARE
-    chapters:
-    - file: cookware
-  - caption: REFERENCE
-    chapters:
+      - file: kitchen
+      - file: pantry
+      - file: cookware
+      - file: menus 
+ - caption: REFERENCE
+   chapters:
     - file: about
     - file: glossary
     - file: bibliography

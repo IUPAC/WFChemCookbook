@@ -1,4 +1,4 @@
-## Sampler Edition - we need your input! 
+# Sampler Edition - we need your input! 
 
 Welcome to our new Cookbook! 
 

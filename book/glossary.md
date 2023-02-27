@@ -1,5 +1,9 @@
 # Glossary
 
+```{note}
+DRAFT
+```
+
 A glossary of FAIR terminology will be developed.  The entries below come from the recent paper {cite:p}`Hanson2022`
 from the [IUPAC 'FAIR Spec' project](https://iupac.org/project/2019-031-1-024/) and will be augmented with chemistry
 examples and addition entries as needed.  Terms marked [RDA] are found/derived from this 
