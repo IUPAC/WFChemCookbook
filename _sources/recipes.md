@@ -1,3 +1,5 @@
-# Workflows for FAIR Data
+# RECIPES: Workflows for machine-readable chemical data 
 
-How to collect/process your data to make it FAIR.
+FAIR data are Findable, Accessible, Interoperable and Reuseable by both humans and machines and "Fully AI-Ready". This section will provide atomized workflows for specific tasks related to managing machine-readable chemical data. Interactive examples are included as demonstrations that can be copied and executed through a Jupyter notebook or other Python based code. 
+
+See the SAMPLER RECIPES section for a range of example protocols developed by active community members. 

@@ -1,11 +1,6 @@
 # About this Project
 
-This website is the product of the WorldFAIR D3.2 project, one of three deliverables under WP3 developed by the 
-International Union of Pure and Applied Chemistry ([IUPAC](https://iupac.org/)) for the 
-[WorldFAIR](https://worldfair-project.eu/) project. The IUPAC FAIR Chemistry Cookbook is intended to support the 
-chemistry community in understanding what FAIR is and how chemists can be enabled to be FAIRer moving forward. In 
-addition, the site is intended to be a living resource by addition of new content as the area of FAIR evolves and 
-encouraging the chemistry community to contribute new content.
+This website is the product of the [WorldFAIR D3.2 project](https://iupac.org/project/2022-028-1-024/), one of three deliverables under the [Chemistry case study](https://worldfair-project.eu/case-studies-of-worldfair/#chemistry) developed by the IUPAC Committee on Publications and Cheminformatics Data Standards ([CPCDS]([https://iupac.org/](https://iupac.org/body/024/)) for the [WorldFAIR initiative](https://worldfair-project.eu/) (see below). The IUPAC FAIR Chemistry Cookbook is intended to support the broader community in understanding how to implement the FAIR data principles for chemical data. The site is designed to be a living resource through the addition of new content as strategies for implementing FAIR evolve and the sharing and reuse of FAIR chemical data continues to increase.
 
 ## WorldFAIR D3.2 Objective
 FAIR chemical data needs to be machine-readable, and this can be an unfamiliar scenario for many researchers and other 
@@ -31,3 +26,8 @@ and publication of executable content. The content will cover a range of activit
 data likely to be encountered by researchers, data scientists and many other stakeholders engaged in publishing and 
 re-using chemical data. Best practices for using standards and tools will be emphasized and the resource will include 
 instructions for how to contribute materials.
+
+## WordFAIR Initiative
+The Committee on Data of the International Science Council ([CODATA](https://codata.org/)) and the Research Data Alliance (RDA) have recently launched the [WorldFAIR Initiative](https://worldfair-project.eu/) to advance implementation of the [FAIR data principles](https://force11.org/info/the-fair-data-principles/) within and across research domains. The International Union of Pure and Applied Chemistry ([IUPAC](https://iupac.org/)), known as the world authority on chemical nomenclature, terminology, and standardized methods of measurement, is leading the WorldFAIR Chemistry project in a concerted effort through collaboration with related disciplines and data science communities to support broader data sharing of chemical data. The goal of [WorldFAIR Chemistry](https://iupac.org/project/2022-012-1-024) is to support the use of chemical data standards in research workflows to enable downstream data reuse through practical direction and resources.
+
+*WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41 Coordination and Support Action under Grant Agreement No. 101058393.*
