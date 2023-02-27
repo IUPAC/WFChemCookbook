@@ -5,14 +5,14 @@ The IUPAC FAIR Chemistry Cookbook is intended to be an open, collaborative, comm
 *WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41 Coordination and Support Action under Grant Agreement No. 101058393.*
 
 ## Using the Cookbook
-
-[use cases]
-[Jupyter notebooks]
-[interactive recipes]
-[headers]
-[skills]
-[learning objectives]
-[disclaimer] 
+- Many of the recipes on this site will take advantage of Juypter Notebooks to run Python code 
+ in the browser for an interactive (and educational) feel for the user.
+- We have tried to provide useful information about each recipe in the collapsable 'header'
+ that is below the title of the recipe.  We are hoping this provides users with some sense
+ of the how, what and when a recipe might be useful.
+- As part of the header we have included bullets for skills and learning objectives but have also
+ thought to add use cases.  If you have any ideas about how we characterize recipes we would love to 
+ hear them!
 
 ## Contributing to the Cookbook
 
