@@ -6,40 +6,40 @@ root: intro
 parts: 
  - caption: SAMPLE RECIPES
    chapters:
-      - file: sampler
-      - file: samples/goldbook.ipynb
-      - file: samples/computing_inchis.ipynb
-      - file: samples/learn_spectra
-      - file: samples/dataset_search.ipynb
-      - file: samples/PrepChemicalDataforSharing
-      - file: samples/pubchem-pug
-        sections:
+     - file: sampler
+     - file: samples/goldbook.ipynb
+     - file: samples/computing_inchis.ipynb
+     - file: samples/learn_spectra
+     - file: samples/dataset_search.ipynb
+     - file: samples/PrepChemicalDataforSharing
+     - file: samples/pubchem-pug
+       sections:
           - file: samples/pubchem-pug-rest1.ipynb
           - file: samples/pubchem-pug-rest2.ipynb
           - file: samples/pubchem-pug-rest3.ipynb
-      - file: samples/uvvis_metadata.ipynb
-      - file: samples/opsin.ipynb
+     - file: samples/uvvis_metadata.ipynb
+     - file: samples/opsin.ipynb
  - caption: CULINARY SCHOOL
    chapters: 
-      - file: school
+     - file: school
  - caption: INGREDIENTS
    chapters:
-      - file: ingredients
+     - file: ingredients
  - caption: RECIPES
    chapters:
-      - file: recipes
+     - file: recipes
  - caption: TEST KITCHEN
    chapters:
-      - file: kitchen
+     - file: kitchen
  - caption: PANTRY
    chapters:
-      - file: pantry
+     - file: pantry
  - caption: COOKWARE
    chapters:
-      - file: cookware
+     - file: cookware
  - CAPTION: MENUS 
    chapters:
-      - file: menus 
+     - file: menus 
  - caption: REFERENCE
    chapters:
     - file: about
