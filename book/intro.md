@@ -1,4 +1,4 @@
-# Welcome to the IUPAC FAIR Chemistry Cookbook
+# Using the Cookbook
 
 The IUPAC FAIR Chemistry Cookbook is intended to be an open, collaborative, community focused resource on working with 
 FAIR data in chemistry. FAIR data are findable, accessible, interoperable, and reusable for machine processing 
@@ -7,10 +7,7 @@ using chemical data standards through practical, interactive tutorials, provided
 and Applied Chemistry (IUPAC) through the EU funded WorldFAIR project 
 (see [About this project](https://iupac.github.io/WFChemCookbook/about.html)). 
 
-*WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41 
-Coordination and Support Action under Grant Agreement No. 101058393.*
-
-## Using the Cookbook
+## Recipes 
 - Many of the recipes on this site will take advantage of Juypter Notebooks to run Python code 
  in the browser for an interactive (and educational) feel for the user.
 - We have tried to provide useful information about each recipe in the collapsable 'header'
@@ -23,3 +20,6 @@ Coordination and Support Action under Grant Agreement No. 101058393.*
 ## Contributing to the Cookbook
 
 We welcome [feedback & suggestions](https://github.com/IUPAC/WFChemCookbook/issues/new/choose) for additional content. 
+
+*WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41 
+Coordination and Support Action under Grant Agreement No. 101058393.*
