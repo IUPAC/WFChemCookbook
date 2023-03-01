@@ -2,7 +2,7 @@
 name: Provide General Feedback
 about: Add your comments as to what you like and dont like about the cookbook
 title: ''
-labels: ''
+labels: feedback
 assignees: ''
 
 ---
