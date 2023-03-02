@@ -1,4 +1,4 @@
-# PANTRY: Finding and sharing FAIR chemical data
+# Finding and sharing FAIR chemical data
 
 This section will review online resources where you can deposit/share and find/reuse FAIR chemical data. This material 
 will be informed by the [WorldFAIR Chemistry D3.1 project](https://iupac.org/project/2022-027-1-024) related to 
