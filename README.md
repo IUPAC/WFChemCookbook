@@ -3,7 +3,7 @@ The IUPAC FAIR Chemistry Cookbook is an open, collaborate, community focused res
 
 ## Usage
 
-See the [cookbook](https://iupac.github.io/WFChemCookbook/howtos_identifiers.html) for a user friendly, interactive portal for these resources.
+See the [cookbook](https://iupac.github.io/WFChemCookbook/) for a user-friendly, interactive portal for these resources.
 
 The contents of this repository are designed to use the [Jupyter Book](https://jupyterbook.org/) framework to generate a simple to navigate and easy to maintain set of reference materials for getting started leveraging common and powerful chemical information tooling.
 
