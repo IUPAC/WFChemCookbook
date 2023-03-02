@@ -1,16 +1,16 @@
 # Preparing Chemical Data for FAIR Sharing - A Minimalist Approach
 
-```{dropdown} About this how to
-- Author: [Ye Li](https://orcid.org/0000-0001-8361-6916)
+```{dropdown} About this recipe
+- Author(s): [Ye Li](https://orcid.org/0000-0001-8361-6916)
 - Reviewer:
-- Topics: Chemical data, FAIR, formatting
-- Format: Markdown file
-- Scenarios: I need to share my data in a FAIR way
-- Skills: You should be familiar with
+- Topic(s): Chemical data, FAIR, formatting
+- Format(s): Markdown file
+- Scenario(s): I need to share my data in a FAIR way
+- Skill(s): You should be familiar with
     - [Identifiers](https://www.ibm.com/topics/api)
 - Learning outcomes: After completing this example you should understand:
     - Understand what it will take to make your data FAIR
-- Citation: 'How to: Preparing Chemical Data for FAIR Sharing - A Minimalist Approach', The IUPAC FAIR Chemistry Cookbook, https://iupac.github.io/WFChemCookbook/samples/PrepChemicalDataforSharing.html
+- Citation: We will not be providing citations for the sampler, but citations for recipes will be available (with copy button) in the full release of the Cookbook and will include DOI’s. 
 - Reuse: This notebook is made available under a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
 ```
 
