@@ -1,13 +1,13 @@
 # FAIR formating of (multi, hyper)spectral data
 
-```{dropdown} About this interactive ![icons](../images/rocket.png) recipe
-- Author: 
+```{dropdown} About this recipe
+- Author(s): 
 - Reviewer: 
-- Topics: 
-- Format: 
-- Skills:
+- Topic(s): 
+- Format(s): 
+- Skill(s):
 - Learning outcomes:  After completing this example you should understand:
-- Citation: 'FAIR formating of (multi, hyper)spectral data', The IUPAC FAIR Chemistry Cookbook, https://iupac.github.io/WFChemCookbook/samples/learn_spectra.html
+- Citation: We will not be providing citations for the sampler, but citations for recipes will be available (with copy button) in the full release of the Cookbook and will include DOI’s. 
 - Reuse: This notebook is made available under a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
 ```
 
