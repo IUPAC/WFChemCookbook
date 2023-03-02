@@ -28,21 +28,21 @@ re-using chemical data. Best practices for using standards and tools will be emp
 instructions for how to contribute materials.
 
 ## WorldFAIR D3.2 Project Contributors
-- Stuart Chalk (Editor) 
+- Stuart Chalk (Editor), University of North Florida
 - Ann-Christin Andres
 - Sally Bloodworth
 - Simon Coles
-- Jordi Cuadros
+- Jordi Cuadros, IQS Universitat Ramon Llull
 - Sonja Herres-Pawlis
 - John Jolliffe
 - Sunghwan Kim
 - Nicola Knight
 - Ken Kroenlein
 - Ye Li
-- Leah McEwen 
+- Leah McEwen, Cornell University
 - Samuel Munday
 - Fatima Mustafa 
-- Vincent F Scalfani
+- Vincent F. Scalfani, University of Alabama
 
 ## WordFAIR Initiative
 The Committee on Data of the International Science Council ([CODATA](https://codata.org/)) and the Research Data Alliance (RDA) have recently launched the [WorldFAIR Initiative](https://worldfair-project.eu/) to advance implementation of the [FAIR data principles](https://force11.org/info/the-fair-data-principles/) within and across research domains. The International Union of Pure and Applied Chemistry ([IUPAC](https://iupac.org/)), known as the world authority on chemical nomenclature, terminology, and standardized methods of measurement, is leading the WorldFAIR Chemistry project in a concerted effort through collaboration with related disciplines and data science communities to support broader data sharing of chemical data. The goal of [WorldFAIR Chemistry](https://iupac.org/project/2022-012-1-024) is to support the use of chemical data standards in research workflows to enable downstream data reuse through practical direction and resources.

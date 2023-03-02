@@ -621,6 +621,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 <li><p class="sd-card-text"><a class="reference external" href="https://www.ibm.com/topics/api">Application Programming Interfaces (APIs)</a></p></li>
 <li><p class="sd-card-text"><a class="reference external" href="https://www.w3schools.com/js/js_json_intro.asp">The JavaScript Object Notation (JSON) file format</a></p></li>
 <li><p class="sd-card-text"><a class="reference external" href="https://www.youtube.com/watch?v=kqtD5dpn9C8">Introductory Python</a></p></li>
+<li><p class="sd-card-text">[Regular expressions]</p></li>
 </ul>
 </li>
 <li><p class="sd-card-text">Learning outcomes: After completing this example you should understand:</p>
@@ -649,7 +650,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </section>
 <section id="step-2-add-a-python-function">
 <h2>Step 2: Add a Python function<a class="headerlink" href="#step-2-add-a-python-function" title="Permalink to this headline">#</a></h2>
-<p>This function removes HTML tags from textual data</p>
+<p>This function removes HTML tags from textual data.  It uses <a class="reference external" href="https://www.youtube.com/watch?v=rhzKDrUiJVk">regular expressions</a> to detect HTML tags (e.g., <b>I am surrounded by HTML tags</b>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Source: https://medium.com/@jorlugaqui/how-to-strip-html-tags-from-a-string-in-python-7cb81a2bbf44</span>
@@ -663,7 +664,8 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </section>
 <section id="step-3-download-a-json-file">
 <h2>Step 3: Download a JSON file<a class="headerlink" href="#step-3-download-a-json-file" title="Permalink to this headline">#</a></h2>
-<p>Frab data for all the IUPAC Recommended Terms currently available</p>
+<p>Download data for all the IUPAC Recommended Terms currently available. Even though the amount of data that we download here is big (804 kB),
+it is better to get the data all at once rather than call the API every time in a loop.  This makes the ‘for’ loop in Step 4 much faster.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allpath</span> <span class="o">=</span> <span class="s2">&quot;https://goldbook.iupac.org/terms/index/all/json&quot;</span>  <span class="c1"># URL to the IUPAC Gold Book API down</span>
@@ -682,22 +684,27 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </section>
 <section id="step-4-search-for-a-term">
 <h2>Step 4: Search for a term<a class="headerlink" href="#step-4-search-for-a-term" title="Permalink to this headline">#</a></h2>
-<p>Search the recommended term list and if present get the terms code</p>
+<p>Here we search the recommended term list and if present get the terms code.  We use the function above to ‘normalize’ the text of the titles from
+the Gold Book entries, by removing the HTML markup, so they match the term we are looking for. (Note: not all term titles have HTML in them)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">searchterm</span> <span class="o">=</span> <span class="s2">&quot;cis-trans isomers&quot;</span>                            <span class="c1"># the term to be found</span>
 <span class="n">searchcode</span> <span class="o">=</span> <span class="kc">None</span>                                           <span class="c1"># empty variable to contain the searchcode</span>
+<span class="n">rawtitle</span> <span class="o">=</span> <span class="kc">None</span>                                             <span class="c1"># empty variable to contain the raw title string</span>
 <span class="k">for</span> <span class="n">code</span><span class="p">,</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">terms</span><span class="p">[</span><span class="s1">&#39;terms&#39;</span><span class="p">][</span><span class="s1">&#39;list&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>           <span class="c1"># iterate over each term in the list (code (str), term (obj))</span>
     <span class="n">cleaned</span> <span class="o">=</span> <span class="n">remove_html_tags</span><span class="p">(</span><span class="n">term</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>               <span class="c1"># remove any HTML formatting in the title</span>
     <span class="k">if</span> <span class="n">cleaned</span> <span class="o">==</span> <span class="n">searchterm</span><span class="p">:</span>                               <span class="c1"># check if the term matches the one we want</span>
         <span class="n">searchcode</span> <span class="o">=</span> <span class="n">code</span>                                   <span class="c1"># if it does, get the code for the term</span>
-        <span class="k">break</span>                                               <span class="c1"># we have found the term so we can get out of the for loop</span>
+        <span class="n">rawtitle</span> <span class="o">=</span> <span class="n">term</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>                            <span class="c1"># saw the raw title so we can see it below</span>
+        <span class="k">break</span>                                               <span class="c1"># we have found the term, so we can get out of the for loop</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rawtitle</span><span class="p">)</span>                                             <span class="c1"># IUPAC Gold Book term code (if found)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">searchcode</span><span class="p">)</span>                                           <span class="c1"># IUPAC Gold Book term code (if found)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C01093
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;i&gt;cis&lt;/i&gt;-&lt;i&gt;trans&lt;/i&gt; isomers
+C01093
 </pre></div>
 </div>
 </div>
@@ -711,8 +718,20 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;https://goldbook.iupac.org/terms/view/**/json&quot;</span>      <span class="c1"># URL path to the IUPAC Gold Book API for a term</span>
 <span class="n">reqdata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;**&quot;</span><span class="p">,</span> <span class="n">searchcode</span><span class="p">))</span>      <span class="c1"># request data from the Gold Book server</span>
 <span class="n">jsondata</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">reqdata</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>                      <span class="c1"># get the downloaded JSON</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">searchterm</span> <span class="o">+</span> <span class="s2">&quot; (&quot;</span> <span class="o">+</span> <span class="n">searchcode</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>                 <span class="c1"># print the title and Gold Book term code</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">jsondata</span><span class="p">[</span><span class="s1">&#39;term&#39;</span><span class="p">][</span><span class="s1">&#39;definitions&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>           <span class="c1"># print the definition of the term</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jsondata</span><span class="p">)</span>                                             <span class="c1"># print out all the downloaded data, so we can &#39;see&#39; its structure and know how to get the definition</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;term&#39;: {&#39;id&#39;: &#39;01093&#39;, &#39;doi&#39;: &#39;10.1351/goldbook.C01093&#39;, &#39;code&#39;: &#39;C01093&#39;, &#39;status&#39;: &#39;current&#39;, &#39;longtitle&#39;: &#39;IUPAC Gold Book - cis-trans isomers&#39;, &#39;title&#39;: &#39;&lt;i&gt;cis&lt;/i&gt;-&lt;i&gt;trans&lt;/i&gt; isomers&#39;, &#39;version&#39;: &#39;2.3.3&#39;, &#39;lastupdated&#39;: &#39;2014-02-24&#39;, &#39;definitions&#39;: [{&#39;id&#39;: &#39;1&#39;, &#39;text&#39;: &#39;Stereoisomeric olefins or cycloalkanes (or hetero-analogues) which differ in the positions of atoms (or groups) relative to a reference plane: in the cis-isomer the atoms are on the same side, in the trans-isomer they are on opposite sides. [image: molecular structures showing cis/trans isomerism]&#39;, &#39;chemicals&#39;: [{&#39;type&#39;: &#39;chemimage&#39;, &#39;title&#39;: &#39;molecular structures showing cis/trans isomerism&#39;, &#39;file&#39;: &#39;https://goldbook.iupac.org/img/inline/C01093.png&#39;}], &#39;links&#39;: [{&#39;title&#39;: &#39;Stereoisomeric&#39;, &#39;type&#39;: &#39;internal&#39;, &#39;url&#39;: &#39;https://goldbook.iupac.org/terms/view/S05983&#39;}, {&#39;title&#39;: &#39;olefins&#39;, &#39;type&#39;: &#39;goldify&#39;, &#39;url&#39;: &#39;https://goldbook.iupac.org/terms/view/O04281&#39;}, {&#39;title&#39;: &#39;cycloalkanes&#39;, &#39;type&#39;: &#39;goldify&#39;, &#39;url&#39;: &#39;https://goldbook.iupac.org/terms/view/C01497&#39;}, {&#39;title&#39;: &#39;isomer&#39;, &#39;type&#39;: &#39;goldify&#39;, &#39;url&#39;: &#39;https://goldbook.iupac.org/terms/view/I03289&#39;}, {&#39;title&#39;: &#39;trans&#39;, &#39;type&#39;: &#39;goldify&#39;, &#39;url&#39;: &#39;https://goldbook.iupac.org/terms/view/C01092&#39;}], &#39;sources&#39;: [&quot;PAC, 1996, 68, 2193. &#39;Basic terminology of stereochemistry (IUPAC Recommendations 1996)&#39; on page 2204 (https://doi.org/10.1351/pac199668122193)&quot;]}], &#39;referencedin&#39;: [{&#39;title&#39;: &#39;Wikipedia - Cis-trans izomerie (cs)&#39;, &#39;url&#39;: &#39;https://cs.wikipedia.org/wiki/Cis-trans_izomerie&#39;}, {&#39;title&#39;: &#39;Wikipedia - Cis-trans izoméria (sk)&#39;, &#39;url&#39;: &#39;https://sk.wikipedia.org/wiki/Cis-trans_izoméria&#39;}, {&#39;title&#39;: &#39;Wikipedia - Cis–trans isomerism (en)&#39;, &#39;url&#39;: &#39;https://en.wikipedia.org/wiki/Cis–trans_isomerism&#39;}, {&#39;title&#39;: &#39;Wikipedia - Isomeria (it)&#39;, &#39;url&#39;: &#39;https://it.wikipedia.org/wiki/Isomeria&#39;}, {&#39;title&#39;: &#39;Wikipedia - Isomeria cis-trans (it)&#39;, &#39;url&#39;: &#39;https://it.wikipedia.org/wiki/Isomeria_cis-trans&#39;}, {&#39;title&#39;: &#39;Wikipedia - Isomeria geométrica (pt)&#39;, &#39;url&#39;: &#39;https://pt.wikipedia.org/wiki/Isomeria_geométrica&#39;}, {&#39;title&#39;: &#39;Wikipedia - Isomería cis-trans (es)&#39;, &#39;url&#39;: &#39;https://es.wikipedia.org/wiki/Isomería_cis-trans&#39;}, {&#39;title&#39;: &#39;Wikipedia - Talk:Isomer (en)&#39;, &#39;url&#39;: &#39;https://en.wikipedia.org/wiki/Talk:Isomer&#39;}, {&#39;title&#39;: &#39;Wikipedia - Talk:Stereoisomerism (en)&#39;, &#39;url&#39;: &#39;https://en.wikipedia.org/wiki/Talk:Stereoisomerism&#39;}, {&#39;title&#39;: &#39;Wikipedia - Цис–транс ізомерія (uk)&#39;, &#39;url&#39;: &#39;https://uk.wikipedia.org/wiki/Цис–транс_ізомерія&#39;}, {&#39;title&#39;: &#39;Wikipedia - ایزومری سیس–ترانس (fa)&#39;, &#39;url&#39;: &#39;https://fa.wikipedia.org/wiki/ایزومری_سیس–ترانس&#39;}, {&#39;title&#39;: &#39;Wikipedia - 顺反异构 (zh)&#39;, &#39;url&#39;: &#39;https://zh.wikipedia.org/wiki/顺反异构&#39;}], &#39;links&#39;: {&#39;html&#39;: &#39;https://goldbook.iupac.org/terms/view/C01093/html&#39;, &#39;json&#39;: &#39;https://goldbook.iupac.org/terms/view/C01093/json&#39;, &#39;xml&#39;: &#39;https://goldbook.iupac.org/terms/view/C01093/xml&#39;, &#39;plain&#39;: &#39;https://goldbook.iupac.org/terms/view/C01093/plain&#39;, &#39;pdf&#39;: &#39;https://goldbook.iupac.org/terms/view/C01093/pdf&#39;}, &#39;citeas&#39;: &#39;IUPAC. Compendium of Chemical Terminology, 2nd ed. (the &quot;Gold Book&quot;). Compiled by A. D. McNaught and A. Wilkinson. Blackwell Scientific Publications, Oxford (1997). Online version (2019-) created by S. J. Chalk. ISBN 0-9678550-9-8. https://doi.org/10.1351/goldbook.&#39;, &#39;license&#39;: &#39;Licensed under Creative Commons Attribution-NoDerivatives (CC BY-NC-ND) 4.0 International (https://creativecommons.org/licenses/by-nc-nd/4.0/)&#39;, &#39;collection reuse&#39;: &#39;For parties interested in reusing the entire IUPAC Gold Book please contact IUPAC here https://www.cognitoforms.com/IUPAC1/ContactInformationForm&#39;, &#39;disclaimer&#39;: &#39;The International Union of Pure and Applied Chemistry (IUPAC) is continuously reviewing and, where needed, updating terms in the Compendium of Chemical Terminology (the IUPAC Gold Book). Users of these terms are encouraged to include the version of a term with its use and to check regularly for updates to term definitions that you are using.&#39;, &#39;accessed&#39;: &#39;2023-03-02T18:50:11+00:00&#39;}}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">searchterm</span> <span class="o">+</span> <span class="s2">&quot; (&quot;</span> <span class="o">+</span> <span class="n">searchcode</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>                 <span class="c1"># print the title and Gold Book term code</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jsondata</span><span class="p">[</span><span class="s1">&#39;term&#39;</span><span class="p">][</span><span class="s1">&#39;definitions&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>           <span class="c1"># extract out and print the definition of the term (compare to above)</span>
 </pre></div>
 </div>
 </div>
