@@ -1,4 +1,4 @@
-# CULINARY SCHOOL: FAIR basics for Chemistry 
+# FAIR basics for Chemistry 
 
 This section will include background on the FAIR data principles with specific reference to chemical data standards and critical issues to keep in mind when working with chemical data description, including topics listed below. 
 
