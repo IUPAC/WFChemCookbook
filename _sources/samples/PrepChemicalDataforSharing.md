@@ -37,4 +37,5 @@
 
 ## Examples of FAIR chemical data package in the minimalist approach
 
-Content of this receipe is adopted from Li, Y., & Ahlqvist, G. P. (2021, June 28). Preparing Your Chemical Data for Publishing and FAIR Sharing. https://doi.org/10.17605/OSF.IO/VCSNP 
+Content of this receipe is adopted from Li, Y., & Ahlqvist, G. P. (2021, June 28). Preparing Your Chemical Data for 
+Publishing and FAIR Sharing. https://doi.org/10.17605/OSF.IO/VCSNP 
