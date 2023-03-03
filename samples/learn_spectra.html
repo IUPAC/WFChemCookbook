@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>FAIR formating of (multi, hyper)spectral data &#8212; IUPAC FAIR Chemistry Cookbook</title>
+    <title>FAIR formating of (multi, hyper) spectral data &#8212; IUPAC FAIR Chemistry Cookbook</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -137,7 +137,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   FAIR formating of (multi, hyper)spectral data
+   FAIR formating of (multi, hyper) spectral data
   </a>
  </li>
  <li class="toctree-l1">
@@ -471,28 +471,28 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-metadata">
-   What metadata?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-simple-minimal-approach">
    A simple minimal approach
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-pool-of-formats-some-are-fairer-than-others">
-   A pool of formats (some are FAIRer than others)
+  <a class="reference internal nav-link" href="#what-metadata">
+   What metadata?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#checking-the-databases">
-   Checking the databases
+  <a class="reference internal nav-link" href="#plenty-of-formats-some-are-fairer-than-others">
+   Plenty of formats (some are FAIRer than others)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-helpful-software">
-   Some helpful software
+  <a class="reference internal nav-link" href="#guidance-for-ms-data">
+   Guidance for MS data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ms-databases-and-conversion-software">
+   MS databases and conversion software
   </a>
  </li>
 </ul>
@@ -504,7 +504,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>FAIR formating of (multi, hyper)spectral data</h1>
+                <h1>FAIR formating of (multi, hyper) spectral data</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -520,28 +520,28 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-metadata">
-   What metadata?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-simple-minimal-approach">
    A simple minimal approach
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-pool-of-formats-some-are-fairer-than-others">
-   A pool of formats (some are FAIRer than others)
+  <a class="reference internal nav-link" href="#what-metadata">
+   What metadata?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#checking-the-databases">
-   Checking the databases
+  <a class="reference internal nav-link" href="#plenty-of-formats-some-are-fairer-than-others">
+   Plenty of formats (some are FAIRer than others)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-helpful-software">
-   Some helpful software
+  <a class="reference internal nav-link" href="#guidance-for-ms-data">
+   Guidance for MS data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ms-databases-and-conversion-software">
+   MS databases and conversion software
   </a>
  </li>
 </ul>
@@ -555,67 +555,135 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="fair-formating-of-multi-hyper-spectral-data">
-<h1>FAIR formating of (multi, hyper)spectral data<a class="headerlink" href="#fair-formating-of-multi-hyper-spectral-data" title="Permalink to this headline">#</a></h1>
+<h1>FAIR formating of (multi, hyper) spectral data<a class="headerlink" href="#fair-formating-of-multi-hyper-spectral-data" title="Permalink to this headline">#</a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-About this recipe<div class="sd-summary-down docutils">
+About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
-<li><p class="sd-card-text">Author(s):</p></li>
+<li><p class="sd-card-text">Author: <a class="reference external" href="https://orcid.org/0000-0001-6513-9140">Jordi Cuadros</a></p></li>
 <li><p class="sd-card-text">Reviewer:</p></li>
-<li><p class="sd-card-text">Topic(s):</p></li>
-<li><p class="sd-card-text">Format(s):</p></li>
-<li><p class="sd-card-text">Skill(s):</p></li>
-<li><p class="sd-card-text">Learning outcomes:  After completing this example you should understand:</p></li>
-<li><p class="sd-card-text">Citation: We will not be providing citations for the sampler, but citations for recipes will be available (with copy button) in the full release of the Cookbook and will include DOI’s.</p></li>
+<li><p class="sd-card-text">Topics: Spectral data, MS, Spectral data processing,</p></li>
+<li><p class="sd-card-text">Format: Markdown file</p></li>
+<li><p class="sd-card-text">Skills: You should be familiar with</p>
+<ul>
+<li><p class="sd-card-text"><a class="reference external" href="https://chem.libretexts.org/Courses/University_of_Arkansas_Little_Rock/ChemInformatics_(2015)%3A_Chem_4399_5399/Text/5_Chemical_Identifiers">Identifiers</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Instrumental_Analysis_(LibreTexts)">Instrumental analysis</a></p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Learning outcomes:  After completing this example you should understand:</p>
+<ul>
+<li><p class="sd-card-text">Understand the different types of spectral data we may have and find</p></li>
+<li><p class="sd-card-text">Know the most relevant data formats for storing MS data</p></li>
+<li><p class="sd-card-text">Be able to prepare a set of MS Spectra for its FAIR distribution</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Citation: ‘FAIR formating of (multi, hyper)spectral data’, The IUPAC FAIR Chemistry Cookbook, <a class="reference external" href="https://iupac.github.io/WFChemCookbook/samples/learn_spectra.html">https://iupac.github.io/WFChemCookbook/samples/learn_spectra.html</a></p></li>
 <li><p class="sd-card-text">Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
 </ul>
 </div>
-</details><p>Spectral data are common in many domains and may arise from a variety of instruments and instrumental techniques. In many cases, a spectrum is a table of observed values as a single variable changes (wavelength, time, mass-charge ratio…) but in other cases can be more complex as or the number of variables or the resolution increases.</p>
+</details><p>Spectral data are common in many domains and may arise from a variety of instruments and instrumental techniques. In
+many cases, a spectrum is a table of observed values as a single variable changes (wavelength, time, mass-to-charge
+ratio…) but in other cases can be more complex as or the number of variables or the resolution increases.</p>
 <section id="what-data">
 <h2>What data?<a class="headerlink" href="#what-data" title="Permalink to this headline">#</a></h2>
+<p>While we all share the mental image of a spectrum, and most of us have different mental images for an IR (usually a
+line with broad overlapping peaks) or for an MS spectrum (usually a set of vertical lines), we are often unaware of
+the data processing that leads to these results.</p>
+<p>Any spectrum starts with some <strong>raw data</strong> collected by a set of sensors inside the instrument. While these unprocessed
+data set is rarely available, We must be aware that the data that usually comes out from the analytical instruments may
+have already been partially processed.</p>
+<p>These data collected from the sensors are then processed to obtain many form of <strong>processed spectral data</strong>. Commonly
+the baseline is adjusted, noise is removed, and scales may be centered and scaled. These data still include data points
+for each possible of the independent variable (time, mass-to-charge ratio, wavelength…).</p>
+<p>For some analytical techniques, data undergo further processing in order to select the relevant peak. The spectral data
+are then reduced to a <strong>peak list</strong> by identifying the local maxima and using a threshold value to keep only significant signals.</p>
+<p>Additionally, in some cases, spectra are further simplified by keeping only the data that belong to one or more
+<strong>regions of interest</strong> (ROI). Further additional data can also be calculated, like integrals, coupling constants, etc.,
+and included to the spectral data.</p>
+<p>While any of these data can be stored in the same formats independenly of the level of processing, it is important to
+properly encode the data manipulation steps being performed, and to understand what is stored in a data set.</p>
+<p>Last, sometimes this is presented in a chart (static or interactive) and/or saved as an image file.</p>
+<p>The data in each of these processing steps offers different types of reusability. More on this is discussed, for NMR, in</p>
 <ul class="simple">
-<li><p>Raw</p></li>
-<li><p>Processed</p></li>
-<li><p>Peak list</p></li>
-<li><p>ROI</p></li>
+<li><p>Hanson, R. M., Jeannerat, D., Archibald, M., Bruno, I., Chalk, S., Davies, A. N., … &amp; Rzepa, H. S. (2021). FAIR enough?. Spectrosc. Europe, 33(2), 25-31.</p></li>
 </ul>
-</section>
-<section id="what-metadata">
-<h2>What metadata?<a class="headerlink" href="#what-metadata" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Authorship</p></li>
-<li><p>Instrument</p></li>
-<li><p>Procedure/technique</p></li>
-<li><p>Sample</p></li>
-</ul>
+<p>Therefore, consider including in your FAIR data more than one type of information, for example, raw data, a processed
+data file for the regions of interest and an image or PDF of the spectra.</p>
 </section>
 <section id="a-simple-minimal-approach">
 <h2>A simple minimal approach<a class="headerlink" href="#a-simple-minimal-approach" title="Permalink to this headline">#</a></h2>
-<p>XML+CSV</p>
+<p>We will approach below on to find appropriate formats for the many existant analytical techniques, but a common minimal
+approach that is always possible is to encode the data as one or more tables in a comma-separated text file (CSV) or in
+a tab-delimited text file (TSV) supplemented with the required metadata to undestand and properly interpreted the data.
+Metadata is usually encoded in XML or JSON data files, although other standard open formats may also be possible.</p>
+<p>More on this approach can be found at <a class="reference internal" href="PrepChemicalDataforSharing.html"><span class="doc std std-doc">Preparing Chemical Data for FAIR Sharing - A Minimalist Approach</span></a>.</p>
 </section>
-<section id="a-pool-of-formats-some-are-fairer-than-others">
-<h2>A pool of formats (some are FAIRer than others)<a class="headerlink" href="#a-pool-of-formats-some-are-fairer-than-others" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3518119/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3518119/</a></p>
+<section id="what-metadata">
+<h2>What metadata?<a class="headerlink" href="#what-metadata" title="Permalink to this headline">#</a></h2>
+<p>Associated data is critical for reusing spectral data sets. Guidance on this is offered in the reports of the
+<a class="reference external" href="https://iupac.org/project/2019-031-1-024/">FAIRSpec IUPAC project</a>. Some details are also included in
+<a class="reference internal" href="uvvis_metadata.html"><span class="doc std std-doc">Creating a UV/Vis (meta)data file structure for small molecule characterisation</span></a>.</p>
+<p>It is always important to include</p>
 <ul class="simple">
-<li><p>JCAMP-DX</p></li>
-<li><p>mzML</p></li>
-<li><p>msp</p></li>
+<li><p>Contextual information about the data (references to papers or collections)</p></li>
+<li><p>Instrumental details, such as the instrument manufacturer and its model, and the parameters being used when operating it</p></li>
+<li><p>Sample information, using chemical identifiers in the case of known susbtances, mixtures identifiers if mixture is known, or best available description in other cases</p></li>
+<li><p>Analytical procedure/technique followed to prepare the data</p></li>
+<li><p>Authorship and licensing information</p></li>
+</ul>
+<p>The more information is available and accessible, the more reusable will be the data set. The more standardized
+identifiers we use, the more findable it will be. And interoperability will be enhanced if we use standardized
+formats for the metadata.</p>
+</section>
+<section id="plenty-of-formats-some-are-fairer-than-others">
+<h2>Plenty of formats (some are FAIRer than others)<a class="headerlink" href="#plenty-of-formats-some-are-fairer-than-others" title="Permalink to this headline">#</a></h2>
+<p>Looking now into more specific data types for the different analytical techniques, we may be surprised by the large
+number of formats that are available. Many of them are described in</p>
+<ul class="simple">
+<li><p>NFDI4Chem. Data format standard. <a class="reference external" href="https://knowledgebase.nfdi4chem.de/knowledge_base/docs/topics/format_standards/">https://knowledgebase.nfdi4chem.de/knowledge_base/docs/topics/format_standards/</a></p></li>
+<li><p>Rauh, D., Blankenburg, C., Fischer, T., Jung, N., Kuhn, S., Schatzschneider, U., Schulze, T. &amp; Neumann, S. (2022).</p></li>
+<li><p>Data format standards in analytical chemistry. Pure and Applied Chemistry, 94(6), 725-736. <a class="reference external" href="https://doi.org/10.1515/pac-2021-3101">https://doi.org/10.1515/pac-2021-3101</a></p></li>
+</ul>
+<p>From a FAIR perspective, non-propietary, text-based and standard formats should be preferred.</p>
+<p>For MS, a wider revision, centered in bioinformatics, is published as:</p>
+<ul class="simple">
+<li><p>Deutsch E. W. (2012). File formats commonly used in mass spectrometry proteomics. Molecular &amp; cellular proteomics:</p></li>
+<li><p>MCP, 11(12), 1612–1621. <a class="reference external" href="https://doi.org/10.1074/mcp.R112.019695">https://doi.org/10.1074/mcp.R112.019695</a></p></li>
 </ul>
 </section>
-<section id="checking-the-databases">
-<h2>Checking the databases<a class="headerlink" href="#checking-the-databases" title="Permalink to this headline">#</a></h2>
+<section id="guidance-for-ms-data">
+<h2>Guidance for MS data<a class="headerlink" href="#guidance-for-ms-data" title="Permalink to this headline">#</a></h2>
+<p>So, let’s assume we have a set of experimental MS data from a coupled instrument (HPLC-MS, GC_MS, tandem MS…).
+How should we go with them.</p>
+<p>Standard open text-based formats for MS data include</p>
 <ul class="simple">
-<li><p>PubChem</p></li>
-<li><p>MassBank</p></li>
-<li><p>ChemSpider</p></li>
+<li><p><a class="reference external" href="https://iupac.org/what-we-do/digital-standards/jcamp-dx/">JCAMP-DX</a>, developed by IUPAC,</p></li>
+<li><p><a class="reference external" href="https://chemdata.nist.gov/mass-spc/ms-search/docs/Ver20Man_11.pdf">msp</a>, a NIST format used, for instance, in the MoNA database, and</p></li>
+<li><p>mzML, <a class="reference external" href="https://doi.org/10.1002/pmic.200890049">https://doi.org/10.1002/pmic.200890049</a>, published by American Society for Mass Spectrometry.</p></li>
 </ul>
+<p>The first format is common for single MS, while msp and mzML are usual in the metabolomics and proteomics communities.</p>
 </section>
-<section id="some-helpful-software">
-<h2>Some helpful software<a class="headerlink" href="#some-helpful-software" title="Permalink to this headline">#</a></h2>
+<section id="ms-databases-and-conversion-software">
+<h2>MS databases and conversion software<a class="headerlink" href="#ms-databases-and-conversion-software" title="Permalink to this headline">#</a></h2>
+<p>Databases and software for converting into different formats. It worth checking the formats used to encode the MS spectra.</p>
+<p><strong>Databases with MS spectra</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a></p></li>
+<li><p><a class="reference external" href="https://mona.fiehnlab.ucdavis.edu/">MassBank of North America (MoNA)</a></p></li>
+<li><p><a class="reference external" href="http://www.chemspider.com/">ChemSpider</a></p></li>
+<li><p><a class="reference external" href="https://massive.ucsd.edu/ProteoSAFe/static/massive.jsp">MassIVE</a></p></li>
+</ul>
+<p><strong>Software</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://proteowizard.sourceforge.io/">Proteowizard</a></p></li>
+<li><p><a class="reference external" href="https://gnps-quickstart.ucsd.edu/conversion">GNPS</a></p></li>
+<li><p><a class="reference external" href="http://fields.scripps.edu/rawconv/">RawConverter</a></p></li>
+</ul>
+<p>Python libraries and R packages also exist for reading and converting MS files.</p>
 </section>
 </section>
 
