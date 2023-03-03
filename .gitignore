@@ -4,5 +4,10 @@ book/_build
 book/recipes/hiddensettings.py
 book/howtos/inchikeys.md
 book/.DS_Store
+<<<<<<< HEAD
+.Rproj.user
+.gitignore
+=======
 book/samples/conformer1.txt
 book/samples/conformer2.txt
+>>>>>>> e209cf6ef9b893c74dfaff936b44c2f650f14573
