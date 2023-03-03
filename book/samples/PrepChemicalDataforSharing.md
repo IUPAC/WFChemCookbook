@@ -1,3 +1,4 @@
+> **This is an outline of the section. Detailed content is coming soon.**
 # Preparing Chemical Data for FAIR Sharing - A Minimalist Approach
 
 ```{dropdown} About this recipe
@@ -36,3 +37,4 @@
 
 ## Examples of FAIR chemical data package in the minimalist approach
 
+Content of this receipe is adopted from Li, Y., & Ahlqvist, G. P. (2021, June 28). Preparing Your Chemical Data for Publishing and FAIR Sharing. https://doi.org/10.17605/OSF.IO/VCSNP 
