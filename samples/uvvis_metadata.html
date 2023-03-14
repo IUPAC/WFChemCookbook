@@ -582,8 +582,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#glossary">
-   5. Glossary
+  <a class="reference internal nav-link" href="#glossary-of-python-terms">
+   5. Glossary of Python terms
   </a>
  </li>
 </ul>
@@ -675,8 +675,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#glossary">
-   5. Glossary
+  <a class="reference internal nav-link" href="#glossary-of-python-terms">
+   5. Glossary of Python terms
   </a>
  </li>
 </ul>
@@ -786,7 +786,7 @@ Markdown (.ipynb)
     <td style="word-wrap: break-word; max-width: 400px;">Essential</td>
   </tr>
   <tr>
-    <td style="word-wrap: break-word; max-width: 400px;">Sample concentration, solvent and optical pathlength</td>
+    <td style="word-wrap: break-word; max-width: 400px;">Sample concentration, solvent, optical path length, user ID and date/time of collection</td>
     <td style="word-wrap: break-word; max-width: 400px;">Experimental parameters</td>
     <td style="word-wrap: break-word; max-width: 400px;">Essential</td>
   </tr>
@@ -820,7 +820,7 @@ Markdown (.ipynb)
     <td style="word-wrap: break-word; max-width: 400px;">Data reporting: <br>
     <br>
 1.	Plot of the UV/Vis spectrum <br>
-2.	𝜆<sub>max</sub> and associated molar extinction coefficient 
+2.	𝜆<sub>max</sub> and ε (Section 4)
 </td>
     <td style="word-wrap: break-word; max-width: 400px;">The two key outputs required for publication. </td>
     <td style="word-wrap: break-word; max-width: 400px;">Essential</td>
@@ -868,7 +868,7 @@ Markdown (.ipynb)
 </section>
 <section id="data-reporting-using-jupyter-notebook-python">
 <h2>4. Data reporting using Jupyter Notebook (Python)<a class="headerlink" href="#data-reporting-using-jupyter-notebook-python" title="Permalink to this headline">#</a></h2>
-<p>Publication of UV/Vis spectroscopic data for small molecule characterisation typically requires a plot of the spectrum, and accompanying values for 𝜆_max and ε. An exemplar procedure for FAIR data reporting using Jupyter Notebook is described below, suitable for a novice user without existing experience in the Python language.</p>
+<p>Publication of UV/Vis spectroscopic data for small molecule characterisation typically requires a plot of the spectrum, and accompanying values for the wavelength of maximum absorbance (𝜆<sub>max</sub>) and associated molar extinction coefficient (ε). An exemplar procedure for FAIR data reporting using Jupyter Notebook is described below, suitable for a novice user without existing experience in the Python language.</p>
 <p>The UV/Vis reference data file ‘sample_data.jdx’ for salicylic acid in JCAMP-DX format is from the NIST Standard Reference Database available from the <a class="reference external" href="https://webbook.nist.gov/">NIST Chemistry WebBook</a>.</p>
 <section id="the-tools">
 <h3>4.1 The tools<a class="headerlink" href="#the-tools" title="Permalink to this headline">#</a></h3>
@@ -1015,7 +1015,7 @@ with descriptive and informative names) that will hold the data associated with 
 </div>
 </div>
 </div>
-<p>In this example, for reporting of the molar extinction coefficient (ε) corresponding to 𝜆_max we must first take the antilog</p>
+<p>In this example, for reporting of the molar extinction coefficient (ε) corresponding to 𝜆<sub>max</sub> we must first take the antilog</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epsilon_array</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">log_epsilon</span> <span class="c1"># Create an nd array and assign the antilog of log_epsilon </span>
@@ -1037,7 +1037,7 @@ with descriptive and informative names) that will hold the data associated with 
 </div>
 </div>
 </div>
-<p>Now we create a function to calculate the Beer Lambert law to convert Absorbance (A) to Absorptivity (ε) followed by a line of code to run the function.</p>
+<p>Now we create a function to apply the Beer Lambert law to convert Absorbance (A) to Absorptivity (ε) followed by a line of code to run the function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">beer_lambert</span><span class="p">(</span><span class="n">absorbance</span><span class="p">,</span> <span class="n">concentration</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
@@ -1081,14 +1081,14 @@ with descriptive and informative names) that will hold the data associated with 
 </div>
 </section>
 </section>
-<section id="glossary">
-<h2>5. Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">#</a></h2>
+<section id="glossary-of-python-terms">
+<h2>5. Glossary of Python terms<a class="headerlink" href="#glossary-of-python-terms" title="Permalink to this headline">#</a></h2>
 <p><b>Package</b></p>
 <p>When developing a Python script, it’s often necessary to use functionality that is not included in the Python standard library. One way to access this additional functionality is by importing Python packages into your script. These packages, also known as modules, provide pre-built functionality and code that can be easily integrated into your script, saving you the time and effort of having to write everything from scratch. They can include functions, classes, or other objects that are ready to use or extend, and are written by other developers to solve specific problems or tasks. In addition, importing packages can also help to keep your code organized and maintainable, by breaking it up into reusable and functional blocks. In summary, we import packages into scripts to leverage pre-built functionality and take advantage of the expertise of the Python community, allowing us to focus on the specific problem we are trying to solve.</p>
 <p><b>Comment</b></p>
 <p>In Python, a comment is a piece of text that is ignored by the interpreter when the code is executed. Comments are used to explain the purpose and logic of the code, and to make it easier for other people (or yourself) to understand and maintain the code. Comments can be a single line or span multiple lines and can start with a # symbol or be encapsulated by tiple quotes “”” “””. The text within the comment is only intended for human readers. Comments are very useful to add explanations and context to code, also it can help to keep track of the progress, problems or ideas you had when working in a script. Use them liberally.</p>
 <p><b>Method</b></p>
-<p>A method is a function that is associated with an object. It is defined inside a class, and it can access and manipulate the attributes and state of the object it is associated with. Methods contain functionality that is often useful for the work you are doing.</p>
+<p>A method is a function that is associated with an object. It is defined inside a class, and it can access and manipulate the attributes and state of the object it is associated with. Methods contain functionality that is often useful for the work you are doing e.g def for beer_lambert in the exemplar code above (section 4)</p>
 <p><b>Data Structure</b></p>
 <p>In Python (and in computer science in general), a data structure is a way of organizing and storing data in a computer’s memory so that it can be efficiently accessed and modified.</p>
 <p><b>Float</b></p>
@@ -1105,8 +1105,6 @@ with descriptive and informative names) that will hold the data associated with 
 <p>A docstring in Python is a string that appears at the top of a module, class, or function definition. Docstrings are used to provide a brief description of what the code does, as well as any information on the arguments, return values, and other details of the code.</p>
 <p><b>Virtual Environment</b></p>
 <p>You may have multiple Python projects happening at once. A virtual environment is a named, isolated copy of Python that has its own files and packages. Anything done inside a virtual environment is specific to that environment and won’t affect any other projects. All the dependencies and packages you install will be sandboxed inside the environment you are using. You should therefore have a separate virtual environment for each separate project.</p>
-<p><b><a class="reference external" href="https://iupac.org/what-we-do/digital-standards/jcamp-dx/">JCAMP–DX</a></b></p>
-<p>IUPAC standard file format for spectral data</p>
 </section>
 </section>
 
