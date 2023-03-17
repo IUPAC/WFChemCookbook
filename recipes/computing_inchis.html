@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Recipe: Computing InChIs &#8212; IUPAC FAIR Chemistry Cookbook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Recipe: Finding a Findable Dataset" href="dataset_search.html" />
+    <link rel="prev" title="Recipe: Accessing PubChem through PUG-REST: Part III" href="pubchem-pug-rest3.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/iupac_and_wf.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">IUPAC FAIR Chemistry Cookbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to the IUPAC FAIR Chemistry Cookbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  RECIPES
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../recipes.html">
+   Workflows for FAIR Data
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="uvvis_metadata.html">
+     Recipe: Structured UV/Vis (meta)data for small molecule characterisation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="goldbook.html">
+     Recipe: Accessing the IUPAC Gold Book API in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="opsin.html">
+     Recipe: Using the OPSIN API in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pubchem-pug-rest1.html">
+     Recipe: Accessing PubChem through PUG-REST - Part I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pubchem-pug-rest2.html">
+     Recipe: Accessing PubChem through PUG-REST: Part II
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pubchem-pug-rest3.html">
+     Recipe: Accessing PubChem through PUG-REST: Part III
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Recipe: Computing InChIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dataset_search.html">
+     Recipe: Finding a Findable Dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  CULINARY SCHOOL
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../howtos.html">
+   Making your science FAIRer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howtos/uniqueidentifiers.html">
+     How To: Unique Identifiers for Chemical Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howtos/PrepChemicalDataforSharing.html">
+     How to: Preparing Chemical Data for FAIR Sharing - A Minimalist Approach
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howtos/learn_spectra.html">
+     How to: FAIR formating of (multi, hyper)spectral data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PANTRY
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../store.html">
+   Places to find and store FAIR data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../repositories/commonchem.html">
+     Repository: Common Chemistry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../repositories/figshare.html">
+     Repository: figshare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../repositories/pubchem.html">
+     Repository: PubChem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../repositories/zenodo.html">
+     Repository: Zenodo
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  INGREDIENTS
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ingredients.html">
+   Must-haves for FAIR
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  COOKWARE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cutlery.html">
+   Tools for Enabling FAIR Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  REFERENCE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about.html">
+   About this Project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/IUPAC/WFChemCookbook/main?urlpath=tree/book/recipes/computing_inchis.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/IUPAC/WFChemCookbook/blob/main/book/recipes/computing_inchis.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/IUPAC/WFChemCookbook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Frecipes/computing_inchis.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/recipes/computing_inchis.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-rdkit">
+   1. Using RDKit
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-rdkit-modules">
+     1.1 Import RDKit Modules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-molecular-object-from-smiles">
+     1.2 Create a Molecular Object from SMILES
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-inchi">
+     1.3 Calculate InChI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-inchis-for-a-list-of-molecules">
+     1.4 Calculate InChIs for a List of Molecules
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-open-babel">
+   2. Using Open Babel
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-open-babel-modules">
+     2.1 Import Open Babel Modules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2.2 Create a Molecular Object from SMILES
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     2.3 Calculate InChI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     2.4 Calculate InChIs for a List of Molecules
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Recipe: Computing InChIs</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-rdkit">
+   1. Using RDKit
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-rdkit-modules">
+     1.1 Import RDKit Modules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-molecular-object-from-smiles">
+     1.2 Create a Molecular Object from SMILES
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-inchi">
+     1.3 Calculate InChI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-inchis-for-a-list-of-molecules">
+     1.4 Calculate InChIs for a List of Molecules
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-open-babel">
+   2. Using Open Babel
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-open-babel-modules">
+     2.1 Import Open Babel Modules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2.2 Create a Molecular Object from SMILES
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     2.3 Calculate InChI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     2.4 Calculate InChIs for a List of Molecules
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="recipe-computing-inchis">
+<h1>Recipe: Computing InChIs<a class="headerlink" href="#recipe-computing-inchis" title="Permalink to this headline">#</a></h1>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Author: <a class="reference external" href="https://orcid.org/0000-0002-7363-531X">Vincent Scalfani</a></p></li>
+<li><p class="sd-card-text">Reviewer: <a class="reference external" href="https://orcid.org/0000-0002-0703-7776">Stuart Chalk</a></p></li>
+<li><p class="sd-card-text">Topic: How to Calculate InChIs from SMILES Using <a class="reference external" href="https://www.rdkit.org/">RDKit</a> or <a class="reference external" href="https://openbabel.org/wiki/Main_Page">Open Babel</a>
+<em>Adapted from CPCDS 2021 Digital IUPAC Session - 51st IUPAC General Assembly</em></p></li>
+<li><p class="sd-card-text">Format: Interactive Jupyter Notebook (Python)</p></li>
+<li><p class="sd-card-text">Skills: You should be familiar with</p>
+<ul>
+<li><p class="sd-card-text"><a class="reference external" href="https://chem.libretexts.org/Courses/University_of_Arkansas_Little_Rock/ChemInformatics_(2015)%3A_Chem_4399_5399/Text/5_Chemical_Identifiers">Chemical Identifiers</a></p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Learning outcomes:  After completing this example you should understand:</p>
+<ul>
+<li><p class="sd-card-text">How to load and use RDKit to obtain and display chemical identifiers</p></li>
+<li><p class="sd-card-text">How to load and use Open Babel to obtain and display chemical identifiers</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Citation: ‘Recipe: Computing InChIs’, The IUPAC FAIR Chemistry Cookbook, <a class="reference external" href="https://iupac.github.io/WFChemCookbook/recipes/computing_inchis.html">https://iupac.github.io/WFChemCookbook/recipes/computing_inchis.html</a></p></li>
+<li><p class="sd-card-text">Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
+</ul>
+</div>
+</details><section id="using-rdkit">
+<h2>1. Using RDKit<a class="headerlink" href="#using-rdkit" title="Permalink to this headline">#</a></h2>
+<section id="import-rdkit-modules">
+<h3>1.1 Import RDKit Modules<a class="headerlink" href="#import-rdkit-modules" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">Draw</span>
+
+<span class="c1"># RDKit Version</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">rdBase</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rdBase</span><span class="o">.</span><span class="n">rdkitVersion</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022.09.3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-a-molecular-object-from-smiles">
+<h3>1.2 Create a Molecular Object from SMILES<a class="headerlink" href="#create-a-molecular-object-from-smiles" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PubChem CID: 134601</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@H](CC(=O)O)N&#39;</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/computing_inchis_4_0.png" src="../_images/computing_inchis_4_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Internally, we have created an RDKit molecular object</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;rdkit.Chem.rdchem.Mol object at 0x1198484a0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calculate-inchi">
+<h3>1.3 Calculate InChI<a class="headerlink" href="#calculate-inchi" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchi</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;InChI=1S/C14H18N2O5/c1-21-14(20)11(7-9-5-3-2-4-6-9)16-13(19)10(15)8-12(17)18/h2-6,10-11H,7-8,15H2,1H3,(H,16,19)(H,17,18)/t10-,11-/m0/s1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchiKey</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;IAOZJIPTCAWIRG-QWRGUYRKSA-N&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calculate-inchis-for-a-list-of-molecules">
+<h3>1.4 Calculate InChIs for a List of Molecules<a class="headerlink" href="#calculate-inchis-for-a-list-of-molecules" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a file of SMILES</span>
+<span class="n">smiles_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_smiles.smi&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+     <span class="k">for</span> <span class="n">smi</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+            <span class="n">smiles_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smi</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span> <span class="c1"># rstrip removes newline</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">smiles_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@H](CC(=O)O)N&#39;, &#39;COC(=O)[C@@H](CC1=CC=CC=C1)NC(=O)[C@@H](CC(=O)O)N&#39;, &#39;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)C[C@@H](C(=O)O)N&#39;, &#39;C1=CC=C(C=C1)C[C@@H](C(=O)O)NC(=O)[C@H](CC(=O)O)NC=O&#39;, &#39;C[C@@H](C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)O)N&#39;, &#39;CC(C)C[C@@H](C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)O)NC(=O)C&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Or create a list directly</span>
+<span class="n">smiles_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@H](CC(=O)O)N&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;COC(=O)[C@@H](CC1=CC=CC=C1)NC(=O)[C@@H](CC(=O)O)N&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)C[C@@H](C(=O)O)N&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;C1=CC=C(C=C1)C[C@@H](C(=O)O)NC(=O)[C@H](CC(=O)O)NC=O&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;C[C@@H](C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)O)N&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;CC(C)C[C@@H](C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)O)NC(=O)C&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next, loop through the smiles_list and create RDKit molecular objects</span>
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi</span><span class="p">)</span> <span class="k">for</span> <span class="n">smi</span> <span class="ow">in</span> <span class="n">smiles_list</span><span class="p">]</span>
+<span class="n">mols</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;rdkit.Chem.rdchem.Mol at 0x119848820&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x119848900&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x119848cf0&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x119848d60&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x119848dd0&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x119848e40&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the molecules in a grid</span>
+<span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">useSVG</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/computing_inchis_13_0.png" src="../_images/computing_inchis_13_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loop through mols (molecular objects) and calculate InChIs</span>
+<span class="n">InChIs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchi</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span> <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="p">]</span>
+<span class="n">InChIs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;InChI=1S/C14H18N2O5/c1-21-14(20)11(7-9-5-3-2-4-6-9)16-13(19)10(15)8-12(17)18/h2-6,10-11H,7-8,15H2,1H3,(H,16,19)(H,17,18)/t10-,11-/m0/s1&#39;,
+ &#39;InChI=1S/C14H18N2O5/c1-21-14(20)11(7-9-5-3-2-4-6-9)16-13(19)10(15)8-12(17)18/h2-6,10-11H,7-8,15H2,1H3,(H,16,19)(H,17,18)/t10-,11-/m1/s1&#39;,
+ &#39;InChI=1S/C14H18N2O5/c1-21-14(20)11(7-9-5-3-2-4-6-9)16-12(17)8-10(15)13(18)19/h2-6,10-11H,7-8,15H2,1H3,(H,16,17)(H,18,19)/t10-,11-/m0/s1&#39;,
+ &#39;InChI=1S/C14H16N2O6/c17-8-15-10(7-12(18)19)13(20)16-11(14(21)22)6-9-4-2-1-3-5-9/h1-5,8,10-11H,6-7H2,(H,15,17)(H,16,20)(H,18,19)(H,21,22)/t10-,11-/m0/s1&#39;,
+ &#39;InChI=1S/C12H16N2O3/c1-8(13)11(15)14-10(12(16)17)7-9-5-3-2-4-6-9/h2-6,8,10H,7,13H2,1H3,(H,14,15)(H,16,17)/t8-,10-/m0/s1&#39;,
+ &#39;InChI=1S/C17H24N2O4/c1-11(2)9-14(18-12(3)20)16(21)19-15(17(22)23)10-13-7-5-4-6-8-13/h4-8,11,14-15H,9-10H2,1-3H3,(H,18,20)(H,19,21)(H,22,23)/t14-,15-/m0/s1&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="using-open-babel">
+<h2>2. Using Open Babel<a class="headerlink" href="#using-open-babel" title="Permalink to this headline">#</a></h2>
+<section id="import-open-babel-modules">
+<h3>2.1 Import Open Babel Modules<a class="headerlink" href="#import-open-babel-modules" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open Babel v3.1.1</span>
+<span class="kn">from</span> <span class="nn">openbabel</span> <span class="kn">import</span> <span class="n">openbabel</span> <span class="k">as</span> <span class="n">ob</span>
+<span class="kn">from</span> <span class="nn">openbabel</span> <span class="kn">import</span> <span class="n">pybel</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>2.2 Create a Molecular Object from SMILES<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">pybel</span><span class="o">.</span><span class="n">readstring</span><span class="p">(</span><span class="s2">&quot;smi&quot;</span><span class="p">,</span> <span class="s2">&quot;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@H](CC(=O)O)N&quot;</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/computing_inchis_18_0.svg" src="../_images/computing_inchis_18_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Internally, we have created an Open Babel molecular object</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;openbabel.pybel.Molecule&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h3>2.3 Calculate InChI<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up InChI conversion</span>
+<span class="n">conv</span> <span class="o">=</span> <span class="n">pybel</span><span class="o">.</span><span class="n">ob</span><span class="o">.</span><span class="n">OBConversion</span><span class="p">()</span>
+<span class="n">conv</span><span class="o">.</span><span class="n">SetOutFormat</span><span class="p">(</span><span class="s2">&quot;inchi&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate InChI</span>
+<span class="n">inchi_output</span> <span class="o">=</span> <span class="n">conv</span><span class="o">.</span><span class="n">WriteString</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">OBMol</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inchi_output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>InChI=1S/C14H18N2O5/c1-21-14(20)11(7-9-5-3-2-4-6-9)16-13(19)10(15)8-12(17)18/h2-6,10-11H,7-8,15H2,1H3,(H,16,19)(H,17,18)/t10-,11-/m0/s1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up InChIKey conversion</span>
+<span class="n">conv</span> <span class="o">=</span> <span class="n">pybel</span><span class="o">.</span><span class="n">ob</span><span class="o">.</span><span class="n">OBConversion</span><span class="p">()</span>
+<span class="n">conv</span><span class="o">.</span><span class="n">SetOutFormat</span><span class="p">(</span><span class="s2">&quot;inchikey&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate InChIKey</span>
+<span class="n">inchikey_output</span> <span class="o">=</span> <span class="n">conv</span><span class="o">.</span><span class="n">WriteString</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">OBMol</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inchikey_output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IAOZJIPTCAWIRG-QWRGUYRKSA-N
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h3>2.4 Calculate InChIs for a List of Molecules<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a file of SMILES</span>
+<span class="n">smiles_list</span> <span class="o">=</span><span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_smiles.smi&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+     <span class="k">for</span> <span class="n">smi</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+            <span class="n">smiles_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smi</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span> <span class="c1"># rstrip removes newline</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">smiles_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@H](CC(=O)O)N&#39;, &#39;COC(=O)[C@@H](CC1=CC=CC=C1)NC(=O)[C@@H](CC(=O)O)N&#39;, &#39;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)C[C@@H](C(=O)O)N&#39;, &#39;C1=CC=C(C=C1)C[C@@H](C(=O)O)NC(=O)[C@H](CC(=O)O)NC=O&#39;, &#39;C[C@@H](C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)O)N&#39;, &#39;CC(C)C[C@@H](C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)O)NC(=O)C&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next,loop through the smiles_list and create OB molecular objects</span>
+<span class="n">ms</span> <span class="o">=</span> <span class="p">[</span><span class="n">pybel</span><span class="o">.</span><span class="n">readstring</span><span class="p">(</span><span class="s2">&quot;smi&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">smiles_list</span><span class="p">]</span>
+<span class="n">ms</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;openbabel.pybel.Molecule at 0x121c6f370&gt;,
+ &lt;openbabel.pybel.Molecule at 0x121c6f250&gt;,
+ &lt;openbabel.pybel.Molecule at 0x121c6f2e0&gt;,
+ &lt;openbabel.pybel.Molecule at 0x121c6fb50&gt;,
+ &lt;openbabel.pybel.Molecule at 0x121c6ee00&gt;,
+ &lt;openbabel.pybel.Molecule at 0x121c6efb0&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up InChI conversion</span>
+<span class="n">conv</span> <span class="o">=</span> <span class="n">pybel</span><span class="o">.</span><span class="n">ob</span><span class="o">.</span><span class="n">OBConversion</span><span class="p">()</span>
+<span class="n">conv</span><span class="o">.</span><span class="n">SetOutFormat</span><span class="p">(</span><span class="s2">&quot;inchi&quot;</span><span class="p">)</span>
+
+<span class="c1"># Loop through mols (molecular objects) and calculate InChIs</span>
+<span class="n">InChIs</span> <span class="o">=</span> <span class="p">[</span><span class="n">conv</span><span class="o">.</span><span class="n">WriteString</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">OBMol</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">ms</span><span class="p">]</span>
+<span class="n">InChIs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;InChI=1S/C14H18N2O5/c1-21-14(20)11(7-9-5-3-2-4-6-9)16-13(19)10(15)8-12(17)18/h2-6,10-11H,7-8,15H2,1H3,(H,16,19)(H,17,18)/t10-,11-/m0/s1&#39;,
+ &#39;InChI=1S/C14H18N2O5/c1-21-14(20)11(7-9-5-3-2-4-6-9)16-13(19)10(15)8-12(17)18/h2-6,10-11H,7-8,15H2,1H3,(H,16,19)(H,17,18)/t10-,11-/m1/s1&#39;,
+ &#39;InChI=1S/C14H18N2O5/c1-21-14(20)11(7-9-5-3-2-4-6-9)16-12(17)8-10(15)13(18)19/h2-6,10-11H,7-8,15H2,1H3,(H,16,17)(H,18,19)/t10-,11-/m0/s1&#39;,
+ &#39;InChI=1S/C14H16N2O6/c17-8-15-10(7-12(18)19)13(20)16-11(14(21)22)6-9-4-2-1-3-5-9/h1-5,8,10-11H,6-7H2,(H,15,17)(H,16,20)(H,18,19)(H,21,22)/t10-,11-/m0/s1&#39;,
+ &#39;InChI=1S/C12H16N2O3/c1-8(13)11(15)14-10(12(16)17)7-9-5-3-2-4-6-9/h2-6,8,10H,7,13H2,1H3,(H,14,15)(H,16,17)/t8-,10-/m0/s1&#39;,
+ &#39;InChI=1S/C17H24N2O4/c1-11(2)9-14(18-12(3)20)16(21)19-15(17(22)23)10-13-7-5-4-6-8-13/h4-8,11,14-15H,9-10H2,1-3H3,(H,18,20)(H,19,21)(H,22,23)/t14-,15-/m0/s1&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>References</strong></p>
+<p>[1] RDKit Documentation: <a class="reference external" href="https://www.rdkit.org/docs/index.html">https://www.rdkit.org/docs/index.html</a></p>
+<p>[2] Open Babel Python Documentation: <a class="reference external" href="https://open-babel.readthedocs.io/en/latest/UseTheLibrary/Python.html">https://open-babel.readthedocs.io/en/latest/UseTheLibrary/Python.html</a></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./recipes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="pubchem-pug-rest3.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Recipe: Accessing PubChem through PUG-REST: Part III</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="dataset_search.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Recipe: Finding a Findable Dataset</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By IUPAC WorldFAIR Chemistry D3.2 Project<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

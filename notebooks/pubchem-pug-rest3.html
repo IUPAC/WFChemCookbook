@@ -1,0 +1,1096 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Accessing PubChem through PUG-REST: Part III &#8212; IUPAC FAIR Chemistry Cookbook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Recipe: Computing InChIs" href="computing_inchis.html" />
+    <link rel="prev" title="Accessing PubChem through PUG-REST: Part II" href="pubchem-pug-rest2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/iupac_and_wf.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">IUPAC FAIR Chemistry Cookbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to the IUPAC FAIR Chemistry Cookbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  RECIPES
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../recipes.html">
+   Workflows for FAIR Data
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="goldbook.html">
+     Recipe: Accessing the IUPAC Gold Book API in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="opsin.html">
+     Recipe: Using the OPSIN API in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pubchem-pug-rest1.html">
+     Recipe: Accessing PubChem through PUG-REST - Part I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pubchem-pug-rest2.html">
+     Accessing PubChem through PUG-REST: Part II
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Accessing PubChem through PUG-REST: Part III
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computing_inchis.html">
+     Recipe: Computing InChIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dataset_search.html">
+     Recipe: Reusing a Chemical Dataset. Part 1- Finding Datasets
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  CULINARY SCHOOL
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../howtos.html">
+   Make your science FAIRer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howtos/uniqueidentifiers.html">
+     How To: Unique Identifiers for Chemical Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howtos/PrepChemicalDataforSharing.html">
+     Prepare Chemical Data for FAIR Sharing - A Minimalist Approach
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howtos/learn_spectra.html">
+     How to: FAIR formating of (multi, hyper)spectral data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PANTRY
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../store.html">
+   Resources to make your data FAIR
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../repositories/commonchem.html">
+     Repository: Common Chemistry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../repositories/figshare.html">
+     Repository: figshare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../repositories/pubchem.html">
+     Repository: PubChem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../repositories/zenodo.html">
+     Repository: Zenodo
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  FAIR COOKING
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../school.html">
+   Learn about FAIR Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ingredients for FAIR Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ingredients.html">
+   Ingredients for FAIR Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  TOOLS
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cutlery.html">
+   Tools for enabling FAIR Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  REFERENCE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about.html">
+   About this Project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/IUPAC/WFChemCookbook/main?urlpath=tree/book/notebooks/pubchem-pug-rest3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/IUPAC/WFChemCookbook/blob/main/book/notebooks/pubchem-pug-rest3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/IUPAC/WFChemCookbook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/pubchem-pug-rest3.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/pubchem-pug-rest3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-a-smiles-or-inchi-string-as-an-input-query">
+   1. Using a SMILES or InChI string as an input query
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performing-identity-search">
+   2. Performing identity search
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performing-2-d-and-3-d-similarity-search">
+   3. Performing 2-D and 3-D similarity search
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performing-substructure-superstructure-search">
+   5. Performing substructure/superstructure search
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#molecular-formula-search">
+   7. Molecular Formula search
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Accessing PubChem through PUG-REST: Part III</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-a-smiles-or-inchi-string-as-an-input-query">
+   1. Using a SMILES or InChI string as an input query
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performing-identity-search">
+   2. Performing identity search
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performing-2-d-and-3-d-similarity-search">
+   3. Performing 2-D and 3-D similarity search
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performing-substructure-superstructure-search">
+   5. Performing substructure/superstructure search
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#molecular-formula-search">
+   7. Molecular Formula search
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="accessing-pubchem-through-pug-rest-part-iii">
+<h1>Accessing PubChem through PUG-REST: Part III<a class="headerlink" href="#accessing-pubchem-through-pug-rest-part-iii" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="using-a-smiles-or-inchi-string-as-an-input-query">
+<h2>1. Using a SMILES or InChI string as an input query<a class="headerlink" href="#using-a-smiles-or-inchi-string-as-an-input-query" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC(=O)OC1=CC=CC=C1C(=O)O&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/&quot;</span> <span class="o">+</span> <span class="n">smiles</span> <span class="o">+</span> <span class="s2">&quot;/cids/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2244
+</pre></div>
+</div>
+</div>
+</div>
+<p>Some SMILES strings contain characters not compatible with the PUG-REST request URL syntax.  For example, isomeric SMILES uses the “/” character (forward slash) to represent the E/Z or cis/trans stereochemistry of a molecule.  However, because the “/” character is also used in the request URL to separate the segments of the URL path, the use of such SMILES strings as an input structure will result an error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC(C)C1=NC(=NC(=C1/C=C/[C@H](C[C@H](CC(=O)O)O)O)C2=CC=C(C=C2)F)N(C)S(=O)(=O)C&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/&quot;</span> <span class="o">+</span> <span class="n">smiles</span> <span class="o">+</span> <span class="s2">&quot;/cids/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: 400
+Code: PUGREST.BadRequest
+Message: Unable to standardize the given structure - perhaps some special characters need to be escaped or data packed in a MIME form?
+Detail: error: 
+Detail: status: 400
+Detail: output: Caught ncbi::CException: Standardization failed
+Detail: Output Log:
+Detail: Record 1: Warning: Cactvs Ensemble cannot be created from input string
+Detail: Record 1: Error: Unable to convert input into a compound object
+Detail: 
+Detail:
+</pre></div>
+</div>
+</div>
+</div>
+<p>To circumvent this issue, the SMILES input should be provided in one of the following two ways:</p>
+<ol class="simple">
+<li><p>as a URL parameter</p></li>
+<li><p>in the HTTP header (using the HTTP POST method).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC(C)C1=NC(=NC(=C1/C=C/[C@H](C[C@H](CC(=O)O)O)O)C2=CC=C(C=C2)F)N(C)S(=O)(=O)C&quot;</span>
+
+<span class="c1"># As a URL parameter</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/txt&quot;</span> <span class="o">+</span> <span class="s2">&quot;?smiles=&quot;</span> <span class="o">+</span> <span class="n">smiles</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="c1"># In the HTTP header (using HTTP Post)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/txt&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>446157
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>446157
+</pre></div>
+</div>
+</div>
+</div>
+<p>InChI encodes the chemical structure information into multiple layers and sublayers, separated by the “/” character.  For this reason, InChI strings should also be provided as a URL parameter or in the HTTP header (using HTTP host).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inchi</span> <span class="o">=</span> <span class="s2">&quot;InChI=1S/C9H8O4/c1-6(10)13-8-5-3-2-4-7(8)9(11)12/h2-5H,1H3,(H,11,12)&quot;</span>
+
+<span class="c1"># With the request URL : WILL NOT WORK</span>
+<span class="c1">#print(requests.get(&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/inchi/&quot; + inchi + &quot;/cids/txt&quot;).text.strip())</span>
+
+<span class="c1"># As a URL parameter</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/inchi/cids/txt&quot;</span> <span class="o">+</span> <span class="s2">&quot;?inchi=&quot;</span> <span class="o">+</span> <span class="n">inchi</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="c1"># In the HTTP header (using HTTP Post)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/inchi/cids/txt&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;inchi&#39;</span><span class="p">:</span><span class="n">inchi</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2244
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2244
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="performing-identity-search">
+<h2>2. Performing identity search<a class="headerlink" href="#performing-identity-search" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC(C)/C=C/I&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compounds with the same stereochemistry and isotopism (default)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/cid/14571425/cids/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/cid/14571425/cids/txt?identity_type=same_stereo_isotope&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14571425
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14571425
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compounds with the same isotopism (stereochemistry can be different)</span>
+<span class="n">cids1</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/smiles/cids/txt?identity_type=same_isotope&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">mycid</span> <span class="ow">in</span> <span class="n">cids1</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">mycid</span> <span class="o">+</span> <span class="s2">&quot;/record/PNG?image_size=200x200&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CID &quot;</span> <span class="o">+</span> <span class="n">mycid</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">mycid</span> <span class="o">+</span> <span class="s2">&quot;/property/IsomericSMILES/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;14571425&#39;, &#39;14571426&#39;, &#39;71380237&#39;]
+</pre></div>
+</div>
+<img alt="../_images/pubchem-pug-rest3_13_1.png" src="../_images/pubchem-pug-rest3_13_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 14571425 : CC(C)/C=C/I
+</pre></div>
+</div>
+<img alt="../_images/pubchem-pug-rest3_13_3.png" src="../_images/pubchem-pug-rest3_13_3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 14571426 : CC(C)/C=C\I
+</pre></div>
+</div>
+<img alt="../_images/pubchem-pug-rest3_13_5.png" src="../_images/pubchem-pug-rest3_13_5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 71380237 : CC(C)C=CI
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compounds with the same stereochemistry (isotopism can be different)</span>
+<span class="n">cids2</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/smiles/cids/txt?identity_type=same_stereo&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids2</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">mycid</span> <span class="ow">in</span> <span class="n">cids2</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">mycid</span> <span class="o">+</span> <span class="s2">&quot;/record/PNG?image_size=200x200&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CID &quot;</span> <span class="o">+</span> <span class="n">mycid</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">mycid</span> <span class="o">+</span> <span class="s2">&quot;/property/IsomericSMILES/TXT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;14571425&#39;, &#39;118122558&#39;]
+</pre></div>
+</div>
+<img alt="../_images/pubchem-pug-rest3_14_1.png" src="../_images/pubchem-pug-rest3_14_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 14571425 : CC(C)/C=C/I
+</pre></div>
+</div>
+<img alt="../_images/pubchem-pug-rest3_14_3.png" src="../_images/pubchem-pug-rest3_14_3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 118122558 : [2H]C[C@@H](C)/C=C/I
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compounds with the same connectivity (stereochemistry and isotopism can be different)</span>
+<span class="n">cids3</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/smiles/cids/txt?identity_type=same_connectivity&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids3</span><span class="p">)</span>    <span class="c1"># All compounds in cids1 and cids2 are returned.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;14571425&#39;, &#39;14571426&#39;, &#39;71380237&#39;, &#39;118122558&#39;, &#39;123616558&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="performing-2-d-and-3-d-similarity-search">
+<h2>3. Performing 2-D and 3-D similarity search<a class="headerlink" href="#performing-2-d-and-3-d-similarity-search" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsimilarity_2d/smiles/cids/txt&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>122
+[&#39;155903259&#39;, &#39;163421961&#39;, &#39;165179488&#39;, &#39;165179486&#39;, &#39;165179485&#39;, &#39;165179472&#39;, &#39;164850071&#39;, &#39;164785132&#39;, &#39;164766041&#39;, &#39;164766036&#39;, &#39;164701821&#39;, &#39;164701819&#39;, &#39;164701818&#39;, &#39;164701817&#39;, &#39;164701816&#39;, &#39;164701815&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701807&#39;, &#39;164701805&#39;, &#39;164701800&#39;, &#39;164701794&#39;, &#39;164701789&#39;, &#39;164701777&#39;, &#39;164701776&#39;, &#39;164701775&#39;, &#39;164701773&#39;, &#39;164701772&#39;, &#39;164701766&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;164701757&#39;, &#39;164701749&#39;, &#39;164701748&#39;, &#39;164701743&#39;, &#39;164701742&#39;, &#39;164701741&#39;, &#39;164701738&#39;, &#39;164701736&#39;, &#39;164701733&#39;, &#39;164159966&#39;, &#39;164158215&#39;, &#39;163362031&#39;, &#39;163362029&#39;, &#39;163362026&#39;, &#39;163362016&#39;, &#39;163362014&#39;, &#39;163362009&#39;, &#39;163362008&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361998&#39;, &#39;163361997&#39;, &#39;163361849&#39;, &#39;163283407&#39;, &#39;163283390&#39;, &#39;163283387&#39;, &#39;163283371&#39;, &#39;163283370&#39;, &#39;163283343&#39;, &#39;163283330&#39;, &#39;163283322&#39;, &#39;163283284&#39;, &#39;163283243&#39;, &#39;163283239&#39;, &#39;163283238&#39;, &#39;163283236&#39;, &#39;162479130&#39;, &#39;162478807&#39;, &#39;162396459&#39;, &#39;162396458&#39;, &#39;162396453&#39;, &#39;162396452&#39;, &#39;162396372&#39;, &#39;164971185&#39;, &#39;164850290&#39;, &#39;164850073&#39;, &#39;164701802&#39;, &#39;164701798&#39;, &#39;164040179&#39;, &#39;163941851&#39;, &#39;163362019&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;163283283&#39;, &#39;162712506&#39;, &#39;162712498&#39;, &#39;162712490&#39;, &#39;162712489&#39;, &#39;162712482&#39;, &#39;162712471&#39;, &#39;162712468&#39;, &#39;162712462&#39;, &#39;162712460&#39;, &#39;162685338&#39;, &#39;162396461&#39;, &#39;162396460&#39;, &#39;162396450&#39;, &#39;162396442&#39;, &#39;157010397&#39;, &#39;166149062&#39;, &#39;166149063&#39;, &#39;166149071&#39;, &#39;166149074&#39;, &#39;166149077&#39;, &#39;166149089&#39;, &#39;166149094&#39;, &#39;166149137&#39;, &#39;166156664&#39;, &#39;166156828&#39;, &#39;166156829&#39;, &#39;166156836&#39;, &#39;166157017&#39;, &#39;166157023&#39;, &#39;166157043&#39;, &#39;166157057&#39;, &#39;166157065&#39;, &#39;166157157&#39;, &#39;166157194&#39;, &#39;166157205&#39;, &#39;166157215&#39;, &#39;166157269&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can adjust the similarity threshold using the optional parameter “<strong>Threshold</strong>”.  T The following request performs a 2-D similarity search with a tighter similarity threshold (95)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsimilarity_2d/smiles/cids/txt?Threshold=99&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+[&#39;155903259&#39;, &#39;164701818&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;163362031&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361849&#39;, &#39;162396459&#39;, &#39;164040179&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;166157194&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the use of the higher threshold (99) than the default (90) results in fewer structures.</p>
+<p>It is also possible to get line notations and molecular properties for the compounds returned from chemical structure search.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsimilarity_2d/smiles/property/HeavyAtomCount,MolecularFormula,IsomericSMILES/csv?Threshold=99&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;CID&quot;,&quot;HeavyAtomCount&quot;,&quot;MolecularFormula&quot;,&quot;IsomericSMILES&quot;
+155903259,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+164701818,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+164701813,35,&quot;C23H32F3N5O4&quot;,&quot;CC(C)C[C@@H](C(=O)N1CC2C(C1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)C(F)(F)F&quot;
+164701812,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+164701760,36,&quot;C24H34F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)[C@H](CC(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+164701758,35,&quot;C23H32F3N5O4&quot;,&quot;CC(C)[C@@H](C(=O)N1CC2C(C1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)CC(F)(F)F&quot;
+163362031,36,&quot;C24H34F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](CC(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+163362005,35,&quot;C23H32F3N5O4&quot;,&quot;CC(C)[C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)CC(F)(F)F&quot;
+163362001,35,&quot;C23H32F3N5O4&quot;,&quot;CC(C)C[C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)C(F)(F)F&quot;
+163361849,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](CC3CCNC3=O)C#N)C&quot;
+162396459,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+164040179,36,&quot;C24H36F3N5O4&quot;,&quot;C.CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+163341926,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C&quot;
+163285815,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+166157194,34,&quot;C23H33F2N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsimilarity_3d/smiles/cids/txt&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+[&#39;155903259&#39;, &#39;163321803&#39;, &#39;44227150&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Currently, the similarity threshold used for 3-D similarity search is not adjustable, contrary to 2-D similarity search.</p>
+</section>
+<section id="performing-substructure-superstructure-search">
+<h2>5. Performing substructure/superstructure search<a class="headerlink" href="#performing-substructure-superstructure-search" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;C2CN=C(C1=C(C=CC=C1)N2)C3=CC=CC=C3&quot;</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsubstructure/smiles/cids/txt&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>39211
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;C2CN=C(C1=C(C=CC=C1)N2)C3=CC=CC=C3&quot;</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsuperstructure/smiles/cids/txt&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6752
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="molecular-formula-search">
+<h2>7. Molecular Formula search<a class="headerlink" href="#molecular-formula-search" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">formula</span> <span class="o">=</span> <span class="s2">&quot;C6H12O6&quot;</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastformula/&quot;</span> <span class="o">+</span> <span class="n">formula</span> <span class="o">+</span><span class="s2">&quot;/cids/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1507
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can download the structural information for the compounds returned from the molecular formula search.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastformula/&quot;</span> <span class="o">+</span> <span class="n">formula</span> <span class="o">+</span><span class="s2">&quot;/property/MolecularFormula,IsomericSMILES/CSV&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="n">cid_props</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">reader</span><span class="p">))</span>  <span class="c1"># Print the first line (column header)</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cid_props</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cid_props</span><span class="p">:</span>
+    
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cid_props</span><span class="p">[</span><span class="n">item</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cid_props</span><span class="p">[</span><span class="n">item</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">:</span>  <span class="c1"># For simplicity, print only the first 10 items.</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CID&#39;, &#39;MolecularFormula&#39;, &#39;IsomericSMILES&#39;]
+2723872 	 C6H12O6 	 C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O
+107526 	 C6H12O6 	 C([C@H]([C@H]([C@@H]([C@H](C=O)O)O)O)O)O
+24749 	 C6H12O6 	 C(C(C(C(C(C=O)O)O)O)O)O
+24310 	 C6H12O6 	 C1[C@H]([C@H]([C@@H]([C@](O1)(CO)O)O)O)O
+6904 	 C6H12O6 	 C([C@@H]([C@H]([C@@H](C(=O)CO)O)O)O)O
+5984 	 C6H12O6 	 C([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)O
+892 	 C6H12O6 	 C1(C(C(C(C(C1O)O)O)O)O)O
+64689 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O
+5793 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+5460024 	 C6H12O6 	 C([C@@H]([C@@H]([C@H](C(=O)CO)O)O)O)O
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastformula/&quot;</span> <span class="o">+</span> <span class="n">formula</span> <span class="o">+</span><span class="s2">&quot;/cids/txt?AllowOtherElements=True&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3237
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastformula/&quot;</span> <span class="o">+</span> <span class="n">formula</span> <span class="o">+</span><span class="s2">&quot;/property/MolecularFormula,IsomericSMILES/CSV?AllowOtherElements=True&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="n">cid_props</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">reader</span><span class="p">))</span>  <span class="c1"># Print the first line (column header)</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cid_props</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cid_props</span><span class="p">:</span>
+    
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cid_props</span><span class="p">[</span><span class="n">item</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cid_props</span><span class="p">[</span><span class="n">item</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">:</span>  <span class="c1"># For simplicity, print only the first 10 items.</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CID&#39;, &#39;MolecularFormula&#39;, &#39;IsomericSMILES&#39;]
+2723872 	 C6H12O6 	 C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O
+107526 	 C6H12O6 	 C([C@H]([C@H]([C@@H]([C@H](C=O)O)O)O)O)O
+24749 	 C6H12O6 	 C(C(C(C(C(C=O)O)O)O)O)O
+24310 	 C6H12O6 	 C1[C@H]([C@H]([C@@H]([C@](O1)(CO)O)O)O)O
+6904 	 C6H12O6 	 C([C@@H]([C@H]([C@@H](C(=O)CO)O)O)O)O
+5984 	 C6H12O6 	 C([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)O
+892 	 C6H12O6 	 C1(C(C(C(C(C1O)O)O)O)O)O
+3609400 	 C6H12FeO6 	 CC(C(=O)O)O.CC(C(=O)O)O.[Fe]
+64689 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O
+5793 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="pubchem-pug-rest2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Accessing PubChem through PUG-REST: Part II</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="computing_inchis.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Recipe: Computing InChIs</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By IUPAC WorldFAIR Chemistry D3.2 Project<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
