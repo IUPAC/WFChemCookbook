@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Preparing Chemical Data for FAIR Sharing - A Minimalist Approach" href="PrepChemicalDataforSharing.html" />
-    <link rel="prev" title="FAIR formating of (multi, hyper)spectral data" href="learn_spectra.html" />
+    <link rel="next" title="PubChem PUG-REST API" href="pubchem-pug.html" />
+    <link rel="prev" title="FAIR formating of (multi, hyper) spectral data" href="learn_spectra.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -137,17 +137,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="learn_spectra.html">
-   FAIR formating of (multi, hyper)spectral data
+   FAIR formating of (multi, hyper) spectral data
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Finding a Findable Dataset
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="PrepChemicalDataforSharing.html">
-   Preparing Chemical Data for FAIR Sharing - A Minimalist Approach
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -722,6 +717,10 @@ PubChem to include data, in one of a couple of ways:</p>
         &quot;url&quot;: &quot;https://www.alliancegenome.org/&quot;
     },
     {
+        &quot;name&quot;: &quot;Athena Minerals&quot;,
+        &quot;url&quot;: &quot;https://athena.unige.ch/athena/mineral/mineral.html&quot;
+    },
+    {
         &quot;name&quot;: &quot;Barrie Walker, BARK Information Services&quot;,
         &quot;url&quot;: &quot;https://uk.linkedin.com/in/barrie-walker-85b4a510&quot;
     },
@@ -830,16 +829,16 @@ PubChem to include data, in one of a couple of ways:</p>
         &quot;url&quot;: &quot;https://www.epa.gov/chemical-research/distributed-structure-searchable-toxicity-dsstox-database&quot;
     },
     {
-        &quot;name&quot;: &quot;Essentials of Glycobiology, 3rd edition&quot;,
-        &quot;url&quot;: &quot;https://www.ncbi.nlm.nih.gov/books/NBK310273/&quot;
-    },
-    {
         &quot;name&quot;: &quot;FDA Orange Book&quot;,
         &quot;url&quot;: &quot;https://www.fda.gov/drugs/drug-approvals-and-databases/approved-drug-products-therapeutic-equivalence-evaluations-orange-book&quot;
     },
     {
         &quot;name&quot;: &quot;FDA Pharm Classes&quot;,
         &quot;url&quot;: &quot;https://www.fda.gov/industry/structured-product-labeling-resources/pharmacologic-class&quot;
+    },
+    {
+        &quot;name&quot;: &quot;Gene Curation Coalition (GenCC)&quot;,
+        &quot;url&quot;: &quot;https://thegencc.org/&quot;
     },
     {
         &quot;name&quot;: &quot;Gene Ontology (GO)&quot;,
@@ -962,6 +961,10 @@ PubChem to include data, in one of a couple of ways:</p>
         &quot;url&quot;: &quot;https://omim.org/&quot;
     },
     {
+        &quot;name&quot;: &quot;Open Targets&quot;,
+        &quot;url&quot;: &quot;https://www.opentargets.org/&quot;
+    },
+    {
         &quot;name&quot;: &quot;PANTHER&quot;,
         &quot;url&quot;: &quot;http://www.pantherdb.org/&quot;
     },
@@ -980,6 +983,10 @@ PubChem to include data, in one of a couple of ways:</p>
     {
         &quot;name&quot;: &quot;PharmGKB&quot;,
         &quot;url&quot;: &quot;https://www.pharmgkb.org/&quot;
+    },
+    {
+        &quot;name&quot;: &quot;Pharos&quot;,
+        &quot;url&quot;: &quot;https://pharos.nih.gov/&quot;
     },
     {
         &quot;name&quot;: &quot;Pistoia Alliance DataFAIRy Bioassay Pilot&quot;,
@@ -1010,6 +1017,10 @@ PubChem to include data, in one of a couple of ways:</p>
         &quot;url&quot;: &quot;https://www.rhea-db.org/&quot;
     },
     {
+        &quot;name&quot;: &quot;RRUFF Project&quot;,
+        &quot;url&quot;: &quot;https://rruff.info/&quot;
+    },
+    {
         &quot;name&quot;: &quot;SureChEMBL&quot;,
         &quot;url&quot;: &quot;https://www.surechembl.org/search/&quot;
     },
@@ -1020,6 +1031,10 @@ PubChem to include data, in one of a couple of ways:</p>
     {
         &quot;name&quot;: &quot;Swiss Institute of Bioinformatics ENZYME&quot;,
         &quot;url&quot;: &quot;https://enzyme.expasy.org/&quot;
+    },
+    {
+        &quot;name&quot;: &quot;Symbol Nomenclature for Glycans (SNFG) Reference Collection&quot;,
+        &quot;url&quot;: &quot;https://www.ncbi.nlm.nih.gov/glycans/snfg.html&quot;
     },
     {
         &quot;name&quot;: &quot;The Cambridge Structural Database&quot;,
@@ -2052,13 +2067,13 @@ FAIRsharing record for: Network for the Detection of Atmospheric Composition Cha
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">FAIR formating of (multi, hyper)spectral data</p>
+            <p class="prev-next-title">FAIR formating of (multi, hyper) spectral data</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="PrepChemicalDataforSharing.html" title="next page">
+    <a class='right-next' id="next-link" href="pubchem-pug.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Preparing Chemical Data for FAIR Sharing - A Minimalist Approach</p>
+        <p class="prev-next-title">PubChem PUG-REST API</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
