@@ -11,7 +11,6 @@ parts:
      - file: samples/computing_inchis.ipynb
      - file: samples/learn_spectra
      - file: samples/dataset_search.ipynb
-     - file: samples/PrepChemicalDataforSharing
      - file: samples/pubchem-pug
        sections:
           - file: samples/pubchem-pug-rest1.ipynb
