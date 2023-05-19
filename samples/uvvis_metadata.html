@@ -695,7 +695,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
 <li><p class="sd-card-text">Author(s): <a class="reference external" href="https://orcid.org/0000-0003-2219-3635">Sally Bloodworth</a>, <a class="reference external" href="http://orcid.org/0000-0001-8414-9272">Simon Coles</a>, <a class="reference external" href="https://orcid.org/0000-0001-5404-6934">Samuel Munday</a></p></li>
-<li><p class="sd-card-text">Reviewer:</p></li>
+<li><p class="sd-card-text">Reviewer: <a class="reference external" href="https://orcid.org/0000-0002-0703-7776">Stuart Chalk</a></p></li>
 <li><p class="sd-card-text">Topic(s): Creating a UV/Vis (meta)data file structure for small molecule characterisation</p></li>
 <li><p class="sd-card-text">Format: Interactive Jupyter Notebook (Python)</p></li>
 <li><p class="sd-card-text">Skills: You should be familiar with</p>
@@ -1056,7 +1056,7 @@ with descriptive and informative names) that will hold the data associated with 
 <span class="sd">    Returns:</span>
 <span class="sd">    --------</span>
 <span class="sd">    </span>
-<span class="sd">        epsilon (float): The molar absorptivity of the solution</span>
+<span class="sd">        epsilon (float): The molar absorptivity of the solution.</span>
 <span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
@@ -1070,6 +1070,13 @@ with descriptive and informative names) that will hold the data associated with 
 
 <span class="n">epsilon</span> <span class="o">=</span> <span class="n">beer_lambert</span><span class="p">(</span><span class="n">absorbance</span><span class="p">,</span> <span class="n">concentration</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span> <span class="c1"># Replace each of the parameters absorbance, </span>
                                                           <span class="c1"># concentration and length with your own numbers.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The molar absorptivity (ε) is: </span><span class="si">{</span><span class="n">epsilon</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> L mol-1 cm-1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The molar absorptivity (ε) is: 0.167 L mol-1 cm-1
 </pre></div>
 </div>
 </div>
