@@ -673,8 +673,8 @@ system there may be some selections that won’t work on your computer.</p>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">The Excel import dialog the options for ‘File origin’</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Using the open file dialog is important if your text file contains unicode (e.g., UTF-8).  If you double click on a .csv,
-.tsv, or other file with an extension that Excel automatically recognizes, the file will be opened without giving you
+<p>Using the ‘Text Import Wizard’ dialog is important if your text file contains unicode (e.g., UTF-8).  If you double click
+on a .csv, .tsv, or other file with an extension that Excel automatically recognizes, the file will be opened without giving you
 the option to choose UTF-8 as the encoding format.  This results in ‘weird characters’ (technical term ;) ) showing up in your
 imported file (see Figure 2a).  However, if you change the extension of such a file to ‘.txt’ and then open it from within
 Excel you will be able to use the dialog in Figure 1a to choose the correct encoding and make sure that the text shows
@@ -682,7 +682,7 @@ correctly in Excel (see Figure 2b).</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/spreadsheet_fig2.jpg"><img alt="importing a unicode (UTF-8) '.csv' file" src="../_images/spreadsheet_fig2.jpg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Importing a unicode (UTF-8) ‘.csv’ file into Excel directly and using the Excel file open dialog</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Importing a unicode (UTF-8) ‘.csv’ file into Excel directly (left)<br/> and using Excel’s Text Import Wizard dialog (right)</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -700,8 +700,8 @@ CR character, and a ‘line-feed’ LF character is at the end of line.</p>
 </section>
 <section id="data-types-in-excel">
 <h3>2.3 Data types in Excel<a class="headerlink" href="#data-types-in-excel" title="Permalink to this headline">#</a></h3>
-<p>During the import of a text file, via the open dialog, you are presented with other choices as you work through importing
-the file.  On the last dialog you get to choose the format of each column of data in the file.  Figure 4a shows the
+<p>During the import of a text file, via the Text Import Wizard, you are presented with other choices as you work through
+importing the file.  On the last dialog you get to choose the format of each column of data in the file.  Figure 4a shows the
 choices available, and you can click on the header of each column (or multiple columns) to assign a data type.  For
 chemical data this is particularly important when importing CAS Registry Numbers (CASRN’s), as some CASRN’s can be
 misinterpreted as dates if the column data type is left as ‘General’.  In this situation, change the data format to
@@ -715,8 +715,8 @@ to run a SPARQL query (search) on Wikidata, that retrieves the first 1000 compou
 button on the left of the page then export the data as .csv from the ‘Download’ menu on the right.  Open the file
 in Excel and see how many of the 1000 compounds have CASRN’s formatted as dates.</p>
 </div>
-<p>Figure 4b shows the dialog when you are importing a file in Excel and in Step 3 you click on the Advanced button.<br />
-If you receive data from collaborators in other countries, you may need to change the way Excel identifies numeric
+<p>Figure 4b shows the options when you click on the ‘Advanced…’ button in Step 3 of the import dialog. If you
+receive data from collaborators in other countries, you may need to change the way Excel identifies numeric
 values, as there are differences between countries on the use of the full stop/period ‘.’ and the comma as
 <a class="reference external" href="https://en.wikipedia.org/wiki/Decimal_separator">formatting characters</a>.
 As an example, the value one thousand, two hundred and thirty-four point fifty-six is represented:</p>
@@ -727,7 +727,7 @@ As an example, the value one thousand, two hundred and thirty-four point fifty-s
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../_images/spreadsheet_fig4.jpg"><img alt="data types for columns in Excel (left) and options for interpretting numeric values (right)" src="../_images/spreadsheet_fig4.jpg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Data types for columns in Excel and advanced options for interpretting numeric values</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Data types for columns in Excel (left) and <br/> advanced options for interpretting numeric values (right)</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id5">

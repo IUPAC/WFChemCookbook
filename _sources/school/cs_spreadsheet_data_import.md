@@ -91,8 +91,8 @@ align: center
 The Excel import dialog the options for 'File origin'
 ```
 
-Using the open file dialog is important if your text file contains unicode (e.g., UTF-8).  If you double click on a .csv,
-.tsv, or other file with an extension that Excel automatically recognizes, the file will be opened without giving you 
+Using the 'Text Import Wizard' dialog is important if your text file contains unicode (e.g., UTF-8).  If you double click
+on a .csv, .tsv, or other file with an extension that Excel automatically recognizes, the file will be opened without giving you 
 the option to choose UTF-8 as the encoding format.  This results in 'weird characters' (technical term ;) ) showing up in your 
 imported file (see Figure 2a).  However, if you change the extension of such a file to '.txt' and then open it from within
 Excel you will be able to use the dialog in Figure 1a to choose the correct encoding and make sure that the text shows
@@ -104,7 +104,7 @@ alt: importing a unicode (UTF-8) '.csv' file
 width: 100%
 align: center
 ---
-Importing a unicode (UTF-8) '.csv' file into Excel directly and using the Excel file open dialog
+Importing a unicode (UTF-8) '.csv' file into Excel directly (left)<br/> and using Excel's Text Import Wizard dialog (right)
 ```
 
 ### 2.2 End of line characters
@@ -122,8 +122,8 @@ Different end-of-line character options for a text file
 ```
 
 ### 2.3 Data types in Excel
-During the import of a text file, via the open dialog, you are presented with other choices as you work through importing 
-the file.  On the last dialog you get to choose the format of each column of data in the file.  Figure 4a shows the 
+During the import of a text file, via the Text Import Wizard, you are presented with other choices as you work through 
+importing the file.  On the last dialog you get to choose the format of each column of data in the file.  Figure 4a shows the 
 choices available, and you can click on the header of each column (or multiple columns) to assign a data type.  For
 chemical data this is particularly important when importing CAS Registry Numbers (CASRN's), as some CASRN's can be
 misinterpreted as dates if the column data type is left as 'General'.  In this situation, change the data format to 
@@ -138,8 +138,8 @@ button on the left of the page then export the data as .csv from the 'Download' 
 in Excel and see how many of the 1000 compounds have CASRN's formatted as dates.
 ```
 
-Figure 4b shows the dialog when you are importing a file in Excel and in Step 3 you click on the Advanced button.  
-If you receive data from collaborators in other countries, you may need to change the way Excel identifies numeric 
+Figure 4b shows the options when you click on the 'Advanced...' button in Step 3 of the import dialog. If you
+receive data from collaborators in other countries, you may need to change the way Excel identifies numeric 
 values, as there are differences between countries on the use of the full stop/period '.' and the comma as 
 [formatting characters](https://en.wikipedia.org/wiki/Decimal_separator).
 As an example, the value one thousand, two hundred and thirty-four point fifty-six is represented:
@@ -152,7 +152,7 @@ alt: data types for columns in Excel (left) and options for interpretting numeri
 width: 100%
 align: center
 ---
-Data types for columns in Excel and advanced options for interpretting numeric values
+Data types for columns in Excel (left) and <br/> advanced options for interpretting numeric values (right)
 ```
 
 ```{figure} ../images/spreadsheet_fig5.jpg
