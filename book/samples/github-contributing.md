@@ -34,7 +34,7 @@ We will work through an example using the WorldFAIR cookbook repository, but if 
 7.	**Merge**: Merging combines changes from one branch into another. Pull requests are often merged after review.
 8.	**Markdown**: Markdown is a simple text formatting language used to style documents and web content. It uses symbols (such as '#'. '*', '-') for basic formatting of text. 
 
-![A GitHub flow diagram showing the process of making a branch from a repoistory](/book/images/github-flow.png)
+![A GitHub flow diagram showing the process of making a branch from a repository](/book/images/github-flow.png)
 
 ## GitHub Worked Example:
 
@@ -45,7 +45,7 @@ First, you need to create a GitHub account (or log in if you already have an acc
 You can browse public repositories to see how projects are organized and structured, many public repositories will also allow contributions to be made to them. If the repository you want to work on is private you will need to be invited to join it. In this example we will be looking at the public WorldFAIR cookbook repository https://github.com/IUPAC/WFChemCookbook
 -	When you open the repo you will see the structure of the files / folders in the repo and a README file for the repo (if present) which should explain a bit about the project and how to work with it. 
 -	You can navigate through the files to see the content present in the cookbook repository. Many of the files are .md which is the Markdown format. 
--	The (Cookbook website)[https://iupac.github.io/WFChemCookbook/intro.html] is the best place to interact with the actual content, but if you want to contribute to the content or suggest an edit then this would be done through GitHub. Note: if you aren’t confident with GitHub / markdown but want to highlight an issue then you can (submit an issue)[https://github.com/IUPAC/WFChemCookbook/issues/new/choose] to the repository. 
+-	The [Cookbook website](https://iupac.github.io/WFChemCookbook/intro.html) is the best place to interact with the actual content, but if you want to contribute to the content or suggest an edit then this would be done through GitHub. Note: if you aren’t confident with GitHub / markdown but want to highlight an issue then you can [submit an issue](https://github.com/IUPAC/WFChemCookbook/issues/new/choose) to the repository. 
 
 ![A screenshot of the WFChemCookbook GitHub repository](../images/github-repo.png)
 
@@ -56,7 +56,7 @@ Now we are going to make some changes to the content on the CookBook. To do this
 -	This will create a copy of the repository in your own GitHub profile where you can work on it. 
 
 ### 4. Open GitHub Desktop: 
-Ensure you have a GitHub client installed on your machine. (GitHub Desktop)[https://desktop.github.com/] is one option, (Git for Windows)[https://git-scm.com/download/win] is another option that can be used in certain code editors such as VS Code. These have installers available and you can leave any options as the default settings.
+Ensure you have a GitHub client installed on your machine. [GitHub Desktop](https://desktop.github.com/) is one option, [Git for Windows](https://git-scm.com/download/win) is another option that can be used in certain code editors such as VS Code. These have installers available and you can leave any options as the default settings.
 
 Once this is installed, open the program and sign in to your GitHub account. You will need to authorise the application to access your GitHub data. 
 
@@ -77,7 +77,7 @@ Now you can start working on some changes to the code / files in the project. Yo
 •	Any changes you make will only be on your local machine, until you commit them and push them back up to the repository on GitHub. 
 •	Once you have made changes locally you can make a commit and this creates a ‘save’ point in the project. Each commit should have a message alongside it to ensure someone can understand the change. Due to this it is best to make your commits smaller chunks of related changes rather than saving up lots of different changes and committing them all in one go. 
 
-Open a file (or create a new file) you wish to change in your preferred code editor. Many of the files in the cookbook are either Jupyter Notebooks (.ipynb) or Markdown (.md). The basic syntax of Markdown can be seen in this guide. 
+Open a file (or create a new file) you wish to change in your preferred code editor. Many of the files in the cookbook are either Jupyter Notebooks (.ipynb) or Markdown (.md). The basic syntax of Markdown can be seen [in this guide](https://www.markdownguide.org/basic-syntax). 
 Make changes to the content and save these changes. Note: this will not yet have any affect on the GitHub repository. 
 
 ### 7. Committing the changes:
