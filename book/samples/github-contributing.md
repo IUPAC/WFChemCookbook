@@ -94,6 +94,23 @@ Once pushed to origin you will be able to see the changes by viewing the reposit
 It may also show your branch as behind IUPAC:main if changes have been made to the original project. 
 
 ### 9. Create a Pull Request:
+Once you have finished all of the changes you wish to make and are ready to request that your changes are incorporated into the original project it’s time to open a pull request. 
+-	Navigate to your fork of the repository on github.com (make sure all changes have been committed and pushed from your local version and that you are viewing the most up to date commit). 
+-	Make sure you are on the correct branch that you have been working on (this will be main if you have followed this tutorial)
+-	Click the ‘Contribute’ button in the message bar and you will see an option to ‘Open pull request’
+
+![A screenshot showing the Open pul request option in the GitHub web interface'](../images/github-pull-menu.png)
+
+-	This will compare the two branches and determine if they can be merged automatically, or if there are any conflicts to resolve. Conflicts usually arise if changes have been made to the same files on both branches. 
+-	The summary will show which branches are being merged, how many commits you are merging, and the number of files being changed. 
+-	Add a title describing the pull request and in the description field put an explanation of the content you are asking to be added. This will be seen by the repository maintainers and help them to review your pull request. 
+
+![A screenshot showing the completion of a pull request in GitHub](../images/github-pull-request.png)
+
+-	Once you have created the pull request this will go into review before it is merged into the main repository. 
+-	The maintainers may ask for some clarification or further changes to be made before they merge the code. 
+-   Once the is merged it will be available for others to see, modify and further collaborate on.
+-   Thank you for contributing to the WFChemCookBook! 
 
 
 This introduction scratches the surface of GitHub and version control. There are many more features available as you get more familiar with using Git in your workflow.
