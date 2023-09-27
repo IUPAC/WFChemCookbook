@@ -1,5 +1,6 @@
 # IUPAC FAIR Chemistry Cookbook
-The IUPAC FAIR Chemistry Cookbook is an open, collaborate, community focused resource on how to work with FAIR data in chemistry. FAIR means findable, accessible, interoperable, and reusable and is the new paradigm for how chemists should share their data.
+The IUPAC FAIR Chemistry Cookbook is an open, collaborate, community focused resource on how to work with FAIR data in chemistry.
+FAIR means findable, accessible, interoperable, and reusable and is the new paradigm for how chemists should share their data.
 
 ## Usage
 
@@ -11,10 +12,15 @@ The contents of this repository are designed to use the [Jupyter Book](https://j
 
 See the [contributing guide](./CONTRIBUTING.md).
 
-## About this project 
+## About this project
 
-The Committee on Data of the International Science Council ([CODATA](https://codata.org/)) and the Research Data Alliance ([RDA](https://rd-alliance.org/)) have recently launched the [WorldFAIR Initiative](https://worldfair-project.eu/) to advance implementation of the [FAIR data principles](https://force11.org/info/the-fair-data-principles/) within and across research domains. The International Union of Pure and Applied Chemistry ([IUPAC](https://iupac.org/)), known as the world authority on chemical nomenclature, terminology, and standardized methods of measurement, is leading the [WorldFAIR Chemistry](https://iupac.org/project/2022-012-1-024) project in a concerted effort through collaboration with related disciplines and data science communities to support broader data sharing of chemical data. The goal of WorldFAIR Chemistry is to support the use of chemical data standards in research workflows to enable downstream data reuse through practical direction and resources.
+The Committee on Data of the International Science Council ([CODATA](https://codata.org/)) and the Research Data Alliance ([RDA](https://rd-alliance.org/)) have recently launched the [WorldFAIR Initiative](https://worldfair-project.eu/) to advance implementation of the [FAIR data principles](https://force11.org/info/the-fair-data-principles/) within and across research domains.
+The International Union of Pure and Applied Chemistry ([IUPAC](https://iupac.org/)), known as the world authority on chemical nomenclature, terminology, and standardized methods of measurement, is leading the [WorldFAIR Chemistry](https://iupac.org/project/2022-012-1-024) project in a concerted effort through collaboration with related disciplines and data science communities to support broader data sharing of chemical data.
+The goal of WorldFAIR Chemistry is to support the use of chemical data standards in research workflows to enable downstream data reuse through practical direction and resources.
 
-This Cookbook corresponds to [Deliverable 3.2](https://iupac.org/project/2022-028-1-024/) of the WorldFAIR Chemistry project. The main scope of work is to develop an online community resource of practical and re-usable training materials that demonstrate how to manage digital data files and content.
+This Cookbook corresponds to [Deliverable 3.2](https://iupac.org/project/2022-028-1-024/) of the WorldFAIR Chemistry project.
+The main scope of work is to develop an online community resource of practical and re-usable training materials that demonstrate how to manage digital data files and content for chemistry and cheminfomatics.
+All presented code should execute as written, and if it does not please [let us know](https://github.com/IUPAC/WFChemCookbook/issues/new/choose).
+General purpose software engineering strategies and techniques (_e.g._, Python language semantics, branch management in Git) are out of scope for this reference material, but an effort will be made to reference relevant external materials.
 
 *WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41 Coordination and Support Action under Grant Agreement No. 101058393.*
