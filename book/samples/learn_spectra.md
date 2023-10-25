@@ -84,7 +84,7 @@ formats for the metadata.
 Looking now into more specific data types for the different analytical techniques, we may be surprised by the large 
 number of formats that are available. Many of them are described in
 
-- NFDI4Chem. Data format standard. https://knowledgebase.nfdi4chem.de/knowledge_base/docs/topics/format_standards/
+- NFDI4Chem. Data format standard. https://knowledgebase.nfdi4chem.de/knowledge_base/docs/format_standards/
 - Rauh, D., Blankenburg, C., Fischer, T., Jung, N., Kuhn, S., Schatzschneider, U., Schulze, T. & Neumann, S. (2022). 
 - Data format standards in analytical chemistry. Pure and Applied Chemistry, 94(6), 725-736. https://doi.org/10.1515/pac-2021-3101
 
