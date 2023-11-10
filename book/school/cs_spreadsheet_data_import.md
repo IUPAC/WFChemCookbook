@@ -30,9 +30,35 @@ In research or in class (organic lab for instance) you may find yourself needing
 so that you can create a plot for a report.  Text files are extremely common for transferring data between computers,
 can be written in different ways, and come with different extensions.  The reason text files are so popular is that
 they are simple (it's just a file with text in it right?) and generally the best for 
-[digital preservation](https://library.duke.edu/using/policies/recommended-file-formats-digital-preservation) (meaning
-files that can be kept a long time and still be read by software).
+[digital preservation](https://library.duke.edu/using/policies/recommended-file-formats-digital-preservation) (meaning files that can be kept a long time and still be read by software).
 
+### 1.1 Text files
+Text files are for humans to read.  Originally, text files were only able to store characters (letters, number, symbols)
+in the English language and this was published as a specficiation called the "American Standard Code for Information
+Exchange", or ASCII.  This specification could only define up to 256 different characters which was OK in the 1970's but
+has since been recognized as extremely limiting.  The limitation was based on the fact that each character had a number
+defined in one byte (eight bits) of data on a computer.  In binary (which use only 1's and 0's to represent each bit)
+you can go from 0 to 255 (256 different values).
+
+In 1988, the development of [Unicode](https://home.unicode.org/) started which uses up to four bytes (4 x 8 = 32 bits) to
+represent a character, giving an upper limit of over 1.1 million characters (only 149,813 characters have actually been 
+created as of Sept. 2023).  This increase in the limit of characters has allowed many different languages to be supported,
+including Chinese pictograph characters, and more important for today's society [emoji's](https://unicode.org/emoji/charts/full-emoji-list.html/) 
+(slow page!) like 🧪 or 👩‍🔬.  The are currently just under 2000 emjoi's plus their skin tone variants.
+
+### 1.2 Binary files
+In the dicussion above the idea of binary representation of characters was introduced.  This is the fundamental way that
+data is stored on a computer so is generally more compact and faster as it is interpreted through computer code and does
+not need to be converted to equivalent characters.  A common example of a binary file is any type of image file.  For
+images the data is not representing text so it is raw 1's and 0's and this is interpreted by the computer (using the
+image specification) into an image.  If you want to see how it looks, take any image file, make the extension .txt (the
+computer will likely ask you if you really want to change it) and then open it in a text editor.  The data will look like
+a big random mess (see below).
+
+![fig0](../images/spreadsheet_fig0.jpg)
+Caption: Binary image file (BeachBall.jpg) (left) v's text editor reading the file as text file (BeachBall.txt) right.
+
+### 1.3 Text file extensions
 However, there are situations where importing isn't easy, or worse where imported data gets corrupted. So, it is important
 to know what data you are working with, and how best to important it accurately. First, you need to check the extension
 (.xxx) that you are working with. While many files are text files they can have extension which dictates what type of
