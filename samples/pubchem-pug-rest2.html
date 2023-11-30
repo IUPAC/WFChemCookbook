@@ -1,35 +1,45 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Accessing PubChem through PUG-REST: Part II &#8212; IUPAC FAIR Chemistry Cookbook</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,12 +47,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,62 +60,94 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'samples/pubchem-pug-rest2';</script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Accessing PubChem through PUG-REST: Part III" href="pubchem-pug-rest3.html" />
     <link rel="prev" title="Accessing PubChem through PUG-REST - Part I" href="pubchem-pug-rest1.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/iupac_and_wf.jpg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">IUPAC FAIR Chemistry Cookbook</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -114,448 +156,309 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  SAMPLE RECIPES
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">SAMPLE RECIPES</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../sampler.html">
-   We need your feedback!
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="goldbook.html">
-   Accessing the IUPAC Gold Book API in Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="computing_inchis.html">
-   Computing InChIs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="learn_spectra.html">
-   FAIR formating of (multi, hyper) spectral data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dataset_search.html">
-   Finding a Findable Dataset
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="pubchem-pug.html">
-   PubChem PUG-REST API
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="pubchem-pug-rest1.html">
-     Accessing PubChem through PUG-REST - Part I
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Accessing PubChem through PUG-REST: Part II
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pubchem-pug-rest3.html">
-     Accessing PubChem through PUG-REST: Part III
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="uvvis_metadata.html">
-   Structured UV/Vis (meta)data for small molecule characterisation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="opsin.html">
-   Using the OPSIN API in Python
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../sampler.html">We need your feedback!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="goldbook.html">Accessing the IUPAC Gold Book API in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computing_inchis.html">Computing InChIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learn_spectra.html">FAIR formating of (multi, hyper) spectral data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset_search.html">Finding a Findable Dataset</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pubchem-pug.html">PubChem PUG-REST API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pubchem-pug-rest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Accessing PubChem through PUG-REST: Part II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pubchem-pug-rest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  CULINARY SCHOOL
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../school.html">
-   FAIR basics for Chemistry
-  </a>
- </li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opsin.html">Using the OPSIN API in Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  INGREDIENTS
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CULINARY SCHOOL</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ingredients.html">
-   Data standards and formats for Chemistry
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../school.html">FAIR basics for Chemistry</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  RECIPES
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">INGREDIENTS</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../recipes.html">
-   Workflows for machine-readable chemical data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../ingredients.html">Data standards and formats for Chemistry</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  TEST KITCHEN
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">RECIPES</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../kitchen.html">
-   Checking your chemical data/metadata
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes.html">Workflows for machine-readable chemical data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  PANTRY
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">TEST KITCHEN</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../pantry.html">
-   Finding and sharing FAIR chemical data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../kitchen.html">Checking your chemical data/metadata</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  COOKWARE
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PANTRY</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../cookware.html">
-   Tools for enabling FAIR chemical data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../pantry.html">Finding and sharing FAIR chemical data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">COOKWARE</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cookware.html">Tools for enabling FAIR chemical data</a></li>
 </ul>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../menus.html">
-   Use cases for FAIR chemical data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../menus.html">Use cases for FAIR chemical data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  REFERENCE
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">REFERENCE</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about.html">
-   About this Project
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../glossary.html">
-   Glossary
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../bibliography.html">
-   Bibliography
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About this Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/IUPAC/WFChemCookbook/main?urlpath=tree/book/samples/pubchem-pug-rest2.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/IUPAC/WFChemCookbook/main?urlpath=tree/book/samples/pubchem-pug-rest2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/IUPAC/WFChemCookbook/blob/main/book/samples/pubchem-pug-rest2.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/IUPAC/WFChemCookbook/blob/main/book/samples/pubchem-pug-rest2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/IUPAC/WFChemCookbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Fsamples/pubchem-pug-rest2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/samples/pubchem-pug-rest2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/IUPAC/WFChemCookbook"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Fsamples/pubchem-pug-rest2.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/samples/pubchem-pug-rest2.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessing-pubchem-data-using-a-chemical-name">
-   1. Accessing PubChem data using a chemical name
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-chemical-names-for-a-given-chemical-structure">
-   2. Getting chemical names for a given chemical structure
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Accessing PubChem through PUG-REST: Part II</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessing-pubchem-data-using-a-chemical-name">
-   1. Accessing PubChem data using a chemical name
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-chemical-names-for-a-given-chemical-structure">
-   2. Getting chemical names for a given chemical structure
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Accessing PubChem through PUG-REST: Part II</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-pubchem-data-using-a-chemical-name">1. Accessing PubChem data using a chemical name</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-chemical-names-for-a-given-chemical-structure">2. Getting chemical names for a given chemical structure</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="accessing-pubchem-through-pug-rest-part-ii">
 <h1>Accessing PubChem through PUG-REST: Part II<a class="headerlink" href="#accessing-pubchem-through-pug-rest-part-ii" title="Permalink to this headline">#</a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -604,9 +507,7 @@ MolecularFormula: C9H8O4
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MolecularWeight : 180.16
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IsomericSMILES  : CC(=O)OC1=CC=CC=C1C(=O)O
+IsomericSMILES  : CC(=O)OC1=CC=CC=C1C(=O)O
 </pre></div>
 </div>
 </div>
@@ -635,15 +536,15 @@ MolecularFormula: C9H8O4
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/pubchem-pug-rest2_7_0.png" src="../_images/pubchem-pug-rest2_7_0.png" />
+<img alt="../_images/ceb2eb736a4baf98ac60c0cf2962d49e3e620b6111c9c22fe46031e1ead16832.png" src="../_images/ceb2eb736a4baf98ac60c0cf2962d49e3e620b6111c9c22fe46031e1ead16832.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 156391 : C14H14O3
 </pre></div>
 </div>
-<img alt="../_images/pubchem-pug-rest2_7_2.png" src="../_images/pubchem-pug-rest2_7_2.png" />
+<img alt="../_images/198f5296d0a55e99a74954b6a256e42b85418779a609e6ba2ae5047432467cb1.png" src="../_images/198f5296d0a55e99a74954b6a256e42b85418779a609e6ba2ae5047432467cb1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 23681059 : C14H13NaO3
 </pre></div>
 </div>
-<img alt="../_images/pubchem-pug-rest2_7_4.png" src="../_images/pubchem-pug-rest2_7_4.png" />
+<img alt="../_images/735af5550dd31c8b76f75b46b4dc5b56b1f26935fe6d255c24ec82cc0aae73e7.png" src="../_images/735af5550dd31c8b76f75b46b4dc5b56b1f26935fe6d255c24ec82cc0aae73e7.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 6925666 : C14H13O3-
 </pre></div>
 </div>
@@ -659,7 +560,7 @@ MolecularFormula: C9H8O4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;23681059&#39;, &#39;156391&#39;, &#39;6925666&#39;, &#39;56841568&#39;, &#39;77098502&#39;, &#39;9581&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;23681059&#39;, &#39;156391&#39;, &#39;6925666&#39;, &#39;56841568&#39;, &#39;9581&#39;, &#39;77098502&#39;]
 </pre></div>
 </div>
 </div>
@@ -676,16 +577,16 @@ MolecularFormula: C9H8O4
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/pubchem-pug-rest2_11_0.png" src="../_images/pubchem-pug-rest2_11_0.png" />
+<img alt="../_images/a5bf5d2aa0b0260638df0b17b97d84cbc3c573f47d0e4ee88ed7b15af5b7ec2c.png" src="../_images/a5bf5d2aa0b0260638df0b17b97d84cbc3c573f47d0e4ee88ed7b15af5b7ec2c.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 56841568 : C24H30ClNO4
 </pre></div>
 </div>
-<img alt="../_images/pubchem-pug-rest2_11_2.png" src="../_images/pubchem-pug-rest2_11_2.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 77098502 : C31H35ClNNaO4
+<img alt="../_images/72793c29696013f027987259a64b8046adb68e4869b32f23e3082adc2b770aef.png" src="../_images/72793c29696013f027987259a64b8046adb68e4869b32f23e3082adc2b770aef.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 9581 : C10H16ClNO
 </pre></div>
 </div>
-<img alt="../_images/pubchem-pug-rest2_11_4.png" src="../_images/pubchem-pug-rest2_11_4.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 9581 : C10H16ClNO
+<img alt="../_images/36e4c75367ecbb2ec6a21b2b78bcc67496596fe776c3c0c46c57eb7975839f4b.png" src="../_images/36e4c75367ecbb2ec6a21b2b78bcc67496596fe776c3c0c46c57eb7975839f4b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 77098502 : C31H35ClNNaO4
 </pre></div>
 </div>
 </div>
@@ -705,125 +606,68 @@ MolecularFormula: C9H8O4
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-- CID 56841568
-141623-29-2
 Aleve-D Sinus &amp; Cold
 Aleve-D Sinus and Cold
 Naproxen / pseudoephedrine
 Aleve-D Sinus and headache
+141623-29-2
 DTXSID80931146
 2-(6-Methoxynaphthalen-2-yl)propanoic acid--2-(methylamino)-1-phenylpropan-1-ol--hydrogen chloride (1/1/1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-- CID 77098502
-Aleve PM
-Naproxen sodium/DPH combination
-Diphenhydramine HCl / naproxen sodium
-BAY98-7111
-BAY 98-7111
-Naproxen Sodium and diphenhydramine combination
-Diphenhydramine hydrochloride and naproxen sodium
-S900006580
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-- CID 9581
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-- CID 9581
-PSEUDOEPHEDRINE HYDROCHLORIDE
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PSEUDOEPHEDRINE HYDROCHLORIDE
 Pseudoephedrine Hcl
 345-78-8
-Otrinol
 Rhinalair
-Tussaphed
+Otrinol
 Novafed
-Sudafed
 Sudomyl
+Tussaphed
 First sign
-d-Pseudoephedrine hydrochloride
-Besan
-Sudafed hydrochloride
-(+)-Pseudoephedrine hydrochloride
-Pseudophedrine hydrochloride
-Galsud
-Efidac 24
-1S,2S-(+)-Pseudoephedrine hydrochloride
-NSC-33634
-NSC-106567
-6V9V2RYJ8N
-L(+)-Pseudoephedrine hydrochloride
 Sinufed
+Sudafed
+Sudafed hydrochloride
+d-Pseudoephedrine hydrochloride
 CoAdvil
+(+)-Pseudoephedrine hydrochloride
 Symptom 2
-D-(alpha-(1-Methylamino)ethyl)benzyl alcohol hydrochloride
 Sudafed 12 Hour
-Pseudoephedrine, (+)-
-Pseudoephedrine, L-(+)-
-Suphedrine
+Besan
 Nexafed
-Dorcol
-L-(+)-Pseudoephedrine hydrochloride
+Pseudophedrine hydrochloride
+Suphedrine
+Galsud
 Sun mark sinus
-Deconsal II
-CHEBI:8604
-Sudafed Liquid, Children&#39;s
-PediaCare Decongestant Drops
 Sudafed 24 Hour
-(1S,2S)-2-(methylamino)-1-phenylpropan-1-ol hydrochloride
-Benzenemethanol, hydrochloride, S-(R,R)-
-WLN: QYR &amp; Y1 &amp; M1 &amp; GH-L
-Dimetapp Decongestant
-Actifed Sinus Daytime
 CPDD 0050
-Benzenemethanol, hydrochloride, [S-(R*,R*)]-
-EINECS 206-462-1
-Pseudoephedrine hydrochloride [USAN]
-NSC 33634
+1S,2S-(+)-Pseudoephedrine hydrochloride
+L(+)-Pseudoephedrine hydrochloride
 UNII-6V9V2RYJ8N
-NSC 106567
-(1S,2S)-2-(methylamino)-1-phenylpropan-1-ol;hydrochloride
+EINECS 206-462-1
+6V9V2RYJ8N
+NSC 33634
+NSC-33634
 Topcare 12 hour decongestant
-D-[.alpha.-(1-Methylamino)ethyl]benzyl alcohol hydrochloride
-Ornex and Maximum Strength Ornex
-Sudafed (TN)
+NSC 106567
+NSC-106567
+Efidac 24
 GALPSEUD
 Pseudoephedrine, hydrochloride, L-(+)-
-Pseudoephedrine hydrochloride [USAN:USP]
-Tylenol Sinus Medication, Maximum Strength
-Isoephedrine Hydrochloride
-Contac Day &amp; Night Allergy Sinus Day Caplets
-psi-Ephedrine Hydrochloride
-Benzenemethanol, alpha-(1-(methylamino)ethyl)-, hydrochloride, (S-(R*,R*))-
+CHEBI:8604
+(1S,2S)-2-(methylamino)-1-phenylpropan-1-ol hydrochloride
+D-(alpha-(1-Methylamino)ethyl)benzyl alcohol hydrochloride
 EC 206-462-1
-SCHEMBL33285
-MLS001304069
-SPECTRUM1500516
-CHEMBL1200724
-Sine-Off Maximum Strength No Drowsiness Formula Caplets
-DTXSID10889343
-HMS1920N04
-Pharmakon1600-01500516
 NSC33634
-Pseudoephedrine hydrochloride (USP)
-CCG-39241
+Benzenemethanol, alpha-(1-(methylamino)ethyl)-, hydrochloride, (S-(R*,R*))-
 NSC106567
-NSC759616
-AKOS027383893
-Benzenemethanol, alpha-(1-(methylamino)ethyl)-, (S-(R*,R*))-, hydrochloride
-NSC-759616
-Benzenemethanol, .alpha.-[(1S)-1-(methylamino)ethyl]-, hydrochloride, (.alpha.S)-
+Pseudoephedrine hydrochloride [USAN:USP]
+(+)-Pseudoephedrine.HCl
 Benzenemethanol, alpha-((1S)-1-(methylamino)ethyl)-, hydrochloride, (alphaS)-
 Benzenemethanol, alpha-(1-(methylamino)ethyl)-, hydrochloride, (S-(theta,theta))-
-PSEUDOEPHEDRINE HYDROCHLORIDE [MI]
-SMR000718787
-(+)-Pseudoephedrine hydrochloride, &gt;=98%
-P1654
-PSEUDOEPHEDRINE HYDROCHLORIDE [MART.]
-PSEUDOEPHEDRINE HYDROCHLORIDE [VANDF]
-PSEUDOEPHEDRINE HYDROCHLORIDE [USP-RS]
-PSEUDOEPHEDRINE HYDROCHLORIDE [WHO-DD]
-D00485
-PSEUDOEPHEDRINE HYDROCHLORIDE [ORANGE BOOK]
 MYFED COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
-PSEUDOEPHEDRINE HYDROCHLORIDE [EP MONOGRAPH]
-PSEUDOEPHEDRINE HYDROCHLORIDE [USP MONOGRAPH]
-W-106727
 ACTAHIST COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
 ACTIFED COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
 ALEVE-D COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
@@ -832,7 +676,7 @@ CORPHED COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
 HISTAFED COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
 ISOCLOR COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF MYFED
-Q27108108
+Pseudoephedrine, (+)-
 TRIPHED COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
 ZYRTEC-D COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
 ALLEGRA-D COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
@@ -846,14 +690,12 @@ PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF TRIPHED
 SEMPREX-D COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
 TRIACIN-C COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
 TRILITRON COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
-(+)-Pseudoephedrine hydrochloride, Sigma Reference Standard
 BROMANATE DM COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
 DIMETANE-DX COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
 HYCOFENIX COMPONENT OF PSEUDOEPHEDRINE HYDROCHLORIDE
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF ACTAHIST
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF ALLEGRA-D
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF ALLERFED
-PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF BROMFED-DM
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF HISTAFED
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF HYCOFENIX
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF MUCINEX D
@@ -861,27 +703,138 @@ PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF SEMPREX-D
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF TRIACIN-C
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF TRILITRON
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF ZYRTEC-D
-Pseudoephedrine Hydrochloride; Threo-Ephedrine Hydrochloride
 SINE-AID IB COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
-(1S,2S)-2-(Methylamino)-1-phenyl-1-propanol Hydrochloride
-CODIMAL-L.A. 12 COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+Pseudoephedrine, L-(+)-
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF BROMANATE DM
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF BROMFED-DM
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF DIMETANE-DX
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF SINE-AID IB
+Dorcol
 ADVIL ALLERGY SINUS COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+CODIMAL-L.A. 12 COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
+PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF CODIMAL-L.A. 12
+L-(+)-Pseudoephedrine hydrochloride
 CHILDREN&#39;S ADVIL COLD COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
 CHILDREN&#39;S MOTRIN COLD COMPONENT PSEUDOEPHEDRINE HYDROCHLORIDE
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF ADVIL ALLERGY SINUS
-PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF CODIMAL-L.A. 12
-(+)-Pseudoephedrine Hydrochloride 1.0 mg/ml in Methanol (as free base)
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF CHILDREN&#39;S ADVIL COLD
+Deconsal II
 PSEUDOEPHEDRINE HYDROCHLORIDE COMPONENT OF CHILDREN&#39;S MOTRIN COLD
+Sudafed Liquid, Children&#39;s
+PediaCare Decongestant Drops
+Pseudoephedrine hydrochloride (USAN:USP)
+Benzenemethanol, hydrochloride, S-(R,R)-
+WLN: QYR &amp; Y1 &amp; M1 &amp; GH-L
+Dimetapp Decongestant
+PSEUDOEPHEDRINE HYDROCHLORIDE (MART.)
+PSEUDOEPHEDRINE HYDROCHLORIDE [MART.]
+Actifed Sinus Daytime
+PSEUDOEPHEDRINE HYDROCHLORIDE (USP-RS)
+PSEUDOEPHEDRINE HYDROCHLORIDE [USP-RS]
+Benzenemethanol, hydrochloride, [S-(R*,R*)]-
+PSEUDOEPHEDRINE HYDROCHLORIDE (EP MONOGRAPH)
+PSEUDOEPHEDRINE HYDROCHLORIDE (USP MONOGRAPH)
+PSEUDOEPHEDRINE HYDROCHLORIDE [EP MONOGRAPH]
+PSEUDOEPHEDRINE HYDROCHLORIDE [USP MONOGRAPH]
+Pseudoephedrine hydrochloride [USAN]
+D-[.alpha.-(1-Methylamino)ethyl]benzyl alcohol hydrochloride
+walphed d
+Pseudo-time
+Zephrex D
+Zephrex-D
+Childrens Sudafed
+Ornex and Maximum Strength Ornex
+Sinus Decongestion
+pseudoephedrine.hcl
+Nasal DecongestantD
+Harris Teeter Sinus
+Sudafed (TN)
+SudoGest 12 Hour
+Sinus and Congestion
+Nasal Decongestant D
+(1S,2S)-(+)-Pseudoephedrine hydrochloride
+Good Sense Suphedrine
+equate sinus 12 hour
+RugbyNasal Decongestant
+Tylenol Sinus Medication, Maximum Strength
+Isoephedrine Hydrochloride
+Leader Nasal Decongestant
+Picnic Nasal Decongestant
+equaline nasal decongestant
+SUDAFED Sinus Congestion
+Topcare Nasal Decongestant
+Contac Day &amp; Night Allergy Sinus Day Caplets
+psi-Ephedrine Hydrochloride
+Sudogest Nasal Decongestant
+12 Hour Nasal Decongestant
+Pseudoephedrine HClUnit Dose
+SCHEMBL33285
+Good Sense Nasal Decongestant
+MLS001304069
+Good Sense Suphedrine12 Hour
+SPECTRUM1500516
+Sinus and CongestionNon-Drowsy
+Equaline 12 Hour Decongestant
+CHEMBL1200724
+Sine-Off Maximum Strength No Drowsiness Formula Caplets
+DTXSID10889343
+BALXUFOVQVENIU-KXNXZCPBSA-N
+Sudafed Sinus Congestion 12 Hour
+Sudafed Sinus Congestion 24 Hour
+Childrens SudafedNasal Decongestant
+Childrens UniphedNasal Decongestant
+HMS1920N04
+Pharmakon1600-01500516
+Leader 12 Hour Nasal Decongestant
+Pseudoephedrine hydrochloride (USP)
+CareOne Nasal and Sinus Decongestant
+CCG-39241
+NSC759616
+AKOS027383893
+Benzenemethanol, alpha-(1-(methylamino)ethyl)-, (S-(R*,R*))-, hydrochloride
+NSC-759616
+Benzenemethanol, .alpha.-[(1S)-1-(methylamino)ethyl]-, hydrochloride, (.alpha.S)-
+Cvs Health Non-drowsy Nasal Decongestant
+Good Neighbor Pharmacy Nasal Decongestant
+PSEUDOEPHEDRINE HYDROCHLORIDE [MI]
+Rugby Nasal DecongestantNasal Decongestant
+SMR000718787
+walphed dmaximum strength non drowsy sinus
+(+)-Pseudoephedrine hydrochloride, &gt;=98%
+nasal decongestantmaximum strength non drowsy
+P1654
+PSEUDOEPHEDRINE HYDROCHLORIDE [VANDF]
+PSEUDOEPHEDRINE HYDROCHLORIDE [WHO-DD]
+D00485
+Nasal DecongestantMaximum Strength, Non-Drowsy
+PSEUDOEPHEDRINE HYDROCHLORIDE [ORANGE BOOK]
+Sinus Pressure and Congestion ReliefMaximum Strength
+W-106727
+equaline nasal decongestantnon drowsy maximum strength
+Q27108108
+Topcare Nasal DecongestantMaximum Strength Non Drowsy
+(+)-Pseudoephedrine hydrochloride, Sigma Reference Standard
+(1S,2S)-2-(Methylamino)-1-phenyl-1-propanol Hydrochloride
+(+)-Pseudoephedrine Hydrochloride 1.0 mg/ml in Methanol (as free base)
 Pseudoephedrine hydrochloride, British Pharmacopoeia (BP) Reference Standard
 Benzenemethanol, .alpha.-[(1S)-1-(methylamino)ethyl]-, hydrochloride (1:1), (.alpha.S)-
 Benzenemethanol, alpha-((1S)-1-(methylamino)ethyl)-, hydrochloride (1:1), (alphaS)-
 Pseudoephedrine hydrochloride, European Pharmacopoeia (EP) Reference Standard
 Pseudoephedrine hydrochloride, United States Pharmacopeia (USP) Reference Standard
 Pseudoephedrine hydrochloride, Pharmaceutical Secondary Standard; Certified Reference Material
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-- CID 77098502
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Aleve PM
+Naproxen sodium/DPH combination
+Diphenhydramine HCl / naproxen sodium
+BAY98-7111
+BAY 98-7111
+Naproxen Sodium and diphenhydramine combination
+Diphenhydramine hydrochloride and naproxen sodium
+S900006580
 </pre></div>
 </div>
 </div>
@@ -910,50 +863,106 @@ Pseudoephedrine hydrochloride, Pharmaceutical Secondary Standard; Certified Refe
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="pubchem-pug-rest1.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Accessing PubChem through PUG-REST - Part I</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pubchem-pug-rest1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Accessing PubChem through PUG-REST - Part I</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="pubchem-pug-rest3.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="pubchem-pug-rest3.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Accessing PubChem through PUG-REST: Part III</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By IUPAC WorldFAIR Chemistry D3.2 Project<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-pubchem-data-using-a-chemical-name">1. Accessing PubChem data using a chemical name</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-chemical-names-for-a-given-chemical-structure">2. Getting chemical names for a given chemical structure</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IUPAC WorldFAIR Chemistry D3.2 Project
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,35 +1,45 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Accessing PubChem through PUG-REST: Part III &#8212; IUPAC FAIR Chemistry Cookbook</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,12 +47,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,62 +60,94 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'samples/pubchem-pug-rest3';</script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Structured UV/Vis (meta)data for small molecule characterisation" href="uvvis_metadata.html" />
     <link rel="prev" title="Accessing PubChem through PUG-REST: Part II" href="pubchem-pug-rest2.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/iupac_and_wf.jpg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">IUPAC FAIR Chemistry Cookbook</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -114,478 +156,312 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  SAMPLE RECIPES
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">SAMPLE RECIPES</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../sampler.html">
-   We need your feedback!
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="goldbook.html">
-   Accessing the IUPAC Gold Book API in Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="computing_inchis.html">
-   Computing InChIs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="learn_spectra.html">
-   FAIR formating of (multi, hyper) spectral data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dataset_search.html">
-   Finding a Findable Dataset
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="pubchem-pug.html">
-   PubChem PUG-REST API
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="pubchem-pug-rest1.html">
-     Accessing PubChem through PUG-REST - Part I
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pubchem-pug-rest2.html">
-     Accessing PubChem through PUG-REST: Part II
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Accessing PubChem through PUG-REST: Part III
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="uvvis_metadata.html">
-   Structured UV/Vis (meta)data for small molecule characterisation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="opsin.html">
-   Using the OPSIN API in Python
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../sampler.html">We need your feedback!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="goldbook.html">Accessing the IUPAC Gold Book API in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computing_inchis.html">Computing InChIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learn_spectra.html">FAIR formating of (multi, hyper) spectral data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset_search.html">Finding a Findable Dataset</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pubchem-pug.html">PubChem PUG-REST API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pubchem-pug-rest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pubchem-pug-rest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Accessing PubChem through PUG-REST: Part III</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  CULINARY SCHOOL
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../school.html">
-   FAIR basics for Chemistry
-  </a>
- </li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opsin.html">Using the OPSIN API in Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  INGREDIENTS
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CULINARY SCHOOL</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ingredients.html">
-   Data standards and formats for Chemistry
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../school.html">FAIR basics for Chemistry</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  RECIPES
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">INGREDIENTS</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../recipes.html">
-   Workflows for machine-readable chemical data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../ingredients.html">Data standards and formats for Chemistry</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  TEST KITCHEN
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">RECIPES</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../kitchen.html">
-   Checking your chemical data/metadata
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes.html">Workflows for machine-readable chemical data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  PANTRY
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">TEST KITCHEN</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../pantry.html">
-   Finding and sharing FAIR chemical data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../kitchen.html">Checking your chemical data/metadata</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  COOKWARE
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PANTRY</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../cookware.html">
-   Tools for enabling FAIR chemical data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../pantry.html">Finding and sharing FAIR chemical data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">COOKWARE</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cookware.html">Tools for enabling FAIR chemical data</a></li>
 </ul>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../menus.html">
-   Use cases for FAIR chemical data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../menus.html">Use cases for FAIR chemical data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  REFERENCE
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">REFERENCE</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about.html">
-   About this Project
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../glossary.html">
-   Glossary
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../bibliography.html">
-   Bibliography
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About this Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/IUPAC/WFChemCookbook/main?urlpath=tree/book/samples/pubchem-pug-rest3.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/IUPAC/WFChemCookbook/main?urlpath=tree/book/samples/pubchem-pug-rest3.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/IUPAC/WFChemCookbook/blob/main/book/samples/pubchem-pug-rest3.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/IUPAC/WFChemCookbook/blob/main/book/samples/pubchem-pug-rest3.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/IUPAC/WFChemCookbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Fsamples/pubchem-pug-rest3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/samples/pubchem-pug-rest3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/IUPAC/WFChemCookbook"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Fsamples/pubchem-pug-rest3.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/samples/pubchem-pug-rest3.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-a-smiles-or-inchi-string-as-an-input-query">
-   1. Using a SMILES or InChI string as an input query
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#performing-identity-search">
-   2. Performing identity search
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#performing-2-d-and-3-d-similarity-search">
-   3. Performing 2-D and 3-D similarity search
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#performing-substructure-superstructure-search">
-   5. Performing substructure/superstructure search
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#molecular-formula-search">
-   7. Molecular Formula search
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Accessing PubChem through PUG-REST: Part III</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-a-smiles-or-inchi-string-as-an-input-query">
-   1. Using a SMILES or InChI string as an input query
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#performing-identity-search">
-   2. Performing identity search
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#performing-2-d-and-3-d-similarity-search">
-   3. Performing 2-D and 3-D similarity search
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#performing-substructure-superstructure-search">
-   5. Performing substructure/superstructure search
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#molecular-formula-search">
-   7. Molecular Formula search
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Accessing PubChem through PUG-REST: Part III</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-smiles-or-inchi-string-as-an-input-query">1. Using a SMILES or InChI string as an input query</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performing-identity-search">2. Performing identity search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performing-2-d-and-3-d-similarity-search">3. Performing 2-D and 3-D similarity search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performing-substructure-superstructure-search">5. Performing substructure/superstructure search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-formula-search">7. Molecular Formula search</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="accessing-pubchem-through-pug-rest-part-iii">
 <h1>Accessing PubChem through PUG-REST: Part III<a class="headerlink" href="#accessing-pubchem-through-pug-rest-part-iii" title="Permalink to this headline">#</a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -658,7 +534,7 @@ Detail:
 </div>
 </div>
 <p>To circumvent this issue, the SMILES input should be provided in one of the following two ways:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>as a URL parameter</p></li>
 <li><p>in the HTTP header (using the HTTP POST method).</p></li>
 </ol>
@@ -752,15 +628,15 @@ Detail:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;14571425&#39;, &#39;14571426&#39;, &#39;71380237&#39;]
 </pre></div>
 </div>
-<img alt="../_images/pubchem-pug-rest3_13_1.png" src="../_images/pubchem-pug-rest3_13_1.png" />
+<img alt="../_images/bc74df77714d6db930b4437547b225756c615a6b7b893c8c9fcf1dc663ffe8fb.png" src="../_images/bc74df77714d6db930b4437547b225756c615a6b7b893c8c9fcf1dc663ffe8fb.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 14571425 : CC(C)/C=C/I
 </pre></div>
 </div>
-<img alt="../_images/pubchem-pug-rest3_13_3.png" src="../_images/pubchem-pug-rest3_13_3.png" />
+<img alt="../_images/acbcd012bc67a408dcf4dd07b8f9b53e02e230a5178b31c5aa7577efbb3c6a4f.png" src="../_images/acbcd012bc67a408dcf4dd07b8f9b53e02e230a5178b31c5aa7577efbb3c6a4f.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 14571426 : CC(C)/C=C\I
 </pre></div>
 </div>
-<img alt="../_images/pubchem-pug-rest3_13_5.png" src="../_images/pubchem-pug-rest3_13_5.png" />
+<img alt="../_images/534a7f6f692bfff965314fff318fb5a806c93f7665497ba70229c45db3c4bca1.png" src="../_images/534a7f6f692bfff965314fff318fb5a806c93f7665497ba70229c45db3c4bca1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 71380237 : CC(C)C=CI
 </pre></div>
 </div>
@@ -783,11 +659,11 @@ Detail:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;14571425&#39;, &#39;118122558&#39;]
 </pre></div>
 </div>
-<img alt="../_images/pubchem-pug-rest3_14_1.png" src="../_images/pubchem-pug-rest3_14_1.png" />
+<img alt="../_images/bc74df77714d6db930b4437547b225756c615a6b7b893c8c9fcf1dc663ffe8fb.png" src="../_images/bc74df77714d6db930b4437547b225756c615a6b7b893c8c9fcf1dc663ffe8fb.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 14571425 : CC(C)/C=C/I
 </pre></div>
 </div>
-<img alt="../_images/pubchem-pug-rest3_14_3.png" src="../_images/pubchem-pug-rest3_14_3.png" />
+<img alt="../_images/840c0466e82581eb1d3acfafa70f48f50851a0bbd1651cb3fb8d6ccc6df3608b.png" src="../_images/840c0466e82581eb1d3acfafa70f48f50851a0bbd1651cb3fb8d6ccc6df3608b.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID 118122558 : [2H]C[C@@H](C)/C=C/I
 </pre></div>
 </div>
@@ -820,8 +696,8 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>280
-[&#39;155903259&#39;, &#39;163421961&#39;, &#39;166537627&#39;, &#39;166494843&#39;, &#39;166494662&#39;, &#39;166157269&#39;, &#39;166157215&#39;, &#39;166157194&#39;, &#39;166157043&#39;, &#39;166157017&#39;, &#39;166156836&#39;, &#39;166156828&#39;, &#39;166156664&#39;, &#39;166149137&#39;, &#39;166149094&#39;, &#39;166149089&#39;, &#39;166149077&#39;, &#39;166149074&#39;, &#39;166149071&#39;, &#39;166149062&#39;, &#39;165179488&#39;, &#39;165179486&#39;, &#39;165179485&#39;, &#39;165179472&#39;, &#39;164971185&#39;, &#39;164850071&#39;, &#39;164785132&#39;, &#39;164766041&#39;, &#39;164766036&#39;, &#39;164701821&#39;, &#39;164701819&#39;, &#39;164701818&#39;, &#39;164701817&#39;, &#39;164701816&#39;, &#39;164701815&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701807&#39;, &#39;164701805&#39;, &#39;164701800&#39;, &#39;164701794&#39;, &#39;164701789&#39;, &#39;164701777&#39;, &#39;164701776&#39;, &#39;164701775&#39;, &#39;164701773&#39;, &#39;164701772&#39;, &#39;164701766&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;164701757&#39;, &#39;164701749&#39;, &#39;164701748&#39;, &#39;164701743&#39;, &#39;164701742&#39;, &#39;164701741&#39;, &#39;164701738&#39;, &#39;164701736&#39;, &#39;164701733&#39;, &#39;164159966&#39;, &#39;164158215&#39;, &#39;164040179&#39;, &#39;163941851&#39;, &#39;163362031&#39;, &#39;163362029&#39;, &#39;163362026&#39;, &#39;163362016&#39;, &#39;163362014&#39;, &#39;163362009&#39;, &#39;163362008&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361998&#39;, &#39;163361997&#39;, &#39;163361849&#39;, &#39;163283407&#39;, &#39;163283390&#39;, &#39;163283387&#39;, &#39;163283371&#39;, &#39;163283370&#39;, &#39;163283343&#39;, &#39;163283330&#39;, &#39;163283322&#39;, &#39;163283284&#39;, &#39;163283243&#39;, &#39;163283239&#39;, &#39;163283238&#39;, &#39;163283236&#39;, &#39;162479130&#39;, &#39;162478807&#39;, &#39;162396459&#39;, &#39;162396458&#39;, &#39;162396453&#39;, &#39;162396452&#39;, &#39;162396372&#39;, &#39;166157205&#39;, &#39;166157157&#39;, &#39;166157065&#39;, &#39;166157057&#39;, &#39;166157023&#39;, &#39;166156829&#39;, &#39;166149063&#39;, &#39;164850290&#39;, &#39;164850073&#39;, &#39;164701802&#39;, &#39;164701798&#39;, &#39;163362019&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;163283283&#39;, &#39;162712506&#39;, &#39;162712498&#39;, &#39;162712490&#39;, &#39;162712489&#39;, &#39;162712482&#39;, &#39;162712471&#39;, &#39;162712468&#39;, &#39;162712462&#39;, &#39;162712460&#39;, &#39;162685338&#39;, &#39;162396461&#39;, &#39;162396460&#39;, &#39;162396450&#39;, &#39;162396442&#39;, &#39;157010397&#39;, &#39;166642632&#39;, &#39;166840326&#39;, &#39;166840392&#39;, &#39;166840457&#39;, &#39;166840466&#39;, &#39;166840731&#39;, &#39;166891533&#39;, &#39;166891547&#39;, &#39;166891596&#39;, &#39;166891665&#39;, &#39;166893182&#39;, &#39;166893274&#39;, &#39;166893275&#39;, &#39;166893276&#39;, &#39;166893348&#39;, &#39;166893351&#39;, &#39;166964883&#39;, &#39;166964886&#39;, &#39;166964888&#39;, &#39;166964890&#39;, &#39;166964899&#39;, &#39;166964903&#39;, &#39;166964904&#39;, &#39;166964908&#39;, &#39;166964913&#39;, &#39;166986000&#39;, &#39;166986065&#39;, &#39;166986067&#39;, &#39;166986077&#39;, &#39;167065080&#39;, &#39;167065082&#39;, &#39;167065154&#39;, &#39;167065160&#39;, &#39;167094315&#39;, &#39;167094316&#39;, &#39;167094334&#39;, &#39;167094341&#39;, &#39;167203321&#39;, &#39;167203580&#39;, &#39;167203581&#39;, &#39;167203608&#39;, &#39;167206597&#39;, &#39;167206598&#39;, &#39;167206599&#39;, &#39;167206807&#39;, &#39;167207061&#39;, &#39;167229685&#39;, &#39;167251496&#39;, &#39;167278770&#39;, &#39;167331610&#39;, &#39;167331612&#39;, &#39;167331630&#39;, &#39;167331639&#39;, &#39;167331698&#39;, &#39;167338845&#39;, &#39;167338850&#39;, &#39;167338914&#39;, &#39;167338917&#39;, &#39;167338943&#39;, &#39;167480975&#39;, &#39;167480997&#39;, &#39;167481005&#39;, &#39;167481033&#39;, &#39;167481034&#39;, &#39;167481037&#39;, &#39;167481072&#39;, &#39;167481103&#39;, &#39;167481104&#39;, &#39;167481130&#39;, &#39;167481158&#39;, &#39;167481199&#39;, &#39;167481201&#39;, &#39;167481202&#39;, &#39;167481210&#39;, &#39;167481232&#39;, &#39;167481234&#39;, &#39;167481250&#39;, &#39;167481257&#39;, &#39;167481266&#39;, &#39;167481309&#39;, &#39;167481324&#39;, &#39;167481327&#39;, &#39;167481349&#39;, &#39;167481356&#39;, &#39;167481364&#39;, &#39;167481374&#39;, &#39;167481379&#39;, &#39;167481386&#39;, &#39;167481398&#39;, &#39;167481400&#39;, &#39;167481430&#39;, &#39;167481462&#39;, &#39;167481474&#39;, &#39;167481480&#39;, &#39;167481489&#39;, &#39;167481535&#39;, &#39;167481542&#39;, &#39;167481547&#39;, &#39;167481557&#39;, &#39;167481565&#39;, &#39;167481566&#39;, &#39;167481575&#39;, &#39;167481608&#39;, &#39;167481637&#39;, &#39;167481640&#39;, &#39;167481663&#39;, &#39;167481675&#39;, &#39;167481747&#39;, &#39;167481808&#39;, &#39;167481821&#39;, &#39;167481860&#39;, &#39;167481876&#39;, &#39;167481880&#39;, &#39;167481900&#39;, &#39;167481908&#39;, &#39;167481917&#39;, &#39;167481924&#39;, &#39;167481927&#39;, &#39;167481929&#39;, &#39;167481944&#39;, &#39;167481950&#39;, &#39;167481970&#39;, &#39;167481972&#39;, &#39;167481999&#39;, &#39;167482005&#39;, &#39;167482039&#39;, &#39;167482043&#39;, &#39;167482074&#39;, &#39;167482083&#39;, &#39;167482106&#39;, &#39;167482130&#39;, &#39;167482167&#39;, &#39;167482178&#39;, &#39;167482205&#39;, &#39;167482212&#39;, &#39;167482213&#39;, &#39;167482218&#39;, &#39;167482232&#39;, &#39;167482240&#39;, &#39;167482261&#39;, &#39;167482283&#39;, &#39;167482292&#39;, &#39;167482295&#39;, &#39;167482299&#39;, &#39;167482300&#39;, &#39;167482314&#39;, &#39;167482317&#39;, &#39;167518190&#39;, &#39;167518234&#39;, &#39;167521394&#39;, &#39;167537951&#39;, &#39;167574477&#39;, &#39;167574478&#39;, &#39;167579537&#39;, &#39;167674037&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>349
+[&#39;155903259&#39;, &#39;163421961&#39;, &#39;162396458&#39;, &#39;162396452&#39;, &#39;162396372&#39;, &#39;163361997&#39;, &#39;163283243&#39;, &#39;163283236&#39;, &#39;162712498&#39;, &#39;162712489&#39;, &#39;162712482&#39;, &#39;162712462&#39;, &#39;162712460&#39;, &#39;162685338&#39;, &#39;162396459&#39;, &#39;162396453&#39;, &#39;162396442&#39;, &#39;168291677&#39;, &#39;168290284&#39;, &#39;168142213&#39;, &#39;168142167&#39;, &#39;168142166&#39;, &#39;168142152&#39;, &#39;168142141&#39;, &#39;167579537&#39;, &#39;167521394&#39;, &#39;167518234&#39;, &#39;167518190&#39;, &#39;167482317&#39;, &#39;167482314&#39;, &#39;167482295&#39;, &#39;167482292&#39;, &#39;167482283&#39;, &#39;167482261&#39;, &#39;167482240&#39;, &#39;167482232&#39;, &#39;167482218&#39;, &#39;167482213&#39;, &#39;167482212&#39;, &#39;167482205&#39;, &#39;167482178&#39;, &#39;167482167&#39;, &#39;167482106&#39;, &#39;167482083&#39;, &#39;167482074&#39;, &#39;167482043&#39;, &#39;167482039&#39;, &#39;167482005&#39;, &#39;167481999&#39;, &#39;167481972&#39;, &#39;167481944&#39;, &#39;167481929&#39;, &#39;167481927&#39;, &#39;167481924&#39;, &#39;167481917&#39;, &#39;167481908&#39;, &#39;167481900&#39;, &#39;167481880&#39;, &#39;167481876&#39;, &#39;167481860&#39;, &#39;167481821&#39;, &#39;167481808&#39;, &#39;167481747&#39;, &#39;167481675&#39;, &#39;167481663&#39;, &#39;167481640&#39;, &#39;167481637&#39;, &#39;167481608&#39;, &#39;167481575&#39;, &#39;167481566&#39;, &#39;167481565&#39;, &#39;167481557&#39;, &#39;167481547&#39;, &#39;167481542&#39;, &#39;167481535&#39;, &#39;167481480&#39;, &#39;167481474&#39;, &#39;167481462&#39;, &#39;167481430&#39;, &#39;167481400&#39;, &#39;167481398&#39;, &#39;167481386&#39;, &#39;167481379&#39;, &#39;167481374&#39;, &#39;167481364&#39;, &#39;167481356&#39;, &#39;167481349&#39;, &#39;167481327&#39;, &#39;167481324&#39;, &#39;167481309&#39;, &#39;167481266&#39;, &#39;167481257&#39;, &#39;167481250&#39;, &#39;167481234&#39;, &#39;167481232&#39;, &#39;167481210&#39;, &#39;167481202&#39;, &#39;167481201&#39;, &#39;167481199&#39;, &#39;167481158&#39;, &#39;167481130&#39;, &#39;167481103&#39;, &#39;167481072&#39;, &#39;167481037&#39;, &#39;167481034&#39;, &#39;167481033&#39;, &#39;167481005&#39;, &#39;167480997&#39;, &#39;167480975&#39;, &#39;167338943&#39;, &#39;167338917&#39;, &#39;167338914&#39;, &#39;167338850&#39;, &#39;167338845&#39;, &#39;167331698&#39;, &#39;167331639&#39;, &#39;167331630&#39;, &#39;167251496&#39;, &#39;167229685&#39;, &#39;167207061&#39;, &#39;167206807&#39;, &#39;167206599&#39;, &#39;167206598&#39;, &#39;167206597&#39;, &#39;167203608&#39;, &#39;167203581&#39;, &#39;167203580&#39;, &#39;167094341&#39;, &#39;167094334&#39;, &#39;167094316&#39;, &#39;167094315&#39;, &#39;167065160&#39;, &#39;167065154&#39;, &#39;167065082&#39;, &#39;167065080&#39;, &#39;166893351&#39;, &#39;166893348&#39;, &#39;166893276&#39;, &#39;166893275&#39;, &#39;166893274&#39;, &#39;166893182&#39;, &#39;166891665&#39;, &#39;166891596&#39;, &#39;166891547&#39;, &#39;166891533&#39;, &#39;166840731&#39;, &#39;166840466&#39;, &#39;166840457&#39;, &#39;166840392&#39;, &#39;166840326&#39;, &#39;166537627&#39;, &#39;166494843&#39;, &#39;166494662&#39;, &#39;166157269&#39;, &#39;166157215&#39;, &#39;166157194&#39;, &#39;166157043&#39;, &#39;166157017&#39;, &#39;166156836&#39;, &#39;166156828&#39;, &#39;166156664&#39;, &#39;166149137&#39;, &#39;166149094&#39;, &#39;166149089&#39;, &#39;166149077&#39;, &#39;166149074&#39;, &#39;166149071&#39;, &#39;166149062&#39;, &#39;165179488&#39;, &#39;165179486&#39;, &#39;165179485&#39;, &#39;165179472&#39;, &#39;164971185&#39;, &#39;164850071&#39;, &#39;164785132&#39;, &#39;164766041&#39;, &#39;164766036&#39;, &#39;164701821&#39;, &#39;164701819&#39;, &#39;164701818&#39;, &#39;164701817&#39;, &#39;164701816&#39;, &#39;164701815&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701807&#39;, &#39;164701805&#39;, &#39;164701800&#39;, &#39;164701794&#39;, &#39;164701789&#39;, &#39;164701777&#39;, &#39;164701776&#39;, &#39;164701775&#39;, &#39;164701773&#39;, &#39;164701772&#39;, &#39;164701766&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;164701757&#39;, &#39;164701749&#39;, &#39;164701748&#39;, &#39;164701743&#39;, &#39;164701742&#39;, &#39;164701741&#39;, &#39;164701738&#39;, &#39;164701736&#39;, &#39;164701733&#39;, &#39;164159966&#39;, &#39;164158215&#39;, &#39;164040179&#39;, &#39;163941851&#39;, &#39;163362031&#39;, &#39;163362029&#39;, &#39;163362026&#39;, &#39;163362016&#39;, &#39;163362014&#39;, &#39;163362009&#39;, &#39;163362008&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361998&#39;, &#39;163361849&#39;, &#39;163283407&#39;, &#39;163283390&#39;, &#39;163283387&#39;, &#39;163283371&#39;, &#39;163283370&#39;, &#39;163283343&#39;, &#39;163283330&#39;, &#39;163283322&#39;, &#39;163283284&#39;, &#39;163283239&#39;, &#39;163283238&#39;, &#39;162712471&#39;, &#39;162479130&#39;, &#39;162478807&#39;, &#39;162396461&#39;, &#39;162396460&#39;, &#39;162396450&#39;, &#39;157010397&#39;, &#39;168310837&#39;, &#39;168310836&#39;, &#39;168301133&#39;, &#39;168154285&#39;, &#39;168093174&#39;, &#39;168010016&#39;, &#39;167574478&#39;, &#39;167574477&#39;, &#39;167482300&#39;, &#39;167482299&#39;, &#39;167482130&#39;, &#39;167481970&#39;, &#39;167481950&#39;, &#39;167481489&#39;, &#39;167481104&#39;, &#39;167331612&#39;, &#39;167331610&#39;, &#39;167278770&#39;, &#39;167203321&#39;, &#39;166986077&#39;, &#39;166986067&#39;, &#39;166986065&#39;, &#39;166986000&#39;, &#39;166964913&#39;, &#39;166964908&#39;, &#39;166964904&#39;, &#39;166964903&#39;, &#39;166964899&#39;, &#39;166964890&#39;, &#39;166964888&#39;, &#39;166964886&#39;, &#39;166964883&#39;, &#39;166157205&#39;, &#39;166157157&#39;, &#39;166157065&#39;, &#39;166157057&#39;, &#39;166157023&#39;, &#39;166156829&#39;, &#39;166149063&#39;, &#39;164850290&#39;, &#39;164850073&#39;, &#39;164701802&#39;, &#39;164701798&#39;, &#39;163362019&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;163283283&#39;, &#39;162712506&#39;, &#39;162712490&#39;, &#39;162712468&#39;, &#39;166642632&#39;, &#39;167537951&#39;, &#39;167674037&#39;, &#39;168476190&#39;, &#39;168750579&#39;, &#39;168750586&#39;, &#39;168750590&#39;, &#39;168750593&#39;, &#39;168870655&#39;, &#39;168878798&#39;, &#39;168878799&#39;, &#39;168941969&#39;, &#39;168942044&#39;, &#39;168993728&#39;, &#39;168993735&#39;, &#39;169084219&#39;, &#39;169084221&#39;, &#39;169084224&#39;, &#39;169084228&#39;, &#39;169095061&#39;, &#39;169122295&#39;, &#39;169193197&#39;, &#39;169193261&#39;, &#39;169193357&#39;, &#39;169193396&#39;, &#39;169193437&#39;, &#39;169193547&#39;, &#39;169193552&#39;, &#39;169193733&#39;, &#39;169193751&#39;, &#39;169193754&#39;, &#39;169193839&#39;, &#39;169193895&#39;, &#39;169193963&#39;, &#39;169193967&#39;, &#39;169193968&#39;, &#39;169193984&#39;, &#39;169194030&#39;, &#39;169194114&#39;, &#39;169194124&#39;, &#39;169194140&#39;, &#39;169194186&#39;, &#39;169194204&#39;, &#39;169194217&#39;, &#39;169194236&#39;, &#39;169194258&#39;, &#39;169194293&#39;, &#39;169194319&#39;, &#39;169194330&#39;, &#39;169194348&#39;, &#39;169194427&#39;, &#39;169240696&#39;, &#39;169240697&#39;, &#39;169240701&#39;, &#39;169240702&#39;, &#39;169283836&#39;, &#39;169283867&#39;, &#39;169283881&#39;, &#39;169291133&#39;]
 </pre></div>
 </div>
 </div>
@@ -837,8 +713,8 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
-[&#39;155903259&#39;, &#39;166157194&#39;, &#39;164701818&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;164040179&#39;, &#39;163362031&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361849&#39;, &#39;162396459&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;166642632&#39;, &#39;167065082&#39;, &#39;167094315&#39;, &#39;167094316&#39;, &#39;167331698&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+[&#39;155903259&#39;, &#39;162396459&#39;, &#39;168290284&#39;, &#39;167331698&#39;, &#39;167094316&#39;, &#39;167094315&#39;, &#39;167065082&#39;, &#39;166157194&#39;, &#39;164701818&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;164040179&#39;, &#39;163362031&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361849&#39;, &#39;168301133&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;166642632&#39;, &#39;168476190&#39;, &#39;169240696&#39;, &#39;169240702&#39;]
 </pre></div>
 </div>
 </div>
@@ -855,6 +731,12 @@ Detail:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;CID&quot;,&quot;HeavyAtomCount&quot;,&quot;MolecularFormula&quot;,&quot;IsomericSMILES&quot;
 155903259,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+162396459,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+168290284,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@H]3CCNC3=O)C#N)C&quot;
+167331698,34,&quot;C23H33F2N5O4&quot;,&quot;CC(C)C[C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)C(F)F&quot;
+167094316,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@H]2C1CN([C@@H]2C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C&quot;
+167094315,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+167065082,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1[C@H](N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 166157194,34,&quot;C23H33F2N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 164701818,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 164701813,35,&quot;C23H32F3N5O4&quot;,&quot;CC(C)C[C@@H](C(=O)N1CC2C(C1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)C(F)(F)F&quot;
@@ -866,14 +748,13 @@ Detail:
 163362005,35,&quot;C23H32F3N5O4&quot;,&quot;CC(C)[C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)CC(F)(F)F&quot;
 163362001,35,&quot;C23H32F3N5O4&quot;,&quot;CC(C)C[C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)C(F)(F)F&quot;
 163361849,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](CC3CCNC3=O)C#N)C&quot;
-162396459,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+168301133,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 163341926,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C&quot;
 163285815,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 166642632,35,&quot;C23H32F3N5O4&quot;,&quot;[2H]C([2H])([2H])C([C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)C(F)(F)F)(C([2H])([2H])[2H])C([2H])([2H])[2H]&quot;
-167065082,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1[C@H](N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-167094315,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-167094316,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@H]2C1CN([C@@H]2C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C&quot;
-167331698,34,&quot;C23H33F2N5O4&quot;,&quot;CC(C)C[C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)C(F)F&quot;
+168476190,35,&quot;C23H32F3N5O4&quot;,&quot;[2H]C1(C[C@H](C(=O)N1)C[C@@H](C#N)NC(=O)[C@@H]2[C@@H]3[C@@H](C3(C)C)CN2C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)[2H]&quot;
+169240696,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)[C@H](C(C)(C)C)N([C@@H](C[C@@H]3CCNC3=O)C#N)C(=O)C(F)(F)F)C(=O)N)C&quot;
+169240702,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(C[C@@H]3CCNC3=O)C#N)C&quot;
 </pre></div>
 </div>
 </div>
@@ -888,8 +769,8 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-[&#39;155903259&#39;, &#39;163321803&#39;, &#39;44227150&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38
+[&#39;155903259&#39;, &#39;162396448&#39;, &#39;162396443&#39;, &#39;162712482&#39;, &#39;162396442&#39;, &#39;162712489&#39;, &#39;166157170&#39;, &#39;167203578&#39;, &#39;162712462&#39;, &#39;162396447&#39;, &#39;162712498&#39;, &#39;166949501&#39;, &#39;166949500&#39;, &#39;165368436&#39;, &#39;167481592&#39;, &#39;164622832&#39;, &#39;58799705&#39;, &#39;58766735&#39;, &#39;167213710&#39;, &#39;165368435&#39;, &#39;167430402&#39;, &#39;164701814&#39;, &#39;163321803&#39;, &#39;44227150&#39;, &#39;166156672&#39;, &#39;59115764&#39;, &#39;58908752&#39;, &#39;58605465&#39;, &#39;59115469&#39;, &#39;58908973&#39;, &#39;58604790&#39;, &#39;166156886&#39;, &#39;167203609&#39;, &#39;167203582&#39;, &#39;166157313&#39;, &#39;162396450&#39;, &#39;166157277&#39;, &#39;166157052&#39;]
 </pre></div>
 </div>
 </div>
@@ -907,7 +788,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>39833
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40628
 </pre></div>
 </div>
 </div>
@@ -921,7 +802,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6745
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6795
 </pre></div>
 </div>
 </div>
@@ -938,7 +819,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1510
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1552
 </pre></div>
 </div>
 </div>
@@ -969,15 +850,15 @@ Detail:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CID&#39;, &#39;MolecularFormula&#39;, &#39;IsomericSMILES&#39;]
 2723872 	 C6H12O6 	 C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O
-107526 	 C6H12O6 	 C([C@H]([C@H]([C@@H]([C@H](C=O)O)O)O)O)O
-24749 	 C6H12O6 	 C(C(C(C(C(C=O)O)O)O)O)O
-24310 	 C6H12O6 	 C1[C@H]([C@H]([C@@H]([C@](O1)(CO)O)O)O)O
 892 	 C6H12O6 	 C1(C(C(C(C(C1O)O)O)O)O)O
 64689 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O
-5984 	 C6H12O6 	 C([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)O
-5793 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+24310 	 C6H12O6 	 C1[C@H]([C@H]([C@@H]([C@](O1)(CO)O)O)O)O
 439709 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@](O1)(CO)O)O)O)O
 439312 	 C6H12O6 	 C1[C@H]([C@@H]([C@@H](C(O1)(CO)O)O)O)O
+107526 	 C6H12O6 	 C([C@H]([C@H]([C@@H]([C@H](C=O)O)O)O)O)O
+79025 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O)O)O)O)O
+6036 	 C6H12O6 	 C([C@@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+5793 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
 </pre></div>
 </div>
 </div>
@@ -990,7 +871,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3245
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3288
 </pre></div>
 </div>
 </div>
@@ -1020,15 +901,15 @@ Detail:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CID&#39;, &#39;MolecularFormula&#39;, &#39;IsomericSMILES&#39;]
 2723872 	 C6H12O6 	 C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O
-107526 	 C6H12O6 	 C([C@H]([C@H]([C@@H]([C@H](C=O)O)O)O)O)O
-24749 	 C6H12O6 	 C(C(C(C(C(C=O)O)O)O)O)O
-24310 	 C6H12O6 	 C1[C@H]([C@H]([C@@H]([C@](O1)(CO)O)O)O)O
 892 	 C6H12O6 	 C1(C(C(C(C(C1O)O)O)O)O)O
-3609400 	 C6H12FeO6 	 CC(C(=O)O)O.CC(C(=O)O)O.[Fe]
 64689 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O
-5984 	 C6H12O6 	 C([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)O
+24310 	 C6H12O6 	 C1[C@H]([C@H]([C@@H]([C@](O1)(CO)O)O)O)O
+439709 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@](O1)(CO)O)O)O)O
+439312 	 C6H12O6 	 C1[C@H]([C@@H]([C@@H](C(O1)(CO)O)O)O)O
+107526 	 C6H12O6 	 C([C@H]([C@H]([C@@H]([C@H](C=O)O)O)O)O)O
+79025 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O)O)O)O)O
+6036 	 C6H12O6 	 C([C@@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O)O
 5793 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
-57508785 	 C6H12FeO6+2 	 CC(C(=O)O)O.CC(C(=O)O)O.[Fe+2]
 </pre></div>
 </div>
 </div>
@@ -1056,50 +937,109 @@ Detail:
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="pubchem-pug-rest2.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Accessing PubChem through PUG-REST: Part II</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pubchem-pug-rest2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Accessing PubChem through PUG-REST: Part II</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="uvvis_metadata.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="uvvis_metadata.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Structured UV/Vis (meta)data for small molecule characterisation</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By IUPAC WorldFAIR Chemistry D3.2 Project<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-smiles-or-inchi-string-as-an-input-query">1. Using a SMILES or InChI string as an input query</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performing-identity-search">2. Performing identity search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performing-2-d-and-3-d-similarity-search">3. Performing 2-D and 3-D similarity search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performing-substructure-superstructure-search">5. Performing substructure/superstructure search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-formula-search">7. Molecular Formula search</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IUPAC WorldFAIR Chemistry D3.2 Project
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
