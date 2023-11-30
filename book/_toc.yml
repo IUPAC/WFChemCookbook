@@ -21,7 +21,6 @@ parts:
  - caption: CULINARY SCHOOL
    chapters: 
      - file: school
-     - file: school/cs_spreadsheet_data_import
  - caption: INGREDIENTS
    chapters:
      - file: ingredients

@@ -2,7 +2,7 @@
 .DS_Store
 book/_build
 book/recipes/hiddensettings.py
-book/howtos/inchikeys.md
+book/recipes/inchikeys.md
 book/.DS_Store
 <<<<<<< HEAD
 .Rproj.user
