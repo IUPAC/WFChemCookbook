@@ -19,7 +19,5 @@ and Applied Chemistry (IUPAC) through the EU funded WorldFAIR project
 
 ## Contributing to the Cookbook
 
-We welcome feedback & suggestions for additional content.  For ways to do this go to our [feedback page](sampler.md)!
+We welcome feedback & suggestions for additional content.  For ways to do this go to our [feedback page](feedback.md)!
 
-*WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41 
-Coordination and Support Action under Grant Agreement No. 101058393.*

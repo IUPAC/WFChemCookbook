@@ -1,4 +1,3 @@
-> **This is an outline of the section. Detailed content is coming soon.** 
-# Use cases for FAIR chemical data
+# Use Cases for FAIR chemical data
 
-This section will provide example workflow sequences for different scenarios and strategies for setting up regular data management processes. 
+This section will highlight specific use cases where data has been made FAIR through a multistep workflow.

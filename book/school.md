@@ -1,25 +1,35 @@
-> **This is an outline of the section. Detailed content is coming soon.** 
-# FAIR basics for Chemistry 
+# Background Material for Users of the FAIR Chemistry Cookbook 
 
-This section will include background on the FAIR data principles with specific reference to chemical data standards and critical issues to keep in mind when working with chemical data description, including topics listed below. 
+Realizing that users of the cookbook will come from different backgrounds, this section includes reference material
+on different topics that you can choose from based on your background. 
 
-**FAIR data principles for Chemistry**
+**FAIR data principles**
 * Findable with chemical identifiers
 * Accessible with chemistry repositories 
 * Interoperable with chemistry data formats 
 * Reusable with validated notation  
 
-**Machine-readable chemical data** 
-* Chemical samples and chemical representation
-* Chemical property measurements
+**Digital representation of chemical information** 
+* Chemical data file formats
+* Chemical identifiers
+* Chemical measurements, quantities and units
+* Chemical structure representation
+* Digital data standards
 
-**Annotating chemical data** 
-* Associating chemical structures with characterization data 
-* Multi-component chemical systems
+**Data science fundamentals**
+* Application programming interfaces
+* Data file formats
+* Data types
+* Databases
+* Metadata 101
+* Programming languages
+* Organizing data - data models
 
-**Data file issues in Chemistry**  
-* Open vs. proprietary 
-* Data format conversion 
-* Archival formats   
+**Data access and capture in chemistry**  
+* Archival data formats
+* Data format conversion
+* Laboratory notebooks
+* Open access publishing
+* Open vs. proprietary resources
+* Supplemental information (available with research papers)
 
-This material will be informed by the [WorldFAIR Chemistry D3.1 project](https://iupac.org/project/2022-027-1-024) related to Reporting Guidance for FAIR chemical data and other community resources, including the [NDFI4Chem Knowledgebase](https://knowledgebase.nfdi4chem.de/knowledge_base/) and the [ELIXIR FAIR Cookbook](https://faircookbook.elixir-europe.org/). 

@@ -3,45 +3,53 @@
 
 format: jb-book
 root: intro
-parts: 
- - caption: SAMPLE RECIPES
-   chapters:
-     - file: sampler
-     - file: samples/goldbook.ipynb
-     - file: samples/computing_inchis.ipynb
-     - file: samples/learn_spectra
-     - file: samples/dataset_search.ipynb
-     - file: samples/pubchem-pug
-       sections:
-          - file: samples/pubchem-pug-rest1.ipynb
-          - file: samples/pubchem-pug-rest2.ipynb
-          - file: samples/pubchem-pug-rest3.ipynb
-     - file: samples/uvvis_metadata.ipynb
-     - file: samples/opsin.ipynb
- - caption: CULINARY SCHOOL
-   chapters: 
-     - file: school
-     - file: school/cs_spreadsheet_data_import
- - caption: INGREDIENTS
-   chapters:
-     - file: ingredients
- - caption: RECIPES
-   chapters:
-     - file: recipes
- - caption: TEST KITCHEN
-   chapters:
-     - file: kitchen
- - caption: PANTRY
-   chapters:
-     - file: pantry
- - caption: COOKWARE
-   chapters:
-     - file: cookware
- - CAPTION: MENUS 
-   chapters:
-     - file: menus 
- - caption: REFERENCE
-   chapters:
+parts:
+  - caption: Introduction
+    chapters:
     - file: about
-    - file: glossary
-    - file: bibliography
+    - file: iupacfair
+    - file: feedback
+  - caption: The FAIR Chemistry Cookbook
+    chapters:
+    - file: cooking
+      title: The Joy of Cooking
+    - file: techniques
+      title: Cooking Techniques
+      sections:
+        - glob: techniques/*
+    - file: utensils
+      title: Utensils to Use
+      sections:
+        - glob: utensils/*
+    - file: ingredients
+      title: Finding Ingredients
+      sections:
+        - glob: ingredients/ing_[!pubchem]*
+        - file: ingredients/ing_pubchem
+        - file: ingredients/ing_pubchem_pugrest
+          sections:
+            - file: ingredients/ing_pubchem_pugrest1
+            - file: ingredients/ing_pubchem_pugrest2
+            - file: ingredients/ing_pubchem_pugrest3
+    - file: recipes
+      title: Data Recipes
+      sections:
+        - glob: recipes/*
+    - file: menus
+      title: FAIR Menus
+      sections:
+        - glob: menus/*
+    - file: school
+      title: Culinary School
+      sections:
+        - glob: school/*
+    - file: plating
+      title: Data Plating
+      sections:
+        - glob: standards/*
+  - caption: Reference
+    chapters:
+      - file: development
+        title: Cookbook development
+      - file: glossary
+      - file: bibliography

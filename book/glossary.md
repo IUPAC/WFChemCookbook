@@ -154,3 +154,7 @@ examples and addition entries as needed.  Terms marked [RDA] are found/derived f
 - _SMILES (Simplified Molecular Input Line Entry System)_ - 
   A linear representation of a molecular graph in character string form, used for searching for, matching, and
   atom-atom mapping of chemical structures and models.
+
+```{bibliography}
+:filter: docname in docnames
+```
