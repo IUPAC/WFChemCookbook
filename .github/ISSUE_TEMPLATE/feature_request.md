@@ -1,20 +1,27 @@
 ---
-name: Feature request
-about: Suggest a topic for the Cookbook
-title: ''
-labels: ''
-assignees: ''
-
+name: Features request
+about: Suggest an idea for the Cookbook project
+title: ' '
+labels: enhancement
+assignees: ' '
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**Describe the Feature**
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+A clear and concise description of what you want to happen. 
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+**Benefits of the Feature**
 
-**Additional context**
+Explain why this feature would be useful and how it would enhance the Cookbook project. 
+
+**Describe Alternatives**
+
+Have you considered any alternative solutions or features? If so, describe them, along with links to any source material.
+
+**Reference Material** 
+
+Please provide any literature of source material that supports your feature request.
+
+**Additional Context**
+
 Add any other context or screenshots about the feature request here.

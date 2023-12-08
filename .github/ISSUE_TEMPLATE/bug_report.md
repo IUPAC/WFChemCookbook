@@ -1,38 +1,43 @@
 ---
-name: Bug report
-about: Send us a note to help us improve the Cookbook
-title: ''
-labels: ''
-assignees: ''
-
+name: Bug report 
+about: Create a report to help us improve the Cookbook 
+title: ' '
+labels: bug
+assignees: ' '
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+** Describe the bug**
+
+Please provide a clear and concise descriptoon of what the bug is.
 
 **To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+Steps to reproduce the behaviour 
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+1. Go to ' '
+2. Click on ' '
+3. Run cell ' '
+4. Download ' '
+5. Command run was ' ' 
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**Expected behaviour**
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+A clear and concise desctiption of what you expected to happen.
+
+**Screenshots/screen recordings**
+
+If applicable, add screenshots to help explain the problem. 
+If useful, add a screen recording. 
+
+**Environment**
+
+- Device: [e.g mobile/desktop]
+- OS: [e.g iOS]
+- OS ver: [e.g Ventura 13.2]
+- Browswer: [e.g. Safari]
+- Python ver: [e.g 3.10]
+- List of conda packages (conda list): 
+- IDE: [e.g VSCode]
 
 **Additional context**
-Add any other context about the problem here.
+Any other context about the problem here.
