@@ -1,4 +1,4 @@
-# Contributions to the IUPAC FAIR Chemistry Cookbook
+# Contributions to the Cookbook
 
 We would like to thank all the contributors have made the IUPAC FAIR Chemsitry Cookbook the important resource that it is.
 
