@@ -1,0 +1,678 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>FAIR formating of (multi, hyper) spectral data &#8212; IUPAC FAIR Chemistry Cookbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'standards/std_learn_spectra';</script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Unique Identifiers for Chemical Data" href="std_unique_identifiers.html" />
+    <link rel="prev" title="The IUPAC International Chemical Identifier" href="std_inchi.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About this Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iupacfair.html">IUPAC and FAIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feedback.html">Help Us! Provide feeback</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cooking.html">The Joy of Cooking</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../techniques.html">Cooking Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../techniques/tec_dataset_search.html">Finding a Findable Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../techniques/tec_sharing_chemdata.html">Preparing Chemical Data for FAIR Sharing - A Minimalist Approach</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../utensils.html">Utensils to Use</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../utensils/utn_opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ingredients.html">Finding Ingredients</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ingredients/ing_figshare.html">Repository: figshare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ingredients/ing_zenodo.html">Repository: zenodo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ingredients/ing_pubchem.html">Data Repository: PubChem</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ingredients/ing_pubchem_pugrest.html">PubChem PUG-REST API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ingredients/ing_pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ingredients/ing_pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ingredients/ing_pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../recipes.html">Data Recipes</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/rec_computing_inchis.html">Computing InChIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/rec_goldbook_api.html">Accessing the IUPAC Gold Book API in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/rec_opsin_api.html">Using the OPSIN API in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/rec_uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../menus.html">FAIR Menus</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../menus/men_iupac_pkadata.html">Reuse of Curated Chemical Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../school.html">Culinary School</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../school/sch_excel_import.html">Importing Chemical Data into a Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../school/sch_sheets_citations.html">Importing JSON Citation Data from an API into Google Sheets</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../plating.html">Data Plating</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="std_inchi.html">The IUPAC International Chemical Identifier</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">FAIR formating of (multi, hyper) spectral data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="std_unique_identifiers.html">Unique Identifiers for Chemical Data</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Cookbook development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/IUPAC/WFChemCookbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Fstandards/std_learn_spectra.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/standards/std_learn_spectra.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>FAIR formating of (multi, hyper) spectral data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-data">What data?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-minimal-approach">A simple minimal approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-metadata">What metadata?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plenty-of-formats-some-are-fairer-than-others">Plenty of formats (some are FAIRer than others)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidance-for-ms-data">Guidance for MS data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ms-databases-and-conversion-software">MS databases and conversion software</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="fair-formating-of-multi-hyper-spectral-data">
+<h1>FAIR formating of (multi, hyper) spectral data<a class="headerlink" href="#fair-formating-of-multi-hyper-spectral-data" title="Permalink to this headline">#</a></h1>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Author: <a class="reference external" href="https://orcid.org/0000-0001-6513-9140">Jordi Cuadros</a></p></li>
+<li><p class="sd-card-text">Reviewer:</p></li>
+<li><p class="sd-card-text">Topics: Spectral data, MS, Spectral data processing,</p></li>
+<li><p class="sd-card-text">Format: Markdown file</p></li>
+<li><p class="sd-card-text">Skills: You should be familiar with</p>
+<ul>
+<li><p class="sd-card-text"><a class="reference external" href="https://chem.libretexts.org/Courses/University_of_Arkansas_Little_Rock/ChemInformatics_(2015)%3A_Chem_4399_5399/Text/5_Chemical_Identifiers">Identifiers</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Instrumental_Analysis_(LibreTexts)">Instrumental analysis</a></p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Learning outcomes:  After completing this example you should understand:</p>
+<ul>
+<li><p class="sd-card-text">Understand the different types of spectral data we may have and find</p></li>
+<li><p class="sd-card-text">Know the most relevant data formats for storing MS data</p></li>
+<li><p class="sd-card-text">Be able to prepare a set of MS Spectra for its FAIR distribution</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Citation: ‘FAIR formating of (multi, hyper)spectral data’, The IUPAC FAIR Chemistry Cookbook, https://iupac.github.io/WFChemCookbook/samples/learn_spectra.html</p></li>
+<li><p class="sd-card-text">Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
+</ul>
+</div>
+</details><p>Spectral data are common in many domains and may arise from a variety of instruments and instrumental techniques. In
+many cases, a spectrum is a table of observed values as a single variable changes (wavelength, time, mass-to-charge
+ratio…) but in other cases can be more complex as or the number of variables or the resolution increases.</p>
+<section id="what-data">
+<h2>What data?<a class="headerlink" href="#what-data" title="Permalink to this headline">#</a></h2>
+<p>While we all share the mental image of a spectrum, and most of us have different mental images for an IR (usually a
+line with broad overlapping peaks) or for an MS spectrum (usually a set of vertical lines), we are often unaware of
+the data processing that leads to these results.</p>
+<p>Any spectrum starts with some <strong>raw data</strong> collected by a set of sensors inside the instrument. While these unprocessed
+data set is rarely available, We must be aware that the data that usually comes out from the analytical instruments may
+have already been partially processed.</p>
+<p>These data collected from the sensors are then processed to obtain many form of <strong>processed spectral data</strong>. Commonly
+the baseline is adjusted, noise is removed, and scales may be centered and scaled. These data still include data points
+for each possible of the independent variable (time, mass-to-charge ratio, wavelength…).</p>
+<p>For some analytical techniques, data undergo further processing in order to select the relevant peak. The spectral data
+are then reduced to a <strong>peak list</strong> by identifying the local maxima and using a threshold value to keep only significant signals.</p>
+<p>Additionally, in some cases, spectra are further simplified by keeping only the data that belong to one or more
+<strong>regions of interest</strong> (ROI). Further additional data can also be calculated, like integrals, coupling constants, etc.,
+and included to the spectral data.</p>
+<p>While any of these data can be stored in the same formats independenly of the level of processing, it is important to
+properly encode the data manipulation steps being performed, and to understand what is stored in a data set.</p>
+<p>Last, sometimes this is presented in a chart (static or interactive) and/or saved as an image file.</p>
+<p>The data in each of these processing steps offers different types of reusability. More on this is discussed, for NMR, in</p>
+<ul class="simple">
+<li><p>Hanson, R. M., Jeannerat, D., Archibald, M., Bruno, I., Chalk, S., Davies, A. N., … &amp; Rzepa, H. S. (2021). FAIR enough?. Spectrosc. Europe, 33(2), 25-31.</p></li>
+</ul>
+<p>Therefore, consider including in your FAIR data more than one type of information, for example, raw data, a processed
+data file for the regions of interest and an image or PDF of the spectra.</p>
+</section>
+<section id="a-simple-minimal-approach">
+<h2>A simple minimal approach<a class="headerlink" href="#a-simple-minimal-approach" title="Permalink to this headline">#</a></h2>
+<p>We will approach below on to find appropriate formats for the many existant analytical techniques, but a common minimal
+approach that is always possible is to encode the data as one or more tables in a comma-separated text file (CSV) or in
+a tab-delimited text file (TSV) supplemented with the required metadata to undestand and properly interpreted the data.
+Metadata is usually encoded in XML or JSON data files, although other standard open formats may also be possible.</p>
+<p>More on this approach can be found at <a class="reference internal" href="../techniques/tec_sharing_chemdata.html"><span class="doc std std-doc">Preparing Chemical Data for FAIR Sharing - A Minimalist Approach</span></a>.</p>
+</section>
+<section id="what-metadata">
+<h2>What metadata?<a class="headerlink" href="#what-metadata" title="Permalink to this headline">#</a></h2>
+<p>Associated data is critical for reusing spectral data sets. Guidance on this is offered in the reports of the
+<a class="reference external" href="https://iupac.org/project/2019-031-1-024/">FAIRSpec IUPAC project</a>. Some details are also included in
+<a class="reference internal" href="../recipes/rec_uvvis_metadata.html"><span class="doc std std-doc">Creating a UV/Vis (meta)data file structure for small molecule characterisation</span></a>.</p>
+<p>It is always important to include</p>
+<ul class="simple">
+<li><p>Contextual information about the data (references to papers or collections)</p></li>
+<li><p>Instrumental details, such as the instrument manufacturer and its model, and the parameters being used when operating it</p></li>
+<li><p>Sample information, using chemical identifiers in the case of known susbtances, mixtures identifiers if mixture is known, or best available description in other cases</p></li>
+<li><p>Analytical procedure/technique followed to prepare the data</p></li>
+<li><p>Authorship and licensing information</p></li>
+</ul>
+<p>The more information is available and accessible, the more reusable will be the data set. The more standardized
+identifiers we use, the more findable it will be. And interoperability will be enhanced if we use standardized
+formats for the metadata.</p>
+</section>
+<section id="plenty-of-formats-some-are-fairer-than-others">
+<h2>Plenty of formats (some are FAIRer than others)<a class="headerlink" href="#plenty-of-formats-some-are-fairer-than-others" title="Permalink to this headline">#</a></h2>
+<p>Looking now into more specific data types for the different analytical techniques, we may be surprised by the large
+number of formats that are available. Many of them are described in</p>
+<ul class="simple">
+<li><p>NFDI4Chem. Data format standard. https://knowledgebase.nfdi4chem.de/knowledge_base/docs/topics/format_standards/</p></li>
+<li><p>Rauh, D., Blankenburg, C., Fischer, T., Jung, N., Kuhn, S., Schatzschneider, U., Schulze, T. &amp; Neumann, S. (2022).</p></li>
+<li><p>Data format standards in analytical chemistry. Pure and Applied Chemistry, 94(6), 725-736. https://doi.org/10.1515/pac-2021-3101</p></li>
+</ul>
+<p>From a FAIR perspective, non-propietary, text-based and standard formats should be preferred.</p>
+<p>For MS, a wider revision, centered in bioinformatics, is published as:</p>
+<ul class="simple">
+<li><p>Deutsch E. W. (2012). File formats commonly used in mass spectrometry proteomics. Molecular &amp; cellular proteomics:</p></li>
+<li><p>MCP, 11(12), 1612–1621. https://doi.org/10.1074/mcp.R112.019695</p></li>
+</ul>
+</section>
+<section id="guidance-for-ms-data">
+<h2>Guidance for MS data<a class="headerlink" href="#guidance-for-ms-data" title="Permalink to this headline">#</a></h2>
+<p>So, let’s assume we have a set of experimental MS data from a coupled instrument (HPLC-MS, GC_MS, tandem MS…).
+How should we go with them.</p>
+<p>Standard open text-based formats for MS data include</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://iupac.org/what-we-do/digital-standards/jcamp-dx/">JCAMP-DX</a>, developed by IUPAC,</p></li>
+<li><p><a class="reference external" href="https://chemdata.nist.gov/mass-spc/ms-search/docs/Ver20Man_11.pdf">msp</a>, a NIST format used, for instance, in the MoNA database, and</p></li>
+<li><p>mzML, https://doi.org/10.1002/pmic.200890049, published by American Society for Mass Spectrometry.</p></li>
+</ul>
+<p>The first format is common for single MS, while msp and mzML are usual in the metabolomics and proteomics communities.</p>
+</section>
+<section id="ms-databases-and-conversion-software">
+<h2>MS databases and conversion software<a class="headerlink" href="#ms-databases-and-conversion-software" title="Permalink to this headline">#</a></h2>
+<p>Databases and software for converting into different formats. It worth checking the formats used to encode the MS spectra.</p>
+<p><strong>Databases with MS spectra</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a></p></li>
+<li><p><a class="reference external" href="https://mona.fiehnlab.ucdavis.edu/">MassBank of North America (MoNA)</a></p></li>
+<li><p><a class="reference external" href="http://www.chemspider.com/">ChemSpider</a></p></li>
+<li><p><a class="reference external" href="https://massive.ucsd.edu/ProteoSAFe/static/massive.jsp">MassIVE</a></p></li>
+</ul>
+<p><strong>Software</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://proteowizard.sourceforge.io/">Proteowizard</a></p></li>
+<li><p><a class="reference external" href="https://gnps-quickstart.ucsd.edu/conversion">GNPS</a></p></li>
+<li><p><a class="reference external" href="http://fields.scripps.edu/rawconv/">RawConverter</a></p></li>
+</ul>
+<p>Python libraries and R packages also exist for reading and converting MS files.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./standards"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="std_inchi.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The IUPAC International Chemical Identifier</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="std_unique_identifiers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Unique Identifiers for Chemical Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-data">What data?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-minimal-approach">A simple minimal approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-metadata">What metadata?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plenty-of-formats-some-are-fairer-than-others">Plenty of formats (some are FAIRer than others)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidance-for-ms-data">Guidance for MS data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ms-databases-and-conversion-software">MS databases and conversion software</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IUPAC WorldFAIR Chemistry D3.2 Project
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<em>WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41<br/>
+Coordination and Support Action under Grant Agreement No. 101058393.</em>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

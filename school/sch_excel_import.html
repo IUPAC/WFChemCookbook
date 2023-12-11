@@ -1,0 +1,714 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Importing Chemical Data into a Spreadsheet &#8212; IUPAC FAIR Chemistry Cookbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'school/sch_excel_import';</script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Importing JSON Citation Data from an API into Google Sheets" href="sch_sheets_citations.html" />
+    <link rel="prev" title="Background Material for Users of the FAIR Chemistry Cookbook" href="../school.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About this Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iupacfair.html">IUPAC and FAIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feedback.html">Help Us! Provide feeback</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cooking.html">The Joy of Cooking</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../techniques.html">Cooking Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../techniques/tec_dataset_search.html">Finding a Findable Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../techniques/tec_sharing_chemdata.html">Preparing Chemical Data for FAIR Sharing - A Minimalist Approach</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../utensils.html">Utensils to Use</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../utensils/utn_opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ingredients.html">Finding Ingredients</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ingredients/ing_figshare.html">Repository: figshare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ingredients/ing_zenodo.html">Repository: zenodo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ingredients/ing_pubchem.html">Data Repository: PubChem</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ingredients/ing_pubchem_pugrest.html">PubChem PUG-REST API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ingredients/ing_pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ingredients/ing_pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ingredients/ing_pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../recipes.html">Data Recipes</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/rec_computing_inchis.html">Computing InChIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/rec_goldbook_api.html">Accessing the IUPAC Gold Book API in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/rec_opsin_api.html">Using the OPSIN API in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/rec_uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../menus.html">FAIR Menus</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../menus/men_iupac_pkadata.html">Reuse of Curated Chemical Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../school.html">Culinary School</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Importing Chemical Data into a Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sch_sheets_citations.html">Importing JSON Citation Data from an API into Google Sheets</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../plating.html">Data Plating</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../standards/std_inchi.html">The IUPAC International Chemical Identifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../standards/std_learn_spectra.html">FAIR formating of (multi, hyper) spectral data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../standards/std_unique_identifiers.html">Unique Identifiers for Chemical Data</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Cookbook development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/IUPAC/WFChemCookbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Fschool/sch_excel_import.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/school/sch_excel_import.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Importing Chemical Data into a Spreadsheet</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-data-are-you-working-with">1 What data are you working with?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-into-microsoft-excel">2 Importing into Microsoft Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-encoding-format">2.1 File encoding format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-line-characters">2.2 End of line characters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-in-excel">2.3 Data types in Excel</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-into-google-sheets">3 Importing into Google Sheets</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="importing-chemical-data-into-a-spreadsheet">
+<h1>Importing Chemical Data into a Spreadsheet<a class="headerlink" href="#importing-chemical-data-into-a-spreadsheet" title="Permalink to this headline">#</a></h1>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Culinary School Topic<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Author: <a class="reference external" href="https://orcid.org/0000-0001-6513-9140">Stuart Chalk</a></p></li>
+<li><p class="sd-card-text">Reviewer:</p></li>
+<li><p class="sd-card-text">Topics: Data Importing, Spreadsheets, Chemical Data</p></li>
+<li><p class="sd-card-text">Format: Markdown file</p></li>
+<li><p class="sd-card-text">Skills: You should be familiar with</p>
+<ul>
+<li><p class="sd-card-text"><a class="reference external" href="https://www.howtogeek.com/356448/what-is-a-file-extension/">Computer files and extensions</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://en.wikipedia.org/wiki/Data_type">Data Types</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://en.wikipedia.org/wiki/Character_encoding">Character Encoding</a></p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Learning outcomes:  After completing this example you should understand:</p>
+<ul>
+<li><p class="sd-card-text">How to import data into Microsoft Excel and Google Sheets</p></li>
+<li><p class="sd-card-text">Understand the difference between .csv, .tsv and .txt files</p></li>
+<li><p class="sd-card-text">Identify why data may be corrupted upon import a file</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Citation: ‘Importing Chemical Data into Spreadsheet’, The IUPAC FAIR Chemistry Cookbook,
+https://iupac.github.io/WFChemCookbook/school/cs_spreadsheet_data_import.html</p></li>
+<li><p class="sd-card-text">Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
+</ul>
+</div>
+</details><section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>This tutorial focuses on importing data into spreadsheets.  This is a very common activity for chemists that results from
+downloading data from analytical instruments (e.g., as <a class="reference external" href="https://iupac.org/what-we-do/digital-standards/jcamp-dx/">JCAMP files</a> - .jdx),
+from databases (e.g., MySQL), or from data websites (e.g., <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov">PubChem</a>).  It also contextualizes
+the general topic of delimited text <a class="reference external" href="https://en.wikipedia.org/wiki/Delimiter-separated_values">files</a> and gives examples
+of issues that can arises with data import into MS Excel and Google Sheets.</p>
+</section>
+<section id="what-data-are-you-working-with">
+<h2>1 What data are you working with?<a class="headerlink" href="#what-data-are-you-working-with" title="Permalink to this headline">#</a></h2>
+<p>In research or in class (organic lab for instance) you may find yourself needing to a save a spectrum to a text file
+so that you can create a plot for a report.  Text files are extremely common for transferring data between computers,
+can be written in different ways, and come with different extensions.  The reason text files are so popular is that
+they are simple (it’s just a file with text in it right?) and generally the best for
+<a class="reference external" href="https://library.duke.edu/using/policies/recommended-file-formats-digital-preservation">digital preservation</a> (meaning
+files that can be kept a long time and still be read by software).</p>
+<p>However, there are situations where importing isn’t easy, or worse where imported data gets corrupted. So, it is important
+to know what data you are working with, and how best to important it accurately. First, you need to check the extension
+(.xxx) that you are working with. While many files are text files they can have extension which dictates what type of
+format the file is, and/or which type of software can open it.  Some common text file formats are:</p>
+<ul class="simple">
+<li><p>‘.txt’ : this is your basic text file which can be read by a general text editor such as; ‘textedit’ (macOS),
+‘Notepad’ (Windows), ‘textmate’ (<a class="reference external" href="https://macromates.com/">macOS</a>), ‘Sublime Text’
+(<a class="reference external" href="https://www.sublimetext.com/">macOS/Windows/Linux</a>)</p></li>
+<li><p>‘.csv’ : a text file that is specifically written to store data as ‘comma separated variables’.  This means that data
+is organized like a table.  Each row of the table is a line in the text file ends in a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Newline">newline character</a>, which varies between different computer systems.  Then columns
+on the line are separated by a comma, with text in a column being surrounded by double quotes if there is a comma in
+the text.  On Windows a .csv file will automatically launch in MS Excel if present and into Apple Numbers if present
+and then MS Excel for Mac.  You can also read these files in the text editors above, but you have to pick the text editor,
+rather than just double-clicking the file, to use the text editor.</p></li>
+<li><p>‘.tsv’ : the same as ‘.csv’ except the delimiter is a ‘tab’ character rather than a comma.</p></li>
+<li><p>‘.json’: a text file in the <a class="reference external" href="https://en.wikipedia.org/wiki/JSON">JavaScript Object Notation (JSON)</a> format used to
+store and identify data and metadata in a lightweight format that is commonly used to communicate between web browsers
+and servers in the background so content on the page can be updated without refreshing the page.  More recently, JSON
+has become the de facto standard for serving data from websites <a class="reference external" href="https://en.wikipedia.org/wiki/API">Application Programming Interface (API)</a>
+because it can be read by many programming languages and operating systems and can be made small without compression
+using the stringify feature, where extra space and newline characters can be removed.</p></li>
+<li><p>.xml : a text file in the <a class="reference external" href="https://en.wikipedia.org/wiki/XML">Extensible Markup Language (XML)</a> format.  XML is a
+commonly used standard for encoding data in a tree structure using ‘tags’ like those used in HTML (see XHTML). XML
+has a large community of users, tools, and features like XPath <a class="reference external" href="https://en.wikipedia.org/wiki/XPath">XML Path Language</a>,
+<a class="reference external" href="https://en.wikipedia.org/wiki/XQuery">XQuery (XML Query)</a>,
+<a class="reference external" href="https://en.wikipedia.org/wiki/XSLT">XSLT (Extensible Stylesheet Language Transformations)</a>. Most important though is
+ability of XML documents to be validated against an <a class="reference external" href="https://en.wikipedia.org/wiki/XML_schema">XML Schema</a>, a set of
+XML based rules that dictate what can be stored in an XML file that is an instance of a specific XML schema.</p></li>
+<li><p>‘.jdx’ : a JCAMP-DX text file that stores instrument data according to a specific format (see…). This is one of many
+chemical data file formats, many of which are discussed <a class="reference external" href="https://en.wikipedia.org/wiki/Chemical_file_format">here</a>.</p></li>
+</ul>
+<p>Files with the extension .csv  or .tsv are examples of ‘delimited’ text files.  Delimiting simply means separating data
+into chunks (e.g., columns in a table) in a text string or line of text in a file, using a specific character.  For a
+.csv file the character is a comma (hence comma separated variable) and a .tsv file the character is a tab (hence tab
+separated variable).  Any character can be a delimiter, however in practice the comma and tab are the most common, and
+many pieces of software, and scripting languages know how to read them.</p>
+</section>
+<section id="importing-into-microsoft-excel">
+<h2>2 Importing into Microsoft Excel<a class="headerlink" href="#importing-into-microsoft-excel" title="Permalink to this headline">#</a></h2>
+<p>When dealing with chemical data it is important to make sure you don’t corrupt the data as you process it.  This is
+easier to do than you might think, and very difficult to find after the fact.  Here are some important pointers about
+working with data in Microsoft Excel.</p>
+<section id="file-encoding-format">
+<h3>2.1 File encoding format<a class="headerlink" href="#file-encoding-format" title="Permalink to this headline">#</a></h3>
+<p>First, only text based files can be imported into a spreadsheet, so make sure that the file is not a binary file. Next,
+it is good to check in a text editor what the file encoding is.  In Figure 1 below, Excel can handle many different
+encoding formats, but in order to import them correctly you should use the .txt file extension as Excel will automatically
+import .csv, .tsv and other files and not let you choose what the encoding is.  Depending on your computers’ operating
+system there may be some selections that won’t work on your computer.</p>
+<p>Figure 1
+<img alt="fig1" src="../_images/sch_excel_import_fig1.jpg" />
+Caption: The Excel import dialog (a) and the options for ‘File origin’ (b)</p>
+<p>Using the open file dialog is important if your text file contains unicode (e.g., UTF-8).  If you double-click on a .csv,
+.tsv, or other file with an extension that Excel automatically recognizes, the file will be opened without giving you
+the option to choose UTF-8 as the encoding format.  This results in ‘weird characters’ (technical term ;) ) showing up in your
+imported file (see Figure 2a).  However, if you change the extension of such a file to ‘.txt’ and then open it from within
+Excel you will be able to use the dialog in Figure 1a to choose the correct encoding and make sure that the text shows
+correctly in Excel (see Figure 2b).</p>
+<p>Figure 2
+<img alt="fig2" src="../_images/sch_excel_import_fig2.jpg" />
+Caption: Importing a unicode (UTF-8) ‘.csv’ file into Excel directly (a), and using the Excel file oping dialog (b)</p>
+</section>
+<section id="end-of-line-characters">
+<h3>2.2 End of line characters<a class="headerlink" href="#end-of-line-characters" title="Permalink to this headline">#</a></h3>
+<p>Although less of an issue these days, you may want to check the end-of-line encoding (Figure 3) that is used in the file.
+This can result in extra blank lines begin added by Excel to the imported file when the file has both a ‘carriage return’
+CR character, and a ‘line-feed’ LF character is at the end of line.</p>
+<p>Figure 3
+<img alt="fig3" src="../_images/sch_excel_import_fig3.jpg" />
+Caption: Different end-of-line character options from a text file.</p>
+</section>
+<section id="data-types-in-excel">
+<h3>2.3 Data types in Excel<a class="headerlink" href="#data-types-in-excel" title="Permalink to this headline">#</a></h3>
+<p>During the import of a text file, via the open dialog, you are presented with other choices as you work through importing
+the file.  On the last dialog you get to choose the format of each column of data in the file.  Figure 4a shows the
+choices available, and you can click on the header of each column (or multiple columns) to assign a data type.  For
+chemical data this is particularly important when importing CAS Registry Numbers (CASRN’s), as some CASRN’s can be
+misinterpreted as dates if the column data type is left as ‘General’.  In this situation, change the data format to
+‘Text’ and the CASRN’s will all be imported correctly (see Figure 4a).  You can also force this in the .csv file by
+addin quotes around the CASRN and adding a ‘=’before the first quote (Figure 4b).</p>
+<p>Figure 4
+<img alt="fig4" src="../_images/sch_excel_import_fig4.jpg" />
+Caption: CASRNs in (4a) and advanced options for interpretting numeric values (4b)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to find out how prevalent CASRN’s being misinterpreted as dates, use this
+<a class="reference external" href="https://query.wikidata.org/#%23All%20CAS%20registry%20numbers%20in%20Wikidata%0ASELECT%20DISTINCT%20%3Fcompound%20%3FcompoundLabel%20%3Fcas%0AWHERE%0A%7B%0A%20%20%3Fcompound%20wdt%3AP231%20%3Fcas%20.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%0ALIMIT%201000">link</a>
+to run a SPARQL query (search) on Wikidata, that retrieves the first 1000 compounds with a CASRN.  Click the ‘Run’
+button on the left of the page then export the data as .csv from the ‘Download’ menu on the right.  Open the file
+in Excel and see how many of the 1000 compounds have CASRN’s formatted as dates.</p>
+</div>
+<p>Figure 5b shows the dialog when you are importing a file in Excel and in Step 3 you click on the Advanced button. If you
+receive data from collaborators in other countries, you may need to change the way Excel identifies numeric values, as
+there are differences between countries on the use of the full stop/period ‘.’ and the comma as
+<a class="reference external" href="https://en.wikipedia.org/wiki/Decimal_separator">formatting characters</a>.</p>
+<p>As an example, the value one thousand, two hundred and thirty-four point fifty-six is represented:</p>
+<ul class="simple">
+<li><p>In English-speaking countries and Asia as: 1,234.56</p></li>
+<li><p>In Latin America and continental Europe as: 1.234,56</p></li>
+</ul>
+<p>Figure 5
+<img alt="fig5" src="../_images/sch_excel_import_fig5.jpg" />
+Caption: Data types for columns in Excel (a) and advanced options for interpretting numeric values (b)</p>
+</section>
+</section>
+<section id="importing-into-google-sheets">
+<h2>3 Importing into Google Sheets<a class="headerlink" href="#importing-into-google-sheets" title="Permalink to this headline">#</a></h2>
+<p>In general Google Sheets is less susceptible to these issues, however if you are doing research at any level make sure
+to check with your advisor about putting research data in Google sheets, as many advisors are reluctant to store
+research data in a cloud based service (also, Dropbox, OneDrive, Box, etc.) for fear of others getting access.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./school"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../school.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Background Material for Users of the FAIR Chemistry Cookbook</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sch_sheets_citations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Importing JSON Citation Data from an API into Google Sheets</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-data-are-you-working-with">1 What data are you working with?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-into-microsoft-excel">2 Importing into Microsoft Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-encoding-format">2.1 File encoding format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-line-characters">2.2 End of line characters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-in-excel">2.3 Data types in Excel</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-into-google-sheets">3 Importing into Google Sheets</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IUPAC WorldFAIR Chemistry D3.2 Project
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<em>WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41<br/>
+Coordination and Support Action under Grant Agreement No. 101058393.</em>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
