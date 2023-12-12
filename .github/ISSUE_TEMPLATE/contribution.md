@@ -16,7 +16,7 @@ A concise description of the contribution you are submitting.
 
 **Type of Contribution**
 
-Ingredient, Menu, Recipe, School, Plating, Techinque, Utensil
+Ingredient, Menu, Recipe, School, Plating, Technique, Utensil
 (See [here](https://github.com/IUPAC/WFChemCookbook/wiki/IFCC-Contribution-Types) for descriptions of these types)
 
 **Have You Tested This?**
