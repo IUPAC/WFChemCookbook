@@ -9,6 +9,7 @@ parts:
     - file: about
     - file: iupacfair
     - file: feedback
+    - file: contributions
   - caption: The FAIR Chemistry Cookbook
     chapters:
     - file: cooking
