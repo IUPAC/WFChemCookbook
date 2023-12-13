@@ -26,14 +26,14 @@
 <line x1="40.0" y1="60.0" x2="74.6" y2="40.0" opacity="1.0" stroke="rgb(0,0,0)" stroke-width="2.0" />
 <line x1="48.8" y1="63.2" x2="73.0" y2="49.2" opacity="1.0" stroke="rgb(0,0,0)" stroke-width="2.0" />
 <line x1="74.6" y1="40.0" x2="109.3" y2="60.0" opacity="1.0" stroke="rgb(0,0,0)" stroke-width="2.0" />
-<text x="243.846097" y="68.000000" fill="rgb(102,102,102)" stroke-width="0" font-weight="bold" font-size="16">CH</text>
-<text x="267.846097" y="71.680000" fill="rgb(102,102,102)" stroke-width="0" font-weight="bold" font-size="13">3</text>
-<text x="207.205081" y="48.000000" fill="rgb(255,12,12)" stroke-width="0" font-weight="bold" font-size="16">O</text>
-<text x="137.923048" y="48.000000" fill="rgb(255,12,12)" stroke-width="0" font-weight="bold" font-size="16">O</text>
-<text x="207.205081" y="128.000000" fill="rgb(12,12,255)" stroke-width="0" font-weight="bold" font-size="16">NH</text>
-<text x="172.564065" y="188.000000" fill="rgb(255,12,12)" stroke-width="0" font-weight="bold" font-size="16">O</text>
-<text x="172.564065" y="228.000000" fill="rgb(255,12,12)" stroke-width="0" font-weight="bold" font-size="16">O</text>
-<text x="207.205081" y="288.000000" fill="rgb(255,12,12)" stroke-width="0" font-weight="bold" font-size="16">OH</text>
 <text x="278.487113" y="168.000000" fill="rgb(12,12,255)" stroke-width="0" font-weight="bold" font-size="16">NH</text>
 <text x="302.487113" y="171.680000" fill="rgb(12,12,255)" stroke-width="0" font-weight="bold" font-size="13">2</text>
+<text x="207.205081" y="288.000000" fill="rgb(255,12,12)" stroke-width="0" font-weight="bold" font-size="16">OH</text>
+<text x="172.564065" y="228.000000" fill="rgb(255,12,12)" stroke-width="0" font-weight="bold" font-size="16">O</text>
+<text x="172.564065" y="188.000000" fill="rgb(255,12,12)" stroke-width="0" font-weight="bold" font-size="16">O</text>
+<text x="207.205081" y="128.000000" fill="rgb(12,12,255)" stroke-width="0" font-weight="bold" font-size="16">NH</text>
+<text x="243.846097" y="68.000000" fill="rgb(102,102,102)" stroke-width="0" font-weight="bold" font-size="16">CH</text>
+<text x="267.846097" y="71.680000" fill="rgb(102,102,102)" stroke-width="0" font-weight="bold" font-size="13">3</text>
+<text x="137.923048" y="48.000000" fill="rgb(255,12,12)" stroke-width="0" font-weight="bold" font-size="16">O</text>
+<text x="207.205081" y="48.000000" fill="rgb(255,12,12)" stroke-width="0" font-weight="bold" font-size="16">O</text>
 </svg>

@@ -4,7 +4,7 @@ To be FAIR in how you present, write, or deposit your research it is important t
 studied, what you have used to do the research, and the type(s) of data you have collected.  Here we discuss 
 many of the (standard) unique identifier systems that chemistry researcher might need to use, and look at what’s coming.
 
-## Why are unique identifiers important?
+## Why are Unique Identifiers Important?
 Have you ever done a search for information about a specific chemical only to have to try multiple searches on 
 (probably Google)? That’s because different scientists have tended to name compounds differently for ease of reference, 
 as a trade name, because their language is not English, or because there are different ways to name compounds based on 
@@ -19,17 +19,18 @@ chemical compounds and other important information that characterizes the work w
 This does not mean that you should throw away a name for a compound that you normally use, just add a unique identifier 
 when you add it to your notebook or include it in your paper or presentation.
 
-## Where and how do you find unique identifiers for chemical compounds?
+## Where and How do you Find Unique Identifiers for Chemical Compounds?
 There are many resources where you can search for unique chemical identifiers, some free, others not. Here is a short list, for more check out the “Resources for chemical identification” section. Each allows you to enter your name for the compound and get back unique identifier for that compound.
 - Free
   - US NIH PubChem https://pubchem.ncbi.nlm.nih.gov
   - US NIH Chemical Identifier Resolver https://cactus.nci.nih.gov/chemical/structure
   - RSC ChemSpider https://www.chemspider.com
   - ACS Common Chemistry https://commonchemistry.cas.org
+  - EBI UniChem https://www.ebi.ac.uk/unichem/
 - For a fee
-  - ACS SciFindern https://scifinder-n.cas.org
+  - ACS SciFinderⁿ https://scifinder-n.cas.org
 
-## Unique identifiers for chemical substances
+## Unique Identifiers for Chemical Substances
 Historically, the first system to identify chemical substances uniquely was developed by CAS, with the 
 CAS Registry Number system. Each compound entered into CAS’s system was assigned a 
 [unique number](https://en.wikipedia.org/wiki/CAS_Registry_Number) with a format of 
@@ -37,16 +38,16 @@ CAS Registry Number system. Each compound entered into CAS’s system was assign
 
 More recently, the [International Chemical Identifier (InChI)](https://www.inchi-trust.org/) and its hashed 
 InChIKey have become available and more popular due to these identifiers being created from a standard 
-[molfiles](https://en.wikipedia.org/wiki/Chemical_table_file) and a 
+[mol files](https://en.wikipedia.org/wiki/Chemical_table_file) and a 
 [free piece of software](https://www.inchi-trust.org/download-latest-inchi-standard-software/), 
 that implements the algorithm to generate the InChI and InChIKey.
 
-## Unique identifiers for chemical reactions
+## Unique Identifiers for Chemical Reactions
 The InChI-Trust that is responsible for the InChI standard has developed a standard for representing chemical reactions,
 using the InChI as the basis.  The Reaction InChI, or [RInChI](https://www.inchi-trust.org/reactions/), takes the InChIs
 (InChIKeys) for reactants, products and catalysts integrates them into a single identifier for a chemical reaction.
 
-## Unique identifiers for macromolecules
+## Unique Identifiers for Macromolecules
 Originally developed in the Pistoia Alliance and now supported by IUPAC, the Hierarchical Editing Language for 
 Macromolecules ([HELM](https://www.pistoiaalliance.org/helm-project/)) is a standard to generate unique identifiers 
 for larger molecules (e.g., proteins, nucleotides, antibody drug conjugates) where other identifier systems are 
@@ -59,7 +60,7 @@ chemical and physical quantities in chemistry. The Green Book guidelines are for
 Quantity, Units, Dimensions and Datatypes specification ([QUDT](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html))
 that was originally developed for NASA.
 
-## Unique identifiers for units of measurement
+## Unique Identifiers for Units of Measurement
 As above, the best place to go for the unique identification of units of measure is the 
 [QUDT](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html) specification. The string representation of each unit of 
 measurement is formatted in accordance with a 
@@ -67,7 +68,7 @@ measurement is formatted in accordance with a
 so if you don’t see the unit you want to use, you can generate the string for that unit even though it is not already 
 part of the QUDT system.  You can subsequently submit a request to propose the new unit that you need.
 
-## Unique identifiers for research articles
+## Unique Identifiers for Research Articles
 Introduced in 2000, the Digital Object Identifier ([DOI](https://www.doi.org/)) has revolutionized publishing research. 
 Today all major publishers assign a DOI with a research article once its accepted and this makes the publication easy 
 to reference and find.  In addition, if you write a paper and cite papers that have DOI’s, it is easier than ever to 
@@ -77,18 +78,19 @@ DOI’s are now used for more than research articles, being assigned to books, b
 concepts](https://goldbook.iupac.org/), and more recently data, in repositories such as 
 [figshare](https://figshare.com/) and [Zenodo](https://zenodo.org/).
 
-## Unique Identifiers for researchers
+## Unique Identifiers for Researchers
 In the past it was difficult to keep up with specific researchers, and very difficult to identifier a particular 
 researcher if they had a common name.  Today, it's easy by using the freely available 
-‘Open Researcher and Contributor ID’ (ORCID), designed for researchers.
+[‘Open Researcher and Contributor ID’ (ORCID)](https://orcid.org/), designed for researchers.
 
-## Other unique identifiers for research
-- [Mass spectra](https://splash.fiehnlab.ucdavis.edu/)
-- [Funding agencies](https://www.crossref.org/services/funder-registry/)
-- [Research methods](https://www.protocols.io/)
-- [Research resources](https://www.rrids.org/) (general)
+## Other Unique Identifiers for Research
+- [Mass Spectra](https://splash.fiehnlab.ucdavis.edu/)
+- [Funding Agencies](https://www.crossref.org/services/funder-registry/)
+- [Research Methods](https://www.protocols.io/)
+- [Research Resources](https://www.rrids.org/) (general)
 
-## The future of unique identifiers
+## The Future of Unique Identifiers
 If you think about all the identifiers mentioned above it may dawn on you that there are other things you might 
 want to more specifically identify when you publish your research.  Here are some things that are coming.
-- [Persistent identifiers for instruments](https://www.rd-alliance.org/groups/persistent-identification-instruments-wg)
+- [Persistent Identifiers for Instruments](https://www.rd-alliance.org/groups/persistent-identification-instruments-wg)
+- [Permanent Identifiers for ... anything](https://w3id.org/)
