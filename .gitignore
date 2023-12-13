@@ -5,3 +5,5 @@ book/recipes/hiddensettings.py
 book/howtos/inchikeys.md
 book/.DS_Store
 Pipfile.lock
+book/ingredients/conformer1.txt
+book/ingredients/conformer2.txt
