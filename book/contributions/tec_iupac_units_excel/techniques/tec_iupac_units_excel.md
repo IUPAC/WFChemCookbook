@@ -39,15 +39,16 @@ with digitally.  In addition, in many situations a unit is not written in accord
 chemistry is the IUPAC "Quantities, Units and Symbols in Physical Chemistry" (or The IUPAC Green Book). {cite:p}`Green2007`
 
 There is a lot of information in the exhaustive tables in the Green Book, and it covers, not surprisingly, a wide 
-range of quantities and units across the many subdisciplines of chemistry. As a guide for humans to read it fine but
-enabling practical usage in the digital laboratory it does not, where units are almost an afterthought (IUPAC is working
-on a digital version of the Green Book as you read this.)  So, enabling the use of the recommended units in chemistry
+range of quantities and units across the many sub-disciplines of chemistry. As a guide for humans to read it's fine but
+enabling practical usage in the digital laboratory it is not, where units are almost an afterthought (IUPAC is working
+on a digital version of the Green Book as you read this.)  So, enabling the use of IUPAC recommended units in chemistry
 has been reimagined in this [Excel spreadsheet](../files/tec_iupac_units_excel.xlsx).
 
 ## Using the IUPAC Units Spreadsheet
-The spreadsheet has been developed to provide the quantities and units expressed in the Green Book along with additional
-columns that characterise each unit and representations in some different encodings of units of measurement (see
-the figure below).
+The spreadsheet has been developed to provide the most common quantities and units expressed in the Green Book along 
+with additional columns that characterise each unit and representations in some different encodings of units of 
+measurement (see the figure below).  The spreadsheet will be expanded with quantities and units over time and if you
+would like to help with its development, please let the author know ([schalk@unf.edu](mailto:schalk@unf.edu).
 
 ![fig1](../images/tec_iupac_units_excel_fig1.jpg)
 
