@@ -19,6 +19,7 @@
   - Endpoint: <chemicalname>.png (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.png](https://opsin.ch.cam.ac.uk/opsin/benzene.png))
   - Endpoint: <chemicalname>.svg (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.svg](https://opsin.ch.cam.ac.uk/opsin/benzene.svg))
 - GitHub Repository: [https://github.com/dan2097/opsin](https://github.com/dan2097/opsin)
+- Citations: 'OPSIN: Open Parser for Systematic IUPAC Nomenclature', IUPAC FAIR Chemistry Cookbook, [https://w3id.org/ifcc/IFCC001](https://w3id.org/ifcc/IFCC001)
 - Reuse: This resource is made available under a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
 ```
 
