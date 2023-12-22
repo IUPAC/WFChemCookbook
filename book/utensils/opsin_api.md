@@ -40,7 +40,7 @@ be used to fix misspelling of systematic names amd it is really useful as a teac
 structure and ask them to name it, checking the names with OPSIN.  For data science OPSIN also has an [API](https://opsin.ch.cam.ac.uk/instructions.html) and returns
 information back in JSON for easy use within scripting languages and other tools.
 
-![fig1](../images/utn_opsin_api_fig1.jpg)
+![fig1](../images/opsin_api_fig1.jpg)
 
 OPSIN can deal with names that include [greek letters and superscripts](https://opsin.ch.cam.ac.uk/instructions.html). 
 It also has the capability to interpret mixtures of substances. This is useful for situations like getting identifiers for

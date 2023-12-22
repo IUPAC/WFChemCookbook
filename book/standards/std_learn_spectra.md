@@ -59,13 +59,13 @@ approach that is always possible is to encode the data as one or more tables in 
 a tab-delimited text file (TSV) supplemented with the required metadata to undestand and properly interpreted the data. 
 Metadata is usually encoded in XML or JSON data files, although other standard open formats may also be possible. 
 
-More on this approach can be found at [Preparing Chemical Data for FAIR Sharing - A Minimalist Approach](../techniques/tec_sharing_chemdata.md).
+More on this approach can be found at [Preparing Chemical Data for FAIR Sharing - A Minimalist Approach](../techniques/sharing_chemdata).
 
 ## What metadata?
 
 Associated data is critical for reusing spectral data sets. Guidance on this is offered in the reports of the 
 [FAIRSpec IUPAC project](https://iupac.org/project/2019-031-1-024/). Some details are also included in 
-[Creating a UV/Vis (meta)data file structure for small molecule characterisation](../recipes/rec_uvvis_metadata.ipynb).
+[Creating a UV/Vis (meta)data file structure for small molecule characterisation](../recipes/uvvis_metadata.ipynb).
 
 It is always important to include
 

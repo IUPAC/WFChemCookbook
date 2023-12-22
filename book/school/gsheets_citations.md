@@ -42,7 +42,7 @@ get a JSON file returned (see below).  The JSON file is formatted using the [JSO
 plugin for Firefox and all the fields have been collapsed to make it easy to see the whole file at
 http://api.crossref.org/works/10.1515/pac-2018-1010.
 
-![fig](../images/sch_sheets_citations_crossref_api.jpg)
+![fig](../images/gsheets_citations_crossref_api.jpg)
 
 Caption: JSON output from the Crossref API
 
