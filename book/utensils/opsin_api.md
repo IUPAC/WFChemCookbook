@@ -14,7 +14,7 @@
   - Endpoint: <chemicalname>.cml (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.cml](https://opsin.ch.cam.ac.uk/opsin/benzene.cml))
   - Endpoint: <chemicalname>.stdinchi (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchi](https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchi))
   - Endpoint: <chemicalname>.stdinchikey (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchikey](https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchikey))
-  - Endpoint: <chemicalname>.smiles (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.smiles](https://opsin.ch.cam.ac.uk/opsin/benzene.smiles))
+  - Endpoint: <chemicalname>.smi (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.smi](https://opsin.ch.cam.ac.uk/opsin/benzene.smi))
   - Endpoint: <chemicalname>.json (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.json](https://opsin.ch.cam.ac.uk/opsin/benzene.json))
   - Endpoint: <chemicalname>.png (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.png](https://opsin.ch.cam.ac.uk/opsin/benzene.png))
   - Endpoint: <chemicalname>.svg (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.svg](https://opsin.ch.cam.ac.uk/opsin/benzene.svg))
