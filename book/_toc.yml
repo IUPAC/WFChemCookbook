@@ -25,13 +25,13 @@ parts:
     - file: ingredients
       title: Finding Ingredients
       sections:
-        - glob: ingredients/ing_[!pubchem]*
-        - file: ingredients/ing_pubchem
-        - file: ingredients/ing_pubchem_pugrest
+        - glob: ingredients/[!pubchem]*
+        - file: ingredients/pubchem
+        - file: ingredients/pubchem_pugrest
           sections:
-            - file: ingredients/ing_pubchem_pugrest1
-            - file: ingredients/ing_pubchem_pugrest2
-            - file: ingredients/ing_pubchem_pugrest3
+            - file: ingredients/pubchem_pugrest1
+            - file: ingredients/pubchem_pugrest2
+            - file: ingredients/pubchem_pugrest3
     - file: recipes
       title: Data Recipes
       sections:
