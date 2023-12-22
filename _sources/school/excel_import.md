@@ -83,7 +83,7 @@ import .csv, .tsv and other files and not let you choose what the encoding is.  
 system there may be some selections that won't work on your computer.
 
 Figure 1
-![fig1](../images/sch_excel_import_fig1.jpg)
+![fig1](../images/excel_import_fig1.jpg)
 Caption: The Excel import dialog (a) and the options for 'File origin' (b)
 
 Using the open file dialog is important if your text file contains unicode (e.g., UTF-8).  If you double-click on a .csv,
@@ -94,7 +94,7 @@ Excel you will be able to use the dialog in Figure 1a to choose the correct enco
 correctly in Excel (see Figure 2b).
 
 Figure 2
-![fig2](../images/sch_excel_import_fig2.jpg)
+![fig2](../images/excel_import_fig2.jpg)
 Caption: Importing a unicode (UTF-8) '.csv' file into Excel directly (a), and using the Excel file oping dialog (b)
 
 ### 2.2 End of line characters
@@ -103,7 +103,7 @@ This can result in extra blank lines begin added by Excel to the imported file w
 CR character, and a 'line-feed' LF character is at the end of line.
 
 Figure 3
-![fig3](../images/sch_excel_import_fig3.jpg)
+![fig3](../images/excel_import_fig3.jpg)
 Caption: Different end-of-line character options from a text file. 
 
 ### 2.3 Data types in Excel
@@ -116,7 +116,7 @@ misinterpreted as dates if the column data type is left as 'General'.  In this s
 addin quotes around the CASRN and adding a '='before the first quote (Figure 4b).
 
 Figure 4
-![fig4](../images/sch_excel_import_fig4.jpg)
+![fig4](../images/excel_import_fig4.jpg)
 Caption: CASRNs in (4a) and advanced options for interpretting numeric values (4b)
 
 ```{Note}
@@ -137,7 +137,7 @@ As an example, the value one thousand, two hundred and thirty-four point fifty-s
 - In Latin America and continental Europe as: 1.234,56
 
 Figure 5
-![fig5](../images/sch_excel_import_fig5.jpg)
+![fig5](../images/excel_import_fig5.jpg)
 Caption: Data types for columns in Excel (a) and advanced options for interpretting numeric values (b)
 
 
