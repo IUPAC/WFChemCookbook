@@ -6,10 +6,12 @@ root: intro
 parts:
   - caption: Introduction
     chapters:
-    - file: about
-    - file: iupacfair
-    - file: feedback
+    - file: about_cookbook
+      title: About this Cookbook
+      sctions:
+        - file: iupacfair
     - file: contributions
+    - file: feedback
   - caption: The FAIR Chemistry Cookbook
     chapters:
     - file: cooking
@@ -50,7 +52,7 @@ parts:
         - glob: standards/*
   - caption: Reference
     chapters:
-      - file: development
-        title: Cookbook development
+      - file: about_project
+        title: About this project
       - file: glossary
       - file: bibliography
