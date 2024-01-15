@@ -607,10 +607,150 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14571425
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: 500
+Code: PUGREST.ServerError
+Message: Error parsing search response:
+Detail: 
+Detail: exception:  Frame type= eFrameNamed, Object type= response
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14571425
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Compounds with the same stereochemistry and isotopism (default)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/cid/14571425/cids/txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/cid/14571425/cids/txt?identity_type=same_stereo_isotope&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/requests/api.py:73,</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span><span class="w">     </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Sends a GET request.</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span><span class="sd">     :param url: URL for the new :class:`Request` object.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="sd">     :rtype: requests.Response</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/requests/api.py:59,</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="c1"># By using the &#39;with&#39; statement we are sure the session is closed, thus we</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="c1"># avoid leaving sockets open which can trigger a ResourceWarning in some</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="c1"># cases, and look like a memory leak in others.</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">with</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">59</span>     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/requests/sessions.py:589,</span> in <span class="ni">Session.request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
+<span class="g g-Whitespace">    </span><span class="mi">584</span> <span class="n">send_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">585</span>     <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="n">timeout</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">586</span>     <span class="s2">&quot;allow_redirects&quot;</span><span class="p">:</span> <span class="n">allow_redirects</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">587</span> <span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">588</span> <span class="n">send_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">589</span> <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">591</span> <span class="k">return</span> <span class="n">resp</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/requests/sessions.py:703,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">700</span> <span class="n">start</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="c1"># Send the request</span>
+<span class="ne">--&gt; </span><span class="mi">703</span> <span class="n">r</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span> <span class="c1"># Total elapsed time of the request (approximately)</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/requests/adapters.py:486,</span> in <span class="ni">HTTPAdapter.send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">483</span>     <span class="n">timeout</span> <span class="o">=</span> <span class="n">TimeoutSauce</span><span class="p">(</span><span class="n">connect</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">read</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">485</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">486</span>     <span class="n">resp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">487</span>         <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">488</span>         <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">489</span>         <span class="n">body</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span>         <span class="n">headers</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span>         <span class="n">redirect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span>         <span class="n">assert_same_host</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>         <span class="n">preload_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span>         <span class="n">decode_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>         <span class="n">retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_retries</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">497</span>         <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">498</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">500</span> <span class="k">except</span> <span class="p">(</span><span class="n">ProtocolError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span>     <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:790,</span> in <span class="ni">HTTPConnectionPool.urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">787</span> <span class="n">response_conn</span> <span class="o">=</span> <span class="n">conn</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">release_conn</span> <span class="k">else</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">789</span> <span class="c1"># Make the request on the HTTPConnection object</span>
+<span class="ne">--&gt; </span><span class="mi">790</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">791</span>     <span class="n">conn</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">793</span>     <span class="n">url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">794</span>     <span class="n">timeout</span><span class="o">=</span><span class="n">timeout_obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">795</span>     <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">796</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">797</span>     <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">798</span>     <span class="n">retries</span><span class="o">=</span><span class="n">retries</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">799</span>     <span class="n">response_conn</span><span class="o">=</span><span class="n">response_conn</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">800</span>     <span class="n">preload_content</span><span class="o">=</span><span class="n">preload_content</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">801</span>     <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span>     <span class="o">**</span><span class="n">response_kw</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">803</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">805</span> <span class="c1"># Everything went great!</span>
+<span class="g g-Whitespace">    </span><span class="mi">806</span> <span class="n">clean_exit</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:536,</span> in <span class="ni">HTTPConnectionPool._make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
+<span class="g g-Whitespace">    </span><span class="mi">534</span> <span class="c1"># Receive the response from the server</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">536</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">537</span> <span class="k">except</span> <span class="p">(</span><span class="n">BaseSSLError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_raise_timeout</span><span class="p">(</span><span class="n">err</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout_value</span><span class="o">=</span><span class="n">read_timeout</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/connection.py:461,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span> <span class="kn">from</span> <span class="nn">.response</span> <span class="kn">import</span> <span class="n">HTTPResponse</span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="c1"># Get the response from http.client.HTTPConnection</span>
+<span class="ne">--&gt; </span><span class="mi">461</span> <span class="n">httplib_response</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="n">assert_header_parsing</span><span class="p">(</span><span class="n">httplib_response</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/http/client.py:1386,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1384</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1385</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1386</span>         <span class="n">response</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1387</span>     <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1388</span>         <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/http/client.py:325,</span> in <span class="ni">HTTPResponse.begin</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">323</span> <span class="c1"># read until we get a non-100 response</span>
+<span class="g g-Whitespace">    </span><span class="mi">324</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">325</span>     <span class="n">version</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_status</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">CONTINUE</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="k">break</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/http/client.py:286,</span> in <span class="ni">HTTPResponse._read_status</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span> <span class="k">def</span> <span class="nf">_read_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">286</span>     <span class="n">line</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="n">_MAXLINE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;iso-8859-1&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">_MAXLINE</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>         <span class="k">raise</span> <span class="n">LineTooLong</span><span class="p">(</span><span class="s2">&quot;status line&quot;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/socket.py:706,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">706</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">708</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/ssl.py:1315,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1311</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1312</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1313</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1314</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1315</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1316</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1317</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/ssl.py:1167,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1165</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1166</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1167</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1168</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1169</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -700,8 +840,8 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>351
-[&#39;155903259&#39;, &#39;163421961&#39;, &#39;162396458&#39;, &#39;162396452&#39;, &#39;162396372&#39;, &#39;163361997&#39;, &#39;163283243&#39;, &#39;163283236&#39;, &#39;162712498&#39;, &#39;162712489&#39;, &#39;162712482&#39;, &#39;162712462&#39;, &#39;162712460&#39;, &#39;162685338&#39;, &#39;162396459&#39;, &#39;162396453&#39;, &#39;162396442&#39;, &#39;169291133&#39;, &#39;169283881&#39;, &#39;169283867&#39;, &#39;169283836&#39;, &#39;169240701&#39;, &#39;169240697&#39;, &#39;169240696&#39;, &#39;169194427&#39;, &#39;169194258&#39;, &#39;169194236&#39;, &#39;169194204&#39;, &#39;169194186&#39;, &#39;169194140&#39;, &#39;169194124&#39;, &#39;169194114&#39;, &#39;169194030&#39;, &#39;169193968&#39;, &#39;169193963&#39;, &#39;169193839&#39;, &#39;169193754&#39;, &#39;169193751&#39;, &#39;169193733&#39;, &#39;169193552&#39;, &#39;169193547&#39;, &#39;169193357&#39;, &#39;169193261&#39;, &#39;169193197&#39;, &#39;169122295&#39;, &#39;169084224&#39;, &#39;168942044&#39;, &#39;168941969&#39;, &#39;168878798&#39;, &#39;168870655&#39;, &#39;168750593&#39;, &#39;168750590&#39;, &#39;168750586&#39;, &#39;168750579&#39;, &#39;168301133&#39;, &#39;168291677&#39;, &#39;168290284&#39;, &#39;168142213&#39;, &#39;168142167&#39;, &#39;168142166&#39;, &#39;168142152&#39;, &#39;168142141&#39;, &#39;167579537&#39;, &#39;167521394&#39;, &#39;167518234&#39;, &#39;167518190&#39;, &#39;167482317&#39;, &#39;167482314&#39;, &#39;167482295&#39;, &#39;167482292&#39;, &#39;167482283&#39;, &#39;167482261&#39;, &#39;167482240&#39;, &#39;167482232&#39;, &#39;167482218&#39;, &#39;167482213&#39;, &#39;167482212&#39;, &#39;167482205&#39;, &#39;167482178&#39;, &#39;167482167&#39;, &#39;167482106&#39;, &#39;167482083&#39;, &#39;167482074&#39;, &#39;167482043&#39;, &#39;167482039&#39;, &#39;167482005&#39;, &#39;167481999&#39;, &#39;167481972&#39;, &#39;167481944&#39;, &#39;167481929&#39;, &#39;167481927&#39;, &#39;167481924&#39;, &#39;167481917&#39;, &#39;167481908&#39;, &#39;167481900&#39;, &#39;167481880&#39;, &#39;167481876&#39;, &#39;167481860&#39;, &#39;167481821&#39;, &#39;167481808&#39;, &#39;167481747&#39;, &#39;167481675&#39;, &#39;167481663&#39;, &#39;167481640&#39;, &#39;167481637&#39;, &#39;167481608&#39;, &#39;167481575&#39;, &#39;167481566&#39;, &#39;167481565&#39;, &#39;167481557&#39;, &#39;167481547&#39;, &#39;167481542&#39;, &#39;167481535&#39;, &#39;167481480&#39;, &#39;167481474&#39;, &#39;167481462&#39;, &#39;167481430&#39;, &#39;167481400&#39;, &#39;167481398&#39;, &#39;167481386&#39;, &#39;167481379&#39;, &#39;167481374&#39;, &#39;167481364&#39;, &#39;167481356&#39;, &#39;167481349&#39;, &#39;167481327&#39;, &#39;167481324&#39;, &#39;167481309&#39;, &#39;167481266&#39;, &#39;167481257&#39;, &#39;167481250&#39;, &#39;167481234&#39;, &#39;167481232&#39;, &#39;167481210&#39;, &#39;167481202&#39;, &#39;167481201&#39;, &#39;167481199&#39;, &#39;167481158&#39;, &#39;167481130&#39;, &#39;167481103&#39;, &#39;167481072&#39;, &#39;167481037&#39;, &#39;167481034&#39;, &#39;167481033&#39;, &#39;167481005&#39;, &#39;167480997&#39;, &#39;167480975&#39;, &#39;167338943&#39;, &#39;167338917&#39;, &#39;167338914&#39;, &#39;167338850&#39;, &#39;167338845&#39;, &#39;167331698&#39;, &#39;167331639&#39;, &#39;167331630&#39;, &#39;167251496&#39;, &#39;167229685&#39;, &#39;167207061&#39;, &#39;167206807&#39;, &#39;167206599&#39;, &#39;167206598&#39;, &#39;167206597&#39;, &#39;167203608&#39;, &#39;167203581&#39;, &#39;167203580&#39;, &#39;167094341&#39;, &#39;167094334&#39;, &#39;167094316&#39;, &#39;167094315&#39;, &#39;167065160&#39;, &#39;167065154&#39;, &#39;167065082&#39;, &#39;167065080&#39;, &#39;166893351&#39;, &#39;166893348&#39;, &#39;166893276&#39;, &#39;166893275&#39;, &#39;166893274&#39;, &#39;166893182&#39;, &#39;166891665&#39;, &#39;166891596&#39;, &#39;166891547&#39;, &#39;166891533&#39;, &#39;166840731&#39;, &#39;166840466&#39;, &#39;166840457&#39;, &#39;166840392&#39;, &#39;166840326&#39;, &#39;166537627&#39;, &#39;166494843&#39;, &#39;166494662&#39;, &#39;166157269&#39;, &#39;166157215&#39;, &#39;166157194&#39;, &#39;166157043&#39;, &#39;166157017&#39;, &#39;166156836&#39;, &#39;166156828&#39;, &#39;166156664&#39;, &#39;166149137&#39;, &#39;166149094&#39;, &#39;166149089&#39;, &#39;166149077&#39;, &#39;166149074&#39;, &#39;166149071&#39;, &#39;166149062&#39;, &#39;165179488&#39;, &#39;165179486&#39;, &#39;165179485&#39;, &#39;165179472&#39;, &#39;164971185&#39;, &#39;164850071&#39;, &#39;164785132&#39;, &#39;164766041&#39;, &#39;164766036&#39;, &#39;164701821&#39;, &#39;164701819&#39;, &#39;164701818&#39;, &#39;164701817&#39;, &#39;164701816&#39;, &#39;164701815&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701807&#39;, &#39;164701805&#39;, &#39;164701800&#39;, &#39;164701794&#39;, &#39;164701789&#39;, &#39;164701777&#39;, &#39;164701776&#39;, &#39;164701775&#39;, &#39;164701773&#39;, &#39;164701772&#39;, &#39;164701766&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;164701757&#39;, &#39;164701749&#39;, &#39;164701748&#39;, &#39;164701743&#39;, &#39;164701742&#39;, &#39;164701741&#39;, &#39;164701738&#39;, &#39;164701736&#39;, &#39;164701733&#39;, &#39;164159966&#39;, &#39;164158215&#39;, &#39;164040179&#39;, &#39;163941851&#39;, &#39;163362031&#39;, &#39;163362029&#39;, &#39;163362026&#39;, &#39;163362016&#39;, &#39;163362014&#39;, &#39;163362009&#39;, &#39;163362008&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361998&#39;, &#39;163361849&#39;, &#39;163283407&#39;, &#39;163283390&#39;, &#39;163283387&#39;, &#39;163283371&#39;, &#39;163283370&#39;, &#39;163283343&#39;, &#39;163283330&#39;, &#39;163283322&#39;, &#39;163283284&#39;, &#39;163283239&#39;, &#39;163283238&#39;, &#39;162712471&#39;, &#39;162479130&#39;, &#39;162478807&#39;, &#39;162396461&#39;, &#39;162396460&#39;, &#39;162396450&#39;, &#39;157010397&#39;, &#39;169436363&#39;, &#39;169436361&#39;, &#39;169240702&#39;, &#39;169194348&#39;, &#39;169194330&#39;, &#39;169194319&#39;, &#39;169194293&#39;, &#39;169194217&#39;, &#39;169193984&#39;, &#39;169193967&#39;, &#39;169193895&#39;, &#39;169193437&#39;, &#39;169193396&#39;, &#39;169095061&#39;, &#39;169084228&#39;, &#39;169084221&#39;, &#39;169084219&#39;, &#39;168993735&#39;, &#39;168878799&#39;, &#39;168310837&#39;, &#39;168310836&#39;, &#39;168154285&#39;, &#39;168093174&#39;, &#39;168010016&#39;, &#39;167574478&#39;, &#39;167574477&#39;, &#39;167482300&#39;, &#39;167482299&#39;, &#39;167482130&#39;, &#39;167481970&#39;, &#39;167481950&#39;, &#39;167481489&#39;, &#39;167481104&#39;, &#39;167331612&#39;, &#39;167331610&#39;, &#39;167278770&#39;, &#39;167203321&#39;, &#39;166986077&#39;, &#39;166986067&#39;, &#39;166986065&#39;, &#39;166986000&#39;, &#39;166964913&#39;, &#39;166964908&#39;, &#39;166964904&#39;, &#39;166964903&#39;, &#39;166964899&#39;, &#39;166964890&#39;, &#39;166964888&#39;, &#39;166964886&#39;, &#39;166964883&#39;, &#39;166157205&#39;, &#39;166157157&#39;, &#39;166157065&#39;, &#39;166157057&#39;, &#39;166157023&#39;, &#39;166156829&#39;, &#39;166149063&#39;, &#39;164850290&#39;, &#39;164850073&#39;, &#39;164701802&#39;, &#39;164701798&#39;, &#39;163362019&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;163283283&#39;, &#39;162712506&#39;, &#39;162712490&#39;, &#39;162712468&#39;, &#39;166642632&#39;, &#39;167537951&#39;, &#39;167674037&#39;, &#39;168476190&#39;, &#39;168993728&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
+[&#39;155903259&#39;, &#39;163421961&#39;, &#39;164850071&#39;, &#39;164785132&#39;, &#39;164766041&#39;, &#39;164766036&#39;, &#39;164701821&#39;, &#39;164701819&#39;, &#39;164701818&#39;, &#39;164701817&#39;, &#39;164701816&#39;, &#39;164701815&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701807&#39;, &#39;164701805&#39;, &#39;164701800&#39;, &#39;164701794&#39;, &#39;164701789&#39;, &#39;164701777&#39;, &#39;164701776&#39;, &#39;164701775&#39;, &#39;164701773&#39;, &#39;164701772&#39;, &#39;164701766&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;164701757&#39;, &#39;164701749&#39;, &#39;164701748&#39;, &#39;164701743&#39;, &#39;164701742&#39;, &#39;164701741&#39;, &#39;164701738&#39;, &#39;164701736&#39;, &#39;164701733&#39;, &#39;164159966&#39;, &#39;164158215&#39;, &#39;163362031&#39;, &#39;163362029&#39;, &#39;163362026&#39;, &#39;163362016&#39;, &#39;163362014&#39;, &#39;163362009&#39;, &#39;163362008&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361998&#39;, &#39;163361997&#39;, &#39;163361849&#39;, &#39;163283407&#39;, &#39;163283390&#39;, &#39;163283387&#39;, &#39;163283371&#39;, &#39;163283370&#39;, &#39;163283343&#39;, &#39;163283330&#39;, &#39;163283322&#39;, &#39;163283284&#39;, &#39;163283243&#39;, &#39;163283239&#39;, &#39;163283238&#39;, &#39;163283236&#39;, &#39;162479130&#39;, &#39;162478807&#39;, &#39;162396459&#39;, &#39;162396458&#39;, &#39;162396453&#39;, &#39;162396452&#39;, &#39;162396372&#39;, &#39;164850290&#39;, &#39;164850073&#39;, &#39;164701802&#39;, &#39;164701798&#39;, &#39;164040179&#39;, &#39;163941851&#39;, &#39;163362019&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;163283283&#39;, &#39;162712506&#39;, &#39;162712498&#39;, &#39;162712490&#39;, &#39;162712489&#39;, &#39;162712482&#39;, &#39;162712471&#39;, &#39;162712468&#39;, &#39;162712462&#39;, &#39;162712460&#39;, &#39;162685338&#39;, &#39;162396461&#39;, &#39;162396460&#39;, &#39;162396450&#39;, &#39;162396442&#39;, &#39;157010397&#39;, &#39;164971185&#39;, &#39;165179472&#39;, &#39;165179485&#39;, &#39;165179486&#39;, &#39;165179488&#39;]
 </pre></div>
 </div>
 </div>
@@ -717,8 +857,8 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
-[&#39;155903259&#39;, &#39;162396459&#39;, &#39;169240696&#39;, &#39;168301133&#39;, &#39;168290284&#39;, &#39;167331698&#39;, &#39;167094316&#39;, &#39;167094315&#39;, &#39;167065082&#39;, &#39;166157194&#39;, &#39;164701818&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;164040179&#39;, &#39;163362031&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361849&#39;, &#39;169240702&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;166642632&#39;, &#39;168476190&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+[&#39;155903259&#39;, &#39;164701818&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;163362031&#39;, &#39;163362005&#39;, &#39;163362001&#39;, &#39;163361849&#39;, &#39;162396459&#39;, &#39;164040179&#39;, &#39;163341926&#39;, &#39;163285815&#39;]
 </pre></div>
 </div>
 </div>
@@ -735,30 +875,19 @@ Detail:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;CID&quot;,&quot;HeavyAtomCount&quot;,&quot;MolecularFormula&quot;,&quot;IsomericSMILES&quot;
 155903259,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-162396459,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-169240696,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)[C@H](C(C)(C)C)N([C@@H](C[C@@H]3CCNC3=O)C#N)C(=O)C(F)(F)F)C(=O)N)C&quot;
-168301133,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-168290284,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@H]3CCNC3=O)C#N)C&quot;
-167331698,34,&quot;C23H33F2N5O4&quot;,&quot;CC(C)C[C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)C(F)F&quot;
-167094316,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@H]2C1CN([C@@H]2C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C&quot;
-167094315,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-167065082,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1[C@H](N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-166157194,34,&quot;C23H33F2N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 164701818,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 164701813,35,&quot;C23H32F3N5O4&quot;,&quot;CC(C)C[C@@H](C(=O)N1CC2C(C1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)C(F)(F)F&quot;
 164701812,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 164701760,36,&quot;C24H34F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)[C@H](CC(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 164701758,35,&quot;C23H32F3N5O4&quot;,&quot;CC(C)[C@@H](C(=O)N1CC2C(C1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)CC(F)(F)F&quot;
-164040179,36,&quot;C24H36F3N5O4&quot;,&quot;C.CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 163362031,36,&quot;C24H34F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](CC(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 163362005,35,&quot;C23H32F3N5O4&quot;,&quot;CC(C)[C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)CC(F)(F)F&quot;
 163362001,35,&quot;C23H32F3N5O4&quot;,&quot;CC(C)C[C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)C(F)(F)F&quot;
 163361849,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](CC3CCNC3=O)C#N)C&quot;
-169240702,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(C[C@@H]3CCNC3=O)C#N)C&quot;
+162396459,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+164040179,36,&quot;C24H36F3N5O4&quot;,&quot;C.CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 163341926,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C&quot;
 163285815,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-166642632,35,&quot;C23H32F3N5O4&quot;,&quot;[2H]C([2H])([2H])C([C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)C(F)(F)F)(C([2H])([2H])[2H])C([2H])([2H])[2H]&quot;
-168476190,35,&quot;C23H32F3N5O4&quot;,&quot;[2H]C1(C[C@H](C(=O)N1)C[C@@H](C#N)NC(=O)[C@@H]2[C@@H]3[C@@H](C3(C)C)CN2C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)[2H]&quot;
 </pre></div>
 </div>
 </div>
@@ -773,8 +902,8 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38
-[&#39;155903259&#39;, &#39;162396448&#39;, &#39;162396443&#39;, &#39;162712482&#39;, &#39;162396442&#39;, &#39;162712489&#39;, &#39;166157170&#39;, &#39;167203578&#39;, &#39;162712462&#39;, &#39;162396447&#39;, &#39;162712498&#39;, &#39;166949501&#39;, &#39;166949500&#39;, &#39;165368436&#39;, &#39;167481592&#39;, &#39;164622832&#39;, &#39;58799705&#39;, &#39;58766735&#39;, &#39;167213710&#39;, &#39;165368435&#39;, &#39;167430402&#39;, &#39;164701814&#39;, &#39;163321803&#39;, &#39;44227150&#39;, &#39;166156672&#39;, &#39;59115764&#39;, &#39;58908752&#39;, &#39;58605465&#39;, &#39;59115469&#39;, &#39;58908973&#39;, &#39;58604790&#39;, &#39;166156886&#39;, &#39;167203609&#39;, &#39;167203582&#39;, &#39;166157313&#39;, &#39;162396450&#39;, &#39;166157277&#39;, &#39;166157052&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+[&#39;155903259&#39;, &#39;163321803&#39;, &#39;44227150&#39;]
 </pre></div>
 </div>
 </div>
@@ -792,7 +921,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40600
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38488
 </pre></div>
 </div>
 </div>
@@ -806,7 +935,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6816
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6746
 </pre></div>
 </div>
 </div>
@@ -823,7 +952,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1560
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1507
 </pre></div>
 </div>
 </div>
@@ -854,15 +983,15 @@ Detail:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CID&#39;, &#39;MolecularFormula&#39;, &#39;IsomericSMILES&#39;]
 2723872 	 C6H12O6 	 C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O
-892 	 C6H12O6 	 C1(C(C(C(C(C1O)O)O)O)O)O
-439312 	 C6H12O6 	 C1[C@H]([C@@H]([C@@H](C(O1)(CO)O)O)O)O
-64689 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O
+107526 	 C6H12O6 	 C([C@H]([C@H]([C@@H]([C@H](C=O)O)O)O)O)O
+24749 	 C6H12O6 	 C(C(C(C(C(C=O)O)O)O)O)O
 24310 	 C6H12O6 	 C1[C@H]([C@H]([C@@H]([C@](O1)(CO)O)O)O)O
-5793 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+892 	 C6H12O6 	 C1(C(C(C(C(C1O)O)O)O)O)O
+64689 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O
+5984 	 C6H12O6 	 C([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)O
 439709 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@](O1)(CO)O)O)O)O
+439312 	 C6H12O6 	 C1[C@H]([C@@H]([C@@H](C(O1)(CO)O)O)O)O
 79025 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O)O)O)O)O
-6036 	 C6H12O6 	 C([C@@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O)O
-3037556 	 C6H12O6 	 C([C@H]([C@@H]([C@@H]([C@H](C=O)O)O)O)O)O
 </pre></div>
 </div>
 </div>
@@ -875,7 +1004,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3283
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3235
 </pre></div>
 </div>
 </div>
@@ -899,21 +1028,6 @@ Detail:
     <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cid_props</span><span class="p">[</span><span class="n">item</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cid_props</span><span class="p">[</span><span class="n">item</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
     <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">:</span>  <span class="c1"># For simplicity, print only the first 10 items.</span>
         <span class="k">break</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CID&#39;, &#39;MolecularFormula&#39;, &#39;IsomericSMILES&#39;]
-2723872 	 C6H12O6 	 C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O
-892 	 C6H12O6 	 C1(C(C(C(C(C1O)O)O)O)O)O
-439312 	 C6H12O6 	 C1[C@H]([C@@H]([C@@H](C(O1)(CO)O)O)O)O
-64689 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O
-24310 	 C6H12O6 	 C1[C@H]([C@H]([C@@H]([C@](O1)(CO)O)O)O)O
-5793 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
-439709 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@](O1)(CO)O)O)O)O
-79025 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O)O)O)O)O
-6036 	 C6H12O6 	 C([C@@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O)O
-3037556 	 C6H12O6 	 C([C@H]([C@@H]([C@@H]([C@H](C=O)O)O)O)O)O
 </pre></div>
 </div>
 </div>
