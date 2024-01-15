@@ -40,8 +40,13 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-# Compounds with the same stereochemistry and isotopism (default)
-print(requests.get("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/cid/14571425/cids/txt").text.strip())
-print(requests.get("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/cid/14571425/cids/txt?identity_type=same_stereo_isotope").text.strip())
+# Compounds with the same stereochemistry (isotopism can be different)
+cids2 = requests.post("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastidentity/smiles/cids/txt?identity_type=same_stereo", data={'smiles':smiles}).text.strip().split()
+print(cids2)
+
+for mycid in cids2:
+    display(Image(requests.get("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/" + mycid + "/record/PNG?image_size=200x200").content))
+    print("CID " + mycid, ":", requests.get("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/" + mycid + "/property/IsomericSMILES/TXT").text)
+    time.sleep(0.2)
 -------------------
 
