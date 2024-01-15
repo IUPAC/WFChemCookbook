@@ -1,4 +1,0 @@
-Status: 400
-Code: PUGREST.BadRequest
-Message: Missing CID list
-Detail: Expected a comma-separated list of CIDs via URL or POST
