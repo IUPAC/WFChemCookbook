@@ -1,3 +1,3 @@
-# Cooking up FAIR Chemical Data
+# The Joy of Cooking (FAIR data)
 
 Add more content

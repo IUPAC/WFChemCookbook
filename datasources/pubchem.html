@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Preparing Chemical Data for FAIR Sharing - A Minimalist Approach &#8212; IUPAC FAIR Chemistry Cookbook</title>
+    <title>Data Repository: PubChem &#8212; IUPAC FAIR Chemistry Cookbook</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'techniques/sharing_chemdata';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'datasources/pubchem';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tools for working with FAIR Chemical Data" href="../tools.html" />
-    <link rel="prev" title="FAIR Techniques for Chemical Data" href="../techniques.html" />
+    <link rel="next" title="PubChem PUG-REST API" href="pubchem_pugrest.html" />
+    <link rel="prev" title="Repository: zenodo" href="zenodo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -158,23 +158,23 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cooking.html">The Joy of Cooking</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../techniques.html">FAIR Techniques</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Preparing Chemical Data for FAIR Sharing - A Minimalist Approach</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../techniques.html">FAIR Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../techniques/sharing_chemdata.html">Preparing Chemical Data for FAIR Sharing - A Minimalist Approach</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../datasources/figshare.html">Repository: figshare</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../datasources/goldbook_api.html">Accessing the IUPAC Gold Book API in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../datasources/zenodo.html">Repository: zenodo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../datasources/pubchem.html">Data Repository: PubChem</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../datasources/pubchem_pugrest.html">PubChem PUG-REST API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../datasources/pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../datasources/pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../datasources/pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="figshare.html">Repository: figshare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="goldbook_api.html">Accessing the IUPAC Gold Book API in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zenodo.html">Repository: zenodo</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Data Repository: PubChem</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pubchem_pugrest.html">PubChem PUG-REST API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
 </ul>
 </li>
 </ul>
@@ -263,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Ftechniques/sharing_chemdata.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Fdatasources/pubchem.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/techniques/sharing_chemdata.md" target="_blank"
+      <li><a href="../_sources/datasources/pubchem.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -375,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Preparing Chemical Data for FAIR Sharing - A Minimalist Approach</h1>
+    <h1>Data Repository: PubChem</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,17 +385,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spectrum-of-fairness-for-chemical-data">The Spectrum of FAIRness for Chemical Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-components-for-fair-chemical-data">(Minimal) Components for FAIR Chemical Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-list">Check list</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-prepare-your-chemical-data-for-fair-sharing">Steps to prepare your chemical data for FAIR sharing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart">Flowchart</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-and-organization-of-chemical-data-package">Structure and organization of chemical data package</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-fair-chemical-data-package-in-the-minimalist-approach">Examples of FAIR chemical data package in the minimalist approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-pubchem">What is PubChem?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-tutorials">PubChem Tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -407,73 +399,71 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <blockquote>
-<div><p><strong>This is an outline of the section. Detailed content is coming soon.</strong></p>
+  <section id="data-repository-pubchem">
+<h1>Data Repository: PubChem<a class="headerlink" href="#data-repository-pubchem" title="Permalink to this headline">#</a></h1>
+<section id="what-is-pubchem">
+<h2>What is PubChem?<a class="headerlink" href="#what-is-pubchem" title="Permalink to this headline">#</a></h2>
+<p>PubChem <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov">(https://pubchem.ncbi.nlm.nih.gov)</a> <span id="id1">[<a class="reference internal" href="#id10" title="Sunghwan Kim, Jie Chen, Tiejun Cheng, Asta Gindulyte, Jia He, Siqian He, Qingliang Li, Benjamin A. Shoemaker, Paul A. Thiessen, Bo Yu, Leonid Zaslavsky, Jian Zhang, and Evan E. Bolton. PubChem 2023 update. Nucleic Acids Research, 51(D1):D1373-D1380, 2023. URL: https://doi.org/10.1093/nar/gkac956.">KCC+23</a>]</span> is a very popular chemistry information resource for biomedical research communities in many areas, including cheminformatics, chemical biology, medicinal chemistry, and drug discovery. PubChem’s information content, collected from hundreds of data sources, is organized into multiple data collections, including Substance, Compound, BioAssay, Gene, Protein, Pathway, Cell Line, Taxonomy, and Patent <span id="id2">[<a class="reference internal" href="#id9" title="Sunghwan Kim, Tiejun Cheng, Siqian He, Paul A. Thiessen, Qingliang Li, Asta Gindulyte, and Evan E. Bolton. Pubchem protein, gene, pathway, and taxonomy data collections: bridging biology and chemistry through target-centric views of pubchem data. Journal of Molecular Biology, 434(11):167514, 2022. URL: https://doi.org/10.1016/j.jmb.2022.167514.">KCH+22</a>]</span>. Substance archives the chemical data submitted by individual data sources and Compound stores the unique chemical structures extracted from Substance through chemical structure standardization. BioAssay contains biological assay descriptions and test results deposited by assay data providers. The record identifiers (IDs) used in Substance, Compound, and BioAssay are called Substance ID (SID), Compound ID (CID), and Assay ID (AID), respectively. The other data collections (i.e., Gene, Protein, Pathway, Cell Line, Taxonomy, and Patent) provide alternative views of PubChem data, related to a specific gene, protein, pathway, cell line, taxon, and patent document, respectively. Each record in the data collections has a dedicated web page (called a Summary page), which presents information available in PubChem for that record. This page also presents relevant annotations collected by PubChem from authoritative data sources.  Here are some example Summary pages for PubChem records.</p>
+<ul class="simple">
+<li><p>Compound (CID 60823, aspirin):<br>
+https://pubchem.ncbi.nlm.nih.gov/compound/2244</p></li>
+<li><p>Substance (SID 829042, depositor-provided structure of aspirin)<br>
+https://pubchem.ncbi.nlm.nih.gov/substance/829042</p></li>
+<li><p>Assay (AID 463075, high-throughput assay to identify inhibitors of TNF-<sym>alpha-induced cell death)<br>
+https://pubchem.ncbi.nlm.nih.gov/bioassay/463075</p></li>
+<li><p>Gene (human tumor necrosis factor (TNF); NCBI GeneID 7124)<br>
+https://pubchem.ncbi.nlm.nih.gov/gene/7124</p></li>
+<li><p>Protein (mouse Cytochrome P450 1A1 (CYP1A1); NCBI accession P00184)<br>
+https://pubchem.ncbi.nlm.nih.gov/protein/P00184</p></li>
+<li><p>Pathway (Glycolysis in human; Reactome ID R-HSA-70171)<br>
+https://pubchem.ncbi.nlm.nih.gov/pathway/Reactome:R-HSA-70171</p></li>
+<li><p>Cell Line (Michigan Cancer Foundation-7 (MCF-7) breast cancer cell line)<br>
+https://pubchem.ncbi.nlm.nih.gov/cell/mcf-7</p></li>
+<li><p>Taxonomy (Saccharomyces cerevisiae (baker’s yeast); NCBI Taxonomy ID 4932)<br>
+https://pubchem.ncbi.nlm.nih.gov/taxonomy/4932</p></li>
+<li><p>Patent (US Patent US-2021379090-A1)<br>
+https://pubchem.ncbi.nlm.nih.gov/patent/US-2021379090-A1</p></li>
+</ul>
+</section>
+<section id="pubchem-tutorials">
+<h2>PubChem Tutorials<a class="headerlink" href="#pubchem-tutorials" title="Permalink to this headline">#</a></h2>
+<p>For novice users, an interactive online PubChem tutorial is available at the following webpage:</p>
+<p><a class="reference external" href="https://www.nlm.nih.gov/oet/ed/pubchem/tutorial/index.html">https://www.nlm.nih.gov/oet/ed/pubchem/tutorial/index.html</a></p>
+<p>In addition, the following paper <span id="id3">[<a class="reference internal" href="#id8" title="Sunghwan Kim. Exploring chemical information in pubchem. Current Protocols, 1(8):e217, 2021. URL: https://doi.org/10.1002/cpz1.217.">Kim21</a>]</span> provides step-by-step instructions on how to explore data contained in PubChem, along with examples of commonly requested tasks.</p>
+<blockquote>
+<div><p>Kim S. <strong>Exploring Chemical Information in PubChem.</strong> Curr. Protoc.; 2021 Aug 9; 1(8):e217. doi: https://doi.org/10.1002/cpz1.217.<br />
+<a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/34370395/">[PubMed PMID: 34370395]</a> <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8363119/">[PubMed Central PMCID: PMC8363119]</a> <a class="reference external" href="https://doi.org/10.1002/cpz1.217">[Free Full Text]</a></p>
 </div></blockquote>
-<section id="preparing-chemical-data-for-fair-sharing-a-minimalist-approach">
-<h1>Preparing Chemical Data for FAIR Sharing - A Minimalist Approach<a class="headerlink" href="#preparing-chemical-data-for-fair-sharing-a-minimalist-approach" title="Permalink to this headline">#</a></h1>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-About this recipe<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<p>This paper includes several protocols designed to help users to get familiar with PubChem’s data and tools.</p>
 <ul class="simple">
-<li><p class="sd-card-text">Author(s): <a class="reference external" href="https://orcid.org/0000-0001-8361-6916">Ye Li</a></p></li>
-<li><p class="sd-card-text">Reviewer:</p></li>
-<li><p class="sd-card-text">Topic(s): Chemical data, FAIR, formatting</p></li>
-<li><p class="sd-card-text">Format(s): Markdown file</p></li>
-<li><p class="sd-card-text">Scenario(s): I need to share my data in a FAIR way</p></li>
-<li><p class="sd-card-text">Skill(s): You should be familiar with</p>
-<ul>
-<li><p class="sd-card-text"><a class="reference external" href="https://www.ibm.com/topics/api">Identifiers</a></p></li>
+<li><p><strong>Basic Protocol 1</strong>: <a class="reference external" href="https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpz1.217#cpz1217-prot-0001">Finding genes and proteins that interact with a given compound</a></p></li>
+<li><p><strong>Basic Protocol 2</strong>: <a class="reference external" href="https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpz1.217#cpz1217-prot-0002">Finding drug-like compounds similar to a query compound through a two-dimensional (2-D) similarity search</a></p></li>
+<li><p><strong>Basic Protocol 3</strong>: <a class="reference external" href="https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpz1.217#cpz1217-prot-0003">Finding compounds similar to a query compound through a three-dimensional (3-D) similarity search</a></p></li>
+<li><p><strong>Support Protocol</strong>: <a class="reference external" href="https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpz1.217#cpz1217-prot-0004">Computing similarity scores between compounds</a></p></li>
+<li><p><strong>Basic Protocol 4</strong>: <a class="reference external" href="https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpz1.217#cpz1217-prot-0005">Getting the bioactivity data for the hit compounds from substructure search</a></p></li>
+<li><p><strong>Basic Protocol 5</strong>: <a class="reference external" href="https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpz1.217#cpz1217-prot-0006">Finding drugs that target a particular gene</a></p></li>
+<li><p><strong>Basic Protocol 6</strong>: <a class="reference external" href="https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpz1.217#cpz1217-prot-0007">Getting bioactivity data of all chemicals tested against a protein</a></p></li>
+<li><p><strong>Basic Protocol 7</strong>: <a class="reference external" href="https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpz1.217#cpz1217-prot-0008">Finding compounds annotated with classifications or ontological terms</a></p></li>
+<li><p><strong>Basic Protocol 8</strong>: <a class="reference external" href="https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpz1.217#cpz1217-prot-0009">Finding stereoisomers and isotopomers of a compound through identity search</a></p></li>
 </ul>
-</li>
-<li><p class="sd-card-text">Learning outcomes: After completing this example you should understand:</p>
-<ul>
-<li><p class="sd-card-text">Understand what it will take to make your data FAIR</p></li>
-</ul>
-</li>
-<li><p class="sd-card-text">Citation: We will not be providing citations for the sampler, but citations for recipes will be available (with copy button) in the full release of the Cookbook and will include DOI’s.</p></li>
-<li><p class="sd-card-text">Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
-</ul>
+<p>Finally, one of the developers at PubChem, Dr. Sunghwan Kim, has developed some <a class="reference internal" href="pubchem_pugrest.html"><span class="doc std std-doc">tutorials</span></a> about the PubChem API,
+the Power User Group - Representation State Transfer (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest">PUG-REST</a>) service.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id4">
+<dl class="citation">
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id3">Kim21</a></span></dt>
+<dd><p>Sunghwan Kim. Exploring chemical information in pubchem. <em>Current Protocols</em>, 1(8):e217, 2021. URL: <a class="reference external" href="https://doi.org/10.1002/cpz1.217">https://doi.org/10.1002/cpz1.217</a>.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id1">KCC+23</a></span></dt>
+<dd><p>Sunghwan Kim, Jie Chen, Tiejun Cheng, Asta Gindulyte, Jia He, Siqian He, Qingliang Li, Benjamin A. Shoemaker, Paul A. Thiessen, Bo Yu, Leonid Zaslavsky, Jian Zhang, and Evan E. Bolton. PubChem 2023 update. <em>Nucleic Acids Research</em>, 51(D1):D1373–D1380, 2023. URL: <a class="reference external" href="https://doi.org/10.1093/nar/gkac956">https://doi.org/10.1093/nar/gkac956</a>.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id2">KCH+22</a></span></dt>
+<dd><p>Sunghwan Kim, Tiejun Cheng, Siqian He, Paul A. Thiessen, Qingliang Li, Asta Gindulyte, and Evan E. Bolton. Pubchem protein, gene, pathway, and taxonomy data collections: bridging biology and chemistry through target-centric views of pubchem data. <em>Journal of Molecular Biology</em>, 434(11):167514, 2022. URL: <a class="reference external" href="https://doi.org/10.1016/j.jmb.2022.167514">https://doi.org/10.1016/j.jmb.2022.167514</a>.</p>
+</dd>
+</dl>
 </div>
-</details><section id="the-spectrum-of-fairness-for-chemical-data">
-<h2>The Spectrum of FAIRness for Chemical Data<a class="headerlink" href="#the-spectrum-of-fairness-for-chemical-data" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="minimal-components-for-fair-chemical-data">
-<h2>(Minimal) Components for FAIR Chemical Data<a class="headerlink" href="#minimal-components-for-fair-chemical-data" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Openly shared in a proper data repository</p></li>
-<li><p>Data available in an open (standard) format (and in the original format from the instruments)</p></li>
-<li><p>READEME file to document</p>
-<ul>
-<li><p>globally unique, citable, and persistent identifiers (PID, e.g., ORCID, InChI)</p></li>
-<li><p>affiliated article citation</p></li>
-<li><p>methods and other technical details</p></li>
-<li><p>dataset structure and organization</p></li>
-<li><p>license and term of use</p></li>
-</ul>
-</li>
-</ul>
-<section id="check-list">
-<h3>Check list<a class="headerlink" href="#check-list" title="Permalink to this headline">#</a></h3>
-</section>
-</section>
-<section id="steps-to-prepare-your-chemical-data-for-fair-sharing">
-<h2>Steps to prepare your chemical data for FAIR sharing<a class="headerlink" href="#steps-to-prepare-your-chemical-data-for-fair-sharing" title="Permalink to this headline">#</a></h2>
-<section id="flowchart">
-<h3>Flowchart<a class="headerlink" href="#flowchart" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="structure-and-organization-of-chemical-data-package">
-<h3>Structure and organization of chemical data package<a class="headerlink" href="#structure-and-organization-of-chemical-data-package" title="Permalink to this headline">#</a></h3>
-</section>
-</section>
-<section id="examples-of-fair-chemical-data-package-in-the-minimalist-approach">
-<h2>Examples of FAIR chemical data package in the minimalist approach<a class="headerlink" href="#examples-of-fair-chemical-data-package-in-the-minimalist-approach" title="Permalink to this headline">#</a></h2>
-<p>Content of this receipe is adopted from Li, Y., &amp; Ahlqvist, G. P. (2021, June 28). Preparing Your Chemical Data for
-Publishing and FAIR Sharing. https://doi.org/10.17605/OSF.IO/VCSNP</p>
 </section>
 </section>
 
@@ -490,7 +480,7 @@ Publishing and FAIR Sharing. https://doi.org/10.17605/OSF.IO/VCSNP</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./techniques"
+            path: "./datasources"
         },
         predefinedOutput: true
     }
@@ -509,20 +499,20 @@ Publishing and FAIR Sharing. https://doi.org/10.17605/OSF.IO/VCSNP</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../techniques.html"
+       href="zenodo.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">FAIR Techniques for Chemical Data</p>
+        <p class="prev-next-title">Repository: zenodo</p>
       </div>
     </a>
     <a class="right-next"
-       href="../tools.html"
+       href="pubchem_pugrest.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tools for working with FAIR Chemical Data</p>
+        <p class="prev-next-title">PubChem PUG-REST API</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -544,17 +534,9 @@ Publishing and FAIR Sharing. https://doi.org/10.17605/OSF.IO/VCSNP</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spectrum-of-fairness-for-chemical-data">The Spectrum of FAIRness for Chemical Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-components-for-fair-chemical-data">(Minimal) Components for FAIR Chemical Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-list">Check list</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-prepare-your-chemical-data-for-fair-sharing">Steps to prepare your chemical data for FAIR sharing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart">Flowchart</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-and-organization-of-chemical-data-package">Structure and organization of chemical data package</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-fair-chemical-data-package-in-the-minimalist-approach">Examples of FAIR chemical data package in the minimalist approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-pubchem">What is PubChem?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-tutorials">PubChem Tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 
