@@ -8,8 +8,7 @@ parts:
     chapters:
     - file: about_cookbook
       title: About this Cookbook
-      sections:
-        - file: iupacfair
+    - file: use_cookbook
     - file: contributions
     - file: feedback
   - caption: The FAIR Chemistry Cookbook
@@ -17,39 +16,31 @@ parts:
     - file: cooking
       title: The Joy of Cooking
     - file: techniques
-      title: Cooking Techniques
+      title: FAIR Techniques
       sections:
         - glob: techniques/*
-    - file: utensils
-      title: Utensils to Use
+    - file: tools
+      title: Tools & Web Services
       sections:
-        - glob: utensils/*
-    - file: ingredients
-      title: Finding Ingredients
+        - glob: tools/*
+    - file: data_sources
+      title: Data Sources
       sections:
-        - glob: ingredients/[!pubchem]*
-        - file: ingredients/pubchem
-        - file: ingredients/pubchem_pugrest
+        - glob: datasources/[!pubchem]*
+        - file: datasources/pubchem
+        - file: datasources/pubchem_pugrest
           sections:
-            - file: ingredients/pubchem_pugrest1
-            - file: ingredients/pubchem_pugrest2
-            - file: ingredients/pubchem_pugrest3
-    - file: recipes
-      title: Data Recipes
+            - file: datasources/pubchem_pugrest1
+            - file: datasources/pubchem_pugrest2
+            - file: datasources/pubchem_pugrest3
+    - file: manipulations
+      title: Data Manipulations
       sections:
-        - glob: recipes/*
-    - file: menus
-      title: FAIR Menus
+        - glob: manipulations/*
+    - file: usecases
+      title: Use Cases & Workflows
       sections:
-        - glob: menus/*
-    - file: school
-      title: Culinary School
-      sections:
-        - glob: school/*
-    - file: plating
-      title: Data Plating
-      sections:
-        - glob: standards/*
+        - glob: usecases/*
   - caption: Reference
     chapters:
       - file: about_project

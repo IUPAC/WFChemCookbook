@@ -1,3 +1,3 @@
-# FAIR Chemistry Cooking Techniques
+# FAIR Techniques for Chemical Data
 
 Add more content

@@ -65,7 +65,7 @@ More on this approach can be found at [Preparing Chemical Data for FAIR Sharing 
 
 Associated data is critical for reusing spectral data sets. Guidance on this is offered in the reports of the 
 [FAIRSpec IUPAC project](https://iupac.org/project/2019-031-1-024/). Some details are also included in 
-[Creating a UV/Vis (meta)data file structure for small molecule characterisation](../recipes/uvvis_metadata.ipynb).
+[Creating a UV/Vis (meta)data file structure for small molecule characterisation](../usecases/uvvis_metadata.ipynb).
 
 It is always important to include
 

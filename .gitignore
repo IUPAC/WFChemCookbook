@@ -1,9 +1,9 @@
 .idea
 .DS_Store
 book/_build
-book/recipes/hiddensettings.py
+book/manipulations/hiddensettings.py
 book/howtos/inchikeys.md
 book/.DS_Store
 Pipfile.lock
-book/ingredients/conformer1.txt
-book/ingredients/conformer2.txt
+book/datasources/conformer1.txt
+book/datasources/conformer2.txt
