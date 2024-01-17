@@ -17,8 +17,6 @@ parts:
       title: The Joy of Cooking
     - file: techniques
       title: FAIR Techniques
-      sections:
-        - glob: techniques/*
     - file: tools
       title: Tools & Web Services
       sections:
