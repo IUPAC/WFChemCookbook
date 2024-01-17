@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Workflows for Accessing or Publishing FAIR Chemical Data &#8212; IUPAC FAIR Chemistry Cookbook</title>
+    <title>Manipulating Data within a Digital Environment &#8212; IUPAC FAIR Chemistry Cookbook</title>
   
   
   
@@ -158,20 +158,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cooking.html">The Joy of Cooking</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="techniques.html">FAIR Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="techniques/sharing_chemdata.html">Preparing Chemical Data for FAIR Sharing - A Minimalist Approach</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="techniques.html">FAIR Techniques</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="tools/opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/opsin_api_jn.html">Using the OPSIN API in Python</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="data_sources.html">Data Sources</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="datasources/figshare.html">Repository: figshare</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="data_sources.html">Data Sources</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="datasources/goldbook_api.html">Accessing the IUPAC Gold Book API in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="datasources/zenodo.html">Repository: zenodo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datasources/pubchem.html">Data Repository: PubChem</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="datasources/pubchem_pugrest.html">PubChem PUG-REST API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="datasources/pubchem_pugrest.html">PubChem PUG-REST API</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="datasources/pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datasources/pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datasources/pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
@@ -179,11 +175,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Data Manipulations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Data Manipulations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="manipulations/computing_inchis.html">Computing InChIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulations/dataset_search.html">Finding a Findable Dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulations/excel_import.html">Importing Chemical Data into a Spreadsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulations/gsheets_citations.html">Importing JSON Citation Data from an API into Google Sheets</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="usecases.html">Use Cases &amp; Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="usecases/iupac_pkadata.html">Reuse of Curated Chemical Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
 </ul>
 </li>
 </ul>
@@ -373,7 +374,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Workflows for Accessing or Publishing FAIR Chemical Data</h1>
+    <h1>Manipulating Data within a Digital Environment</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -387,11 +388,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="workflows-for-accessing-or-publishing-fair-chemical-data">
-<h1>Workflows for Accessing or Publishing FAIR Chemical Data<a class="headerlink" href="#workflows-for-accessing-or-publishing-fair-chemical-data" title="Permalink to this headline">#</a></h1>
-<p>FAIR data are Findable, Accessible, Interoperable and Reusable by both humans and machines and “Fully AI-Ready”.
-This section will provide workflows for specific tasks related to managing machine-readable chemical data. Interactive
-examples are included as demonstrations that can be copied and executed through a Jupyter notebook or other Python based code.</p>
+  <section id="manipulating-data-within-a-digital-environment">
+<h1>Manipulating Data within a Digital Environment<a class="headerlink" href="#manipulating-data-within-a-digital-environment" title="Permalink to this headline">#</a></h1>
+<p>FAIR data are Findable, Accessible, Interoperable and Reusable by both humans and machines and “Fully AI-Ready”. The
+recipes in this section demonstrate atomized workflows for specific tasks related to managing machine-readable chemical
+data. Interactive examples are included as demonstrations that can be copied and executed through a Jupyter notebook or
+other Python based code.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>

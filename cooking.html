@@ -158,20 +158,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">The Joy of Cooking</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="techniques.html">FAIR Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="techniques/sharing_chemdata.html">Preparing Chemical Data for FAIR Sharing - A Minimalist Approach</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="techniques.html">FAIR Techniques</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="tools/opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/opsin_api_jn.html">Using the OPSIN API in Python</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="data_sources.html">Data Sources</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="datasources/figshare.html">Repository: figshare</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="data_sources.html">Data Sources</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="datasources/goldbook_api.html">Accessing the IUPAC Gold Book API in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="datasources/zenodo.html">Repository: zenodo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datasources/pubchem.html">Data Repository: PubChem</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="datasources/pubchem_pugrest.html">PubChem PUG-REST API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="datasources/pubchem_pugrest.html">PubChem PUG-REST API</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="datasources/pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datasources/pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datasources/pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
@@ -179,11 +175,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="manipulations.html">Data Manipulations</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="manipulations.html">Data Manipulations</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="manipulations/computing_inchis.html">Computing InChIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulations/dataset_search.html">Finding a Findable Dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulations/excel_import.html">Importing Chemical Data into a Spreadsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulations/gsheets_citations.html">Importing JSON Citation Data from an API into Google Sheets</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="usecases.html">Use Cases &amp; Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="usecases/iupac_pkadata.html">Reuse of Curated Chemical Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
 </ul>
 </li>
 </ul>
@@ -362,7 +363,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -378,6 +381,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#themes">Themes</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -389,7 +400,85 @@ document.write(`
                   
   <section id="the-joy-of-cooking-fair-data">
 <h1>The Joy of Cooking (FAIR data)<a class="headerlink" href="#the-joy-of-cooking-fair-data" title="Permalink to this headline">#</a></h1>
-<p>Add more content</p>
+<p>This cookbook provides a range of example protocols developed by active community members. These recipes target
+different tasks across a range of possible use cases for working with machine-readable chemical data (i.e., FAIR data).
+The aim is to present all materials with relevant chemistry examples, point to external content that are of high quality
+where available, reference IUPAC and community digital standards where appropriate, and engage the chemistry community
+in order to broaden the understanding of FAIR in chemistry.</p>
+<p>Working with data in terms of FAIR and in a digital environment means working with machine-readable data, therefore
+different activities, different steps to handle the data. This section provides a brief background on machine-readable
+data and the FAIR data principles in the context of chemistry, what you can do with machine-readable chemical data and
+the importance of preparing data to be FAIR and discoverable in domain repositories.</p>
+<p>In data science, a recipe describes a series of steps applied to a data set to prepare it for data analysis in a
+systematic away. Recipes can describe all the steps taken in a project from data ingestion to transformation to
+analysis to automate processes and share work with others. With recipes, you can prepare your dataset in a systematic
+and repeatable way. Recipes can cover many aspects of data preparation including normalization and joining multiple
+datasets. The recipes in this cookbook demonstrate actions…</p>
+<p>[Pointing to other sources: ELIXIR FAIR cookbook, NFDI4Chem KnowledgeBase, other resources]</p>
+<section id="themes">
+<h2>Themes<a class="headerlink" href="#themes" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>FAIR describes attributes of machine-readable data that enables them to be reusable</p>
+<ul>
+<li><p>Structure and consistency are important but there is no one rigid best way</p></li>
+<li><p>Standards are designed to encapsulate multiple attributes into convenient motifs and methods</p></li>
+<li><p>[Application of motifs/workflows enables FAIR attributes of data/metadata]</p></li>
+</ul>
+</li>
+<li><p>Common motifs in machine-readable chemical data (also in Culinary School)</p>
+<ul>
+<li><p>Chemical identification and structure representation</p></li>
+<li><p>Standard file formats for different data types</p></li>
+<li><p>Chemical metadata description</p></li>
+</ul>
+</li>
+<li><p>What you can do with machine-readable chemical data?</p>
+<ul>
+<li><p>Enhance discovery</p></li>
+<li><p>Compile data</p></li>
+<li><p>Programmatically query for data</p></li>
+</ul>
+</li>
+<li><p>Making chemical Data FAIR  (more practicals in later sections)</p>
+<ul>
+<li><p>Data files</p></li>
+<li><p>Data processing</p></li>
+<li><p>Data description</p></li>
+<li><p>Data sharing</p></li>
+<li><p>Absolute “minimum” (meaning that would enable data to be discoverable and a reuser can then try to do something with
+it, even if not as efficiently as desirable)</p></li>
+</ul>
+</li>
+<li><p>Basic concepts – (also include concepts in glossary for specific linking)</p>
+<ul>
+<li><p>[setting the stage, the vernacular, this is what is happening here and you will come across that]</p></li>
+<li><p>machine-readable</p></li>
+<li><p>programmatic access/reuse</p></li>
+<li><p>Data exchange</p></li>
+<li><p>Data export/import formats (e.g., JSON)</p></li>
+<li><p>Metadata</p></li>
+<li><p>Languages (e.g. python, R, markdown?)</p></li>
+<li><p>Platforms</p></li>
+<li><p>Workspaces</p></li>
+<li><p>Workflows</p></li>
+<li><p>Provenance</p></li>
+<li><p>PIDs</p></li>
+</ul>
+</li>
+<li><p>How FAIR works? – (and other sections as appropriate)</p></li>
+<li><p>Chemistry particulars – (and other sections as appropriate)</p>
+<ul>
+<li><p>Data types</p></li>
+<li><p>Motifs (identifiers, representations, schema, formats, ontologies)</p></li>
+<li><p>Standards</p></li>
+<li><p>Organizing principles of data resources</p></li>
+<li><p>There should also be something in here about FAIR is a scale and that anything you can do to improve the FAIRness
+of your data is a good thing (with comments on the benefits of doing even the lowest level improvements).  SJC 12/5/23</p></li>
+<li><p>RIPE as a sequence of considerations…</p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -450,6 +539,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#themes">Themes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

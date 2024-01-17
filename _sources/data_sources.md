@@ -1,8 +1,5 @@
 # Sources of FAIR Chemical Data
 
-This section will provide descriptions of standard notation and file formats available for sharing and reusing chemical data that are referred to in recipes throughout this book. 
-
-* Chemical structures
-* Chemical properties
-* Chemical terminology 
-* Other useful formats 
+Recipes in this section review accessible online sources of reliable FAIR chemical data, including research data 
+repositories and other aggregated sources.  Materials include brief descriptions of content and available documentation,
+and provide tutorials and demos of API protocols for searching and retrieving various types of data. 
