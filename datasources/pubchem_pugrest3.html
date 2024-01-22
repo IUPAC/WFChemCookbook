@@ -702,8 +702,8 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
-[&#39;Status:&#39;, &#39;504&#39;, &#39;Code:&#39;, &#39;PUGREST.Timeout&#39;, &#39;Message:&#39;, &#39;Request&#39;, &#39;timed&#39;, &#39;out&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+[&#39;155903259&#39;, &#39;167331698&#39;, &#39;166157194&#39;, &#39;163362001&#39;, &#39;162396459&#39;, &#39;169240696&#39;, &#39;168301133&#39;, &#39;168290284&#39;, &#39;167094316&#39;, &#39;167094315&#39;, &#39;167065082&#39;, &#39;164701818&#39;, &#39;164701813&#39;, &#39;164701812&#39;, &#39;164701760&#39;, &#39;164701758&#39;, &#39;164040179&#39;, &#39;163362031&#39;, &#39;163362005&#39;, &#39;163361849&#39;, &#39;169240702&#39;, &#39;163341926&#39;, &#39;163285815&#39;, &#39;166642632&#39;, &#39;168476190&#39;]
 </pre></div>
 </div>
 </div>
@@ -778,7 +778,67 @@ Detail:
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="ne">InvalidChunkLength</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/response.py:712,</span> in <span class="ni">HTTPResponse._error_catcher</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">711</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">712</span>     <span class="k">yield</span>
+<span class="g g-Whitespace">    </span><span class="mi">714</span> <span class="k">except</span> <span class="n">SocketTimeout</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">715</span>     <span class="c1"># FIXME: Ideally we&#39;d like to include the url in the ReadTimeoutError but</span>
+<span class="g g-Whitespace">    </span><span class="mi">716</span>     <span class="c1"># there is yet no clean way to get at it from this context.</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/response.py:1071,</span> in <span class="ni">HTTPResponse.read_chunked</span><span class="nt">(self, amt, decode_content)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1070</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1071</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_update_chunk_length</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1072</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/response.py:1006,</span> in <span class="ni">HTTPResponse._update_chunk_length</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1005</span> <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">1006</span> <span class="k">raise</span> <span class="n">InvalidChunkLength</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+
+<span class="ne">InvalidChunkLength</span>: InvalidChunkLength(got length b&#39;&#39;, 0 bytes read)
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">ProtocolError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/requests/models.py:816,</span> in <span class="ni">Response.iter_content.&lt;locals&gt;.generate</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">815</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">816</span>     <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span> <span class="k">except</span> <span class="n">ProtocolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/response.py:931,</span> in <span class="ni">HTTPResponse.stream</span><span class="nt">(self, amt, decode_content)</span>
+<span class="g g-Whitespace">    </span><span class="mi">930</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunked</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">supports_chunked_reads</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">931</span>     <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_chunked</span><span class="p">(</span><span class="n">amt</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">932</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/response.py:1059,</span> in <span class="ni">HTTPResponse.read_chunked</span><span class="nt">(self, amt, decode_content)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1054</span>     <span class="k">raise</span> <span class="n">BodyNotHttplibCompatible</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1055</span>         <span class="s2">&quot;Body should be http.client.HTTPResponse like. &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1056</span>         <span class="s2">&quot;It should have have an fp attribute which returns raw chunks.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1057</span>     <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1059</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_error_catcher</span><span class="p">():</span>
+<span class="g g-Whitespace">   </span><span class="mi">1060</span>     <span class="c1"># Don&#39;t bother reading the body of a HEAD request.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_original_response</span> <span class="ow">and</span> <span class="n">is_response_to_head</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_original_response</span><span class="p">):</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/contextlib.py:158,</span> in <span class="ni">_GeneratorContextManager.__exit__</span><span class="nt">(self, typ, value, traceback)</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">158</span>     <span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">throw</span><span class="p">(</span><span class="n">typ</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="k">except</span> <span class="ne">StopIteration</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span>     <span class="c1"># Suppress StopIteration *unless* it&#39;s the same exception that</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span>     <span class="c1"># was passed to throw().  This prevents a StopIteration</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="c1"># raised inside the &quot;with&quot; statement from being suppressed.</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/response.py:729,</span> in <span class="ni">HTTPResponse._error_catcher</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">727</span> <span class="k">except</span> <span class="p">(</span><span class="n">HTTPException</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">728</span>     <span class="c1"># This includes IncompleteRead.</span>
+<span class="ne">--&gt; </span><span class="mi">729</span>     <span class="k">raise</span> <span class="n">ProtocolError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connection broken: </span><span class="si">{</span><span class="n">e</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">    </span><span class="mi">731</span> <span class="c1"># If no exception is thrown, we should avoid cleaning up</span>
+<span class="g g-Whitespace">    </span><span class="mi">732</span> <span class="c1"># unnecessarily.</span>
+
+<span class="ne">ProtocolError</span>: (&quot;Connection broken: InvalidChunkLength(got length b&#39;&#39;, 0 bytes read)&quot;, InvalidChunkLength(got length b&#39;&#39;, 0 bytes read))
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ChunkedEncodingError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;C2CN=C(C1=C(C=CC=C1)N2)C3=CC=CC=C3&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">cids</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastsubstructure/smiles/cids/txt&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span><span class="n">smiles</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -810,102 +870,28 @@ Detail:
 <span class="ne">--&gt; </span><span class="mi">589</span> <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">591</span> <span class="k">return</span> <span class="n">resp</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/requests/sessions.py:703,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span> <span class="n">start</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="c1"># Send the request</span>
-<span class="ne">--&gt; </span><span class="mi">703</span> <span class="n">r</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span> <span class="c1"># Total elapsed time of the request (approximately)</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/requests/sessions.py:747,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">744</span>         <span class="k">pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">746</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">stream</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">747</span>     <span class="n">r</span><span class="o">.</span><span class="n">content</span>
+<span class="g g-Whitespace">    </span><span class="mi">749</span> <span class="k">return</span> <span class="n">r</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/requests/adapters.py:486,</span> in <span class="ni">HTTPAdapter.send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span>     <span class="n">timeout</span> <span class="o">=</span> <span class="n">TimeoutSauce</span><span class="p">(</span><span class="n">connect</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">read</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">486</span>     <span class="n">resp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>         <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span>         <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">489</span>         <span class="n">body</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span>         <span class="n">headers</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span>         <span class="n">redirect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">492</span>         <span class="n">assert_same_host</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span>         <span class="n">preload_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span>         <span class="n">decode_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">495</span>         <span class="n">retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">497</span>         <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">500</span> <span class="k">except</span> <span class="p">(</span><span class="n">ProtocolError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span>     <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/requests/models.py:899,</span> in <span class="ni">Response.content</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">897</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">898</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">899</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">CONTENT_CHUNK_SIZE</span><span class="p">))</span> <span class="ow">or</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">901</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content_consumed</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">902</span> <span class="c1"># don&#39;t need to release the connection; that&#39;s been handled by urllib3</span>
+<span class="g g-Whitespace">    </span><span class="mi">903</span> <span class="c1"># since we exhausted the data.</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:790,</span> in <span class="ni">HTTPConnectionPool.urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">787</span> <span class="n">response_conn</span> <span class="o">=</span> <span class="n">conn</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">release_conn</span> <span class="k">else</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">789</span> <span class="c1"># Make the request on the HTTPConnection object</span>
-<span class="ne">--&gt; </span><span class="mi">790</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">791</span>     <span class="n">conn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">793</span>     <span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">794</span>     <span class="n">timeout</span><span class="o">=</span><span class="n">timeout_obj</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">795</span>     <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">796</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">797</span>     <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">798</span>     <span class="n">retries</span><span class="o">=</span><span class="n">retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">799</span>     <span class="n">response_conn</span><span class="o">=</span><span class="n">response_conn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">800</span>     <span class="n">preload_content</span><span class="o">=</span><span class="n">preload_content</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">801</span>     <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">802</span>     <span class="o">**</span><span class="n">response_kw</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">803</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">805</span> <span class="c1"># Everything went great!</span>
-<span class="g g-Whitespace">    </span><span class="mi">806</span> <span class="n">clean_exit</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/requests/models.py:818,</span> in <span class="ni">Response.iter_content.&lt;locals&gt;.generate</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">816</span>     <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span> <span class="k">except</span> <span class="n">ProtocolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">818</span>     <span class="k">raise</span> <span class="n">ChunkedEncodingError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">819</span> <span class="k">except</span> <span class="n">DecodeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">820</span>     <span class="k">raise</span> <span class="n">ContentDecodingError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:467,</span> in <span class="ni">HTTPConnectionPool._make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span>     <span class="c1"># Trigger any extra validation we need to do.</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">467</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_validate_conn</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span>     <span class="k">except</span> <span class="p">(</span><span class="n">SocketTimeout</span><span class="p">,</span> <span class="n">BaseSSLError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_raise_timeout</span><span class="p">(</span><span class="n">err</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout_value</span><span class="o">=</span><span class="n">conn</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:1096,</span> in <span class="ni">HTTPSConnectionPool._validate_conn</span><span class="nt">(self, conn)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1094</span> <span class="c1"># Force connect early to allow us to validate the connection.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1095</span> <span class="k">if</span> <span class="n">conn</span><span class="o">.</span><span class="n">is_closed</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1096</span>     <span class="n">conn</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">conn</span><span class="o">.</span><span class="n">is_verified</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1099</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>             <span class="sa">f</span><span class="s2">&quot;Unverified HTTPS request is being made to host &#39;</span><span class="si">{</span><span class="n">conn</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">&#39;. &quot;</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1106</span>         <span class="n">InsecureRequestWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1107</span>     <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/connection.py:611,</span> in <span class="ni">HTTPSConnection.connect</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">609</span> <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">610</span>     <span class="n">sock</span><span class="p">:</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span> <span class="o">|</span> <span class="n">ssl</span><span class="o">.</span><span class="n">SSLSocket</span>
-<span class="ne">--&gt; </span><span class="mi">611</span>     <span class="bp">self</span><span class="o">.</span><span class="n">sock</span> <span class="o">=</span> <span class="n">sock</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_conn</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">612</span>     <span class="n">server_hostname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span>
-<span class="g g-Whitespace">    </span><span class="mi">613</span>     <span class="n">tls_in_tls</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/connection.py:203,</span> in <span class="ni">HTTPConnection._new_conn</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Establish a socket connection and set nodelay settings on it.</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">200</span><span class="sd"> :return: New socket connection.</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">203</span>     <span class="n">sock</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">create_connection</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span>         <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dns_host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">205</span>         <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span>         <span class="n">source_address</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">source_address</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">207</span>         <span class="n">socket_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">socket_options</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">208</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span> <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">gaierror</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>     <span class="k">raise</span> <span class="n">NameResolutionError</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/urllib3/util/connection.py:73,</span> in <span class="ni">create_connection</span><span class="nt">(address, timeout, source_address, socket_options)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="k">if</span> <span class="n">source_address</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="n">sock</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">source_address</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">73</span> <span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">sa</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="c1"># Break explicitly a reference cycle</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="n">err</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<span class="ne">ChunkedEncodingError</span>: (&quot;Connection broken: InvalidChunkLength(got length b&#39;&#39;, 0 bytes read)&quot;, InvalidChunkLength(got length b&#39;&#39;, 0 bytes read))
 </pre></div>
 </div>
 </div>
