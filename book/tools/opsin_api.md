@@ -2,7 +2,7 @@
 
 ```{dropdown} About this tool
 - Author: [Stuart Chalk](https://orcid.org/0000-0002-0703-7776)
-- Reviewer: 
+- Reviewer: [Leah McEwen](https://orcid.org/0000-0003-2968-1674)
 - Function: IUPAC chemical name to chemical identifier converter
 - Format: Website form based queries and URL based API
 - Input: IUPAC systematic chemical name
@@ -11,13 +11,13 @@
 - Publication: [https://doi.org/10.1021/ci100384d](https://pubs.acs.org/articlesonrequest/AOR-PcYgSy87ettZWfqyvHmN)
 - Website: [https://opsin.ch.cam.ac.uk](https://opsin.ch.cam.ac.uk)
 - Application Programming Interface (API): https://opsin.ch.cam.ac.uk/opsin/
-  - Endpoint: <chemicalname>.cml (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.cml](https://opsin.ch.cam.ac.uk/opsin/benzene.cml))
-  - Endpoint: <chemicalname>.stdinchi (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchi](https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchi))
-  - Endpoint: <chemicalname>.stdinchikey (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchikey](https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchikey))
-  - Endpoint: <chemicalname>.smi (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.smi](https://opsin.ch.cam.ac.uk/opsin/benzene.smi))
-  - Endpoint: <chemicalname>.json (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.json](https://opsin.ch.cam.ac.uk/opsin/benzene.json))
-  - Endpoint: <chemicalname>.png (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.png](https://opsin.ch.cam.ac.uk/opsin/benzene.png))
-  - Endpoint: <chemicalname>.svg (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.svg](https://opsin.ch.cam.ac.uk/opsin/benzene.svg))
+  - Endpoint: Chemical Markup Language file <chemicalname>.cml (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.cml](https://opsin.ch.cam.ac.uk/opsin/benzene.cml))
+  - Endpoint: Standard InChI text file <chemicalname>.stdinchi (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchi](https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchi))
+  - Endpoint: Standard InChIKey text file <chemicalname>.stdinchikey (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchikey](https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchikey))
+  - Endpoint: SMILES text file <chemicalname>.smi (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.smi](https://opsin.ch.cam.ac.uk/opsin/benzene.smi))
+  - Endpoint: JavaScript Object Notation (JSON) file <chemicalname>.json (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.json](https://opsin.ch.cam.ac.uk/opsin/benzene.json))
+  - Endpoint: PNG Image file <chemicalname>.png (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.png](https://opsin.ch.cam.ac.uk/opsin/benzene.png))
+  - Endpoint: SVG Image file <chemicalname>.svg (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.svg](https://opsin.ch.cam.ac.uk/opsin/benzene.svg))
 - GitHub Repository: [https://github.com/dan2097/opsin](https://github.com/dan2097/opsin)
 - Citations: 'OPSIN: Open Parser for Systematic IUPAC Nomenclature', IUPAC FAIR Chemistry Cookbook, [https://w3id.org/ifcc/IFCC001](https://w3id.org/ifcc/IFCC001)
 - Reuse: This resource is made available under a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
