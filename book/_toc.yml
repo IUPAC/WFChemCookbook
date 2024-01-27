@@ -24,7 +24,8 @@ parts:
     - file: data_sources
       title: Data Sources
       sections:
-        - glob: datasources/[!pubchem]*
+        - file: datasources/goldbook_api
+          title: "Terminology: The IUPAC Gold Book"
         - file: datasources/pubchem
         - file: datasources/pubchem_pugrest
           sections:
