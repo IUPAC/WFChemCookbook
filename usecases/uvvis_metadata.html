@@ -687,6 +687,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 <span class="kn">from</span> <span class="nn">jcamp</span> <span class="kn">import</span> <span class="n">jcamp_read</span>              <span class="c1"># Importing the jcamp_read() method from the jcamp package</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>           <span class="c1"># Importing a plotting package</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                        <span class="c1"># Import the numerical python package for mathematical operations</span>
+<span class="kn">import</span> <span class="nn">requests</span>
 </pre></div>
 </div>
 </div>
@@ -695,7 +696,9 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (from jcamp) (1.26.2)
 Requirement already satisfied: datetime in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (from jcamp) (5.4)
 Requirement already satisfied: zope.interface in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (from datetime-&gt;jcamp) (6.1)
-Requirement already satisfied: pytz in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (from datetime-&gt;jcamp) (2023.3.post1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (from datetime-&gt;jcamp) (2023.3.post1)
 Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (from zope.interface-&gt;datetime-&gt;jcamp) (65.5.0)
 </pre></div>
 </div>
@@ -708,9 +711,10 @@ Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.11.7/
 <p>Next, specify the file path that your file is saved at, and use the jcamp_read() method to import the data into your script</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;../files/sample_data.jdx&#39;</span>             <span class="c1"># Replace with your specific file path</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">data_dictionary</span> <span class="o">=</span> <span class="n">jcamp_read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>    <span class="c1"># Store the contents of the jdx file in a python dictionary</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/IUPAC/WFChemCookbook/main/book/files/sample_data.jdx&#39;</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>                    <span class="c1"># split raw text into lines</span>
+<span class="n">file</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">]</span>      <span class="c1"># decode the lines into UTF-8</span>
+<span class="n">data_dictionary</span> <span class="o">=</span> <span class="n">jcamp_read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>                  <span class="c1"># Store the contents of the jdx file in a python dictionary  </span>
 </pre></div>
 </div>
 </div>
