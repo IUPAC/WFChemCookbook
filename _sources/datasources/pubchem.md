@@ -2,7 +2,22 @@
 
 ## What is PubChem?
 
-PubChem [(https://pubchem.ncbi.nlm.nih.gov)](https://pubchem.ncbi.nlm.nih.gov) {cite:p}`Kim2023` is a very popular chemistry information resource for biomedical research communities in many areas, including cheminformatics, chemical biology, medicinal chemistry, and drug discovery. PubChem's information content, collected from hundreds of data sources, is organized into multiple data collections, including Substance, Compound, BioAssay, Gene, Protein, Pathway, Cell Line, Taxonomy, and Patent {cite:p}`Kim2022`. Substance archives the chemical data submitted by individual data sources and Compound stores the unique chemical structures extracted from Substance through chemical structure standardization. BioAssay contains biological assay descriptions and test results deposited by assay data providers. The record identifiers (IDs) used in Substance, Compound, and BioAssay are called Substance ID (SID), Compound ID (CID), and Assay ID (AID), respectively. The other data collections (i.e., Gene, Protein, Pathway, Cell Line, Taxonomy, and Patent) provide alternative views of PubChem data, related to a specific gene, protein, pathway, cell line, taxon, and patent document, respectively. Each record in the data collections has a dedicated web page (called a Summary page), which presents information available in PubChem for that record. This page also presents relevant annotations collected by PubChem from authoritative data sources.  Here are some example Summary pages for PubChem records.
+PubChem [(https://pubchem.ncbi.nlm.nih.gov)](https://pubchem.ncbi.nlm.nih.gov) {cite:p}`Kim2023` is a very popular 
+chemistry information resource for biomedical research communities in many areas, including cheminformatics, 
+chemical biology, medicinal chemistry, and drug discovery. PubChem's information content, collected from 
+hundreds of data sources, is organized into multiple data collections, including Substance, Compound, BioAssay, 
+Gene, Protein, Pathway, Cell Line, Taxonomy, and Patent {cite:p}`Kim2022`.
+
+Substance archives the chemical data submitted by individual data sources and Compound stores the unique 
+chemical structures extracted from Substance through chemical structure standardization. BioAssay contains 
+biological assay descriptions and test results deposited by assay data providers. The record identifiers (IDs)
+used in Substance, Compound, and BioAssay are called Substance ID (SID), Compound ID (CID), and Assay ID (AID),
+respectively. The other data collections (i.e., Gene, Protein, Pathway, Cell Line, Taxonomy, and Patent) 
+provide alternative views of PubChem data, related to a specific gene, protein, pathway, cell line, taxon, 
+and patent document, respectively. Each record in the data collections has a dedicated web page (called 
+a Summary page), which presents information available in PubChem for that record. This page also presents 
+relevant annotations collected by PubChem from authoritative data sources.  Here are some example Summary 
+pages for PubChem records.
 
 - Compound (CID 60823, aspirin):<br>
 https://pubchem.ncbi.nlm.nih.gov/compound/2244
@@ -42,7 +57,6 @@ In addition, the following paper {cite:p}`Kim2021` provides step-by-step instruc
 
 >Kim S. **Exploring Chemical Information in PubChem.** Curr. Protoc.; 2021 Aug 9; 1(8):e217. doi: https://doi.org/10.1002/cpz1.217.  
 >[\[PubMed PMID: 34370395\]](https://pubmed.ncbi.nlm.nih.gov/34370395/) [\[PubMed Central PMCID: PMC8363119\]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8363119/) [\[Free Full Text\]](https://doi.org/10.1002/cpz1.217)
-
 
 This paper includes several protocols designed to help users to get familiar with PubChem's data and tools.
 
