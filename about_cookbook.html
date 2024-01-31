@@ -152,7 +152,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">About this Cookbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cookbook.html">How to use the Cookbook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributions.html">Contributions to the Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributions.html">Contribute to the Cookbook!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feedback.html">Feedback on the Cookbook</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
@@ -363,7 +363,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -379,6 +381,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-contributors">Project contributors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cookbook-development">Cookbook development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worldfair-chemistry">WorldFAIR Chemistry</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -390,22 +402,54 @@ document.write(`
                   
   <section id="about-this-cookbook">
 <h1>About this Cookbook<a class="headerlink" href="#about-this-cookbook" title="Permalink to this headline">#</a></h1>
-<p>The IUPAC FAIR Chemistry Cookbook is intended to be an open, collaborative, community focused resource on working
-with FAIR data in chemistry. This community resource aims to provide a range of practical and re-usable training
-materials that demonstrate how to manage digital data files and content. Our goal is to get more practical tools
-&amp; tips in the hands of practicing chemists and others working with digital chemical data, to lower barriers and
-smooth the adoption of best practices for sharing and reusing FAIR chemical data. The content primarily consists
-of actionable recipes for a range of tasks to prepare and deposit FAIR machine-enabled chemical data, identify
-and extract chemically relevant metadata, and compile and validate chemical data files using online tools.</p>
-<p>FAIR data are findable, accessible, interoperable, and reusable for machine processing <span id="id1">[<a class="reference internal" href="bibliography.html#id2" title="Mark D. et al. Wilkinson. The fair guiding principles for scientific data management and stewardship. Scientific Data, 3:160018, 2016. doi:10.1038/sdata.2016.18.">Wil16</a>]</span>.
-FAIR chemical data need to be machine-readable, and this can be an unfamiliar scenario for many researchers
-and other stakeholders involved with publishing and managing experimental data. This cookbook aims to support
-best practices for sharing and reusing chemical data aligned with the technical criteria for FAIR
-machine-readable data. Practical, interactive tutorials based on common workflows and readily accessible
-online tools for working with digital content augment broader guidance.</p>
-<p>The IUPAC FAIR Chemistry Cookbook is designed to be an evolving resource for the chemistry community. It is
-supported by the International Union of Pure and Applied Chemistry (IUPAC) as part of the WorldFAIR
-Initiative (see About this project).</p>
+<p>This resource was initially formulated as an output of the <a class="reference external" href="https://iupac.org/project/2022-028-1-024/">IUPAC WorldFAIR Chemistry project</a>, for the
+<a class="reference external" href="https://worldfair-project.eu/">WorldFAIR initiative</a> (see below). The IUPAC FAIR Chemistry Cookbook is intended to support the broader
+community in understanding how to work with machine-readable chemical data and implement the FAIR data principles.
+The site is designed to be a living community resource through the addition of new content as strategies evolve
+and the sharing and reuse of FAIR chemical data continues to increase. Feedback and contributions are welcome.</p>
+<section id="project-contributors">
+<h2>Project contributors<a class="headerlink" href="#project-contributors" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Stuart Chalk (Project Lead), University of North Florida</p></li>
+<li><p>Ann-Christin Andres, Johannes Gutenberg University Mainz</p></li>
+<li><p>Simon Coles, University of Southampton</p></li>
+<li><p>Jordi Cuadros, IQS Universitat Ramon Llull</p></li>
+<li><p>Sonja Herres-Pawlis, RWTH Aachen University</p></li>
+<li><p>John Jolliffe, Johannes Gutenberg University Mainz</p></li>
+<li><p>Sunghwan Kim, National Center for Biotechnology Information, National Institutes of Health</p></li>
+<li><p>Nicola Knight, University of Southampton</p></li>
+<li><p>Ken Kroenlein, Citrine Informatics</p></li>
+<li><p>Ye Li, Massachusetts Institute of Technology</p></li>
+<li><p>Leah McEwen, Cornell University</p></li>
+<li><p>Samuel Munday, University of Southampton</p></li>
+<li><p>Fatima Mustafa, Texas A&amp;M San Antonio</p></li>
+<li><p>Vincent F. Scalfani, University of Alabama</p></li>
+</ul>
+</section>
+<section id="cookbook-development">
+<h2>Cookbook development<a class="headerlink" href="#cookbook-development" title="Permalink to this headline">#</a></h2>
+<p>This Cookbook is created online with Jupyter Book. Content is generated locally and managed through a GitHub repository.
+This infrastructure enables the following requirements at the content creation level:</p>
+<ul class="simple">
+<li><p>Open and FAIR development and deployment</p></li>
+<li><p>Support for a diverse set of user personas</p></li>
+<li><p>Agile development and adaptation to user needs</p></li>
+<li><p>Community engagement for long term stability</p></li>
+<li><p>Documentation at user, contributor and administrator levels</p></li>
+</ul>
+</section>
+<section id="worldfair-chemistry">
+<h2>WorldFAIR Chemistry<a class="headerlink" href="#worldfair-chemistry" title="Permalink to this headline">#</a></h2>
+<p>The Committee on Data of the International Science Council (<a class="reference external" href="https://codata.org/">CODATA</a>) and the Research Data
+Alliance (<a class="reference external" href="https://rd-alliance.org/">RDA</a>) launched the <a class="reference external" href="https://worldfair-project.eu/">WorldFAIR Initiative</a> in
+2022 to advance implementation of the <a class="reference external" href="https://force11.org/info/the-fair-data-principles/">FAIR data principles</a>
+within and across research domains. The International Union of Pure and Applied Chemistry (<a class="reference external" href="https://iupac.org/">IUPAC</a>),
+known as the world authority on chemical nomenclature, terminology, and standardized methods of measurement hosts
+the WorldFAIR Chemistry project in a concerted effort to support broader data sharing of chemical data through
+collaboration with related disciplines and data science communities. The goal of
+<a class="reference external" href="https://iupac.org/project/2022-012-1-024">WorldFAIR Chemistry</a> is to support the use of chemical data standards in
+research workflows to enable downstream data reuse through practical direction and resources.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -466,6 +510,22 @@ Initiative (see About this project).</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-contributors">Project contributors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cookbook-development">Cookbook development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worldfair-chemistry">WorldFAIR Chemistry</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

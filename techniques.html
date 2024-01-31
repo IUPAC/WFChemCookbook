@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>FAIR Techniques for Chemical Data &#8212; IUPAC FAIR Chemistry Cookbook</title>
+    <title>FAIR Techniques &#8212; IUPAC FAIR Chemistry Cookbook</title>
   
   
   
@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tools for working with FAIR Chemical Data" href="tools.html" />
-    <link rel="prev" title="The Joy of Cooking (FAIR data)" href="cooking.html" />
+    <link rel="prev" title="The Joy of Cooking" href="cooking.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -152,7 +152,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="about_cookbook.html">About this Cookbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cookbook.html">How to use the Cookbook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributions.html">Contributions to the Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributions.html">Contribute to the Cookbook!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feedback.html">Feedback on the Cookbook</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
@@ -374,7 +374,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>FAIR Techniques for Chemical Data</h1>
+    <h1>FAIR Techniques</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -388,97 +388,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="fair-techniques-for-chemical-data">
-<h1>FAIR Techniques for Chemical Data<a class="headerlink" href="#fair-techniques-for-chemical-data" title="Permalink to this headline">#</a></h1>
-<p>Making your science FAIRer: This section details how you can make your work FAIRer by upgrading how you can do common
-activities in a FAIR enabled way.</p>
-<p>This material will be informed by the WorldFAIR Chemistry D3.1 project related to Reporting Guidance for FAIR chemical
-data and other community resources, including the NDFI4Chem Knowledgebase and the ELIXIR FAIR Cookbook. In addition,
-efforts to inform best practice, such as the IUPAC FAIR Spec Project, will be highlighted.</p>
-<p>Test Kitchen / Checking your chemical data/metadata: This section will review protocols for confirming the completeness
-and consistency of chemical data and metadata files, for example the checkCIF service for Crystallographic Information
-Files (CIF). This material will also be informed by the WorldFAIR Chemistry D3.3 project related to Protocol Services
-for standardized programmatic access to chemical data, and other community resources.</p>
-<p>Ingredients / Data standards and formats for Chemistry: This section will provide descriptions of standard notation
-and file formats available for sharing and reusing chemical data that are referred to in recipes throughout this book.</p>
-<ul class="simple">
-<li><p>Chemical structures</p></li>
-<li><p>Chemical properties</p></li>
-<li><p>Chemical terminology</p></li>
-<li><p>Other useful formats</p></li>
-</ul>
-<p>This category introduces basic techniques on how to work with machine-readable data with particular emphasis on
-chemical data nuances and ways chemical data can be made more FAIR, when it is initially shared and for reusing
-data that are not fully FAIR. Techniques should be relatively easy to implement into common workflow(s) and give
-tangible results/improvements.</p>
-<ul class="simple">
-<li><p>Overview of good FAIR practices</p>
-<ul>
-<li><p>You’ve got to manage your data [files, structures, description, etc.]</p></li>
-<li><p>You’ve got to get the data shared and licensed and citable</p></li>
-<li><p>Identifying things of import (people, instrument, samples)</p></li>
-<li><p>Critical stages of data processing (raw, processed, derived)</p></li>
-<li><p>***Example of how InChI supports F-A-I-R</p></li>
-</ul>
-</li>
-<li><p>Overview of working with FAIR chemical data</p>
-<ul>
-<li><p>Queries</p></li>
-<li><p>Matching on chemical identifiers/representations</p></li>
-<li><p>APIs (what is an API and then link to some the recipes that demo these for tools and resources)</p></li>
-<li><p>Chemical data standards!</p></li>
-</ul>
-</li>
-<li><p>Safety/watch-outs</p>
-<ul>
-<li><p>Syntax: character sets, units</p></li>
-<li><p>Semantics: valence models, units, temperature scale, date format</p></li>
-<li><p>Normalization</p></li>
-<li><p>Validation</p></li>
-<li><p>Clean up</p></li>
-<li><p>Examples of unFAIR data</p>
-<ul>
-<li><p>(condensed chemical formula is not fully interoperable/identifiable)</p></li>
-<li><p>Data values without reference (or other provenance, conditions)</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Using chemical data standards</p></li>
-<li><p>General resources on FAIR for chemistry</p>
-<ul>
-<li><p>FAIR Data Principles | NFDI4Chem Knowledge Base</p></li>
-<li><p>Elixir FAIR Cookbook</p></li>
-<li><p>Elixir DRM…</p></li>
-</ul>
-</li>
-<li><p>General topics about how to improve working with chemical data, for example…</p>
-<ul>
-<li><p>Basic data management</p></li>
-<li><p>Assigning unique identifiers (especially for chemicals)</p></li>
-<li><p>File naming conventions</p></li>
-</ul>
-</li>
-</ul>
-<p>Given that most users of the cookbook will not be cheminformatics/data science experts, there needs to be some content
-that provides background material to users. Generally this would mean content about chemistry information and data
-needed by a computer science/data science background AND computer science information needed by a chemistry professional
-or student.  Some of this material will be available externally and linked in pages, but other content might be best
-discussed in the context of computer science or chemistry to communicate how they relate.</p>
-<ul class="simple">
-<li><p>Basic data manipulation stuff</p>
-<ul>
-<li><p>APIs, spreadsheets, languages</p></li>
-<li><p>What happens when you have unFAIR data</p></li>
-</ul>
-</li>
-<li><p>Basic chemistry issues? And how do you manage these?</p>
-<ul>
-<li><p>Chemical description</p></li>
-<li><p>Chemistry data standards</p></li>
-</ul>
-</li>
-</ul>
+  <section id="fair-techniques">
+<h1>FAIR Techniques<a class="headerlink" href="#fair-techniques" title="Permalink to this headline">#</a></h1>
+<p>The cookbook is meant to provide practical approaches to different data tasks to inspire others to improve their own
+data practices. This section will introduce basic techniques on how to work with machine-readable data with particular
+emphasis on chemical data nuances and ways chemical data can be made more FAIR, when it is initially shared and for
+reusing data that are not fully FAIR. Techniques should be relatively easy to implement into common workflow(s) and
+give tangible results/improvements.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -518,7 +434,7 @@ discussed in the context of computer science or chemistry to communicate how the
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The Joy of Cooking (FAIR data)</p>
+        <p class="prev-next-title">The Joy of Cooking</p>
       </div>
     </a>
     <a class="right-next"
