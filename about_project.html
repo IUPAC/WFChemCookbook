@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'about_project';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Glossary" href="glossary.html" />
+    <link rel="next" title="Project Contributors" href="contributors.html" />
     <link rel="prev" title="Structured UV/Vis (meta)data for small molecule characterisation" href="usecases/uvvis_metadata.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -190,7 +190,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">About this project</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">About this project</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributors.html">Project Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html">Cookbook development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worldfair.html">WordFAIR Chemistry</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
@@ -363,9 +368,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -381,15 +384,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-contributors">Project Contributors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wordfair-chemistry">WordFAIR Chemistry</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -401,7 +395,7 @@ document.write(`
                   
   <section id="about-the-iupac-fair-chemistry-cookbook-project">
 <h1>About the IUPAC FAIR Chemistry Cookbook Project<a class="headerlink" href="#about-the-iupac-fair-chemistry-cookbook-project" title="Permalink to this headline">#</a></h1>
-<p>This resources was initially formulated as an output of the
+<p>This resource was initially formulated as an output of the
 <a class="reference external" href="https://iupac.org/project/2022-028-1-024/">WorldFAIR D3.2 project</a> for the
 <a class="reference external" href="https://worldfair-project.eu/">WorldFAIR initiative</a> (see below). The IUPAC FAIR Chemistry Cookbook is intended to support
 the broader community in understanding how to work with machine-readable chemical data and implement the FAIR data
@@ -409,39 +403,8 @@ principles. The site is designed to be a living community resource through the a
 and the sharing and reuse of FAIR chemical data continues to increase.
 <a class="reference external" href="https://iupac.github.io/WFChemCookbook/feedback.html">Feedback</a> and
 <a class="reference external" href="https://iupac.github.io/WFChemCookbook/contributions.html">contributions</a> are welcome!</p>
-<section id="project-contributors">
-<h2>Project Contributors<a class="headerlink" href="#project-contributors" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Stuart Chalk (Project Lead), University of North Florida</p></li>
-<li><p>Ann-Christin Andres, Johannes Gutenberg University Mainz</p></li>
-<li><p>Simon Coles, University of Southampton</p></li>
-<li><p>Jordi Cuadros, IQS Universitat Ramon Llull</p></li>
-<li><p>Sonja Herres-Pawlis, RWTH Aachen University</p></li>
-<li><p>John Jolliffe, Johannes Gutenberg University Mainz</p></li>
-<li><p>Sunghwan Kim, National Center for Biotechnology Information, National Institutes of Health</p></li>
-<li><p>Nicola Knight, University of Southampton</p></li>
-<li><p>Ken Kroenlein, Citrine Informatics</p></li>
-<li><p>Ye Li, Massachusetts Institute of Technology</p></li>
-<li><p>Leah McEwen, Cornell University</p></li>
-<li><p>Samuel Munday, University of Southampton</p></li>
-<li><p>Fatima Mustafa, Texas A&amp;M San Antonio</p></li>
-<li><p>Vincent F. Scalfani, University of Alabama</p></li>
-</ul>
-</section>
-<section id="wordfair-chemistry">
-<h2>WordFAIR Chemistry<a class="headerlink" href="#wordfair-chemistry" title="Permalink to this headline">#</a></h2>
-<p>The Committee on Data of the International Science Council (<a class="reference external" href="https://codata.org/">CODATA</a>) and the Research Data
-Alliance (RDA) launched the <a class="reference external" href="https://worldfair-project.eu/">WorldFAIR Initiative</a> in 2022 to advance
-implementation of the <a class="reference external" href="https://force11.org/info/the-fair-data-principles/">FAIR data principles</a> within and across
-research domains. The International Union of Pure and Applied Chemistry (<a class="reference external" href="https://iupac.org/">IUPAC</a>), known as the
-world authority on chemical nomenclature, terminology, and standardized methods of measurement, hosts the
-WorldFAIR Chemistry project to support broader data sharing of chemical data through collaboration with related disciplines
-and data science communities. The goal of <a class="reference external" href="https://iupac.org/project/2022-012-1-024">WorldFAIR Chemistry</a> is to support the
-use of chemical data standards in research workflows to enable downstream data reuse through practical direction and
-resources.</p>
-<p><em>WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41
-Coordination and Support Action under Grant Agreement No. 101058393.</em></p>
-</section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -485,11 +448,11 @@ Coordination and Support Action under Grant Agreement No. 101058393.</em></p>
       </div>
     </a>
     <a class="right-next"
-       href="glossary.html"
+       href="contributors.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Glossary</p>
+        <p class="prev-next-title">Project Contributors</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -502,21 +465,6 @@ Coordination and Support Action under Grant Agreement No. 101058393.</em></p>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-contributors">Project Contributors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wordfair-chemistry">WordFAIR Chemistry</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

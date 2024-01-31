@@ -190,7 +190,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../about_project.html">About this project</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributors.html">Project Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development.html">Cookbook development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../worldfair.html">WordFAIR Chemistry</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -693,17 +698,13 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jcamp in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (1.2.2)
-Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (from jcamp) (1.26.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (from jcamp) (1.26.2)
 Requirement already satisfied: datetime in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (from jcamp) (5.4)
 Requirement already satisfied: zope.interface in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (from datetime-&gt;jcamp) (6.1)
 Requirement already satisfied: pytz in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (from datetime-&gt;jcamp) (2023.3.post1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (from zope.interface-&gt;datetime-&gt;jcamp) (65.5.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.2.1</span> -&gt; <span class=" -Color -Color-Green">23.3.2</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages (from zope.interface-&gt;datetime-&gt;jcamp) (65.5.0)
 </pre></div>
 </div>
 </div>
