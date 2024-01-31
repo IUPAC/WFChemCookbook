@@ -8,7 +8,7 @@ of best practices for sharing and reusing FAIR chemical data. The content primar
 for a range of tasks to prepare and deposit FAIR machine-enabled chemical data, identify and extract chemically 
 relevant metadata, and compile and validate chemical data files using online tools. 
 
-FAIR data are findable, accessible, interoperable, and reusable for machine processing {cite:p}Wilkinson2016. 
+FAIR data are findable, accessible, interoperable, and reusable for machine processing {cite:p}`Wilkinson2016`. 
 FAIR chemical data need to be machine-readable, and this can be an unfamiliar scenario for many researchers and 
 other stakeholders involved with publishing and managing experimental data. This cookbook aims to support best 
 practices for sharing and reusing chemical data aligned with the technical criteria for FAIR machine-readable 
