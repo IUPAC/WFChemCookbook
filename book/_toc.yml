@@ -44,5 +44,9 @@ parts:
     chapters:
       - file: about_project
         title: About this project
+        sections:
+          - file: contributors
+          - file: development
+          - file: worldfair
       - file: glossary
       - file: bibliography
