@@ -1,5 +1,23 @@
 # Data Repository: PubChem
 
+```{dropdown} About this recipe
+- Author: [Sunghwan Kim](https://orcid.org/0000-0001-9828-2074)
+- Reviewer: [Sam Munday](https://orcid.org/0000-0001-5404-6934)
+- Topics: The PubChem database, PubChem dataypes, PubChem tutorial
+- Format: Markdown file
+- Scenarios: Retrieve chemical data from an online database
+- Skills: You should be familiar with
+    - [Application Programming Interfaces (APIs)](https://www.ibm.com/topics/api)
+    - [The JavaScript Object Notation (JSON) file format](https://www.w3schools.com/js/js_json_intro.asp)
+    - [Introductory Python](https://www.youtube.com/watch?v=kqtD5dpn9C8)
+- Learning outcomes: After completing this recipe you should understand:
+    - The kinds of data that PubChem makes available
+    - What a PubChem summary page is how to access it
+    - Available PubChem tools (via tutorial)
+- Citation: 'Data Repository: PubChem', Sunghwan Kim, The IUPAC FAIR Chemistry Cookbook, Contributed: 2023-02-28 [https://w3id.org/ifcc/IFCC004](https://w3id.org/ifcc/IFCC004).
+- Reuse: This notebook is made available under a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
+```
+
 ## What is PubChem?
 
 PubChem [(https://pubchem.ncbi.nlm.nih.gov)](https://pubchem.ncbi.nlm.nih.gov) {cite:p}`Kim2023` is a very popular 
