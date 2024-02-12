@@ -464,13 +464,24 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
 <li><p class="sd-card-text">Author(s): <a class="reference external" href="https://orcid.org/0000-0001-9828-2074">Sunghwan Kim</a></p></li>
-<li><p class="sd-card-text">Reviewer:</p></li>
-<li><p class="sd-card-text">Topic(s):</p></li>
-<li><p class="sd-card-text">Format(s): Interactive Jupyter Notebook (Python)</p></li>
-<li><p class="sd-card-text">Scenario(s):</p></li>
-<li><p class="sd-card-text">Skill(s):</p></li>
-<li><p class="sd-card-text">Learning outcomes:</p></li>
-<li><p class="sd-card-text">Citation: We will not be providing citations for the sampler, but citations for recipes will be available (with copy button) in the full release of the Cookbook and will include DOI’s.</p></li>
+<li><p class="sd-card-text">Reviewer: <a class="reference external" href="https://orcid.org/0000-0001-5404-6934">Samuel Munday</a></p></li>
+<li><p class="sd-card-text">Topic(s): How to programmatically retrieve chemical data and chemical names using a structure.</p></li>
+<li><p class="sd-card-text">Format: Interactive Jupyter Notebook (Python)</p></li>
+<li><p class="sd-card-text">Scenario:</p></li>
+<li><p class="sd-card-text">Skills: You should be familar with:</p>
+<ul>
+<li><p class="sd-card-text"><a class="reference external" href="https://www.ibm.com/topics/api">Application Programming Interfaces (APIs)</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://www.youtube.com/watch?v=kqtD5dpn9C8">Introductory Python</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://chem.libretexts.org/Courses/University_of_Arkansas_Little_Rock/ChemInformatics_(2015)%3A_Chem_4399_5399/Text/5_Chemical_Identifiers">Identifiers for Chemical Substances</a></p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Learning outcomes:</p>
+<ul>
+<li><p class="sd-card-text">How to access chemical data using a chemical name</p></li>
+<li><p class="sd-card-text">How to chemical names for a chemical structure</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Citation: ‘Accessing PubChem through PUG-REST - Part II’, Sunghwan Kim, The IUPAC FAIR Chemistry Cookbook, Contributed: 2023-02-28 <a class="reference external" href="https://w3id.org/ifcc/IFCC007">https://w3id.org/ifcc/IFCC007</a>.</p></li>
 <li><p class="sd-card-text">Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
 </ul>
 </div>
@@ -498,10 +509,10 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CID             : 2244
 MolecularFormula: C9H8O4
+MolecularWeight : 180.16
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MolecularWeight : 180.16
-IsomericSMILES  : CC(=O)OC1=CC=CC=C1C(=O)O
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IsomericSMILES  : CC(=O)OC1=CC=CC=C1C(=O)O
 </pre></div>
 </div>
 </div>
@@ -600,20 +611,17 @@ IsomericSMILES  : CC(=O)OC1=CC=CC=C1C(=O)O
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-- CID 56841568
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Aleve-D Sinus &amp; Cold
+Aleve-D Sinus &amp; Cold
 Aleve-D Sinus and Cold
 Naproxen / pseudoephedrine
 Aleve-D Sinus and headache
 141623-29-2
 DTXSID80931146
 2-(6-Methoxynaphthalen-2-yl)propanoic acid--2-(methylamino)-1-phenylpropan-1-ol--hydrogen chloride (1/1/1)
-
-#-- CID 9581
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PSEUDOEPHEDRINE HYDROCHLORIDE
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-- CID 9581
+PSEUDOEPHEDRINE HYDROCHLORIDE
 Pseudoephedrine Hcl
 345-78-8
 Rhinalair
@@ -818,8 +826,9 @@ Benzenemethanol, alpha-((1S)-1-(methylamino)ethyl)-, hydrochloride (1:1), (alpha
 Pseudoephedrine hydrochloride, European Pharmacopoeia (EP) Reference Standard
 Pseudoephedrine hydrochloride, United States Pharmacopeia (USP) Reference Standard
 Pseudoephedrine hydrochloride, Pharmaceutical Secondary Standard; Certified Reference Material
-
-#-- CID 77098502
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-- CID 77098502
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Aleve PM
