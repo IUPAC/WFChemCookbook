@@ -5,5 +5,3 @@ book/manipulations/hiddensettings.py
 book/howtos/inchikeys.md
 book/.DS_Store
 Pipfile.lock
-book/datasources/conformer1.txt
-book/datasources/conformer2.txt
