@@ -59,7 +59,7 @@ approach that is always possible is to encode the data as one or more tables in 
 a tab-delimited text file (TSV) supplemented with the required metadata to undestand and properly interpreted the data. 
 Metadata is usually encoded in XML or JSON data files, although other standard open formats may also be possible. 
 
-More on this approach can be found at [Preparing Chemical Data for FAIR Sharing - A Minimalist Approach](../techniques/sharing_chemdata).
+More on this approach can be found at [Preparing Chemical Data for FAIR Sharing - A Minimalist Approach](sharing_chemdata.md).
 
 ## What metadata?
 
