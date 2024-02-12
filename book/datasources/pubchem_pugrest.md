@@ -8,4 +8,4 @@ The following samples detail different aspects of using the PubChem PUG-REST App
 
 Extensive documentation about the API can be found [here](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest).
 
-General information about the PubChem database can be found [here](https://w3id.org/ifcc/IFCC004)
+General information about the PubChem database can be found [here](https://w3id.org/ifcc/IFCC004).
