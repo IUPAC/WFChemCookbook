@@ -1,0 +1,1240 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Accessing PubChem through PUG-View &#8212; IUPAC FAIR Chemistry Cookbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/js/matomo.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'datasources/pubchem_pugview';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Manipulating Data within a Digital Environment" href="../manipulations.html" />
+    <link rel="prev" title="Accessing PubChem through PUG-REST: Part III" href="pubchem_pugrest3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about_cookbook.html">About this Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_cookbook.html">How to use the Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributions.html">Contribute to the Cookbook!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feedback.html">Feedback on the Cookbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../techniques.html">FAIR Techniques</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api_jn.html">Using the OPSIN API in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="goldbook_api.html">Terminology: The IUPAC Gold Book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pubchem.html">Data Repository: PubChem</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pubchem_pugrest.html">PubChem PUG-REST API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Accessing PubChem through PUG-View</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../manipulations/computing_inchis.html">Computing InChIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manipulations/dataset_search.html">Finding a Findable Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manipulations/excel_import.html">Importing Chemical Data into a Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manipulations/gsheets_citations.html">Importing JSON Citation Data from an API into Google Sheets</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/iupac_pkadata.html">Reuse of Curated Chemical Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributors.html">Project Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development.html">Cookbook development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../worldfair.html">WordFAIR Chemistry</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/IUPAC/WFChemCookbook/main?urlpath=tree/book/datasources/pubchem_pugview.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/IUPAC/WFChemCookbook/blob/main/book/datasources/pubchem_pugview.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/IUPAC/WFChemCookbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Fdatasources/pubchem_pugview.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/datasources/pubchem_pugview.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Accessing PubChem through PUG-View</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations-for-a-pubchem-compound-record">1. Annotations for a PubChem compound record.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-under-a-multi-word-section-heading">2. Data under a  multi-word section heading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-all-annotation-data-for-a-given-property">3. Getting All Annotation Data for a Given Property</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations-for-single-word-headings">3.1 Annotations for single-word headings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations-for-multiple-word-headings">3.2 Annotations for multiple-word headings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-page-annotations">3.3 Multi-page annotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations-from-a-specific-data-collection">3.4 Annotations from a specific data collection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations-for-pubchem-records-other-than-compounds">4. Annotations for PubChem records other than compounds.</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="accessing-pubchem-through-pug-view">
+<h1>Accessing PubChem through PUG-View<a class="headerlink" href="#accessing-pubchem-through-pug-view" title="Permalink to this headline">#</a></h1>
+<p>PubChem provides multiple programmatic access routes.  One of them is PUG-View, which is a Representational State Transfer (REST)-style web service interface specialized for accessing annotation data contained in PubChem.  More detailed information on PUG-View can be found in the following paper:</p>
+<blockquote>
+<div><p><strong>PUG-View: programmatic access to chemical annotations integrated in PubChem</strong><br />
+Kim et al., Journal of Cheminformatics, 2019, 11:56.<br />
+DOI: <a class="reference external" href="https://doi.org/10.1186/s13321-019-0375-2">10.1186/s13321-019-0375-2</a></p>
+</div></blockquote>
+<p>Additional information can also be found at the PUG-View Help page (https://pubchem.ncbi.nlm.nih.gov/docs/pug-view).</p>
+<p>This Jupyter notebook demonstrates how to programmatically access annotation data for PubChem records.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="annotations-for-a-pubchem-compound-record">
+<h2>1. Annotations for a PubChem compound record.<a class="headerlink" href="#annotations-for-a-pubchem-compound-record" title="Permalink to this headline">#</a></h2>
+<p>PubChem collects a wide range of information on chemicals and presents it on Compound Summary pages.</p>
+<p>Let’s suppose that we want to find the viscosity of dimethyl sulfoxide (DMSO; CID 679).  With a web browser like Google Chrome or MS Edge, you can find this information on the following web page:</p>
+<p><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Viscosity">https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Viscosity</a></p>
+<p><img alt="Viscosity of CID 679 (DMSO)" src="../_images/pubchem_pugview_fig1.png" /></p>
+<p>The viscosity of DMSO is 2.47 cP at 20 °C.  It is expressed in cP (centipoise). 1 cP is equivalent to 0.01 P (Poise).</p>
+<p>Now we want to get this viscosity information programmatically, using PUG-View.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Formulate a PUG-View request URL.</span>
+<span class="n">base</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug_view&quot;</span>
+<span class="n">cid</span> <span class="o">=</span> <span class="s2">&quot;679&quot;</span>
+<span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;JSON&quot;</span>
+<span class="n">heading</span> <span class="o">=</span> <span class="s2">&quot;Viscosity&quot;</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/compound/&quot;</span> <span class="o">+</span> <span class="n">cid</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">output</span> <span class="o">+</span> <span class="s2">&quot;?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>   <span class="c1"># Check the request URL</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Viscosity
+</pre></div>
+</div>
+</div>
+</div>
+<p>Click the above PUG-View request URL to view the requested data in a web browser.</p>
+<p>The request URL can also be used in a python script.  The following cell sends a PUG-View request to the PubChem server and prints the returned data in a json format.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the viscosity data and store it as &quot;mydata&quot;</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+    &quot;Record&quot;: {
+        &quot;RecordType&quot;: &quot;CID&quot;,
+        &quot;RecordNumber&quot;: 679,
+        &quot;RecordTitle&quot;: &quot;Dimethyl Sulfoxide&quot;,
+        &quot;Section&quot;: [
+            {
+                &quot;TOCHeading&quot;: &quot;Chemical and Physical Properties&quot;,
+                &quot;Description&quot;: &quot;Various chemical and physical properties that are experimentally determined for this compound.  See also the Safety and Hazard Properties section (if available), which has additional properties pertinent to chemical safety and hazards.&quot;,
+                &quot;Section&quot;: [
+                    {
+                        &quot;TOCHeading&quot;: &quot;Experimental Properties&quot;,
+                        &quot;Description&quot;: &quot;Various experimentally determined properties for this compound.  See also the Safety and Hazard Properties section (if available), which has additional properties pertinent to chemical safety and hazards.&quot;,
+                        &quot;Section&quot;: [
+                            {
+                                &quot;TOCHeading&quot;: &quot;Viscosity&quot;,
+                                &quot;Description&quot;: &quot;Viscosity is a measure of a fluid&#39;s resistance to flow. It describes the internal friction of a moving fluid.&quot;,
+                                &quot;URL&quot;: &quot;https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Physical_Properties_of_Matter/States_of_Matter/Properties_of_Liquids/Viscosity&quot;,
+                                &quot;Information&quot;: [
+                                    {
+                                        &quot;ReferenceNumber&quot;: 34,
+                                        &quot;Description&quot;: &quot;PEER REVIEWED&quot;,
+                                        &quot;Reference&quot;: [
+                                            &quot;O&#39;Neil, M.J. (ed.). The Merck Index - An Encyclopedia of Chemicals, Drugs, and Biologicals. Cambridge, UK:  Royal Society of Chemistry, 2013., p. 593&quot;
+                                        ],
+                                        &quot;Value&quot;: {
+                                            &quot;StringWithMarkup&quot;: [
+                                                {
+                                                    &quot;String&quot;: &quot;2.47cP at 20 \u00b0C&quot;
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        &quot;Reference&quot;: [
+            {
+                &quot;ReferenceNumber&quot;: 34,
+                &quot;SourceName&quot;: &quot;Hazardous Substances Data Bank (HSDB)&quot;,
+                &quot;SourceID&quot;: &quot;80&quot;,
+                &quot;Name&quot;: &quot;DIMETHYL SULFOXIDE&quot;,
+                &quot;Description&quot;: &quot;The Hazardous Substances Data Bank (HSDB) is a toxicology database that focuses on the toxicology of potentially hazardous chemicals. It provides information on human exposure, industrial hygiene, emergency handling procedures, environmental fate, regulatory requirements, nanomaterials, and related areas. The information in HSDB has been assessed by a Scientific Review Panel.&quot;,
+                &quot;URL&quot;: &quot;https://pubchem.ncbi.nlm.nih.gov/source/hsdb/80&quot;,
+                &quot;LicenseURL&quot;: &quot;https://www.nlm.nih.gov/web_policies.html&quot;,
+                &quot;IsToxnet&quot;: true,
+                &quot;ANID&quot;: 49
+            }
+        ]
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>JSON-formatted data downloaded through PUG-View is often very large and not very easy to read.  Therefore, it is necessary to <strong>parse</strong> the JSON-formatted data to extract necessary pieces of information, as shown in the next few cells.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="o">=</span> <span class="n">mydata</span><span class="p">[</span><span class="s1">&#39;Record&#39;</span><span class="p">][</span><span class="s1">&#39;Section&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;Section&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;Section&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;Information&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">node</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ReferenceNumber&#39;: 34,
+ &#39;Description&#39;: &#39;PEER REVIEWED&#39;,
+ &#39;Reference&#39;: [&quot;O&#39;Neil, M.J. (ed.). The Merck Index - An Encyclopedia of Chemicals, Drugs, and Biologicals. Cambridge, UK:  Royal Society of Chemistry, 2013., p. 593&quot;],
+ &#39;Value&#39;: {&#39;StringWithMarkup&#39;: [{&#39;String&#39;: &#39;2.47cP at 20 °C&#39;}]}}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">][</span><span class="s1">&#39;StringWithMarkup&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;String&#39;</span><span class="p">]</span>
+<span class="n">reference</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s1">&#39;Reference&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.47cP at 20 °C
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">reference</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O&#39;Neil, M.J. (ed.). The Merck Index - An Encyclopedia of Chemicals, Drugs, and Biologicals. Cambridge, UK:  Royal Society of Chemistry, 2013., p. 593
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are many other annotation data available for this compound (DMSO). Here are some examples of them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug_view&quot;</span>
+<span class="n">cid</span> <span class="o">=</span> <span class="s2">&quot;679&quot;</span>
+<span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;JSON&quot;</span>
+<span class="n">headings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Density&quot;</span><span class="p">,</span> <span class="s2">&quot;Decomposition&quot;</span><span class="p">,</span> <span class="s2">&quot;Solubility&quot;</span><span class="p">,</span> <span class="s2">&quot;Odor&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">heading</span> <span class="ow">in</span> <span class="n">headings</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/compound/&quot;</span> <span class="o">+</span> <span class="n">cid</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">output</span> <span class="o">+</span> <span class="s2">&quot;?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>   <span class="c1"># Check the request URL</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Density
+https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Decomposition
+https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Solubility
+https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Odor
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above PUG-View requests return the data presented on the corresponding sections of the compound summary page of DMSO (CID 679)</p>
+<ul class="simple">
+<li><p>https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Density</p></li>
+<li><p>https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Decomposition</p></li>
+<li><p>https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Solubility</p></li>
+<li><p>https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Odor</p></li>
+</ul>
+<p>It is noteworthy that the <code class="docutils literal notranslate"><span class="pre">heading</span></code> parameter (after the “?” character) in a PUG-View request URL is optional.  When the <code class="docutils literal notranslate"><span class="pre">heading</span></code> parameter is not given, all annotations available for the compound will be returned.  For example, the following request URL returns all annotation data for DMSO (CID 679).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/compound/&quot;</span> <span class="o">+</span> <span class="n">cid</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">output</span>  <span class="c1"># No heading parameter is set.  All annotations for the CID will be returned.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>   <span class="c1"># Check the request URL</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-under-a-multi-word-section-heading">
+<h2>2. Data under a  multi-word section heading<a class="headerlink" href="#data-under-a-multi-word-section-heading" title="Permalink to this headline">#</a></h2>
+<p>Some section headings consist of multiple words (e.g., “Vapor Pressure”). For example, the following screenshot shows the vapor pressure of CID 679 (DMSO), which can be accessed at:<br />
+https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Vapor-Pressure</p>
+<p><img alt="Vapor pressure of CID 679 (DMSO)" src="../_images/pubchem_pugview_fig2.png" /></p>
+<p>To download the data presented under a multi-word section heading, the space between the words in the heading should be replaced with the “+” character, as shown in the following example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Formulate a PUG-View request URL.</span>
+<span class="n">base</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug_view&quot;</span>
+<span class="n">cid</span> <span class="o">=</span> <span class="s2">&quot;679&quot;</span>
+<span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;JSON&quot;</span>
+<span class="n">heading</span> <span class="o">=</span> <span class="s2">&quot;Vapor+Pressure&quot;</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/compound/&quot;</span> <span class="o">+</span> <span class="n">cid</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">output</span> <span class="o">+</span> <span class="s2">&quot;?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>   <span class="c1"># Check the request URL</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Vapor+Pressure
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the viscosity data and store it as &quot;mydata&quot;</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="c1">#print(json.dumps(mydata, indent=4))  # uncomment this line to print the data.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Data downloaded through PUG-View can be saved.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;files/cid679-vapor-pressure.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;files/cid679-vapor-pressure.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.8/x64/lib/python3.11/site-packages/IPython/core/interactiveshell.py:310,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">310</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;files/cid679-vapor-pressure.json&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Many heading names consist of multiple words.  Here are some examples [for DMSO (CID 679)].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug_view&quot;</span>
+<span class="n">cid</span> <span class="o">=</span> <span class="s2">&quot;679&quot;</span>
+<span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;JSON&quot;</span>
+<span class="n">headings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Autoignition+Temperature&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;Refractive+Index&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Exposure+Routes&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Non-Human+Toxicity+Values&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Ecotoxicity+Excerpts&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">heading</span> <span class="ow">in</span> <span class="n">headings</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/compound/&quot;</span> <span class="o">+</span> <span class="n">cid</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">output</span> <span class="o">+</span> <span class="s2">&quot;?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>   <span class="c1"># Check the request URL</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Autoignition+Temperature
+https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Refractive+Index
+https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Exposure+Routes
+https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Non-Human+Toxicity+Values
+https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Ecotoxicity+Excerpts
+</pre></div>
+</div>
+</div>
+</div>
+<p>The returned annotations are also presented in the compound summary page of DMSO (CID 679).</p>
+<ul class="simple">
+<li><p>https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Autoignition-Temperature</p></li>
+<li><p>https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Refractive-Index</p></li>
+<li><p>https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Exposure-Routes</p></li>
+<li><p>https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Non-Human-Toxicity-Values</p></li>
+<li><p>https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Ecotoxicity-Excerpts</p></li>
+</ul>
+</section>
+<section id="getting-all-annotation-data-for-a-given-property">
+<h2>3. Getting All Annotation Data for a Given Property<a class="headerlink" href="#getting-all-annotation-data-for-a-given-property" title="Permalink to this headline">#</a></h2>
+<p>In some cases, you may want to download all annotation data for a given property (for example, all human-toxicity values or all boiling-point values available in PubChem).  This can be readily done through PUG-View, using the following request URLs.</p>
+<section id="annotations-for-single-word-headings">
+<h3>3.1 Annotations for single-word headings<a class="headerlink" href="#annotations-for-single-word-headings" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heading</span> <span class="o">=</span> <span class="s2">&quot;Viscosity&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The heading is included in the URL query string.</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/annotations/heading/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/JSON?heading=Viscosity
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The heading is included in the URL path.</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/annotations/heading/&quot;</span> <span class="o">+</span> <span class="n">heading</span> <span class="o">+</span> <span class="s2">&quot;/JSON&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/Viscosity/JSON
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above two request URLs differ in where the heading name appears.  That is, the heading name can be encoded in:</p>
+<ul class="simple">
+<li><p>the URL query string (after the “?” character), as in the first URL.</p></li>
+<li><p>the URL path, as in the second URL.</p></li>
+</ul>
+<p>The two URLs do exactly the same thing when the heading name consists of a single word.</p>
+</section>
+<section id="annotations-for-multiple-word-headings">
+<h3>3.2 Annotations for multiple-word headings<a class="headerlink" href="#annotations-for-multiple-word-headings" title="Permalink to this headline">#</a></h3>
+<p>When the heading name consists of multiple words, it is highly recommended to provide the heading name in the query string, although it is possible to provide it in the URL path. Let’s consider the task of downloading all Kovats retention index values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heading1</span> <span class="o">=</span> <span class="s2">&quot;Kovats%20Retention%20Index&quot;</span>  <span class="c1"># spaces are replaced with &quot;%20&quot;</span>
+<span class="n">heading2</span> <span class="o">=</span> <span class="s2">&quot;Kovats+Retention+Index&quot;</span>      <span class="c1"># spaces are replaced with &quot;+&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url1</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/annotations/heading/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading1</span>
+<span class="n">url2</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/annotations/heading/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/JSON?heading=Kovats%20Retention%20Index
+https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/JSON?heading=Kovats+Retention+Index
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The heading is included in the URL path.</span>
+<span class="n">url1</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/annotations/heading/&quot;</span> <span class="o">+</span> <span class="n">heading1</span> <span class="o">+</span> <span class="s2">&quot;/JSON&quot;</span>
+<span class="n">url2</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/annotations/heading/&quot;</span> <span class="o">+</span> <span class="n">heading2</span> <span class="o">+</span> <span class="s2">&quot;/JSON&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url2</span><span class="p">)</span>    <span class="c1">#-- This does not work!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/Kovats%20Retention%20Index/JSON
+https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/Kovats+Retention+Index/JSON
+</pre></div>
+</div>
+</div>
+</div>
+<p>When a multi-word heading name is provided in the URL query string (after the “&amp;” character), the words can be separated by “%20” or “+” characters.  However, only “%20” (not “+”) can be used when the heading name is provided in the URL path.  Because this subtle difference is somewhat confusing, it is highly recommended that the heading name be always provided in the query string, which makes the request URL easier to read.</p>
+</section>
+<section id="multi-page-annotations">
+<h3>3.3 Multi-page annotations<a class="headerlink" href="#multi-page-annotations" title="Permalink to this headline">#</a></h3>
+<p>A PUG-View request has a maximum time limit of 30 seconds. If a PUG-View request exceeds this limit, a time-out error is returned. However, some headings have a large number of annotation data, making it impossible to get them within 30 seconds through a single PUG-REST request.  To circumvent this issue, the annotation data are <strong>paginated</strong>.</p>
+<p>The data returned from a PUG-View request contains the pagination information, which can be found at the end of the returned json data. It looks similar to this:</p>
+<p><img alt="PUG-View-Pagination" src="../_images/pubchem_pugview_fig3.png" /></p>
+<p>The pagination information includes the total number of pages for the requested data and the page number returned from the current request.  Therefore, the above image indicates that the requested annotation data are 80-pages-long, and only the first page has been returned from the current request.  To get all the data, you should loop through all pages, as shown in the following example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heading</span> <span class="o">=</span> <span class="s2">&quot;Kovats+Retention+Index&quot;</span>      <span class="c1"># spaces are replaced with &quot;+&quot;</span>
+
+<span class="n">num_page_total</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_page_total</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_page_total</span><span class="p">):</span>
+    
+    <span class="n">page_curr</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/annotations/heading/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span> <span class="o">+</span> <span class="s2">&quot;&amp;page=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">page_curr</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="n">page_curr</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Getting data for page&quot;</span><span class="p">,</span> <span class="n">page_curr</span><span class="p">)</span>
+    
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Getting data for page 5
+Getting data for page 10
+Getting data for page 15
+Getting data for page 20
+Getting data for page 25
+Getting data for page 30
+Getting data for page 35
+Getting data for page 40
+Getting data for page 45
+Getting data for page 50
+Getting data for page 55
+Getting data for page 60
+Getting data for page 65
+Getting data for page 70
+Getting data for page 75
+Getting data for page 80
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, the downloaded data are stored as a list of json objects, while the data for each page can be stored in a separate variable or file.  Also note that <strong>time.sleep(0.2)</strong> is added to avoid overloading PubChem servers.  According to <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/programmatic-access">PubChem’s usage policy</a>, the user should not submit more than 5 requests per second and violators will be blocked for a certain period of time (typically less than 24 hours).</p>
+</section>
+<section id="annotations-from-a-specific-data-collection">
+<h3>3.4 Annotations from a specific data collection<a class="headerlink" href="#annotations-from-a-specific-data-collection" title="Permalink to this headline">#</a></h3>
+<p>PubChem has multiple data collections, including Substance, Compound, BioAssay, Gene, Protein, Pathway, Cell Line, Taxonomy, Element, and Patent.  Some annotation headings appear in more than one data collection.  For example, both a compound and an element can have the “boiling point” information, as shown in these examples:</p>
+<ul class="simple">
+<li><p>Compound (benzene as an example)<br />
+https://pubchem.ncbi.nlm.nih.gov/compound/241#section=Boiling-Point</p></li>
+<li><p>Element (argon as an example)<br />
+https://pubchem.ncbi.nlm.nih.gov/element/18#section=Boiling-Point</p></li>
+</ul>
+<p>Therefore, when downloading annotations for a heading used in multiple data collections, it is necessary to specify what data collections you want to download data from.  This can be done using the “heading_type” parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Getting annotations for compounds</span>
+<span class="n">heading</span> <span class="o">=</span> <span class="s2">&quot;Boiling+Point&quot;</span>      <span class="c1"># spaces are replaced with &quot;+&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/annotations/heading/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span> <span class="o">+</span> <span class="s2">&quot;&amp;heading_type=compound&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/JSON?heading=Boiling+Point&amp;heading_type=compound
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Getting annotations for elements</span>
+<span class="n">heading</span> <span class="o">=</span> <span class="s2">&quot;Boiling+Point&quot;</span>      <span class="c1"># spaces are replaced with &quot;+&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/annotations/heading/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span> <span class="o">+</span> <span class="s2">&quot;&amp;heading_type=element&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/JSON?heading=Boiling+Point&amp;heading_type=element
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that, in the above two URL examples, the <code class="docutils literal notranslate"><span class="pre">heading_type</span></code> parameter is set to “compound” and “element” to download boiling points for compounds and elements, respectively.</p>
+</section>
+</section>
+<section id="annotations-for-pubchem-records-other-than-compounds">
+<h2>4. Annotations for PubChem records other than compounds.<a class="headerlink" href="#annotations-for-pubchem-records-other-than-compounds" title="Permalink to this headline">#</a></h2>
+<p>With PUG-View, you can programmatically access annotations for compounds as well as other PubChem records, such as genes, proteins, pathways, cell lines, taxons, and patents.<br />
+The examples below demonstrate how to access the data presented on the following summary pages:</p>
+<ul class="simple">
+<li><p>https://pubchem.ncbi.nlm.nih.gov/gene/1956#section=Protein-Isoforms</p></li>
+<li><p>https://pubchem.ncbi.nlm.nih.gov/protein/P10828#section=Related-Proteins</p></li>
+<li><p>https://pubchem.ncbi.nlm.nih.gov/cell/30#section=Diseases</p></li>
+<li><p>https://pubchem.ncbi.nlm.nih.gov/taxonomy/9986#section=Names-and-Identifiers</p></li>
+<li><p>https://pubchem.ncbi.nlm.nih.gov/patent/US-8148324-B2#section=Important-Dates</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Formulate a PUG-View request URL.</span>
+<span class="n">base</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug_view&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Annotations for a gene record</span>
+<span class="n">record_type</span> <span class="o">=</span> <span class="s2">&quot;gene&quot;</span>
+<span class="n">record_id</span> <span class="o">=</span> <span class="s2">&quot;1956&quot;</span>              <span class="c1">#-- NCBI Gene ID for human EGFR</span>
+<span class="n">heading</span> <span class="o">=</span> <span class="s2">&quot;Protein+Isoforms&quot;</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/&quot;</span> <span class="o">+</span> <span class="n">record_type</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">record_id</span> <span class="o">+</span> <span class="s2">&quot;/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/gene/1956/JSON?heading=Protein+Isoforms
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Annotations for a protein record</span>
+<span class="n">record_type</span> <span class="o">=</span> <span class="s2">&quot;protein&quot;</span>
+<span class="n">record_id</span> <span class="o">=</span> <span class="s2">&quot;P10828&quot;</span>            <span class="c1">#-- NCBI Protein Accession for human thyroid hormone receptor beta</span>
+<span class="n">heading</span> <span class="o">=</span> <span class="s2">&quot;Related+Proteins&quot;</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/&quot;</span> <span class="o">+</span> <span class="n">record_type</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">record_id</span> <span class="o">+</span> <span class="s2">&quot;/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/protein/P10828/JSON?heading=Related+Proteins
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Annotations for a cell line record</span>
+<span class="n">record_type</span> <span class="o">=</span> <span class="s2">&quot;cell&quot;</span>
+<span class="n">record_id</span> <span class="o">=</span> <span class="s2">&quot;hela&quot;</span>              <span class="c1">#-- Cell Line Abbreviation</span>
+<span class="n">heading</span> <span class="o">=</span> <span class="s2">&quot;Diseases&quot;</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/&quot;</span> <span class="o">+</span> <span class="n">record_type</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">record_id</span> <span class="o">+</span> <span class="s2">&quot;/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/cell/hela/JSON?heading=Diseases
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Annotations for a taxonomy (organism) record</span>
+<span class="n">record_type</span> <span class="o">=</span> <span class="s2">&quot;taxonomy&quot;</span>
+<span class="n">record_id</span> <span class="o">=</span> <span class="s2">&quot;9986&quot;</span>              <span class="c1">#-- NCBI Taxonomy ID for Oryctolagus cuniculus (rabbit)</span>
+<span class="n">heading</span> <span class="o">=</span> <span class="s2">&quot;Names+and+Identifiers&quot;</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/&quot;</span> <span class="o">+</span> <span class="n">record_type</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">record_id</span> <span class="o">+</span> <span class="s2">&quot;/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/taxonomy/9986/JSON?heading=Names+and+Identifiers
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Annotations for a taxonomy (organism) record</span>
+<span class="n">record_type</span> <span class="o">=</span> <span class="s2">&quot;patent&quot;</span>
+<span class="n">record_id</span> <span class="o">=</span> <span class="s2">&quot;US-8148324-B2&quot;</span>              <span class="c1">#-- Patent ID</span>
+<span class="n">heading</span> <span class="o">=</span> <span class="s2">&quot;Important+Dates&quot;</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/&quot;</span> <span class="o">+</span> <span class="n">record_type</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">record_id</span> <span class="o">+</span> <span class="s2">&quot;/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/patent/US-8148324-B2/JSON?heading=Important+Dates
+</pre></div>
+</div>
+</div>
+</div>
+<p>As mentioned previously, the <code class="docutils literal notranslate"><span class="pre">heading</span></code> parameter is optional.  If it is not provided in the above request URLs, all annotation data for the records will be returned.</p>
+<p>In addition, PUG-View can also be used to retrieve data for PubChem substance and assay records.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Annotations for a PubChem substance record</span>
+<span class="n">record_type</span> <span class="o">=</span> <span class="s2">&quot;substance&quot;</span>
+<span class="n">record_id</span> <span class="o">=</span> <span class="s2">&quot;319892613&quot;</span>              <span class="c1">#-- PubChem Substance ID (SID)</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/&quot;</span> <span class="o">+</span> <span class="n">record_type</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">record_id</span> <span class="o">+</span> <span class="s2">&quot;/JSON&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/substance/319892613/JSON
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Annotations for a PubChem bioassay record</span>
+<span class="n">record_type</span> <span class="o">=</span> <span class="s2">&quot;bioassay&quot;</span>
+<span class="n">record_id</span> <span class="o">=</span> <span class="s2">&quot;720659&quot;</span>              <span class="c1">#-- PubChem BioAssay ID (AID)</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/&quot;</span> <span class="o">+</span> <span class="n">record_type</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">record_id</span> <span class="o">+</span> <span class="s2">&quot;/JSON&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/bioassay/720659/JSON
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that PubChem Substance and BioAssay collections are archival in nature.  It means that the data for the records in these two collections are submitted by data depositors (not collected by PubChem).</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./datasources"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pubchem_pugrest3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Accessing PubChem through PUG-REST: Part III</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../manipulations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Manipulating Data within a Digital Environment</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations-for-a-pubchem-compound-record">1. Annotations for a PubChem compound record.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-under-a-multi-word-section-heading">2. Data under a  multi-word section heading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-all-annotation-data-for-a-given-property">3. Getting All Annotation Data for a Given Property</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations-for-single-word-headings">3.1 Annotations for single-word headings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations-for-multiple-word-headings">3.2 Annotations for multiple-word headings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-page-annotations">3.3 Multi-page annotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations-from-a-specific-data-collection">3.4 Annotations from a specific data collection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations-for-pubchem-records-other-than-compounds">4. Annotations for PubChem records other than compounds.</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IUPAC WorldFAIR Chemistry D3.2 Project
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Licenses:  See the "About this..." section in a page for the per resource license. Default license is <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.<br/>
+<em>WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41<br/>
+Coordination and Support Action under Grant Agreement No. 101058393.</em>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
