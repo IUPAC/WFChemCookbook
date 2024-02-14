@@ -1,0 +1,1691 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>CAS Common Chemistry API &#8212; IUPAC FAIR Chemistry Cookbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/js/matomo.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'datasources/cas_commonchem';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data Repository: PubChem" href="pubchem.html" />
+    <link rel="prev" title="Accessing the IUPAC Gold Book API in Python" href="goldbook_api.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about_cookbook.html">About this Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_cookbook.html">How to use the Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributions.html">Contribute to the Cookbook!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feedback.html">Feedback on the Cookbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../techniques.html">FAIR Techniques</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api_jn.html">Using the OPSIN API in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="goldbook_api.html">Terminology: The IUPAC Gold Book</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">CAS Common Chemistry API</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pubchem.html">Data Repository: PubChem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pubchem_pugrest.html">PubChem PUG-REST</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pubchem_pugview.html">PubChem PUG-View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pubchem_ptable.html">PubChem Periodic Table</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../manipulations/computing_inchis.html">Computing InChIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manipulations/dataset_search.html">Finding a Findable Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manipulations/excel_import.html">Importing Chemical Data into a Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manipulations/gsheets_citations.html">Importing JSON Citation Data from an API into Google Sheets</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/iupac_pkadata.html">Reuse of Curated Chemical Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributors.html">Project Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development.html">Cookbook development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../worldfair.html">WordFAIR Chemistry</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/IUPAC/WFChemCookbook/main?urlpath=tree/book/datasources/cas_commonchem.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/IUPAC/WFChemCookbook/blob/main/book/datasources/cas_commonchem.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/IUPAC/WFChemCookbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/IUPAC/WFChemCookbook/issues/new?title=Issue%20on%20page%20%2Fdatasources/cas_commonchem.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/datasources/cas_commonchem.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>CAS Common Chemistry API</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-chemistry-record-detail-retrieval">1. Common Chemistry Record Detail Retrieval</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries">Import libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-api-parameters">Setup API parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#request-data-from-cas-common-chemistry-detail-api">Request data from CAS Common Chemistry Detail API</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#display-the-molecule-drawing">Display the Molecule Drawing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-some-specific-data">Select some specific data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-chemistry-api-record-detail-retrieval-in-a-loop">2. Common Chemistry API record detail retrieval in a loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Import libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Setup API parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#request-data-for-each-cas-rn-and-save-to-a-list">Request data for each CAS RN and save to a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#display-molecule-drawings">Display Molecule Drawings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Select some specific data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-chemistry-search">3. Common Chemistry Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Import libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Setup API Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#request-data-from-cas-common-chemistry-search-api">Request data from CAS Common Chemistry Search API</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handle-multiple-results">Handle multiple results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handle-multiple-page-results">Handle multiple page results</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="cas-common-chemistry-api">
+<h1>CAS Common Chemistry API<a class="headerlink" href="#cas-common-chemistry-api" title="Permalink to this headline">#</a></h1>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Author: <a class="reference external" href="https://orcid.org/0000-0002-7363-531X">Vincent Scalfani</a></p></li>
+<li><p class="sd-card-text">Reviewer: <a class="reference external" href="https://orcid.org/0000-0002-0703-7776">Stuart Chalk</a></p></li>
+<li><p class="sd-card-text">Topics: How to interact with the <a class="reference external" href="https://www.cas.org/services/commonchemistry-api">CAS Common Chemistry</a> API using Python.</p></li>
+<li><p class="sd-card-text">Attribution: <em>Adapted from the MIT licensed University of Alabama <a class="reference external" href="https://ualibweb.github.io/UALIB_ScholarlyAPI_Cookbook/content/scripts/python/python_casc.html">Scholarly API Cookbook</a></em> Use of the CAS Common Chemistry API <strong>requires</strong> registration: https://www.cas.org/services/commonchemistry-api. Example data shown is credited to CAS Common Chemistry, which is licensed under the <a class="reference external" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 license</a>.</p></li>
+<li><p class="sd-card-text">Format: Interactive Jupyter Notebook (Python)</p></li>
+<li><p class="sd-card-text">Scenarios: You are search for identifiers and general property of common chemical substances.</p></li>
+<li><p class="sd-card-text">Skills: You should be familiar with</p>
+<ul>
+<li><p class="sd-card-text"><a class="reference external" href="https://chem.libretexts.org/Courses/University_of_Arkansas_Little_Rock/ChemInformatics_(2015)%3A_Chem_4399_5399/Text/5_Chemical_Identifiers">Chemical Identifiers</a></p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Learning outcomes:  After completing this example you should understand:</p>
+<ul>
+<li><p class="sd-card-text">What kind of data is available through the CAS Common Chemistry API</p></li>
+<li><p class="sd-card-text">How to interact with the CAS Common Chemistry API using Python</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Citation: ‘CAS Common Chemistry API’, Vincent Scalfani, The IUPAC FAIR Chemistry Cookbook, Contributed: 2024-02-14 <a class="reference external" href="https://w3id.org/ifcc/IFCC011">https://w3id.org/ifcc/IFCC011</a>.</p></li>
+<li><p class="sd-card-text">Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
+</ul>
+</div>
+</details><section id="common-chemistry-record-detail-retrieval">
+<h2>1. Common Chemistry Record Detail Retrieval<a class="headerlink" href="#common-chemistry-record-detail-retrieval" title="Permalink to this headline">#</a></h2>
+<p>Information about substances in CAS Common Chemistry can be retrieved using the <code class="docutils literal notranslate"><span class="pre">/detail</span></code> API and a CAS RN identifier:</p>
+<section id="import-libraries">
+<h3>Import libraries<a class="headerlink" href="#import-libraries" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="setup-api-parameters">
+<h3>Setup API parameters<a class="headerlink" href="#setup-api-parameters" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">detail_base_url</span> <span class="o">=</span> <span class="s2">&quot;https://commonchemistry.cas.org/api/detail?&quot;</span>
+<span class="n">casrn1</span> <span class="o">=</span> <span class="s2">&quot;10094-36-7&quot;</span> <span class="c1"># ethyl cyclohexanepropionate</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="request-data-from-cas-common-chemistry-detail-api">
+<h3>Request data from CAS Common Chemistry Detail API<a class="headerlink" href="#request-data-from-cas-common-chemistry-detail-api" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">casrn1_data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">detail_base_url</span> <span class="o">+</span> <span class="s2">&quot;cas_rn=&quot;</span> <span class="o">+</span> <span class="n">casrn1</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">casrn1_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;canonicalSmile&#39;: &#39;O=C(OCC)CCC1CCCCC1&#39;,
+ &#39;experimentalProperties&#39;: [{&#39;name&#39;: &#39;Boiling Point&#39;,
+                             &#39;property&#39;: &#39;105-113 °C @ Press: 17 Torr&#39;,
+                             &#39;sourceNumber&#39;: 1}],
+ &#39;hasMolfile&#39;: True,
+ &#39;image&#39;: &#39;&lt;svg width=&quot;228.6&quot; viewBox=&quot;0 0 7620 3716&quot; text-rendering=&quot;auto&quot; &#39;
+          &#39;stroke-width=&quot;1&quot; stroke-opacity=&quot;1&quot; stroke-miterlimit=&quot;10&quot; &#39;
+          &#39;stroke-linejoin=&quot;miter&quot; stroke-linecap=&quot;square&quot; &#39;
+          &#39;stroke-dashoffset=&quot;0&quot; stroke-dasharray=&quot;none&quot; stroke=&quot;black&quot; &#39;
+          &#39;shape-rendering=&quot;auto&quot; image-rendering=&quot;auto&quot; height=&quot;111.48&quot; &#39;
+          &#39;font-weight=&quot;normal&quot; font-style=&quot;normal&quot; font-size=&quot;12&quot; &#39;
+          &#39;font-family=&quot;\&#39;Dialog\&#39;&quot; fill-opacity=&quot;1&quot; fill=&quot;black&quot; &#39;
+          &#39;color-rendering=&quot;auto&quot; color-interpolation=&quot;auto&quot; &#39;
+          &#39;xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g&gt;&lt;g stroke=&quot;white&quot; &#39;
+          &#39;fill=&quot;white&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; width=&quot;7620&quot; stroke=&quot;none&quot; &#39;
+          &#39;height=&quot;3716&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(32866,32758)&quot; &#39;
+          &#39;text-rendering=&quot;geometricPrecision&quot; stroke-width=&quot;44&quot; &#39;
+          &#39;stroke-linejoin=&quot;round&quot; stroke-linecap=&quot;round&quot;&gt;&lt;line y2=&quot;-30850&quot; &#39;
+          &#39;y1=&quot;-31419&quot; x2=&quot;-30792&quot; x1=&quot;-31777&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29715&quot; &#39;
+          &#39;y1=&quot;-30850&quot; x2=&quot;-30792&quot; x1=&quot;-30792&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31419&quot; &#39;
+          &#39;y1=&quot;-30850&quot; x2=&quot;-31777&quot; x1=&quot;-32762&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29146&quot; &#39;
+          &#39;y1=&quot;-29715&quot; x2=&quot;-31777&quot; x1=&quot;-30792&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30850&quot; &#39;
+          &#39;y1=&quot;-29715&quot; x2=&quot;-32762&quot; x1=&quot;-32762&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29715&quot; &#39;
+          &#39;y1=&quot;-29146&quot; x2=&quot;-32762&quot; x1=&quot;-31777&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; &#39;
+          &#39;y1=&quot;-30850&quot; x2=&quot;-29885&quot; x1=&quot;-30792&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30850&quot; &#39;
+          &#39;y1=&quot;-31376&quot; x2=&quot;-28978&quot; x1=&quot;-29885&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; &#39;
+          &#39;y1=&quot;-30850&quot; x2=&quot;-28071&quot; x1=&quot;-28978&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30960&quot; &#39;
+          &#39;y1=&quot;-31376&quot; x2=&quot;-27352&quot; x1=&quot;-28071&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; &#39;
+          &#39;y1=&quot;-30960&quot; x2=&quot;-26257&quot; x1=&quot;-26976&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30850&quot; &#39;
+          &#39;y1=&quot;-31376&quot; x2=&quot;-25350&quot; x1=&quot;-26257&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32202&quot; &#39;
+          &#39;y1=&quot;-31376&quot; x2=&quot;-28140&quot; x1=&quot;-28140&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32202&quot; &#39;
+          &#39;y1=&quot;-31376&quot; x2=&quot;-28002&quot; x1=&quot;-28002&quot; fill=&quot;none&quot;/&gt;&lt;text y=&quot;-30671&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-27317&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;text y=&quot;-32242&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-28224&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&#39;,
+ &#39;inchi&#39;: &#39;InChI=1S/C11H20O2/c1-2-13-11(12)9-8-10-6-4-3-5-7-10/h10H,2-9H2,1H3&#39;,
+ &#39;inchiKey&#39;: &#39;InChIKey=NRVPMFHPHGBQLP-UHFFFAOYSA-N&#39;,
+ &#39;molecularFormula&#39;: &#39;C&lt;sub&gt;11&lt;/sub&gt;H&lt;sub&gt;20&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt;&#39;,
+ &#39;molecularMass&#39;: &#39;184.28&#39;,
+ &#39;name&#39;: &#39;Ethyl cyclohexanepropionate&#39;,
+ &#39;propertyCitations&#39;: [{&#39;docUri&#39;: &#39;document/pt/document/22252593&#39;,
+                        &#39;source&#39;: &#39;De Benneville, Peter L.; Journal of the &#39;
+                                  &#39;American Chemical Society, (1940), 62, &#39;
+                                  &#39;283-7, CAplus&#39;,
+                        &#39;sourceNumber&#39;: 1}],
+ &#39;replacedRns&#39;: [],
+ &#39;rn&#39;: &#39;10094-36-7&#39;,
+ &#39;smile&#39;: &#39;C(CC(OCC)=O)C1CCCCC1&#39;,
+ &#39;synonyms&#39;: [&#39;Cyclohexanepropanoic acid, ethyl ester&#39;,
+              &#39;Cyclohexanepropionic acid, ethyl ester&#39;,
+              &#39;Ethyl cyclohexanepropionate&#39;,
+              &#39;Ethyl cyclohexylpropanoate&#39;,
+              &#39;Ethyl 3-cyclohexylpropionate&#39;,
+              &#39;Ethyl 3-cyclohexylpropanoate&#39;,
+              &#39;3-Cyclohexylpropionic acid ethyl ester&#39;,
+              &#39;NSC 71463&#39;,
+              &#39;Ethyl 3-cyclohexanepropionate&#39;],
+ &#39;uri&#39;: &#39;substance/pt/10094367&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="display-the-molecule-drawing">
+<h3>Display the Molecule Drawing<a class="headerlink" href="#display-the-molecule-drawing" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get svg image text</span>
+<span class="n">svg_string1</span> <span class="o">=</span> <span class="n">casrn1_data</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">]</span>
+
+<span class="c1"># display the molecule</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">SVG</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">svg_string1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f61202bfc5231a15a544c00b2a1d322d50c45e3594abf6cfcc53bb759c52f6ef.svg" src="../_images/f61202bfc5231a15a544c00b2a1d322d50c45e3594abf6cfcc53bb759c52f6ef.svg" /></div>
+</div>
+</section>
+<section id="select-some-specific-data">
+<h3>Select some specific data<a class="headerlink" href="#select-some-specific-data" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get Experimental Properties</span>
+<span class="n">casrn1_data</span><span class="p">[</span><span class="s2">&quot;experimentalProperties&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Boiling Point&#39;,
+ &#39;property&#39;: &#39;105-113 °C @ Press: 17 Torr&#39;,
+ &#39;sourceNumber&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get Boiling Point property</span>
+<span class="n">casrn1_data</span><span class="p">[</span><span class="s2">&quot;experimentalProperties&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;property&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;105-113 °C @ Press: 17 Torr&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get InChIKey</span>
+<span class="n">casrn1_data</span><span class="p">[</span><span class="s2">&quot;inchiKey&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;InChIKey=NRVPMFHPHGBQLP-UHFFFAOYSA-N&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get Canonical SMILES</span>
+<span class="n">casrn1_data</span><span class="p">[</span><span class="s2">&quot;canonicalSmile&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;O=C(OCC)CCC1CCCCC1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="common-chemistry-api-record-detail-retrieval-in-a-loop">
+<h2>2. Common Chemistry API record detail retrieval in a loop<a class="headerlink" href="#common-chemistry-api-record-detail-retrieval-in-a-loop" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>Import libraries<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h3>Setup API parameters<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">detail_base_url</span> <span class="o">=</span> <span class="s2">&quot;https://commonchemistry.cas.org/api/detail?&quot;</span>
+<span class="n">casrn_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;10094-36-7&quot;</span><span class="p">,</span> <span class="s2">&quot;10031-92-2&quot;</span><span class="p">,</span> <span class="s2">&quot;10199-61-8&quot;</span><span class="p">,</span> <span class="s2">&quot;10036-21-2&quot;</span><span class="p">,</span> <span class="s2">&quot;1019020-13-3&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="request-data-for-each-cas-rn-and-save-to-a-list">
+<h3>Request data for each CAS RN and save to a list<a class="headerlink" href="#request-data-for-each-cas-rn-and-save-to-a-list" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">casrn_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">casrn</span> <span class="ow">in</span> <span class="n">casrn_list</span><span class="p">:</span>
+    <span class="n">casrn_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">detail_base_url</span> <span class="o">+</span> <span class="s2">&quot;cas_rn=&quot;</span> <span class="o">+</span> <span class="n">casrn</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># add a delay between API calls</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">casrn_data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># view first 2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;uri&#39;: &#39;substance/pt/10094367&#39;,
+  &#39;rn&#39;: &#39;10094-36-7&#39;,
+  &#39;name&#39;: &#39;Ethyl cyclohexanepropionate&#39;,
+  &#39;image&#39;: &#39;&lt;svg width=&quot;228.6&quot; viewBox=&quot;0 0 7620 3716&quot; text-rendering=&quot;auto&quot; stroke-width=&quot;1&quot; stroke-opacity=&quot;1&quot; stroke-miterlimit=&quot;10&quot; stroke-linejoin=&quot;miter&quot; stroke-linecap=&quot;square&quot; stroke-dashoffset=&quot;0&quot; stroke-dasharray=&quot;none&quot; stroke=&quot;black&quot; shape-rendering=&quot;auto&quot; image-rendering=&quot;auto&quot; height=&quot;111.48&quot; font-weight=&quot;normal&quot; font-style=&quot;normal&quot; font-size=&quot;12&quot; font-family=&quot;\&#39;Dialog\&#39;&quot; fill-opacity=&quot;1&quot; fill=&quot;black&quot; color-rendering=&quot;auto&quot; color-interpolation=&quot;auto&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g&gt;&lt;g stroke=&quot;white&quot; fill=&quot;white&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; width=&quot;7620&quot; stroke=&quot;none&quot; height=&quot;3716&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(32866,32758)&quot; text-rendering=&quot;geometricPrecision&quot; stroke-width=&quot;44&quot; stroke-linejoin=&quot;round&quot; stroke-linecap=&quot;round&quot;&gt;&lt;line y2=&quot;-30850&quot; y1=&quot;-31419&quot; x2=&quot;-30792&quot; x1=&quot;-31777&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29715&quot; y1=&quot;-30850&quot; x2=&quot;-30792&quot; x1=&quot;-30792&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31419&quot; y1=&quot;-30850&quot; x2=&quot;-31777&quot; x1=&quot;-32762&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29146&quot; y1=&quot;-29715&quot; x2=&quot;-31777&quot; x1=&quot;-30792&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30850&quot; y1=&quot;-29715&quot; x2=&quot;-32762&quot; x1=&quot;-32762&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29715&quot; y1=&quot;-29146&quot; x2=&quot;-32762&quot; x1=&quot;-31777&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; y1=&quot;-30850&quot; x2=&quot;-29885&quot; x1=&quot;-30792&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30850&quot; y1=&quot;-31376&quot; x2=&quot;-28978&quot; x1=&quot;-29885&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; y1=&quot;-30850&quot; x2=&quot;-28071&quot; x1=&quot;-28978&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30960&quot; y1=&quot;-31376&quot; x2=&quot;-27352&quot; x1=&quot;-28071&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; y1=&quot;-30960&quot; x2=&quot;-26257&quot; x1=&quot;-26976&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30850&quot; y1=&quot;-31376&quot; x2=&quot;-25350&quot; x1=&quot;-26257&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32202&quot; y1=&quot;-31376&quot; x2=&quot;-28140&quot; x1=&quot;-28140&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32202&quot; y1=&quot;-31376&quot; x2=&quot;-28002&quot; x1=&quot;-28002&quot; fill=&quot;none&quot;/&gt;&lt;text y=&quot;-30671&quot; xml:space=&quot;preserve&quot; x=&quot;-27317&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;text y=&quot;-32242&quot; xml:space=&quot;preserve&quot; x=&quot;-28224&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&#39;,
+  &#39;inchi&#39;: &#39;InChI=1S/C11H20O2/c1-2-13-11(12)9-8-10-6-4-3-5-7-10/h10H,2-9H2,1H3&#39;,
+  &#39;inchiKey&#39;: &#39;InChIKey=NRVPMFHPHGBQLP-UHFFFAOYSA-N&#39;,
+  &#39;smile&#39;: &#39;C(CC(OCC)=O)C1CCCCC1&#39;,
+  &#39;canonicalSmile&#39;: &#39;O=C(OCC)CCC1CCCCC1&#39;,
+  &#39;molecularFormula&#39;: &#39;C&lt;sub&gt;11&lt;/sub&gt;H&lt;sub&gt;20&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt;&#39;,
+  &#39;molecularMass&#39;: &#39;184.28&#39;,
+  &#39;experimentalProperties&#39;: [{&#39;name&#39;: &#39;Boiling Point&#39;,
+    &#39;property&#39;: &#39;105-113 °C @ Press: 17 Torr&#39;,
+    &#39;sourceNumber&#39;: 1}],
+  &#39;propertyCitations&#39;: [{&#39;docUri&#39;: &#39;document/pt/document/22252593&#39;,
+    &#39;sourceNumber&#39;: 1,
+    &#39;source&#39;: &#39;De Benneville, Peter L.; Journal of the American Chemical Society, (1940), 62, 283-7, CAplus&#39;}],
+  &#39;synonyms&#39;: [&#39;Cyclohexanepropanoic acid, ethyl ester&#39;,
+   &#39;Cyclohexanepropionic acid, ethyl ester&#39;,
+   &#39;Ethyl cyclohexanepropionate&#39;,
+   &#39;Ethyl cyclohexylpropanoate&#39;,
+   &#39;Ethyl 3-cyclohexylpropionate&#39;,
+   &#39;Ethyl 3-cyclohexylpropanoate&#39;,
+   &#39;3-Cyclohexylpropionic acid ethyl ester&#39;,
+   &#39;NSC 71463&#39;,
+   &#39;Ethyl 3-cyclohexanepropionate&#39;],
+  &#39;replacedRns&#39;: [],
+  &#39;hasMolfile&#39;: True},
+ {&#39;uri&#39;: &#39;substance/pt/10031922&#39;,
+  &#39;rn&#39;: &#39;10031-92-2&#39;,
+  &#39;name&#39;: &#39;Ethyl 2-nonynoate&#39;,
+  &#39;image&#39;: &#39;&lt;svg width=&quot;318.24&quot; viewBox=&quot;0 0 10608 2283&quot; text-rendering=&quot;auto&quot; stroke-width=&quot;1&quot; stroke-opacity=&quot;1&quot; stroke-miterlimit=&quot;10&quot; stroke-linejoin=&quot;miter&quot; stroke-linecap=&quot;square&quot; stroke-dashoffset=&quot;0&quot; stroke-dasharray=&quot;none&quot; stroke=&quot;black&quot; shape-rendering=&quot;auto&quot; image-rendering=&quot;auto&quot; height=&quot;68.49&quot; font-weight=&quot;normal&quot; font-style=&quot;normal&quot; font-size=&quot;12&quot; font-family=&quot;\&#39;Dialog\&#39;&quot; fill-opacity=&quot;1&quot; fill=&quot;black&quot; color-rendering=&quot;auto&quot; color-interpolation=&quot;auto&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g&gt;&lt;g stroke=&quot;white&quot; fill=&quot;white&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; width=&quot;10608&quot; stroke=&quot;none&quot; height=&quot;2283&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(32866,32758)&quot; text-rendering=&quot;geometricPrecision&quot; stroke-width=&quot;44&quot; stroke-linejoin=&quot;round&quot; stroke-linecap=&quot;round&quot;&gt;&lt;line y2=&quot;-31899&quot; y1=&quot;-31899&quot; x2=&quot;-26132&quot; x1=&quot;-27178&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31988&quot; y1=&quot;-31988&quot; x2=&quot;-26132&quot; x1=&quot;-27178&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31809&quot; y1=&quot;-31809&quot; x2=&quot;-26132&quot; x1=&quot;-27178&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31899&quot; y1=&quot;-31899&quot; x2=&quot;-28227&quot; x1=&quot;-27178&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; y1=&quot;-31899&quot; x2=&quot;-29134&quot; x1=&quot;-28227&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31899&quot; y1=&quot;-31376&quot; x2=&quot;-30041&quot; x1=&quot;-29134&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; y1=&quot;-31899&quot; x2=&quot;-30948&quot; x1=&quot;-30041&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31899&quot; y1=&quot;-31376&quot; x2=&quot;-31855&quot; x1=&quot;-30948&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; y1=&quot;-31899&quot; x2=&quot;-32762&quot; x1=&quot;-31855&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31899&quot; y1=&quot;-31899&quot; x2=&quot;-25084&quot; x1=&quot;-26132&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32315&quot; y1=&quot;-31899&quot; x2=&quot;-24364&quot; x1=&quot;-25084&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31899&quot; y1=&quot;-32315&quot; x2=&quot;-23270&quot; x1=&quot;-23989&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32422&quot; y1=&quot;-31899&quot; x2=&quot;-22362&quot; x1=&quot;-23270&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31070&quot; y1=&quot;-31899&quot; x2=&quot;-25014&quot; x1=&quot;-25014&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31070&quot; y1=&quot;-31899&quot; x2=&quot;-25153&quot; x1=&quot;-25153&quot; fill=&quot;none&quot;/&gt;&lt;text y=&quot;-32242&quot; xml:space=&quot;preserve&quot; x=&quot;-24330&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;text y=&quot;-30671&quot; xml:space=&quot;preserve&quot; x=&quot;-25237&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&#39;,
+  &#39;inchi&#39;: &#39;InChI=1S/C11H18O2/c1-3-5-6-7-8-9-10-11(12)13-4-2/h3-8H2,1-2H3&#39;,
+  &#39;inchiKey&#39;: &#39;InChIKey=BFZNMUGAZYAMTG-UHFFFAOYSA-N&#39;,
+  &#39;smile&#39;: &#39;C(C#CCCCCCC)(OCC)=O&#39;,
+  &#39;canonicalSmile&#39;: &#39;O=C(C#CCCCCCC)OCC&#39;,
+  &#39;molecularFormula&#39;: &#39;C&lt;sub&gt;11&lt;/sub&gt;H&lt;sub&gt;18&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt;&#39;,
+  &#39;molecularMass&#39;: &#39;182.26&#39;,
+  &#39;experimentalProperties&#39;: [],
+  &#39;propertyCitations&#39;: [],
+  &#39;synonyms&#39;: [&#39;2-Nonynoic acid, ethyl ester&#39;,
+   &#39;Ethyl 2-nonynoate&#39;,
+   &#39;NSC 190985&#39;],
+  &#39;replacedRns&#39;: [],
+  &#39;hasMolfile&#39;: True}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="display-molecule-drawings">
+<h3>Display Molecule Drawings<a class="headerlink" href="#display-molecule-drawings" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">SVG</span>
+<span class="c1"># get svg image text</span>
+<span class="n">svg_strings</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">svg_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">casrn_data</span><span class="p">)):</span>
+    <span class="n">svg_strings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">casrn_data</span><span class="p">[</span><span class="n">svg_idx</span><span class="p">][</span><span class="s2">&quot;image&quot;</span><span class="p">])</span>
+
+<span class="c1"># display the molecules</span>
+<span class="k">for</span> <span class="n">svg_string</span> <span class="ow">in</span> <span class="n">svg_strings</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">svg_string</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f61202bfc5231a15a544c00b2a1d322d50c45e3594abf6cfcc53bb759c52f6ef.svg" src="../_images/f61202bfc5231a15a544c00b2a1d322d50c45e3594abf6cfcc53bb759c52f6ef.svg" /><img alt="../_images/84b4ffa29013b254af3c95907e2d1f4929811257b7b4e8dd0615e8584c705acb.svg" src="../_images/84b4ffa29013b254af3c95907e2d1f4929811257b7b4e8dd0615e8584c705acb.svg" /><img alt="../_images/9c636bc91d766eaeca32c48f217b396d5864cab96b6701f7b2cb02b01f06eb6a.svg" src="../_images/9c636bc91d766eaeca32c48f217b396d5864cab96b6701f7b2cb02b01f06eb6a.svg" /><img alt="../_images/7023b1a1b4e43d0f2a663efb6369adb2348ec99d220f44ba414da11a498430ec.svg" src="../_images/7023b1a1b4e43d0f2a663efb6369adb2348ec99d220f44ba414da11a498430ec.svg" /><img alt="../_images/82396cf91ccab678889e43dea50eb6c804e86ab9808d31d4620e0c896043aba9.svg" src="../_images/82396cf91ccab678889e43dea50eb6c804e86ab9808d31d4620e0c896043aba9.svg" /></div>
+</div>
+</section>
+<section id="id3">
+<h3>Select some specific data<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get canonical SMILES</span>
+<span class="n">cansmiles</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">cansmi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">casrn_data</span><span class="p">)):</span>
+    <span class="n">cansmiles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">casrn_data</span><span class="p">[</span><span class="n">cansmi</span><span class="p">][</span><span class="s2">&quot;canonicalSmile&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cansmiles</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;O=C(OCC)CCC1CCCCC1&#39;, &#39;O=C(C#CCCCCCC)OCC&#39;, &#39;O=C(OCC)CN1N=CC=C1&#39;, &#39;O=C(OCC)C1=CC=CC(=C1)CCC(=O)OCC&#39;, &#39;N=C(OCC)C1=CCCCC1&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get synonyms</span>
+<span class="n">synonyms_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">syn</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">casrn_data</span><span class="p">)):</span>
+    <span class="n">synonyms_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">casrn_data</span><span class="p">[</span><span class="n">syn</span><span class="p">][</span><span class="s2">&quot;synonyms&quot;</span><span class="p">])</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">synonyms_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;Cyclohexanepropanoic acid, ethyl ester&#39;,
+  &#39;Cyclohexanepropionic acid, ethyl ester&#39;,
+  &#39;Ethyl cyclohexanepropionate&#39;,
+  &#39;Ethyl cyclohexylpropanoate&#39;,
+  &#39;Ethyl 3-cyclohexylpropionate&#39;,
+  &#39;Ethyl 3-cyclohexylpropanoate&#39;,
+  &#39;3-Cyclohexylpropionic acid ethyl ester&#39;,
+  &#39;NSC 71463&#39;,
+  &#39;Ethyl 3-cyclohexanepropionate&#39;],
+ [&#39;2-Nonynoic acid, ethyl ester&#39;, &#39;Ethyl 2-nonynoate&#39;, &#39;NSC 190985&#39;],
+ [&#39;1&lt;em&gt;H&lt;/em&gt;-Pyrazole-1-acetic acid, ethyl ester&#39;,
+  &#39;Pyrazole-1-acetic acid, ethyl ester&#39;,
+  &#39;Ethyl 1&lt;em&gt;H&lt;/em&gt;-pyrazole-1-acetate&#39;,
+  &#39;Ethyl 1-pyrazoleacetate&#39;,
+  &#39;Ethyl 2-(1&lt;em&gt;H&lt;/em&gt;-pyrazol-1-yl)acetate&#39;],
+ [&#39;Benzenepropanoic acid, 3-(ethoxycarbonyl)-, ethyl ester&#39;,
+  &#39;Hydrocinnamic acid, &lt;em&gt;m&lt;/em&gt;-carboxy-, diethyl ester&#39;,
+  &#39;Ethyl 3-(ethoxycarbonyl)benzenepropanoate&#39;],
+ [&#39;1-Cyclohexene-1-carboximidic acid, ethyl ester&#39;,
+  &#39;Ethyl 1-cyclohexene-1-carboximidate&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transform synonym &quot;list of lists&quot; to a flat list</span>
+<span class="n">synonyms_flat</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">synonyms_list</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">synonym</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">:</span>
+        <span class="n">synonyms_flat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">synonym</span><span class="p">)</span>    
+<span class="n">pprint</span><span class="p">(</span><span class="n">synonyms_flat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Cyclohexanepropanoic acid, ethyl ester&#39;,
+ &#39;Cyclohexanepropionic acid, ethyl ester&#39;,
+ &#39;Ethyl cyclohexanepropionate&#39;,
+ &#39;Ethyl cyclohexylpropanoate&#39;,
+ &#39;Ethyl 3-cyclohexylpropionate&#39;,
+ &#39;Ethyl 3-cyclohexylpropanoate&#39;,
+ &#39;3-Cyclohexylpropionic acid ethyl ester&#39;,
+ &#39;NSC 71463&#39;,
+ &#39;Ethyl 3-cyclohexanepropionate&#39;,
+ &#39;2-Nonynoic acid, ethyl ester&#39;,
+ &#39;Ethyl 2-nonynoate&#39;,
+ &#39;NSC 190985&#39;,
+ &#39;1&lt;em&gt;H&lt;/em&gt;-Pyrazole-1-acetic acid, ethyl ester&#39;,
+ &#39;Pyrazole-1-acetic acid, ethyl ester&#39;,
+ &#39;Ethyl 1&lt;em&gt;H&lt;/em&gt;-pyrazole-1-acetate&#39;,
+ &#39;Ethyl 1-pyrazoleacetate&#39;,
+ &#39;Ethyl 2-(1&lt;em&gt;H&lt;/em&gt;-pyrazol-1-yl)acetate&#39;,
+ &#39;Benzenepropanoic acid, 3-(ethoxycarbonyl)-, ethyl ester&#39;,
+ &#39;Hydrocinnamic acid, &lt;em&gt;m&lt;/em&gt;-carboxy-, diethyl ester&#39;,
+ &#39;Ethyl 3-(ethoxycarbonyl)benzenepropanoate&#39;,
+ &#39;1-Cyclohexene-1-carboximidic acid, ethyl ester&#39;,
+ &#39;Ethyl 1-cyclohexene-1-carboximidate&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="common-chemistry-search">
+<h2>3. Common Chemistry Search<a class="headerlink" href="#common-chemistry-search" title="Permalink to this headline">#</a></h2>
+<p>In addition to the <code class="docutils literal notranslate"><span class="pre">/detail</span></code> API, the CAS Common Chemistry API has a <code class="docutils literal notranslate"><span class="pre">/search</span></code> method that allows searching by CAS RN, SMILES, InChI/InChIKey, and name.</p>
+<section id="id4">
+<h3>Import libraries<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h3>Setup API Parameters<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">search_base_url</span> <span class="o">=</span> <span class="s2">&quot;https://commonchemistry.cas.org/api/search?q=&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="request-data-from-cas-common-chemistry-search-api">
+<h3>Request data from CAS Common Chemistry Search API<a class="headerlink" href="#request-data-from-cas-common-chemistry-search-api" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># keyword search query</span>
+<span class="n">quinine_search_data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">search_base_url</span> <span class="o">+</span> <span class="s2">&quot;quinine&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">quinine_search_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;count&#39;: 1,
+ &#39;results&#39;: [{&#39;image&#39;: &#39;&lt;svg width=&quot;309.3&quot; viewBox=&quot;0 0 10310 5592&quot; &#39;
+                       &#39;text-rendering=&quot;auto&quot; stroke-width=&quot;1&quot; &#39;
+                       &#39;stroke-opacity=&quot;1&quot; stroke-miterlimit=&quot;10&quot; &#39;
+                       &#39;stroke-linejoin=&quot;miter&quot; stroke-linecap=&quot;square&quot; &#39;
+                       &#39;stroke-dashoffset=&quot;0&quot; stroke-dasharray=&quot;none&quot; &#39;
+                       &#39;stroke=&quot;black&quot; shape-rendering=&quot;auto&quot; &#39;
+                       &#39;image-rendering=&quot;auto&quot; height=&quot;167.76&quot; &#39;
+                       &#39;font-weight=&quot;normal&quot; font-style=&quot;normal&quot; &#39;
+                       &#39;font-size=&quot;12&quot; font-family=&quot;\&#39;Dialog\&#39;&quot; &#39;
+                       &#39;fill-opacity=&quot;1&quot; fill=&quot;black&quot; color-rendering=&quot;auto&quot; &#39;
+                       &#39;color-interpolation=&quot;auto&quot; &#39;
+                       &#39;xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g&gt;&lt;g &#39;
+                       &#39;stroke=&quot;white&quot; fill=&quot;white&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; &#39;
+                       &#39;width=&quot;10310&quot; stroke=&quot;none&quot; height=&quot;5592&quot;/&gt;&lt;/g&gt;&lt;g &#39;
+                       &#39;transform=&quot;translate(32866,32758)&quot; &#39;
+                       &#39;text-rendering=&quot;geometricPrecision&quot; stroke-width=&quot;44&quot; &#39;
+                       &#39;stroke-linejoin=&quot;round&quot; stroke-linecap=&quot;round&quot;&gt;&lt;line &#39;
+                       &#39;y2=&quot;-28559&quot; y1=&quot;-28036&quot; x2=&quot;-26635&quot; x1=&quot;-25742&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29819&quot; y1=&quot;-28559&quot; x2=&quot;-26635&quot; &#39;
+                       &#39;x1=&quot;-26635&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28036&quot; y1=&quot;-28559&quot; &#39;
+                       &#39;x2=&quot;-25367&quot; x1=&quot;-24474&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30451&quot; &#39;
+                       &#39;y1=&quot;-29819&quot; x2=&quot;-25555&quot; x1=&quot;-26635&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-28559&quot; y1=&quot;-29819&quot; x2=&quot;-24474&quot; x1=&quot;-24474&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29504&quot; y1=&quot;-28828&quot; x2=&quot;-25194&quot; &#39;
+                       &#39;x1=&quot;-26005&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29819&quot; y1=&quot;-30451&quot; &#39;
+                       &#39;x2=&quot;-24474&quot; x1=&quot;-25555&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29082&quot; &#39;
+                       &#39;y1=&quot;-28559&quot; x2=&quot;-27542&quot; x1=&quot;-26635&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-29819&quot; y1=&quot;-30344&quot; x2=&quot;-22660&quot; x1=&quot;-23567&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29700&quot; y1=&quot;-30223&quot; x2=&quot;-22729&quot; &#39;
+                       &#39;x1=&quot;-23636&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28779&quot; y1=&quot;-29082&quot; &#39;
+                       &#39;x2=&quot;-28071&quot; x1=&quot;-27542&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30703&quot; &#39;
+                       &#39;y1=&quot;-30131&quot; x2=&quot;-28524&quot; x1=&quot;-27542&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-31850&quot; y1=&quot;-30703&quot; x2=&quot;-28524&quot; x1=&quot;-28524&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31705&quot; y1=&quot;-30847&quot; x2=&quot;-28354&quot; &#39;
+                       &#39;x1=&quot;-28354&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30131&quot; y1=&quot;-30703&quot; &#39;
+                       &#39;x2=&quot;-29507&quot; x1=&quot;-28524&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30131&quot; &#39;
+                       &#39;y1=&quot;-30703&quot; x2=&quot;-27542&quot; x1=&quot;-26560&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-30347&quot; y1=&quot;-30778&quot; x2=&quot;-27505&quot; x1=&quot;-26768&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31850&quot; y1=&quot;-32422&quot; x2=&quot;-28524&quot; &#39;
+                       &#39;x1=&quot;-29507&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32312&quot; y1=&quot;-31850&quot; &#39;
+                       &#39;x2=&quot;-27730&quot; x1=&quot;-28524&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30703&quot; &#39;
+                       &#39;y1=&quot;-30131&quot; x2=&quot;-30489&quot; x1=&quot;-29507&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-30778&quot; y1=&quot;-30347&quot; x2=&quot;-30281&quot; x1=&quot;-29544&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30703&quot; y1=&quot;-31850&quot; x2=&quot;-26560&quot; &#39;
+                       &#39;x1=&quot;-26560&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32422&quot; y1=&quot;-31850&quot; &#39;
+                       &#39;x2=&quot;-29507&quot; x1=&quot;-30489&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32205&quot; &#39;
+                       &#39;y1=&quot;-31774&quot; x2=&quot;-29544&quot; x1=&quot;-30281&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-31850&quot; y1=&quot;-32312&quot; x2=&quot;-26560&quot; x1=&quot;-27354&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31760&quot; y1=&quot;-32107&quot; x2=&quot;-26745&quot; &#39;
+                       &#39;x1=&quot;-27340&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31850&quot; y1=&quot;-30703&quot; &#39;
+                       &#39;x2=&quot;-30489&quot; x1=&quot;-30489&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30275&quot; &#39;
+                       &#39;y1=&quot;-30703&quot; x2=&quot;-31200&quot; x1=&quot;-30489&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-30541&quot; y1=&quot;-30272&quot; x2=&quot;-32040&quot; x1=&quot;-31575&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; stroke=&quot;none&quot; &#39;
+                       &#39;points=&quot; -24474 -29819 -23602 -30402 -23532 &#39;
+                       &#39;-30284&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; points=&quot; -24474 &#39;
+                       &#39;-29819 -23602 -30402 -23532 -30284&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; stroke=&quot;none&quot; &#39;
+                       &#39;points=&quot; -26635 -28559 -26973 -27837 -27092 &#39;
+                       &#39;-27903&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; points=&quot; -26635 &#39;
+                       &#39;-28559 -26973 -27837 -27092 -27903&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-28860&quot; y1=&quot;-28796&quot; x2=&quot;-25945&quot; x1=&quot;-26066&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28657&quot; y1=&quot;-28611&quot; x2=&quot;-25865&quot; &#39;
+                       &#39;x1=&quot;-25952&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28454&quot; y1=&quot;-28427&quot; &#39;
+                       &#39;x2=&quot;-25785&quot; x1=&quot;-25838&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28252&quot; &#39;
+                       &#39;y1=&quot;-28242&quot; x2=&quot;-25706&quot; x1=&quot;-25723&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-29478&quot; y1=&quot;-29530&quot; x2=&quot;-25257&quot; x1=&quot;-25130&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29686&quot; y1=&quot;-29727&quot; x2=&quot;-25321&quot; &#39;
+                       &#39;x1=&quot;-25221&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29894&quot; y1=&quot;-29924&quot; &#39;
+                       &#39;x2=&quot;-25384&quot; x1=&quot;-25312&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30102&quot; &#39;
+                       &#39;y1=&quot;-30121&quot; x2=&quot;-25448&quot; x1=&quot;-25403&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-30310&quot; y1=&quot;-30317&quot; x2=&quot;-25512&quot; x1=&quot;-25493&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30131&quot; y1=&quot;-30128&quot; x2=&quot;-27473&quot; &#39;
+                       &#39;x1=&quot;-27612&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29914&quot; y1=&quot;-29912&quot; &#39;
+                       &#39;x2=&quot;-27487&quot; x1=&quot;-27598&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29697&quot; &#39;
+                       &#39;y1=&quot;-29695&quot; x2=&quot;-27502&quot; x1=&quot;-27583&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-29480&quot; y1=&quot;-29479&quot; x2=&quot;-27516&quot; x1=&quot;-27569&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29263&quot; y1=&quot;-29263&quot; x2=&quot;-27530&quot; &#39;
+                       &#39;x1=&quot;-27554&quot; fill=&quot;none&quot;/&gt;&lt;text y=&quot;-28380&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-28602&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;433.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;OH&lt;/text&gt;&lt;text y=&quot;-29983&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-31540&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;433.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;text y=&quot;-30691&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-32762&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;433.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;CH&lt;/text&gt;&lt;text y=&quot;-30602&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-32185&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;313.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;3&lt;/text&gt;&lt;text y=&quot;-32242&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-27695&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;433.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;N&lt;/text&gt;&lt;text y=&quot;-27747&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-25708&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;433.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;N&lt;/text&gt;&lt;text y=&quot;-27473&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-27311&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;433.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;H&lt;/text&gt;&lt;text y=&quot;-28600&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-27695&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;R&lt;/text&gt;&lt;text y=&quot;-28522&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-26540&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;S&lt;/text&gt;&lt;text y=&quot;-27337&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-25818&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;S&lt;/text&gt;&lt;text y=&quot;-30573&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-25708&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;S&lt;/text&gt;&lt;text y=&quot;-29495&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-24876&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;R&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&#39;,
+              &#39;name&#39;: &#39;Quinine&#39;,
+              &#39;rn&#39;: &#39;130-95-0&#39;}]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that with the CAS Common Chemistry Search API, only the image data, name, and CAS RN is returned. In order to retrieve the full record, we can combine our search with the related detail API:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># search query</span>
+<span class="n">quinine_search_data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">search_base_url</span> <span class="o">+</span> <span class="s2">&quot;quinine&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="c1"># extract our CAS RN</span>
+<span class="n">quinine_rn</span> <span class="o">=</span> <span class="n">quinine_search_data</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;rn&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quinine_rn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>130-95-0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get detailed record for quinine</span>
+<span class="n">detail_base_url</span> <span class="o">=</span> <span class="s2">&quot;https://commonchemistry.cas.org/api/detail?&quot;</span>
+<span class="n">quinine_detail_data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">detail_base_url</span> <span class="o">+</span> <span class="s2">&quot;cas_rn=&quot;</span> <span class="o">+</span> <span class="n">quinine_rn</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">quinine_detail_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;canonicalSmile&#39;: &#39;OC(C=1C=CN=C2C=CC(OC)=CC21)C3N4CCC(C3)C(C=C)C4&#39;,
+ &#39;experimentalProperties&#39;: [{&#39;name&#39;: &#39;Melting Point&#39;,
+                             &#39;property&#39;: &#39;177 °C (decomp)&#39;,
+                             &#39;sourceNumber&#39;: 1}],
+ &#39;hasMolfile&#39;: True,
+ &#39;image&#39;: &#39;&lt;svg width=&quot;309.3&quot; viewBox=&quot;0 0 10310 5592&quot; text-rendering=&quot;auto&quot; &#39;
+          &#39;stroke-width=&quot;1&quot; stroke-opacity=&quot;1&quot; stroke-miterlimit=&quot;10&quot; &#39;
+          &#39;stroke-linejoin=&quot;miter&quot; stroke-linecap=&quot;square&quot; &#39;
+          &#39;stroke-dashoffset=&quot;0&quot; stroke-dasharray=&quot;none&quot; stroke=&quot;black&quot; &#39;
+          &#39;shape-rendering=&quot;auto&quot; image-rendering=&quot;auto&quot; height=&quot;167.76&quot; &#39;
+          &#39;font-weight=&quot;normal&quot; font-style=&quot;normal&quot; font-size=&quot;12&quot; &#39;
+          &#39;font-family=&quot;\&#39;Dialog\&#39;&quot; fill-opacity=&quot;1&quot; fill=&quot;black&quot; &#39;
+          &#39;color-rendering=&quot;auto&quot; color-interpolation=&quot;auto&quot; &#39;
+          &#39;xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g&gt;&lt;g stroke=&quot;white&quot; &#39;
+          &#39;fill=&quot;white&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; width=&quot;10310&quot; stroke=&quot;none&quot; &#39;
+          &#39;height=&quot;5592&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(32866,32758)&quot; &#39;
+          &#39;text-rendering=&quot;geometricPrecision&quot; stroke-width=&quot;44&quot; &#39;
+          &#39;stroke-linejoin=&quot;round&quot; stroke-linecap=&quot;round&quot;&gt;&lt;line y2=&quot;-28559&quot; &#39;
+          &#39;y1=&quot;-28036&quot; x2=&quot;-26635&quot; x1=&quot;-25742&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29819&quot; &#39;
+          &#39;y1=&quot;-28559&quot; x2=&quot;-26635&quot; x1=&quot;-26635&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28036&quot; &#39;
+          &#39;y1=&quot;-28559&quot; x2=&quot;-25367&quot; x1=&quot;-24474&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30451&quot; &#39;
+          &#39;y1=&quot;-29819&quot; x2=&quot;-25555&quot; x1=&quot;-26635&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28559&quot; &#39;
+          &#39;y1=&quot;-29819&quot; x2=&quot;-24474&quot; x1=&quot;-24474&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29504&quot; &#39;
+          &#39;y1=&quot;-28828&quot; x2=&quot;-25194&quot; x1=&quot;-26005&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29819&quot; &#39;
+          &#39;y1=&quot;-30451&quot; x2=&quot;-24474&quot; x1=&quot;-25555&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29082&quot; &#39;
+          &#39;y1=&quot;-28559&quot; x2=&quot;-27542&quot; x1=&quot;-26635&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29819&quot; &#39;
+          &#39;y1=&quot;-30344&quot; x2=&quot;-22660&quot; x1=&quot;-23567&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29700&quot; &#39;
+          &#39;y1=&quot;-30223&quot; x2=&quot;-22729&quot; x1=&quot;-23636&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28779&quot; &#39;
+          &#39;y1=&quot;-29082&quot; x2=&quot;-28071&quot; x1=&quot;-27542&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30703&quot; &#39;
+          &#39;y1=&quot;-30131&quot; x2=&quot;-28524&quot; x1=&quot;-27542&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31850&quot; &#39;
+          &#39;y1=&quot;-30703&quot; x2=&quot;-28524&quot; x1=&quot;-28524&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31705&quot; &#39;
+          &#39;y1=&quot;-30847&quot; x2=&quot;-28354&quot; x1=&quot;-28354&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30131&quot; &#39;
+          &#39;y1=&quot;-30703&quot; x2=&quot;-29507&quot; x1=&quot;-28524&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30131&quot; &#39;
+          &#39;y1=&quot;-30703&quot; x2=&quot;-27542&quot; x1=&quot;-26560&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30347&quot; &#39;
+          &#39;y1=&quot;-30778&quot; x2=&quot;-27505&quot; x1=&quot;-26768&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31850&quot; &#39;
+          &#39;y1=&quot;-32422&quot; x2=&quot;-28524&quot; x1=&quot;-29507&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32312&quot; &#39;
+          &#39;y1=&quot;-31850&quot; x2=&quot;-27730&quot; x1=&quot;-28524&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30703&quot; &#39;
+          &#39;y1=&quot;-30131&quot; x2=&quot;-30489&quot; x1=&quot;-29507&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30778&quot; &#39;
+          &#39;y1=&quot;-30347&quot; x2=&quot;-30281&quot; x1=&quot;-29544&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30703&quot; &#39;
+          &#39;y1=&quot;-31850&quot; x2=&quot;-26560&quot; x1=&quot;-26560&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32422&quot; &#39;
+          &#39;y1=&quot;-31850&quot; x2=&quot;-29507&quot; x1=&quot;-30489&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32205&quot; &#39;
+          &#39;y1=&quot;-31774&quot; x2=&quot;-29544&quot; x1=&quot;-30281&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31850&quot; &#39;
+          &#39;y1=&quot;-32312&quot; x2=&quot;-26560&quot; x1=&quot;-27354&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31760&quot; &#39;
+          &#39;y1=&quot;-32107&quot; x2=&quot;-26745&quot; x1=&quot;-27340&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31850&quot; &#39;
+          &#39;y1=&quot;-30703&quot; x2=&quot;-30489&quot; x1=&quot;-30489&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30275&quot; &#39;
+          &#39;y1=&quot;-30703&quot; x2=&quot;-31200&quot; x1=&quot;-30489&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30541&quot; &#39;
+          &#39;y1=&quot;-30272&quot; x2=&quot;-32040&quot; x1=&quot;-31575&quot; fill=&quot;none&quot;/&gt;&lt;polygon &#39;
+          &#39;stroke-width=&quot;1&quot; stroke=&quot;none&quot; points=&quot; -24474 -29819 -23602 -30402 &#39;
+          &#39;-23532 -30284&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; points=&quot; -24474 -29819 &#39;
+          &#39;-23602 -30402 -23532 -30284&quot; fill=&quot;none&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; &#39;
+          &#39;stroke=&quot;none&quot; points=&quot; -26635 -28559 -26973 -27837 -27092 &#39;
+          &#39;-27903&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; points=&quot; -26635 -28559 -26973 &#39;
+          &#39;-27837 -27092 -27903&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28860&quot; y1=&quot;-28796&quot; &#39;
+          &#39;x2=&quot;-25945&quot; x1=&quot;-26066&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28657&quot; y1=&quot;-28611&quot; &#39;
+          &#39;x2=&quot;-25865&quot; x1=&quot;-25952&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28454&quot; y1=&quot;-28427&quot; &#39;
+          &#39;x2=&quot;-25785&quot; x1=&quot;-25838&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28252&quot; y1=&quot;-28242&quot; &#39;
+          &#39;x2=&quot;-25706&quot; x1=&quot;-25723&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29478&quot; y1=&quot;-29530&quot; &#39;
+          &#39;x2=&quot;-25257&quot; x1=&quot;-25130&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29686&quot; y1=&quot;-29727&quot; &#39;
+          &#39;x2=&quot;-25321&quot; x1=&quot;-25221&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29894&quot; y1=&quot;-29924&quot; &#39;
+          &#39;x2=&quot;-25384&quot; x1=&quot;-25312&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30102&quot; y1=&quot;-30121&quot; &#39;
+          &#39;x2=&quot;-25448&quot; x1=&quot;-25403&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30310&quot; y1=&quot;-30317&quot; &#39;
+          &#39;x2=&quot;-25512&quot; x1=&quot;-25493&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30131&quot; y1=&quot;-30128&quot; &#39;
+          &#39;x2=&quot;-27473&quot; x1=&quot;-27612&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29914&quot; y1=&quot;-29912&quot; &#39;
+          &#39;x2=&quot;-27487&quot; x1=&quot;-27598&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29697&quot; y1=&quot;-29695&quot; &#39;
+          &#39;x2=&quot;-27502&quot; x1=&quot;-27583&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29480&quot; y1=&quot;-29479&quot; &#39;
+          &#39;x2=&quot;-27516&quot; x1=&quot;-27569&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29263&quot; y1=&quot;-29263&quot; &#39;
+          &#39;x2=&quot;-27530&quot; x1=&quot;-27554&quot; fill=&quot;none&quot;/&gt;&lt;text y=&quot;-28380&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-28602&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;OH&lt;/text&gt;&lt;text y=&quot;-29983&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-31540&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;text y=&quot;-30691&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-32762&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;CH&lt;/text&gt;&lt;text y=&quot;-30602&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-32185&quot; stroke=&quot;none&quot; font-size=&quot;313.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;3&lt;/text&gt;&lt;text y=&quot;-32242&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-27695&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;N&lt;/text&gt;&lt;text y=&quot;-27747&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-25708&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;N&lt;/text&gt;&lt;text y=&quot;-27473&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-27311&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;H&lt;/text&gt;&lt;text y=&quot;-28600&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-27695&quot; stroke=&quot;none&quot; font-style=&quot;italic&quot; &#39;
+          &#39;font-size=&quot;313.3333&quot; font-family=&quot;sans-serif&quot;&gt;R&lt;/text&gt;&lt;text &#39;
+          &#39;y=&quot;-28522&quot; xml:space=&quot;preserve&quot; x=&quot;-26540&quot; stroke=&quot;none&quot; &#39;
+          &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;S&lt;/text&gt;&lt;text y=&quot;-27337&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-25818&quot; stroke=&quot;none&quot; font-style=&quot;italic&quot; &#39;
+          &#39;font-size=&quot;313.3333&quot; font-family=&quot;sans-serif&quot;&gt;S&lt;/text&gt;&lt;text &#39;
+          &#39;y=&quot;-30573&quot; xml:space=&quot;preserve&quot; x=&quot;-25708&quot; stroke=&quot;none&quot; &#39;
+          &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;S&lt;/text&gt;&lt;text y=&quot;-29495&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-24876&quot; stroke=&quot;none&quot; font-style=&quot;italic&quot; &#39;
+          &#39;font-size=&quot;313.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;R&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&#39;,
+ &#39;inchi&#39;: &#39;InChI=1S/C20H24N2O2/c1-3-13-12-22-9-7-14(13)10-19(22)20(23)16-6-8-21-18-5-4-15(24-2)11-17(16)18/h3-6,8,11,13-14,19-20,23H,1,7,9-10,12H2,2H3/t13-,14-,19-,20+/m0/s1&#39;,
+ &#39;inchiKey&#39;: &#39;InChIKey=LOUPRKONTZGTKE-WZBLMQSHSA-N&#39;,
+ &#39;molecularFormula&#39;: &#39;C&lt;sub&gt;20&lt;/sub&gt;H&lt;sub&gt;24&lt;/sub&gt;N&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt;&#39;,
+ &#39;molecularMass&#39;: &#39;324.42&#39;,
+ &#39;name&#39;: &#39;Quinine&#39;,
+ &#39;propertyCitations&#39;: [{&#39;docUri&#39;: &#39;&#39;,
+                        &#39;source&#39;: &#39;Drugs - Synonyms and Properties data were &#39;
+                                  &#39;obtained from Ashgate Publishing Co. (US)&#39;,
+                        &#39;sourceNumber&#39;: 1}],
+ &#39;replacedRns&#39;: [&#39;6912-57-8&#39;,
+                 &#39;12239-42-8&#39;,
+                 &#39;21480-31-9&#39;,
+                 &#39;55980-20-6&#39;,
+                 &#39;72646-90-3&#39;,
+                 &#39;95650-40-1&#39;,
+                 &#39;128544-03-6&#39;,
+                 &#39;767303-40-2&#39;,
+                 &#39;840482-04-4&#39;,
+                 &#39;857212-53-4&#39;,
+                 &#39;864908-93-0&#39;,
+                 &#39;875538-34-4&#39;,
+                 &#39;888714-03-2&#39;,
+                 &#39;890027-24-4&#39;,
+                 &#39;894767-09-0&#39;,
+                 &#39;898813-59-7&#39;,
+                 &#39;898814-28-3&#39;,
+                 &#39;899813-83-3&#39;,
+                 &#39;900786-66-5&#39;,
+                 &#39;900789-95-9&#39;,
+                 &#39;906550-97-8&#39;,
+                 &#39;909263-47-4&#39;,
+                 &#39;909767-48-2&#39;,
+                 &#39;909882-78-6&#39;,
+                 &#39;910878-25-0&#39;,
+                 &#39;910880-97-6&#39;,
+                 &#39;911445-75-5&#39;,
+                 &#39;918778-04-8&#39;,
+                 &#39;1071756-51-8&#39;,
+                 &#39;1267651-57-9&#39;,
+                 &#39;1628705-47-4&#39;,
+                 &#39;2244812-93-7&#39;,
+                 &#39;2244812-97-1&#39;,
+                 &#39;2409557-51-1&#39;,
+                 &#39;2566761-34-8&#39;],
+ &#39;rn&#39;: &#39;130-95-0&#39;,
+ &#39;smile&#39;: &#39;[C@@H](O)(C=1C2=C(C=CC(OC)=C2)N=CC1)[C@]3([N@@]4C[C@H](C=C)[C@](C3)(CC4)[H])[H]&#39;,
+ &#39;synonyms&#39;: [&#39;Cinchonan-9-ol, 6′-methoxy-, (8α,9&lt;em&gt;R&lt;/em&gt;)-&#39;,
+              &#39;Quinine&#39;,
+              &#39;(8α,9&lt;em&gt;R&lt;/em&gt;)-6′-Methoxycinchonan-9-ol&#39;,
+              &#39;6′-Methoxycinchonidine&#39;,
+              &#39;(-)-Quinine&#39;,
+              &#39;(8&lt;em&gt;S&lt;/em&gt;,9&lt;em&gt;R&lt;/em&gt;)-Quinine&#39;,
+              &#39;(&lt;em&gt;R&lt;/em&gt;)-(-)-Quinine&#39;,
+              &#39;NSC 192949&#39;,
+              &#39;WR297608&#39;,
+              &#39;Qualaquin&#39;,
+              &#39;Mosgard&#39;,
+              &#39;Quinlup&#39;,
+              &#39;Quine 9&#39;,
+              &#39;Cinkona&#39;,
+              &#39;Quinex&#39;,
+              &#39;Quinlex&#39;,
+              &#39;Rezquin&#39;,
+              &#39;QSM&#39;,
+              &#39;SW 85833&#39;,
+              &#39;(&lt;em&gt;R&lt;/em&gt;)-(6-Methoxy-4-quinolyl)[(2&lt;em&gt;S&lt;/em&gt;)-5-vinylquinuclidin-2-yl]methanol&#39;,
+              &#39;MeSH ID: D011803&#39;],
+ &#39;uri&#39;: &#39;substance/pt/130950&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="handle-multiple-results">
+<h3>Handle multiple results<a class="headerlink" href="#handle-multiple-results" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># setup search query parameters</span>
+<span class="n">search_base_url</span> <span class="o">=</span> <span class="s2">&quot;https://commonchemistry.cas.org/api/search?q=&quot;</span>
+<span class="c1"># SMILES for butadiene</span>
+<span class="n">smi_bd</span> <span class="o">=</span> <span class="s2">&quot;C=CC=C&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Request data from CAS Common Chemistry Search API</span>
+<span class="n">smi_search_data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">search_base_url</span> <span class="o">+</span> <span class="n">smi_bd</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get results count</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">smi_search_data</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># extract out CAS RNs</span>
+<span class="n">smi_casrn_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">casrn_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">smi_search_data</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">])):</span>
+    <span class="n">smi_casrn_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smi_search_data</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="n">casrn_idx</span><span class="p">][</span><span class="s2">&quot;rn&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">smi_casrn_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;106-99-0&#39;, &#39;16422-75-6&#39;, &#39;26952-74-9&#39;, &#39;29406-96-0&#39;, &#39;29989-19-3&#39;, &#39;31567-90-5&#39;, &#39;9003-17-2&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now use the detail API to retrieve the full records</span>
+<span class="n">detail_base_url</span> <span class="o">=</span> <span class="s2">&quot;https://commonchemistry.cas.org/api/detail?&quot;</span>
+<span class="n">smi_detail_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">casrn</span> <span class="ow">in</span> <span class="n">smi_casrn_list</span><span class="p">:</span>
+    <span class="n">smi_detail_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">detail_base_url</span> <span class="o">+</span> <span class="s2">&quot;cas_rn=&quot;</span> <span class="o">+</span> <span class="n">casrn</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># add a delay between API calls</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get some specific data such as name from the detail records</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">name_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">smi_detail_data</span><span class="p">)):</span>
+    <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smi_detail_data</span><span class="p">[</span><span class="n">name_idx</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1,3-Butadiene&#39;, &#39;Butadiene trimer&#39;, &#39;Butadiene dimer&#39;, &#39;1,3-Butadiene, homopolymer, isotactic&#39;, &#39;1,3-Butadiene-&lt;em&gt;1&lt;/em&gt;,&lt;em&gt;1&lt;/em&gt;,&lt;em&gt;2&lt;/em&gt;,&lt;em&gt;3&lt;/em&gt;,&lt;em&gt;4&lt;/em&gt;,&lt;em&gt;4&lt;/em&gt;-&lt;em&gt;d&lt;/em&gt;&lt;sub&gt;6&lt;/sub&gt;, homopolymer&#39;, &#39;Syndiotactic polybutadiene&#39;, &#39;Polybutadiene&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="handle-multiple-page-results">
+<h3>Handle multiple page results<a class="headerlink" href="#handle-multiple-page-results" title="Permalink to this headline">#</a></h3>
+<p>The CAS Common Chemistry API returns 50 results per page, and only the first page is returned by default. If the search returns more than 50 results, the offset option can be added to page through and obtain all results:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># setup search query parameters</span>
+<span class="n">search_base_url</span> <span class="o">=</span> <span class="s2">&quot;https://commonchemistry.cas.org/api/search?q=&quot;</span>
+<span class="n">n</span> <span class="o">=</span> <span class="s2">&quot;selen*&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get results count for CAS Common Chemistry Search</span>
+<span class="n">num_Results</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">search_base_url</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num_Results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>192
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Request data and save to a list in a loop for each page</span>
+<span class="n">n_search_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">page_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num_Results</span><span class="o">/</span><span class="mi">50</span> <span class="o">+</span><span class="mi">1</span><span class="p">)):</span> <span class="c1"># creates [0,1,2,3] for 4 pages</span>
+    <span class="n">page_data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">search_base_url</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="s2">&quot;&amp;offset=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">page_idx</span><span class="o">*</span><span class="mi">50</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">n_search_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">page_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># length of search data includes a top level list for each query</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">n_search_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lists within lists contain the results</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n_search_data</span><span class="p">)):</span>
+     <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n_search_data</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="s2">&quot;results&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
+50
+50
+42
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can index and extract out the first casrn like this</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">n_search_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;rn&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;10025-68-0&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># extract out all CAS RNs from the list of lists</span>
+<span class="n">n_casrn_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n_search_data</span><span class="p">)):</span> <span class="c1"># top level list</span>
+    <span class="k">for</span> <span class="n">casrn_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n_search_data</span><span class="p">[</span><span class="n">n_idx</span><span class="p">][</span><span class="s2">&quot;results&quot;</span><span class="p">])):</span> <span class="c1"># lists within top level</span>
+        <span class="n">n_casrn_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n_search_data</span><span class="p">[</span><span class="n">n_idx</span><span class="p">][</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="n">casrn_idx</span><span class="p">][</span><span class="s2">&quot;rn&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">n_casrn_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>192
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># show first 10</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">n_casrn_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;10025-68-0&#39;,
+ &#39;10026-03-6&#39;,
+ &#39;10026-23-0&#39;,
+ &#39;10101-96-9&#39;,
+ &#39;10102-18-8&#39;,
+ &#39;10102-23-5&#39;,
+ &#39;10112-94-4&#39;,
+ &#39;10161-84-9&#39;,
+ &#39;10214-40-1&#39;,
+ &#39;10236-58-5&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now we can loop through each casrn and use the detail API to obtain the entire record</span>
+<span class="c1"># this will query CAS Common Chem 192 times and take ~ 5 min.</span>
+<span class="n">detail_base_url</span> <span class="o">=</span> <span class="s2">&quot;https://commonchemistry.cas.org/api/detail?&quot;</span>
+<span class="n">n_detail_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">casrn</span> <span class="ow">in</span> <span class="n">n_casrn_list</span><span class="p">:</span>
+    <span class="n">n_detail_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">detail_base_url</span> <span class="o">+</span> <span class="s2">&quot;cas_rn=&quot;</span> <span class="o">+</span> <span class="n">casrn</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># !! add a delay between API calls</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">37</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="n">casrn</span> <span class="ow">in</span> <span class="n">n_casrn_list</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">n_detail_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">detail_base_url</span> <span class="o">+</span> <span class="s2">&quot;cas_rn=&quot;</span> <span class="o">+</span> <span class="n">casrn</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># !! add a delay between API calls</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract out some data such as molecularMass</span>
+<span class="n">mms</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">mm_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n_detail_data</span><span class="p">)):</span>
+    <span class="n">mms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n_detail_data</span><span class="p">[</span><span class="n">mm_idx</span><span class="p">][</span><span class="s2">&quot;molecularMass&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">mms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>192
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># view first 20</span>
+<span class="c1"># note that several do not have molecularMass values and have an empty string in the record</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mms</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;228.83&#39;, &#39;220.77&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;300.24&#39;, &#39;&#39;, &#39;168.05&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;241.11&#39;, &#39;&#39;, &#39;368.25&#39;, &#39;265.00&#39;, &#39;&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># finally, we can quickly create a simple visualization from the</span>
+<span class="c1"># extracted molecularMass values (from the selen* search)</span>
+
+<span class="c1"># remove empty strings</span>
+<span class="n">mms_values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">mms</span><span class="p">))</span>
+
+<span class="c1"># convert to floats</span>
+<span class="n">mms_values_float</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">mms_value</span> <span class="ow">in</span> <span class="n">mms_values</span><span class="p">:</span>
+    <span class="n">mms_values_float</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">mms_value</span><span class="p">))</span>  
+
+<span class="c1"># import numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># plot data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">mms_values_float</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span><span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Histogram of available molecularMass values for selen* search&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;molecularMass&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/198928bdff50d71cfde341d46d1f6e6be5cc91a6098f78d14af5b28971404c62.png" src="../_images/198928bdff50d71cfde341d46d1f6e6be5cc91a6098f78d14af5b28971404c62.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./datasources"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="goldbook_api.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Accessing the IUPAC Gold Book API in Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pubchem.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Repository: PubChem</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-chemistry-record-detail-retrieval">1. Common Chemistry Record Detail Retrieval</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries">Import libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-api-parameters">Setup API parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#request-data-from-cas-common-chemistry-detail-api">Request data from CAS Common Chemistry Detail API</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#display-the-molecule-drawing">Display the Molecule Drawing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-some-specific-data">Select some specific data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-chemistry-api-record-detail-retrieval-in-a-loop">2. Common Chemistry API record detail retrieval in a loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Import libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Setup API parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#request-data-for-each-cas-rn-and-save-to-a-list">Request data for each CAS RN and save to a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#display-molecule-drawings">Display Molecule Drawings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Select some specific data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-chemistry-search">3. Common Chemistry Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Import libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Setup API Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#request-data-from-cas-common-chemistry-search-api">Request data from CAS Common Chemistry Search API</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handle-multiple-results">Handle multiple results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handle-multiple-page-results">Handle multiple page results</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IUPAC WorldFAIR Chemistry D3.2 Project
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Licenses:  See the "About this..." section in a page for the per resource license. Default license is <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.<br/>
+<em>WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41<br/>
+Coordination and Support Action under Grant Agreement No. 101058393.</em>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
