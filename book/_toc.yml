@@ -14,9 +14,10 @@ parts:
   - caption: The FAIR Chemistry Cookbook
     chapters:
     - file: cooking
-      title: The Joy of Cooking
-    - file: techniques
-      title: FAIR Techniques
+      title: The Joy of FAIR
+      sections:
+        - file: techniques
+          title: FAIR Techniques
     - file: tools
       title: Tools & Web Services
       sections:
@@ -32,7 +33,7 @@ parts:
             - file: datasources/pubchem_pugrest1
             - file: datasources/pubchem_pugrest2
             - file: datasources/pubchem_pugrest3
-        - file: datasources/pubchem_view
+        - file: datasources/pubchem_pugview
     - file: manipulations
       title: Data Manipulations
       sections:
