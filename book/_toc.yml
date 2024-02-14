@@ -27,14 +27,19 @@ parts:
       sections:
         - file: datasources/goldbook_api
           title: "Terminology: The IUPAC Gold Book"
+        - file: datasources/cas_commonchem
         - file: datasources/pubchem
-        - file: datasources/pubchem_pugrest
           sections:
-            - file: datasources/pubchem_pugrest1
-            - file: datasources/pubchem_pugrest2
-            - file: datasources/pubchem_pugrest3
-        - file: datasources/pubchem_pugview
-          title: PubChem PUG-View
+            - file: datasources/pubchem_pugrest
+              title: PubChem PUG-REST
+              sections:
+                - file: datasources/pubchem_pugrest1
+                - file: datasources/pubchem_pugrest2
+                - file: datasources/pubchem_pugrest3
+            - file: datasources/pubchem_pugview
+              title: PubChem PUG-View
+            - file: datasources/pubchem_ptable
+              title: PubChem Periodic Table
     - file: manipulations
       title: Data Manipulations
       sections:
