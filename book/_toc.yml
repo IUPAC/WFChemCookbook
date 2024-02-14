@@ -34,6 +34,7 @@ parts:
             - file: datasources/pubchem_pugrest2
             - file: datasources/pubchem_pugrest3
         - file: datasources/pubchem_pugview
+          title: PubChem PUG-View
     - file: manipulations
       title: Data Manipulations
       sections:
