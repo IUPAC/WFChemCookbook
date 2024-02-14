@@ -1,4 +1,4 @@
-# The Joy of Cooking
+# The Joy of FAIR
 
 Working with data in terms of FAIR and in a digital environment means working with machine-readable data, therefore 
 different activities, different steps to handle the data. This section will provide a brief background on 
