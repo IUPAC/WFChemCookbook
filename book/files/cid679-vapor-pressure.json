@@ -1,0 +1,135 @@
+{
+    "Record": {
+        "RecordType": "CID",
+        "RecordNumber": 679,
+        "RecordTitle": "Dimethyl Sulfoxide",
+        "Section": [
+            {
+                "TOCHeading": "Chemical and Physical Properties",
+                "Description": "Various chemical and physical properties that are experimentally determined for this compound.  See also the Safety and Hazard Properties section (if available), which has additional properties pertinent to chemical safety and hazards.",
+                "Section": [
+                    {
+                        "TOCHeading": "Experimental Properties",
+                        "Description": "Various experimentally determined properties for this compound.  See also the Safety and Hazard Properties section (if available), which has additional properties pertinent to chemical safety and hazards.",
+                        "Section": [
+                            {
+                                "TOCHeading": "Vapor Pressure",
+                                "Description": "Vapor pressure (or equilibrium vapor pressure) is the pressure of a vapor in thermodynamic equilibrium with its condensed phases in a closed system.",
+                                "URL": "https://chem.libretexts.org/Bookshelves/General_Chemistry/Map%3A_Chemistry_-_The_Central_Science_(Brown_et_al.)/11%3A_Liquids_and_Intermolecular_Forces/11.05%3A_Vapor_Pressure",
+                                "Information": [
+                                    {
+                                        "ReferenceNumber": 1,
+                                        "Reference": [
+                                            "National Toxicology Program, Institute of Environmental Health Sciences, National Institutes of Health (NTP). 1992. National Toxicology Program Chemical Repository Database. Research Triangle Park, North Carolina."
+                                        ],
+                                        "Value": {
+                                            "StringWithMarkup": [
+                                                {
+                                                    "String": "0.42 mmHg at 68 \u00b0F (NTP, 1992)"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "ReferenceNumber": 32,
+                                        "Value": {
+                                            "StringWithMarkup": [
+                                                {
+                                                    "String": "0.61 [mmHg]"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "ReferenceNumber": 33,
+                                        "Description": "PEER REVIEWED",
+                                        "Reference": [
+                                            "Verschueren, K. Handbook of Environmental Data on Organic Chemicals. Volumes 1-2. 4th ed. John Wiley & Sons. New York, NY. 2001, p. 941"
+                                        ],
+                                        "Value": {
+                                            "StringWithMarkup": [
+                                                {
+                                                    "String": "VP: 0.42 mm at 20 \u00b0C"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "ReferenceNumber": 33,
+                                        "Description": "PEER REVIEWED",
+                                        "Reference": [
+                                            "Daubert TE, Danner RP; Physical and Thermodynamic Properties of Pure Chemicals Data Compilation. Washington, DC: Taylor and Francis (2002)"
+                                        ],
+                                        "Value": {
+                                            "StringWithMarkup": [
+                                                {
+                                                    "String": "0.60 mm Hg at 25 \u00b0C"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "ReferenceNumber": 47,
+                                        "Value": {
+                                            "StringWithMarkup": [
+                                                {
+                                                    "String": "Vapor pressure, Pa at 20 \u00b0C: 59.4"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 1,
+                "SourceName": "CAMEO Chemicals",
+                "SourceID": "8559",
+                "Name": "DIMETHYL SULFOXIDE",
+                "Description": "CAMEO Chemicals is a chemical database designed for people who are involved in hazardous material incident response and planning. CAMEO Chemicals contains a library with thousands of datasheets containing response-related information and recommendations for hazardous materials that are commonly transported, used, or stored in the United States. CAMEO Chemicals was developed by the National Oceanic and Atmospheric Administration's Office of Response and Restoration in partnership with the Environmental Protection Agency's Office of Emergency Management.",
+                "URL": "https://cameochemicals.noaa.gov/chemical/8559",
+                "LicenseNote": "CAMEO Chemicals and all other CAMEO products are available at no charge to those organizations and individuals (recipients) responsible for the safe handling of chemicals. However, some of the chemical data itself is subject to the copyright restrictions of the companies or organizations that provided the data.",
+                "LicenseURL": "https://cameochemicals.noaa.gov/help/reference/terms_and_conditions.htm?d_f=false",
+                "ANID": 758138
+            },
+            {
+                "ReferenceNumber": 32,
+                "SourceName": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+                "SourceID": "hz1671",
+                "Name": "Dimethyl sulfoxide",
+                "Description": "Haz-Map\u00ae is an occupational health database designed for health and safety professionals and for consumers seeking information about the adverse effects of workplace exposures to chemical and biological agents.",
+                "URL": "https://haz-map.com/Agents/1671",
+                "LicenseNote": "Copyright (c) 2022 Haz-Map(R). All rights reserved.\nUnless otherwise indicated, all materials from Haz-Map are copyrighted by Haz-Map(R). No part of these materials, either text or image may be used for any purpose other than for personal use. Therefore, reproduction, modification, storage in a retrieval system or retransmission, in any form or by any means, electronic, mechanical or otherwise, for reasons other than personal use, is strictly prohibited without prior written permission.",
+                "LicenseURL": "https://haz-map.com/About",
+                "ANID": 17277215
+            },
+            {
+                "ReferenceNumber": 33,
+                "SourceName": "Hazardous Substances Data Bank (HSDB)",
+                "SourceID": "80",
+                "Name": "DIMETHYL SULFOXIDE",
+                "Description": "The Hazardous Substances Data Bank (HSDB) is a toxicology database that focuses on the toxicology of potentially hazardous chemicals. It provides information on human exposure, industrial hygiene, emergency handling procedures, environmental fate, regulatory requirements, nanomaterials, and related areas. The information in HSDB has been assessed by a Scientific Review Panel.",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/80",
+                "LicenseURL": "https://www.nlm.nih.gov/web_policies.html",
+                "IsToxnet": true,
+                "ANID": 49
+            },
+            {
+                "ReferenceNumber": 47,
+                "SourceName": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+                "SourceID": "0459",
+                "Name": "DIMETHYL SULPHOXIDE",
+                "Description": "The International Chemical Safety Cards (ICSCs) are data sheets intended to provide essential safety and health information on chemicals in a clear and concise way. The primary aim of the Cards is to promote the safe use of chemicals in the workplace.",
+                "URL": "https://www.ilo.org/dyn/icsc/showcard.display?p_version=2&p_card_id=0459",
+                "LicenseNote": "Creative Commons CC BY 4.0",
+                "LicenseURL": "https://www.ilo.org/global/copyright/lang--en/index.htm",
+                "ANID": 2260361
+            }
+        ]
+    }
+}
