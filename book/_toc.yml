@@ -32,6 +32,7 @@ parts:
             - file: datasources/pubchem_pugrest1
             - file: datasources/pubchem_pugrest2
             - file: datasources/pubchem_pugrest3
+        - file: datasources/pubchem_view
     - file: manipulations
       title: Data Manipulations
       sections:
