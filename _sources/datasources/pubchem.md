@@ -38,31 +38,31 @@ relevant annotations collected by PubChem from authoritative data sources.  Here
 pages for PubChem records.
 
 - Compound (CID 60823, aspirin):<br>
-https://pubchem.ncbi.nlm.nih.gov/compound/2244
+  [https://pubchem.ncbi.nlm.nih.gov/compound/2244](https://pubchem.ncbi.nlm.nih.gov/compound/2244)
 
 - Substance (SID 829042, depositor-provided structure of aspirin)<br>
-https://pubchem.ncbi.nlm.nih.gov/substance/829042
+  [https://pubchem.ncbi.nlm.nih.gov/substance/829042](https://pubchem.ncbi.nlm.nih.gov/substance/829042)
 
 - Assay (AID 463075, high-throughput assay to identify inhibitors of TNF-<sym>alpha-induced cell death)<br>
-https://pubchem.ncbi.nlm.nih.gov/bioassay/463075
+  [https://pubchem.ncbi.nlm.nih.gov/bioassay/463075](https://pubchem.ncbi.nlm.nih.gov/bioassay/463075)
 
 - Gene (human tumor necrosis factor (TNF); NCBI GeneID 7124)<br>
-https://pubchem.ncbi.nlm.nih.gov/gene/7124
+  [https://pubchem.ncbi.nlm.nih.gov/gene/7124](https://pubchem.ncbi.nlm.nih.gov/gene/7124)
 
 - Protein (mouse Cytochrome P450 1A1 (CYP1A1); NCBI accession P00184)<br>
-https://pubchem.ncbi.nlm.nih.gov/protein/P00184
+  [https://pubchem.ncbi.nlm.nih.gov/protein/P00184](https://pubchem.ncbi.nlm.nih.gov/protein/P00184)
 
 - Pathway (Glycolysis in human; Reactome ID R-HSA-70171)<br>
-https://pubchem.ncbi.nlm.nih.gov/pathway/Reactome:R-HSA-70171
+  [https://pubchem.ncbi.nlm.nih.gov/pathway/Reactome:R-HSA-70171](https://pubchem.ncbi.nlm.nih.gov/pathway/Reactome:R-HSA-70171)
 
 - Cell Line (Michigan Cancer Foundation-7 (MCF-7) breast cancer cell line)<br>
-https://pubchem.ncbi.nlm.nih.gov/cell/mcf-7
+  [https://pubchem.ncbi.nlm.nih.gov/cell/mcf-7](https://pubchem.ncbi.nlm.nih.gov/cell/mcf-7)
 
 - Taxonomy (Saccharomyces cerevisiae (baker's yeast); NCBI Taxonomy ID 4932)<br>
-https://pubchem.ncbi.nlm.nih.gov/taxonomy/4932
+  [https://pubchem.ncbi.nlm.nih.gov/taxonomy/4932](https://pubchem.ncbi.nlm.nih.gov/taxonomy/4932)
 
 - Patent (US Patent US-2021379090-A1)<br>
-https://pubchem.ncbi.nlm.nih.gov/patent/US-2021379090-A1
+  [https://pubchem.ncbi.nlm.nih.gov/patent/US-2021379090-A1](https://pubchem.ncbi.nlm.nih.gov/patent/US-2021379090-A1)
 
 
 ## PubChem Tutorials
