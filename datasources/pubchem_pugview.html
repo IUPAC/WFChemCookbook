@@ -175,7 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Accessing PubChem through PUG-View</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">PubChem PUG-View</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -466,13 +466,44 @@ document.write(`
                   
   <section id="accessing-pubchem-through-pug-view">
 <h1>Accessing PubChem through PUG-View<a class="headerlink" href="#accessing-pubchem-through-pug-view" title="Permalink to this headline">#</a></h1>
-<p>PubChem provides multiple programmatic access routes.  One of them is PUG-View, which is a Representational State Transfer (REST)-style web service interface specialized for accessing annotation data contained in PubChem.  More detailed information on PUG-View can be found in the following paper:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Author(s): <a class="reference external" href="https://orcid.org/0000-0001-9828-2074">Sunghwan Kim</a></p></li>
+<li><p class="sd-card-text">Reviewer: <a class="reference external" href="https://orcid.org/0000-0001-5404-6934">Samuel Munday</a></p></li>
+<li><p class="sd-card-text">Topic(s): How to retrieve chemical data using the PubChem View API.</p></li>
+<li><p class="sd-card-text">Format: Interactive Jupyter Notebook (Python)</p></li>
+<li><p class="sd-card-text">Scenario: You need to access and chemical data programatically based from PubChem annotations.</p></li>
+<li><p class="sd-card-text">Skills: You should be familar with:</p>
+<ul>
+<li><p class="sd-card-text"><a class="reference external" href="https://www.ibm.com/topics/api">Application Programming Interfaces (APIs)</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://restfulapi.net/">Representational State Transfer API</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://www.youtube.com/watch?v=kqtD5dpn9C8">Introductory Python</a></p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Learning outcomes:</p>
+<ul>
+<li><p class="sd-card-text">How to get PubChem annotations for a compound</p></li>
+<li><p class="sd-card-text">How to get PubChem annotations of multi-word sections and chemical properties for a compound</p></li>
+<li><p class="sd-card-text">How to get PubChem annotations for data other types of records</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Citation: ‘Accessing PubChem through PUG-View’, Sunghwan Kim, The IUPAC FAIR Chemistry Cookbook, Contributed: 2024-02-14 <a class="reference external" href="https://w3id.org/ifcc/IFCC009">https://w3id.org/ifcc/IFCC009</a>.</p></li>
+<li><p class="sd-card-text">Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
+</ul>
+</div>
+</details><p>PubChem provides multiple programmatic access routes.  One of them is PUG-View, which is a Representational State Transfer (REST)-style web service interface specialized for accessing annotation data contained in PubChem.  More detailed information on PUG-View can be found in the following paper:</p>
 <blockquote>
 <div><p><strong>PUG-View: programmatic access to chemical annotations integrated in PubChem</strong><br />
 Kim et al., Journal of Cheminformatics, 2019, 11:56.<br />
 DOI: <a class="reference external" href="https://doi.org/10.1186/s13321-019-0375-2">10.1186/s13321-019-0375-2</a></p>
 </div></blockquote>
-<p>Additional information can also be found at the PUG-View Help page (https://pubchem.ncbi.nlm.nih.gov/docs/pug-view).</p>
+<p>Additional information can also be found at the PUG-View Help page (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/pug-view">https://pubchem.ncbi.nlm.nih.gov/docs/pug-view</a>.</p>
 <p>This Jupyter notebook demonstrates how to programmatically access annotation data for PubChem records.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -711,28 +742,8 @@ https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Vapor-Pressure</p>
 <p>Data downloaded through PUG-View can be saved.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;files/cid679-vapor-pressure.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../files/cid679-vapor-pressure.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;files/cid679-vapor-pressure.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.8/x64/lib/python3.11/site-packages/IPython/core/interactiveshell.py:310,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">310</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;files/cid679-vapor-pressure.json&#39;
 </pre></div>
 </div>
 </div>
@@ -895,21 +906,25 @@ https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/Kovats+Retent
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Getting data for page 5
-Getting data for page 10
-Getting data for page 15
-Getting data for page 20
-Getting data for page 25
-Getting data for page 30
-Getting data for page 35
-Getting data for page 40
-Getting data for page 45
-Getting data for page 50
-Getting data for page 55
-Getting data for page 60
-Getting data for page 65
-Getting data for page 70
-Getting data for page 75
-Getting data for page 80
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Getting data for page 10
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Getting data for page 15
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Getting data for page 20
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="k">if</span> <span class="n">page_curr</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Getting data for page&quot;</span><span class="p">,</span> <span class="n">page_curr</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -935,11 +950,6 @@ https://pubchem.ncbi.nlm.nih.gov/element/18#section=Boiling-Point</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/JSON?heading=Boiling+Point&amp;heading_type=compound
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -947,11 +957,6 @@ https://pubchem.ncbi.nlm.nih.gov/element/18#section=Boiling-Point</p></li>
 <span class="n">heading</span> <span class="o">=</span> <span class="s2">&quot;Boiling+Point&quot;</span>      <span class="c1"># spaces are replaced with &quot;+&quot;</span>
 <span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/annotations/heading/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span> <span class="o">+</span> <span class="s2">&quot;&amp;heading_type=element&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/JSON?heading=Boiling+Point&amp;heading_type=element
 </pre></div>
 </div>
 </div>
@@ -990,11 +995,6 @@ The examples below demonstrate how to access the data presented on the following
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/gene/1956/JSON?heading=Protein+Isoforms
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1005,11 +1005,6 @@ The examples below demonstrate how to access the data presented on the following
 
 <span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/&quot;</span> <span class="o">+</span> <span class="n">record_type</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">record_id</span> <span class="o">+</span> <span class="s2">&quot;/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/protein/P10828/JSON?heading=Related+Proteins
 </pre></div>
 </div>
 </div>
@@ -1026,11 +1021,6 @@ The examples below demonstrate how to access the data presented on the following
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/cell/hela/JSON?heading=Diseases
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1044,11 +1034,6 @@ The examples below demonstrate how to access the data presented on the following
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/taxonomy/9986/JSON?heading=Names+and+Identifiers
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1059,11 +1044,6 @@ The examples below demonstrate how to access the data presented on the following
 
 <span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/&quot;</span> <span class="o">+</span> <span class="n">record_type</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">record_id</span> <span class="o">+</span> <span class="s2">&quot;/JSON?heading=&quot;</span> <span class="o">+</span> <span class="n">heading</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/patent/US-8148324-B2/JSON?heading=Important+Dates
 </pre></div>
 </div>
 </div>
@@ -1081,11 +1061,6 @@ The examples below demonstrate how to access the data presented on the following
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/substance/319892613/JSON
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1095,11 +1070,6 @@ The examples below demonstrate how to access the data presented on the following
 
 <span class="n">url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;/data/&quot;</span> <span class="o">+</span> <span class="n">record_type</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">record_id</span> <span class="o">+</span> <span class="s2">&quot;/JSON&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/bioassay/720659/JSON
 </pre></div>
 </div>
 </div>
