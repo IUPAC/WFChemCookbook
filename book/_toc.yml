@@ -1,4 +1,4 @@
-# Table of contents sampler edition 
+# IFCC table of contents structure
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
@@ -6,51 +6,55 @@ root: intro
 parts:
   - caption: Introduction
     chapters:
-    - file: about
-    - file: iupacfair
-    - file: feedback
+    - file: about_cookbook
+      title: About this Cookbook
+    - file: use_cookbook
     - file: contributions
+    - file: feedback
   - caption: The FAIR Chemistry Cookbook
     chapters:
     - file: cooking
-      title: The Joy of Cooking
-    - file: techniques
-      title: Cooking Techniques
+      title: The Joy of FAIR
       sections:
-        - glob: techniques/*
-    - file: utensils
-      title: Utensils to Use
+        - file: techniques
+          title: FAIR Techniques
+    - file: tools
+      title: Tools & Web Services
       sections:
-        - glob: utensils/*
-    - file: ingredients
-      title: Finding Ingredients
+        - glob: tools/*
+    - file: data_sources
+      title: Data Sources
       sections:
-        - glob: ingredients/ing_[!pubchem]*
-        - file: ingredients/ing_pubchem
-        - file: ingredients/ing_pubchem_pugrest
+        - file: datasources/goldbook_api
+          title: "Terminology: The IUPAC Gold Book"
+        - file: datasources/cas_commonchem
+        - file: datasources/pubchem
           sections:
-            - file: ingredients/ing_pubchem_pugrest1
-            - file: ingredients/ing_pubchem_pugrest2
-            - file: ingredients/ing_pubchem_pugrest3
-    - file: recipes
-      title: Data Recipes
+            - file: datasources/pubchem_pugrest
+              title: PubChem PUG-REST
+              sections:
+                - file: datasources/pubchem_pugrest1
+                - file: datasources/pubchem_pugrest2
+                - file: datasources/pubchem_pugrest3
+            - file: datasources/pubchem_pugview
+              title: PubChem PUG-View
+            - file: datasources/pubchem_ptable
+              title: PubChem Periodic Table
+    - file: manipulations
+      title: Data Manipulations
       sections:
-        - glob: recipes/*
-    - file: menus
-      title: FAIR Menus
+        - glob: manipulations/*
+    - file: usecases
+      title: Use Cases & Workflows
       sections:
-        - glob: menus/*
-    - file: school
-      title: Culinary School
-      sections:
-        - glob: school/*
-    - file: plating
-      title: Data Plating
-      sections:
-        - glob: standards/*
+        - glob: usecases/*
   - caption: Reference
     chapters:
-      - file: development
-        title: Cookbook development
+      - file: about_project
+        title: About this project
+        sections:
+          - file: contributors
+          - file: development
+          - file: worldfair
       - file: glossary
       - file: bibliography

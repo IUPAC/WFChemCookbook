@@ -1,4 +1,4 @@
-# Help Us! Provide feeback
+# Feedback on the Cookbook
 
 Please review the book content, provide feedback and share your ideas for additional contributions. 
 * [Questionnaire](https://forms.gle/mnPiXpnWwf7928wi9) 
