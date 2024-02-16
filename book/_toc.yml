@@ -43,7 +43,12 @@ parts:
     - file: manipulations
       title: Data Manipulations
       sections:
-        - glob: manipulations/*
+        - file: manipulations/computing_inchis
+        - file: manipulations/dataset_search
+        - file: manipulations/excel_import
+          title: Importing data into Excel
+        - file: manipulations/gheets_citations
+          title: Importing data into Google Sheets
     - file: usecases
       title: Use Cases & Workflows
       sections:
