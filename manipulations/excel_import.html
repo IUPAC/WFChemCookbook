@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Importing Chemical Data into a Spreadsheet &#8212; IUPAC FAIR Chemistry Cookbook</title>
+    <title>Importing Chemical Data into Excel &#8212; IUPAC FAIR Chemistry Cookbook</title>
   
   
   
@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'manipulations/excel_import';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Importing JSON Citation Data from an API into Google Sheets" href="gsheets_citations.html" />
+    <link rel="next" title="Use Cases &amp; Workflows" href="../usecases.html" />
     <link rel="prev" title="Finding a Findable Dataset" href="dataset_search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -185,8 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="computing_inchis.html">Computing InChIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dataset_search.html">Finding a Findable Dataset</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Importing Chemical Data into a Spreadsheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gsheets_citations.html">Importing JSON Citation Data from an API into Google Sheets</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Importing data into Excel</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -388,7 +387,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Importing Chemical Data into a Spreadsheet</h1>
+    <h1>Importing Chemical Data into Excel</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -418,8 +417,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="importing-chemical-data-into-a-spreadsheet">
-<h1>Importing Chemical Data into a Spreadsheet<a class="headerlink" href="#importing-chemical-data-into-a-spreadsheet" title="Permalink to this headline">#</a></h1>
+  <section id="importing-chemical-data-into-excel">
+<h1>Importing Chemical Data into Excel<a class="headerlink" href="#importing-chemical-data-into-excel" title="Permalink to this headline">#</a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Culinary School Topic<div class="sd-summary-down docutils">
@@ -429,10 +428,9 @@ Culinary School Topic<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
 <li><p class="sd-card-text">Author: <a class="reference external" href="https://orcid.org/0000-0001-6513-9140">Stuart Chalk</a></p></li>
-<li><p class="sd-card-text">Reviewer:</p></li>
 <li><p class="sd-card-text">Topics: Data Importing, Spreadsheets, Chemical Data</p></li>
 <li><p class="sd-card-text">Format: Markdown file</p></li>
-<li><p class="sd-card-text">Skills: You should be familiar with</p>
+<li><p class="sd-card-text">Skills: You should be familiar with:</p>
 <ul>
 <li><p class="sd-card-text"><a class="reference external" href="https://www.howtogeek.com/356448/what-is-a-file-extension/">Computer files and extensions</a></p></li>
 <li><p class="sd-card-text"><a class="reference external" href="https://en.wikipedia.org/wiki/Data_type">Data Types</a></p></li>
@@ -446,8 +444,8 @@ Culinary School Topic<div class="sd-summary-down docutils">
 <li><p class="sd-card-text">Identify why data may be corrupted upon import a file</p></li>
 </ul>
 </li>
-<li><p class="sd-card-text">Citation: ‘Importing Chemical Data into Spreadsheet’, The IUPAC FAIR Chemistry Cookbook,
-https://iupac.github.io/WFChemCookbook/school/cs_spreadsheet_data_import.html</p></li>
+<li><p class="sd-card-text">Citation: ‘Importing Chemical Data into Spreadsheet’, Stuart Chalk, The IUPAC FAIR Chemistry Cookbook, Contributed:
+2024-02-14 <a class="reference external" href="https://w3id.org/ifcc/IFCC014">https://w3id.org/ifcc/IFCC014</a>.</p></li>
 <li><p class="sd-card-text">Reuse: This notebook is made available under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license.</p></li>
 </ul>
 </div>
@@ -622,11 +620,11 @@ research data in a cloud based service (also, Dropbox, OneDrive, Box, etc.) for 
       </div>
     </a>
     <a class="right-next"
-       href="gsheets_citations.html"
+       href="../usecases.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Importing JSON Citation Data from an API into Google Sheets</p>
+        <p class="prev-next-title">Use Cases &amp; Workflows</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
