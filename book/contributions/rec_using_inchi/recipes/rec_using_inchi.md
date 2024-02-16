@@ -52,7 +52,7 @@ you can use PubChem or ChemSpider searching features, or the
 ![](../images/rec_using_inchi_fig3.png)
 
 If you can name the compound according to IUPAC systematic nomenclature, you can use the 
-[Open Parser for Systematic IUPAC nomenclature (OPSIN)](<https://opsin.ch.cam.ac.uk/index.html),
+[Open Parser for Systematic IUPAC nomenclature (OPSIN)](https://opsin.ch.cam.ac.uk/index.html),
 to calculate (this is not a search) the InChI and the InChiKey. OPSIN can be downloaded or accessed online.
 
 ![](../images/rec_using_inchi_fig4.png)
@@ -75,7 +75,8 @@ Make sure to check that isotope and stereochemistry information is preserved whe
 
 ## Case 4: I have the SMILES string or the InChI for my chemical
 
-In the case you are able to write our chemical as a SMILES string or already have an InChI and just need the InChIKey for it, we may use the
+In the case you are able to write our chemical as a [SMILES](https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system) 
+string or already have an InChI and just need the InChIKey for it, we may use the
 [CACTUS Chemical Identifier Resolver](https://cactus.nci.nih.gov/chemical/structure).
 
 ![](../images/rec_using_inchi_fig5.png)
@@ -84,41 +85,53 @@ In the case you are able to write our chemical as a SMILES string or already hav
 
 Please be aware that complex InChIs can not be interpreted by the CACTUS Chemical Identifier Resolver.
 
-Again, import and export features of the common molecular drawing packages may be useful in this case. Last but not least, databases can also help find an InChI or an InChIKey from a SMILES; provided the compound is included in the database. Remember to check the responses before taking them as correct (specially for stereochemistry and isotope distribution).
+Again, import and export features of the common molecular drawing packages may be useful in this case. 
+Last but not least, databases can also help find an InChI or an InChIKey from a SMILES; provided the compound is included in the database. 
+Remember to check the responses before taking them as correct (specially for stereochemistry and isotope distribution).
 
-## Case 5: I only have the CAS-RN for my chemical
+## Case 5: I only have the CAS Registry Number (CAS-RN) for my chemical
 
-If you only have the CAS-RN for your chemical, you have to resort to a database to potentially find the InChI and InChIKey. Curated chemical databases, such as the ACS Common Chemistry service, <https://commonchemistry.cas.org/> (for common chemicals) or SciFinder, <https://scifinder.cas.org>, will be among the first options to try. Other databases like PubChem, <https://pubchem.ncbi.nlm.nih.gov>, ChemSpider, <https://chemspider.com>, Wikidata, <https://www.wikidata.org/>, or Wikipedia, <https://www.wikipedia.org/>, (quote your CAS-RN) may also work in many cases for common chemicals.
+If you only have the [CAS Registry Number (CAS-RN)](https://www.cas.org/cas-data/cas-registry) for your chemical,
+you have to resort to a database to potentially find the InChI and InChIKey.
+Curated chemical databases, such as the [ACS Common Chemistry service](https://commonchemistry.cas.org/) (for common chemicals) or 
+[SciFinder](https://scifinder.cas.org), will be among the first options to try.
+Other databases like [PubChem](https://pubchem.ncbi.nlm.nih.gov), [ChemSpider](https://chemspider.com), [Wikidata](https://www.wikidata.org/),
+or [Wikipedia](https://www.wikipedia.org/) (quote your CAS-RN when searching) may also work in many cases for common chemicals.
 
 ![](../images/rec_using_inchi_fig7.png)
 
 ## Last step: Let's check our InChI and InChIKey
 
-Once you have found the InChI and the InChIKey of a chemical species, it may be worth to double-check what we got as a result.
+Once you have found the InChI and the InChIKey of a chemical species, it may be worth double-checking what you got as a result.
 
 ### Quick checks
 
 Let's start with some simple checks.
 
 - Does the InChI starts with the expected characters, "InChI=1S/"?
-- Does the InChI have the expected layers, e.g., t, m , s sublayers if you are referring to a specific isomer, or i if you have an isotopically -labelled compound?
+- Does the InChI have the expected layers, e.g., t, m, s sublayers if you are referring to a specific isomer, or i if you have an isotopically -labelled compound?
 - Does the InChIKey have 27 characters?
 - Does it follow the expected structure 14 uppercase letters, a hyphen, 10 uppercase letters, a hyphen and one last uppercase letter?
-- Does it end with N if the chemical specie is neutral?
+- Does it end with N if the chemical species is neutral?
 - Does the InChIKey has SA has the last two letters preceding the second dash? (SA there means version 1 standard)
 
 ### Import your InChI into a molecular drawing tool
 
-You can use your preferred molecular drawing tool to import the InChI and check that the response corresponds to your chemical structure. The drawing tool at UniChem, <https://www.ebi.ac.uk/unichem/>, may well serve this purpose.
+You can use your preferred molecular drawing tool to import the InChI and check that the response corresponds to your chemical structure.
+The drawing tool at [UniChem](https://www.ebi.ac.uk/unichem/) may well serve this purpose.
 
 ![](../images/rec_using_inchi_fig8.png)
 
 ### Google it!
 
-Major web search engines, like Google, Bing or Baidu can search from an InChIKey; its structure is largely specific and allows finding references and data related to your chemical specie. So, search your InChIKey and make sure you get back responses that belong to your molecule.
+Major web search engines, like Google, Bing or Baidu can search from an InChIKey; its structure is largely specific and allows finding 
+references and data related to your chemical specie. So, search your InChIKey and make sure you get back responses that belong to your molecule.
 
 ### Use an InChI resolver
 
-Last, specific tools are being developed to resolve InChI and InChIKey by searching into databases. Currently, InChI and InChIKey resolution can be done at PubChem search page, <https://pubchem.ncbi.nlm.nih.gov/>, UniChem, <https://www.ebi.ac.uk/unichem/> or the CACTUS Chemical Identity Resolver, <https://cactus.nci.nih.gov/chemical/structure>.
+Last, specific tools are being developed to resolve InChI and InChIKey by searching into databases. 
+Currently, InChI and InChIKey resolution can be done at [PubChem search page](https://pubchem.ncbi.nlm.nih.gov/), [UniChem](https://www.ebi.ac.uk/unichem/),
+or the [CACTUS Chemical Identity Resolver](https://cactus.nci.nih.gov/chemical/structure).
 
-API to resolve programmatically InChIKeys are also being developed. Progress can be checked out at <https://inchi-resolver.org/>.
+An API to resolve programmatically InChIKeys are also being developed. Progress can be checked out at [InChI Resolver](https://inchi-resolver.org/).
+
