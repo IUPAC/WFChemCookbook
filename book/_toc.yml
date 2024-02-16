@@ -47,7 +47,7 @@ parts:
         - file: manipulations/dataset_search
         - file: manipulations/excel_import
           title: Importing data into Excel
-        - file: manipulations/gheets_citations
+        - file: manipulations/gsheets_citations
           title: Importing data into Google Sheets
     - file: usecases
       title: Use Cases & Workflows

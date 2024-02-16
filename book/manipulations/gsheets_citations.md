@@ -1,6 +1,6 @@
 # Importing JSON Citation Data from an API into Google Sheets 
 
-```{dropdown} Culinary School Topic
+```{dropdown} About this recipe
 - Author: [Stuart Chalk](https://orcid.org/0000-0001-6513-9140)
 - Topics: Data Importing, Google Sheets, Citation data
 - Format: Markdown file, Google Sheets file
