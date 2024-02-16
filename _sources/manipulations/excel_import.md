@@ -1,6 +1,6 @@
 # Importing Chemical Data into Excel
 
-```{dropdown} Culinary School Topic
+```{dropdown} About this recipe
 - Author: [Stuart Chalk](https://orcid.org/0000-0001-6513-9140)
 - Topics: Data Importing, Spreadsheets, Chemical Data
 - Format: Markdown file
