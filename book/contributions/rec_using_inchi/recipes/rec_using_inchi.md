@@ -7,59 +7,76 @@
 - Format: Tutorial
 - Scenarios: Retrieve the InChI and InChIKey of a chemical
 - Skills:
-    - Understand what an InChI is (<http://publications.iupac.org/ci/2006/2806/2806-pp12-15.pdf>, <https://www.inchi-trust.org/>)
-    - Know what MOL files are and where to get them (<https://en.wikipedia.org/wiki/Chemical_table_file>, <https://discover.3ds.com/sites/default/files/2020-08/biovia_ctfileformats_2020.pdf> )
-    - Understand what a SMILES string is (<https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system>, <http://opensmiles.org/>)
+    - Understand what an InChI is ([IUPAC](http://publications.iupac.org/ci/2006/2806/2806-pp12-15.pdf), [InChI-Trust](https://www.inchi-trust.org/))
+    - Know what MOL files are and where to get them ([Wikipedia](https://en.wikipedia.org/wiki/Chemical_table_file),
+ [Dassault Systèmes] (https://discover.3ds.com/sites/default/files/2020-08/biovia_ctfileformats_2020.pdf))
+    - Understand what a SMILES string is ([Wikipedia](https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system),
+[OpenSMILES](http://opensmiles.org/))
 - Learning outcomes: After completing this example you should understand:
     - What makes InChI and InChIKey convenient identifier for chemical
     - How to obtain the InChI and the InChIKey of a chemical
     - How to identify a chemical behind an InChI or an InChIKey
-- Citation: 'Using InChI and InChIKey to annotate your chemical entities', The IUPAC FAIR Chemistry Cookbook, https://iupac.github.io/WFChemCookbook/recipes/rec_using_inchi.html
+- Citation: 'Using InChI and InChIKey to annotate your chemical entities', The IUPAC FAIR Chemistry Cookbook,
+ https://iupac.github.io/WFChemCookbook/recipes/rec_using_inchi.html
 - Reuse: This notebook is made available under a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
 ```
 
 ## Scenario
 
-So far, we are quite used to identifying chemical substances with a name, a drawing or a CAS Registry Number (CAS-RN). However, these identifiers have some issues that affect their usability for indexing and searching. A way to increase the FAIRness of our documents is to annotate our chemicals with InChI and InChiKeys, either in papers, data, or metadata files.
+So far, we are quite used to identifying chemical substances with a name, a drawing or a CAS Registry Number (CAS-RN).
+However, these identifiers have some issues that affect their usability for indexing and searching.
+A way to increase the FAIRness of our documents is to annotate our chemical substances with InChI and InChiKeys, either in papers, data, or metadata files.
 
 Let's do it together!
 
-## Case 1: I can draw my chemical 
+## Case 1: I can draw my chemical substance accurately
 
-Many molecular drawing packages like ChemDraw, <https://revvitysignals.com/products/research/chemdraw>, ChemSketch, <https://www.acdlabs.com/products/chemsketch/>, or MarvinSketch, <https://chemaxon.com/marvin>, can output the InChI and the InChIKey for a molecule drawn on them.
+Many molecular drawing packages like [ChemDraw](https://revvitysignals.com/products/research/chemdraw),
+[ChemSketch](https://www.acdlabs.com/products/chemsketch/), or [MarvinSketch](https://chemaxon.com/marvin),
+can output the InChI and the InChIKey for a molecule drawn on them. Other drawing packages such as the ones listed on the
+[Wikipedia page on molecule editors](https://en.wikipedia.org/wiki/Molecule_editor) may also be helpful.
 
 ![](../images/rec_using_inchi_fig1.png)
 
-Alternatively, we can use the CACTUS Chemical Identifier Resolver, <https://cactus.nci.nih.gov/chemical/structure> to get the InChI or the InChIKey of a drawn chemical.
+Alternatively, we can use the [CACTUS Chemical Identifier Resolver](https://cactus.nci.nih.gov/chemical/structure)
+to get the InChI or the InChIKey of a drawn chemical.
 
 ![](../images/rec_using_inchi_fig2.png)
 
 ## Case 2: I can unambiguously name my chemical 
 
-If we can name our chemical (and this name is included in the chemical databases), you can use PubChem or ChemSpider searching features, or the CACTUS Chemical Identifier Resolver, <https://cactus.nci.nih.gov/chemical/structure>, to obtain the InChI or the InChIKey.
+If we can name our chemical (and this name is included in the chemical databases), 
+you can use PubChem or ChemSpider searching features, or the 
+[CACTUS Chemical Identifier Resolver](https://cactus.nci.nih.gov/chemical/structure), to obtain the InChI or the InChIKey.
 
 ![](../images/rec_using_inchi_fig3.png)
 
-If you can name the compound according to IUPAC systematic nomenclature, you can use the Open Parser for Systematic IUPAC nomenclature (OPSIN), to calculate (this is not a search) the InChI and the InChiKey. OPSIN can be downloaded (accessed on the command line) or used online at <https://opsin.ch.cam.ac.uk/index.html>.
+If you can name the compound according to IUPAC systematic nomenclature, you can use the 
+[Open Parser for Systematic IUPAC nomenclature (OPSIN)](<https://opsin.ch.cam.ac.uk/index.html),
+to calculate (this is not a search) the InChI and the InChiKey. OPSIN can be downloaded or accessed online.
 
 ![](../images/rec_using_inchi_fig4.png)
 
 ## Case 3: I have a MOL file for my chemical
 
-If you have a MOL or SDF file for our molecule, you can use the UniChem service, <https://www.ebi.ac.uk/unichem/> to upload the file and obtain its InChI and InChIKey.
+If you have a [MOL or SDF file](https://en.wikipedia.org/wiki/Chemical_table_file) for your molecule, you can use the 
+[UniChem service](https://www.ebi.ac.uk/unichem/) to upload the file and obtain its InChI and InChIKey.
 
 You can also use the following software that you install locally to process the MOL file:
 
--   InChI core software, <https://www.inchi-trust.org/download-latest-inchi-standard-software/>.
--   OpenBabel, <https://openbabel.org/wiki/Main_Page>,
+-   [InChI core software](https://www.inchi-trust.org/download-latest-inchi-standard-software/).
+-   [OpenBabel](https://openbabel.org/wiki/Main_Page),
 
 to convert a MOL file to InChI or InChIKey.
 
-Many common molecular drawing programs can also export and import MOL files. This way. they can also be used to convert a MOL file to an InChI or InChIKey. Make sure to check that isotope and stereochemistry information is preserved when importing and exporting MOL files.
+Many common molecular drawing programs can also export and import MOL files. 
+This way. they can also be used to convert a MOL file to an InChI or InChIKey. 
+Make sure to check that isotope and stereochemistry information is preserved when importing and exporting MOL files.
 
-## Case 3: I have the SMILES string or the InChI for my chemical
+## Case 4: I have the SMILES string or the InChI for my chemical
 
-In the case you are able to write our chemical as a SMILES string or already have an InChI and just need the InChIKey for it, we may use the CACTUS Chemical Identifier Resolver, <https://cactus.nci.nih.gov/chemical/structure>.
+In the case you are able to write our chemical as a SMILES string or already have an InChI and just need the InChIKey for it, we may use the
+[CACTUS Chemical Identifier Resolver](https://cactus.nci.nih.gov/chemical/structure).
 
 ![](../images/rec_using_inchi_fig5.png)
 
@@ -69,7 +86,7 @@ Please be aware that complex InChIs can not be interpreted by the CACTUS Chemica
 
 Again, import and export features of the common molecular drawing packages may be useful in this case. Last but not least, databases can also help find an InChI or an InChIKey from a SMILES; provided the compound is included in the database. Remember to check the responses before taking them as correct (specially for stereochemistry and isotope distribution).
 
-## Case 4: I only have the CAS-RN for my chemical
+## Case 5: I only have the CAS-RN for my chemical
 
 If you only have the CAS-RN for your chemical, you have to resort to a database to potentially find the InChI and InChIKey. Curated chemical databases, such as the ACS Common Chemistry service, <https://commonchemistry.cas.org/> (for common chemicals) or SciFinder, <https://scifinder.cas.org>, will be among the first options to try. Other databases like PubChem, <https://pubchem.ncbi.nlm.nih.gov>, ChemSpider, <https://chemspider.com>, Wikidata, <https://www.wikidata.org/>, or Wikipedia, <https://www.wikipedia.org/>, (quote your CAS-RN) may also work in many cases for common chemicals.
 
