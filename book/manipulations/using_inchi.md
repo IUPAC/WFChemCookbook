@@ -133,6 +133,3 @@ references and data related to your chemical specie. So, search your InChIKey an
 Last, specific tools are being developed to resolve InChI and InChIKey by searching into databases. 
 Currently, InChI and InChIKey resolution can be done at [PubChem search page](https://pubchem.ncbi.nlm.nih.gov/), [UniChem](https://www.ebi.ac.uk/unichem/),
 or the [CACTUS Chemical Identity Resolver](https://cactus.nci.nih.gov/chemical/structure).
-
-An API to resolve programmatically InChIKeys are also being developed. Progress can be checked out at [InChI Resolver](https://inchi-resolver.org/).
-
