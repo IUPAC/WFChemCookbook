@@ -86,9 +86,9 @@ string or already have an InChI and just need the InChIKey for it, we may use th
 
 Please be aware that complex InChIs can not be interpreted by the CACTUS Chemical Identifier Resolver.
 
-Again, import and export features of the common molecular drawing packages may be useful in this case. 
-Last but not least, databases can also help find an InChI or an InChIKey from a SMILES; provided the compound is included in the database. 
-Remember to check the responses before taking them as correct (specially for stereochemistry and isotope distribution).
+Again, import and export features of the common molecular drawing packages may be useful in this case. Last but not 
+least, databases can also help find an InChI or an InChIKey from a SMILES; provided the compound is included in the database. 
+Remember to check the responses before taking them as correct (especially for stereochemistry and isotope distribution).
 
 ## Case 5: I only have the CAS Registry Number (CAS-RN) for my chemical
 
@@ -125,11 +125,11 @@ The drawing tool at [UniChem](https://www.ebi.ac.uk/unichem/) may well serve thi
 
 ### Google it!
 
-Major web search engines, like Google, Bing or Baidu can search from an InChIKey; its structure is largely specific and allows finding 
-references and data related to your chemical specie. So, search your InChIKey and make sure you get back responses that belong to your molecule.
+Major web search engines, like Google, Bing or Baidu can search for an InChIKey; its structure is largely specific and allows finding 
+references and data related to your chemical species. So, search your InChIKey and make sure you get back responses that belong to your molecule.
 
 ### Use an InChI resolver
 
-Last, specific tools are being developed to resolve InChI and InChIKey by searching into databases. 
-Currently, InChI and InChIKey resolution can be done at [PubChem search page](https://pubchem.ncbi.nlm.nih.gov/), [UniChem](https://www.ebi.ac.uk/unichem/),
+Last, specific tools are being developed to resolve InChI and InChIKey by searching into databases. Currently, InChI and
+InChIKey resolution can be done at [PubChem search page](https://pubchem.ncbi.nlm.nih.gov/), [UniChem](https://www.ebi.ac.uk/unichem/),
 or the [CACTUS Chemical Identity Resolver](https://cactus.nci.nih.gov/chemical/structure).
