@@ -49,6 +49,8 @@ parts:
           title: Importing data into Excel
         - file: manipulations/gsheets_citations
           title: Importing data into Google Sheets
+        - file: manipulations/using_inchi
+          title: Annotation with InChIs
     - file: usecases
       title: Use Cases & Workflows
       sections:

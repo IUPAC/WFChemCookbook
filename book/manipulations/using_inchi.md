@@ -1,8 +1,8 @@
 # Using InChI and InChIKey to annotate your chemical entities 
 
-```{dropdown} About this interactive ![icons](../static/img/rocket.png) recipe
+```{dropdown} About this recipe
 - Author: [Jordi Cuadros](https://orcid.org/0000-0001-6513-9140)
-- Reviewer:
+- Reviewer: [Stuart Chalk](https://orcid.org/0000-0002-0703-7776)
 - Topics: InChI, InChIKey
 - Format: Tutorial
 - Scenarios: Retrieve the InChI and InChIKey of a chemical
@@ -16,8 +16,9 @@
     - What makes InChI and InChIKey convenient identifier for chemical
     - How to obtain the InChI and the InChIKey of a chemical
     - How to identify a chemical behind an InChI or an InChIKey
-- Citation: 'Using InChI and InChIKey to annotate your chemical entities', The IUPAC FAIR Chemistry Cookbook,
- https://iupac.github.io/WFChemCookbook/recipes/rec_using_inchi.html
+- Citation: 'Using InChI and InChIKey to annotate your chemical entities', Jordi Cuadros, The IUPAC FAIR Chemistry 
+  Cookbook, Contributed: 2024-02-28 [https://w3id.org/ifcc/IFCC017](https://w3id.org/ifcc/IFCC017).
+ https://iupac.github.io/WFChemCookbook/recipes/rec_using_inchi.html IFCC017
 - Reuse: This notebook is made available under a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
 ```
 
@@ -25,7 +26,8 @@
 
 So far, we are quite used to identifying chemical substances with a name, a drawing or a CAS Registry Number (CAS-RN).
 However, these identifiers have some issues that affect their usability for indexing and searching.
-A way to increase the FAIRness of our documents is to annotate our chemical substances with InChI and InChiKeys, either in papers, data, or metadata files.
+A way to increase the FAIRness of our documents is to annotate our chemical substances with InChI and InChiKeys, either 
+in papers, data, or metadata files.
 
 Let's do it together!
 
@@ -36,12 +38,12 @@ Many molecular drawing packages like [ChemDraw](https://revvitysignals.com/produ
 can output the InChI and the InChIKey for a molecule drawn on them. Other drawing packages such as the ones listed on the
 [Wikipedia page on molecule editors](https://en.wikipedia.org/wiki/Molecule_editor) may also be helpful.
 
-![](../images/rec_using_inchi_fig1.png)
+![](../images/using_inchi_fig1.png)
 
 Alternatively, we can use the [CACTUS Chemical Identifier Resolver](https://cactus.nci.nih.gov/chemical/structure)
 to get the InChI or the InChIKey of a drawn chemical.
 
-![](../images/rec_using_inchi_fig2.png)
+![](../images/using_inchi_fig2.png)
 
 ## Case 2: I can unambiguously name my chemical 
 
@@ -49,13 +51,13 @@ If we can name our chemical (and this name is included in the chemical databases
 you can use PubChem or ChemSpider searching features, or the 
 [CACTUS Chemical Identifier Resolver](https://cactus.nci.nih.gov/chemical/structure), to obtain the InChI or the InChIKey.
 
-![](../images/rec_using_inchi_fig3.png)
+![](../images/using_inchi_fig3.png)
 
 If you can name the compound according to IUPAC systematic nomenclature, you can use the 
 [Open Parser for Systematic IUPAC nomenclature (OPSIN)](https://opsin.ch.cam.ac.uk/index.html),
 to calculate (this is not a search) the InChI and the InChiKey. OPSIN can be downloaded or accessed online.
 
-![](../images/rec_using_inchi_fig4.png)
+![](../images/using_inchi_fig4.png)
 
 ## Case 3: I have a MOL file for my chemical
 
@@ -79,9 +81,9 @@ In the case you are able to write our chemical as a [SMILES](https://en.wikipedi
 string or already have an InChI and just need the InChIKey for it, we may use the
 [CACTUS Chemical Identifier Resolver](https://cactus.nci.nih.gov/chemical/structure).
 
-![](../images/rec_using_inchi_fig5.png)
+![](../images/using_inchi_fig5.png)
 
-![](../images/rec_using_inchi_fig6.png)
+![](../images/using_inchi_fig6.png)
 
 Please be aware that complex InChIs can not be interpreted by the CACTUS Chemical Identifier Resolver.
 
@@ -98,7 +100,7 @@ Curated chemical databases, such as the [ACS Common Chemistry service](https://c
 Other databases like [PubChem](https://pubchem.ncbi.nlm.nih.gov), [ChemSpider](https://chemspider.com), [Wikidata](https://www.wikidata.org/),
 or [Wikipedia](https://www.wikipedia.org/) (quote your CAS-RN when searching) may also work in many cases for common chemicals.
 
-![](../images/rec_using_inchi_fig7.png)
+![](../images/using_inchi_fig7.png)
 
 ## Last step: Let's check our InChI and InChIKey
 
@@ -120,7 +122,7 @@ Let's start with some simple checks.
 You can use your preferred molecular drawing tool to import the InChI and check that the response corresponds to your chemical structure.
 The drawing tool at [UniChem](https://www.ebi.ac.uk/unichem/) may well serve this purpose.
 
-![](../images/rec_using_inchi_fig8.png)
+![](../images/using_inchi_fig8.png)
 
 ### Google it!
 
