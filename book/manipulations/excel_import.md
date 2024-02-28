@@ -1,11 +1,10 @@
-# Importing Chemical Data into a Spreadsheet
+# Importing Chemical Data into Excel
 
-```{dropdown} Culinary School Topic
+```{dropdown} About this recipe
 - Author: [Stuart Chalk](https://orcid.org/0000-0001-6513-9140)
-- Reviewer: 
 - Topics: Data Importing, Spreadsheets, Chemical Data
 - Format: Markdown file
-- Skills: You should be familiar with
+- Skills: You should be familiar with:
     - [Computer files and extensions](https://www.howtogeek.com/356448/what-is-a-file-extension/)
     - [Data Types](https://en.wikipedia.org/wiki/Data_type)
     - [Character Encoding](https://en.wikipedia.org/wiki/Character_encoding)
@@ -13,8 +12,8 @@
     - How to import data into Microsoft Excel and Google Sheets
     - Understand the difference between .csv, .tsv and .txt files
     - Identify why data may be corrupted upon import a file
-- Citation: 'Importing Chemical Data into Spreadsheet', The IUPAC FAIR Chemistry Cookbook, 
-  https://iupac.github.io/WFChemCookbook/school/cs_spreadsheet_data_import.html
+- Citation: 'Importing Chemical Data into Spreadsheet', Stuart Chalk, The IUPAC FAIR Chemistry Cookbook, Contributed: 
+  2024-02-14 [https://w3id.org/ifcc/IFCC014](https://w3id.org/ifcc/IFCC014).
 - Reuse: This notebook is made available under a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
 ```
 

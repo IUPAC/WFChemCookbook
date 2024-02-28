@@ -1,8 +1,7 @@
 # Importing JSON Citation Data from an API into Google Sheets 
 
-```{dropdown} Culinary School Topic
+```{dropdown} About this recipe
 - Author: [Stuart Chalk](https://orcid.org/0000-0001-6513-9140)
-- Reviewer: 
 - Topics: Data Importing, Google Sheets, Citation data
 - Format: Markdown file, Google Sheets file
 - Skills: You should be familiar with
@@ -13,8 +12,8 @@
     - Options to import data into Google Sheets
     - Understand how to configure the Google Sheets document to import .json files
     - Usage of the ImportJSON Apps Script 
-- Citation: 'Importing JSON Citation Data from an API into Google Sheets ', The IUPAC FAIR Chemistry Cookbook, 
-  https://iupac.github.io/WFChemCookbook/school/cs_googlesheets_citation_data.html
+- Citation: 'Importing JSON Citation Data from an API into Google Sheets', Stuart Chalk, The IUPAC FAIR Chemistry Cookbook, 
+  Contributed: 2024-02-14 [https://w3id.org/ifcc/IFCC015](https://w3id.org/ifcc/IFCC015).
 - Reuse: This notebook is made available under a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
 ```
 
