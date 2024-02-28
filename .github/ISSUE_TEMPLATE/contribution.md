@@ -6,7 +6,7 @@ labels: contribution
 assignees: ''
 ---
 Note:  Your contribution must be attached to this issue as a ZIP file and follow the guidelines in 
-https://github.com/IUPAC/WFChemCookbook/wiki/Structure-and-Naming-of-IFCC-Contribution-Folders .
+https://github.com/IUPAC/WFChemCookbook/wiki/Structure-and-Naming-of-Cookbook-Contribution-Folders .
 
 **Title of Your Contribution**
 Provide a clear and concise title for your contribution. 
@@ -16,7 +16,7 @@ A concise description of the contribution you are submitting.
 
 **Type of Contribution**
 Ingredient, Menu, Recipe, School, Plating, Technique, Utensil
-(See https://github.com/IUPAC/WFChemCookbook/wiki/IFCC-Contribution-Types for descriptions of these types)
+(See https://github.com/IUPAC/WFChemCookbook/wiki/Cookbook-Contribution-Types for descriptions of these types)
 
 **Have You Tested This?**
 Describe how you've tested and verified that your contribution works as expected.
