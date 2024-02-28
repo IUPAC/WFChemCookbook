@@ -6,4 +6,4 @@ Please review the book content, provide feedback and share your ideas for additi
 
 Our overall goal is to get practical tools & tips in the hands of practicing chemists and those who support them to 
 lower barriers and smooth the adoption of best practices for sharing and re-using FAIR chemical data. 
-See [About this project](https://iupac.github.io/WFChemCookbook/about.html) for more background. 
+See [About this project](https://iupac.github.io/WFChemCookbook/about_project.html) for more background. 

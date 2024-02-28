@@ -17,7 +17,7 @@
     - How to obtain the InChI and the InChIKey of a chemical
     - How to identify a chemical behind an InChI or an InChIKey
 - Citation: 'Using InChI and InChIKey to annotate your chemical entities', Jordi Cuadros, The IUPAC FAIR Chemistry 
-  Cookbook, Contributed: 2024-02-28 (https://w3id.org/ifcc/IFCC017)[https://w3id.org/ifcc/IFCC017].
+  Cookbook, Contributed: 2024-02-28 [https://w3id.org/ifcc/IFCC017](https://w3id.org/ifcc/IFCC017).
 - Reuse: This notebook is made available under a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
 ```
 
