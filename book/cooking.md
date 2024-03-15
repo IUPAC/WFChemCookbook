@@ -21,7 +21,7 @@ attributes that enable data to be reused through automated means.
 There are a number of scenarios where it can be useful to navigate across distributed data resources using programmatic 
 methods - for example, a global search for specific chemicals, cross-exchange of chemical information between data 
 repositories, validation of converted or predicted chemical representations, or integration of distributed data for 
-compiled meta-analysis [WF3.3]. A machine processing workflow for reusing data might proceed through stages of 
+compiled meta-analysis {cite:p}`WFD3.3`. A machine processing workflow for reusing data might proceed through stages of 
 discovery, retrieval, validation, curation, compilation, visualization, analysis and derivation. Each of these is 
 dependent on some combination of consistently structured data, granular metadata description and reproducible protocols. 
 Aligning these with FAIR community practices optimizes the workflow for repeated and reliable automated and scalable 
