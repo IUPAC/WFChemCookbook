@@ -1,47 +1,67 @@
-# Table of contents sampler edition 
+# IFCC table of contents structure
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
 root: intro
-parts: 
- - caption: SAMPLE RECIPES
-   chapters:
-     - file: sampler
-     - file: samples/goldbook.ipynb
-     - file: samples/computing_inchis.ipynb
-     - file: samples/learn_spectra
-     - file: samples/dataset_search.ipynb
-     - file: samples/pubchem-pug
-       sections:
-          - file: samples/pubchem-pug-rest1.ipynb
-          - file: samples/pubchem-pug-rest2.ipynb
-          - file: samples/pubchem-pug-rest3.ipynb
-     - file: samples/uvvis_metadata.ipynb
-     - file: samples/opsin.ipynb
- - caption: CULINARY SCHOOL
-   chapters: 
-     - file: school
-     - file: school/cs_spreadsheet_data_import
- - caption: INGREDIENTS
-   chapters:
-     - file: ingredients
- - caption: RECIPES
-   chapters:
-     - file: recipes
- - caption: TEST KITCHEN
-   chapters:
-     - file: kitchen
- - caption: PANTRY
-   chapters:
-     - file: pantry
- - caption: COOKWARE
-   chapters:
-     - file: cookware
- - CAPTION: MENUS 
-   chapters:
-     - file: menus 
- - caption: REFERENCE
-   chapters:
-    - file: about
-    - file: glossary
-    - file: bibliography
+parts:
+  - caption: Introduction
+    chapters:
+    - file: about_cookbook
+      title: About this Cookbook
+    - file: use_cookbook
+    - file: contributions
+    - file: feedback
+  - caption: The FAIR Chemistry Cookbook
+    chapters:
+    - file: cooking
+      title: The Joy of FAIR
+      sections:
+        - file: techniques
+          title: FAIR Techniques
+    - file: tools
+      title: Tools & Web Services
+      sections:
+        - glob: tools/*
+    - file: data_sources
+      title: Data Sources
+      sections:
+        - file: datasources/goldbook_api
+          title: "Terminology: The IUPAC Gold Book"
+        - file: datasources/cas_commonchem
+        - file: datasources/pubchem
+          sections:
+            - file: datasources/pubchem_pugrest
+              title: PubChem PUG-REST
+              sections:
+                - file: datasources/pubchem_pugrest1
+                - file: datasources/pubchem_pugrest2
+                - file: datasources/pubchem_pugrest3
+            - file: datasources/pubchem_pugview
+              title: PubChem PUG-View
+            - file: datasources/pubchem_ptable
+              title: PubChem Periodic Table
+    - file: manipulations
+      title: Data Manipulations
+      sections:
+        - file: manipulations/computing_inchis
+        - file: manipulations/dataset_search
+        - file: manipulations/excel_import
+          title: Importing data into Excel
+        - file: manipulations/gsheets_citations
+          title: Importing data into Google Sheets
+        - file: manipulations/using_inchi
+          title: Annotation with InChIs
+    - file: usecases
+      title: Use Cases & Workflows
+      sections:
+        - glob: usecases/*
+  - caption: Reference
+    chapters:
+      - file: about_project
+        title: About this project
+        sections:
+          - file: contributors
+          - file: development
+          - file: worldfair
+      - file: glossary
+      - file: bibliography

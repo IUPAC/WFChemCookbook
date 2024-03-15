@@ -7,7 +7,7 @@ DRAFT
 A glossary of FAIR terminology will be developed.  The entries below come from the recent paper {cite:p}`Hanson2022`
 from the [IUPAC 'FAIR Spec' project](https://iupac.org/project/2019-031-1-024/) and will be augmented with chemistry
 examples and addition entries as needed.  Terms marked [RDA] are found/derived from this 
-[Research Data Alliance resource](https://smw-rda.esc.rzg.mpg.de/dft-3.0.html).
+[Research Data Alliance resource](http://smw-rda.esc.rzg.mpg.de/dft-3.0.html).
 
 - _chemical structure identifier_ -
   A meaningful alphanumeric text string that can uniquely identify a chemical compound and facilitate its handling in 
@@ -154,3 +154,7 @@ examples and addition entries as needed.  Terms marked [RDA] are found/derived f
 - _SMILES (Simplified Molecular Input Line Entry System)_ - 
   A linear representation of a molecular graph in character string form, used for searching for, matching, and
   atom-atom mapping of chemical structures and models.
+
+```{bibliography}
+:filter: docname in docnames
+```

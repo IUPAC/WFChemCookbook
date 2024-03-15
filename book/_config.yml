@@ -3,7 +3,7 @@
 
 title: IUPAC FAIR Chemistry Cookbook
 author: IUPAC WorldFAIR Chemistry D3.2 Project
-logo: images/iupac_and_wf.jpg
+logo: static/img/iupac_and_wf.jpg
 
 # force re-execution of notebooks on each build.
 # see https://jupyterbook.org/content/execute.html
@@ -25,7 +25,7 @@ repository:
   path_to_book: book  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
-# add Google colab launch button
+# add Binder and Google colab launch buttons
 launch_buttons:
   binderhub_url: "https://mybinder.org"
   colab_url: "https://colab.research.google.com"
@@ -35,10 +35,25 @@ launch_buttons:
 html:
   use_issues_button: true
   use_repository_button: true
+  home_page_in_navbar: false
+  extra_footer: |
+    Licenses:  See the "About this..." section in a page for the per resource license. Default license is <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.<br/>
+    <img alt="EU funded" src="https://iupac.github.io/WFChemCookbook/_static/img/eu_funded.jpg" width="200"/><br/>
+    WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41<br/>
+    Coordination and Support Action under Grant Agreement No. 101058393.
+
+
+sphinx:
+  config:
+    html_show_copyright: false
+    html_js_files: [ 'js/matomo.js' ]
+    html_static_path: [ 'static' ]
 
 # add parse options to distinguish internal and external files
 parse:
    myst_url_schemes: [mailto, http, https]
+   myst_enable_extensions:
+     - html_image
 
 # new feature?
 only_build_toc_files: true

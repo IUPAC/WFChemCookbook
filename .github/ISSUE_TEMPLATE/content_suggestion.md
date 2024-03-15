@@ -1,14 +1,14 @@
 ---
-name: Feature request
-about: Suggest a new feature for the Cookbook project
+name: Content suggestion
+about: Suggest an idea for the Cookbook project
 title: ''
 labels: enhancement
 assignees: ''
 ---
 
-**Describe the Feature Request**
+**Describe the Content**
 
-A clear and concise description of the feature you think the Cookbook to benefit from.
+A clear and concise description of what content you think the Cookbook to benefit from.
 
 Explain why this feature would be useful and how it would enhance the Cookbook project. 
 
