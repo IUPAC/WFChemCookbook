@@ -123,7 +123,7 @@ Once you have finished all of the changes you wish to make and are ready to requ
 -	The summary will show which branches are being merged, how many commits you are merging, and the number of files being changed. 
 -	Add a title describing the pull request and in the description field put an explanation of the content you are asking to be added. This will be seen by the repository maintainers and help them to review your pull request. 
 
-![A screenshot showing the completion of a pull request in GitHub](../images/github-pull-request.png)
+![A screenshot showing the completion of a pull request in GitHub](/book/contributions/nk_introtogithub/images/github_intro_fig6_pull_request.png)
 
 -	Once you have created the pull request this will go into review before it is merged into the main repository. 
 -	The maintainers may ask for some clarification or further changes to be made before they merge the code. You can make further changes by adding more commits to the branch that you are merging in the pull request. 
