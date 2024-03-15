@@ -8,7 +8,7 @@ target different tasks across a range of possible use cases for handling chemica
 relevant chemistry examples, point to external content that are of high quality where available, and reference IUPAC 
 and community digital standards where appropriate.
 
-FAIR data are findable, accessible, interoperable, and reusable for machine processing [Wil16]. FAIR chemical data need 
+FAIR data are findable, accessible, interoperable, and reusable for machine processing {cite:p}`Wil16`. FAIR chemical data need 
 to be machine-readable, and this can be an unfamiliar scenario for many researchers and other stakeholders involved with 
 publishing and managing experimental data. Students need to learn how to navigate the scale and range of data types and 
 sources becoming available, extract meaning and insight from aggregations of data programmatically, and apply automated 
