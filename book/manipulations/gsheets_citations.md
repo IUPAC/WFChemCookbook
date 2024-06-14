@@ -76,11 +76,11 @@ Caption: The Google Sheets 'How It Works' sheet
 Let's walk through the code.  The Crossref path is in cell B2 and the DOI is added to cell B3.  The full path is
 created in the Google Sheet function 'CONCAT'.  Here is an example call to get the data.
 
-`=ImportJSON(CONCATENATE('How it works'!$B$2,B3),"/message/title","noInherit,noTruncate,rawHeaders")`
+`=ImportJSON(CONCATENATE('How it works'!$B$2,B3), "/message/title", "noInherit,noTruncate,rawHeaders")`
 
 The Google Sheet 'ImportJSON' addon [function](https://workspace.google.com/marketplace/app/importjson_import_json_data_into_google/782573720506) 
 takes a URL (first variable) and a path to data (second variable) and optionally
-so processing options (third variable).  When the Google sheet processes this function the data at the path is put into
+some processing options (third variable).  When the Google sheet processes this function the data at the path is put into
 the cell below the function.  This works easily for the title, journal name, volume, issue and pages.
 
 In order to process the authors and the year we have to do a little more.  For the authors, the data is a JSON array
@@ -94,13 +94,13 @@ separated string (B19) and then get the first four characters of that string to 
 'path' could point to specific elements in the array (i.e. /message/published/date-parts/0), but this does not work.
 
 Finally, our goal of a citation string is implemented in B27, by concatenating the fields above with some extra 
-formatting.  In the 'Worksheet' sheet all the mechanics are hidden and all that is needed is to add a DOI of a
-paper in each/any of B2, C2, or D2 (you can copy any of the B,C or D columns across to other columns to process) 
+formatting.  In the 'Worksheet' sheet, all the mechanics are hidden and all that is needed is to add a DOI of a
+paper in each/any of B2, C2, or D2 (you can copy any of the B, C or D columns across to other columns to process) 
 metadata for more files.
 
 ## 3 Conclusion
 In this brief tutorial you can see how Google Sheets and the ImportJSON addon allows you to process any API data.
-Given this example, you can create spreadsheet views fo API data and even integrate data from multiple sources.
-The only thing to be aware of is that the more calls to APIs that you make in one sheet the slower the over all
+Given this example, you can create spreadsheet views of API data, and even integrate data from multiple sources.
+The only thing to be aware of is that the more calls to APIs that you make in one sheet, the slower the over all
 sheet will work, but this of course depends on your access speed, so you may need to optimize how you import the data.
 
