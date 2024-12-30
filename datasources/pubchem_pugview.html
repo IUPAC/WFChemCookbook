@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Accessing PubChem through PUG-View &#8212; IUPAC FAIR Chemistry Cookbook</title>
   
@@ -15,19 +15,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -67,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Accessing the Chemical Elements Data from PubChem" href="pubchem_ptable.html" />
     <link rel="prev" title="Accessing PubChem through PUG-REST: Part III" href="pubchem_pugrest3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,19 +77,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +115,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,9 +143,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -141,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="IUPAC FAIR Chemistry Cookbook - Home"/>
+    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="IUPAC FAIR Chemistry Cookbook - Home"/>`);</script>
   
   
 </a></div>
@@ -157,53 +175,53 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../techniques.html">FAIR Techniques</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api_jn.html">Using the OPSIN API in Python</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="goldbook_api.html">Terminology: The IUPAC Gold Book</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cas_commonchem.html">CAS Common Chemistry API</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="pubchem.html">Data Repository: PubChem</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3 has-children"><a class="reference internal" href="pubchem_pugrest.html">PubChem PUG-REST</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="pubchem.html">Data Repository: PubChem</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="pubchem_pugrest.html">PubChem PUG-REST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">PubChem PUG-View</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pubchem_ptable.html">PubChem Periodic Table</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/computing_inchis.html">Computing InChIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/dataset_search.html">Finding a Findable Dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/excel_import.html">Importing data into Excel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/gsheets_citations.html">Importing data into Google Sheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/using_inchi.html">Annotation with InChIs</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../usecases/iupac_pkadata.html">Reuse of Curated Chemical Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../usecases/uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributors.html">Project Contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../development.html">Cookbook development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../worldfair.html">WordFAIR Chemistry</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -221,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -230,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -408,20 +426,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -467,10 +487,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="accessing-pubchem-through-pug-view">
-<h1>Accessing PubChem through PUG-View<a class="headerlink" href="#accessing-pubchem-through-pug-view" title="Permalink to this headline">#</a></h1>
+<h1>Accessing PubChem through PUG-View<a class="headerlink" href="#accessing-pubchem-through-pug-view" title="Permalink to this heading">#</a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<div class="sd-summary-down docutils">
@@ -520,7 +540,7 @@ DOI: <a class="reference external" href="https://doi.org/10.1186/s13321-019-0375
 </div>
 </div>
 <section id="annotations-for-a-pubchem-compound-record">
-<h2>1. Annotations for a PubChem compound record.<a class="headerlink" href="#annotations-for-a-pubchem-compound-record" title="Permalink to this headline">#</a></h2>
+<h2>1. Annotations for a PubChem compound record.<a class="headerlink" href="#annotations-for-a-pubchem-compound-record" title="Permalink to this heading">#</a></h2>
 <p>PubChem collects a wide range of information on chemicals and presents it on Compound Summary pages.</p>
 <p>Let’s suppose that we want to find the viscosity of dimethyl sulfoxide (DMSO; CID 679).  With a web browser like Google Chrome or MS Edge, you can find this information on the following web page:</p>
 <p><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Viscosity">https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Viscosity</a></p>
@@ -577,7 +597,7 @@ DOI: <a class="reference external" href="https://doi.org/10.1186/s13321-019-0375
                                 &quot;URL&quot;: &quot;https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Physical_Properties_of_Matter/States_of_Matter/Properties_of_Liquids/Viscosity&quot;,
                                 &quot;Information&quot;: [
                                     {
-                                        &quot;ReferenceNumber&quot;: 43,
+                                        &quot;ReferenceNumber&quot;: 40,
                                         &quot;Description&quot;: &quot;PEER REVIEWED&quot;,
                                         &quot;Reference&quot;: [
                                             &quot;O&#39;Neil, M.J. (ed.). The Merck Index - An Encyclopedia of Chemicals, Drugs, and Biologicals. Cambridge, UK:  Royal Society of Chemistry, 2013., p. 593&quot;
@@ -591,7 +611,7 @@ DOI: <a class="reference external" href="https://doi.org/10.1186/s13321-019-0375
                                         }
                                     },
                                     {
-                                        &quot;ReferenceNumber&quot;: 57,
+                                        &quot;ReferenceNumber&quot;: 54,
                                         &quot;Name&quot;: &quot;&quot;,
                                         &quot;Value&quot;: {
                                             &quot;StringWithMarkup&quot;: [
@@ -610,7 +630,7 @@ DOI: <a class="reference external" href="https://doi.org/10.1186/s13321-019-0375
         ],
         &quot;Reference&quot;: [
             {
-                &quot;ReferenceNumber&quot;: 43,
+                &quot;ReferenceNumber&quot;: 40,
                 &quot;SourceName&quot;: &quot;Hazardous Substances Data Bank (HSDB)&quot;,
                 &quot;SourceID&quot;: &quot;80&quot;,
                 &quot;Name&quot;: &quot;DIMETHYL SULFOXIDE&quot;,
@@ -621,7 +641,7 @@ DOI: <a class="reference external" href="https://doi.org/10.1186/s13321-019-0375
                 &quot;ANID&quot;: 49
             },
             {
-                &quot;ReferenceNumber&quot;: 57,
+                &quot;ReferenceNumber&quot;: 54,
                 &quot;SourceName&quot;: &quot;ILO-WHO International Chemical Safety Cards (ICSCs)&quot;,
                 &quot;SourceID&quot;: &quot;0459&quot;,
                 &quot;Name&quot;: &quot;DIMETHYL SULPHOXIDE&quot;,
@@ -647,7 +667,7 @@ DOI: <a class="reference external" href="https://doi.org/10.1186/s13321-019-0375
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ReferenceNumber&#39;: 43,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ReferenceNumber&#39;: 40,
  &#39;Description&#39;: &#39;PEER REVIEWED&#39;,
  &#39;Reference&#39;: [&quot;O&#39;Neil, M.J. (ed.). The Merck Index - An Encyclopedia of Chemicals, Drugs, and Biologicals. Cambridge, UK:  Royal Society of Chemistry, 2013., p. 593&quot;],
  &#39;Value&#39;: {&#39;StringWithMarkup&#39;: [{&#39;String&#39;: &#39;2.47cP at 20 °C&#39;}]}}
@@ -733,7 +753,7 @@ https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Od
 </div>
 </section>
 <section id="data-under-a-multi-word-section-heading">
-<h2>2. Data under a  multi-word section heading<a class="headerlink" href="#data-under-a-multi-word-section-heading" title="Permalink to this headline">#</a></h2>
+<h2>2. Data under a  multi-word section heading<a class="headerlink" href="#data-under-a-multi-word-section-heading" title="Permalink to this heading">#</a></h2>
 <p>Some section headings consist of multiple words (e.g., “Vapor Pressure”). For example, the following screenshot shows the vapor pressure of CID 679 (DMSO), which can be accessed at:<br />
 https://pubchem.ncbi.nlm.nih.gov/compound/679#section=Vapor-Pressure</p>
 <p><img alt="Vapor pressure of CID 679 (DMSO)" src="../_images/pubchem_pugview_fig2.png" /></p>
@@ -813,10 +833,10 @@ https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Ec
 </ul>
 </section>
 <section id="getting-all-annotation-data-for-a-given-property">
-<h2>3. Getting All Annotation Data for a Given Property<a class="headerlink" href="#getting-all-annotation-data-for-a-given-property" title="Permalink to this headline">#</a></h2>
+<h2>3. Getting All Annotation Data for a Given Property<a class="headerlink" href="#getting-all-annotation-data-for-a-given-property" title="Permalink to this heading">#</a></h2>
 <p>In some cases, you may want to download all annotation data for a given property (for example, all human-toxicity values or all boiling-point values available in PubChem).  This can be readily done through PUG-View, using the following request URLs.</p>
 <section id="annotations-for-single-word-headings">
-<h3>3.1 Annotations for single-word headings<a class="headerlink" href="#annotations-for-single-word-headings" title="Permalink to this headline">#</a></h3>
+<h3>3.1 Annotations for single-word headings<a class="headerlink" href="#annotations-for-single-word-headings" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heading</span> <span class="o">=</span> <span class="s2">&quot;Viscosity&quot;</span>
@@ -860,7 +880,7 @@ https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Ec
 <p>The two URLs do exactly the same thing when the heading name consists of a single word.</p>
 </section>
 <section id="annotations-for-multiple-word-headings">
-<h3>3.2 Annotations for multiple-word headings<a class="headerlink" href="#annotations-for-multiple-word-headings" title="Permalink to this headline">#</a></h3>
+<h3>3.2 Annotations for multiple-word headings<a class="headerlink" href="#annotations-for-multiple-word-headings" title="Permalink to this heading">#</a></h3>
 <p>When the heading name consists of multiple words, it is highly recommended to provide the heading name in the query string, although it is possible to provide it in the URL path. Let’s consider the task of downloading all Kovats retention index values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -906,7 +926,7 @@ https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/Kovats+Retent
 <p>When a multi-word heading name is provided in the URL query string (after the “&amp;” character), the words can be separated by “%20” or “+” characters.  However, only “%20” (not “+”) can be used when the heading name is provided in the URL path.  Because this subtle difference is somewhat confusing, it is highly recommended that the heading name be always provided in the query string, which makes the request URL easier to read.</p>
 </section>
 <section id="multi-page-annotations">
-<h3>3.3 Multi-page annotations<a class="headerlink" href="#multi-page-annotations" title="Permalink to this headline">#</a></h3>
+<h3>3.3 Multi-page annotations<a class="headerlink" href="#multi-page-annotations" title="Permalink to this heading">#</a></h3>
 <p>A PUG-View request has a maximum time limit of 30 seconds. If a PUG-View request exceeds this limit, a time-out error is returned. However, some headings have a large number of annotation data, making it impossible to get them within 30 seconds through a single PUG-REST request.  To circumvent this issue, the annotation data are <strong>paginated</strong>.</p>
 <p>The data returned from a PUG-View request contains the pagination information, which can be found at the end of the returned json data. It looks similar to this:</p>
 <p><img alt="PUG-View-Pagination" src="../_images/pubchem_pugview_fig3.png" /></p>
@@ -944,7 +964,7 @@ https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/Kovats+Retent
 <span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="k">if</span> <span class="n">page_curr</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Getting data for page&quot;</span><span class="p">,</span> <span class="n">page_curr</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/requests/api.py:73,</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/requests/api.py:73,</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">63</span><span class="w">     </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Sends a GET request.</span>
 <span class="g g-Whitespace">     </span><span class="mi">64</span><span class="sd"> </span>
@@ -954,14 +974,14 @@ https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/Kovats+Retent
 <span class="g g-Whitespace">     </span><span class="mi">71</span><span class="sd">     &quot;&quot;&quot;</span>
 <span class="ne">---&gt; </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/requests/api.py:59,</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/requests/api.py:59,</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="c1"># By using the &#39;with&#39; statement we are sure the session is closed, thus we</span>
 <span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="c1"># avoid leaving sockets open which can trigger a ResourceWarning in some</span>
 <span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="c1"># cases, and look like a memory leak in others.</span>
 <span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">with</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
 <span class="ne">---&gt; </span><span class="mi">59</span>     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/requests/sessions.py:589,</span> in <span class="ni">Session.request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/requests/sessions.py:589,</span> in <span class="ni">Session.request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
 <span class="g g-Whitespace">    </span><span class="mi">584</span> <span class="n">send_kwargs</span> <span class="o">=</span> <span class="p">{</span>
 <span class="g g-Whitespace">    </span><span class="mi">585</span>     <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="n">timeout</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">586</span>     <span class="s2">&quot;allow_redirects&quot;</span><span class="p">:</span> <span class="n">allow_redirects</span><span class="p">,</span>
@@ -970,94 +990,94 @@ https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/Kovats+Retent
 <span class="ne">--&gt; </span><span class="mi">589</span> <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">591</span> <span class="k">return</span> <span class="n">resp</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/requests/sessions.py:703,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/requests/sessions.py:703,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">700</span> <span class="n">start</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="c1"># Send the request</span>
 <span class="ne">--&gt; </span><span class="mi">703</span> <span class="n">r</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">705</span> <span class="c1"># Total elapsed time of the request (approximately)</span>
 <span class="g g-Whitespace">    </span><span class="mi">706</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/requests/adapters.py:486,</span> in <span class="ni">HTTPAdapter.send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span>     <span class="n">timeout</span> <span class="o">=</span> <span class="n">TimeoutSauce</span><span class="p">(</span><span class="n">connect</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">read</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">486</span>     <span class="n">resp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>         <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span>         <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">489</span>         <span class="n">body</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span>         <span class="n">headers</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span>         <span class="n">redirect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">492</span>         <span class="n">assert_same_host</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span>         <span class="n">preload_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span>         <span class="n">decode_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">495</span>         <span class="n">retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">497</span>         <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">500</span> <span class="k">except</span> <span class="p">(</span><span class="n">ProtocolError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span>     <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/requests/adapters.py:667,</span> in <span class="ni">HTTPAdapter.send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span>     <span class="n">timeout</span> <span class="o">=</span> <span class="n">TimeoutSauce</span><span class="p">(</span><span class="n">connect</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">read</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">666</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">667</span>     <span class="n">resp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">668</span>         <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">669</span>         <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">670</span>         <span class="n">body</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">671</span>         <span class="n">headers</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">672</span>         <span class="n">redirect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">673</span>         <span class="n">assert_same_host</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">674</span>         <span class="n">preload_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">675</span>         <span class="n">decode_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">676</span>         <span class="n">retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_retries</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">677</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">678</span>         <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">679</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">681</span> <span class="k">except</span> <span class="p">(</span><span class="n">ProtocolError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">682</span>     <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:790,</span> in <span class="ni">HTTPConnectionPool.urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">787</span> <span class="n">response_conn</span> <span class="o">=</span> <span class="n">conn</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">release_conn</span> <span class="k">else</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">789</span> <span class="c1"># Make the request on the HTTPConnection object</span>
-<span class="ne">--&gt; </span><span class="mi">790</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">791</span>     <span class="n">conn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">793</span>     <span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">794</span>     <span class="n">timeout</span><span class="o">=</span><span class="n">timeout_obj</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">795</span>     <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">796</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">797</span>     <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">798</span>     <span class="n">retries</span><span class="o">=</span><span class="n">retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">799</span>     <span class="n">response_conn</span><span class="o">=</span><span class="n">response_conn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">800</span>     <span class="n">preload_content</span><span class="o">=</span><span class="n">preload_content</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">801</span>     <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">802</span>     <span class="o">**</span><span class="n">response_kw</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">803</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">805</span> <span class="c1"># Everything went great!</span>
-<span class="g g-Whitespace">    </span><span class="mi">806</span> <span class="n">clean_exit</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:787,</span> in <span class="ni">HTTPConnectionPool.urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">784</span> <span class="n">response_conn</span> <span class="o">=</span> <span class="n">conn</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">release_conn</span> <span class="k">else</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">786</span> <span class="c1"># Make the request on the HTTPConnection object</span>
+<span class="ne">--&gt; </span><span class="mi">787</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">788</span>     <span class="n">conn</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">789</span>     <span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">790</span>     <span class="n">url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">791</span>     <span class="n">timeout</span><span class="o">=</span><span class="n">timeout_obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">793</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">794</span>     <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">795</span>     <span class="n">retries</span><span class="o">=</span><span class="n">retries</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">796</span>     <span class="n">response_conn</span><span class="o">=</span><span class="n">response_conn</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">797</span>     <span class="n">preload_content</span><span class="o">=</span><span class="n">preload_content</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">798</span>     <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">799</span>     <span class="o">**</span><span class="n">response_kw</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">800</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span> <span class="c1"># Everything went great!</span>
+<span class="g g-Whitespace">    </span><span class="mi">803</span> <span class="n">clean_exit</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:536,</span> in <span class="ni">HTTPConnectionPool._make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
-<span class="g g-Whitespace">    </span><span class="mi">534</span> <span class="c1"># Receive the response from the server</span>
-<span class="g g-Whitespace">    </span><span class="mi">535</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">536</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span> <span class="k">except</span> <span class="p">(</span><span class="n">BaseSSLError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_raise_timeout</span><span class="p">(</span><span class="n">err</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout_value</span><span class="o">=</span><span class="n">read_timeout</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:534,</span> in <span class="ni">HTTPConnectionPool._make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span> <span class="c1"># Receive the response from the server</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">534</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span> <span class="k">except</span> <span class="p">(</span><span class="n">BaseSSLError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">536</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_raise_timeout</span><span class="p">(</span><span class="n">err</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout_value</span><span class="o">=</span><span class="n">read_timeout</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/urllib3/connection.py:461,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span> <span class="kn">from</span> <span class="nn">.response</span> <span class="kn">import</span> <span class="n">HTTPResponse</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="c1"># Get the response from http.client.HTTPConnection</span>
-<span class="ne">--&gt; </span><span class="mi">461</span> <span class="n">httplib_response</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="n">assert_header_parsing</span><span class="p">(</span><span class="n">httplib_response</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/urllib3/connection.py:516,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span> <span class="n">_shutdown</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="p">,</span> <span class="s2">&quot;shutdown&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">515</span> <span class="c1"># Get the response from http.client.HTTPConnection</span>
+<span class="ne">--&gt; </span><span class="mi">516</span> <span class="n">httplib_response</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">518</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">519</span>     <span class="n">assert_header_parsing</span><span class="p">(</span><span class="n">httplib_response</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/http/client.py:1395,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/http/client.py:1395,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1393</span> <span class="k">try</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1394</span>     <span class="k">try</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">1395</span>         <span class="n">response</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
 <span class="g g-Whitespace">   </span><span class="mi">1396</span>     <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1397</span>         <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/http/client.py:325,</span> in <span class="ni">HTTPResponse.begin</span><span class="nt">(self)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/http/client.py:325,</span> in <span class="ni">HTTPResponse.begin</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">    </span><span class="mi">323</span> <span class="c1"># read until we get a non-100 response</span>
 <span class="g g-Whitespace">    </span><span class="mi">324</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">325</span>     <span class="n">version</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_status</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">CONTINUE</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="k">break</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/http/client.py:286,</span> in <span class="ni">HTTPResponse._read_status</span><span class="nt">(self)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/http/client.py:286,</span> in <span class="ni">HTTPResponse._read_status</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">    </span><span class="mi">285</span> <span class="k">def</span> <span class="nf">_read_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">286</span>     <span class="n">line</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="n">_MAXLINE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;iso-8859-1&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">287</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">_MAXLINE</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">288</span>         <span class="k">raise</span> <span class="n">LineTooLong</span><span class="p">(</span><span class="s2">&quot;status line&quot;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/socket.py:718,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/socket.py:718,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
 <span class="g g-Whitespace">    </span><span class="mi">716</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="k">try</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">718</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">719</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">720</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/ssl.py:1314,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/ssl.py:1314,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1310</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1311</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
 <span class="g g-Whitespace">   </span><span class="mi">1312</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
@@ -1066,7 +1086,7 @@ https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/Kovats+Retent
 <span class="g g-Whitespace">   </span><span class="mi">1315</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1316</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/ssl.py:1166,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/ssl.py:1166,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1164</span> <span class="k">try</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1165</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">1166</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
@@ -1081,7 +1101,7 @@ https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/Kovats+Retent
 <p>In this example, the downloaded data are stored as a list of json objects, while the data for each page can be stored in a separate variable or file.  Also note that <strong>time.sleep(0.2)</strong> is added to avoid overloading PubChem servers.  According to <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/programmatic-access">PubChem’s usage policy</a>, the user should not submit more than 5 requests per second and violators will be blocked for a certain period of time (typically less than 24 hours).</p>
 </section>
 <section id="annotations-from-a-specific-data-collection">
-<h3>3.4 Annotations from a specific data collection<a class="headerlink" href="#annotations-from-a-specific-data-collection" title="Permalink to this headline">#</a></h3>
+<h3>3.4 Annotations from a specific data collection<a class="headerlink" href="#annotations-from-a-specific-data-collection" title="Permalink to this heading">#</a></h3>
 <p>PubChem has multiple data collections, including Substance, Compound, BioAssay, Gene, Protein, Pathway, Cell Line, Taxonomy, Element, and Patent.  Some annotation headings appear in more than one data collection.  For example, both a compound and an element can have the “boiling point” information, as shown in these examples:</p>
 <ul class="simple">
 <li><p>Compound (benzene as an example)<br />
@@ -1114,7 +1134,7 @@ https://pubchem.ncbi.nlm.nih.gov/element/18#section=Boiling-Point</p></li>
 </section>
 </section>
 <section id="annotations-for-pubchem-records-other-than-compounds">
-<h2>4. Annotations for PubChem records other than compounds.<a class="headerlink" href="#annotations-for-pubchem-records-other-than-compounds" title="Permalink to this headline">#</a></h2>
+<h2>4. Annotations for PubChem records other than compounds.<a class="headerlink" href="#annotations-for-pubchem-records-other-than-compounds" title="Permalink to this heading">#</a></h2>
 <p>With PUG-View, you can programmatically access annotations for compounds as well as other PubChem records, such as genes, proteins, pathways, cell lines, taxons, and patents.<br />
 The examples below demonstrate how to access the data presented on the following summary pages:</p>
 <ul class="simple">
@@ -1252,11 +1272,10 @@ The examples below demonstrate how to access the data presented on the following
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="pubchem_pugrest3.html"
@@ -1276,10 +1295,7 @@ The examples below demonstrate how to access the data presented on the following
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1287,6 +1303,7 @@ The examples below demonstrate how to access the data presented on the following
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1325,6 +1342,7 @@ By IUPAC WorldFAIR Chemistry D3.2 Project
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -1351,8 +1369,8 @@ Coordination and Support Action under Grant Agreement No. 101058393.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

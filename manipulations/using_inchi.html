@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Using InChI and InChIKey to annotate your chemical entities &#8212; IUPAC FAIR Chemistry Cookbook</title>
   
@@ -15,19 +15,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -67,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Use Cases &amp; Workflows" href="../usecases.html" />
     <link rel="prev" title="Importing JSON Citation Data from an API into Google Sheets" href="gsheets_citations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,19 +77,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +115,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,9 +143,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -141,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="IUPAC FAIR Chemistry Cookbook - Home"/>
+    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="IUPAC FAIR Chemistry Cookbook - Home"/>`);</script>
   
   
 </a></div>
@@ -157,53 +175,53 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../techniques.html">FAIR Techniques</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api_jn.html">Using the OPSIN API in Python</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../datasources/goldbook_api.html">Terminology: The IUPAC Gold Book</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../datasources/cas_commonchem.html">CAS Common Chemistry API</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../datasources/pubchem.html">Data Repository: PubChem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../datasources/pubchem_pugrest.html">PubChem PUG-REST</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../datasources/pubchem.html">Data Repository: PubChem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../datasources/pubchem_pugrest.html">PubChem PUG-REST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../datasources/pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../datasources/pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../datasources/pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasources/pubchem_pugview.html">PubChem PUG-View</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasources/pubchem_ptable.html">PubChem Periodic Table</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="computing_inchis.html">Computing InChIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dataset_search.html">Finding a Findable Dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="excel_import.html">Importing data into Excel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gsheets_citations.html">Importing data into Google Sheets</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Annotation with InChIs</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../usecases/iupac_pkadata.html">Reuse of Curated Chemical Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../usecases/uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributors.html">Project Contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../development.html">Cookbook development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../worldfair.html">WordFAIR Chemistry</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -221,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -230,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -359,20 +377,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -421,10 +441,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="using-inchi-and-inchikey-to-annotate-your-chemical-entities">
-<h1>Using InChI and InChIKey to annotate your chemical entities<a class="headerlink" href="#using-inchi-and-inchikey-to-annotate-your-chemical-entities" title="Permalink to this headline">#</a></h1>
+<h1>Using InChI and InChIKey to annotate your chemical entities<a class="headerlink" href="#using-inchi-and-inchikey-to-annotate-your-chemical-entities" title="Permalink to this heading">#</a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 About this recipe<div class="sd-summary-down docutils">
@@ -460,7 +480,7 @@ Cookbook, Contributed: 2024-02-28 <a class="reference external" href="https://w3
 </ul>
 </div>
 </details><section id="scenario">
-<h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">#</a></h2>
+<h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this heading">#</a></h2>
 <p>So far, we are quite used to identifying chemical substances with a name, a drawing or a CAS Registry Number (CAS-RN).
 However, these identifiers have some issues that affect their usability for indexing and searching.
 A way to increase the FAIRness of our documents is to annotate our chemical substances with InChI and InChiKeys, either
@@ -468,7 +488,7 @@ in papers, data, or metadata files.</p>
 <p>Let’s do it together!</p>
 </section>
 <section id="case-1-i-can-draw-my-chemical-substance-accurately">
-<h2>Case 1: I can draw my chemical substance accurately<a class="headerlink" href="#case-1-i-can-draw-my-chemical-substance-accurately" title="Permalink to this headline">#</a></h2>
+<h2>Case 1: I can draw my chemical substance accurately<a class="headerlink" href="#case-1-i-can-draw-my-chemical-substance-accurately" title="Permalink to this heading">#</a></h2>
 <p>Many molecular drawing packages like <a class="reference external" href="https://revvitysignals.com/products/research/chemdraw">ChemDraw</a>,
 <a class="reference external" href="https://www.acdlabs.com/products/chemsketch/">ChemSketch</a>, or <a class="reference external" href="https://chemaxon.com/marvin">MarvinSketch</a>,
 can output the InChI and the InChIKey for a molecule drawn on them. Other drawing packages such as the ones listed on the
@@ -479,7 +499,7 @@ to get the InChI or the InChIKey of a drawn chemical.</p>
 <p><img alt="" src="../_images/using_inchi_fig2.png" /></p>
 </section>
 <section id="case-2-i-can-unambiguously-name-my-chemical">
-<h2>Case 2: I can unambiguously name my chemical<a class="headerlink" href="#case-2-i-can-unambiguously-name-my-chemical" title="Permalink to this headline">#</a></h2>
+<h2>Case 2: I can unambiguously name my chemical<a class="headerlink" href="#case-2-i-can-unambiguously-name-my-chemical" title="Permalink to this heading">#</a></h2>
 <p>If we can name our chemical (and this name is included in the chemical databases),
 you can use PubChem or ChemSpider searching features, or the
 <a class="reference external" href="https://cactus.nci.nih.gov/chemical/structure">CACTUS Chemical Identifier Resolver</a>, to obtain the InChI or the InChIKey.</p>
@@ -490,7 +510,7 @@ to calculate (this is not a search) the InChI and the InChiKey. OPSIN can be dow
 <p><img alt="" src="../_images/using_inchi_fig4.png" /></p>
 </section>
 <section id="case-3-i-have-a-mol-file-for-my-chemical">
-<h2>Case 3: I have a MOL file for my chemical<a class="headerlink" href="#case-3-i-have-a-mol-file-for-my-chemical" title="Permalink to this headline">#</a></h2>
+<h2>Case 3: I have a MOL file for my chemical<a class="headerlink" href="#case-3-i-have-a-mol-file-for-my-chemical" title="Permalink to this heading">#</a></h2>
 <p>If you have a <a class="reference external" href="https://en.wikipedia.org/wiki/Chemical_table_file">MOL or SDF file</a> for your molecule, you can use the
 <a class="reference external" href="https://www.ebi.ac.uk/unichem/">UniChem service</a> to upload the file and obtain its InChI and InChIKey.</p>
 <p>You can also use the following software that you install locally to process the MOL file:</p>
@@ -504,7 +524,7 @@ This way. they can also be used to convert a MOL file to an InChI or InChIKey.
 Make sure to check that isotope and stereochemistry information is preserved when importing and exporting MOL files.</p>
 </section>
 <section id="case-4-i-have-the-smiles-string-or-the-inchi-for-my-chemical">
-<h2>Case 4: I have the SMILES string or the InChI for my chemical<a class="headerlink" href="#case-4-i-have-the-smiles-string-or-the-inchi-for-my-chemical" title="Permalink to this headline">#</a></h2>
+<h2>Case 4: I have the SMILES string or the InChI for my chemical<a class="headerlink" href="#case-4-i-have-the-smiles-string-or-the-inchi-for-my-chemical" title="Permalink to this heading">#</a></h2>
 <p>In the case you are able to write our chemical as a <a class="reference external" href="https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system">SMILES</a>
 string or already have an InChI and just need the InChIKey for it, we may use the
 <a class="reference external" href="https://cactus.nci.nih.gov/chemical/structure">CACTUS Chemical Identifier Resolver</a>.</p>
@@ -516,7 +536,7 @@ least, databases can also help find an InChI or an InChIKey from a SMILES; provi
 Remember to check the responses before taking them as correct (especially for stereochemistry and isotope distribution).</p>
 </section>
 <section id="case-5-i-only-have-the-cas-registry-number-cas-rn-for-my-chemical">
-<h2>Case 5: I only have the CAS Registry Number (CAS-RN) for my chemical<a class="headerlink" href="#case-5-i-only-have-the-cas-registry-number-cas-rn-for-my-chemical" title="Permalink to this headline">#</a></h2>
+<h2>Case 5: I only have the CAS Registry Number (CAS-RN) for my chemical<a class="headerlink" href="#case-5-i-only-have-the-cas-registry-number-cas-rn-for-my-chemical" title="Permalink to this heading">#</a></h2>
 <p>If you only have the <a class="reference external" href="https://www.cas.org/cas-data/cas-registry">CAS Registry Number (CAS-RN)</a> for your chemical,
 you have to resort to a database to potentially find the InChI and InChIKey.
 Curated chemical databases, such as the <a class="reference external" href="https://commonchemistry.cas.org/">ACS Common Chemistry service</a> (for common chemicals) or
@@ -526,10 +546,10 @@ or <a class="reference external" href="https://www.wikipedia.org/">Wikipedia</a>
 <p><img alt="" src="../_images/using_inchi_fig7.png" /></p>
 </section>
 <section id="last-step-let-s-check-our-inchi-and-inchikey">
-<h2>Last step: Let’s check our InChI and InChIKey<a class="headerlink" href="#last-step-let-s-check-our-inchi-and-inchikey" title="Permalink to this headline">#</a></h2>
+<h2>Last step: Let’s check our InChI and InChIKey<a class="headerlink" href="#last-step-let-s-check-our-inchi-and-inchikey" title="Permalink to this heading">#</a></h2>
 <p>Once you have found the InChI and the InChIKey of a chemical species, it may be worth double-checking what you got as a result.</p>
 <section id="quick-checks">
-<h3>Quick checks<a class="headerlink" href="#quick-checks" title="Permalink to this headline">#</a></h3>
+<h3>Quick checks<a class="headerlink" href="#quick-checks" title="Permalink to this heading">#</a></h3>
 <p>Let’s start with some simple checks.</p>
 <ul class="simple">
 <li><p>Does the InChI starts with the expected characters, “InChI=1S/”?</p></li>
@@ -541,18 +561,18 @@ or <a class="reference external" href="https://www.wikipedia.org/">Wikipedia</a>
 </ul>
 </section>
 <section id="import-your-inchi-into-a-molecular-drawing-tool">
-<h3>Import your InChI into a molecular drawing tool<a class="headerlink" href="#import-your-inchi-into-a-molecular-drawing-tool" title="Permalink to this headline">#</a></h3>
+<h3>Import your InChI into a molecular drawing tool<a class="headerlink" href="#import-your-inchi-into-a-molecular-drawing-tool" title="Permalink to this heading">#</a></h3>
 <p>You can use your preferred molecular drawing tool to import the InChI and check that the response corresponds to your chemical structure.
 The drawing tool at <a class="reference external" href="https://www.ebi.ac.uk/unichem/">UniChem</a> may well serve this purpose.</p>
 <p><img alt="" src="../_images/using_inchi_fig8.png" /></p>
 </section>
 <section id="google-it">
-<h3>Google it!<a class="headerlink" href="#google-it" title="Permalink to this headline">#</a></h3>
+<h3>Google it!<a class="headerlink" href="#google-it" title="Permalink to this heading">#</a></h3>
 <p>Major web search engines, like Google, Bing or Baidu can search for an InChIKey; its structure is largely specific and allows finding
 references and data related to your chemical species. So, search your InChIKey and make sure you get back responses that belong to your molecule.</p>
 </section>
 <section id="use-an-inchi-resolver">
-<h3>Use an InChI resolver<a class="headerlink" href="#use-an-inchi-resolver" title="Permalink to this headline">#</a></h3>
+<h3>Use an InChI resolver<a class="headerlink" href="#use-an-inchi-resolver" title="Permalink to this heading">#</a></h3>
 <p>Last, specific tools are being developed to resolve InChI and InChIKey by searching into databases. Currently, InChI and
 InChIKey resolution can be done at <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/">PubChem search page</a>, <a class="reference external" href="https://www.ebi.ac.uk/unichem/">UniChem</a>,
 or the <a class="reference external" href="https://cactus.nci.nih.gov/chemical/structure">CACTUS Chemical Identity Resolver</a>.</p>
@@ -585,11 +605,10 @@ or the <a class="reference external" href="https://cactus.nci.nih.gov/chemical/s
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="gsheets_citations.html"
@@ -609,10 +628,7 @@ or the <a class="reference external" href="https://cactus.nci.nih.gov/chemical/s
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -620,6 +636,7 @@ or the <a class="reference external" href="https://cactus.nci.nih.gov/chemical/s
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -661,6 +678,7 @@ By IUPAC WorldFAIR Chemistry D3.2 Project
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -687,8 +705,8 @@ Coordination and Support Action under Grant Agreement No. 101058393.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

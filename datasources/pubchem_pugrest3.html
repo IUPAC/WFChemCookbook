@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Accessing PubChem through PUG-REST: Part III &#8212; IUPAC FAIR Chemistry Cookbook</title>
   
@@ -15,19 +15,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -67,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Accessing PubChem through PUG-View" href="pubchem_pugview.html" />
     <link rel="prev" title="Accessing PubChem through PUG-REST: Part II" href="pubchem_pugrest2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,19 +77,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +115,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,9 +143,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -141,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="IUPAC FAIR Chemistry Cookbook - Home"/>
+    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="IUPAC FAIR Chemistry Cookbook - Home"/>`);</script>
   
   
 </a></div>
@@ -157,53 +175,53 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../techniques.html">FAIR Techniques</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api_jn.html">Using the OPSIN API in Python</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="goldbook_api.html">Terminology: The IUPAC Gold Book</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cas_commonchem.html">CAS Common Chemistry API</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="pubchem.html">Data Repository: PubChem</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3 current active has-children"><a class="reference internal" href="pubchem_pugrest.html">PubChem PUG-REST</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="pubchem.html">Data Repository: PubChem</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="pubchem_pugrest.html">PubChem PUG-REST</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">Accessing PubChem through PUG-REST: Part III</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l3"><a class="reference internal" href="pubchem_pugview.html">PubChem PUG-View</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pubchem_ptable.html">PubChem Periodic Table</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/computing_inchis.html">Computing InChIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/dataset_search.html">Finding a Findable Dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/excel_import.html">Importing data into Excel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/gsheets_citations.html">Importing data into Google Sheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/using_inchi.html">Annotation with InChIs</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../usecases/iupac_pkadata.html">Reuse of Curated Chemical Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../usecases/uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributors.html">Project Contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../development.html">Cookbook development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../worldfair.html">WordFAIR Chemistry</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -221,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -230,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -408,20 +426,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -462,10 +482,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="accessing-pubchem-through-pug-rest-part-iii">
-<h1>Accessing PubChem through PUG-REST: Part III<a class="headerlink" href="#accessing-pubchem-through-pug-rest-part-iii" title="Permalink to this headline">#</a></h1>
+<h1>Accessing PubChem through PUG-REST: Part III<a class="headerlink" href="#accessing-pubchem-through-pug-rest-part-iii" title="Permalink to this heading">#</a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<div class="sd-summary-down docutils">
@@ -510,7 +530,7 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </div>
 </div>
 <section id="using-a-smiles-or-inchi-string-as-an-input-query">
-<h2>1. Using a SMILES or InChI string as an input query<a class="headerlink" href="#using-a-smiles-or-inchi-string-as-an-input-query" title="Permalink to this headline">#</a></h2>
+<h2>1. Using a SMILES or InChI string as an input query<a class="headerlink" href="#using-a-smiles-or-inchi-string-as-an-input-query" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC(=O)OC1=CC=CC=C1C(=O)O&quot;</span>
@@ -601,7 +621,7 @@ Detail:
 </div>
 </section>
 <section id="performing-identity-search">
-<h2>2. Performing identity search<a class="headerlink" href="#performing-identity-search" title="Permalink to this headline">#</a></h2>
+<h2>2. Performing identity search<a class="headerlink" href="#performing-identity-search" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC(C)/C=C/I&quot;</span>
@@ -619,9 +639,7 @@ Detail:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14571425
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14571425
+14571425
 </pre></div>
 </div>
 </div>
@@ -700,7 +718,7 @@ Detail:
 </div>
 </section>
 <section id="performing-2-d-and-3-d-similarity-search">
-<h2>3. Performing 2-D and 3-D similarity search<a class="headerlink" href="#performing-2-d-and-3-d-similarity-search" title="Permalink to this headline">#</a></h2>
+<h2>3. Performing 2-D and 3-D similarity search<a class="headerlink" href="#performing-2-d-and-3-d-similarity-search" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;</span>
@@ -711,8 +729,8 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>574
-[&#39;155903259&#39;, &#39;162396372&#39;, &#39;162396452&#39;, &#39;162396453&#39;, &#39;162396458&#39;, &#39;162396459&#39;, &#39;162685338&#39;, &#39;162712460&#39;, &#39;162712462&#39;, &#39;162712482&#39;, &#39;162712489&#39;, &#39;162712498&#39;, &#39;163283236&#39;, &#39;163283243&#39;, &#39;163283284&#39;, &#39;163361997&#39;, &#39;163362001&#39;, &#39;166149071&#39;, &#39;166157194&#39;, &#39;167203580&#39;, &#39;167203608&#39;, &#39;167331698&#39;, &#39;167518234&#39;, &#39;163421961&#39;, &#39;162396450&#39;, &#39;162396460&#39;, &#39;162396461&#39;, &#39;168290284&#39;, &#39;162396442&#39;, &#39;162712471&#39;, &#39;166157023&#39;, &#39;166157057&#39;, &#39;166157065&#39;, &#39;166157205&#39;, &#39;167331610&#39;, &#39;167331612&#39;, &#39;168870655&#39;, &#39;157010397&#39;, &#39;168291677&#39;, &#39;171347857&#39;, &#39;171355745&#39;, &#39;162478807&#39;, &#39;162479130&#39;, &#39;163283238&#39;, &#39;163283239&#39;, &#39;163283322&#39;, &#39;163283330&#39;, &#39;163283343&#39;, &#39;163283370&#39;, &#39;163283371&#39;, &#39;163283387&#39;, &#39;163283390&#39;, &#39;163283407&#39;, &#39;163361849&#39;, &#39;163361998&#39;, &#39;163362005&#39;, &#39;163362008&#39;, &#39;163362009&#39;, &#39;163362014&#39;, &#39;163362016&#39;, &#39;163362026&#39;, &#39;163362029&#39;, &#39;163362031&#39;, &#39;163941851&#39;, &#39;164040179&#39;, &#39;164158215&#39;, &#39;164159966&#39;, &#39;164701733&#39;, &#39;164701736&#39;, &#39;164701738&#39;, &#39;164701741&#39;, &#39;164701742&#39;, &#39;164701743&#39;, &#39;164701748&#39;, &#39;164701749&#39;, &#39;164701757&#39;, &#39;164701758&#39;, &#39;164701760&#39;, &#39;164701766&#39;, &#39;164701772&#39;, &#39;164701773&#39;, &#39;164701775&#39;, &#39;164701776&#39;, &#39;164701777&#39;, &#39;164701789&#39;, &#39;164701794&#39;, &#39;164701800&#39;, &#39;164701805&#39;, &#39;164701807&#39;, &#39;164701812&#39;, &#39;164701813&#39;, &#39;164701815&#39;, &#39;164701816&#39;, &#39;164701817&#39;, &#39;164701818&#39;, &#39;164701819&#39;, &#39;164701821&#39;, &#39;164766036&#39;, &#39;164766041&#39;, &#39;164785132&#39;, &#39;164850071&#39;, &#39;164971185&#39;, &#39;165179472&#39;, &#39;165179485&#39;, &#39;165179486&#39;, &#39;165179488&#39;, &#39;166149062&#39;, &#39;166149074&#39;, &#39;166149077&#39;, &#39;166149089&#39;, &#39;166149094&#39;, &#39;166149137&#39;, &#39;166156664&#39;, &#39;166156828&#39;, &#39;166156836&#39;, &#39;166157017&#39;, &#39;166157043&#39;, &#39;166157215&#39;, &#39;166157269&#39;, &#39;166494662&#39;, &#39;166494843&#39;, &#39;166537627&#39;, &#39;166840326&#39;, &#39;166840392&#39;, &#39;166840457&#39;, &#39;166840466&#39;, &#39;166840731&#39;, &#39;166891533&#39;, &#39;166891547&#39;, &#39;166891596&#39;, &#39;166891665&#39;, &#39;166893182&#39;, &#39;166893274&#39;, &#39;166893275&#39;, &#39;166893276&#39;, &#39;166893348&#39;, &#39;166893351&#39;, &#39;167065080&#39;, &#39;167065082&#39;, &#39;167065154&#39;, &#39;167065160&#39;, &#39;167094315&#39;, &#39;167094316&#39;, &#39;167094334&#39;, &#39;167094341&#39;, &#39;167203581&#39;, &#39;167206597&#39;, &#39;167206598&#39;, &#39;167206599&#39;, &#39;167206807&#39;, &#39;167207061&#39;, &#39;167229685&#39;, &#39;167251496&#39;, &#39;167331630&#39;, &#39;167331639&#39;, &#39;167338845&#39;, &#39;167338850&#39;, &#39;167338914&#39;, &#39;167338917&#39;, &#39;167338943&#39;, &#39;167480975&#39;, &#39;167480997&#39;, &#39;167481005&#39;, &#39;167481033&#39;, &#39;167481034&#39;, &#39;167481037&#39;, &#39;167481072&#39;, &#39;167481103&#39;, &#39;167481130&#39;, &#39;167481158&#39;, &#39;167481199&#39;, &#39;167481201&#39;, &#39;167481202&#39;, &#39;167481210&#39;, &#39;167481232&#39;, &#39;167481234&#39;, &#39;167481250&#39;, &#39;167481257&#39;, &#39;167481266&#39;, &#39;167481309&#39;, &#39;167481324&#39;, &#39;167481327&#39;, &#39;167481349&#39;, &#39;167481356&#39;, &#39;167481364&#39;, &#39;167481374&#39;, &#39;167481379&#39;, &#39;167481386&#39;, &#39;167481398&#39;, &#39;167481400&#39;, &#39;167481430&#39;, &#39;167481462&#39;, &#39;167481474&#39;, &#39;167481480&#39;, &#39;167481535&#39;, &#39;167481542&#39;, &#39;167481547&#39;, &#39;167481557&#39;, &#39;167481565&#39;, &#39;167481566&#39;, &#39;167481575&#39;, &#39;167481608&#39;, &#39;167481637&#39;, &#39;167481640&#39;, &#39;167481663&#39;, &#39;167481675&#39;, &#39;167481747&#39;, &#39;167481808&#39;, &#39;167481821&#39;, &#39;167481860&#39;, &#39;167481876&#39;, &#39;167481880&#39;, &#39;167481900&#39;, &#39;167481908&#39;, &#39;167481917&#39;, &#39;167481924&#39;, &#39;167481927&#39;, &#39;167481929&#39;, &#39;167481944&#39;, &#39;167481972&#39;, &#39;167481999&#39;, &#39;167482005&#39;, &#39;167482039&#39;, &#39;167482043&#39;, &#39;167482074&#39;, &#39;167482083&#39;, &#39;167482106&#39;, &#39;167482167&#39;, &#39;167482178&#39;, &#39;167482205&#39;, &#39;167482212&#39;, &#39;167482213&#39;, &#39;167482218&#39;, &#39;167482232&#39;, &#39;167482240&#39;, &#39;167482261&#39;, &#39;167482283&#39;, &#39;167482292&#39;, &#39;167482295&#39;, &#39;167482314&#39;, &#39;167482317&#39;, &#39;167518190&#39;, &#39;167521394&#39;, &#39;167579537&#39;, &#39;168142141&#39;, &#39;168142152&#39;, &#39;168142166&#39;, &#39;168142167&#39;, &#39;168142213&#39;, &#39;168750579&#39;, &#39;168750586&#39;, &#39;168750590&#39;, &#39;168750593&#39;, &#39;168878798&#39;, &#39;168941969&#39;, &#39;168942044&#39;, &#39;169084224&#39;, &#39;169122295&#39;, &#39;169193197&#39;, &#39;169193261&#39;, &#39;169193357&#39;, &#39;169193547&#39;, &#39;169193552&#39;, &#39;169193733&#39;, &#39;169193751&#39;, &#39;169193754&#39;, &#39;169193839&#39;, &#39;169193963&#39;, &#39;169193968&#39;, &#39;169194030&#39;, &#39;169194114&#39;, &#39;169194124&#39;, &#39;169194140&#39;, &#39;169194186&#39;, &#39;169194204&#39;, &#39;169194236&#39;, &#39;169194258&#39;, &#39;169194427&#39;, &#39;169240696&#39;, &#39;169240697&#39;, &#39;169240701&#39;, &#39;169283836&#39;, &#39;169283867&#39;, &#39;169283881&#39;, &#39;169291133&#39;, &#39;169436363&#39;, &#39;170552067&#39;, &#39;170552068&#39;, &#39;170631558&#39;, &#39;170631565&#39;, &#39;170631680&#39;, &#39;170631745&#39;, &#39;170701828&#39;, &#39;170701834&#39;, &#39;170701836&#39;, &#39;170701844&#39;, &#39;170701848&#39;, &#39;170701854&#39;, &#39;170701858&#39;, &#39;171108715&#39;, &#39;171108717&#39;, &#39;171530265&#39;, &#39;171534254&#39;, &#39;171534270&#39;, &#39;171843250&#39;, &#39;171843260&#39;, &#39;163285815&#39;, &#39;163341926&#39;, &#39;166149063&#39;, &#39;166156829&#39;, &#39;167278770&#39;, &#39;167481104&#39;, &#39;167481950&#39;, &#39;167481970&#39;, &#39;167482299&#39;, &#39;167482300&#39;, &#39;168010016&#39;, &#39;168301133&#39;, &#39;168310836&#39;, &#39;168310837&#39;, &#39;168878799&#39;, &#39;169240702&#39;, &#39;169436361&#39;, &#39;169595627&#39;, &#39;169595871&#39;, &#39;169595876&#39;, &#39;169595900&#39;, &#39;169595902&#39;, &#39;169595937&#39;, &#39;169595991&#39;, &#39;169595994&#39;, &#39;169597577&#39;, &#39;169655654&#39;, &#39;169655658&#39;, &#39;169655661&#39;, &#39;169655677&#39;, &#39;169655713&#39;, &#39;169655746&#39;, &#39;169655747&#39;, &#39;169655787&#39;, &#39;169655789&#39;, &#39;169676887&#39;, &#39;169686050&#39;, &#39;169686051&#39;, &#39;169707956&#39;, &#39;169707957&#39;, &#39;169732235&#39;, &#39;169732236&#39;, &#39;169734644&#39;, &#39;169735016&#39;, &#39;169737661&#39;, &#39;169816596&#39;, &#39;169860851&#39;, &#39;169860855&#39;, &#39;169860863&#39;, &#39;169860866&#39;, &#39;169860882&#39;, &#39;169861043&#39;, &#39;169861121&#39;, &#39;169861122&#39;, &#39;169861123&#39;, &#39;169861126&#39;, &#39;169861127&#39;, &#39;169861128&#39;, &#39;169861209&#39;, &#39;169861410&#39;, &#39;169861544&#39;, &#39;169861545&#39;, &#39;169861547&#39;, &#39;169861552&#39;, &#39;169861641&#39;, &#39;169861643&#39;, &#39;169861899&#39;, &#39;169861924&#39;, &#39;169862040&#39;, &#39;169878303&#39;, &#39;169878305&#39;, &#39;169878307&#39;, &#39;169878308&#39;, &#39;169878350&#39;, &#39;169878352&#39;, &#39;169878353&#39;, &#39;169878366&#39;, &#39;169878439&#39;, &#39;169878441&#39;, &#39;169878442&#39;, &#39;169878445&#39;, &#39;169878446&#39;, &#39;169878447&#39;, &#39;169878448&#39;, &#39;169878449&#39;, &#39;169878451&#39;, &#39;169878452&#39;, &#39;169878453&#39;, &#39;169878454&#39;, &#39;169878455&#39;, &#39;169878511&#39;, &#39;169878512&#39;, &#39;169878513&#39;, &#39;169878514&#39;, &#39;169878517&#39;, &#39;169878631&#39;, &#39;169878890&#39;, &#39;169907886&#39;, &#39;169907978&#39;, &#39;169914647&#39;, &#39;169914666&#39;, &#39;169914913&#39;, &#39;169966328&#39;, &#39;169979396&#39;, &#39;169979540&#39;, &#39;169989970&#39;, &#39;169994700&#39;, &#39;169994701&#39;, &#39;169994702&#39;, &#39;169994703&#39;, &#39;169994705&#39;, &#39;169994706&#39;, &#39;169994745&#39;, &#39;169994895&#39;, &#39;169994956&#39;, &#39;169995108&#39;, &#39;169995153&#39;, &#39;169995154&#39;, &#39;169995401&#39;, &#39;169995678&#39;, &#39;169995679&#39;, &#39;169995904&#39;, &#39;170005512&#39;, &#39;170036051&#39;, &#39;170036248&#39;, &#39;170036541&#39;, &#39;170036799&#39;, &#39;170036842&#39;, &#39;170036848&#39;, &#39;170036858&#39;, &#39;170036928&#39;, &#39;170036943&#39;, &#39;170036979&#39;, &#39;170037210&#39;, &#39;170037247&#39;, &#39;170038496&#39;, &#39;170052972&#39;, &#39;170052975&#39;, &#39;170053129&#39;, &#39;170053614&#39;, &#39;170053627&#39;, &#39;170053669&#39;, &#39;170054633&#39;, &#39;170054800&#39;, &#39;170060745&#39;, &#39;170060748&#39;, &#39;170151866&#39;, &#39;170164590&#39;, &#39;170164688&#39;, &#39;170164691&#39;, &#39;170164767&#39;, &#39;170165331&#39;, &#39;170165489&#39;, &#39;170165491&#39;, &#39;170165562&#39;, &#39;170165698&#39;, &#39;170165798&#39;, &#39;170166112&#39;, &#39;170166207&#39;, &#39;170166212&#39;, &#39;170166479&#39;, &#39;170166597&#39;, &#39;170166774&#39;, &#39;170166889&#39;, &#39;170166912&#39;, &#39;170166968&#39;, &#39;170167024&#39;, &#39;170167108&#39;, &#39;170167453&#39;, &#39;170167521&#39;, &#39;170167675&#39;, &#39;170167936&#39;, &#39;170168021&#39;, &#39;170203998&#39;, &#39;170404012&#39;, &#39;171379688&#39;, &#39;171394959&#39;, &#39;171530266&#39;, &#39;162712468&#39;, &#39;162712490&#39;, &#39;162712506&#39;, &#39;163283283&#39;, &#39;163362019&#39;, &#39;164701798&#39;, &#39;164701802&#39;, &#39;164850073&#39;, &#39;164850290&#39;, &#39;166157157&#39;, &#39;166964883&#39;, &#39;166964886&#39;, &#39;166964888&#39;, &#39;166964890&#39;, &#39;166964899&#39;, &#39;166964903&#39;, &#39;166964904&#39;, &#39;166964908&#39;, &#39;166964913&#39;, &#39;166986000&#39;, &#39;166986065&#39;, &#39;166986067&#39;, &#39;166986077&#39;, &#39;167203321&#39;, &#39;167481489&#39;, &#39;167482130&#39;, &#39;167574477&#39;, &#39;167574478&#39;, &#39;168093174&#39;, &#39;168154285&#39;, &#39;168993735&#39;, &#39;169084219&#39;, &#39;169084221&#39;, &#39;169084228&#39;, &#39;169095061&#39;, &#39;169193396&#39;, &#39;169193437&#39;, &#39;169193895&#39;, &#39;169193967&#39;, &#39;169193984&#39;, &#39;169194217&#39;, &#39;169194293&#39;, &#39;169194319&#39;, &#39;169194330&#39;, &#39;169194348&#39;, &#39;166642632&#39;, &#39;167537951&#39;, &#39;167674037&#39;, &#39;168476190&#39;, &#39;168993728&#39;, &#39;169595592&#39;, &#39;169595872&#39;, &#39;169595897&#39;, &#39;169595998&#39;, &#39;169655830&#39;, &#39;169728040&#39;, &#39;169728041&#39;, &#39;169728431&#39;, &#39;169728432&#39;, &#39;169736642&#39;, &#39;169736643&#39;, &#39;169862121&#39;, &#39;169878349&#39;, &#39;169914451&#39;, &#39;169915447&#39;, &#39;169915455&#39;, &#39;169915574&#39;, &#39;169995311&#39;, &#39;170014641&#39;, &#39;170036241&#39;, &#39;170036499&#39;, &#39;170036602&#39;, &#39;170052965&#39;, &#39;170053029&#39;, &#39;170053921&#39;, &#39;170080981&#39;, &#39;170164555&#39;, &#39;170165348&#39;, &#39;170165794&#39;, &#39;170165926&#39;, &#39;170166075&#39;, &#39;170167073&#39;, &#39;170167420&#39;, &#39;170167651&#39;, &#39;170167680&#39;, &#39;170168510&#39;, &#39;170168543&#39;, &#39;170200729&#39;, &#39;170201013&#39;, &#39;170291885&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>609
+[&#39;155903259&#39;, &#39;162396372&#39;, &#39;162396442&#39;, &#39;162396452&#39;, &#39;162396453&#39;, &#39;162396458&#39;, &#39;162396459&#39;, &#39;162685338&#39;, &#39;162712460&#39;, &#39;162712462&#39;, &#39;162712482&#39;, &#39;162712489&#39;, &#39;162712498&#39;, &#39;163283236&#39;, &#39;163283243&#39;, &#39;163283284&#39;, &#39;163361997&#39;, &#39;163362001&#39;, &#39;166149071&#39;, &#39;166157194&#39;, &#39;167203580&#39;, &#39;167203608&#39;, &#39;167331698&#39;, &#39;167518234&#39;, &#39;163421961&#39;, &#39;162396450&#39;, &#39;162396460&#39;, &#39;162396461&#39;, &#39;168290284&#39;, &#39;162712471&#39;, &#39;166157023&#39;, &#39;166157057&#39;, &#39;166157065&#39;, &#39;166157205&#39;, &#39;167331610&#39;, &#39;167331612&#39;, &#39;168870655&#39;, &#39;157010397&#39;, &#39;168301133&#39;, &#39;168291677&#39;, &#39;171347857&#39;, &#39;171355745&#39;, &#39;162478807&#39;, &#39;162479130&#39;, &#39;163283238&#39;, &#39;163283239&#39;, &#39;163283322&#39;, &#39;163283330&#39;, &#39;163283343&#39;, &#39;163283370&#39;, &#39;163283371&#39;, &#39;163283387&#39;, &#39;163283390&#39;, &#39;163283407&#39;, &#39;163341926&#39;, &#39;163361849&#39;, &#39;163361998&#39;, &#39;163362005&#39;, &#39;163362008&#39;, &#39;163362009&#39;, &#39;163362014&#39;, &#39;163362016&#39;, &#39;163362026&#39;, &#39;163362029&#39;, &#39;163362031&#39;, &#39;163941851&#39;, &#39;164040179&#39;, &#39;164158215&#39;, &#39;164159966&#39;, &#39;164701733&#39;, &#39;164701736&#39;, &#39;164701738&#39;, &#39;164701741&#39;, &#39;164701742&#39;, &#39;164701743&#39;, &#39;164701748&#39;, &#39;164701749&#39;, &#39;164701757&#39;, &#39;164701758&#39;, &#39;164701760&#39;, &#39;164701766&#39;, &#39;164701772&#39;, &#39;164701773&#39;, &#39;164701775&#39;, &#39;164701776&#39;, &#39;164701777&#39;, &#39;164701789&#39;, &#39;164701794&#39;, &#39;164701800&#39;, &#39;164701805&#39;, &#39;164701807&#39;, &#39;164701812&#39;, &#39;164701813&#39;, &#39;164701815&#39;, &#39;164701816&#39;, &#39;164701817&#39;, &#39;164701818&#39;, &#39;164701819&#39;, &#39;164701821&#39;, &#39;164766036&#39;, &#39;164766041&#39;, &#39;164785132&#39;, &#39;164850071&#39;, &#39;164971185&#39;, &#39;165179472&#39;, &#39;165179485&#39;, &#39;165179486&#39;, &#39;165179488&#39;, &#39;166149062&#39;, &#39;166149074&#39;, &#39;166149077&#39;, &#39;166149089&#39;, &#39;166149094&#39;, &#39;166149137&#39;, &#39;166156664&#39;, &#39;166156828&#39;, &#39;166156836&#39;, &#39;166157017&#39;, &#39;166157043&#39;, &#39;166157215&#39;, &#39;166157269&#39;, &#39;166494662&#39;, &#39;166494843&#39;, &#39;166537627&#39;, &#39;166840326&#39;, &#39;166840392&#39;, &#39;166840457&#39;, &#39;166840466&#39;, &#39;166840731&#39;, &#39;166891533&#39;, &#39;166891547&#39;, &#39;166891596&#39;, &#39;166891665&#39;, &#39;166893182&#39;, &#39;166893274&#39;, &#39;166893275&#39;, &#39;166893276&#39;, &#39;166893348&#39;, &#39;166893351&#39;, &#39;167065080&#39;, &#39;167065082&#39;, &#39;167065154&#39;, &#39;167065160&#39;, &#39;167094315&#39;, &#39;167094316&#39;, &#39;167094334&#39;, &#39;167094341&#39;, &#39;167203581&#39;, &#39;167206597&#39;, &#39;167206598&#39;, &#39;167206599&#39;, &#39;167206807&#39;, &#39;167207061&#39;, &#39;167229685&#39;, &#39;167251496&#39;, &#39;167278770&#39;, &#39;167331630&#39;, &#39;167331639&#39;, &#39;167338845&#39;, &#39;167338850&#39;, &#39;167338914&#39;, &#39;167338917&#39;, &#39;167338943&#39;, &#39;167480975&#39;, &#39;167480997&#39;, &#39;167481005&#39;, &#39;167481033&#39;, &#39;167481034&#39;, &#39;167481037&#39;, &#39;167481072&#39;, &#39;167481103&#39;, &#39;167481130&#39;, &#39;167481158&#39;, &#39;167481199&#39;, &#39;167481201&#39;, &#39;167481202&#39;, &#39;167481210&#39;, &#39;167481232&#39;, &#39;167481234&#39;, &#39;167481250&#39;, &#39;167481257&#39;, &#39;167481266&#39;, &#39;167481309&#39;, &#39;167481324&#39;, &#39;167481327&#39;, &#39;167481349&#39;, &#39;167481356&#39;, &#39;167481364&#39;, &#39;167481374&#39;, &#39;167481379&#39;, &#39;167481386&#39;, &#39;167481398&#39;, &#39;167481400&#39;, &#39;167481430&#39;, &#39;167481462&#39;, &#39;167481474&#39;, &#39;167481480&#39;, &#39;167481535&#39;, &#39;167481542&#39;, &#39;167481547&#39;, &#39;167481557&#39;, &#39;167481565&#39;, &#39;167481566&#39;, &#39;167481575&#39;, &#39;167481608&#39;, &#39;167481637&#39;, &#39;167481640&#39;, &#39;167481663&#39;, &#39;167481675&#39;, &#39;167481747&#39;, &#39;167481808&#39;, &#39;167481821&#39;, &#39;167481860&#39;, &#39;167481876&#39;, &#39;167481880&#39;, &#39;167481900&#39;, &#39;167481908&#39;, &#39;167481917&#39;, &#39;167481924&#39;, &#39;167481927&#39;, &#39;167481929&#39;, &#39;167481944&#39;, &#39;167481950&#39;, &#39;167481970&#39;, &#39;167481972&#39;, &#39;167481999&#39;, &#39;167482005&#39;, &#39;167482039&#39;, &#39;167482043&#39;, &#39;167482074&#39;, &#39;167482083&#39;, &#39;167482106&#39;, &#39;167482167&#39;, &#39;167482178&#39;, &#39;167482205&#39;, &#39;167482212&#39;, &#39;167482213&#39;, &#39;167482218&#39;, &#39;167482232&#39;, &#39;167482240&#39;, &#39;167482261&#39;, &#39;167482283&#39;, &#39;167482292&#39;, &#39;167482295&#39;, &#39;167482314&#39;, &#39;167482317&#39;, &#39;167518190&#39;, &#39;167521394&#39;, &#39;167579537&#39;, &#39;168142141&#39;, &#39;168142152&#39;, &#39;168142166&#39;, &#39;168142167&#39;, &#39;168142213&#39;, &#39;168750579&#39;, &#39;168750586&#39;, &#39;168750590&#39;, &#39;168750593&#39;, &#39;168878798&#39;, &#39;168941969&#39;, &#39;168942044&#39;, &#39;169084224&#39;, &#39;169122295&#39;, &#39;169193197&#39;, &#39;169193261&#39;, &#39;169193357&#39;, &#39;169193547&#39;, &#39;169193552&#39;, &#39;169193733&#39;, &#39;169193751&#39;, &#39;169193754&#39;, &#39;169193839&#39;, &#39;169193963&#39;, &#39;169193968&#39;, &#39;169194030&#39;, &#39;169194114&#39;, &#39;169194124&#39;, &#39;169194140&#39;, &#39;169194186&#39;, &#39;169194204&#39;, &#39;169194236&#39;, &#39;169194258&#39;, &#39;169194427&#39;, &#39;169240696&#39;, &#39;169240697&#39;, &#39;169240701&#39;, &#39;169283836&#39;, &#39;169283867&#39;, &#39;169283881&#39;, &#39;169291133&#39;, &#39;169436363&#39;, &#39;169595627&#39;, &#39;169595871&#39;, &#39;169595876&#39;, &#39;169595900&#39;, &#39;169595902&#39;, &#39;169595937&#39;, &#39;169595991&#39;, &#39;169595994&#39;, &#39;169597577&#39;, &#39;169655654&#39;, &#39;169655658&#39;, &#39;169655661&#39;, &#39;169655677&#39;, &#39;169655713&#39;, &#39;169655746&#39;, &#39;169655747&#39;, &#39;169655787&#39;, &#39;169655789&#39;, &#39;169676887&#39;, &#39;169686050&#39;, &#39;169686051&#39;, &#39;169707956&#39;, &#39;169707957&#39;, &#39;169732235&#39;, &#39;169732236&#39;, &#39;169734644&#39;, &#39;169735016&#39;, &#39;169737661&#39;, &#39;169816596&#39;, &#39;169860851&#39;, &#39;169860855&#39;, &#39;169860863&#39;, &#39;169860866&#39;, &#39;169860882&#39;, &#39;169861043&#39;, &#39;169861121&#39;, &#39;169861122&#39;, &#39;169861123&#39;, &#39;169861126&#39;, &#39;169861127&#39;, &#39;169861128&#39;, &#39;169861209&#39;, &#39;169861410&#39;, &#39;169861544&#39;, &#39;169861545&#39;, &#39;169861547&#39;, &#39;169861552&#39;, &#39;169861641&#39;, &#39;169861643&#39;, &#39;169861899&#39;, &#39;169861924&#39;, &#39;169862040&#39;, &#39;169878303&#39;, &#39;169878305&#39;, &#39;169878307&#39;, &#39;169878308&#39;, &#39;169878350&#39;, &#39;169878352&#39;, &#39;169878353&#39;, &#39;169878366&#39;, &#39;169878439&#39;, &#39;169878441&#39;, &#39;169878442&#39;, &#39;169878445&#39;, &#39;169878446&#39;, &#39;169878447&#39;, &#39;169878448&#39;, &#39;169878449&#39;, &#39;169878451&#39;, &#39;169878452&#39;, &#39;169878453&#39;, &#39;169878454&#39;, &#39;169878455&#39;, &#39;169878511&#39;, &#39;169878512&#39;, &#39;169878513&#39;, &#39;169878514&#39;, &#39;169878517&#39;, &#39;169878631&#39;, &#39;169878890&#39;, &#39;169907886&#39;, &#39;169907978&#39;, &#39;169914647&#39;, &#39;169914666&#39;, &#39;169914913&#39;, &#39;169966328&#39;, &#39;169979396&#39;, &#39;169979540&#39;, &#39;169989970&#39;, &#39;169994700&#39;, &#39;169994701&#39;, &#39;169994702&#39;, &#39;169994703&#39;, &#39;169994705&#39;, &#39;169994706&#39;, &#39;169994745&#39;, &#39;169994895&#39;, &#39;169994956&#39;, &#39;169995108&#39;, &#39;169995153&#39;, &#39;169995154&#39;, &#39;169995401&#39;, &#39;169995678&#39;, &#39;169995679&#39;, &#39;169995904&#39;, &#39;170005512&#39;, &#39;170036051&#39;, &#39;170036248&#39;, &#39;170036541&#39;, &#39;170036799&#39;, &#39;170036842&#39;, &#39;170036848&#39;, &#39;170036858&#39;, &#39;170036928&#39;, &#39;170036943&#39;, &#39;170036979&#39;, &#39;170037210&#39;, &#39;170037247&#39;, &#39;170038496&#39;, &#39;170052972&#39;, &#39;170052975&#39;, &#39;170053129&#39;, &#39;170053614&#39;, &#39;170053627&#39;, &#39;170053669&#39;, &#39;170054633&#39;, &#39;170054800&#39;, &#39;170060745&#39;, &#39;170060748&#39;, &#39;170151866&#39;, &#39;170164590&#39;, &#39;170164688&#39;, &#39;170164691&#39;, &#39;170164767&#39;, &#39;170165331&#39;, &#39;170165489&#39;, &#39;170165491&#39;, &#39;170165562&#39;, &#39;170165698&#39;, &#39;170165798&#39;, &#39;170166112&#39;, &#39;170166207&#39;, &#39;170166212&#39;, &#39;170166479&#39;, &#39;170166597&#39;, &#39;170166774&#39;, &#39;170166889&#39;, &#39;170166912&#39;, &#39;170166968&#39;, &#39;170167024&#39;, &#39;170167108&#39;, &#39;170167453&#39;, &#39;170167521&#39;, &#39;170167675&#39;, &#39;170167936&#39;, &#39;170168021&#39;, &#39;170203998&#39;, &#39;170404012&#39;, &#39;170552067&#39;, &#39;170552068&#39;, &#39;170631558&#39;, &#39;170631565&#39;, &#39;170631680&#39;, &#39;170631745&#39;, &#39;170701828&#39;, &#39;170701834&#39;, &#39;170701836&#39;, &#39;170701844&#39;, &#39;170701848&#39;, &#39;170701854&#39;, &#39;170701858&#39;, &#39;171108715&#39;, &#39;171108717&#39;, &#39;171530265&#39;, &#39;171534254&#39;, &#39;171534270&#39;, &#39;171843250&#39;, &#39;171843260&#39;, &#39;172118140&#39;, &#39;172118146&#39;, &#39;172118147&#39;, &#39;172118153&#39;, &#39;172118162&#39;, &#39;172118182&#39;, &#39;172118188&#39;, &#39;172118204&#39;, &#39;172118214&#39;, &#39;172118221&#39;, &#39;172118226&#39;, &#39;172118235&#39;, &#39;172118239&#39;, &#39;172118244&#39;, &#39;172118277&#39;, &#39;172118278&#39;, &#39;172118286&#39;, &#39;172118291&#39;, &#39;172118304&#39;, &#39;172118309&#39;, &#39;172118317&#39;, &#39;172118328&#39;, &#39;172118346&#39;, &#39;172118347&#39;, &#39;172118353&#39;, &#39;172118354&#39;, &#39;172118355&#39;, &#39;172118358&#39;, &#39;172118360&#39;, &#39;163285815&#39;, &#39;166149063&#39;, &#39;166156829&#39;, &#39;167481104&#39;, &#39;167482299&#39;, &#39;167482300&#39;, &#39;168010016&#39;, &#39;168310836&#39;, &#39;168310837&#39;, &#39;168476190&#39;, &#39;168878799&#39;, &#39;169240702&#39;, &#39;169436361&#39;, &#39;171379688&#39;, &#39;171394959&#39;, &#39;171530266&#39;, &#39;162712468&#39;, &#39;162712490&#39;, &#39;162712506&#39;, &#39;163283283&#39;, &#39;163362019&#39;, &#39;164701798&#39;, &#39;164701802&#39;, &#39;164850073&#39;, &#39;164850290&#39;, &#39;166157157&#39;, &#39;166964883&#39;, &#39;166964886&#39;, &#39;166964888&#39;, &#39;166964890&#39;, &#39;166964899&#39;, &#39;166964903&#39;, &#39;166964904&#39;, &#39;166964908&#39;, &#39;166964913&#39;, &#39;166986000&#39;, &#39;166986065&#39;, &#39;166986067&#39;, &#39;166986077&#39;, &#39;167203321&#39;, &#39;167481489&#39;, &#39;167482130&#39;, &#39;167537951&#39;, &#39;167574477&#39;, &#39;167574478&#39;, &#39;167674037&#39;, &#39;168093174&#39;, &#39;168154285&#39;, &#39;168993735&#39;, &#39;169084219&#39;, &#39;169084221&#39;, &#39;169084228&#39;, &#39;169095061&#39;, &#39;169193396&#39;, &#39;169193437&#39;, &#39;169193895&#39;, &#39;169193967&#39;, &#39;169193984&#39;, &#39;169194217&#39;, &#39;169194293&#39;, &#39;169194319&#39;, &#39;169194330&#39;, &#39;169194348&#39;, &#39;169595592&#39;, &#39;169595872&#39;, &#39;169595897&#39;, &#39;169595998&#39;, &#39;169655830&#39;, &#39;169728040&#39;, &#39;169728041&#39;, &#39;169728431&#39;, &#39;169728432&#39;, &#39;169736642&#39;, &#39;169736643&#39;, &#39;169862121&#39;, &#39;169878349&#39;, &#39;169914451&#39;, &#39;169915447&#39;, &#39;169915455&#39;, &#39;169915574&#39;, &#39;169995311&#39;, &#39;170014641&#39;, &#39;170036241&#39;, &#39;170036499&#39;, &#39;170036602&#39;, &#39;170052965&#39;, &#39;170053029&#39;, &#39;170053921&#39;, &#39;170080981&#39;, &#39;170164555&#39;, &#39;170165348&#39;, &#39;170165794&#39;, &#39;170165926&#39;, &#39;170166075&#39;, &#39;170167073&#39;, &#39;170167420&#39;, &#39;170167651&#39;, &#39;170167680&#39;, &#39;170168510&#39;, &#39;170168543&#39;, &#39;170200729&#39;, &#39;170201013&#39;, &#39;170291885&#39;, &#39;172579449&#39;, &#39;172579509&#39;, &#39;172579567&#39;, &#39;172579762&#39;, &#39;172579767&#39;, &#39;166642632&#39;, &#39;168993728&#39;, &#39;172463305&#39;]
 </pre></div>
 </div>
 </div>
@@ -728,8 +746,8 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43
-[&#39;155903259&#39;, &#39;162396459&#39;, &#39;163362001&#39;, &#39;166157194&#39;, &#39;167331698&#39;, &#39;168290284&#39;, &#39;163361849&#39;, &#39;163362005&#39;, &#39;163362031&#39;, &#39;164040179&#39;, &#39;164701758&#39;, &#39;164701760&#39;, &#39;164701812&#39;, &#39;164701813&#39;, &#39;164701818&#39;, &#39;167065082&#39;, &#39;167094315&#39;, &#39;167094316&#39;, &#39;169240696&#39;, &#39;170701834&#39;, &#39;171530265&#39;, &#39;163285815&#39;, &#39;163341926&#39;, &#39;168301133&#39;, &#39;169240702&#39;, &#39;169595994&#39;, &#39;169686051&#39;, &#39;169707956&#39;, &#39;169707957&#39;, &#39;169860851&#39;, &#39;169860863&#39;, &#39;169861121&#39;, &#39;169861123&#39;, &#39;169861544&#39;, &#39;169861545&#39;, &#39;169878303&#39;, &#39;169878307&#39;, &#39;169914913&#39;, &#39;170060748&#39;, &#39;170404012&#39;, &#39;171394959&#39;, &#39;166642632&#39;, &#39;168476190&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44
+[&#39;155903259&#39;, &#39;162396459&#39;, &#39;163362001&#39;, &#39;166157194&#39;, &#39;167331698&#39;, &#39;168290284&#39;, &#39;168301133&#39;, &#39;163341926&#39;, &#39;163361849&#39;, &#39;163362005&#39;, &#39;163362031&#39;, &#39;164040179&#39;, &#39;164701758&#39;, &#39;164701760&#39;, &#39;164701812&#39;, &#39;164701813&#39;, &#39;164701818&#39;, &#39;167065082&#39;, &#39;167094315&#39;, &#39;167094316&#39;, &#39;169240696&#39;, &#39;169595994&#39;, &#39;169686051&#39;, &#39;169707956&#39;, &#39;169707957&#39;, &#39;169860851&#39;, &#39;169860863&#39;, &#39;169861121&#39;, &#39;169861123&#39;, &#39;169861544&#39;, &#39;169861545&#39;, &#39;169878303&#39;, &#39;169878307&#39;, &#39;169914913&#39;, &#39;170060748&#39;, &#39;170404012&#39;, &#39;170701834&#39;, &#39;171530265&#39;, &#39;163285815&#39;, &#39;168476190&#39;, &#39;169240702&#39;, &#39;171394959&#39;, &#39;166642632&#39;, &#39;172463305&#39;]
 </pre></div>
 </div>
 </div>
@@ -751,6 +769,8 @@ Detail:
 166157194,34,&quot;C23H33F2N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 167331698,34,&quot;C23H33F2N5O4&quot;,&quot;CC(C)C[C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)C(F)F&quot;
 168290284,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@H]3CCNC3=O)C#N)C&quot;
+168301133,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+163341926,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C&quot;
 163361849,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](CC3CCNC3=O)C#N)C&quot;
 163362005,35,&quot;C23H32F3N5O4&quot;,&quot;CC(C)[C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)CC(F)(F)F&quot;
 163362031,36,&quot;C24H34F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](CC(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
@@ -764,12 +784,6 @@ Detail:
 167094315,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 167094316,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@H]2C1CN([C@@H]2C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C&quot;
 169240696,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)[C@H](C(C)(C)C)N([C@@H](C[C@@H]3CCNC3=O)C#N)C(=O)C(F)(F)F)C(=O)N)C&quot;
-170701834,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NCC[C@H]3C[C@H](NC3=O)C#N)C&quot;
-171530265,35,&quot;C23H34F3N5O4&quot;,&quot;CC(C)C.CC1(C2C1C(N(C2)C(=O)CNC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-163285815,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-163341926,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C&quot;
-168301133,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
-169240702,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(C[C@@H]3CCNC3=O)C#N)C&quot;
 169595994,35,&quot;C24H35F2N5O4&quot;,&quot;CC(C)C[C@@H](C(=O)N1C[C@]2([C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)C)NC(=O)C(F)F&quot;
 169686051,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@H]2C1CN([C@@H]2C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C&quot;
 169707956,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(C[C@@H]3CCNC3=O)C#N)C&quot;
@@ -785,9 +799,14 @@ Detail:
 169914913,36,&quot;C24H34F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)CC(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 170060748,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(C[C@@H]3CCNC3=O)C#N)C&quot;
 170404012,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1C(N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+170701834,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NCC[C@H]3C[C@H](NC3=O)C#N)C&quot;
+171530265,35,&quot;C23H34F3N5O4&quot;,&quot;CC(C)C.CC1(C2C1C(N(C2)C(=O)CNC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+163285815,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
+168476190,35,&quot;C23H32F3N5O4&quot;,&quot;[2H]C1(C[C@H](C(=O)N1)C[C@@H](C#N)NC(=O)[C@@H]2[C@@H]3[C@@H](C3(C)C)CN2C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)[2H]&quot;
+169240702,35,&quot;C23H32F3N5O4&quot;,&quot;CC1(C2C1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(C[C@@H]3CCNC3=O)C#N)C&quot;
 171394959,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@H](C[C@H]3CCNC3=O)C#N)C&quot;
 166642632,35,&quot;C23H32F3N5O4&quot;,&quot;[2H]C([2H])([2H])C([C@@H](C(=O)N1C[C@H]2[C@@H]([C@H]1C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C2(C)C)NC(=O)C(F)(F)F)(C([2H])([2H])[2H])C([2H])([2H])[2H]&quot;
-168476190,35,&quot;C23H32F3N5O4&quot;,&quot;[2H]C1(C[C@H](C(=O)N1)C[C@@H](C#N)NC(=O)[C@@H]2[C@@H]3[C@@H](C3(C)C)CN2C(=O)[C@H](C(C)(C)C)NC(=O)C(F)(F)F)[2H]&quot;
+172463305,35,&quot;C23H32F3N5O4&quot;,&quot;CC1([C@@H]2[C@H]1[C@H](N(C2)C(=O)[C@@H](C(C)(C)C)NC(=O)C(F)(F)F)C(=O)N[C@@H](C[C@@H]3CCNC3=O)C#N)C&quot;
 </pre></div>
 </div>
 </div>
@@ -802,8 +821,8 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>63
-[&#39;168476190&#39;, &#39;155903259&#39;, &#39;162396448&#39;, &#39;162396443&#39;, &#39;167331612&#39;, &#39;162712482&#39;, &#39;162396442&#39;, &#39;162712489&#39;, &#39;169595910&#39;, &#39;166157170&#39;, &#39;166157194&#39;, &#39;168290284&#39;, &#39;162712462&#39;, &#39;166149071&#39;, &#39;171347857&#39;, &#39;169491069&#39;, &#39;162396447&#39;, &#39;170200908&#39;, &#39;170200725&#39;, &#39;169727506&#39;, &#39;162712498&#39;, &#39;166949501&#39;, &#39;171502451&#39;, &#39;171381582&#39;, &#39;166949500&#39;, &#39;165368436&#39;, &#39;171362423&#39;, &#39;167481592&#39;, &#39;164622832&#39;, &#39;167203580&#39;, &#39;171350187&#39;, &#39;171362422&#39;, &#39;171502467&#39;, &#39;170774498&#39;, &#39;58799705&#39;, &#39;58766735&#39;, &#39;171843228&#39;, &#39;167213710&#39;, &#39;165368435&#39;, &#39;167430402&#39;, &#39;170774504&#39;, &#39;164701814&#39;, &#39;163321803&#39;, &#39;170774499&#39;, &#39;44227150&#39;, &#39;166156672&#39;, &#39;59115764&#39;, &#39;58908752&#39;, &#39;58605465&#39;, &#39;59115469&#39;, &#39;58908973&#39;, &#39;58604790&#39;, &#39;168941919&#39;, &#39;169907726&#39;, &#39;166156886&#39;, &#39;169291122&#39;, &#39;167203609&#39;, &#39;167203582&#39;, &#39;166157313&#39;, &#39;169595980&#39;, &#39;162396450&#39;, &#39;166157277&#39;, &#39;166157052&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>64
+[&#39;168476190&#39;, &#39;168301133&#39;, &#39;155903259&#39;, &#39;162396448&#39;, &#39;162396443&#39;, &#39;167331612&#39;, &#39;162712482&#39;, &#39;162396442&#39;, &#39;162712489&#39;, &#39;169595910&#39;, &#39;166157170&#39;, &#39;166157194&#39;, &#39;168290284&#39;, &#39;162712462&#39;, &#39;166149071&#39;, &#39;171347857&#39;, &#39;169491069&#39;, &#39;162396447&#39;, &#39;170200908&#39;, &#39;170200725&#39;, &#39;169727506&#39;, &#39;162712498&#39;, &#39;166949501&#39;, &#39;171502451&#39;, &#39;171381582&#39;, &#39;166949500&#39;, &#39;165368436&#39;, &#39;171362423&#39;, &#39;167481592&#39;, &#39;164622832&#39;, &#39;167203580&#39;, &#39;171350187&#39;, &#39;171362422&#39;, &#39;171502467&#39;, &#39;170774498&#39;, &#39;58799705&#39;, &#39;58766735&#39;, &#39;171843228&#39;, &#39;167213710&#39;, &#39;165368435&#39;, &#39;167430402&#39;, &#39;170774504&#39;, &#39;164701814&#39;, &#39;163321803&#39;, &#39;170774499&#39;, &#39;44227150&#39;, &#39;166156672&#39;, &#39;59115764&#39;, &#39;58908752&#39;, &#39;58605465&#39;, &#39;59115469&#39;, &#39;58908973&#39;, &#39;58604790&#39;, &#39;168941919&#39;, &#39;169907726&#39;, &#39;166156886&#39;, &#39;169291122&#39;, &#39;167203609&#39;, &#39;167203582&#39;, &#39;166157313&#39;, &#39;169595980&#39;, &#39;162396450&#39;, &#39;166157277&#39;, &#39;166157052&#39;]
 </pre></div>
 </div>
 </div>
@@ -811,7 +830,7 @@ Detail:
 <p>Currently, the similarity threshold used for 3-D similarity search is not adjustable, contrary to 2-D similarity search.</p>
 </section>
 <section id="performing-substructure-superstructure-search">
-<h2>5. Performing substructure/superstructure search<a class="headerlink" href="#performing-substructure-superstructure-search" title="Permalink to this headline">#</a></h2>
+<h2>5. Performing substructure/superstructure search<a class="headerlink" href="#performing-substructure-superstructure-search" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;C2CN=C(C1=C(C=CC=C1)N2)C3=CC=CC=C3&quot;</span>
@@ -821,7 +840,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41412
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41497
 </pre></div>
 </div>
 </div>
@@ -835,14 +854,14 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6869
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6894
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="molecular-formula-search">
-<h2>7. Molecular Formula search<a class="headerlink" href="#molecular-formula-search" title="Permalink to this headline">#</a></h2>
+<h2>7. Molecular Formula search<a class="headerlink" href="#molecular-formula-search" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">formula</span> <span class="o">=</span> <span class="s2">&quot;C6H12O6&quot;</span>
@@ -852,7 +871,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1576
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1581
 </pre></div>
 </div>
 </div>
@@ -882,9 +901,9 @@ Detail:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CID&#39;, &#39;MolecularFormula&#39;, &#39;IsomericSMILES&#39;]
-2723872 	 C6H12O6 	 C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O
 892 	 C6H12O6 	 C1(C(C(C(C(C1O)O)O)O)O)O
 5793 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+2723872 	 C6H12O6 	 C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O
 6036 	 C6H12O6 	 C([C@@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O)O
 107526 	 C6H12O6 	 C([C@H]([C@H]([C@@H]([C@H](C=O)O)O)O)O)O
 64689 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O
@@ -904,7 +923,7 @@ Detail:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3329
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3338
 </pre></div>
 </div>
 </div>
@@ -933,9 +952,9 @@ Detail:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CID&#39;, &#39;MolecularFormula&#39;, &#39;IsomericSMILES&#39;]
-2723872 	 C6H12O6 	 C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O
 892 	 C6H12O6 	 C1(C(C(C(C(C1O)O)O)O)O)O
 5793 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+2723872 	 C6H12O6 	 C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O
 6036 	 C6H12O6 	 C([C@@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O)O
 107526 	 C6H12O6 	 C([C@H]([C@H]([C@@H]([C@H](C=O)O)O)O)O)O
 64689 	 C6H12O6 	 C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O
@@ -975,11 +994,10 @@ Detail:
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="pubchem_pugrest2.html"
@@ -999,10 +1017,7 @@ Detail:
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1010,6 +1025,7 @@ Detail:
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1043,6 +1059,7 @@ By IUPAC WorldFAIR Chemistry D3.2 Project
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -1069,8 +1086,8 @@ Coordination and Support Action under Grant Agreement No. 101058393.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

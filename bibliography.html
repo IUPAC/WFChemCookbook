@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Bibliography &#8212; IUPAC FAIR Chemistry Cookbook</title>
   
@@ -15,19 +15,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -66,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Glossary" href="glossary.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -74,19 +76,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -108,12 +114,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -128,9 +142,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -140,8 +158,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/iupac_and_wf.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/iupac_and_wf.jpg" class="logo__image only-light" alt="IUPAC FAIR Chemistry Cookbook - Home"/>
+    <script>document.write(`<img src="_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="IUPAC FAIR Chemistry Cookbook - Home"/>`);</script>
   
   
 </a></div>
@@ -156,53 +174,53 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="cooking.html">The Joy of FAIR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="cooking.html">The Joy of FAIR</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="techniques.html">FAIR Techniques</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tools.html">Tools &amp; Web Services</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="tools/opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools/opsin_api_jn.html">Using the OPSIN API in Python</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="data_sources.html">Data Sources</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="data_sources.html">Data Sources</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="datasources/goldbook_api.html">Terminology: The IUPAC Gold Book</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datasources/cas_commonchem.html">CAS Common Chemistry API</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="datasources/pubchem.html">Data Repository: PubChem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="datasources/pubchem_pugrest.html">PubChem PUG-REST</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="datasources/pubchem.html">Data Repository: PubChem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="datasources/pubchem_pugrest.html">PubChem PUG-REST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="datasources/pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
 <li class="toctree-l4"><a class="reference internal" href="datasources/pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
 <li class="toctree-l4"><a class="reference internal" href="datasources/pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l3"><a class="reference internal" href="datasources/pubchem_pugview.html">PubChem PUG-View</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datasources/pubchem_ptable.html">PubChem Periodic Table</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="manipulations.html">Data Manipulations</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="manipulations.html">Data Manipulations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="manipulations/computing_inchis.html">Computing InChIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulations/dataset_search.html">Finding a Findable Dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulations/excel_import.html">Importing data into Excel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulations/gsheets_citations.html">Importing data into Google Sheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulations/using_inchi.html">Annotation with InChIs</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="usecases.html">Use Cases &amp; Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="usecases.html">Use Cases &amp; Workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="usecases/iupac_pkadata.html">Reuse of Curated Chemical Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usecases/uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="about_project.html">About this project</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="about_project.html">About this project</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="contributors.html">Project Contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html">Cookbook development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="worldfair.html">WordFAIR Chemistry</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Bibliography</a></li>
 </ul>
@@ -220,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -229,7 +247,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -358,20 +376,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -398,32 +418,37 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="bibliography">
-<h1>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h1>
+<h1>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this heading">#</a></h1>
 <p>This page contains a full bibliography of resource referenced across the book pages.</p>
 <div class="docutils container" id="id1">
-<dl class="citation">
-<dt class="label" id="id3"><span class="brackets">HJA+22</span></dt>
-<dd><p>Robert M. Hanson, Damien Jeannerat, Mark Archibald, Ian J. Bruno, Stuart J. Chalk, Antony N. Davies, Robert J. Lancashire, Jeffrey Lang, and Henry S. Rzepa. Iupac specification for the fair management of spectroscopic data in chemistry (iupac fairspec) – guiding principles. <em>Pure and Applied Chemistry</em>, 94(6):623–636, 2022. URL: <a class="reference external" href="https://doi.org/10.1515/pac-2021-2009">https://doi.org/10.1515/pac-2021-2009</a>, <a class="reference external" href="https://doi.org/doi:10.1515/pac-2021-2009">doi:doi:10.1515/pac-2021-2009</a>.</p>
-</dd>
-<dt class="label" id="id5"><span class="brackets">Kim21</span></dt>
-<dd><p>Sunghwan Kim. &quot;exploring chemical information in pubchem&quot;. <em>Current Protocols</em>, 1(8):e217, 2021. URL: <a class="reference external" href="https://doi.org/10.1002/cpz1.217">https://doi.org/10.1002/cpz1.217</a>.</p>
-</dd>
-<dt class="label" id="id7"><span class="brackets">KCC+23</span></dt>
-<dd><p>Sunghwan Kim, Jie Chen, Tiejun Cheng, Asta Gindulyte, Jia He, Siqian He, Qingliang Li, Benjamin A. Shoemaker, Paul A. Thiessen, Bo Yu, Leonid Zaslavsky, Jian Zhang, and Evan E. Bolton. &quot;pubchem 2023 update&quot;. <em>Nucleic Acids Research</em>, 51(D1):D1373–D1380, 2023. URL: <a class="reference external" href="https://doi.org/10.1093/nar/gkac956">https://doi.org/10.1093/nar/gkac956</a>.</p>
-</dd>
-<dt class="label" id="id6"><span class="brackets">KCH+22</span></dt>
-<dd><p>Sunghwan Kim, Tiejun Cheng, Siqian He, Paul A. Thiessen, Qingliang Li, Asta Gindulyte, and Evan E. Bolton. &quot;pubchem protein, gene, pathway, and taxonomy data collections: bridging biology and chemistry through target-centric views of pubchem data&quot;. <em>Journal of Molecular Biology</em>, 434(11):167514, 2022. URL: <a class="reference external" href="https://doi.org/10.1016/j.jmb.2022.167514">https://doi.org/10.1016/j.jmb.2022.167514</a>.</p>
-</dd>
-<dt class="label" id="id8"><span class="brackets">PT23</span></dt>
-<dd><p>L. R. McEwen P. Thiessen, E. Bolton. &quot;worldfair (d3.3) utility services for chemistry standards (1.1)&quot;. Technical Report, WorldFAIR D3.3 Project, 2023. URL: <a class="reference external" href="https://doi.org/10.5281/zenodo.10514901">https://doi.org/10.5281/zenodo.10514901</a>.</p>
-</dd>
-<dt class="label" id="id2"><span class="brackets">Wil16</span></dt>
-<dd><p>Mark D. et al. Wilkinson. The fair guiding principles for scientific data management and stewardship. <em>Scientific Data</em>, 3:160018, 2016. <a class="reference external" href="https://doi.org/10.1038/sdata.2016.18">doi:10.1038/sdata.2016.18</a>.</p>
-</dd>
-</dl>
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>HJA+22<span class="fn-bracket">]</span></span>
+<p>Robert M. Hanson, Damien Jeannerat, Mark Archibald, Ian J. Bruno, Stuart J. Chalk, Antony N. Davies, Robert J. Lancashire, Jeffrey Lang, and Henry S. Rzepa. Iupac specification for the fair management of spectroscopic data in chemistry (iupac fairspec) – guiding principles. <em>Pure and Applied Chemistry</em>, 94(6):623–636, 2022. URL: <a class="reference external" href="https://doi.org/10.1515/pac-2021-2009">https://doi.org/10.1515/pac-2021-2009</a>, <a class="reference external" href="https://doi.org/doi:10.1515/pac-2021-2009">doi:doi:10.1515/pac-2021-2009</a>.</p>
+</div>
+<div class="citation" id="id5" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Kim21<span class="fn-bracket">]</span></span>
+<p>Sunghwan Kim. &quot;exploring chemical information in pubchem&quot;. <em>Current Protocols</em>, 1(8):e217, 2021. URL: <a class="reference external" href="https://doi.org/10.1002/cpz1.217">https://doi.org/10.1002/cpz1.217</a>.</p>
+</div>
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>KCC+23<span class="fn-bracket">]</span></span>
+<p>Sunghwan Kim, Jie Chen, Tiejun Cheng, Asta Gindulyte, Jia He, Siqian He, Qingliang Li, Benjamin A. Shoemaker, Paul A. Thiessen, Bo Yu, Leonid Zaslavsky, Jian Zhang, and Evan E. Bolton. &quot;pubchem 2023 update&quot;. <em>Nucleic Acids Research</em>, 51(D1):D1373–D1380, 2023. URL: <a class="reference external" href="https://doi.org/10.1093/nar/gkac956">https://doi.org/10.1093/nar/gkac956</a>.</p>
+</div>
+<div class="citation" id="id6" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>KCH+22<span class="fn-bracket">]</span></span>
+<p>Sunghwan Kim, Tiejun Cheng, Siqian He, Paul A. Thiessen, Qingliang Li, Asta Gindulyte, and Evan E. Bolton. &quot;pubchem protein, gene, pathway, and taxonomy data collections: bridging biology and chemistry through target-centric views of pubchem data&quot;. <em>Journal of Molecular Biology</em>, 434(11):167514, 2022. URL: <a class="reference external" href="https://doi.org/10.1016/j.jmb.2022.167514">https://doi.org/10.1016/j.jmb.2022.167514</a>.</p>
+</div>
+<div class="citation" id="id8" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>PT23<span class="fn-bracket">]</span></span>
+<p>L. R. McEwen P. Thiessen, E. Bolton. &quot;worldfair (d3.3) utility services for chemistry standards (1.1)&quot;. Technical Report, WorldFAIR D3.3 Project, 2023. URL: <a class="reference external" href="https://doi.org/10.5281/zenodo.10514901">https://doi.org/10.5281/zenodo.10514901</a>.</p>
+</div>
+<div class="citation" id="id2" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Wil16<span class="fn-bracket">]</span></span>
+<p>Mark D. et al. Wilkinson. The fair guiding principles for scientific data management and stewardship. <em>Scientific Data</em>, 3:160018, 2016. <a class="reference external" href="https://doi.org/10.1038/sdata.2016.18">doi:10.1038/sdata.2016.18</a>.</p>
+</div>
+</div>
 </div>
 </section>
 
@@ -452,11 +477,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="glossary.html"
@@ -467,10 +491,7 @@ document.write(`
         <p class="prev-next-title">Glossary</p>
       </div>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -493,6 +514,7 @@ By IUPAC WorldFAIR Chemistry D3.2 Project
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -519,8 +541,8 @@ Coordination and Support Action under Grant Agreement No. 101058393.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

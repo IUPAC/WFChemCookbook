@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Structured UV/Vis (meta)data for small molecule characterisation &#8212; IUPAC FAIR Chemistry Cookbook</title>
   
@@ -15,19 +15,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -67,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="About the IUPAC FAIR Chemistry Cookbook Project" href="../about_project.html" />
     <link rel="prev" title="Reuse of Curated Chemical Data" href="iupac_pkadata.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,19 +77,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +115,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,9 +143,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -141,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="IUPAC FAIR Chemistry Cookbook - Home"/>
+    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="IUPAC FAIR Chemistry Cookbook - Home"/>`);</script>
   
   
 </a></div>
@@ -157,53 +175,53 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../techniques.html">FAIR Techniques</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api_jn.html">Using the OPSIN API in Python</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../datasources/goldbook_api.html">Terminology: The IUPAC Gold Book</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../datasources/cas_commonchem.html">CAS Common Chemistry API</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../datasources/pubchem.html">Data Repository: PubChem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../datasources/pubchem_pugrest.html">PubChem PUG-REST</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../datasources/pubchem.html">Data Repository: PubChem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../datasources/pubchem_pugrest.html">PubChem PUG-REST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../datasources/pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../datasources/pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../datasources/pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasources/pubchem_pugview.html">PubChem PUG-View</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasources/pubchem_ptable.html">PubChem Periodic Table</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/computing_inchis.html">Computing InChIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/dataset_search.html">Finding a Findable Dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/excel_import.html">Importing data into Excel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/gsheets_citations.html">Importing data into Google Sheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/using_inchi.html">Annotation with InChIs</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="iupac_pkadata.html">Reuse of Curated Chemical Data</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributors.html">Project Contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../development.html">Cookbook development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../worldfair.html">WordFAIR Chemistry</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -221,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -230,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -408,20 +426,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -489,10 +509,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="structured-uv-vis-meta-data-for-small-molecule-characterisation">
-<h1>Structured UV/Vis (meta)data for small molecule characterisation<a class="headerlink" href="#structured-uv-vis-meta-data-for-small-molecule-characterisation" title="Permalink to this headline">#</a></h1>
+<h1>Structured UV/Vis (meta)data for small molecule characterisation<a class="headerlink" href="#structured-uv-vis-meta-data-for-small-molecule-characterisation" title="Permalink to this heading">#</a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<div class="sd-summary-down docutils">
@@ -522,24 +542,24 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </ul>
 </div>
 </details><section id="objectives">
-<h2>1. Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
+<h2>1. Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
 <p>To provide guidance on the minimum set of metadata required for publishing UV/Vis spectroscopic data as supplementary information to support compound characterisation using the Beer-Lambert Law. To apply the FAIR principles for data management to produce digital data objects that contain raw, spectral and metadata to enable current and future researchers in the reanalysis and visualisation of UV/Vis spectroscopic data.</p>
 </section>
 <section id="target-audience">
-<h2>2. Target audience<a class="headerlink" href="#target-audience" title="Permalink to this headline">#</a></h2>
+<h2>2. Target audience<a class="headerlink" href="#target-audience" title="Permalink to this heading">#</a></h2>
 <p>Researchers who routinely work with a user interface (spreadsheet) for preparation of supplementary material to support compound characterisation for publication: authors who aim to improve the FAIRness of their published supporting data.</p>
 <p>FAIR data management refers to the <a class="reference external" href="https://doi.org/10.1515/pac-2021-2009">IUPAC FAIRSpec standard</a>: IUPAC specifications for the findability, accessibility, interoperability and reusability of spectroscopic data in chemistry.</p>
 </section>
 <section id="structuring-the-meta-data">
-<h2>3. Structuring the (meta)data<a class="headerlink" href="#structuring-the-meta-data" title="Permalink to this headline">#</a></h2>
+<h2>3. Structuring the (meta)data<a class="headerlink" href="#structuring-the-meta-data" title="Permalink to this heading">#</a></h2>
 <section id="file-formats">
-<h3>3.1 File formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">#</a></h3>
+<h3>3.1 File formats<a class="headerlink" href="#file-formats" title="Permalink to this heading">#</a></h3>
 <p>Textual metadata should (typically) be provided as a README.txt file.</p>
 <p>Instrument–specific file formats should not be used for storage of the raw spectroscopic dataset. If JCAMP-DX is a fully supported format of the spectrophotometer, then the sample level metadata available in the raw data file could be user–defined or mandatory. The metadata content also depends on mapping from the spectrophotometer native software to JCAMP-DX. Sample level metadata should be supplemented using the file structure defined in 3.2 below.</p>
 <p>The file formats recommended here are not exhaustive. For data reuse and preservation, all file formats must be non-proprietary, and associated software open source (maintained). Files should be uncompressed and unencrypted.</p>
 </section>
 <section id="file-hierarchy">
-<h3>3.2 File hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this headline">#</a></h3>
+<h3>3.2 File hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this heading">#</a></h3>
 <table border="1">
   <tr style="background-color:gray;">
     <td colspan="4"><strong>Raw Data</strong></td>
@@ -653,31 +673,31 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </section>
 </section>
 <section id="data-reporting-using-jupyter-notebook-python">
-<h2>4. Data reporting using Jupyter Notebook (Python)<a class="headerlink" href="#data-reporting-using-jupyter-notebook-python" title="Permalink to this headline">#</a></h2>
+<h2>4. Data reporting using Jupyter Notebook (Python)<a class="headerlink" href="#data-reporting-using-jupyter-notebook-python" title="Permalink to this heading">#</a></h2>
 <p>Publication of UV/Vis spectroscopic data for small molecule characterisation typically requires a plot of the spectrum, and accompanying values for the wavelength of maximum absorbance (𝜆<sub>max</sub>) and associated molar extinction coefficient (ε). An exemplar procedure for FAIR data reporting using Jupyter Notebook is described below, suitable for a novice user without existing experience in the Python language.</p>
 <p>The UV/Vis reference data file ‘sample_data.jdx’ for salicylic acid in JCAMP-DX format is from the NIST Standard Reference Database available from the <a class="reference external" href="https://webbook.nist.gov/">NIST Chemistry WebBook</a>.</p>
 <section id="the-tools">
-<h3>4.1 The tools<a class="headerlink" href="#the-tools" title="Permalink to this headline">#</a></h3>
+<h3>4.1 The tools<a class="headerlink" href="#the-tools" title="Permalink to this heading">#</a></h3>
 <section id="what-is-python">
-<h4>What is Python?<a class="headerlink" href="#what-is-python" title="Permalink to this headline">#</a></h4>
+<h4>What is Python?<a class="headerlink" href="#what-is-python" title="Permalink to this heading">#</a></h4>
 <p>From the official python website, Python.org:</p>
 <p>Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python’s simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed.</p>
 </section>
 <section id="what-is-jupyter-a-jupyter-notebook">
-<h4>What is Jupyter/a Jupyter Notebook?<a class="headerlink" href="#what-is-jupyter-a-jupyter-notebook" title="Permalink to this headline">#</a></h4>
+<h4>What is Jupyter/a Jupyter Notebook?<a class="headerlink" href="#what-is-jupyter-a-jupyter-notebook" title="Permalink to this heading">#</a></h4>
 <p>Jupyter (formerly IPython Notebook) is an open-source project that lets you easily combine MarkDown text and executable Python source code on one canvas called a notebook. They are both human-readable documents containing the analysis description and the results (figures, tables, etc.) as well as executable documents which run the code to perform the data analysis.</p>
 </section>
 <section id="what-is-anaconda">
-<h4>What is Anaconda?<a class="headerlink" href="#what-is-anaconda" title="Permalink to this headline">#</a></h4>
+<h4>What is Anaconda?<a class="headerlink" href="#what-is-anaconda" title="Permalink to this heading">#</a></h4>
 <p>Anaconda can be thought of as a one-stop shop for all things Python and data science. It’s almost an umbrella; by downloading Anaconda you also get Python, Jupyter notebooks and a whole host of other useful programmes. It is also a package manager and virtual environment manager.</p>
 </section>
 <section id="installing-the-tools">
-<h4>Installing the tools<a class="headerlink" href="#installing-the-tools" title="Permalink to this headline">#</a></h4>
+<h4>Installing the tools<a class="headerlink" href="#installing-the-tools" title="Permalink to this heading">#</a></h4>
 <p>The easiest way to install Python is through the package and virtual environment manager Anaconda. Anaconda is free and open source and the Individual Edition can be installed from https://www.anaconda.com/.</p>
 <p>Once Anaconda is installed you can create a virtual environment, load Jupyter into the environment and run this notebook.</p>
 </section>
 <section id="running-the-notebook-on-your-computer">
-<h4>Running the notebook (on your computer)<a class="headerlink" href="#running-the-notebook-on-your-computer" title="Permalink to this headline">#</a></h4>
+<h4>Running the notebook (on your computer)<a class="headerlink" href="#running-the-notebook-on-your-computer" title="Permalink to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Make sure Anaconda is installed on your computer</p></li>
 <li><p>Use the Anaconda navigator (or the command line) to create a virtual environment</p></li>
@@ -691,7 +711,7 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </section>
 </section>
 <section id="exemplar-code-for-data-reporting">
-<h3>4.2 Exemplar code for data reporting<a class="headerlink" href="#exemplar-code-for-data-reporting" title="Permalink to this headline">#</a></h3>
+<h3>4.2 Exemplar code for data reporting<a class="headerlink" href="#exemplar-code-for-data-reporting" title="Permalink to this heading">#</a></h3>
 <p>First the packages we need are imported into the Jupyter notebook</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -705,12 +725,12 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jcamp in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (1.2.2)
-Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from jcamp) (1.26.2)
-Requirement already satisfied: datetime in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from jcamp) (5.4)
-Requirement already satisfied: zope.interface in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from datetime-&gt;jcamp) (6.1)
-Requirement already satisfied: pytz in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from datetime-&gt;jcamp) (2023.3.post1)
-Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from zope.interface-&gt;datetime-&gt;jcamp) (65.5.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jcamp in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (1.2.2)
+Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from jcamp) (2.2.1)
+Requirement already satisfied: datetime in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from jcamp) (5.5)
+Requirement already satisfied: zope.interface in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from datetime-&gt;jcamp) (7.2)
+Requirement already satisfied: pytz in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from datetime-&gt;jcamp) (2024.2)
+Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from zope.interface-&gt;datetime-&gt;jcamp) (75.6.0)
 </pre></div>
 </div>
 </div>
@@ -769,8 +789,10 @@ are nm for x, but logged for y.</p>
  &#39;$ref date&#39;: 1963,
  &#39;xypoints&#39;: &#39;(XY..XY)&#39;,
  &#39;end&#39;: &#39;&#39;,
- &#39;x&#39;: array([247.1048, 247.1574, 247.1657, ..., 334.0779, 334.1783, 340.0658]),
- &#39;y&#39;: array([3.14445 , 3.182843, 3.112433, ..., 1.693346, 1.67324 , 1.25709 ])}
+ &#39;x&#39;: array([247.1048, 247.1574, 247.1657, ..., 334.0779, 334.1783, 340.0658],
+       shape=(1449,)),
+ &#39;y&#39;: array([3.14445 , 3.182843, 3.112433, ..., 1.693346, 1.67324 , 1.25709 ],
+       shape=(1449,))}
 </pre></div>
 </div>
 </div>
@@ -800,7 +822,7 @@ with descriptive and informative names) that will hold the data associated with 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4f616e31310bb0f47387d9c899ef324593fd6003808614026e48b3e7a903e267.png" src="../_images/4f616e31310bb0f47387d9c899ef324593fd6003808614026e48b3e7a903e267.png" />
+<img alt="../_images/4dcce7dda843fbebed418195416fbb84c236f19f2749a179234567539491a8ac.png" src="../_images/4dcce7dda843fbebed418195416fbb84c236f19f2749a179234567539491a8ac.png" />
 </div>
 </div>
 <p>The plot has also been saved as an image.</p>
@@ -879,47 +901,47 @@ with descriptive and informative names) that will hold the data associated with 
 </section>
 </section>
 <section id="glossary-of-python-terms">
-<h2>5. Glossary of Python terms<a class="headerlink" href="#glossary-of-python-terms" title="Permalink to this headline">#</a></h2>
+<h2>5. Glossary of Python terms<a class="headerlink" href="#glossary-of-python-terms" title="Permalink to this heading">#</a></h2>
 <section id="package">
-<h3>Package<a class="headerlink" href="#package" title="Permalink to this headline">#</a></h3>
+<h3>Package<a class="headerlink" href="#package" title="Permalink to this heading">#</a></h3>
 <p>When developing a Python script, it’s often necessary to use functionality that is not included in the Python standard library. One way to access this additional functionality is by importing Python packages into your script. These packages, also known as modules, provide pre-built functionality and code that can be easily integrated into your script, saving you the time and effort of having to write everything from scratch. They can include functions, classes, or other objects that are ready to use or extend, and are written by other developers to solve specific problems or tasks. In addition, importing packages can also help to keep your code organized and maintainable, by breaking it up into reusable and functional blocks. In summary, we import packages into scripts to leverage pre-built functionality and take advantage of the expertise of the Python community, allowing us to focus on the specific problem we are trying to solve.</p>
 </section>
 <section id="comment">
-<h3>Comment<a class="headerlink" href="#comment" title="Permalink to this headline">#</a></h3>
+<h3>Comment<a class="headerlink" href="#comment" title="Permalink to this heading">#</a></h3>
 <p>In Python, a comment is a piece of text that is ignored by the interpreter when the code is executed. Comments are used to explain the purpose and logic of the code, and to make it easier for other people (or yourself) to understand and maintain the code. Comments can be a single line or span multiple lines and can start with a # symbol or be encapsulated by tiple quotes “”” “””. The text within the comment is only intended for human readers. Comments are very useful to add explanations and context to code, also it can help to keep track of the progress, problems or ideas you had when working in a script. Use them liberally.</p>
 </section>
 <section id="method">
-<h3>Method<a class="headerlink" href="#method" title="Permalink to this headline">#</a></h3>
+<h3>Method<a class="headerlink" href="#method" title="Permalink to this heading">#</a></h3>
 <p>A method is a function that is associated with an object. It is defined inside a class, and it can access and manipulate the attributes and state of the object it is associated with. Methods contain functionality that is often useful for the work you are doing, e.g. def for beer_lambert in the exemplar code above (section 4)</p>
 </section>
 <section id="data-structure">
-<h3>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">#</a></h3>
+<h3>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this heading">#</a></h3>
 <p>In Python (and in computer science in general), a data structure is a way of organizing and storing data in a computer’s memory so that it can be efficiently accessed and modified.</p>
 </section>
 <section id="float">
-<h3>Float<a class="headerlink" href="#float" title="Permalink to this headline">#</a></h3>
+<h3>Float<a class="headerlink" href="#float" title="Permalink to this heading">#</a></h3>
 <p>A float (short for “floating-point number”) is a type of numeric data that can represent decimal values.</p>
 </section>
 <section id="function">
-<h3>Function<a class="headerlink" href="#function" title="Permalink to this headline">#</a></h3>
+<h3>Function<a class="headerlink" href="#function" title="Permalink to this heading">#</a></h3>
 <p>In Python, a function is a block of organized, reusable code that performs a specific task. Functions provide a way to organize your code into logical, modular chunks that can be easily reused and tested.</p>
 <p>A Python function is defined using the def keyword, followed by the function name, a pair of parentheses (), and a colon :. The code inside the function is indented under the definition line.</p>
 </section>
 <section id="dictionary">
-<h3>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">#</a></h3>
+<h3>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this heading">#</a></h3>
 <p>A dictionary is a built-in data structure that stores a collection of key-value pairs, where each key is unique. Dictionaries are also commonly known as associative arrays or hash maps. They are similar to lists or arrays in other programming languages, but the elements in a dictionary are accessed via keys rather than an index.</p>
 </section>
 <section id="variable">
-<h3>Variable<a class="headerlink" href="#variable" title="Permalink to this headline">#</a></h3>
+<h3>Variable<a class="headerlink" href="#variable" title="Permalink to this heading">#</a></h3>
 <p>In Python, a variable is a named location in memory that is used to store a value. A variable can be thought of as a “container” that holds a value, and the value can be of any data type (e.g., a number, a string, a list, etc.).</p>
 <p>To create a variable in Python, you simply give it a name and assign a value to it using the assignment operator (=).</p>
 </section>
 <section id="doc-string">
-<h3>Doc String<a class="headerlink" href="#doc-string" title="Permalink to this headline">#</a></h3>
+<h3>Doc String<a class="headerlink" href="#doc-string" title="Permalink to this heading">#</a></h3>
 <p>A docstring in Python is a string that appears at the top of a module, class, or function definition. Docstrings are used to provide a brief description of what the code does, as well as any information on the arguments, return values, and other details of the code.</p>
 </section>
 <section id="virtual-environment">
-<h3>Virtual Environment<a class="headerlink" href="#virtual-environment" title="Permalink to this headline">#</a></h3>
+<h3>Virtual Environment<a class="headerlink" href="#virtual-environment" title="Permalink to this heading">#</a></h3>
 <p>You may have multiple Python projects happening at once. A virtual environment is a named, isolated copy of Python that has its own files and packages. Anything done inside a virtual environment is specific to that environment and won’t affect any other projects. All the dependencies and packages you install will be sandboxed inside the environment you are using. You should therefore have a separate virtual environment for each separate project.</p>
 </section>
 </section>
@@ -950,11 +972,10 @@ with descriptive and informative names) that will hold the data associated with 
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="iupac_pkadata.html"
@@ -974,10 +995,7 @@ with descriptive and informative names) that will hold the data associated with 
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -985,6 +1003,7 @@ with descriptive and informative names) that will hold the data associated with 
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1045,6 +1064,7 @@ By IUPAC WorldFAIR Chemistry D3.2 Project
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -1071,8 +1091,8 @@ Coordination and Support Action under Grant Agreement No. 101058393.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

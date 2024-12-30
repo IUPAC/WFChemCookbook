@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Computing InChIs &#8212; IUPAC FAIR Chemistry Cookbook</title>
   
@@ -15,19 +15,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -67,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Finding a Findable Dataset" href="dataset_search.html" />
     <link rel="prev" title="Manipulating Data within a Digital Environment" href="../manipulations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,19 +77,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +115,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,9 +143,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -141,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="IUPAC FAIR Chemistry Cookbook - Home"/>
+    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="IUPAC FAIR Chemistry Cookbook - Home"/>`);</script>
   
   
 </a></div>
@@ -157,53 +175,53 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../techniques.html">FAIR Techniques</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api_jn.html">Using the OPSIN API in Python</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../datasources/goldbook_api.html">Terminology: The IUPAC Gold Book</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../datasources/cas_commonchem.html">CAS Common Chemistry API</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../datasources/pubchem.html">Data Repository: PubChem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../datasources/pubchem_pugrest.html">PubChem PUG-REST</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../datasources/pubchem.html">Data Repository: PubChem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../datasources/pubchem_pugrest.html">PubChem PUG-REST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../datasources/pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../datasources/pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../datasources/pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasources/pubchem_pugview.html">PubChem PUG-View</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasources/pubchem_ptable.html">PubChem Periodic Table</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Computing InChIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dataset_search.html">Finding a Findable Dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="excel_import.html">Importing data into Excel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gsheets_citations.html">Importing data into Google Sheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using_inchi.html">Annotation with InChIs</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../usecases/iupac_pkadata.html">Reuse of Curated Chemical Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../usecases/uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributors.html">Project Contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../development.html">Cookbook development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../worldfair.html">WordFAIR Chemistry</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -221,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -230,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -408,20 +426,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -471,10 +491,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="computing-inchis">
-<h1>Computing InChIs<a class="headerlink" href="#computing-inchis" title="Permalink to this headline">#</a></h1>
+<h1>Computing InChIs<a class="headerlink" href="#computing-inchis" title="Permalink to this heading">#</a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<div class="sd-summary-down docutils">
@@ -505,9 +525,9 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </ul>
 </div>
 </details><section id="using-rdkit">
-<h2>1. Using RDKit<a class="headerlink" href="#using-rdkit" title="Permalink to this headline">#</a></h2>
+<h2>1. Using RDKit<a class="headerlink" href="#using-rdkit" title="Permalink to this heading">#</a></h2>
 <section id="import-rdkit-modules">
-<h3>1.1 Import RDKit Modules<a class="headerlink" href="#import-rdkit-modules" title="Permalink to this headline">#</a></h3>
+<h3>1.1 Import RDKit Modules<a class="headerlink" href="#import-rdkit-modules" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
@@ -518,7 +538,7 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </div>
 </section>
 <section id="create-a-molecular-object-from-smiles">
-<h3>1.2 Create a Molecular Object from SMILES<a class="headerlink" href="#create-a-molecular-object-from-smiles" title="Permalink to this headline">#</a></h3>
+<h3>1.2 Create a Molecular Object from SMILES<a class="headerlink" href="#create-a-molecular-object-from-smiles" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PubChem CID: 134601</span>
@@ -528,7 +548,7 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/18fcfcaea1d0a56ab95abf88e64b2e3750ca78cb088e00e1aa4695ccc29ceec1.png" src="../_images/18fcfcaea1d0a56ab95abf88e64b2e3750ca78cb088e00e1aa4695ccc29ceec1.png" />
+<img alt="../_images/15d386c20c2cddce02e46c582a31221d7df4ac0f6792fc3390959a44705b51a4.png" src="../_images/15d386c20c2cddce02e46c582a31221d7df4ac0f6792fc3390959a44705b51a4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -539,14 +559,14 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;rdkit.Chem.rdchem.Mol object at 0x7febc5ab02e0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;rdkit.Chem.rdchem.Mol object at 0x7f0b1c923df0&gt;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="calculate-inchi">
-<h3>1.3 Calculate InChI<a class="headerlink" href="#calculate-inchi" title="Permalink to this headline">#</a></h3>
+<h3>1.3 Calculate InChI<a class="headerlink" href="#calculate-inchi" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute InChI from RDKit mol</span>
@@ -575,7 +595,7 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </div>
 </section>
 <section id="calculate-inchis-for-a-list-of-molecules">
-<h3>1.4 Calculate InChIs for a List of Molecules<a class="headerlink" href="#calculate-inchis-for-a-list-of-molecules" title="Permalink to this headline">#</a></h3>
+<h3>1.4 Calculate InChIs for a List of Molecules<a class="headerlink" href="#calculate-inchis-for-a-list-of-molecules" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a file of SMILES strings</span>
@@ -620,7 +640,7 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;rdkit.Chem.rdchem.Mol object at 0x7febc5ab07b0&gt;, &lt;rdkit.Chem.rdchem.Mol object at 0x7febc5ab0890&gt;, &lt;rdkit.Chem.rdchem.Mol object at 0x7febc5ab0c80&gt;, &lt;rdkit.Chem.rdchem.Mol object at 0x7febc5ab0cf0&gt;, &lt;rdkit.Chem.rdchem.Mol object at 0x7febc5ab0d60&gt;, &lt;rdkit.Chem.rdchem.Mol object at 0x7febc5ab0dd0&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;rdkit.Chem.rdchem.Mol object at 0x7f0b1c9bc3c0&gt;, &lt;rdkit.Chem.rdchem.Mol object at 0x7f0b1c9bc350&gt;, &lt;rdkit.Chem.rdchem.Mol object at 0x7f0b1c9bc820&gt;, &lt;rdkit.Chem.rdchem.Mol object at 0x7f0b1c9bc890&gt;, &lt;rdkit.Chem.rdchem.Mol object at 0x7f0b1c9bc900&gt;, &lt;rdkit.Chem.rdchem.Mol object at 0x7f0b1c9bc970&gt;]
 </pre></div>
 </div>
 </div>
@@ -634,7 +654,7 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/413483a68657f0010c06d89bc7be5f51faea67c6b33bbf73321275db7b632a45.png" src="../_images/413483a68657f0010c06d89bc7be5f51faea67c6b33bbf73321275db7b632a45.png" />
+<img alt="../_images/950e306d09b2d0fbc0257f5a9fec33a2cbb2d23e8c5c61d7d2f69111f9e58066.png" src="../_images/950e306d09b2d0fbc0257f5a9fec33a2cbb2d23e8c5c61d7d2f69111f9e58066.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -654,9 +674,9 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </section>
 </section>
 <section id="using-open-babel">
-<h2>2. Using Open Babel<a class="headerlink" href="#using-open-babel" title="Permalink to this headline">#</a></h2>
+<h2>2. Using Open Babel<a class="headerlink" href="#using-open-babel" title="Permalink to this heading">#</a></h2>
 <section id="import-open-babel-modules">
-<h3>2.1 Import Open Babel Modules<a class="headerlink" href="#import-open-babel-modules" title="Permalink to this headline">#</a></h3>
+<h3>2.1 Import Open Babel Modules<a class="headerlink" href="#import-open-babel-modules" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open Babel v3.1.1</span>
@@ -667,7 +687,7 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </div>
 </section>
 <section id="id1">
-<h3>2.2 Create a Molecular Object from SMILES<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>2.2 Create a Molecular Object from SMILES<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">pybel</span><span class="o">.</span><span class="n">readstring</span><span class="p">(</span><span class="s2">&quot;smi&quot;</span><span class="p">,</span> <span class="s2">&quot;COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@H](CC(=O)O)N&quot;</span><span class="p">)</span>
@@ -693,7 +713,7 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </div>
 </section>
 <section id="id2">
-<h3>2.3 Calculate InChI<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3>2.3 Calculate InChI<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up InChI conversion</span>
@@ -752,7 +772,7 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </div>
 </section>
 <section id="id3">
-<h3>2.4 Calculate InChIs for a List of Molecules<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>2.4 Calculate InChIs for a List of Molecules<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a file of SMILES</span>
@@ -779,7 +799,7 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;openbabel.pybel.Molecule object at 0x7febc550edd0&gt;, &lt;openbabel.pybel.Molecule object at 0x7febc4242ed0&gt;, &lt;openbabel.pybel.Molecule object at 0x7febc438d690&gt;, &lt;openbabel.pybel.Molecule object at 0x7febc438da50&gt;, &lt;openbabel.pybel.Molecule object at 0x7febc438da90&gt;, &lt;openbabel.pybel.Molecule object at 0x7febc438db50&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;openbabel.pybel.Molecule object at 0x7f0b1b9f8ad0&gt;, &lt;openbabel.pybel.Molecule object at 0x7f0b1b9f9250&gt;, &lt;openbabel.pybel.Molecule object at 0x7f0b1b9f9410&gt;, &lt;openbabel.pybel.Molecule object at 0x7f0b1b9f9510&gt;, &lt;openbabel.pybel.Molecule object at 0x7f0b1b9f9650&gt;, &lt;openbabel.pybel.Molecule object at 0x7f0b1b9f9710&gt;]
 </pre></div>
 </div>
 </div>
@@ -834,11 +854,10 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../manipulations.html"
@@ -858,10 +877,7 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -869,6 +885,7 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -911,6 +928,7 @@ By IUPAC WorldFAIR Chemistry D3.2 Project
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -937,8 +955,8 @@ Coordination and Support Action under Grant Agreement No. 101058393.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

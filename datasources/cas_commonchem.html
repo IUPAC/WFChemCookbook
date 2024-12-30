@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>CAS Common Chemistry API &#8212; IUPAC FAIR Chemistry Cookbook</title>
   
@@ -15,19 +15,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -67,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Data Repository: PubChem" href="pubchem.html" />
     <link rel="prev" title="Accessing the IUPAC Gold Book API in Python" href="goldbook_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,19 +77,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +115,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,9 +143,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -141,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/iupac_and_wf.jpg" class="logo__image only-light" alt="IUPAC FAIR Chemistry Cookbook - Home"/>
+    <script>document.write(`<img src="../_static/iupac_and_wf.jpg" class="logo__image only-dark" alt="IUPAC FAIR Chemistry Cookbook - Home"/>`);</script>
   
   
 </a></div>
@@ -157,53 +175,53 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The FAIR Chemistry Cookbook</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cooking.html">The Joy of FAIR</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../techniques.html">FAIR Techniques</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools &amp; Web Services</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api.html">OPSIN: Open Parser for Systematic IUPAC Nomenclature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools/opsin_api_jn.html">Using the OPSIN API in Python</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../data_sources.html">Data Sources</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="goldbook_api.html">Terminology: The IUPAC Gold Book</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">CAS Common Chemistry API</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="pubchem.html">Data Repository: PubChem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="pubchem_pugrest.html">PubChem PUG-REST</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pubchem.html">Data Repository: PubChem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pubchem_pugrest.html">PubChem PUG-REST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="pubchem_pugrest1.html">Accessing PubChem through PUG-REST - Part I</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pubchem_pugrest2.html">Accessing PubChem through PUG-REST: Part II</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pubchem_pugrest3.html">Accessing PubChem through PUG-REST: Part III</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l3"><a class="reference internal" href="pubchem_pugview.html">PubChem PUG-View</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pubchem_ptable.html">PubChem Periodic Table</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manipulations.html">Data Manipulations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/computing_inchis.html">Computing InChIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/dataset_search.html">Finding a Findable Dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/excel_import.html">Importing data into Excel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/gsheets_citations.html">Importing data into Google Sheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../manipulations/using_inchi.html">Annotation with InChIs</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases &amp; Workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../usecases/iupac_pkadata.html">Reuse of Curated Chemical Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../usecases/uvvis_metadata.html">Structured UV/Vis (meta)data for small molecule characterisation</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project.html">About this project</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributors.html">Project Contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../development.html">Cookbook development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../worldfair.html">WordFAIR Chemistry</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -221,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -230,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -408,20 +426,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -481,10 +501,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="cas-common-chemistry-api">
-<h1>CAS Common Chemistry API<a class="headerlink" href="#cas-common-chemistry-api" title="Permalink to this headline">#</a></h1>
+<h1>CAS Common Chemistry API<a class="headerlink" href="#cas-common-chemistry-api" title="Permalink to this heading">#</a></h1>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<div class="sd-summary-down docutils">
@@ -515,10 +535,10 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </ul>
 </div>
 </details><section id="common-chemistry-record-detail-retrieval">
-<h2>1. Common Chemistry Record Detail Retrieval<a class="headerlink" href="#common-chemistry-record-detail-retrieval" title="Permalink to this headline">#</a></h2>
+<h2>1. Common Chemistry Record Detail Retrieval<a class="headerlink" href="#common-chemistry-record-detail-retrieval" title="Permalink to this heading">#</a></h2>
 <p>Information about substances in CAS Common Chemistry can be retrieved using the <code class="docutils literal notranslate"><span class="pre">/detail</span></code> API and a CAS RN identifier:</p>
 <section id="import-libraries">
-<h3>Import libraries<a class="headerlink" href="#import-libraries" title="Permalink to this headline">#</a></h3>
+<h3>Import libraries<a class="headerlink" href="#import-libraries" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -529,7 +549,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </section>
 <section id="setup-api-parameters">
-<h3>Setup API parameters<a class="headerlink" href="#setup-api-parameters" title="Permalink to this headline">#</a></h3>
+<h3>Setup API parameters<a class="headerlink" href="#setup-api-parameters" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">detail_base_url</span> <span class="o">=</span> <span class="s2">&quot;https://commonchemistry.cas.org/api/detail?&quot;</span>
@@ -540,7 +560,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </section>
 <section id="request-data-from-cas-common-chemistry-detail-api">
-<h3>Request data from CAS Common Chemistry Detail API<a class="headerlink" href="#request-data-from-cas-common-chemistry-detail-api" title="Permalink to this headline">#</a></h3>
+<h3>Request data from CAS Common Chemistry Detail API<a class="headerlink" href="#request-data-from-cas-common-chemistry-detail-api" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">casrn1_data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">detail_base_url</span> <span class="o">+</span> <span class="s2">&quot;cas_rn=&quot;</span> <span class="o">+</span> <span class="n">casrn1</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -554,77 +574,80 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
                              &#39;property&#39;: &#39;105-113 °C @ Press: 17 Torr&#39;,
                              &#39;sourceNumber&#39;: 1}],
  &#39;hasMolfile&#39;: True,
- &#39;image&#39;: &#39;&lt;svg width=&quot;215&quot; viewBox=&quot;0 0 215 101&quot; style=&quot;fill-opacity:1; &#39;
-          &#39;color-rendering:auto; color-interpolation:auto; &#39;
-          &#39;text-rendering:auto; stroke:black; stroke-linecap:square; &#39;
-          &#39;stroke-miterlimit:10; shape-rendering:auto; stroke-opacity:1; &#39;
-          &#39;fill:black; stroke-dasharray:none; font-weight:normal; &#39;
-          &quot;stroke-width:1; font-family:&#39;Open Sans&#39;; font-style:normal; &quot;
-          &#39;stroke-linejoin:miter; font-size:12; stroke-dashoffset:0; &#39;
-          &#39;image-rendering:auto;&quot; height=&quot;101&quot; class=&quot;cas-substance-image&quot; &#39;
-          &#39;xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; &#39;
-          &#39;xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;svg &#39;
-          &#39;class=&quot;cas-substance-single-component&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; &#39;
-          &#39;width=&quot;215&quot; stroke=&quot;none&quot; ry=&quot;7&quot; rx=&quot;7&quot; height=&quot;101&quot; fill=&quot;white&quot; &#39;
-          &#39;class=&quot;cas-substance-group&quot;/&gt;&lt;svg y=&quot;0&quot; x=&quot;0&quot; width=&quot;215&quot; &#39;
-          &#39;viewBox=&quot;0 0 215 101&quot; style=&quot;fill:black;&quot; height=&quot;101&quot; &#39;
-          &#39;class=&quot;cas-substance-single-component-image&quot;&gt;&lt;svg&gt;&lt;g&gt;&lt;g &#39;
-          &#39;transform=&quot;translate(107,49)&quot; &#39;
-          &#39;style=&quot;text-rendering:geometricPrecision; &#39;
-          &#39;color-rendering:optimizeQuality; color-interpolation:linearRGB; &#39;
-          &#39;stroke-linecap:butt; image-rendering:optimizeQuality;&quot;&gt;&lt;line y2=&quot;0&quot; &#39;
-          &#39;y1=&quot;15&quot; x2=&quot;0&quot; x1=&quot;-25.98&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0&quot; y1=&quot;15&quot; &#39;
-          &#39;x2=&quot;-51.963&quot; x1=&quot;-25.98&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;15&quot; y1=&quot;0&quot; &#39;
-          &#39;x2=&quot;25.98&quot; x1=&quot;0&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;3.1886&quot; y1=&quot;15&quot; &#39;
-          &#39;x2=&quot;46.4398&quot; x1=&quot;25.98&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;38.5234&quot; &#39;
-          &#39;y1=&quot;13.9896&quot; x2=&quot;24.23&quot; x1=&quot;24.23&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-          &#39;y2=&quot;38.5234&quot; y1=&quot;13.9897&quot; x2=&quot;27.73&quot; x1=&quot;27.73&quot; &#39;
-          &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;15&quot; y1=&quot;3.1786&quot; x2=&quot;77.943&quot; &#39;
-          &#39;x1=&quot;57.4684&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0&quot; y1=&quot;15&quot; x2=&quot;103.923&quot; &#39;
-          &#39;x1=&quot;77.943&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;15&quot; y1=&quot;0&quot; x2=&quot;-77.943&quot; &#39;
-          &#39;x1=&quot;-51.963&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-30&quot; y1=&quot;0&quot; x2=&quot;-51.963&quot; &#39;
-          &#39;x1=&quot;-51.963&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0&quot; y1=&quot;15&quot; x2=&quot;-103.923&quot; &#39;
-          &#39;x1=&quot;-77.943&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-45&quot; y1=&quot;-30&quot; &#39;
-          &#39;x2=&quot;-77.943&quot; x1=&quot;-51.963&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-30&quot; y1=&quot;0&quot; &#39;
-          &#39;x2=&quot;-103.923&quot; x1=&quot;-103.923&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-30&quot; &#39;
-          &#39;y1=&quot;-45&quot; x2=&quot;-103.923&quot; x1=&quot;-77.943&quot; style=&quot;fill:none;&quot;/&gt;&lt;path &#39;
-          &#39;style=&quot;fill:none; stroke-miterlimit:5;&quot; d=&quot;M-25.547 14.75 L-25.98 &#39;
-          &#39;15 L-26.413 14.75&quot;/&gt;&lt;path style=&quot;fill:none; stroke-miterlimit:5;&quot; &#39;
-          &#39;d=&quot;M-0.433 0.25 L0 0 L0.433 0.25&quot;/&gt;&lt;path style=&quot;fill:none; &#39;
-          &#39;stroke-miterlimit:5;&quot; d=&quot;M25.547 14.75 L25.98 15 L26.413 &#39;
-          &#39;14.75&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(107,49)&quot; &#39;
-          &#39;style=&quot;stroke-linecap:butt; fill:rgb(230,0,0); &#39;
-          &#39;text-rendering:geometricPrecision; color-rendering:optimizeQuality; &#39;
-          &quot;image-rendering:optimizeQuality; font-family:&#39;Open Sans&#39;; &quot;
-          &#39;stroke:rgb(230,0,0); color-interpolation:linearRGB; &#39;
-          &#39;stroke-miterlimit:5;&quot;&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M55.9005 &#39;
-          &#39;-0.0703 Q55.9005 1.9922 54.8614 3.1719 Q53.8224 4.3516 51.9786 &#39;
-          &#39;4.3516 Q50.088 4.3516 49.0568 3.1875 Q48.0255 2.0234 48.0255 &#39;
-          &#39;-0.0859 Q48.0255 -2.1797 49.0568 -3.3281 Q50.088 -4.4766 51.9786 &#39;
-          &#39;-4.4766 Q53.838 -4.4766 54.8693 -3.3047 Q55.9005 -2.1328 55.9005 &#39;
-          &#39;-0.0703 ZM49.0724 -0.0703 Q49.0724 1.6641 49.8146 2.5703 Q50.5568 &#39;
-          &#39;3.4766 51.9786 3.4766 Q53.4005 3.4766 54.1271 2.5781 Q54.8536 &#39;
-          &#39;1.6797 54.8536 -0.0703 Q54.8536 -1.8047 54.1271 -2.6953 Q53.4005 &#39;
-          &#39;-3.5859 51.9786 -3.5859 Q50.5568 -3.5859 49.8146 -2.6875 Q49.0724 &#39;
-          &#39;-1.7891 49.0724 -0.0703 Z&quot;/&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M29.9175 &#39;
-          &#39;44.9297 Q29.9175 46.9922 28.8784 48.1719 Q27.8394 49.3516 25.9956 &#39;
-          &#39;49.3516 Q24.105 49.3516 23.0737 48.1875 Q22.0425 47.0234 22.0425 &#39;
-          &#39;44.9141 Q22.0425 42.8203 23.0737 41.6719 Q24.105 40.5234 25.9956 &#39;
-          &#39;40.5234 Q27.855 40.5234 28.8862 41.6953 Q29.9175 42.8672 29.9175 &#39;
-          &#39;44.9297 ZM23.0894 44.9297 Q23.0894 46.6641 23.8316 47.5703 Q24.5737 &#39;
-          &#39;48.4766 25.9956 48.4766 Q27.4175 48.4766 28.1441 47.5781 Q28.8706 &#39;
-          &#39;46.6797 28.8706 44.9297 Q28.8706 43.1953 28.1441 42.3047 Q27.4175 &#39;
-          &#39;41.4141 25.9956 41.4141 Q24.5737 41.4141 23.8316 42.3125 Q23.0894 &#39;
-          &#39;43.2109 23.0894 44.9297 Z&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; &#39;
-          &#39;d=&quot;M77.51 14.75 L77.943 15 L78.376 14.75&quot;/&gt;&lt;path style=&quot;fill:none; &#39;
-          &#39;stroke:black;&quot; d=&quot;M-77.51 14.75 L-77.943 15 L-78.376 14.75&quot;/&gt;&lt;path &#39;
-          &#39;style=&quot;fill:none; stroke:black;&quot; d=&quot;M-51.963 -29.5 L-51.963 -30 &#39;
-          &#39;L-52.396 -30.25&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; &#39;
-          &#39;d=&quot;M-103.49 0.25 L-103.923 0 L-103.923 -0.5&quot;/&gt;&lt;path &#39;
-          &#39;style=&quot;fill:none; stroke:black;&quot; d=&quot;M-77.51 -44.75 L-77.943 -45 &#39;
-          &#39;L-78.376 -44.75&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; &#39;
-          &#39;d=&quot;M-103.923 -29.5 L-103.923 -30 L-103.49 &#39;
-          &#39;-30.25&quot;/&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/svg&gt;&lt;/svg&gt;&lt;/svg&gt;&#39;,
+ &#39;images&#39;: [&#39;&lt;svg width=&quot;215&quot; viewBox=&quot;0 0 215 101&quot; style=&quot;fill-opacity:1; &#39;
+            &#39;color-rendering:auto; color-interpolation:auto; &#39;
+            &#39;text-rendering:auto; stroke:black; stroke-linecap:square; &#39;
+            &#39;stroke-miterlimit:10; shape-rendering:auto; stroke-opacity:1; &#39;
+            &#39;fill:black; stroke-dasharray:none; font-weight:normal; &#39;
+            &quot;stroke-width:1; font-family:&#39;Open Sans&#39;; font-style:normal; &quot;
+            &#39;stroke-linejoin:miter; font-size:12; stroke-dashoffset:0; &#39;
+            &#39;image-rendering:auto;&quot; height=&quot;101&quot; class=&quot;cas-substance-image&quot; &#39;
+            &#39;xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; &#39;
+            &#39;xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;svg &#39;
+            &#39;class=&quot;cas-substance-single-component&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; &#39;
+            &#39;width=&quot;215&quot; stroke=&quot;none&quot; ry=&quot;7&quot; rx=&quot;7&quot; height=&quot;101&quot; fill=&quot;white&quot; &#39;
+            &#39;class=&quot;cas-substance-group&quot;/&gt;&lt;svg y=&quot;0&quot; x=&quot;0&quot; width=&quot;215&quot; &#39;
+            &#39;viewBox=&quot;0 0 215 101&quot; style=&quot;fill:black;&quot; height=&quot;101&quot; &#39;
+            &#39;class=&quot;cas-substance-single-component-image&quot;&gt;&lt;svg&gt;&lt;g&gt;&lt;g &#39;
+            &#39;transform=&quot;translate(107,49)&quot; &#39;
+            &#39;style=&quot;text-rendering:geometricPrecision; &#39;
+            &#39;color-rendering:optimizeQuality; color-interpolation:linearRGB; &#39;
+            &#39;stroke-linecap:butt; image-rendering:optimizeQuality;&quot;&gt;&lt;line &#39;
+            &#39;y2=&quot;0&quot; y1=&quot;15&quot; x2=&quot;0&quot; x1=&quot;-25.98&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
+            &#39;y2=&quot;0&quot; y1=&quot;15&quot; x2=&quot;-51.963&quot; x1=&quot;-25.98&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
+            &#39;y2=&quot;15&quot; y1=&quot;0&quot; x2=&quot;25.98&quot; x1=&quot;0&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
+            &#39;y2=&quot;3.1886&quot; y1=&quot;15&quot; x2=&quot;46.4398&quot; x1=&quot;25.98&quot; &#39;
+            &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;38.5234&quot; y1=&quot;13.9896&quot; x2=&quot;24.23&quot; &#39;
+            &#39;x1=&quot;24.23&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;38.5234&quot; y1=&quot;13.9897&quot; &#39;
+            &#39;x2=&quot;27.73&quot; x1=&quot;27.73&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;15&quot; &#39;
+            &#39;y1=&quot;3.1786&quot; x2=&quot;77.943&quot; x1=&quot;57.4684&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
+            &#39;y2=&quot;0&quot; y1=&quot;15&quot; x2=&quot;103.923&quot; x1=&quot;77.943&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
+            &#39;y2=&quot;15&quot; y1=&quot;0&quot; x2=&quot;-77.943&quot; x1=&quot;-51.963&quot; &#39;
+            &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-30&quot; y1=&quot;0&quot; x2=&quot;-51.963&quot; &#39;
+            &#39;x1=&quot;-51.963&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0&quot; y1=&quot;15&quot; &#39;
+            &#39;x2=&quot;-103.923&quot; x1=&quot;-77.943&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-45&quot; &#39;
+            &#39;y1=&quot;-30&quot; x2=&quot;-77.943&quot; x1=&quot;-51.963&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
+            &#39;y2=&quot;-30&quot; y1=&quot;0&quot; x2=&quot;-103.923&quot; x1=&quot;-103.923&quot; &#39;
+            &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-30&quot; y1=&quot;-45&quot; x2=&quot;-103.923&quot; &#39;
+            &#39;x1=&quot;-77.943&quot; style=&quot;fill:none;&quot;/&gt;&lt;path style=&quot;fill:none; &#39;
+            &#39;stroke-miterlimit:5;&quot; d=&quot;M-25.547 14.75 L-25.98 15 L-26.413 &#39;
+            &#39;14.75&quot;/&gt;&lt;path style=&quot;fill:none; stroke-miterlimit:5;&quot; d=&quot;M-0.433 &#39;
+            &#39;0.25 L0 0 L0.433 0.25&quot;/&gt;&lt;path style=&quot;fill:none; &#39;
+            &#39;stroke-miterlimit:5;&quot; d=&quot;M25.547 14.75 L25.98 15 L26.413 &#39;
+            &#39;14.75&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(107,49)&quot; &#39;
+            &#39;style=&quot;stroke-linecap:butt; fill:rgb(230,0,0); &#39;
+            &#39;text-rendering:geometricPrecision; &#39;
+            &#39;color-rendering:optimizeQuality; image-rendering:optimizeQuality; &#39;
+            &quot;font-family:&#39;Open Sans&#39;; stroke:rgb(230,0,0); &quot;
+            &#39;color-interpolation:linearRGB; stroke-miterlimit:5;&quot;&gt;&lt;path &#39;
+            &#39;style=&quot;stroke:none;&quot; d=&quot;M55.9005 -0.0703 Q55.9005 1.9922 54.8614 &#39;
+            &#39;3.1719 Q53.8224 4.3516 51.9786 4.3516 Q50.088 4.3516 49.0568 &#39;
+            &#39;3.1875 Q48.0255 2.0234 48.0255 -0.0859 Q48.0255 -2.1797 49.0568 &#39;
+            &#39;-3.3281 Q50.088 -4.4766 51.9786 -4.4766 Q53.838 -4.4766 54.8693 &#39;
+            &#39;-3.3047 Q55.9005 -2.1328 55.9005 -0.0703 ZM49.0724 -0.0703 &#39;
+            &#39;Q49.0724 1.6641 49.8146 2.5703 Q50.5568 3.4766 51.9786 3.4766 &#39;
+            &#39;Q53.4005 3.4766 54.1271 2.5781 Q54.8536 1.6797 54.8536 -0.0703 &#39;
+            &#39;Q54.8536 -1.8047 54.1271 -2.6953 Q53.4005 -3.5859 51.9786 -3.5859 &#39;
+            &#39;Q50.5568 -3.5859 49.8146 -2.6875 Q49.0724 -1.7891 49.0724 -0.0703 &#39;
+            &#39;Z&quot;/&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M29.9175 44.9297 Q29.9175 &#39;
+            &#39;46.9922 28.8784 48.1719 Q27.8394 49.3516 25.9956 49.3516 Q24.105 &#39;
+            &#39;49.3516 23.0737 48.1875 Q22.0425 47.0234 22.0425 44.9141 Q22.0425 &#39;
+            &#39;42.8203 23.0737 41.6719 Q24.105 40.5234 25.9956 40.5234 Q27.855 &#39;
+            &#39;40.5234 28.8862 41.6953 Q29.9175 42.8672 29.9175 44.9297 &#39;
+            &#39;ZM23.0894 44.9297 Q23.0894 46.6641 23.8316 47.5703 Q24.5737 &#39;
+            &#39;48.4766 25.9956 48.4766 Q27.4175 48.4766 28.1441 47.5781 Q28.8706 &#39;
+            &#39;46.6797 28.8706 44.9297 Q28.8706 43.1953 28.1441 42.3047 Q27.4175 &#39;
+            &#39;41.4141 25.9956 41.4141 Q24.5737 41.4141 23.8316 42.3125 Q23.0894 &#39;
+            &#39;43.2109 23.0894 44.9297 Z&quot;/&gt;&lt;path style=&quot;fill:none; &#39;
+            &#39;stroke:black;&quot; d=&quot;M77.51 14.75 L77.943 15 L78.376 14.75&quot;/&gt;&lt;path &#39;
+            &#39;style=&quot;fill:none; stroke:black;&quot; d=&quot;M-77.51 14.75 L-77.943 15 &#39;
+            &#39;L-78.376 14.75&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; &#39;
+            &#39;d=&quot;M-51.963 -29.5 L-51.963 -30 L-52.396 -30.25&quot;/&gt;&lt;path &#39;
+            &#39;style=&quot;fill:none; stroke:black;&quot; d=&quot;M-103.49 0.25 L-103.923 0 &#39;
+            &#39;L-103.923 -0.5&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; &#39;
+            &#39;d=&quot;M-77.51 -44.75 L-77.943 -45 L-78.376 -44.75&quot;/&gt;&lt;path &#39;
+            &#39;style=&quot;fill:none; stroke:black;&quot; d=&quot;M-103.923 -29.5 L-103.923 -30 &#39;
+            &#39;L-103.49 -30.25&quot;/&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/svg&gt;&lt;/svg&gt;&lt;/svg&gt;&#39;],
  &#39;inchi&#39;: &#39;InChI=1S/C11H20O2/c1-2-13-11(12)9-8-10-6-4-3-5-7-10/h10H,2-9H2,1H3&#39;,
  &#39;inchiKey&#39;: &#39;InChIKey=NRVPMFHPHGBQLP-UHFFFAOYSA-N&#39;,
  &#39;molecularFormula&#39;: &#39;C&lt;sub&gt;11&lt;/sub&gt;H&lt;sub&gt;20&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt;&#39;,
@@ -654,7 +677,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </section>
 <section id="display-the-molecule-drawing">
-<h3>Display the Molecule Drawing<a class="headerlink" href="#display-the-molecule-drawing" title="Permalink to this headline">#</a></h3>
+<h3>Display the Molecule Drawing<a class="headerlink" href="#display-the-molecule-drawing" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get svg image text</span>
@@ -667,11 +690,22 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dc483030f9cbc340140eaffa8fd3d845e828bd0d9291a6e8920e236e4a31115b.svg" src="../_images/dc483030f9cbc340140eaffa8fd3d845e828bd0d9291a6e8920e236e4a31115b.svg" /></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># get svg image text</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">svg_string1</span> <span class="o">=</span> <span class="n">casrn1_data</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># display the molecule</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">SVG</span>
+
+<span class="ne">KeyError</span>: &#39;image&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="select-some-specific-data">
-<h3>Select some specific data<a class="headerlink" href="#select-some-specific-data" title="Permalink to this headline">#</a></h3>
+<h3>Select some specific data<a class="headerlink" href="#select-some-specific-data" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get Experimental Properties</span>
@@ -729,9 +763,9 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </section>
 </section>
 <section id="common-chemistry-api-record-detail-retrieval-in-a-loop">
-<h2>2. Common Chemistry API record detail retrieval in a loop<a class="headerlink" href="#common-chemistry-api-record-detail-retrieval-in-a-loop" title="Permalink to this headline">#</a></h2>
+<h2>2. Common Chemistry API record detail retrieval in a loop<a class="headerlink" href="#common-chemistry-api-record-detail-retrieval-in-a-loop" title="Permalink to this heading">#</a></h2>
 <section id="id1">
-<h3>Import libraries<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>Import libraries<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -743,7 +777,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </section>
 <section id="id2">
-<h3>Setup API parameters<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3>Setup API parameters<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">detail_base_url</span> <span class="o">=</span> <span class="s2">&quot;https://commonchemistry.cas.org/api/detail?&quot;</span>
@@ -754,7 +788,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </section>
 <section id="request-data-for-each-cas-rn-and-save-to-a-list">
-<h3>Request data for each CAS RN and save to a list<a class="headerlink" href="#request-data-for-each-cas-rn-and-save-to-a-list" title="Permalink to this headline">#</a></h3>
+<h3>Request data for each CAS RN and save to a list<a class="headerlink" href="#request-data-for-each-cas-rn-and-save-to-a-list" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">casrn_data</span> <span class="o">=</span> <span class="p">[]</span>
@@ -775,7 +809,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;uri&#39;: &#39;substance/pt/10094367&#39;,
   &#39;rn&#39;: &#39;10094-36-7&#39;,
   &#39;name&#39;: &#39;Ethyl cyclohexanepropionate&#39;,
-  &#39;image&#39;: &#39;&lt;svg width=&quot;215&quot; viewBox=&quot;0 0 215 101&quot; style=&quot;fill-opacity:1; color-rendering:auto; color-interpolation:auto; text-rendering:auto; stroke:black; stroke-linecap:square; stroke-miterlimit:10; shape-rendering:auto; stroke-opacity:1; fill:black; stroke-dasharray:none; font-weight:normal; stroke-width:1; font-family:\&#39;Open Sans\&#39;; font-style:normal; stroke-linejoin:miter; font-size:12; stroke-dashoffset:0; image-rendering:auto;&quot; height=&quot;101&quot; class=&quot;cas-substance-image&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;svg class=&quot;cas-substance-single-component&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; width=&quot;215&quot; stroke=&quot;none&quot; ry=&quot;7&quot; rx=&quot;7&quot; height=&quot;101&quot; fill=&quot;white&quot; class=&quot;cas-substance-group&quot;/&gt;&lt;svg y=&quot;0&quot; x=&quot;0&quot; width=&quot;215&quot; viewBox=&quot;0 0 215 101&quot; style=&quot;fill:black;&quot; height=&quot;101&quot; class=&quot;cas-substance-single-component-image&quot;&gt;&lt;svg&gt;&lt;g&gt;&lt;g transform=&quot;translate(107,49)&quot; style=&quot;text-rendering:geometricPrecision; color-rendering:optimizeQuality; color-interpolation:linearRGB; stroke-linecap:butt; image-rendering:optimizeQuality;&quot;&gt;&lt;line y2=&quot;0&quot; y1=&quot;15&quot; x2=&quot;0&quot; x1=&quot;-25.98&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0&quot; y1=&quot;15&quot; x2=&quot;-51.963&quot; x1=&quot;-25.98&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;15&quot; y1=&quot;0&quot; x2=&quot;25.98&quot; x1=&quot;0&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;3.1886&quot; y1=&quot;15&quot; x2=&quot;46.4398&quot; x1=&quot;25.98&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;38.5234&quot; y1=&quot;13.9896&quot; x2=&quot;24.23&quot; x1=&quot;24.23&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;38.5234&quot; y1=&quot;13.9897&quot; x2=&quot;27.73&quot; x1=&quot;27.73&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;15&quot; y1=&quot;3.1786&quot; x2=&quot;77.943&quot; x1=&quot;57.4684&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0&quot; y1=&quot;15&quot; x2=&quot;103.923&quot; x1=&quot;77.943&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;15&quot; y1=&quot;0&quot; x2=&quot;-77.943&quot; x1=&quot;-51.963&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-30&quot; y1=&quot;0&quot; x2=&quot;-51.963&quot; x1=&quot;-51.963&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0&quot; y1=&quot;15&quot; x2=&quot;-103.923&quot; x1=&quot;-77.943&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-45&quot; y1=&quot;-30&quot; x2=&quot;-77.943&quot; x1=&quot;-51.963&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-30&quot; y1=&quot;0&quot; x2=&quot;-103.923&quot; x1=&quot;-103.923&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-30&quot; y1=&quot;-45&quot; x2=&quot;-103.923&quot; x1=&quot;-77.943&quot; style=&quot;fill:none;&quot;/&gt;&lt;path style=&quot;fill:none; stroke-miterlimit:5;&quot; d=&quot;M-25.547 14.75 L-25.98 15 L-26.413 14.75&quot;/&gt;&lt;path style=&quot;fill:none; stroke-miterlimit:5;&quot; d=&quot;M-0.433 0.25 L0 0 L0.433 0.25&quot;/&gt;&lt;path style=&quot;fill:none; stroke-miterlimit:5;&quot; d=&quot;M25.547 14.75 L25.98 15 L26.413 14.75&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(107,49)&quot; style=&quot;stroke-linecap:butt; fill:rgb(230,0,0); text-rendering:geometricPrecision; color-rendering:optimizeQuality; image-rendering:optimizeQuality; font-family:\&#39;Open Sans\&#39;; stroke:rgb(230,0,0); color-interpolation:linearRGB; stroke-miterlimit:5;&quot;&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M55.9005 -0.0703 Q55.9005 1.9922 54.8614 3.1719 Q53.8224 4.3516 51.9786 4.3516 Q50.088 4.3516 49.0568 3.1875 Q48.0255 2.0234 48.0255 -0.0859 Q48.0255 -2.1797 49.0568 -3.3281 Q50.088 -4.4766 51.9786 -4.4766 Q53.838 -4.4766 54.8693 -3.3047 Q55.9005 -2.1328 55.9005 -0.0703 ZM49.0724 -0.0703 Q49.0724 1.6641 49.8146 2.5703 Q50.5568 3.4766 51.9786 3.4766 Q53.4005 3.4766 54.1271 2.5781 Q54.8536 1.6797 54.8536 -0.0703 Q54.8536 -1.8047 54.1271 -2.6953 Q53.4005 -3.5859 51.9786 -3.5859 Q50.5568 -3.5859 49.8146 -2.6875 Q49.0724 -1.7891 49.0724 -0.0703 Z&quot;/&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M29.9175 44.9297 Q29.9175 46.9922 28.8784 48.1719 Q27.8394 49.3516 25.9956 49.3516 Q24.105 49.3516 23.0737 48.1875 Q22.0425 47.0234 22.0425 44.9141 Q22.0425 42.8203 23.0737 41.6719 Q24.105 40.5234 25.9956 40.5234 Q27.855 40.5234 28.8862 41.6953 Q29.9175 42.8672 29.9175 44.9297 ZM23.0894 44.9297 Q23.0894 46.6641 23.8316 47.5703 Q24.5737 48.4766 25.9956 48.4766 Q27.4175 48.4766 28.1441 47.5781 Q28.8706 46.6797 28.8706 44.9297 Q28.8706 43.1953 28.1441 42.3047 Q27.4175 41.4141 25.9956 41.4141 Q24.5737 41.4141 23.8316 42.3125 Q23.0894 43.2109 23.0894 44.9297 Z&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; d=&quot;M77.51 14.75 L77.943 15 L78.376 14.75&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; d=&quot;M-77.51 14.75 L-77.943 15 L-78.376 14.75&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; d=&quot;M-51.963 -29.5 L-51.963 -30 L-52.396 -30.25&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; d=&quot;M-103.49 0.25 L-103.923 0 L-103.923 -0.5&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; d=&quot;M-77.51 -44.75 L-77.943 -45 L-78.376 -44.75&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; d=&quot;M-103.923 -29.5 L-103.923 -30 L-103.49 -30.25&quot;/&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/svg&gt;&lt;/svg&gt;&lt;/svg&gt;&#39;,
+  &#39;image&#39;: &#39;&lt;svg width=&quot;228.6&quot; viewBox=&quot;0 0 7620 3716&quot; text-rendering=&quot;auto&quot; stroke-width=&quot;1&quot; stroke-opacity=&quot;1&quot; stroke-miterlimit=&quot;10&quot; stroke-linejoin=&quot;miter&quot; stroke-linecap=&quot;square&quot; stroke-dashoffset=&quot;0&quot; stroke-dasharray=&quot;none&quot; stroke=&quot;black&quot; shape-rendering=&quot;auto&quot; image-rendering=&quot;auto&quot; height=&quot;111.48&quot; font-weight=&quot;normal&quot; font-style=&quot;normal&quot; font-size=&quot;12&quot; font-family=&quot;\&#39;Dialog\&#39;&quot; fill-opacity=&quot;1&quot; fill=&quot;black&quot; color-rendering=&quot;auto&quot; color-interpolation=&quot;auto&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g&gt;&lt;g stroke=&quot;white&quot; fill=&quot;white&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; width=&quot;7620&quot; stroke=&quot;none&quot; height=&quot;3716&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(32866,32758)&quot; text-rendering=&quot;geometricPrecision&quot; stroke-width=&quot;44&quot; stroke-linejoin=&quot;round&quot; stroke-linecap=&quot;round&quot;&gt;&lt;line y2=&quot;-30850&quot; y1=&quot;-31419&quot; x2=&quot;-30792&quot; x1=&quot;-31777&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29715&quot; y1=&quot;-30850&quot; x2=&quot;-30792&quot; x1=&quot;-30792&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31419&quot; y1=&quot;-30850&quot; x2=&quot;-31777&quot; x1=&quot;-32762&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29146&quot; y1=&quot;-29715&quot; x2=&quot;-31777&quot; x1=&quot;-30792&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30850&quot; y1=&quot;-29715&quot; x2=&quot;-32762&quot; x1=&quot;-32762&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29715&quot; y1=&quot;-29146&quot; x2=&quot;-32762&quot; x1=&quot;-31777&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; y1=&quot;-30850&quot; x2=&quot;-29885&quot; x1=&quot;-30792&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30850&quot; y1=&quot;-31376&quot; x2=&quot;-28978&quot; x1=&quot;-29885&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; y1=&quot;-30850&quot; x2=&quot;-28071&quot; x1=&quot;-28978&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30960&quot; y1=&quot;-31376&quot; x2=&quot;-27352&quot; x1=&quot;-28071&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; y1=&quot;-30960&quot; x2=&quot;-26257&quot; x1=&quot;-26976&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30850&quot; y1=&quot;-31376&quot; x2=&quot;-25350&quot; x1=&quot;-26257&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32202&quot; y1=&quot;-31376&quot; x2=&quot;-28140&quot; x1=&quot;-28140&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32202&quot; y1=&quot;-31376&quot; x2=&quot;-28002&quot; x1=&quot;-28002&quot; fill=&quot;none&quot;/&gt;&lt;text y=&quot;-30671&quot; xml:space=&quot;preserve&quot; x=&quot;-27317&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;text y=&quot;-32242&quot; xml:space=&quot;preserve&quot; x=&quot;-28224&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&#39;,
   &#39;inchi&#39;: &#39;InChI=1S/C11H20O2/c1-2-13-11(12)9-8-10-6-4-3-5-7-10/h10H,2-9H2,1H3&#39;,
   &#39;inchiKey&#39;: &#39;InChIKey=NRVPMFHPHGBQLP-UHFFFAOYSA-N&#39;,
   &#39;smile&#39;: &#39;C(CC(OCC)=O)C1CCCCC1&#39;,
@@ -802,7 +836,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
  {&#39;uri&#39;: &#39;substance/pt/10031922&#39;,
   &#39;rn&#39;: &#39;10031-92-2&#39;,
   &#39;name&#39;: &#39;Ethyl 2-nonynoate&#39;,
-  &#39;image&#39;: &#39;&lt;svg width=&quot;292&quot; viewBox=&quot;0 0 292 86&quot; style=&quot;fill-opacity:1; color-rendering:auto; color-interpolation:auto; text-rendering:auto; stroke:black; stroke-linecap:square; stroke-miterlimit:10; shape-rendering:auto; stroke-opacity:1; fill:black; stroke-dasharray:none; font-weight:normal; stroke-width:1; font-family:\&#39;Open Sans\&#39;; font-style:normal; stroke-linejoin:miter; font-size:12; stroke-dashoffset:0; image-rendering:auto;&quot; height=&quot;86&quot; class=&quot;cas-substance-image&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;svg class=&quot;cas-substance-single-component&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; width=&quot;292&quot; stroke=&quot;none&quot; ry=&quot;7&quot; rx=&quot;7&quot; height=&quot;86&quot; fill=&quot;white&quot; class=&quot;cas-substance-group&quot;/&gt;&lt;svg y=&quot;0&quot; x=&quot;0&quot; width=&quot;292&quot; viewBox=&quot;0 0 292 86&quot; style=&quot;fill:black;&quot; height=&quot;86&quot; class=&quot;cas-substance-single-component-image&quot;&gt;&lt;svg&gt;&lt;g&gt;&lt;g transform=&quot;translate(146,41)&quot; style=&quot;text-rendering:geometricPrecision; color-rendering:optimizeQuality; color-interpolation:linearRGB; stroke-linecap:butt; image-rendering:optimizeQuality;&quot;&gt;&lt;line y2=&quot;-7.5&quot; y1=&quot;7.5&quot; x2=&quot;-38.97&quot; x1=&quot;-64.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-4.3214&quot; y1=&quot;7.5&quot; x2=&quot;-85.4276&quot; x1=&quot;-64.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;31.0234&quot; y1=&quot;6.4896&quot; x2=&quot;-66.703&quot; x1=&quot;-66.703&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;31.0234&quot; y1=&quot;6.4897&quot; x2=&quot;-63.203&quot; x1=&quot;-63.203&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-22.5&quot; y1=&quot;-7.5&quot; x2=&quot;-12.99&quot; x1=&quot;-38.97&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-25.5311&quot; y1=&quot;-10.5311&quot; x2=&quot;-14.74&quot; x1=&quot;-40.72&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-19.4689&quot; y1=&quot;-4.4689&quot; x2=&quot;-11.24&quot; x1=&quot;-37.22&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;7.5&quot; y1=&quot;-4.3112&quot; x2=&quot;-116.913&quot; x1=&quot;-96.456&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-37.5&quot; y1=&quot;-22.5&quot; x2=&quot;12.99&quot; x1=&quot;-12.99&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-7.5&quot; y1=&quot;7.5&quot; x2=&quot;-142.893&quot; x1=&quot;-116.913&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-22.5&quot; y1=&quot;-37.5&quot; x2=&quot;38.97&quot; x1=&quot;12.99&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-37.5&quot; y1=&quot;-22.5&quot; x2=&quot;64.953&quot; x1=&quot;38.97&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-22.5&quot; y1=&quot;-37.5&quot; x2=&quot;90.933&quot; x1=&quot;64.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-37.5&quot; y1=&quot;-22.5&quot; x2=&quot;116.913&quot; x1=&quot;90.933&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-22.5&quot; y1=&quot;-37.5&quot; x2=&quot;142.893&quot; x1=&quot;116.913&quot; style=&quot;fill:none;&quot;/&gt;&lt;path style=&quot;fill:none; stroke-miterlimit:5;&quot; d=&quot;M-64.52 7.25 L-64.953 7.5 L-65.386 7.25&quot;/&gt;&lt;path style=&quot;fill:none; stroke-miterlimit:5;&quot; d=&quot;M-39.403 -7.25 L-38.97 -7.5 L-38.537 -7.75&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(146,41)&quot; style=&quot;stroke-linecap:butt; fill:rgb(230,0,0); text-rendering:geometricPrecision; color-rendering:optimizeQuality; image-rendering:optimizeQuality; font-family:\&#39;Open Sans\&#39;; stroke:rgb(230,0,0); color-interpolation:linearRGB; stroke-miterlimit:5;&quot;&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M-86.9955 -7.5703 Q-86.9955 -5.5078 -88.0346 -4.3281 Q-89.0736 -3.1484 -90.9174 -3.1484 Q-92.808 -3.1484 -93.8392 -4.3125 Q-94.8705 -5.4766 -94.8705 -7.5859 Q-94.8705 -9.6797 -93.8392 -10.8281 Q-92.808 -11.9766 -90.9174 -11.9766 Q-89.058 -11.9766 -88.0267 -10.8047 Q-86.9955 -9.6328 -86.9955 -7.5703 ZM-93.8236 -7.5703 Q-93.8236 -5.8359 -93.0814 -4.9297 Q-92.3392 -4.0234 -90.9174 -4.0234 Q-89.4955 -4.0234 -88.7689 -4.9219 Q-88.0424 -5.8203 -88.0424 -7.5703 Q-88.0424 -9.3047 -88.7689 -10.1953 Q-89.4955 -11.0859 -90.9174 -11.0859 Q-92.3392 -11.0859 -93.0814 -10.1875 Q-93.8236 -9.2891 -93.8236 -7.5703 Z&quot;/&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M-61.0155 37.4297 Q-61.0155 39.4922 -62.0546 40.6719 Q-63.0936 41.8516 -64.9374 41.8516 Q-66.828 41.8516 -67.8593 40.6875 Q-68.8905 39.5234 -68.8905 37.4141 Q-68.8905 35.3203 -67.8593 34.1719 Q-66.828 33.0234 -64.9374 33.0234 Q-63.078 33.0234 -62.0468 34.1953 Q-61.0155 35.3672 -61.0155 37.4297 ZM-67.8436 37.4297 Q-67.8436 39.1641 -67.1014 40.0703 Q-66.3593 40.9766 -64.9374 40.9766 Q-63.5155 40.9766 -62.7889 40.0781 Q-62.0624 39.1797 -62.0624 37.4297 Q-62.0624 35.6953 -62.7889 34.8047 Q-63.5155 33.9141 -64.9374 33.9141 Q-66.3593 33.9141 -67.1014 34.8125 Q-67.8436 35.7109 -67.8436 37.4297 Z&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; d=&quot;M-116.48 7.25 L-116.913 7.5 L-117.346 7.25&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; d=&quot;M12.557 -37.25 L12.99 -37.5 L13.423 -37.25&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; d=&quot;M38.537 -22.75 L38.97 -22.5 L39.403 -22.75&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; d=&quot;M64.52 -37.25 L64.953 -37.5 L65.386 -37.25&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; d=&quot;M90.5 -22.75 L90.933 -22.5 L91.366 -22.75&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; d=&quot;M116.48 -37.25 L116.913 -37.5 L117.346 -37.25&quot;/&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/svg&gt;&lt;/svg&gt;&lt;/svg&gt;&#39;,
+  &#39;image&#39;: &#39;&lt;svg width=&quot;318.24&quot; viewBox=&quot;0 0 10608 2283&quot; text-rendering=&quot;auto&quot; stroke-width=&quot;1&quot; stroke-opacity=&quot;1&quot; stroke-miterlimit=&quot;10&quot; stroke-linejoin=&quot;miter&quot; stroke-linecap=&quot;square&quot; stroke-dashoffset=&quot;0&quot; stroke-dasharray=&quot;none&quot; stroke=&quot;black&quot; shape-rendering=&quot;auto&quot; image-rendering=&quot;auto&quot; height=&quot;68.49&quot; font-weight=&quot;normal&quot; font-style=&quot;normal&quot; font-size=&quot;12&quot; font-family=&quot;\&#39;Dialog\&#39;&quot; fill-opacity=&quot;1&quot; fill=&quot;black&quot; color-rendering=&quot;auto&quot; color-interpolation=&quot;auto&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g&gt;&lt;g stroke=&quot;white&quot; fill=&quot;white&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; width=&quot;10608&quot; stroke=&quot;none&quot; height=&quot;2283&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(32866,32758)&quot; text-rendering=&quot;geometricPrecision&quot; stroke-width=&quot;44&quot; stroke-linejoin=&quot;round&quot; stroke-linecap=&quot;round&quot;&gt;&lt;line y2=&quot;-31899&quot; y1=&quot;-31899&quot; x2=&quot;-26132&quot; x1=&quot;-27178&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31988&quot; y1=&quot;-31988&quot; x2=&quot;-26132&quot; x1=&quot;-27178&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31809&quot; y1=&quot;-31809&quot; x2=&quot;-26132&quot; x1=&quot;-27178&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31899&quot; y1=&quot;-31899&quot; x2=&quot;-28227&quot; x1=&quot;-27178&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; y1=&quot;-31899&quot; x2=&quot;-29134&quot; x1=&quot;-28227&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31899&quot; y1=&quot;-31376&quot; x2=&quot;-30041&quot; x1=&quot;-29134&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; y1=&quot;-31899&quot; x2=&quot;-30948&quot; x1=&quot;-30041&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31899&quot; y1=&quot;-31376&quot; x2=&quot;-31855&quot; x1=&quot;-30948&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31376&quot; y1=&quot;-31899&quot; x2=&quot;-32762&quot; x1=&quot;-31855&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31899&quot; y1=&quot;-31899&quot; x2=&quot;-25084&quot; x1=&quot;-26132&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32315&quot; y1=&quot;-31899&quot; x2=&quot;-24364&quot; x1=&quot;-25084&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31899&quot; y1=&quot;-32315&quot; x2=&quot;-23270&quot; x1=&quot;-23989&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32422&quot; y1=&quot;-31899&quot; x2=&quot;-22362&quot; x1=&quot;-23270&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31070&quot; y1=&quot;-31899&quot; x2=&quot;-25014&quot; x1=&quot;-25014&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31070&quot; y1=&quot;-31899&quot; x2=&quot;-25153&quot; x1=&quot;-25153&quot; fill=&quot;none&quot;/&gt;&lt;text y=&quot;-32242&quot; xml:space=&quot;preserve&quot; x=&quot;-24330&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;text y=&quot;-30671&quot; xml:space=&quot;preserve&quot; x=&quot;-25237&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&#39;,
   &#39;inchi&#39;: &#39;InChI=1S/C11H18O2/c1-3-5-6-7-8-9-10-11(12)13-4-2/h3-8H2,1-2H3&#39;,
   &#39;inchiKey&#39;: &#39;InChIKey=BFZNMUGAZYAMTG-UHFFFAOYSA-N&#39;,
   &#39;smile&#39;: &#39;C(C#CCCCCCC)(OCC)=O&#39;,
@@ -822,7 +856,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </section>
 <section id="display-molecule-drawings">
-<h3>Display Molecule Drawings<a class="headerlink" href="#display-molecule-drawings" title="Permalink to this headline">#</a></h3>
+<h3>Display Molecule Drawings<a class="headerlink" href="#display-molecule-drawings" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">SVG</span>
@@ -838,11 +872,11 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dc483030f9cbc340140eaffa8fd3d845e828bd0d9291a6e8920e236e4a31115b.svg" src="../_images/dc483030f9cbc340140eaffa8fd3d845e828bd0d9291a6e8920e236e4a31115b.svg" /><img alt="../_images/1e7bde96360cba6744881b59b890ccc10eeb40a000a61c2203c8cfb2ea1e4d2d.svg" src="../_images/1e7bde96360cba6744881b59b890ccc10eeb40a000a61c2203c8cfb2ea1e4d2d.svg" /><img alt="../_images/02320cce6221845bc605d80bb0f50b3ed1d23066d38225e299daec64a38f4e15.svg" src="../_images/02320cce6221845bc605d80bb0f50b3ed1d23066d38225e299daec64a38f4e15.svg" /><img alt="../_images/017052da4dbf1b3f8be198c3157c9350b3908efe69c7f632ca4c95199d23bc63.svg" src="../_images/017052da4dbf1b3f8be198c3157c9350b3908efe69c7f632ca4c95199d23bc63.svg" /><img alt="../_images/121b05ae45ac5e5eb45e6fcbc92ea7a2171bc3c7945c60b424cb4f53cf7b0ea7.svg" src="../_images/121b05ae45ac5e5eb45e6fcbc92ea7a2171bc3c7945c60b424cb4f53cf7b0ea7.svg" /></div>
+<img alt="../_images/f61202bfc5231a15a544c00b2a1d322d50c45e3594abf6cfcc53bb759c52f6ef.svg" src="../_images/f61202bfc5231a15a544c00b2a1d322d50c45e3594abf6cfcc53bb759c52f6ef.svg" /><img alt="../_images/84b4ffa29013b254af3c95907e2d1f4929811257b7b4e8dd0615e8584c705acb.svg" src="../_images/84b4ffa29013b254af3c95907e2d1f4929811257b7b4e8dd0615e8584c705acb.svg" /><img alt="../_images/9c636bc91d766eaeca32c48f217b396d5864cab96b6701f7b2cb02b01f06eb6a.svg" src="../_images/9c636bc91d766eaeca32c48f217b396d5864cab96b6701f7b2cb02b01f06eb6a.svg" /><img alt="../_images/7023b1a1b4e43d0f2a663efb6369adb2348ec99d220f44ba414da11a498430ec.svg" src="../_images/7023b1a1b4e43d0f2a663efb6369adb2348ec99d220f44ba414da11a498430ec.svg" /><img alt="../_images/82396cf91ccab678889e43dea50eb6c804e86ab9808d31d4620e0c896043aba9.svg" src="../_images/82396cf91ccab678889e43dea50eb6c804e86ab9808d31d4620e0c896043aba9.svg" /></div>
 </div>
 </section>
 <section id="id3">
-<h3>Select some specific data<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>Select some specific data<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get canonical SMILES</span>
@@ -935,10 +969,10 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </section>
 </section>
 <section id="common-chemistry-search">
-<h2>3. Common Chemistry Search<a class="headerlink" href="#common-chemistry-search" title="Permalink to this headline">#</a></h2>
+<h2>3. Common Chemistry Search<a class="headerlink" href="#common-chemistry-search" title="Permalink to this heading">#</a></h2>
 <p>In addition to the <code class="docutils literal notranslate"><span class="pre">/detail</span></code> API, the CAS Common Chemistry API has a <code class="docutils literal notranslate"><span class="pre">/search</span></code> method that allows searching by CAS RN, SMILES, InChI/InChIKey, and name.</p>
 <section id="id4">
-<h3>Import libraries<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>Import libraries<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -950,7 +984,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </section>
 <section id="id5">
-<h3>Setup API Parameters<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>Setup API Parameters<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">search_base_url</span> <span class="o">=</span> <span class="s2">&quot;https://commonchemistry.cas.org/api/search?q=&quot;</span>
@@ -960,7 +994,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </section>
 <section id="request-data-from-cas-common-chemistry-search-api">
-<h3>Request data from CAS Common Chemistry Search API<a class="headerlink" href="#request-data-from-cas-common-chemistry-search-api" title="Permalink to this headline">#</a></h3>
+<h3>Request data from CAS Common Chemistry Search API<a class="headerlink" href="#request-data-from-cas-common-chemistry-search-api" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># keyword search query</span>
@@ -971,356 +1005,121 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;count&#39;: 1,
- &#39;results&#39;: [{&#39;image&#39;: &#39;&lt;svg width=&quot;280&quot; viewBox=&quot;0 0 280 172&quot; &#39;
-                       &#39;style=&quot;fill-opacity:1; color-rendering:auto; &#39;
-                       &#39;color-interpolation:auto; text-rendering:auto; &#39;
-                       &#39;stroke:black; stroke-linecap:square; &#39;
-                       &#39;stroke-miterlimit:10; shape-rendering:auto; &#39;
-                       &#39;stroke-opacity:1; fill:black; stroke-dasharray:none; &#39;
-                       &quot;font-weight:normal; stroke-width:1; font-family:&#39;Open &quot;
-                       &quot;Sans&#39;; font-style:normal; stroke-linejoin:miter; &quot;
-                       &#39;font-size:12; stroke-dashoffset:0; &#39;
-                       &#39;image-rendering:auto;&quot; height=&quot;172&quot; &#39;
-                       &#39;class=&quot;cas-substance-image&quot; &#39;
-                       &#39;xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; &#39;
-                       &#39;xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;svg &#39;
-                       &#39;class=&quot;cas-substance-single-component&quot;&gt;&lt;rect y=&quot;0&quot; &#39;
-                       &#39;x=&quot;0&quot; width=&quot;280&quot; stroke=&quot;none&quot; ry=&quot;7&quot; rx=&quot;7&quot; &#39;
-                       &#39;height=&quot;172&quot; fill=&quot;white&quot; &#39;
-                       &#39;class=&quot;cas-substance-group&quot;/&gt;&lt;svg y=&quot;0&quot; x=&quot;0&quot; &#39;
-                       &#39;width=&quot;280&quot; viewBox=&quot;0 0 280 172&quot; style=&quot;fill:black;&quot; &#39;
-                       &#39;height=&quot;172&quot; &#39;
-                       &#39;class=&quot;cas-substance-single-component-image&quot;&gt;&lt;svg&gt;&lt;g&gt;&lt;clipPath &#39;
-                       &#39;id=&quot;clipPath_bc3718cacd7145f589f52dd9bfea01721&quot; &#39;
-                       &#39;clipPathUnits=&quot;userSpaceOnUse&quot;&gt;&lt;path d=&quot;M36.2428 &#39;
-                       &#39;-48.9389 L36.2012 -8.9389 L72.6092 -8.9011 L72.6507 &#39;
-                       &#39;-48.9011 L58.0514 -48.9162 L58.0514 -48.9162 L46.7031 &#39;
-                       &#39;-10.8966 L40.9538 -12.6127 L51.7918 -48.9227 L51.7918 &#39;
-                       &#39;-48.9227 L36.2428 -48.9389 Z&quot;/&gt;&lt;/clipPath&gt;&lt;g &#39;
-                       &#39;transform=&quot;translate(140,86)&quot; &#39;
-                       &#39;style=&quot;text-rendering:geometricPrecision; &#39;
-                       &#39;color-rendering:optimizeQuality; &#39;
-                       &#39;color-interpolation:linearRGB; stroke-linecap:butt; &#39;
-                       &#39;image-rendering:optimizeQuality;&quot;&gt;&lt;path &#39;
-                       &#39;style=&quot;stroke:none;&quot; d=&quot;M-1.52 0.527 L-2.386 1.027 &#39;
-                       &#39;L-16.2975 -18.0701 L-11.1012 -21.0699 Z&quot;/&gt;&lt;line &#39;
-                       &#39;y2=&quot;26.757&quot; y1=&quot;0.777&quot; x2=&quot;-16.953&quot; x1=&quot;-1.953&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0.777&quot; y1=&quot;0.777&quot; &#39;
-                       &#39;x2=&quot;28.047&quot; x1=&quot;-1.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-                       &#39;y2=&quot;-25.206&quot; y1=&quot;-25.206&quot; x2=&quot;-136.953&quot; x1=&quot;-112.8905&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0.777&quot; y1=&quot;-19.57&quot; &#39;
-                       &#39;x2=&quot;-91.953&quot; x1=&quot;-103.6994&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-                       &#39;y2=&quot;-49.227&quot; y1=&quot;-65.346&quot; x2=&quot;136.953&quot; x1=&quot;111.651&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-46.2751&quot; y1=&quot;-61.3084&quot; &#39;
-                       &#39;x2=&quot;135.0725&quot; x1=&quot;111.4747&quot; style=&quot;fill:none;&quot;/&gt;&lt;path &#39;
-                       &#39;style=&quot;stroke:none;&quot; d=&quot;M85.2719 -51.0485 L84.8101 &#39;
-                       &#39;-51.9355 L108.9981 -67.6289 L114.8412 -63.9065 &#39;
-                       &#39;Z&quot;/&gt;&lt;line y2=&quot;26.757&quot; y1=&quot;26.757&quot; x2=&quot;-16.953&quot; &#39;
-                       &#39;x1=&quot;-46.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;52.737&quot; &#39;
-                       &#39;y1=&quot;26.757&quot; x2=&quot;-61.953&quot; x1=&quot;-46.953&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;52.737&quot; y1=&quot;30.257&quot; &#39;
-                       &#39;x2=&quot;-57.9115&quot; x1=&quot;-44.9323&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-                       &#39;y2=&quot;0.777&quot; y1=&quot;26.757&quot; x2=&quot;-61.953&quot; x1=&quot;-46.953&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;52.737&quot; y1=&quot;26.757&quot; &#39;
-                       &#39;x2=&quot;-1.953&quot; x1=&quot;-16.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-                       &#39;y2=&quot;52.737&quot; y1=&quot;30.257&quot; x2=&quot;-5.9945&quot; x1=&quot;-18.9737&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;52.737&quot; y1=&quot;52.737&quot; &#39;
-                       &#39;x2=&quot;-91.953&quot; x1=&quot;-61.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-                       &#39;y2=&quot;72.5787&quot; y1=&quot;52.737&quot; x2=&quot;-50.497&quot; x1=&quot;-61.953&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0.777&quot; y1=&quot;0.777&quot; &#39;
-                       &#39;x2=&quot;-91.953&quot; x1=&quot;-61.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-                       &#39;y2=&quot;4.277&quot; y1=&quot;4.277&quot; x2=&quot;-89.9323&quot; x1=&quot;-63.9737&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;78.717&quot; y1=&quot;52.737&quot; &#39;
-                       &#39;x2=&quot;-16.953&quot; x1=&quot;-1.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-                       &#39;y2=&quot;26.757&quot; y1=&quot;52.737&quot; x2=&quot;-106.953&quot; x1=&quot;-91.953&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;26.7569&quot; y1=&quot;49.237&quot; &#39;
-                       &#39;x2=&quot;-102.9115&quot; x1=&quot;-89.9323&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-                       &#39;y2=&quot;78.717&quot; y1=&quot;78.717&quot; x2=&quot;-16.953&quot; x1=&quot;-41.6014&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;75.217&quot; y1=&quot;75.217&quot; &#39;
-                       &#39;x2=&quot;-18.9737&quot; x1=&quot;-41.6014&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-                       &#39;y2=&quot;26.757&quot; y1=&quot;0.777&quot; x2=&quot;-106.953&quot; x1=&quot;-91.953&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-22.9227&quot; y1=&quot;0.777&quot; &#39;
-                       &#39;x2=&quot;37.5589&quot; x1=&quot;28.047&quot; style=&quot;fill:none;&quot;/&gt;&lt;path &#39;
-                       &#39;style=&quot;stroke:none;&quot; d=&quot;M28.3927 1.1383 L27.7013 &#39;
-                       &#39;0.4157 L47.1148 -21.0165 L43.6455 -9.3935 Z&quot;/&gt;&lt;path &#39;
-                       &#39;style=&quot;clip-path:url(#clipPath_bc3718cacd7145f589f52dd9bfea01721); &#39;
-                       &#39;stroke:none;&quot; d=&quot;M45.323 -28.4294 L45.3241 -29.4294 &#39;
-                       &#39;L71.4315 -31.6118 L67.1417 -25.6163 Z&quot;/&gt;&lt;line &#39;
-                       &#39;y2=&quot;-52.179&quot; y1=&quot;-34.1312&quot; x2=&quot;18.984&quot; x1=&quot;35.2801&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-51.189&quot; y1=&quot;-15.348&quot; &#39;
-                       &#39;x2=&quot;55.599&quot; x1=&quot;44.901&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-                       &#39;y2=&quot;-51.492&quot; y1=&quot;-28.905&quot; x2=&quot;85.041&quot; x1=&quot;68.88&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-75.186&quot; y1=&quot;-52.179&quot; &#39;
-                       &#39;x2=&quot;33.555&quot; x1=&quot;18.984&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-                       &#39;y2=&quot;-51.492&quot; y1=&quot;-51.189&quot; x2=&quot;85.041&quot; x1=&quot;55.599&quot; &#39;
-                       &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-75.186&quot; y1=&quot;-51.189&quot; &#39;
-                       &#39;x2=&quot;33.555&quot; x1=&quot;55.599&quot; style=&quot;fill:none;&quot;/&gt;&lt;path &#39;
-                       &#39;style=&quot;stroke:none;&quot; d=&quot;M28.8064 1.1461 L27.7536 &#39;
-                       &#39;1.5689 L28.0263 2.5369 L29.2786 2.0339 L28.8064 1.1461 &#39;
-                       &#39;ZM30.2231 3.8096 L28.5717 4.473 L28.5717 4.473 &#39;
-                       &#39;L28.8444 5.441 L28.8444 5.441 L30.6953 4.6975 L30.2231 &#39;
-                       &#39;3.8096 ZM31.6398 6.4732 L29.3899 7.377 L29.6626 8.345 &#39;
-                       &#39;L29.6626 8.345 L32.112 7.3611 L32.112 7.3611 L31.6398 &#39;
-                       &#39;6.4732 ZM33.0565 9.1368 L30.208 10.281 L30.208 10.281 &#39;
-                       &#39;L30.4807 11.249 L30.4807 11.249 L33.5287 10.0247 &#39;
-                       &#39;L33.0565 9.1368 ZM34.4732 11.8004 L31.0261 13.1851 &#39;
-                       &#39;L31.0261 13.1851 L31.2988 14.1531 L31.2988 14.1531 &#39;
-                       &#39;L34.9454 12.6883 L34.4732 11.8004 ZM35.8899 14.464 &#39;
-                       &#39;L31.8442 16.0891 L32.1169 17.0571 L32.1169 17.0571 &#39;
-                       &#39;L36.3621 15.3519 L35.8899 14.464 ZM37.3066 17.1276 &#39;
-                       &#39;L32.6624 18.9931 L32.9351 19.9611 L32.9351 19.9611 &#39;
-                       &#39;L37.7788 18.0154 L37.7788 18.0154 L37.3066 17.1276 &#39;
-                       &#39;ZM38.7233 19.7912 L33.4805 21.8971 L33.7532 22.8652 &#39;
-                       &#39;L39.1955 20.679 L39.1955 20.679 L38.7233 19.7912 &#39;
-                       &#39;Z&quot;/&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M56.0578 -50.9903 &#39;
-                       &#39;L55.1402 -51.3877 L62.1732 -73.9177 L67.6791 -71.5332 &#39;
-                       &#39;Z&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(140,86)&quot; &#39;
-                       &#39;style=&quot;font-size:8.4px; fill:gray; &#39;
-                       &#39;text-rendering:geometricPrecision; &#39;
-                       &#39;image-rendering:optimizeQuality; &#39;
-                       &quot;color-rendering:optimizeQuality; font-family:&#39;Open &quot;
-                       &quot;Sans&#39;; font-style:italic; stroke:gray; &quot;
-                       &#39;color-interpolation:linearRGB;&quot;&gt;&lt;path &#39;
-                       &#39;style=&quot;stroke:none;&quot; d=&quot;M-1.3417 -6.7193 Q-1.3417 &#39;
-                       &#39;-8.0474 -0.873 -9.1724 Q-0.4042 -10.2974 0.627 &#39;
-                       &#39;-11.3755 L1.2364 -11.3755 Q0.2676 -10.313 -0.2167 &#39;
-                       &#39;-9.1411 Q-0.7011 -7.9693 -0.7011 -6.7349 Q-0.7011 &#39;
-                       &#39;-5.4068 -0.2636 -4.3911 L-0.7792 -4.3911 Q-1.3417 &#39;
-                       &#39;-5.4224 -1.3417 -6.7193 ZM2.2183 -8.0318 L1.7183 &#39;
-                       &#39;-5.6568 L1.0621 -5.6568 L2.2652 -11.3755 L3.5152 &#39;
-                       &#39;-11.3755 Q5.2496 -11.3755 5.2496 -9.938 Q5.2496 &#39;
-                       &#39;-8.5786 3.8121 -8.188 L4.7496 -5.6568 L4.0308 -5.6568 &#39;
-                       &#39;L3.2027 -8.0318 L2.2183 -8.0318 ZM2.7964 -10.7818 &#39;
-                       &#39;Q2.4058 -8.8599 2.3433 -8.6099 L2.9996 -8.6099 Q3.7496 &#39;
-                       &#39;-8.6099 4.1558 -8.938 Q4.5621 -9.2661 4.5621 -9.8911 &#39;
-                       &#39;Q4.5621 -10.3599 4.3042 -10.5708 Q4.0464 -10.7818 &#39;
-                       &#39;3.4527 -10.7818 L2.7964 -10.7818 ZM7.4355 -9.0318 &#39;
-                       &#39;Q7.4355 -7.7036 6.959 -6.5708 Q6.4824 -5.438 5.4668 &#39;
-                       &#39;-4.3911 L4.8574 -4.3911 Q6.7949 -6.5474 6.7949 -9.0318 &#39;
-                       &#39;Q6.7949 -10.3599 6.3574 -11.3755 L6.873 -11.3755 &#39;
-                       &#39;Q7.4355 -10.313 7.4355 -9.0318 Z&quot;/&gt;&lt;/g&gt;&lt;g &#39;
-                       &#39;transform=&quot;translate(140,86)&quot; &#39;
-                       &#39;style=&quot;fill:rgb(230,0,0); &#39;
-                       &#39;text-rendering:geometricPrecision; &#39;
-                       &#39;color-rendering:optimizeQuality; &#39;
-                       &quot;image-rendering:optimizeQuality; font-family:&#39;Open &quot;
-                       &quot;Sans&#39;; stroke:rgb(230,0,0); &quot;
-                       &#39;color-interpolation:linearRGB;&quot;&gt;&lt;path &#39;
-                       &#39;style=&quot;stroke:none;&quot; d=&quot;M-13.0155 -25.2763 Q-13.0155 &#39;
-                       &#39;-23.2138 -14.0546 -22.0341 Q-15.0936 -20.8544 -16.9374 &#39;
-                       &#39;-20.8544 Q-18.828 -20.8544 -19.8593 -22.0185 Q-20.8905 &#39;
-                       &#39;-23.1826 -20.8905 -25.2919 Q-20.8905 -27.3857 -19.8593 &#39;
-                       &#39;-28.5341 Q-18.828 -29.6826 -16.9374 -29.6826 Q-15.078 &#39;
-                       &#39;-29.6826 -14.0468 -28.5107 Q-13.0155 -27.3388 -13.0155 &#39;
-                       &#39;-25.2763 ZM-19.8436 -25.2763 Q-19.8436 -23.5419 &#39;
-                       &#39;-19.1014 -22.6357 Q-18.3593 -21.7294 -16.9374 -21.7294 &#39;
-                       &#39;Q-15.5155 -21.7294 -14.7889 -22.6279 Q-14.0624 &#39;
-                       &#39;-23.5263 -14.0624 -25.2763 Q-14.0624 -27.0107 -14.7889 &#39;
-                       &#39;-27.9013 Q-15.5155 -28.7919 -16.9374 -28.7919 &#39;
-                       &#39;Q-18.3593 -28.7919 -19.1014 -27.8935 Q-19.8436 &#39;
-                       &#39;-26.9951 -19.8436 -25.2763 Z&quot;/&gt;&lt;path &#39;
-                       &#39;style=&quot;stroke:none;&quot; d=&quot;M-21.8905 -20.9794 L-22.8905 &#39;
-                       &#39;-20.9794 L-22.8905 -25.0107 L-27.4061 -25.0107 &#39;
-                       &#39;L-27.4061 -20.9794 L-28.4061 -20.9794 L-28.4061 &#39;
-                       &#39;-29.5419 L-27.4061 -29.5419 L-27.4061 -25.9013 &#39;
-                       &#39;L-22.8905 -25.9013 L-22.8905 -29.5419 L-21.8905 &#39;
-                       &#39;-29.5419 L-21.8905 -20.9794 Z&quot;/&gt;&lt;path &#39;
-                       &#39;style=&quot;stroke:none;&quot; d=&quot;M-103.0155 -25.2763 Q-103.0155 &#39;
-                       &#39;-23.2138 -104.0546 -22.0341 Q-105.0936 -20.8544 &#39;
-                       &#39;-106.9374 -20.8544 Q-108.828 -20.8544 -109.8592 &#39;
-                       &#39;-22.0185 Q-110.8905 -23.1826 -110.8905 -25.2919 &#39;
-                       &#39;Q-110.8905 -27.3857 -109.8592 -28.5341 Q-108.828 &#39;
-                       &#39;-29.6826 -106.9374 -29.6826 Q-105.078 -29.6826 &#39;
-                       &#39;-104.0467 -28.5107 Q-103.0155 -27.3388 -103.0155 &#39;
-                       &#39;-25.2763 ZM-109.8436 -25.2763 Q-109.8436 -23.5419 &#39;
-                       &#39;-109.1014 -22.6357 Q-108.3592 -21.7294 -106.9374 &#39;
-                       &#39;-21.7294 Q-105.5155 -21.7294 -104.7889 -22.6279 &#39;
-                       &#39;Q-104.0624 -23.5263 -104.0624 -25.2763 Q-104.0624 &#39;
-                       &#39;-27.0107 -104.7889 -27.9013 Q-105.5155 -28.7919 &#39;
-                       &#39;-106.9374 -28.7919 Q-108.3592 -28.7919 -109.1014 &#39;
-                       &#39;-27.8935 Q-109.8436 -26.9951 -109.8436 -25.2763 &#39;
-                       &#39;Z&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(140,86)&quot; &#39;
-                       &#39;style=&quot;stroke-linecap:butt; &#39;
-                       &#39;text-rendering:geometricPrecision; &#39;
-                       &#39;color-rendering:optimizeQuality; &#39;
-                       &quot;image-rendering:optimizeQuality; font-family:&#39;Open &quot;
-                       &quot;Sans&#39;; color-interpolation:linearRGB; &quot;
-                       &#39;stroke-miterlimit:5;&quot;&gt;&lt;path style=&quot;fill:none;&quot; &#39;
-                       &#39;d=&quot;M-47.203 27.19 L-46.953 26.757 L-46.453 &#39;
-                       &#39;26.757&quot;/&gt;&lt;path style=&quot;fill:none;&quot; d=&quot;M-16.703 27.19 &#39;
-                       &#39;L-16.953 26.757 L-16.703 26.324&quot;/&gt;&lt;path &#39;
-                       &#39;style=&quot;fill:none;&quot; d=&quot;M-61.703 52.304 L-61.953 52.737 &#39;
-                       &#39;L-62.453 52.737&quot;/&gt;&lt;path style=&quot;fill:none;&quot; d=&quot;M-61.703 &#39;
-                       &#39;1.21 L-61.953 0.777 L-62.453 0.777&quot;/&gt;&lt;path &#39;
-                       &#39;style=&quot;fill:none;&quot; d=&quot;M-2.203 52.304 L-1.953 52.737 &#39;
-                       &#39;L-2.203 53.17&quot;/&gt;&lt;path style=&quot;fill:none;&quot; d=&quot;M-91.453 &#39;
-                       &#39;52.737 L-91.953 52.737 L-92.203 52.304&quot;/&gt;&lt;path &#39;
-                       &#39;style=&quot;fill:rgb(0,5,255); stroke:none;&quot; d=&quot;M-43.6014 &#39;
-                       &#39;82.8732 L-44.7421 82.8732 L-49.4296 75.6857 L-49.4764 &#39;
-                       &#39;75.6857 Q-49.3827 76.9514 -49.3827 77.9982 L-49.3827 &#39;
-                       &#39;82.8732 L-50.3046 82.8732 L-50.3046 74.3107 L-49.1796 &#39;
-                       &#39;74.3107 L-44.5077 81.467 L-44.4608 81.467 Q-44.4608 &#39;
-                       &#39;81.3107 -44.5077 80.4514 Q-44.5546 79.592 -44.5389 &#39;
-                       &#39;79.217 L-44.5389 74.3107 L-43.6014 74.3107 L-43.6014 &#39;
-                       &#39;82.8732 Z&quot;/&gt;&lt;path style=&quot;fill:none;&quot; d=&quot;M-91.453 0.777 &#39;
-                       &#39;L-91.953 0.777 L-92.203 0.344&quot;/&gt;&lt;path &#39;
-                       &#39;style=&quot;fill:none;&quot; d=&quot;M-16.703 78.284 L-16.953 78.717 &#39;
-                       &#39;L-17.453 78.717&quot;/&gt;&lt;path style=&quot;fill:none;&quot; &#39;
-                       &#39;d=&quot;M-106.703 27.19 L-106.953 26.757 L-106.703 &#39;
-                       &#39;26.324&quot;/&gt;&lt;path style=&quot;fill:none;&quot; d=&quot;M28.2333 1.241 &#39;
-                       &#39;L28.047 0.777 L27.547 0.777&quot;/&gt;&lt;/g&gt;&lt;g &#39;
-                       &#39;transform=&quot;translate(140,86)&quot; &#39;
-                       &#39;style=&quot;stroke-linecap:butt; font-size:8.4px; &#39;
-                       &#39;fill:gray; text-rendering:geometricPrecision; &#39;
-                       &#39;image-rendering:optimizeQuality; &#39;
-                       &quot;color-rendering:optimizeQuality; font-family:&#39;Open &quot;
-                       &quot;Sans&#39;; font-style:italic; stroke:gray; &quot;
-                       &#39;color-interpolation:linearRGB; &#39;
-                       &#39;stroke-miterlimit:5;&quot;&gt;&lt;path style=&quot;stroke:none;&quot; &#39;
-                       &#39;d=&quot;M33.7127 4.093 Q33.7127 2.7649 34.1815 1.6399 &#39;
-                       &#39;Q34.6502 0.5149 35.6815 -0.5632 L36.2908 -0.5632 &#39;
-                       &#39;Q35.3221 0.4993 34.8377 1.6711 Q34.3533 2.843 34.3533 &#39;
-                       &#39;4.0774 Q34.3533 5.4055 34.7908 6.4211 L34.2752 6.4211 &#39;
-                       &#39;Q33.7127 5.3899 33.7127 4.093 ZM39.3353 3.4993 &#39;
-                       &#39;Q39.3353 4.3274 38.7884 4.7805 Q38.2415 5.2336 37.2415 &#39;
-                       &#39;5.2336 Q36.8353 5.2336 36.5228 5.1789 Q36.2103 5.1243 &#39;
-                       &#39;35.929 4.9836 L35.929 4.3274 Q36.554 4.6555 37.2571 &#39;
-                       &#39;4.6555 Q37.8821 4.6555 38.2571 4.3586 Q38.6321 4.0618 &#39;
-                       &#39;38.6321 3.5461 Q38.6321 3.2336 38.429 3.0071 Q38.2259 &#39;
-                       &#39;2.7805 37.6634 2.4524 Q37.0696 2.1243 36.8431 1.7961 &#39;
-                       &#39;Q36.6165 1.468 36.6165 1.0149 Q36.6165 0.2805 37.1321 &#39;
-                       &#39;-0.1804 Q37.6478 -0.6414 38.4915 -0.6414 Q38.8665 &#39;
-                       &#39;-0.6414 39.2025 -0.5632 Q39.5384 -0.4851 39.9134 &#39;
-                       &#39;-0.3132 L39.6478 0.2805 Q39.3978 0.1243 39.0775 0.0383 &#39;
-                       &#39;Q38.7571 -0.0476 38.4915 -0.0476 Q37.9603 -0.0476 &#39;
-                       &#39;37.64 0.2258 Q37.3196 0.4993 37.3196 0.968 Q37.3196 &#39;
-                       &#39;1.1711 37.39 1.3196 Q37.4603 1.468 37.6009 1.6008 &#39;
-                       &#39;Q37.7415 1.7336 38.1634 1.9836 Q38.7259 2.3274 38.929 &#39;
-                       &#39;2.5227 Q39.1321 2.718 39.2337 2.9524 Q39.3353 3.1868 &#39;
-                       &#39;39.3353 3.4993 ZM41.9298 1.7805 Q41.9298 3.1086 &#39;
-                       &#39;41.4532 4.2414 Q40.9766 5.3743 39.961 6.4211 L39.3516 &#39;
-                       &#39;6.4211 Q41.2891 4.2649 41.2891 1.7805 Q41.2891 0.4524 &#39;
-                       &#39;40.8516 -0.5632 L41.3673 -0.5632 Q41.9298 0.4993 &#39;
-                       &#39;41.9298 1.7805 Z&quot;/&gt;&lt;/g&gt;&lt;g &#39;
-                       &#39;transform=&quot;translate(140,86)&quot; &#39;
-                       &#39;style=&quot;stroke-linecap:butt; fill:rgb(0,5,255); &#39;
-                       &#39;text-rendering:geometricPrecision; &#39;
-                       &#39;color-rendering:optimizeQuality; &#39;
-                       &quot;image-rendering:optimizeQuality; font-family:&#39;Open &quot;
-                       &quot;Sans&#39;; stroke:rgb(0,5,255); &quot;
-                       &#39;color-interpolation:linearRGB; &#39;
-                       &#39;stroke-miterlimit:5;&quot;&gt;&lt;path style=&quot;stroke:none;&quot; &#39;
-                       &#39;d=&quot;M43.3236 -24.7787 L42.1829 -24.7787 L37.4954 &#39;
-                       &#39;-31.9662 L37.4486 -31.9662 Q37.5423 -30.7006 37.5423 &#39;
-                       &#39;-29.6537 L37.5423 -24.7787 L36.6204 -24.7787 L36.6204 &#39;
-                       &#39;-33.3412 L37.7454 -33.3412 L42.4173 -26.185 L42.4642 &#39;
-                       &#39;-26.185 Q42.4642 -26.3412 42.4173 -27.2006 Q42.3704 &#39;
-                       &#39;-28.06 42.3861 -28.435 L42.3861 -33.3412 L43.3236 &#39;
-                       &#39;-33.3412 L43.3236 -24.7787 Z&quot;/&gt;&lt;/g&gt;&lt;g &#39;
-                       &#39;transform=&quot;translate(140,86)&quot; &#39;
-                       &#39;style=&quot;stroke-linecap:butt; font-size:8.4px; &#39;
-                       &#39;fill:gray; text-rendering:geometricPrecision; &#39;
-                       &#39;image-rendering:optimizeQuality; &#39;
-                       &quot;color-rendering:optimizeQuality; font-family:&#39;Open &quot;
-                       &quot;Sans&#39;; font-style:italic; stroke:gray; &quot;
-                       &#39;color-interpolation:linearRGB; &#39;
-                       &#39;stroke-miterlimit:5;&quot;&gt;&lt;path style=&quot;stroke:none;&quot; &#39;
-                       &#39;d=&quot;M40.0877 -37.2242 Q40.0877 -38.5523 40.5564 &#39;
-                       &#39;-39.6773 Q41.0252 -40.8023 42.0564 -41.8804 L42.6658 &#39;
-                       &#39;-41.8804 Q41.697 -40.8179 41.2127 -39.646 Q40.7283 &#39;
-                       &#39;-38.4742 40.7283 -37.2398 Q40.7283 -35.9117 41.1658 &#39;
-                       &#39;-34.896 L40.6502 -34.896 Q40.0877 -35.9273 40.0877 &#39;
-                       &#39;-37.2242 ZM45.7102 -37.8179 Q45.7102 -36.9898 45.1633 &#39;
-                       &#39;-36.5367 Q44.6165 -36.0835 43.6165 -36.0835 Q43.2102 &#39;
-                       &#39;-36.0835 42.8977 -36.1382 Q42.5852 -36.1929 42.304 &#39;
-                       &#39;-36.3335 L42.304 -36.9898 Q42.929 -36.6617 43.6321 &#39;
-                       &#39;-36.6617 Q44.2571 -36.6617 44.6321 -36.9585 Q45.0071 &#39;
-                       &#39;-37.2554 45.0071 -37.771 Q45.0071 -38.0835 44.804 &#39;
-                       &#39;-38.3101 Q44.6008 -38.5367 44.0383 -38.8648 Q43.4446 &#39;
-                       &#39;-39.1929 43.218 -39.521 Q42.9915 -39.8492 42.9915 &#39;
-                       &#39;-40.3023 Q42.9915 -41.0367 43.5071 -41.4976 Q44.0227 &#39;
-                       &#39;-41.9585 44.8665 -41.9585 Q45.2415 -41.9585 45.5774 &#39;
-                       &#39;-41.8804 Q45.9133 -41.8023 46.2883 -41.6304 L46.0227 &#39;
-                       &#39;-41.0367 Q45.7727 -41.1929 45.4524 -41.2789 Q45.1321 &#39;
-                       &#39;-41.3648 44.8665 -41.3648 Q44.3352 -41.3648 44.0149 &#39;
-                       &#39;-41.0914 Q43.6946 -40.8179 43.6946 -40.3492 Q43.6946 &#39;
-                       &#39;-40.146 43.7649 -39.9976 Q43.8352 -39.8492 43.9758 &#39;
-                       &#39;-39.7164 Q44.1165 -39.5835 44.5383 -39.3335 Q45.1008 &#39;
-                       &#39;-38.9898 45.304 -38.7945 Q45.5071 -38.5992 45.6087 &#39;
-                       &#39;-38.3648 Q45.7102 -38.1304 45.7102 -37.8179 ZM48.3047 &#39;
-                       &#39;-39.5367 Q48.3047 -38.2085 47.8281 -37.0757 Q47.3516 &#39;
-                       &#39;-35.9429 46.3359 -34.896 L45.7266 -34.896 Q47.6641 &#39;
-                       &#39;-37.0523 47.6641 -39.5367 Q47.6641 -40.8648 47.2266 &#39;
-                       &#39;-41.8804 L47.7422 -41.8804 Q48.3047 -40.8179 48.3047 &#39;
-                       &#39;-39.5367 Z&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; &#39;
-                       &#39;d=&quot;M19.3191 -51.8079 L18.984 -52.179 L19.2515 &#39;
-                       &#39;-52.6014&quot;/&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M41.7458 &#39;
-                       &#39;-47.7405 Q41.7458 -49.0686 42.2146 -50.1936 Q42.6833 &#39;
-                       &#39;-51.3186 43.7146 -52.3967 L44.324 -52.3967 Q43.3552 &#39;
-                       &#39;-51.3342 42.8708 -50.1624 Q42.3865 -48.9905 42.3865 &#39;
-                       &#39;-47.7561 Q42.3865 -46.428 42.824 -45.4124 L42.3083 &#39;
-                       &#39;-45.4124 Q41.7458 -46.4436 41.7458 -47.7405 ZM47.3684 &#39;
-                       &#39;-48.3342 Q47.3684 -47.5061 46.8215 -47.053 Q46.2746 &#39;
-                       &#39;-46.5999 45.2746 -46.5999 Q44.8684 -46.5999 44.5559 &#39;
-                       &#39;-46.6546 Q44.2434 -46.7092 43.9621 -46.8499 L43.9621 &#39;
-                       &#39;-47.5061 Q44.5871 -47.178 45.2903 -47.178 Q45.9153 &#39;
-                       &#39;-47.178 46.2903 -47.4749 Q46.6653 -47.7717 46.6653 &#39;
-                       &#39;-48.2874 Q46.6653 -48.5999 46.4621 -48.8264 Q46.259 &#39;
-                       &#39;-49.053 45.6965 -49.3811 Q45.1028 -49.7092 44.8762 &#39;
-                       &#39;-50.0374 Q44.6496 -50.3655 44.6496 -50.8186 Q44.6496 &#39;
-                       &#39;-51.553 45.1653 -52.0139 Q45.6809 -52.4749 46.5246 &#39;
-                       &#39;-52.4749 Q46.8996 -52.4749 47.2356 -52.3967 Q47.5715 &#39;
-                       &#39;-52.3186 47.9465 -52.1467 L47.6809 -51.553 Q47.4309 &#39;
-                       &#39;-51.7092 47.1106 -51.7952 Q46.7903 -51.8811 46.5246 &#39;
-                       &#39;-51.8811 Q45.9934 -51.8811 45.6731 -51.6077 Q45.3528 &#39;
-                       &#39;-51.3342 45.3528 -50.8655 Q45.3528 -50.6624 45.4231 &#39;
-                       &#39;-50.5139 Q45.4934 -50.3655 45.634 -50.2327 Q45.7746 &#39;
-                       &#39;-50.0999 46.1965 -49.8499 Q46.759 -49.5061 46.9621 &#39;
-                       &#39;-49.3108 Q47.1653 -49.1155 47.2668 -48.8811 Q47.3684 &#39;
-                       &#39;-48.6467 47.3684 -48.3342 ZM49.9629 -50.053 Q49.9629 &#39;
-                       &#39;-48.7249 49.4863 -47.5921 Q49.0097 -46.4592 47.9941 &#39;
-                       &#39;-45.4124 L47.3847 -45.4124 Q49.3222 -47.5686 49.3222 &#39;
-                       &#39;-50.053 Q49.3222 -51.3811 48.8847 -52.3967 L49.4004 &#39;
-                       &#39;-52.3967 Q49.9629 -51.3342 49.9629 -50.053 Z&quot;/&gt;&lt;path &#39;
-                       &#39;style=&quot;stroke:none;&quot; d=&quot;M78.2253 -60.0289 Q78.2253 &#39;
-                       &#39;-61.3571 78.6941 -62.4821 Q79.1628 -63.6071 80.1941 &#39;
-                       &#39;-64.6852 L80.8034 -64.6852 Q79.8347 -63.6227 79.3503 &#39;
-                       &#39;-62.4508 Q78.8659 -61.2789 78.8659 -60.0446 Q78.8659 &#39;
-                       &#39;-58.7164 79.3034 -57.7008 L78.7878 -57.7008 Q78.2253 &#39;
-                       &#39;-58.7321 78.2253 -60.0289 ZM81.7854 -61.3414 L81.2854 &#39;
-                       &#39;-58.9664 L80.6291 -58.9664 L81.8322 -64.6852 L83.0822 &#39;
-                       &#39;-64.6852 Q84.8166 -64.6852 84.8166 -63.2477 Q84.8166 &#39;
-                       &#39;-61.8883 83.3791 -61.4977 L84.3166 -58.9664 L83.5979 &#39;
-                       &#39;-58.9664 L82.7697 -61.3414 L81.7854 -61.3414 ZM82.3635 &#39;
-                       &#39;-64.0914 Q81.9729 -62.1696 81.9104 -61.9196 L82.5666 &#39;
-                       &#39;-61.9196 Q83.3166 -61.9196 83.7229 -62.2477 Q84.1291 &#39;
-                       &#39;-62.5758 84.1291 -63.2008 Q84.1291 -63.6696 83.8713 &#39;
-                       &#39;-63.8805 Q83.6135 -64.0914 83.0197 -64.0914 L82.3635 &#39;
-                       &#39;-64.0914 ZM87.0026 -62.3414 Q87.0026 -61.0133 86.526 &#39;
-                       &#39;-59.8805 Q86.0495 -58.7477 85.0338 -57.7008 L84.4245 &#39;
-                       &#39;-57.7008 Q86.362 -59.8571 86.362 -62.3414 Q86.362 &#39;
-                       &#39;-63.6696 85.9245 -64.6852 L86.4401 -64.6852 Q87.0026 &#39;
-                       &#39;-63.6227 87.0026 -62.3414 Z&quot;/&gt;&lt;path style=&quot;fill:none; &#39;
-                       &#39;stroke:black;&quot; d=&quot;M33.2875 -74.7636 L33.555 -75.186 &#39;
-                       &#39;L33.8933 -74.8178&quot;/&gt;&lt;/g&gt;&lt;g &#39;
-                       &#39;transform=&quot;translate(140,86)&quot; &#39;
-                       &#39;style=&quot;stroke-linecap:butt; &#39;
-                       &#39;text-rendering:geometricPrecision; &#39;
-                       &#39;color-rendering:optimizeQuality; &#39;
-                       &quot;image-rendering:optimizeQuality; font-family:&#39;Open &quot;
-                       &quot;Sans&#39;; color-interpolation:linearRGB; &quot;
-                       &#39;stroke-miterlimit:5;&quot;&gt;&lt;path style=&quot;stroke:none;&quot; &#39;
-                       &#39;d=&quot;M42.4798 32.7732 L41.4798 32.7732 L41.4798 28.742 &#39;
-                       &#39;L36.9642 28.742 L36.9642 32.7732 L35.9642 32.7732 &#39;
-                       &#39;L35.9642 24.2107 L36.9642 24.2107 L36.9642 27.8514 &#39;
-                       &#39;L41.4798 27.8514 L41.4798 24.2107 L42.4798 24.2107 &#39;
-                       &#39;L42.4798 32.7732 Z&quot;/&gt;&lt;path style=&quot;stroke:none;&quot; &#39;
-                       &#39;d=&quot;M70.7788 -74.5607 L69.7788 -74.5607 L69.7788 &#39;
-                       &#39;-78.592 L65.2632 -78.592 L65.2632 -74.5607 L64.2632 &#39;
-                       &#39;-74.5607 L64.2632 -83.1232 L65.2632 -83.1232 L65.2632 &#39;
-                       &#39;-79.4826 L69.7788 -79.4826 L69.7788 -83.1232 L70.7788 &#39;
-                       &#39;-83.1232 L70.7788 -74.5607 &#39;
-                       &#39;Z&quot;/&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/svg&gt;&lt;/svg&gt;&lt;/svg&gt;&#39;,
+ &#39;results&#39;: [{&#39;image&#39;: &#39;&lt;svg width=&quot;309.3&quot; viewBox=&quot;0 0 10310 5592&quot; &#39;
+                       &#39;text-rendering=&quot;auto&quot; stroke-width=&quot;1&quot; &#39;
+                       &#39;stroke-opacity=&quot;1&quot; stroke-miterlimit=&quot;10&quot; &#39;
+                       &#39;stroke-linejoin=&quot;miter&quot; stroke-linecap=&quot;square&quot; &#39;
+                       &#39;stroke-dashoffset=&quot;0&quot; stroke-dasharray=&quot;none&quot; &#39;
+                       &#39;stroke=&quot;black&quot; shape-rendering=&quot;auto&quot; &#39;
+                       &#39;image-rendering=&quot;auto&quot; height=&quot;167.76&quot; &#39;
+                       &#39;font-weight=&quot;normal&quot; font-style=&quot;normal&quot; &#39;
+                       &#39;font-size=&quot;12&quot; font-family=&quot;\&#39;Dialog\&#39;&quot; &#39;
+                       &#39;fill-opacity=&quot;1&quot; fill=&quot;black&quot; color-rendering=&quot;auto&quot; &#39;
+                       &#39;color-interpolation=&quot;auto&quot; &#39;
+                       &#39;xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g&gt;&lt;g &#39;
+                       &#39;stroke=&quot;white&quot; fill=&quot;white&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; &#39;
+                       &#39;width=&quot;10310&quot; stroke=&quot;none&quot; height=&quot;5592&quot;/&gt;&lt;/g&gt;&lt;g &#39;
+                       &#39;transform=&quot;translate(32866,32758)&quot; &#39;
+                       &#39;text-rendering=&quot;geometricPrecision&quot; stroke-width=&quot;44&quot; &#39;
+                       &#39;stroke-linejoin=&quot;round&quot; stroke-linecap=&quot;round&quot;&gt;&lt;line &#39;
+                       &#39;y2=&quot;-28559&quot; y1=&quot;-28036&quot; x2=&quot;-26635&quot; x1=&quot;-25742&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29819&quot; y1=&quot;-28559&quot; x2=&quot;-26635&quot; &#39;
+                       &#39;x1=&quot;-26635&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28036&quot; y1=&quot;-28559&quot; &#39;
+                       &#39;x2=&quot;-25367&quot; x1=&quot;-24474&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30451&quot; &#39;
+                       &#39;y1=&quot;-29819&quot; x2=&quot;-25555&quot; x1=&quot;-26635&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-28559&quot; y1=&quot;-29819&quot; x2=&quot;-24474&quot; x1=&quot;-24474&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29504&quot; y1=&quot;-28828&quot; x2=&quot;-25194&quot; &#39;
+                       &#39;x1=&quot;-26005&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29819&quot; y1=&quot;-30451&quot; &#39;
+                       &#39;x2=&quot;-24474&quot; x1=&quot;-25555&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29082&quot; &#39;
+                       &#39;y1=&quot;-28559&quot; x2=&quot;-27542&quot; x1=&quot;-26635&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-29819&quot; y1=&quot;-30344&quot; x2=&quot;-22660&quot; x1=&quot;-23567&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29700&quot; y1=&quot;-30223&quot; x2=&quot;-22729&quot; &#39;
+                       &#39;x1=&quot;-23636&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28779&quot; y1=&quot;-29082&quot; &#39;
+                       &#39;x2=&quot;-28071&quot; x1=&quot;-27542&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30703&quot; &#39;
+                       &#39;y1=&quot;-30131&quot; x2=&quot;-28524&quot; x1=&quot;-27542&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-31850&quot; y1=&quot;-30703&quot; x2=&quot;-28524&quot; x1=&quot;-28524&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31705&quot; y1=&quot;-30847&quot; x2=&quot;-28354&quot; &#39;
+                       &#39;x1=&quot;-28354&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30131&quot; y1=&quot;-30703&quot; &#39;
+                       &#39;x2=&quot;-29507&quot; x1=&quot;-28524&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30131&quot; &#39;
+                       &#39;y1=&quot;-30703&quot; x2=&quot;-27542&quot; x1=&quot;-26560&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-30347&quot; y1=&quot;-30778&quot; x2=&quot;-27505&quot; x1=&quot;-26768&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31850&quot; y1=&quot;-32422&quot; x2=&quot;-28524&quot; &#39;
+                       &#39;x1=&quot;-29507&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32312&quot; y1=&quot;-31850&quot; &#39;
+                       &#39;x2=&quot;-27730&quot; x1=&quot;-28524&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30703&quot; &#39;
+                       &#39;y1=&quot;-30131&quot; x2=&quot;-30489&quot; x1=&quot;-29507&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-30778&quot; y1=&quot;-30347&quot; x2=&quot;-30281&quot; x1=&quot;-29544&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30703&quot; y1=&quot;-31850&quot; x2=&quot;-26560&quot; &#39;
+                       &#39;x1=&quot;-26560&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32422&quot; y1=&quot;-31850&quot; &#39;
+                       &#39;x2=&quot;-29507&quot; x1=&quot;-30489&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32205&quot; &#39;
+                       &#39;y1=&quot;-31774&quot; x2=&quot;-29544&quot; x1=&quot;-30281&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-31850&quot; y1=&quot;-32312&quot; x2=&quot;-26560&quot; x1=&quot;-27354&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31760&quot; y1=&quot;-32107&quot; x2=&quot;-26745&quot; &#39;
+                       &#39;x1=&quot;-27340&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31850&quot; y1=&quot;-30703&quot; &#39;
+                       &#39;x2=&quot;-30489&quot; x1=&quot;-30489&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30275&quot; &#39;
+                       &#39;y1=&quot;-30703&quot; x2=&quot;-31200&quot; x1=&quot;-30489&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-30541&quot; y1=&quot;-30272&quot; x2=&quot;-32040&quot; x1=&quot;-31575&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; stroke=&quot;none&quot; &#39;
+                       &#39;points=&quot; -24474 -29819 -23602 -30402 -23532 &#39;
+                       &#39;-30284&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; points=&quot; -24474 &#39;
+                       &#39;-29819 -23602 -30402 -23532 -30284&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; stroke=&quot;none&quot; &#39;
+                       &#39;points=&quot; -26635 -28559 -26973 -27837 -27092 &#39;
+                       &#39;-27903&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; points=&quot; -26635 &#39;
+                       &#39;-28559 -26973 -27837 -27092 -27903&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-28860&quot; y1=&quot;-28796&quot; x2=&quot;-25945&quot; x1=&quot;-26066&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28657&quot; y1=&quot;-28611&quot; x2=&quot;-25865&quot; &#39;
+                       &#39;x1=&quot;-25952&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28454&quot; y1=&quot;-28427&quot; &#39;
+                       &#39;x2=&quot;-25785&quot; x1=&quot;-25838&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28252&quot; &#39;
+                       &#39;y1=&quot;-28242&quot; x2=&quot;-25706&quot; x1=&quot;-25723&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-29478&quot; y1=&quot;-29530&quot; x2=&quot;-25257&quot; x1=&quot;-25130&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29686&quot; y1=&quot;-29727&quot; x2=&quot;-25321&quot; &#39;
+                       &#39;x1=&quot;-25221&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29894&quot; y1=&quot;-29924&quot; &#39;
+                       &#39;x2=&quot;-25384&quot; x1=&quot;-25312&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30102&quot; &#39;
+                       &#39;y1=&quot;-30121&quot; x2=&quot;-25448&quot; x1=&quot;-25403&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-30310&quot; y1=&quot;-30317&quot; x2=&quot;-25512&quot; x1=&quot;-25493&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30131&quot; y1=&quot;-30128&quot; x2=&quot;-27473&quot; &#39;
+                       &#39;x1=&quot;-27612&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29914&quot; y1=&quot;-29912&quot; &#39;
+                       &#39;x2=&quot;-27487&quot; x1=&quot;-27598&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29697&quot; &#39;
+                       &#39;y1=&quot;-29695&quot; x2=&quot;-27502&quot; x1=&quot;-27583&quot; fill=&quot;none&quot;/&gt;&lt;line &#39;
+                       &#39;y2=&quot;-29480&quot; y1=&quot;-29479&quot; x2=&quot;-27516&quot; x1=&quot;-27569&quot; &#39;
+                       &#39;fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29263&quot; y1=&quot;-29263&quot; x2=&quot;-27530&quot; &#39;
+                       &#39;x1=&quot;-27554&quot; fill=&quot;none&quot;/&gt;&lt;text y=&quot;-28380&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-28602&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;433.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;OH&lt;/text&gt;&lt;text y=&quot;-29983&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-31540&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;433.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;text y=&quot;-30691&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-32762&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;433.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;CH&lt;/text&gt;&lt;text y=&quot;-30602&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-32185&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;313.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;3&lt;/text&gt;&lt;text y=&quot;-32242&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-27695&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;433.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;N&lt;/text&gt;&lt;text y=&quot;-27747&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-25708&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;433.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;N&lt;/text&gt;&lt;text y=&quot;-27473&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-27311&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-size=&quot;433.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;H&lt;/text&gt;&lt;text y=&quot;-28600&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-27695&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;R&lt;/text&gt;&lt;text y=&quot;-28522&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-26540&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;S&lt;/text&gt;&lt;text y=&quot;-27337&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-25818&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;S&lt;/text&gt;&lt;text y=&quot;-30573&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-25708&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;S&lt;/text&gt;&lt;text y=&quot;-29495&quot; &#39;
+                       &#39;xml:space=&quot;preserve&quot; x=&quot;-24876&quot; stroke=&quot;none&quot; &#39;
+                       &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+                       &#39;font-family=&quot;sans-serif&quot;&gt;R&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&#39;,
               &#39;name&#39;: &#39;Quinine&#39;,
               &#39;rn&#39;: &#39;130-95-0&#39;}]}
 </pre></div>
@@ -1360,281 +1159,95 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
                              &#39;property&#39;: &#39;177 °C (decomp)&#39;,
                              &#39;sourceNumber&#39;: 1}],
  &#39;hasMolfile&#39;: True,
- &#39;image&#39;: &#39;&lt;svg width=&quot;280&quot; viewBox=&quot;0 0 280 172&quot; style=&quot;fill-opacity:1; &#39;
-          &#39;color-rendering:auto; color-interpolation:auto; &#39;
-          &#39;text-rendering:auto; stroke:black; stroke-linecap:square; &#39;
-          &#39;stroke-miterlimit:10; shape-rendering:auto; stroke-opacity:1; &#39;
-          &#39;fill:black; stroke-dasharray:none; font-weight:normal; &#39;
-          &quot;stroke-width:1; font-family:&#39;Open Sans&#39;; font-style:normal; &quot;
-          &#39;stroke-linejoin:miter; font-size:12; stroke-dashoffset:0; &#39;
-          &#39;image-rendering:auto;&quot; height=&quot;172&quot; class=&quot;cas-substance-image&quot; &#39;
-          &#39;xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; &#39;
-          &#39;xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;svg &#39;
-          &#39;class=&quot;cas-substance-single-component&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; &#39;
-          &#39;width=&quot;280&quot; stroke=&quot;none&quot; ry=&quot;7&quot; rx=&quot;7&quot; height=&quot;172&quot; fill=&quot;white&quot; &#39;
-          &#39;class=&quot;cas-substance-group&quot;/&gt;&lt;svg y=&quot;0&quot; x=&quot;0&quot; width=&quot;280&quot; &#39;
-          &#39;viewBox=&quot;0 0 280 172&quot; style=&quot;fill:black;&quot; height=&quot;172&quot; &#39;
-          &#39;class=&quot;cas-substance-single-component-image&quot;&gt;&lt;svg&gt;&lt;g&gt;&lt;clipPath &#39;
-          &#39;id=&quot;clipPath_bc3718cacd7145f589f52dd9bfea01721&quot; &#39;
-          &#39;clipPathUnits=&quot;userSpaceOnUse&quot;&gt;&lt;path d=&quot;M36.2428 -48.9389 L36.2012 &#39;
-          &#39;-8.9389 L72.6092 -8.9011 L72.6507 -48.9011 L58.0514 -48.9162 &#39;
-          &#39;L58.0514 -48.9162 L46.7031 -10.8966 L40.9538 -12.6127 L51.7918 &#39;
-          &#39;-48.9227 L51.7918 -48.9227 L36.2428 -48.9389 Z&quot;/&gt;&lt;/clipPath&gt;&lt;g &#39;
-          &#39;transform=&quot;translate(140,86)&quot; &#39;
-          &#39;style=&quot;text-rendering:geometricPrecision; &#39;
-          &#39;color-rendering:optimizeQuality; color-interpolation:linearRGB; &#39;
-          &#39;stroke-linecap:butt; image-rendering:optimizeQuality;&quot;&gt;&lt;path &#39;
-          &#39;style=&quot;stroke:none;&quot; d=&quot;M-1.52 0.527 L-2.386 1.027 L-16.2975 &#39;
-          &#39;-18.0701 L-11.1012 -21.0699 Z&quot;/&gt;&lt;line y2=&quot;26.757&quot; y1=&quot;0.777&quot; &#39;
-          &#39;x2=&quot;-16.953&quot; x1=&quot;-1.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0.777&quot; &#39;
-          &#39;y1=&quot;0.777&quot; x2=&quot;28.047&quot; x1=&quot;-1.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-          &#39;y2=&quot;-25.206&quot; y1=&quot;-25.206&quot; x2=&quot;-136.953&quot; x1=&quot;-112.8905&quot; &#39;
-          &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0.777&quot; y1=&quot;-19.57&quot; x2=&quot;-91.953&quot; &#39;
-          &#39;x1=&quot;-103.6994&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-49.227&quot; y1=&quot;-65.346&quot; &#39;
-          &#39;x2=&quot;136.953&quot; x1=&quot;111.651&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-46.2751&quot; &#39;
-          &#39;y1=&quot;-61.3084&quot; x2=&quot;135.0725&quot; x1=&quot;111.4747&quot; style=&quot;fill:none;&quot;/&gt;&lt;path &#39;
-          &#39;style=&quot;stroke:none;&quot; d=&quot;M85.2719 -51.0485 L84.8101 -51.9355 &#39;
-          &#39;L108.9981 -67.6289 L114.8412 -63.9065 Z&quot;/&gt;&lt;line y2=&quot;26.757&quot; &#39;
-          &#39;y1=&quot;26.757&quot; x2=&quot;-16.953&quot; x1=&quot;-46.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-          &#39;y2=&quot;52.737&quot; y1=&quot;26.757&quot; x2=&quot;-61.953&quot; x1=&quot;-46.953&quot; &#39;
-          &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;52.737&quot; y1=&quot;30.257&quot; x2=&quot;-57.9115&quot; &#39;
-          &#39;x1=&quot;-44.9323&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0.777&quot; y1=&quot;26.757&quot; &#39;
-          &#39;x2=&quot;-61.953&quot; x1=&quot;-46.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;52.737&quot; &#39;
-          &#39;y1=&quot;26.757&quot; x2=&quot;-1.953&quot; x1=&quot;-16.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-          &#39;y2=&quot;52.737&quot; y1=&quot;30.257&quot; x2=&quot;-5.9945&quot; x1=&quot;-18.9737&quot; &#39;
-          &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;52.737&quot; y1=&quot;52.737&quot; x2=&quot;-91.953&quot; &#39;
-          &#39;x1=&quot;-61.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;72.5787&quot; y1=&quot;52.737&quot; &#39;
-          &#39;x2=&quot;-50.497&quot; x1=&quot;-61.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;0.777&quot; &#39;
-          &#39;y1=&quot;0.777&quot; x2=&quot;-91.953&quot; x1=&quot;-61.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-          &#39;y2=&quot;4.277&quot; y1=&quot;4.277&quot; x2=&quot;-89.9323&quot; x1=&quot;-63.9737&quot; &#39;
-          &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;78.717&quot; y1=&quot;52.737&quot; x2=&quot;-16.953&quot; &#39;
-          &#39;x1=&quot;-1.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;26.757&quot; y1=&quot;52.737&quot; &#39;
-          &#39;x2=&quot;-106.953&quot; x1=&quot;-91.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;26.7569&quot; &#39;
-          &#39;y1=&quot;49.237&quot; x2=&quot;-102.9115&quot; x1=&quot;-89.9323&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-          &#39;y2=&quot;78.717&quot; y1=&quot;78.717&quot; x2=&quot;-16.953&quot; x1=&quot;-41.6014&quot; &#39;
-          &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;75.217&quot; y1=&quot;75.217&quot; x2=&quot;-18.9737&quot; &#39;
-          &#39;x1=&quot;-41.6014&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;26.757&quot; y1=&quot;0.777&quot; &#39;
-          &#39;x2=&quot;-106.953&quot; x1=&quot;-91.953&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-22.9227&quot; &#39;
-          &#39;y1=&quot;0.777&quot; x2=&quot;37.5589&quot; x1=&quot;28.047&quot; style=&quot;fill:none;&quot;/&gt;&lt;path &#39;
-          &#39;style=&quot;stroke:none;&quot; d=&quot;M28.3927 1.1383 L27.7013 0.4157 L47.1148 &#39;
-          &#39;-21.0165 L43.6455 -9.3935 Z&quot;/&gt;&lt;path &#39;
-          &#39;style=&quot;clip-path:url(#clipPath_bc3718cacd7145f589f52dd9bfea01721); &#39;
-          &#39;stroke:none;&quot; d=&quot;M45.323 -28.4294 L45.3241 -29.4294 L71.4315 &#39;
-          &#39;-31.6118 L67.1417 -25.6163 Z&quot;/&gt;&lt;line y2=&quot;-52.179&quot; y1=&quot;-34.1312&quot; &#39;
-          &#39;x2=&quot;18.984&quot; x1=&quot;35.2801&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-51.189&quot; &#39;
-          &#39;y1=&quot;-15.348&quot; x2=&quot;55.599&quot; x1=&quot;44.901&quot; style=&quot;fill:none;&quot;/&gt;&lt;line &#39;
-          &#39;y2=&quot;-51.492&quot; y1=&quot;-28.905&quot; x2=&quot;85.041&quot; x1=&quot;68.88&quot; &#39;
-          &#39;style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-75.186&quot; y1=&quot;-52.179&quot; x2=&quot;33.555&quot; &#39;
-          &#39;x1=&quot;18.984&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-51.492&quot; y1=&quot;-51.189&quot; &#39;
-          &#39;x2=&quot;85.041&quot; x1=&quot;55.599&quot; style=&quot;fill:none;&quot;/&gt;&lt;line y2=&quot;-75.186&quot; &#39;
-          &#39;y1=&quot;-51.189&quot; x2=&quot;33.555&quot; x1=&quot;55.599&quot; style=&quot;fill:none;&quot;/&gt;&lt;path &#39;
-          &#39;style=&quot;stroke:none;&quot; d=&quot;M28.8064 1.1461 L27.7536 1.5689 L28.0263 &#39;
-          &#39;2.5369 L29.2786 2.0339 L28.8064 1.1461 ZM30.2231 3.8096 L28.5717 &#39;
-          &#39;4.473 L28.5717 4.473 L28.8444 5.441 L28.8444 5.441 L30.6953 4.6975 &#39;
-          &#39;L30.2231 3.8096 ZM31.6398 6.4732 L29.3899 7.377 L29.6626 8.345 &#39;
-          &#39;L29.6626 8.345 L32.112 7.3611 L32.112 7.3611 L31.6398 6.4732 &#39;
-          &#39;ZM33.0565 9.1368 L30.208 10.281 L30.208 10.281 L30.4807 11.249 &#39;
-          &#39;L30.4807 11.249 L33.5287 10.0247 L33.0565 9.1368 ZM34.4732 11.8004 &#39;
-          &#39;L31.0261 13.1851 L31.0261 13.1851 L31.2988 14.1531 L31.2988 14.1531 &#39;
-          &#39;L34.9454 12.6883 L34.4732 11.8004 ZM35.8899 14.464 L31.8442 16.0891 &#39;
-          &#39;L32.1169 17.0571 L32.1169 17.0571 L36.3621 15.3519 L35.8899 14.464 &#39;
-          &#39;ZM37.3066 17.1276 L32.6624 18.9931 L32.9351 19.9611 L32.9351 &#39;
-          &#39;19.9611 L37.7788 18.0154 L37.7788 18.0154 L37.3066 17.1276 &#39;
-          &#39;ZM38.7233 19.7912 L33.4805 21.8971 L33.7532 22.8652 L39.1955 20.679 &#39;
-          &#39;L39.1955 20.679 L38.7233 19.7912 Z&quot;/&gt;&lt;path style=&quot;stroke:none;&quot; &#39;
-          &#39;d=&quot;M56.0578 -50.9903 L55.1402 -51.3877 L62.1732 -73.9177 L67.6791 &#39;
-          &#39;-71.5332 Z&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(140,86)&quot; &#39;
-          &#39;style=&quot;font-size:8.4px; fill:gray; &#39;
-          &#39;text-rendering:geometricPrecision; image-rendering:optimizeQuality; &#39;
-          &quot;color-rendering:optimizeQuality; font-family:&#39;Open Sans&#39;; &quot;
-          &#39;font-style:italic; stroke:gray; &#39;
-          &#39;color-interpolation:linearRGB;&quot;&gt;&lt;path style=&quot;stroke:none;&quot; &#39;
-          &#39;d=&quot;M-1.3417 -6.7193 Q-1.3417 -8.0474 -0.873 -9.1724 Q-0.4042 &#39;
-          &#39;-10.2974 0.627 -11.3755 L1.2364 -11.3755 Q0.2676 -10.313 -0.2167 &#39;
-          &#39;-9.1411 Q-0.7011 -7.9693 -0.7011 -6.7349 Q-0.7011 -5.4068 -0.2636 &#39;
-          &#39;-4.3911 L-0.7792 -4.3911 Q-1.3417 -5.4224 -1.3417 -6.7193 ZM2.2183 &#39;
-          &#39;-8.0318 L1.7183 -5.6568 L1.0621 -5.6568 L2.2652 -11.3755 L3.5152 &#39;
-          &#39;-11.3755 Q5.2496 -11.3755 5.2496 -9.938 Q5.2496 -8.5786 3.8121 &#39;
-          &#39;-8.188 L4.7496 -5.6568 L4.0308 -5.6568 L3.2027 -8.0318 L2.2183 &#39;
-          &#39;-8.0318 ZM2.7964 -10.7818 Q2.4058 -8.8599 2.3433 -8.6099 L2.9996 &#39;
-          &#39;-8.6099 Q3.7496 -8.6099 4.1558 -8.938 Q4.5621 -9.2661 4.5621 &#39;
-          &#39;-9.8911 Q4.5621 -10.3599 4.3042 -10.5708 Q4.0464 -10.7818 3.4527 &#39;
-          &#39;-10.7818 L2.7964 -10.7818 ZM7.4355 -9.0318 Q7.4355 -7.7036 6.959 &#39;
-          &#39;-6.5708 Q6.4824 -5.438 5.4668 -4.3911 L4.8574 -4.3911 Q6.7949 &#39;
-          &#39;-6.5474 6.7949 -9.0318 Q6.7949 -10.3599 6.3574 -11.3755 L6.873 &#39;
-          &#39;-11.3755 Q7.4355 -10.313 7.4355 -9.0318 Z&quot;/&gt;&lt;/g&gt;&lt;g &#39;
-          &#39;transform=&quot;translate(140,86)&quot; style=&quot;fill:rgb(230,0,0); &#39;
-          &#39;text-rendering:geometricPrecision; color-rendering:optimizeQuality; &#39;
-          &quot;image-rendering:optimizeQuality; font-family:&#39;Open Sans&#39;; &quot;
-          &#39;stroke:rgb(230,0,0); color-interpolation:linearRGB;&quot;&gt;&lt;path &#39;
-          &#39;style=&quot;stroke:none;&quot; d=&quot;M-13.0155 -25.2763 Q-13.0155 -23.2138 &#39;
-          &#39;-14.0546 -22.0341 Q-15.0936 -20.8544 -16.9374 -20.8544 Q-18.828 &#39;
-          &#39;-20.8544 -19.8593 -22.0185 Q-20.8905 -23.1826 -20.8905 -25.2919 &#39;
-          &#39;Q-20.8905 -27.3857 -19.8593 -28.5341 Q-18.828 -29.6826 -16.9374 &#39;
-          &#39;-29.6826 Q-15.078 -29.6826 -14.0468 -28.5107 Q-13.0155 -27.3388 &#39;
-          &#39;-13.0155 -25.2763 ZM-19.8436 -25.2763 Q-19.8436 -23.5419 -19.1014 &#39;
-          &#39;-22.6357 Q-18.3593 -21.7294 -16.9374 -21.7294 Q-15.5155 -21.7294 &#39;
-          &#39;-14.7889 -22.6279 Q-14.0624 -23.5263 -14.0624 -25.2763 Q-14.0624 &#39;
-          &#39;-27.0107 -14.7889 -27.9013 Q-15.5155 -28.7919 -16.9374 -28.7919 &#39;
-          &#39;Q-18.3593 -28.7919 -19.1014 -27.8935 Q-19.8436 -26.9951 -19.8436 &#39;
-          &#39;-25.2763 Z&quot;/&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M-21.8905 -20.9794 &#39;
-          &#39;L-22.8905 -20.9794 L-22.8905 -25.0107 L-27.4061 -25.0107 L-27.4061 &#39;
-          &#39;-20.9794 L-28.4061 -20.9794 L-28.4061 -29.5419 L-27.4061 -29.5419 &#39;
-          &#39;L-27.4061 -25.9013 L-22.8905 -25.9013 L-22.8905 -29.5419 L-21.8905 &#39;
-          &#39;-29.5419 L-21.8905 -20.9794 Z&quot;/&gt;&lt;path style=&quot;stroke:none;&quot; &#39;
-          &#39;d=&quot;M-103.0155 -25.2763 Q-103.0155 -23.2138 -104.0546 -22.0341 &#39;
-          &#39;Q-105.0936 -20.8544 -106.9374 -20.8544 Q-108.828 -20.8544 -109.8592 &#39;
-          &#39;-22.0185 Q-110.8905 -23.1826 -110.8905 -25.2919 Q-110.8905 -27.3857 &#39;
-          &#39;-109.8592 -28.5341 Q-108.828 -29.6826 -106.9374 -29.6826 Q-105.078 &#39;
-          &#39;-29.6826 -104.0467 -28.5107 Q-103.0155 -27.3388 -103.0155 -25.2763 &#39;
-          &#39;ZM-109.8436 -25.2763 Q-109.8436 -23.5419 -109.1014 -22.6357 &#39;
-          &#39;Q-108.3592 -21.7294 -106.9374 -21.7294 Q-105.5155 -21.7294 &#39;
-          &#39;-104.7889 -22.6279 Q-104.0624 -23.5263 -104.0624 -25.2763 &#39;
-          &#39;Q-104.0624 -27.0107 -104.7889 -27.9013 Q-105.5155 -28.7919 &#39;
-          &#39;-106.9374 -28.7919 Q-108.3592 -28.7919 -109.1014 -27.8935 &#39;
-          &#39;Q-109.8436 -26.9951 -109.8436 -25.2763 Z&quot;/&gt;&lt;/g&gt;&lt;g &#39;
-          &#39;transform=&quot;translate(140,86)&quot; style=&quot;stroke-linecap:butt; &#39;
-          &#39;text-rendering:geometricPrecision; color-rendering:optimizeQuality; &#39;
-          &quot;image-rendering:optimizeQuality; font-family:&#39;Open Sans&#39;; &quot;
-          &#39;color-interpolation:linearRGB; stroke-miterlimit:5;&quot;&gt;&lt;path &#39;
-          &#39;style=&quot;fill:none;&quot; d=&quot;M-47.203 27.19 L-46.953 26.757 L-46.453 &#39;
-          &#39;26.757&quot;/&gt;&lt;path style=&quot;fill:none;&quot; d=&quot;M-16.703 27.19 L-16.953 26.757 &#39;
-          &#39;L-16.703 26.324&quot;/&gt;&lt;path style=&quot;fill:none;&quot; d=&quot;M-61.703 52.304 &#39;
-          &#39;L-61.953 52.737 L-62.453 52.737&quot;/&gt;&lt;path style=&quot;fill:none;&quot; &#39;
-          &#39;d=&quot;M-61.703 1.21 L-61.953 0.777 L-62.453 0.777&quot;/&gt;&lt;path &#39;
-          &#39;style=&quot;fill:none;&quot; d=&quot;M-2.203 52.304 L-1.953 52.737 L-2.203 &#39;
-          &#39;53.17&quot;/&gt;&lt;path style=&quot;fill:none;&quot; d=&quot;M-91.453 52.737 L-91.953 52.737 &#39;
-          &#39;L-92.203 52.304&quot;/&gt;&lt;path style=&quot;fill:rgb(0,5,255); stroke:none;&quot; &#39;
-          &#39;d=&quot;M-43.6014 82.8732 L-44.7421 82.8732 L-49.4296 75.6857 L-49.4764 &#39;
-          &#39;75.6857 Q-49.3827 76.9514 -49.3827 77.9982 L-49.3827 82.8732 &#39;
-          &#39;L-50.3046 82.8732 L-50.3046 74.3107 L-49.1796 74.3107 L-44.5077 &#39;
-          &#39;81.467 L-44.4608 81.467 Q-44.4608 81.3107 -44.5077 80.4514 &#39;
-          &#39;Q-44.5546 79.592 -44.5389 79.217 L-44.5389 74.3107 L-43.6014 &#39;
-          &#39;74.3107 L-43.6014 82.8732 Z&quot;/&gt;&lt;path style=&quot;fill:none;&quot; d=&quot;M-91.453 &#39;
-          &#39;0.777 L-91.953 0.777 L-92.203 0.344&quot;/&gt;&lt;path style=&quot;fill:none;&quot; &#39;
-          &#39;d=&quot;M-16.703 78.284 L-16.953 78.717 L-17.453 78.717&quot;/&gt;&lt;path &#39;
-          &#39;style=&quot;fill:none;&quot; d=&quot;M-106.703 27.19 L-106.953 26.757 L-106.703 &#39;
-          &#39;26.324&quot;/&gt;&lt;path style=&quot;fill:none;&quot; d=&quot;M28.2333 1.241 L28.047 0.777 &#39;
-          &#39;L27.547 0.777&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(140,86)&quot; &#39;
-          &#39;style=&quot;stroke-linecap:butt; font-size:8.4px; fill:gray; &#39;
-          &#39;text-rendering:geometricPrecision; image-rendering:optimizeQuality; &#39;
-          &quot;color-rendering:optimizeQuality; font-family:&#39;Open Sans&#39;; &quot;
-          &#39;font-style:italic; stroke:gray; color-interpolation:linearRGB; &#39;
-          &#39;stroke-miterlimit:5;&quot;&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M33.7127 4.093 &#39;
-          &#39;Q33.7127 2.7649 34.1815 1.6399 Q34.6502 0.5149 35.6815 -0.5632 &#39;
-          &#39;L36.2908 -0.5632 Q35.3221 0.4993 34.8377 1.6711 Q34.3533 2.843 &#39;
-          &#39;34.3533 4.0774 Q34.3533 5.4055 34.7908 6.4211 L34.2752 6.4211 &#39;
-          &#39;Q33.7127 5.3899 33.7127 4.093 ZM39.3353 3.4993 Q39.3353 4.3274 &#39;
-          &#39;38.7884 4.7805 Q38.2415 5.2336 37.2415 5.2336 Q36.8353 5.2336 &#39;
-          &#39;36.5228 5.1789 Q36.2103 5.1243 35.929 4.9836 L35.929 4.3274 Q36.554 &#39;
-          &#39;4.6555 37.2571 4.6555 Q37.8821 4.6555 38.2571 4.3586 Q38.6321 &#39;
-          &#39;4.0618 38.6321 3.5461 Q38.6321 3.2336 38.429 3.0071 Q38.2259 2.7805 &#39;
-          &#39;37.6634 2.4524 Q37.0696 2.1243 36.8431 1.7961 Q36.6165 1.468 &#39;
-          &#39;36.6165 1.0149 Q36.6165 0.2805 37.1321 -0.1804 Q37.6478 -0.6414 &#39;
-          &#39;38.4915 -0.6414 Q38.8665 -0.6414 39.2025 -0.5632 Q39.5384 -0.4851 &#39;
-          &#39;39.9134 -0.3132 L39.6478 0.2805 Q39.3978 0.1243 39.0775 0.0383 &#39;
-          &#39;Q38.7571 -0.0476 38.4915 -0.0476 Q37.9603 -0.0476 37.64 0.2258 &#39;
-          &#39;Q37.3196 0.4993 37.3196 0.968 Q37.3196 1.1711 37.39 1.3196 Q37.4603 &#39;
-          &#39;1.468 37.6009 1.6008 Q37.7415 1.7336 38.1634 1.9836 Q38.7259 2.3274 &#39;
-          &#39;38.929 2.5227 Q39.1321 2.718 39.2337 2.9524 Q39.3353 3.1868 39.3353 &#39;
-          &#39;3.4993 ZM41.9298 1.7805 Q41.9298 3.1086 41.4532 4.2414 Q40.9766 &#39;
-          &#39;5.3743 39.961 6.4211 L39.3516 6.4211 Q41.2891 4.2649 41.2891 1.7805 &#39;
-          &#39;Q41.2891 0.4524 40.8516 -0.5632 L41.3673 -0.5632 Q41.9298 0.4993 &#39;
-          &#39;41.9298 1.7805 Z&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(140,86)&quot; &#39;
-          &#39;style=&quot;stroke-linecap:butt; fill:rgb(0,5,255); &#39;
-          &#39;text-rendering:geometricPrecision; color-rendering:optimizeQuality; &#39;
-          &quot;image-rendering:optimizeQuality; font-family:&#39;Open Sans&#39;; &quot;
-          &#39;stroke:rgb(0,5,255); color-interpolation:linearRGB; &#39;
-          &#39;stroke-miterlimit:5;&quot;&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M43.3236 &#39;
-          &#39;-24.7787 L42.1829 -24.7787 L37.4954 -31.9662 L37.4486 -31.9662 &#39;
-          &#39;Q37.5423 -30.7006 37.5423 -29.6537 L37.5423 -24.7787 L36.6204 &#39;
-          &#39;-24.7787 L36.6204 -33.3412 L37.7454 -33.3412 L42.4173 -26.185 &#39;
-          &#39;L42.4642 -26.185 Q42.4642 -26.3412 42.4173 -27.2006 Q42.3704 -28.06 &#39;
-          &#39;42.3861 -28.435 L42.3861 -33.3412 L43.3236 -33.3412 L43.3236 &#39;
-          &#39;-24.7787 Z&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(140,86)&quot; &#39;
-          &#39;style=&quot;stroke-linecap:butt; font-size:8.4px; fill:gray; &#39;
-          &#39;text-rendering:geometricPrecision; image-rendering:optimizeQuality; &#39;
-          &quot;color-rendering:optimizeQuality; font-family:&#39;Open Sans&#39;; &quot;
-          &#39;font-style:italic; stroke:gray; color-interpolation:linearRGB; &#39;
-          &#39;stroke-miterlimit:5;&quot;&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M40.0877 &#39;
-          &#39;-37.2242 Q40.0877 -38.5523 40.5564 -39.6773 Q41.0252 -40.8023 &#39;
-          &#39;42.0564 -41.8804 L42.6658 -41.8804 Q41.697 -40.8179 41.2127 -39.646 &#39;
-          &#39;Q40.7283 -38.4742 40.7283 -37.2398 Q40.7283 -35.9117 41.1658 &#39;
-          &#39;-34.896 L40.6502 -34.896 Q40.0877 -35.9273 40.0877 -37.2242 &#39;
-          &#39;ZM45.7102 -37.8179 Q45.7102 -36.9898 45.1633 -36.5367 Q44.6165 &#39;
-          &#39;-36.0835 43.6165 -36.0835 Q43.2102 -36.0835 42.8977 -36.1382 &#39;
-          &#39;Q42.5852 -36.1929 42.304 -36.3335 L42.304 -36.9898 Q42.929 -36.6617 &#39;
-          &#39;43.6321 -36.6617 Q44.2571 -36.6617 44.6321 -36.9585 Q45.0071 &#39;
-          &#39;-37.2554 45.0071 -37.771 Q45.0071 -38.0835 44.804 -38.3101 Q44.6008 &#39;
-          &#39;-38.5367 44.0383 -38.8648 Q43.4446 -39.1929 43.218 -39.521 Q42.9915 &#39;
-          &#39;-39.8492 42.9915 -40.3023 Q42.9915 -41.0367 43.5071 -41.4976 &#39;
-          &#39;Q44.0227 -41.9585 44.8665 -41.9585 Q45.2415 -41.9585 45.5774 &#39;
-          &#39;-41.8804 Q45.9133 -41.8023 46.2883 -41.6304 L46.0227 -41.0367 &#39;
-          &#39;Q45.7727 -41.1929 45.4524 -41.2789 Q45.1321 -41.3648 44.8665 &#39;
-          &#39;-41.3648 Q44.3352 -41.3648 44.0149 -41.0914 Q43.6946 -40.8179 &#39;
-          &#39;43.6946 -40.3492 Q43.6946 -40.146 43.7649 -39.9976 Q43.8352 &#39;
-          &#39;-39.8492 43.9758 -39.7164 Q44.1165 -39.5835 44.5383 -39.3335 &#39;
-          &#39;Q45.1008 -38.9898 45.304 -38.7945 Q45.5071 -38.5992 45.6087 &#39;
-          &#39;-38.3648 Q45.7102 -38.1304 45.7102 -37.8179 ZM48.3047 -39.5367 &#39;
-          &#39;Q48.3047 -38.2085 47.8281 -37.0757 Q47.3516 -35.9429 46.3359 &#39;
-          &#39;-34.896 L45.7266 -34.896 Q47.6641 -37.0523 47.6641 -39.5367 &#39;
-          &#39;Q47.6641 -40.8648 47.2266 -41.8804 L47.7422 -41.8804 Q48.3047 &#39;
-          &#39;-40.8179 48.3047 -39.5367 Z&quot;/&gt;&lt;path style=&quot;fill:none; &#39;
-          &#39;stroke:black;&quot; d=&quot;M19.3191 -51.8079 L18.984 -52.179 L19.2515 &#39;
-          &#39;-52.6014&quot;/&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M41.7458 -47.7405 Q41.7458 &#39;
-          &#39;-49.0686 42.2146 -50.1936 Q42.6833 -51.3186 43.7146 -52.3967 &#39;
-          &#39;L44.324 -52.3967 Q43.3552 -51.3342 42.8708 -50.1624 Q42.3865 &#39;
-          &#39;-48.9905 42.3865 -47.7561 Q42.3865 -46.428 42.824 -45.4124 L42.3083 &#39;
-          &#39;-45.4124 Q41.7458 -46.4436 41.7458 -47.7405 ZM47.3684 -48.3342 &#39;
-          &#39;Q47.3684 -47.5061 46.8215 -47.053 Q46.2746 -46.5999 45.2746 &#39;
-          &#39;-46.5999 Q44.8684 -46.5999 44.5559 -46.6546 Q44.2434 -46.7092 &#39;
-          &#39;43.9621 -46.8499 L43.9621 -47.5061 Q44.5871 -47.178 45.2903 -47.178 &#39;
-          &#39;Q45.9153 -47.178 46.2903 -47.4749 Q46.6653 -47.7717 46.6653 &#39;
-          &#39;-48.2874 Q46.6653 -48.5999 46.4621 -48.8264 Q46.259 -49.053 45.6965 &#39;
-          &#39;-49.3811 Q45.1028 -49.7092 44.8762 -50.0374 Q44.6496 -50.3655 &#39;
-          &#39;44.6496 -50.8186 Q44.6496 -51.553 45.1653 -52.0139 Q45.6809 &#39;
-          &#39;-52.4749 46.5246 -52.4749 Q46.8996 -52.4749 47.2356 -52.3967 &#39;
-          &#39;Q47.5715 -52.3186 47.9465 -52.1467 L47.6809 -51.553 Q47.4309 &#39;
-          &#39;-51.7092 47.1106 -51.7952 Q46.7903 -51.8811 46.5246 -51.8811 &#39;
-          &#39;Q45.9934 -51.8811 45.6731 -51.6077 Q45.3528 -51.3342 45.3528 &#39;
-          &#39;-50.8655 Q45.3528 -50.6624 45.4231 -50.5139 Q45.4934 -50.3655 &#39;
-          &#39;45.634 -50.2327 Q45.7746 -50.0999 46.1965 -49.8499 Q46.759 -49.5061 &#39;
-          &#39;46.9621 -49.3108 Q47.1653 -49.1155 47.2668 -48.8811 Q47.3684 &#39;
-          &#39;-48.6467 47.3684 -48.3342 ZM49.9629 -50.053 Q49.9629 -48.7249 &#39;
-          &#39;49.4863 -47.5921 Q49.0097 -46.4592 47.9941 -45.4124 L47.3847 &#39;
-          &#39;-45.4124 Q49.3222 -47.5686 49.3222 -50.053 Q49.3222 -51.3811 &#39;
-          &#39;48.8847 -52.3967 L49.4004 -52.3967 Q49.9629 -51.3342 49.9629 &#39;
-          &#39;-50.053 Z&quot;/&gt;&lt;path style=&quot;stroke:none;&quot; d=&quot;M78.2253 -60.0289 &#39;
-          &#39;Q78.2253 -61.3571 78.6941 -62.4821 Q79.1628 -63.6071 80.1941 &#39;
-          &#39;-64.6852 L80.8034 -64.6852 Q79.8347 -63.6227 79.3503 -62.4508 &#39;
-          &#39;Q78.8659 -61.2789 78.8659 -60.0446 Q78.8659 -58.7164 79.3034 &#39;
-          &#39;-57.7008 L78.7878 -57.7008 Q78.2253 -58.7321 78.2253 -60.0289 &#39;
-          &#39;ZM81.7854 -61.3414 L81.2854 -58.9664 L80.6291 -58.9664 L81.8322 &#39;
-          &#39;-64.6852 L83.0822 -64.6852 Q84.8166 -64.6852 84.8166 -63.2477 &#39;
-          &#39;Q84.8166 -61.8883 83.3791 -61.4977 L84.3166 -58.9664 L83.5979 &#39;
-          &#39;-58.9664 L82.7697 -61.3414 L81.7854 -61.3414 ZM82.3635 -64.0914 &#39;
-          &#39;Q81.9729 -62.1696 81.9104 -61.9196 L82.5666 -61.9196 Q83.3166 &#39;
-          &#39;-61.9196 83.7229 -62.2477 Q84.1291 -62.5758 84.1291 -63.2008 &#39;
-          &#39;Q84.1291 -63.6696 83.8713 -63.8805 Q83.6135 -64.0914 83.0197 &#39;
-          &#39;-64.0914 L82.3635 -64.0914 ZM87.0026 -62.3414 Q87.0026 -61.0133 &#39;
-          &#39;86.526 -59.8805 Q86.0495 -58.7477 85.0338 -57.7008 L84.4245 &#39;
-          &#39;-57.7008 Q86.362 -59.8571 86.362 -62.3414 Q86.362 -63.6696 85.9245 &#39;
-          &#39;-64.6852 L86.4401 -64.6852 Q87.0026 -63.6227 87.0026 -62.3414 &#39;
-          &#39;Z&quot;/&gt;&lt;path style=&quot;fill:none; stroke:black;&quot; d=&quot;M33.2875 -74.7636 &#39;
-          &#39;L33.555 -75.186 L33.8933 -74.8178&quot;/&gt;&lt;/g&gt;&lt;g &#39;
-          &#39;transform=&quot;translate(140,86)&quot; style=&quot;stroke-linecap:butt; &#39;
-          &#39;text-rendering:geometricPrecision; color-rendering:optimizeQuality; &#39;
-          &quot;image-rendering:optimizeQuality; font-family:&#39;Open Sans&#39;; &quot;
-          &#39;color-interpolation:linearRGB; stroke-miterlimit:5;&quot;&gt;&lt;path &#39;
-          &#39;style=&quot;stroke:none;&quot; d=&quot;M42.4798 32.7732 L41.4798 32.7732 L41.4798 &#39;
-          &#39;28.742 L36.9642 28.742 L36.9642 32.7732 L35.9642 32.7732 L35.9642 &#39;
-          &#39;24.2107 L36.9642 24.2107 L36.9642 27.8514 L41.4798 27.8514 L41.4798 &#39;
-          &#39;24.2107 L42.4798 24.2107 L42.4798 32.7732 Z&quot;/&gt;&lt;path &#39;
-          &#39;style=&quot;stroke:none;&quot; d=&quot;M70.7788 -74.5607 L69.7788 -74.5607 &#39;
-          &#39;L69.7788 -78.592 L65.2632 -78.592 L65.2632 -74.5607 L64.2632 &#39;
-          &#39;-74.5607 L64.2632 -83.1232 L65.2632 -83.1232 L65.2632 -79.4826 &#39;
-          &#39;L69.7788 -79.4826 L69.7788 -83.1232 L70.7788 -83.1232 L70.7788 &#39;
-          &#39;-74.5607 Z&quot;/&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/svg&gt;&lt;/svg&gt;&lt;/svg&gt;&#39;,
+ &#39;image&#39;: &#39;&lt;svg width=&quot;309.3&quot; viewBox=&quot;0 0 10310 5592&quot; text-rendering=&quot;auto&quot; &#39;
+          &#39;stroke-width=&quot;1&quot; stroke-opacity=&quot;1&quot; stroke-miterlimit=&quot;10&quot; &#39;
+          &#39;stroke-linejoin=&quot;miter&quot; stroke-linecap=&quot;square&quot; &#39;
+          &#39;stroke-dashoffset=&quot;0&quot; stroke-dasharray=&quot;none&quot; stroke=&quot;black&quot; &#39;
+          &#39;shape-rendering=&quot;auto&quot; image-rendering=&quot;auto&quot; height=&quot;167.76&quot; &#39;
+          &#39;font-weight=&quot;normal&quot; font-style=&quot;normal&quot; font-size=&quot;12&quot; &#39;
+          &#39;font-family=&quot;\&#39;Dialog\&#39;&quot; fill-opacity=&quot;1&quot; fill=&quot;black&quot; &#39;
+          &#39;color-rendering=&quot;auto&quot; color-interpolation=&quot;auto&quot; &#39;
+          &#39;xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g&gt;&lt;g stroke=&quot;white&quot; &#39;
+          &#39;fill=&quot;white&quot;&gt;&lt;rect y=&quot;0&quot; x=&quot;0&quot; width=&quot;10310&quot; stroke=&quot;none&quot; &#39;
+          &#39;height=&quot;5592&quot;/&gt;&lt;/g&gt;&lt;g transform=&quot;translate(32866,32758)&quot; &#39;
+          &#39;text-rendering=&quot;geometricPrecision&quot; stroke-width=&quot;44&quot; &#39;
+          &#39;stroke-linejoin=&quot;round&quot; stroke-linecap=&quot;round&quot;&gt;&lt;line y2=&quot;-28559&quot; &#39;
+          &#39;y1=&quot;-28036&quot; x2=&quot;-26635&quot; x1=&quot;-25742&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29819&quot; &#39;
+          &#39;y1=&quot;-28559&quot; x2=&quot;-26635&quot; x1=&quot;-26635&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28036&quot; &#39;
+          &#39;y1=&quot;-28559&quot; x2=&quot;-25367&quot; x1=&quot;-24474&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30451&quot; &#39;
+          &#39;y1=&quot;-29819&quot; x2=&quot;-25555&quot; x1=&quot;-26635&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28559&quot; &#39;
+          &#39;y1=&quot;-29819&quot; x2=&quot;-24474&quot; x1=&quot;-24474&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29504&quot; &#39;
+          &#39;y1=&quot;-28828&quot; x2=&quot;-25194&quot; x1=&quot;-26005&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29819&quot; &#39;
+          &#39;y1=&quot;-30451&quot; x2=&quot;-24474&quot; x1=&quot;-25555&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29082&quot; &#39;
+          &#39;y1=&quot;-28559&quot; x2=&quot;-27542&quot; x1=&quot;-26635&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29819&quot; &#39;
+          &#39;y1=&quot;-30344&quot; x2=&quot;-22660&quot; x1=&quot;-23567&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29700&quot; &#39;
+          &#39;y1=&quot;-30223&quot; x2=&quot;-22729&quot; x1=&quot;-23636&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28779&quot; &#39;
+          &#39;y1=&quot;-29082&quot; x2=&quot;-28071&quot; x1=&quot;-27542&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30703&quot; &#39;
+          &#39;y1=&quot;-30131&quot; x2=&quot;-28524&quot; x1=&quot;-27542&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31850&quot; &#39;
+          &#39;y1=&quot;-30703&quot; x2=&quot;-28524&quot; x1=&quot;-28524&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31705&quot; &#39;
+          &#39;y1=&quot;-30847&quot; x2=&quot;-28354&quot; x1=&quot;-28354&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30131&quot; &#39;
+          &#39;y1=&quot;-30703&quot; x2=&quot;-29507&quot; x1=&quot;-28524&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30131&quot; &#39;
+          &#39;y1=&quot;-30703&quot; x2=&quot;-27542&quot; x1=&quot;-26560&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30347&quot; &#39;
+          &#39;y1=&quot;-30778&quot; x2=&quot;-27505&quot; x1=&quot;-26768&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31850&quot; &#39;
+          &#39;y1=&quot;-32422&quot; x2=&quot;-28524&quot; x1=&quot;-29507&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32312&quot; &#39;
+          &#39;y1=&quot;-31850&quot; x2=&quot;-27730&quot; x1=&quot;-28524&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30703&quot; &#39;
+          &#39;y1=&quot;-30131&quot; x2=&quot;-30489&quot; x1=&quot;-29507&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30778&quot; &#39;
+          &#39;y1=&quot;-30347&quot; x2=&quot;-30281&quot; x1=&quot;-29544&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30703&quot; &#39;
+          &#39;y1=&quot;-31850&quot; x2=&quot;-26560&quot; x1=&quot;-26560&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32422&quot; &#39;
+          &#39;y1=&quot;-31850&quot; x2=&quot;-29507&quot; x1=&quot;-30489&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-32205&quot; &#39;
+          &#39;y1=&quot;-31774&quot; x2=&quot;-29544&quot; x1=&quot;-30281&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31850&quot; &#39;
+          &#39;y1=&quot;-32312&quot; x2=&quot;-26560&quot; x1=&quot;-27354&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31760&quot; &#39;
+          &#39;y1=&quot;-32107&quot; x2=&quot;-26745&quot; x1=&quot;-27340&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-31850&quot; &#39;
+          &#39;y1=&quot;-30703&quot; x2=&quot;-30489&quot; x1=&quot;-30489&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30275&quot; &#39;
+          &#39;y1=&quot;-30703&quot; x2=&quot;-31200&quot; x1=&quot;-30489&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30541&quot; &#39;
+          &#39;y1=&quot;-30272&quot; x2=&quot;-32040&quot; x1=&quot;-31575&quot; fill=&quot;none&quot;/&gt;&lt;polygon &#39;
+          &#39;stroke-width=&quot;1&quot; stroke=&quot;none&quot; points=&quot; -24474 -29819 -23602 -30402 &#39;
+          &#39;-23532 -30284&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; points=&quot; -24474 -29819 &#39;
+          &#39;-23602 -30402 -23532 -30284&quot; fill=&quot;none&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; &#39;
+          &#39;stroke=&quot;none&quot; points=&quot; -26635 -28559 -26973 -27837 -27092 &#39;
+          &#39;-27903&quot;/&gt;&lt;polygon stroke-width=&quot;1&quot; points=&quot; -26635 -28559 -26973 &#39;
+          &#39;-27837 -27092 -27903&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28860&quot; y1=&quot;-28796&quot; &#39;
+          &#39;x2=&quot;-25945&quot; x1=&quot;-26066&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28657&quot; y1=&quot;-28611&quot; &#39;
+          &#39;x2=&quot;-25865&quot; x1=&quot;-25952&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28454&quot; y1=&quot;-28427&quot; &#39;
+          &#39;x2=&quot;-25785&quot; x1=&quot;-25838&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-28252&quot; y1=&quot;-28242&quot; &#39;
+          &#39;x2=&quot;-25706&quot; x1=&quot;-25723&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29478&quot; y1=&quot;-29530&quot; &#39;
+          &#39;x2=&quot;-25257&quot; x1=&quot;-25130&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29686&quot; y1=&quot;-29727&quot; &#39;
+          &#39;x2=&quot;-25321&quot; x1=&quot;-25221&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29894&quot; y1=&quot;-29924&quot; &#39;
+          &#39;x2=&quot;-25384&quot; x1=&quot;-25312&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30102&quot; y1=&quot;-30121&quot; &#39;
+          &#39;x2=&quot;-25448&quot; x1=&quot;-25403&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30310&quot; y1=&quot;-30317&quot; &#39;
+          &#39;x2=&quot;-25512&quot; x1=&quot;-25493&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-30131&quot; y1=&quot;-30128&quot; &#39;
+          &#39;x2=&quot;-27473&quot; x1=&quot;-27612&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29914&quot; y1=&quot;-29912&quot; &#39;
+          &#39;x2=&quot;-27487&quot; x1=&quot;-27598&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29697&quot; y1=&quot;-29695&quot; &#39;
+          &#39;x2=&quot;-27502&quot; x1=&quot;-27583&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29480&quot; y1=&quot;-29479&quot; &#39;
+          &#39;x2=&quot;-27516&quot; x1=&quot;-27569&quot; fill=&quot;none&quot;/&gt;&lt;line y2=&quot;-29263&quot; y1=&quot;-29263&quot; &#39;
+          &#39;x2=&quot;-27530&quot; x1=&quot;-27554&quot; fill=&quot;none&quot;/&gt;&lt;text y=&quot;-28380&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-28602&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;OH&lt;/text&gt;&lt;text y=&quot;-29983&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-31540&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;O&lt;/text&gt;&lt;text y=&quot;-30691&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-32762&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;CH&lt;/text&gt;&lt;text y=&quot;-30602&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-32185&quot; stroke=&quot;none&quot; font-size=&quot;313.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;3&lt;/text&gt;&lt;text y=&quot;-32242&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-27695&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;N&lt;/text&gt;&lt;text y=&quot;-27747&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-25708&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;N&lt;/text&gt;&lt;text y=&quot;-27473&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-27311&quot; stroke=&quot;none&quot; font-size=&quot;433.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;H&lt;/text&gt;&lt;text y=&quot;-28600&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-27695&quot; stroke=&quot;none&quot; font-style=&quot;italic&quot; &#39;
+          &#39;font-size=&quot;313.3333&quot; font-family=&quot;sans-serif&quot;&gt;R&lt;/text&gt;&lt;text &#39;
+          &#39;y=&quot;-28522&quot; xml:space=&quot;preserve&quot; x=&quot;-26540&quot; stroke=&quot;none&quot; &#39;
+          &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;S&lt;/text&gt;&lt;text y=&quot;-27337&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-25818&quot; stroke=&quot;none&quot; font-style=&quot;italic&quot; &#39;
+          &#39;font-size=&quot;313.3333&quot; font-family=&quot;sans-serif&quot;&gt;S&lt;/text&gt;&lt;text &#39;
+          &#39;y=&quot;-30573&quot; xml:space=&quot;preserve&quot; x=&quot;-25708&quot; stroke=&quot;none&quot; &#39;
+          &#39;font-style=&quot;italic&quot; font-size=&quot;313.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;S&lt;/text&gt;&lt;text y=&quot;-29495&quot; &#39;
+          &#39;xml:space=&quot;preserve&quot; x=&quot;-24876&quot; stroke=&quot;none&quot; font-style=&quot;italic&quot; &#39;
+          &#39;font-size=&quot;313.3333&quot; &#39;
+          &#39;font-family=&quot;sans-serif&quot;&gt;R&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&#39;,
  &#39;inchi&#39;: &#39;InChI=1S/C20H24N2O2/c1-3-13-12-22-9-7-14(13)10-19(22)20(23)16-6-8-21-18-5-4-15(24-2)11-17(16)18/h3-6,8,11,13-14,19-20,23H,1,7,9-10,12H2,2H3/t13-,14-,19-,20+/m0/s1&#39;,
  &#39;inchiKey&#39;: &#39;InChIKey=LOUPRKONTZGTKE-WZBLMQSHSA-N&#39;,
  &#39;molecularFormula&#39;: &#39;C&lt;sub&gt;20&lt;/sub&gt;H&lt;sub&gt;24&lt;/sub&gt;N&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt;&#39;,
@@ -1678,9 +1291,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
                  &#39;2244812-93-7&#39;,
                  &#39;2244812-97-1&#39;,
                  &#39;2409557-51-1&#39;,
-                 &#39;2566761-34-8&#39;,
-                 &#39;2929261-86-7&#39;,
-                 &#39;3032276-91-5&#39;],
+                 &#39;2566761-34-8&#39;],
  &#39;rn&#39;: &#39;130-95-0&#39;,
  &#39;smile&#39;: &#39;[C@@H](O)(C=1C2=C(C=CC(OC)=C2)N=CC1)[C@]3([N@@]4C[C@H](C=C)[C@](C3)(CC4)[H])[H]&#39;,
  &#39;synonyms&#39;: [&#39;Cinchonan-9-ol, 6′-methoxy-, (8α,9&lt;em&gt;R&lt;/em&gt;)-&#39;,
@@ -1711,7 +1322,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </section>
 <section id="handle-multiple-results">
-<h3>Handle multiple results<a class="headerlink" href="#handle-multiple-results" title="Permalink to this headline">#</a></h3>
+<h3>Handle multiple results<a class="headerlink" href="#handle-multiple-results" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># setup search query parameters</span>
@@ -1789,7 +1400,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </section>
 <section id="handle-multiple-page-results">
-<h3>Handle multiple page results<a class="headerlink" href="#handle-multiple-page-results" title="Permalink to this headline">#</a></h3>
+<h3>Handle multiple page results<a class="headerlink" href="#handle-multiple-page-results" title="Permalink to this heading">#</a></h3>
 <p>The CAS Common Chemistry API returns 50 results per page, and only the first page is returned by default. If the search returns more than 50 results, the offset option can be added to page through and obtain all results:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1809,7 +1420,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>194
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>192
 </pre></div>
 </div>
 </div>
@@ -1851,7 +1462,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
 50
 50
-44
+42
 </pre></div>
 </div>
 </div>
@@ -1887,7 +1498,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>194
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>192
 </pre></div>
 </div>
 </div>
@@ -1923,148 +1534,6 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 <span class="k">for</span> <span class="n">casrn</span> <span class="ow">in</span> <span class="n">n_casrn_list</span><span class="p">:</span>
     <span class="n">n_detail_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">detail_base_url</span> <span class="o">+</span> <span class="s2">&quot;cas_rn=&quot;</span> <span class="o">+</span> <span class="n">casrn</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
     <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># !! add a delay between API calls</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">37</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">n_detail_data</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="n">casrn</span> <span class="ow">in</span> <span class="n">n_casrn_list</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">n_detail_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">detail_base_url</span> <span class="o">+</span> <span class="s2">&quot;cas_rn=&quot;</span> <span class="o">+</span> <span class="n">casrn</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># !! add a delay between API calls</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/requests/api.py:73,</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span><span class="w">     </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Sends a GET request.</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span><span class="sd">     :param url: URL for the new :class:`Request` object.</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="sd">     :rtype: requests.Response</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/requests/api.py:59,</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="c1"># By using the &#39;with&#39; statement we are sure the session is closed, thus we</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="c1"># avoid leaving sockets open which can trigger a ResourceWarning in some</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="c1"># cases, and look like a memory leak in others.</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">with</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">59</span>     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/requests/sessions.py:589,</span> in <span class="ni">Session.request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
-<span class="g g-Whitespace">    </span><span class="mi">584</span> <span class="n">send_kwargs</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span>     <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">586</span>     <span class="s2">&quot;allow_redirects&quot;</span><span class="p">:</span> <span class="n">allow_redirects</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span> <span class="p">}</span>
-<span class="g g-Whitespace">    </span><span class="mi">588</span> <span class="n">send_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">589</span> <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span> <span class="k">return</span> <span class="n">resp</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/requests/sessions.py:703,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span> <span class="n">start</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="c1"># Send the request</span>
-<span class="ne">--&gt; </span><span class="mi">703</span> <span class="n">r</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span> <span class="c1"># Total elapsed time of the request (approximately)</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/requests/adapters.py:486,</span> in <span class="ni">HTTPAdapter.send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span>     <span class="n">timeout</span> <span class="o">=</span> <span class="n">TimeoutSauce</span><span class="p">(</span><span class="n">connect</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">read</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">486</span>     <span class="n">resp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>         <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span>         <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">489</span>         <span class="n">body</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span>         <span class="n">headers</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span>         <span class="n">redirect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">492</span>         <span class="n">assert_same_host</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span>         <span class="n">preload_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span>         <span class="n">decode_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">495</span>         <span class="n">retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">497</span>         <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">500</span> <span class="k">except</span> <span class="p">(</span><span class="n">ProtocolError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span>     <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:790,</span> in <span class="ni">HTTPConnectionPool.urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">787</span> <span class="n">response_conn</span> <span class="o">=</span> <span class="n">conn</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">release_conn</span> <span class="k">else</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">789</span> <span class="c1"># Make the request on the HTTPConnection object</span>
-<span class="ne">--&gt; </span><span class="mi">790</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">791</span>     <span class="n">conn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">793</span>     <span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">794</span>     <span class="n">timeout</span><span class="o">=</span><span class="n">timeout_obj</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">795</span>     <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">796</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">797</span>     <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">798</span>     <span class="n">retries</span><span class="o">=</span><span class="n">retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">799</span>     <span class="n">response_conn</span><span class="o">=</span><span class="n">response_conn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">800</span>     <span class="n">preload_content</span><span class="o">=</span><span class="n">preload_content</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">801</span>     <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">802</span>     <span class="o">**</span><span class="n">response_kw</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">803</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">805</span> <span class="c1"># Everything went great!</span>
-<span class="g g-Whitespace">    </span><span class="mi">806</span> <span class="n">clean_exit</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:536,</span> in <span class="ni">HTTPConnectionPool._make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
-<span class="g g-Whitespace">    </span><span class="mi">534</span> <span class="c1"># Receive the response from the server</span>
-<span class="g g-Whitespace">    </span><span class="mi">535</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">536</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span> <span class="k">except</span> <span class="p">(</span><span class="n">BaseSSLError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_raise_timeout</span><span class="p">(</span><span class="n">err</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout_value</span><span class="o">=</span><span class="n">read_timeout</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/urllib3/connection.py:461,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span> <span class="kn">from</span> <span class="nn">.response</span> <span class="kn">import</span> <span class="n">HTTPResponse</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="c1"># Get the response from http.client.HTTPConnection</span>
-<span class="ne">--&gt; </span><span class="mi">461</span> <span class="n">httplib_response</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="n">assert_header_parsing</span><span class="p">(</span><span class="n">httplib_response</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/http/client.py:1395,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1393</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1394</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1395</span>         <span class="n">response</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1396</span>     <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1397</span>         <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/http/client.py:325,</span> in <span class="ni">HTTPResponse.begin</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">323</span> <span class="c1"># read until we get a non-100 response</span>
-<span class="g g-Whitespace">    </span><span class="mi">324</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">325</span>     <span class="n">version</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_status</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">CONTINUE</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="k">break</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/http/client.py:286,</span> in <span class="ni">HTTPResponse._read_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">285</span> <span class="k">def</span> <span class="nf">_read_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">286</span>     <span class="n">line</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="n">_MAXLINE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;iso-8859-1&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">287</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">_MAXLINE</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">288</span>         <span class="k">raise</span> <span class="n">LineTooLong</span><span class="p">(</span><span class="s2">&quot;status line&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/socket.py:718,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">716</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">718</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">719</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">720</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/ssl.py:1314,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1310</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1311</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1312</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1313</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1314</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1315</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1316</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/ssl.py:1166,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1164</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1165</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1166</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1167</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1168</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -2164,11 +1633,10 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="goldbook_api.html"
@@ -2188,10 +1656,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -2199,6 +1664,7 @@ About this interactive <img alt="icons" src="../_images/rocket.png" /> recipe<di
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2251,6 +1717,7 @@ By IUPAC WorldFAIR Chemistry D3.2 Project
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -2277,8 +1744,8 @@ Coordination and Support Action under Grant Agreement No. 101058393.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
