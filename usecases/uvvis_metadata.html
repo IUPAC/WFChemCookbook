@@ -717,20 +717,19 @@ About this interactive <img alt="icons" src="../_images/rocket1.png" /> recipe<d
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># noinspection PyProtectedMember</span>
 <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>jcamp<span class="w">                        </span>#<span class="w"> </span><span class="nb">command</span><span class="w"> </span>to<span class="w"> </span>instruct<span class="w"> </span>Binder/Colab<span class="w"> </span>to<span class="w"> </span>install<span class="w"> </span>the<span class="w"> </span>jcamp<span class="w"> </span>package
-<span class="kn">from</span> <span class="nn">jcamp</span> <span class="kn">import</span> <span class="n">jcamp_read</span>              <span class="c1"># Importing the jcamp_read() method from the jcamp package</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>           <span class="c1"># Importing a plotting package</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                        <span class="c1"># Import the numerical python package for mathematical operations</span>
-<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jcamp</span><span class="w"> </span><span class="kn">import</span> <span class="n">jcamp_read</span>              <span class="c1"># Importing the jcamp_read() method from the jcamp package</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>           <span class="c1"># Importing a plotting package</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>                        <span class="c1"># Import the numerical python package for mathematical operations</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jcamp in /opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages (1.2.2)
-Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages (from jcamp) (2.2.1)
-Requirement already satisfied: datetime in /opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages (from jcamp) (5.5)
-Requirement already satisfied: zope.interface in /opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages (from datetime-&gt;jcamp) (7.2)
-Requirement already satisfied: pytz in /opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages (from datetime-&gt;jcamp) (2024.2)
-Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages (from zope.interface-&gt;datetime-&gt;jcamp) (75.6.0)
+Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages (from jcamp) (2.4.1)
+Requirement already satisfied: datetime in /opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages (from jcamp) (6.0)
+Requirement already satisfied: zope.interface in /opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages (from datetime-&gt;jcamp) (8.2)
+Requirement already satisfied: pytz in /opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages (from datetime-&gt;jcamp) (2025.2)
 </pre></div>
 </div>
 </div>
@@ -822,7 +821,7 @@ with descriptive and informative names) that will hold the data associated with 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4dcce7dda843fbebed418195416fbb84c236f19f2749a179234567539491a8ac.png" src="../_images/4dcce7dda843fbebed418195416fbb84c236f19f2749a179234567539491a8ac.png" />
+<img alt="../_images/2b858e6534d2f65a918bdaf19efdf4cb1fa55ad6fc012ad0891e45e63a5cbfa0.png" src="../_images/2b858e6534d2f65a918bdaf19efdf4cb1fa55ad6fc012ad0891e45e63a5cbfa0.png" />
 </div>
 </div>
 <p>The plot has also been saved as an image.</p>
@@ -852,7 +851,7 @@ with descriptive and informative names) that will hold the data associated with 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># noinspection PyShadowingNames</span>
-<span class="k">def</span> <span class="nf">beer_lambert</span><span class="p">(</span><span class="n">absorbance</span><span class="p">,</span> <span class="n">concentration</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">beer_lambert</span><span class="p">(</span><span class="n">absorbance</span><span class="p">,</span> <span class="n">concentration</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Doc String</span>
 <span class="sd">    ----------</span>

@@ -27,13 +27,13 @@ SVG(svg_string1)
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mKeyError[0m                                  Traceback (most recent call last)
-Cell [0;32mIn[4], line 2[0m
-[1;32m      1[0m [38;5;66;03m# get svg image text[39;00m
-[0;32m----> 2[0m svg_string1 [38;5;241m=[39m [43mcasrn1_data[49m[43m[[49m[38;5;124;43m"[39;49m[38;5;124;43mimage[39;49m[38;5;124;43m"[39;49m[43m][49m
-[1;32m      4[0m [38;5;66;03m# display the molecule[39;00m
-[1;32m      5[0m [38;5;28;01mfrom[39;00m [38;5;21;01mIPython[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdisplay[39;00m [38;5;28;01mimport[39;00m SVG
+[31m---------------------------------------------------------------------------[39m
+[31mKeyError[39m                                  Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 2[39m
+[32m      1[39m [38;5;66;03m# get svg image text[39;00m
+[32m----> [39m[32m2[39m svg_string1 = [43mcasrn1_data[49m[43m[[49m[33;43m"[39;49m[33;43mimage[39;49m[33;43m"[39;49m[43m][49m
+[32m      4[39m [38;5;66;03m# display the molecule[39;00m
+[32m      5[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mIPython[39;00m[34;01m.[39;00m[34;01mdisplay[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m SVG
 
-[0;31mKeyError[0m: 'image'
+[31mKeyError[39m: 'image'
 
