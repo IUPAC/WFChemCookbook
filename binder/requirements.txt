@@ -1,0 +1,13 @@
+# Environment for Binder (repo2docker) — used when launching the notebooks
+# from the website. repo2docker reads config exclusively from this binder/
+# folder (root config files are ignored while it exists). Not used for
+# building the site; that is done with pixi (see pixi.toml).
+# Keep the jcamp pin in sync with pixi.toml.
+jcamp==1.3.2
+matplotlib==3.10.8
+numpy>=2,<3
+openbabel==3.2.1
+pandas==2.3.3
+rdkit==2025.9.4
+requests>=2
+seaborn==0.13.2

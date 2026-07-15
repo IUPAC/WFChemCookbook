@@ -1,6 +1,37 @@
-.content-container h1 { font-size: 28px; }
-.content-container h2 { font-size: 24px; }
-.content-container h3 { font-size: 20px; }
-.content-container h4 { font-size: 18px; }
-.content-container h5 { font-size: 16px; }
-.content-container h6 { font-size: 14px; }
+/* Site styles for the MyST book-theme (Jupyter Book 2).
+   Loaded via `site.options.style` in myst.yml.
+   Approximates the look of the previous sphinx-book-theme site. */
+
+/* Page title: the default theme title is very large and extra-bold */
+h1.myst-fm-block-title {
+  font-size: 2.4rem !important;
+  font-weight: 600 !important;
+}
+
+/* Content heading scale, close to the previous sphinx-book-theme */
+article h2 { font-size: 1.75rem !important; font-weight: 600 !important; }
+article h3 { font-size: 1.4rem  !important; font-weight: 600 !important; }
+article h4 { font-size: 1.2rem  !important; }
+article h5 { font-size: 1.05rem !important; }
+article h6 { font-size: 1rem    !important; }
+
+/* Hide the author popover under every page title; attribution lives in
+   the site footer, as on the previous site */
+header.myst-fm-authors-affiliations { display: none; }
+
+/* Inline images used inside dropdown titles (e.g. the rocket icon in
+   "About this interactive 🚀 recipe") — the theme renders images as centered
+   blocks, which breaks the header onto three lines */
+.myst-dropdown-header-title img {
+  display: inline-block !important;
+  height: 1.2em;
+  width: auto;
+  margin: 0 0.15em !important;
+  vertical-align: text-bottom;
+}
+
+/* Footer: left-align the EU funding logo, as in the JB1 footer */
+footer.article img {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}

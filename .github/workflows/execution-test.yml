@@ -1,0 +1,38 @@
+name: execution-test
+
+# Verifies that all notebooks still execute (external APIs drift over time —
+# e.g. CAS introduced an API-key requirement). Pages with `execute: skip: true`
+# frontmatter are exempt. The deployed site uses the committed notebook outputs;
+# this workflow only tests executability and never publishes anything.
+on:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1" # weekly on Monday, 06:00 UTC
+
+jobs:
+  execute-notebooks:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write # to open an issue when a scheduled run fails
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+        with: { submodules: recursive }
+      - uses: prefix-dev/setup-pixi@v0.9.3
+        with: { pixi-version: v0.72.0 }
+      - name: Execute all notebooks
+        run: |
+          cd book
+          pixi run -e dev myst build --execute --strict
+
+      # External APIs can break outside of any PR; make sure someone notices.
+      - name: Open an issue on scheduled failure
+        if: failure() && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "Scheduled notebook execution test failed ($(date -u +%Y-%m-%d))" \
+            --body "The weekly notebook execution test failed — a web service used by a notebook may have changed or gone offline. See the run log: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"

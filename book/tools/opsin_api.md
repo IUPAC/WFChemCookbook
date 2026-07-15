@@ -10,7 +10,7 @@
 - Usage: [Instructions](https://opsin.ch.cam.ac.uk/instructions.html)
 - Publication: [https://doi.org/10.1021/ci100384d](https://pubs.acs.org/articlesonrequest/AOR-PcYgSy87ettZWfqyvHmN)
 - Website: [https://opsin.ch.cam.ac.uk](https://opsin.ch.cam.ac.uk)
-- Application Programming Interface (API): https://opsin.ch.cam.ac.uk/opsin/
+- Application Programming Interface (API): `https://opsin.ch.cam.ac.uk/opsin/`
   - Endpoint: Chemical Markup Language file <chemicalname>.cml (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.cml](https://opsin.ch.cam.ac.uk/opsin/benzene.cml))
   - Endpoint: Standard InChI text file <chemicalname>.stdinchi (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchi](https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchi))
   - Endpoint: Standard InChIKey text file <chemicalname>.stdinchikey (e.g., [https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchikey](https://opsin.ch.cam.ac.uk/opsin/benzene.stdinchikey))
@@ -40,7 +40,7 @@ be used to fix misspelling of systematic names, and it is really useful as a tea
 structure and ask them to name it, checking the names with OPSIN.  For data science OPSIN also has an [API](https://opsin.ch.cam.ac.uk/instructions.html) and returns
 information back in JSON for easy use within scripting languages and other tools.
 
-![fig1](../images/opsin_api_fig1.jpg)
+![fig1](images/opsin_api_fig1.jpg)
 
 OPSIN can deal with names that include [greek letters and superscripts](https://opsin.ch.cam.ac.uk/instructions.html). 
 It also has the capability to interpret mixtures of substances. This is useful for situations like getting identifiers for

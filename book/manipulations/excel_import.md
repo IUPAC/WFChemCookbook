@@ -82,7 +82,7 @@ import .csv, .tsv and other files and not let you choose what the encoding is.  
 system there may be some selections that won't work on your computer.
 
 Figure 1
-![fig1](../images/excel_import_fig1.jpg)
+![fig1](images/excel_import_fig1.jpg)
 Caption: The Excel import dialog (a) and the options for 'File origin' (b)
 
 Using the open file dialog is important if your text file contains unicode (e.g., UTF-8).  If you double-click on a .csv,
@@ -93,7 +93,7 @@ Excel you will be able to use the dialog in Figure 1a to choose the correct enco
 correctly in Excel (see Figure 2b).
 
 Figure 2
-![fig2](../images/excel_import_fig2.jpg)
+![fig2](images/excel_import_fig2.jpg)
 Caption: Importing a unicode (UTF-8) '.csv' file into Excel directly (a), and using the Excel file oping dialog (b)
 
 ### 2.2 End of line characters
@@ -102,7 +102,7 @@ This can result in extra blank lines begin added by Excel to the imported file w
 CR character, and a 'line-feed' LF character is at the end of line.
 
 Figure 3
-![fig3](../images/excel_import_fig3.jpg)
+![fig3](images/excel_import_fig3.jpg)
 Caption: Different end-of-line character options from a text file. 
 
 ### 2.3 Data types in Excel
@@ -115,10 +115,10 @@ misinterpreted as dates if the column data type is left as 'General'.  In this s
 addin quotes around the CASRN and adding a '='before the first quote (Figure 4b).
 
 Figure 4
-![fig4](../images/excel_import_fig4.jpg)
+![fig4](images/excel_import_fig4.jpg)
 Caption: CASRNs in (4a) and advanced options for interpretting numeric values (4b)
 
-```{Note}
+```{note}
 If you want to find out how prevalent CASRN's being misinterpreted as dates, use this 
 [link](https://query.wikidata.org/#%23All%20CAS%20registry%20numbers%20in%20Wikidata%0ASELECT%20DISTINCT%20%3Fcompound%20%3FcompoundLabel%20%3Fcas%0AWHERE%0A%7B%0A%20%20%3Fcompound%20wdt%3AP231%20%3Fcas%20.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%0ALIMIT%201000) 
 to run a SPARQL query (search) on Wikidata, that retrieves the first 1000 compounds with a CASRN.  Click the 'Run' 
@@ -136,7 +136,7 @@ As an example, the value one thousand, two hundred and thirty-four point fifty-s
 - In Latin America and continental Europe as: 1.234,56
 
 Figure 5
-![fig5](../images/excel_import_fig5.jpg)
+![fig5](images/excel_import_fig5.jpg)
 Caption: Data types for columns in Excel (a) and advanced options for interpretting numeric values (b)
 
 

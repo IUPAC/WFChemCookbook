@@ -5,32 +5,47 @@ on:
   push:
     branches:
     - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # required to push to the gh-pages branch
     steps:
-    - uses: actions/checkout@v3
+      - name: checkout
+        uses: actions/checkout@v6
+        with: { submodules: recursive }
+      - uses: prefix-dev/setup-pixi@v0.9.3
+        with: { pixi-version: v0.72.0 }
+      - name: Build the book
+        run: |
+          cd book
+          pixi run -e dev jupyter-book build
 
-    # Install dependencies
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
+      # The MyST book-theme has no custom-script option, so add Matomo after the build
+      - name: Inject Matomo analytics
+        run: python3 .github/scripts/inject_matomo.py book/_build/html
 
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+      # Push the book's HTML to github-pages (only on pushes to main;
+      # pull requests just build as a check — their token is read-only)
+      - name: GitHub Pages action
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: book/_build/html
 
-    # Build the book
-    - name: Build the book
-      run: |
-        jupyter-book build book
-
-    # Push the book's HTML to github-pages
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.9.3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: book/_build/html
+      # Non-blocking link check: reports dead external links in the step log
+      # (red X on the step) without failing the workflow — some sites block or
+      # rate-limit the checker (ACS 403, PubChem 503, Crossref 429)
+      - name: Check links (non-blocking)
+        continue-on-error: true
+        run: |
+          cd book
+          pixi run -e dev myst build --strict --check-links

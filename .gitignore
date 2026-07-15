@@ -1,7 +1,27 @@
 .idea
 .DS_Store
-book/_build
 book/manipulations/hiddensettings.py
 book/howtos/inchikeys.md
 book/.DS_Store
+book/nul
 Pipfile.lock
+
+# generated data from tests and builds
+# notebooks write their outputs to a files/generated/ folder (relative to the
+# kernel cwd: the notebook's folder interactively, book/ during myst execution)
+**/files/generated/
+book/_build
+book/manipulations/.excel_import.md.bak
+
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+# MyST build outputs
+_build
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# local files
+TODO.md

@@ -1,9 +1,0 @@
-ghp-import==2.1.0
-jcamp==1.2.2
-jupyter==1.1.1
-jupyter-book==0.15.1
-matplotlib==3.10.8
-openbabel-wheel==3.1.1.22
-pandas==2.3.3
-rdkit==2025.9.3
-seaborn==0.13.2

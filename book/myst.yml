@@ -1,0 +1,114 @@
+version: 1
+project:
+  title: IUPAC FAIR Chemistry Cookbook
+  authors:
+    - name: IUPAC WorldFAIR Chemistry D3.2 Project
+  github: IUPAC/WFChemCookbook
+  thebe:
+    binder:
+      repo: IUPAC/WFChemCookbook
+      provider: github
+      url: https://mybinder.org
+      ref: main
+  bibliography:
+    - references.bib
+  # links that are fine in a browser but block automated link checkers
+  # (403/503/429 to bots) — do not fail builds on them
+  error_rules:
+    - rule: link-resolves
+      severity: ignore
+      keys:
+        - 'https://pubs.acs.org/**'
+        - 'https://pubchem.ncbi.nlm.nih.gov/compound/**'
+        - 'https://api.crossref.org'
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: intro.md
+    - title: Introduction
+      children:
+        - file: introduction/about_cookbook.md
+          title: About this Cookbook
+        - file: introduction/use_cookbook.md
+        - file: introduction/contributions.md
+        - file: introduction/feedback.md
+    - title: The FAIR Chemistry Cookbook
+      children:
+        - file: joy_of_fair/index.md
+          title: The Joy of FAIR
+          children:
+            - file: joy_of_fair/techniques.md
+              title: FAIR Techniques
+        - file: tools/index.md
+          title: Tools & Web Services
+          children:
+            - file: tools/opsin_api.md
+            - file: tools/opsin_api_jn.ipynb
+        - file: datasources/index.md
+          title: Data Sources
+          children:
+            - file: datasources/goldbook_api.ipynb
+              title: 'Terminology: The IUPAC Gold Book'
+            - file: datasources/cas_commonchem.ipynb
+            - file: datasources/pubchem/index.md
+              title: PubChem
+              children:
+                - file: datasources/pubchem/pugrest/index.md
+                  title: PubChem PUG-REST
+                  children:
+                    - file: datasources/pubchem/pugrest/part1.ipynb
+                    - file: datasources/pubchem/pugrest/part2.ipynb
+                    - file: datasources/pubchem/pugrest/part3.ipynb
+                - file: datasources/pubchem/pugview.ipynb
+                  title: PubChem PUG-View
+                - file: datasources/pubchem/ptable.ipynb
+                  title: PubChem Periodic Table
+        - file: manipulations/index.md
+          title: Data Manipulations
+          children:
+            - file: manipulations/computing_inchis.ipynb
+            - file: manipulations/dataset_search.ipynb
+            - file: manipulations/excel_import.md
+              title: Importing data into Excel
+            - file: manipulations/gsheets_citations.md
+              title: Importing data into Google Sheets
+            - file: manipulations/using_inchi.md
+              title: Annotation with InChIs
+        - file: usecases/index.md
+          title: Use Cases & Workflows
+          children:
+            - file: usecases/iupac_pkadata.ipynb
+            - file: usecases/uvvis_metadata.ipynb
+    - title: Reference
+      children:
+        - file: reference/about_project.md
+          title: About this project
+          children:
+            - file: reference/contributors.md
+            - file: reference/development.md
+            - file: reference/worldfair.md
+        - file: reference/glossary.md
+        - file: reference/bibliography.md
+site:
+  options:
+    logo: static/img/iupac_and_wf.jpg
+    logo_text: IUPAC FAIR Chemistry Cookbook
+    folders: true
+    style: static/wfcc.css
+  parts:
+    footer: |
+      By IUPAC WorldFAIR Chemistry D3.2 Project
+
+      Licenses: See the "About this..." section in a page for the per resource license.
+      Default license is [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+      ```{image} static/img/eu_funded.jpg
+      :alt: Funded by the European Union
+      :width: 200px
+      ```
+
+      WorldFAIR “Global cooperation on FAIR data policy and practice” is funded by the EC HORIZON-WIDERA-2021-ERA-01-41
+      Coordination and Support Action under Grant Agreement No. 101058393.
+  template: book-theme

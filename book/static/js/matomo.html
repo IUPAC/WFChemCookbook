@@ -1,0 +1,39 @@
+<!-- Matomo -->
+<script>
+var _paq = window._paq = window._paq || [];
+_paq.push(['enableLinkTracking']);
+(function() {
+  var u = "//matomo.goldbook.iupac.org/matomo/";
+  _paq.push(['setTrackerUrl', u + 'matomo.php']);
+  _paq.push(['setSiteId', '3']);
+  var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+  g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+})();
+/* The site is a client-side-routed app: navigating between pages does not
+   reload the document, so a page view must also be reported whenever the
+   route changes (Matomo single-page-application pattern). */
+(function() {
+  var lastUrl = null;
+  function trackPageView() {
+    if (location.href === lastUrl) { return; }
+    if (lastUrl !== null) {
+      _paq.push(['setReferrerUrl', lastUrl]);
+      _paq.push(['setCustomUrl', location.href]);
+      _paq.push(['setDocumentTitle', document.title]);
+    }
+    lastUrl = location.href;
+    _paq.push(['trackPageView']);
+  }
+  ['pushState', 'replaceState'].forEach(function(fn) {
+    var original = history[fn];
+    history[fn] = function() {
+      original.apply(this, arguments);
+      /* wait for the router to update document.title */
+      setTimeout(trackPageView, 250);
+    };
+  });
+  window.addEventListener('popstate', function() { setTimeout(trackPageView, 250); });
+  trackPageView();
+})();
+</script>
+<!-- End Matomo -->

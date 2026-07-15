@@ -20,7 +20,7 @@
 ## Summary
 In many research contexts, access to the literature is very important and dealing with its metadata can be time-consuming.
 The advent of the [Digital Object Identifier](https://www.doi.org/) (DOI) has made it much easier to deal with 
-citation data for many different types of digital resources.  Currently, twelve [registration agencies](https://www.doi.org/the-community/existing-registration-agencies/) are 
+citation data for many different types of digital resources.  Currently, twelve [registration agencies](https://en.wikipedia.org/wiki/Digital_object_identifier#Registration_agencies) are 
 'minting' (creating) DOI's and each has a different scope and size.  From a research literature perspective 
 [CrossRef](https://www.crossref.org/) is the agency  that holds DOI's (now [~150,000,000](https://www.crossref.org/06members/53status.html)) and that is a lot of data to sort through.
 
@@ -39,7 +39,7 @@ get a JSON file returned (see below).  The JSON file in the image is formatted u
 plugin for Firefox and all the fields have been collapsed to make it easy to see the whole file at
 http://api.crossref.org/works/10.1515/pac-2018-1010.
 
-![fig](../images/gsheets_citations_crossref_api.jpg)
+![fig](images/gsheets_citations_crossref_api.jpg)
 Caption: JSON output from the Crossref API
 
 The data we need to extract to be able to create a citation for this paper is spread throughoout different parts of the
@@ -70,7 +70,7 @@ paper retrieval of these metadata fields and some organization and formating. Th
 in each column, and much of the mechanics is hidden in rows between the showing data.  This is all explained in the
 'How it works' sheet.
 
-![fig](../images/gsheets_citations_howitworks.jpg)
+![fig](images/gsheets_citations_howitworks.jpg)
 Caption: The Google Sheets 'How It Works' sheet 
 
 Let's walk through the code.  The Crossref path is in cell B2 and the DOI is added to cell B3.  The full path is
